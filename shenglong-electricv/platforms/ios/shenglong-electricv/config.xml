@@ -21,9 +21,9 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
-    <name>HelloWorld</name>
+    <name>shenglong-electricv</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        shenglong-electricv
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
