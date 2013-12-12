@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E79A51AD-7748-4F2C-9648-8B83AE507985</string>
+	<string>64EA389F-01F0-4A70-85C8-32BDBCE4A06F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>HelloWorld</string>
+	<string>shenglong-electricv</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6B15D455-6EA3-4718-AEBE-3AE6026C41F8</key>
+		<key>4009B273-E417-4A59-853C-D55E12390D7F</key>
 		<string>ssh://github.com/zhangchunsheng/webapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>shenglong-electricv/platforms/ios/HelloWorld.xcodeproj/project.xcworkspace</string>
+	<string>shenglong-electricv/platforms/ios/shenglong-electricv.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6B15D455-6EA3-4718-AEBE-3AE6026C41F8</key>
+		<key>4009B273-E417-4A59-853C-D55E12390D7F</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6B15D455-6EA3-4718-AEBE-3AE6026C41F8</string>
+	<string>4009B273-E417-4A59-853C-D55E12390D7F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6B15D455-6EA3-4718-AEBE-3AE6026C41F8</string>
+			<string>4009B273-E417-4A59-853C-D55E12390D7F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>webapp</string>
 		</dict>
