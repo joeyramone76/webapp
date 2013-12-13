@@ -23,10 +23,10 @@
     </feature>
     <name>盛隆电气</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        盛隆电气
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="zhangcs_423@163.com" href="http://www.luomor.com">
+        ZhangChunsheng
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
