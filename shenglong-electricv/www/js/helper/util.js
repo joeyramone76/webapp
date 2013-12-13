@@ -1,5 +1,5 @@
-define({
-    test: function() {
-		console.log("test1");
+define("util", ["exports"], function(exports) {
+	exports.test = function() {
+		console.log("test");
 	}
 });
