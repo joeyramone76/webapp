@@ -12,7 +12,6 @@
 		<link rel="stylesheet"  href="./css/themes/flat/flat-theme.css">
 		<link rel="stylesheet"  href="./css/themes/default/jquery.mobile.structure-1.3.2.css">
 		<link rel="shortcut icon" href="./favicon.ico">
-		<script type="text/javascript" src="phonegap.js"></script>
 		<script src="./js/lib/jquery-1.9.1.js"></script>
 		<script src="./js/lib/jquery.mobile-1.3.2.js"></script>
 	</head>
@@ -62,7 +61,7 @@
 			<div data-role="footer" data-id="menu" data-position="fixed">
 				<div data-role="navbar" data-iconpos="top" data-inline="true">
 					<ul>
-						<li><a href="#" data-prefetch="true" data-theme="a" data-icon="home" data-transition="fade">盛隆</a></li>
+						<li><a href="weather.html" data-prefetch="true" data-theme="a" data-icon="home" data-transition="fade">盛隆</a></li>
 						<li><a href="#" data-prefetch="true" data-theme="a" data-icon="home" data-transition="fade">新闻</a></li>
 						<li><a href="#" data-prefetch="true" data-theme="a" data-icon="home" data-transition="fade">产品</a></li>
 						<li><a href="#" data-prefetch="true" data-theme="a" data-icon="home" data-transition="fade">客户</a></li>
@@ -72,5 +71,8 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$("a").attr('data-ajax', false);
+		</script>
 	</body>
 </html>
