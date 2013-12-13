@@ -4,7 +4,7 @@ var	carousel,
 	page,
 	slides = [
 		'<h1>北京</h1>\
-			<ul data-role="listview">\
+			<ul data-role="listview" data-inset="true">\
 				<li>星期一</li>\
 				<li>星期二</li>\
 				<li>星期三</li>\
@@ -13,7 +13,7 @@ var	carousel,
 				<li>星期六</li>\
 			</ul>',
 		'<h1>上海</h1>\
-			<ul data-role="listview">\
+			<ul data-role="listview" data-inset="true">\
 				<li>星期一</li>\
 				<li>星期二</li>\
 				<li>星期三</li>\
@@ -22,7 +22,7 @@ var	carousel,
 				<li>星期六</li>\
 			</ul>',
 		'<h1>徐州</h1>\
-			<ul data-role="listview">\
+			<ul data-role="listview" data-inset="true">\
 				<li>星期一</li>\
 				<li>星期二</li>\
 				<li>星期三</li>\
@@ -31,7 +31,7 @@ var	carousel,
 				<li>星期六</li>\
 			</ul>',
 		'<h1>南京</h1>\
-			<ul data-role="listview">\
+			<ul data-role="listview" data-inset="true">\
 				<li>星期一</li>\
 				<li>星期二</li>\
 				<li>星期三</li>\
