@@ -15,7 +15,7 @@ var Weather = function(cityCode) {
 };
 
 Weather.prototype.getWeather = function(cb) {
-	var url = "http://localhost/github/html5/webapp/shenglong-electricv/php/weather.php";
+	var url = "http://html5share.duapp.com/weather/weather.php";
 	var data = {
 		cityCode: this.cityCode
 	}
