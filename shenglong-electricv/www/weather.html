@@ -16,23 +16,36 @@
 			<div data-role="header" data-id="submenu" data-position="fixed">
 				<a href="./index.html" data-icon="back">返回</a>
 				<h1>天气预报</h1>
-				<a href="#" data-icon="gear"class="ui-btn-right">设置</a>
+				<a href="#" id="setting" data-icon="gear" class="ui-btn-right">设置</a>
 			</div>
 			<div data-role="content">
-				<div id="wrapper">
-					
-				</div>
+				<article data-role="article" id="article" data-enhance="false">
+
+				</article>
 			</div>
 			<div data-role="footer" data-id="menu" data-position="fixed">
-				
+
 			</div>
 		</div>
-		<script type="text/javascript" src="./js/lib/swipeview.js"></script>
-		<script type="text/javascript" src="./js/app/weather.js"></script>
+		
 		<script type="text/javascript" src="./js/lib/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="./js/lib/jquery.mobile-1.3.2.js"></script>
+		<script type="text/javascript" src="./js/lib/underscore.js"></script>
 		<script type="text/javascript">
 			$("a").attr('data-ajax', false);
+			$("#article").attr("style", "height:" + (window.screen.height) + "px");
 		</script>
+		<script type="text/html" id='weatherTemplate'>
+			<h1><%= weather.cityName%></h1>
+			<ul data-role="listview" data-inset="true">
+				<% _.each(weather.weathers, function(data) { %>
+					<li><img src="<%= data.img%>"></img> 风力:<%= data.fl%> 舒适度:<%= data.st%> <%= data.temp%> <%= data.weather%> <%= data.wind%></li>
+				<%});%>
+				<% if(weather.weathers.length == 0) {%>
+				<li>暂时无数据</li>
+				<%}%>
+			</ul>
+		</script>
+		<script type="text/javascript" src="./js/app/weather.js"></script>
 	</body>
 </html>
