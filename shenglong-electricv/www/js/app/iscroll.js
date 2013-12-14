@@ -71,7 +71,9 @@ function scrollContent() {
 }
 
 function menuScroll() {
-	hScroll = new iScroll('nav');
+	hScroll = new iScroll('nav', {
+		hScrollbar: false
+	});
 }
 
 document.addEventListener('touchmove', function (e) {
