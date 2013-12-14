@@ -876,7 +876,7 @@ div.ui-mobile-viewport { overflow-x: hidden; }
 
 /* grid e: 16/16/16/16/16/16 */
 .ui-grid-e .ui-block-a, .ui-grid-e .ui-block-b, .ui-grid-e .ui-block-c, .ui-grid-e .ui-block-d, .ui-grid-e .ui-block-e, .ui-grid-e .ui-block-f { width: 16.66%; }
-.ui-grid-e > :nth-child(n) { width: 16.6%; }
+.ui-grid-e > :nth-child(n) { width: 16.666%; }
 .ui-grid-e .ui-block-a { clear: left; }
 
 /* grid f: 14/14/14/14/14/14/14 */

@@ -89,18 +89,13 @@ function loadWeather(cityName, cityCode) {
 	});	
 }
 
-function initWeather() {
+var weatherApp = {};
+
+weatherApp.initWeather = function() {
 	var cityName = "北京";
 	var cityCode = "101010100";
 	loadWeather(cityName, cityCode);
 }
-
-$(document).ready(function() {
-	initWeather();
-	$("setting").bind("click", function() {
-		console.log("test");
-	});
-});
 
 $(document).bind( 'mobileinit', function(){
 	$.mobile.loader.prototype.options.text = "努力加载中...";
@@ -109,6 +104,16 @@ $(document).bind( 'mobileinit', function(){
 	$.mobile.loader.prototype.options.html = "";
 	$.mobile.ignoreContentEnabled = true;
 });
+
+if(typeof define != "undefined") {
+	define([], function() {
+		return weatherApp;
+	});
+} else {
+	$(document).ready(function() {
+		weatherApp.initWeather();
+	});
+}
 
 /**
  * trigger('create');
