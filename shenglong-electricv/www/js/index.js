@@ -7,17 +7,22 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        app: '../app',
 		jquery: 'jquery-1.9.1',
-		helper: '../helper',
 		jquerymobile: 'jquery.mobile-1.3.2',
-		iScroll: "iscroll",
 		underscore: "underscore",
-		pages: "../../pages"
+		iScroll: "iscroll",
+		helper: '../helper',
+        app: '../app',
+		pages: "../../pages",
+		//BMap: "http://api.map.baidu.com/api?v=2.0&ak=lQdsfRa5RghKht0IbnYQ4Mom"
+		BMap: "http://api.map.baidu.com/getscript?v=2.0&ak=lQdsfRa5RghKht0IbnYQ4Mom&services=&t=20131213035516"
     },
 	shim: {
         'jquery': {
             exports: '$'
+        },
+		'jquerymobile': {
+            exports: 'jq'
         },
         'underscore': {
             exports: '_'
@@ -28,11 +33,14 @@ requirejs.config({
         },
 		"iScroll": {
 			exports: "iScroll"
+		},
+		"BMap": {
+			exports: "BMap"
 		}
     }
 });
 
-requirejs(["app/iscroll", "jquery", "jquerymobile", "underscore", "app/app", "helper/util"], function(appiscroll, $, jq, _, app, util) {
+requirejs(["jquerymobile", "underscore", "helper/util", "app/appiscroll", "app/app"], function(jq, _, util, appiscroll, app) {
 	//$("a").attr('data-ajax', false);
 	$(document).bind( 'mobileinit', function() {
 		util.init_loading();
@@ -40,39 +48,6 @@ requirejs(["app/iscroll", "jquery", "jquerymobile", "underscore", "app/app", "he
 	});
 	$(document).ready(function() {
 		util.showloading();
-		var date = new Date();
-		$.ajax({
-			type: "get",
-			url: "pages/main.html?" + date.getTime(),
-			success: function(data, status) {
-				$("#main").html(data).trigger("pagecreate");
-				$("#nav a").removeClass("ui-link");
-
-				setTimeout(appiscroll.scrollContent, 200);
-				setTimeout(appiscroll.menuScroll, 200);
-				setTimeout(function() {
-					$.mobile.loading("hide");
-				}, 600);
-	
-				$("a[data-name=shenglong]").bind("click", function() {
-					/*$.mobile.changePage("weather.html?" + date.getTime(), {
-						transition: "slideup",
-						changeHash: true
-					});*/
-					date = new Date();
-					$.get("pages/weather.html?" + date.getTime()).then(function(data) {
-						clearTimeout(appiscroll.timeoutId);
-						$("#main").html(data).trigger("pagecreate");
-						requirejs(["app/weather"], function(weather) {
-							$("#article").attr("style", "height:" + (window.screen.height) + "px");
-							weather.initWeather();
-						});
-					});
-				});
-			},
-			error: function() {
-				$.mobile.loading("hide");
-			}
-		});
+		app.init();
 	});
 })

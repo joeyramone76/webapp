@@ -1,0 +1,10 @@
+#map_container{
+	width:100%;
+	border: 0px solid #999;
+	height:90%;
+}
+
+@media print{
+  #notes{display:none}
+  #map_container{margin:0}
+}
