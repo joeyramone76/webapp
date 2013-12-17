@@ -47,7 +47,6 @@ requirejs(["jquerymobile", "underscore", "helper/util", "app/appiscroll", "app/a
 		$.mobile.ignoreContentEnabled = true;
 	});
 	$(document).ready(function() {
-		util.showloading();
 		app.init();
 	});
 })

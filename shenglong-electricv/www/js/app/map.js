@@ -10,8 +10,8 @@ mapApp.initMap = function() {
 
 	var type = "";
 	type = TRANSIT_ROUTE; //公交检索
-	type = DRIVING_ROUTE; //驾车检索
-	type = LOCAL_SEARCH ; //本地检索
+	//type = DRIVING_ROUTE; //驾车检索
+	//type = LOCAL_SEARCH ; //本地检索
 
 	//创建检索控件
 	var searchControl = new BMapLib.SearchControl({
