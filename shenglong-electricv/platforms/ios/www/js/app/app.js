@@ -1,7 +1,7 @@
-define(function () {
-    //Do setup work here
-    return {
-        color: "black",
-        size: "unisize"
-    }
-});
+var app = {};
+
+if(typeof define != "undefined") {
+	define("util", ["jquery","jquerymobile"], function($, jq) {
+		return app;
+	});
+}
