@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.shenglongelectricv.app</id>
-    <name>shenglong-electricv</name>
-    <version>1.0</version>
+    <name>盛隆电气</name>
+    <version>1.0.0</version>
     <publisher>peter</publisher>
     <url>http://www.shenglong-electric.com.cn/</url>
-    <description>not specified</description>
+    <description>盛隆电气</description>
     <copyright>2013 by peter</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
