@@ -3,18 +3,14 @@ function ApplicationTabGroup() {
 	//create module instance
 	var self = Ti.UI.createTabGroup(),
 		Window = require('ui/common/ApplicationWindow');
-	
-	var webview = Ti.UI.createWebView({
-		url: 'http://www.google.com'
-	});
 
 	//create app tabs
-	var winHome = new Window(L('home'), webview),
-		winNews = new Window(L('news'), webview),
-		winProduct = new Window(L('product'), webview),
-		winCustomer = new Window(L('customer'), webview),
-		winConnect = new Window(L('connect'), webview),
-		winSettings = new Window(L('settings'), webview);
+	var winHome = new Window(L('home'), 'http://www.google.com'),
+		winNews = new Window(L('news'), 'http://m.shenglong-electric.com.cn/'),
+		winProduct = new Window(L('product'), 'http://www.google.com'),
+		winCustomer = new Window(L('customer'), 'http://m.shenglong-electric.com.cn/'),
+		winConnect = new Window(L('connect'), 'http://www.google.com'),
+		winSettings = new Window(L('settings'), 'http://m.shenglong-electric.com.cn/');
 
 	var tabHome = Ti.UI.createTab({
 		title: L('home'),
