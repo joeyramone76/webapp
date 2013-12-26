@@ -17,38 +17,48 @@ if (Ti.version < 1.8) {
 
 // This is a single context application with mutliple windows in a stack
 (function() {
-  //determine platform and form factor and render approproate components
-  var osname = Ti.Platform.osname,
-    version = Ti.Platform.version,
-    height = Ti.Platform.displayCaps.platformHeight,
-    width = Ti.Platform.displayCaps.platformWidth;
-
-  function checkTablet() {
-    var platform = Ti.Platform.osname;
-
-    switch (platform) {
-      case 'ipad':
-        return true;
-      case 'android':
-        var psc = Ti.Platform.Android.physicalSizeCategory;
-        var tiAndroid = Ti.Platform.Android;
-        return psc === tiAndroid.PHYSICAL_SIZE_CATEGORY_LARGE || psc === tiAndroid.PHYSICAL_SIZE_CATEGORY_XLARGE;
-      default:
-        return Math.min(
-          Ti.Platform.displayCaps.platformHeight,
-          Ti.Platform.displayCaps.platformWidth
-        ) >= 400
-    }
-  }
-
-  var isTablet = checkTablet();
-
-  var Window;
-  if (isTablet) {
-    Window = require('ui/tablet/ApplicationWindow');
-  } else {
-    Window = require('ui/handheld/ApplicationWindow');
-  }
-  var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-  new ApplicationTabGroup(Window).open();
+	//determine platform and form factor and render approproate components
+  	var osname = Ti.Platform.osname,
+    	version = Ti.Platform.version,
+    	height = Ti.Platform.displayCaps.platformHeight,
+    	width = Ti.Platform.displayCaps.platformWidth;
+	
+	var Window;
+	
+	if(osname === 'iphone' || osname === 'ipad') {
+		Window = require('ui/handheld/ios/ApplicationWindow');
+	} else if(osname === 'mobileweb') {
+		Window = require('ui/mobileweb/ApplicationWindow');
+	} else {
+		Window = require('ui/handheld/android/ApplicationWindow');
+	}
+	
+	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+	var theTabGroup = new ApplicationTabGroup();
+	if(osname === 'iphone' || osname === 'ipad') {
+		theTabGroup.open({transition: Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+	} else {
+		theTabGroup.open();
+	}
+	
+	var MessageWindow = require('ui/common/MessageWindow'),
+		messageWin = new MessageWindow();
+		
+	Titanium.App.addEventListener('event_one', function(e) {
+		messageWin.setLabel('盛隆电气');
+		messageWin.open();
+		setTimeout(function() {
+			messageWin.close({opactity: 0, duration: 500});
+		}, 1000);
+	});
+	
+	Titanium.App.addEventListener('event_two', function(e) {
+		messageWin.setLable('欢迎您');
+		messageWin.open();
+		setTimeout(function() {
+			messageWin.close({opacity:0, duration:500});
+		}, 1000);
+	});
+	
+	Ti.API.info("hello world!");
 })();
