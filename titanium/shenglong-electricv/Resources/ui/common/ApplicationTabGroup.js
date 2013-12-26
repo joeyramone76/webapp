@@ -3,25 +3,61 @@ function ApplicationTabGroup(Window) {
 	var self = Ti.UI.createTabGroup();
 
 	//create app tabs
-	var win1 = new Window(L('home')),
-		win2 = new Window(L('settings'));
+	var winHome = new Window(L('home')),
+		winNews = new Window(L('news')),
+		winProduct = new Window(L('product')),
+		winCustomer = new Window(L('customer')),
+		winConnect = new Window(L('connect')),
+		winSettings = new Window(L('settings'));
 
-	var tab1 = Ti.UI.createTab({
+	var tabHome = Ti.UI.createTab({
 		title: L('home'),
 		icon: '/images/KS_nav_ui.png',
-		window: win1
+		window: winHome
 	});
-	win1.containingTab = tab1;
+	winHome.containingTab = tabHome;
+	
+	var tabNews = Ti.UI.createTab({
+		title: L('news'),
+		icon: '/images/KS_nav_ui.png',
+		window: winNews
+	});
+	winNews.containingTab = tabNews;
+	
+	var tabProduct = Ti.UI.createTab({
+		title: L('product'),
+		icon: '/images/KS_nav_ui.png',
+		window: winProduct
+	});
+	winProduct.containingTab = tabProduct;
+	
+	var tabCustomer = Ti.UI.createTab({
+		title: L('customer'),
+		icon: '/images/KS_nav_ui.png',
+		window: winCustomer
+	});
+	winCustomer.containingTab = tabCustomer;
+	
+	var tabConnect = Ti.UI.createTab({
+		title: L('connect'),
+		icon: '/images/KS_nav_ui.png',
+		window: winConnect
+	});
+	winConnect.containingTab = tabConnect;
 
-	var tab2 = Ti.UI.createTab({
+	var tabSettings = Ti.UI.createTab({
 		title: L('settings'),
 		icon: '/images/KS_nav_views.png',
-		window: win2
+		window: winSettings
 	});
-	win2.containingTab = tab2;
+	winSettings.containingTab = tabSettings;
 
-	self.addTab(tab1);
-	self.addTab(tab2);
+	self.addTab(tabHome);
+	self.addTab(tabNews);
+	self.addTab(tabProduct);
+	self.addTab(tabCustomer);
+	self.addTab(tabConnect);
+	self.addTab(tabSettings);
 
 	return self;
 };
