@@ -25,7 +25,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	contentWidth = 0;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
-		buttonWidth = fontWidth * submenusName.length;
+		buttonWidth = fontWidth * submenuName.length;
 		contentWidth += buttonWidth + marginLeft;
 	}
 	contentWidth += 20;
@@ -115,9 +115,15 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	var submenuView = [];
 	var submenuLabel = [];
 	var submenuName = "";
+	var left = 0;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
-		buttonWidth = fontWidth * submenusName.length;
+		buttonWidth = fontWidth * submenuName.length;
+		if(i == 0) {
+			left = marginLeft;	
+		} else {
+			left = submenuView[i - 1].getLeft() + submenuView[i - 1].getWidth() + marginLeft;
+		}
 		submenuView.push(Ti.UI.createView({
 			backgroundColor: '#336699',
 			borderRadius: 10,
@@ -125,7 +131,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			borderColor: '#336699',
 			width: buttonWidth,
 			height: submenuHeight,
-			left: marginLeft + i * (buttonWidth + marginLeft)
+			left: left
 		}));
 		scrollView.add(submenuView[i]);
 		submenuLabel.push(Ti.UI.createLabel({
