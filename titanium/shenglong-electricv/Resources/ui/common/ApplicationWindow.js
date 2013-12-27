@@ -11,7 +11,8 @@ function ApplicationWindow(opts) {
 
 	var webview = Ti.UI.createWebView({
 		url: url,
-		hideLoadIndicator: true
+		hideLoadIndicator: true,
+		top: 40
 	});
 	
 	var ActivityIndicator = require("ui/common/ActivityIndicator");

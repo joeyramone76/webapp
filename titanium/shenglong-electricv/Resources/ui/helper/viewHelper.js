@@ -6,8 +6,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		arrowIndex = 101,
 		arrowLeft = 0,
 		arrowRight = 0,
-		opacity = 0.7,
-		scrollBgColor = '#13386c',
+		arrowBgColor = 'A9A9A9',
+		opacity = 1,
+		scrollBgColor = '#F8F8FF',
 		scrollBgIndex = 100,
 		scrollBgTop = 0,
 		contentWidth = 440,
@@ -17,7 +18,12 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		marginLeft = 10,
 		buttonWidth = 60,
 		fontSize = 13,
-		fontWidth = 15;
+		fontWidth = 15,
+		fontColor = '#808080',
+		borderColor = '#DCDCDC',
+		activeFontColor = '#A52A2A',
+		activeBorderColor = 'C0C0C0',
+		activeBgColor = '#000';
 	
 	
 	var submenus = opts.menu.submenus;
@@ -43,7 +49,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		left: 0,
 		height: contentHeight,
 		width: arrowWidth,
-		backgroundColor: scrollBgColor,
+		backgroundColor: arrowBgColor,
 		zIndex: scrollBgIndex,
 		opacity: opacity
 	});
@@ -67,7 +73,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		right: 0,
 		height: contentHeight,
 		width: arrowWidth,
-		backgroundColor: scrollBgColor,
+		backgroundColor: arrowBgColor,
 		zIndex: scrollBgIndex,
 		opacity: opacity
 	});
@@ -90,7 +96,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		height: contentHeight,
 		width: scrollViewWidth,
 		//borderRadius: 10,
-		backgroundColor: '#13386c',
+		backgroundColor: scrollBgColor,
 		zIndex: scrollBgIndex,
 		opacity: opacity
 	});
@@ -113,10 +119,14 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	window.add(scrollView);
 	
 	var submenuView = [];
-	var submenuLabel = [];
-	var submenuName = "";
-	var left = 0;
-	var url = "";
+	var submenuLabel = [],
+		submenuName = "",
+		left = 0,
+		url = "",
+		submenuBgColor,
+		submenuBorderColor,
+		submenuFontColor,
+		activeTabIndex = 0;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
 		buttonWidth = fontWidth * submenuName.length;
@@ -125,11 +135,20 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		} else {
 			left = submenuView[i - 1].getLeft() + submenuView[i - 1].getWidth() + marginLeft;
 		}
+		if(i == activeTabIndex) {
+			submenuBgColor = activeBgColor;
+			submenuBorderColor = activeBorderColor;
+			submenuFontColor = activeFontColor;
+		} else {
+			submenuBgColor = scrollBgColor;
+			submenuBorderColor = borderColor;
+			submenuFontColor = fontColor;
+		}
 		submenuView.push(Ti.UI.createView({
-			backgroundColor: '#336699',
+			backgroundColor: submenuBgColor,
 			borderRadius: 10,
 			borderWidth: 1,
-			borderColor: '#336699',
+			borderColor: submenuBorderColor,
 			width: buttonWidth,
 			height: submenuHeight,
 			left: left
@@ -138,7 +157,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		submenuLabel.push(Ti.UI.createLabel({
 			text: submenuName,
 			font: {fontSize: fontSize},
-			color: '#fff',
+			color: submenuFontColor,
 			width: 'auto',
 			textAlign: 'center',
 			height: 'auto'
