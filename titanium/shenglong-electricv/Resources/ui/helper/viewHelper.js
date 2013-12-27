@@ -6,7 +6,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		arrowIndex = 101,
 		arrowLeft = 0,
 		arrowRight = 0,
-		arrowBgColor = 'A9A9A9',
+		arrowBgColor = 'F8F8FF',
 		opacity = 1,
 		scrollBgColor = '#F8F8FF',
 		scrollBgIndex = 100,
@@ -23,7 +23,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		borderColor = '#DCDCDC',
 		activeFontColor = '#A52A2A',
 		activeBorderColor = 'C0C0C0',
-		activeBgColor = '#000';
+		activeBgColor = '#fff';
 	
 	
 	var submenus = opts.menu.submenus;
@@ -126,7 +126,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		submenuBgColor,
 		submenuBorderColor,
 		submenuFontColor,
-		activeTabIndex = 0;
+		activeTabIndex = -1;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
 		buttonWidth = fontWidth * submenuName.length;
@@ -151,7 +151,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			borderColor: submenuBorderColor,
 			width: buttonWidth,
 			height: submenuHeight,
-			left: left
+			left: left,
+			name: submenus[i].name
 		}));
 		scrollView.add(submenuView[i]);
 		submenuLabel.push(Ti.UI.createLabel({
@@ -168,12 +169,26 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		} else {
 			url = submenus[i].url;
 		}
-		(function(url) {
+		(function(url, i) {
 			submenuView[i].addEventListener('click', function(e) {
+				if(i == activeTabIndex) {
+					webview.setUrl(url);
+					webview.reload();
+					return;
+				}
+				if(activeTabIndex >= 0) {
+					submenuView[activeTabIndex].setBackgroundColor(scrollBgColor);
+					submenuView[activeTabIndex].setBorderColor(borderColor);
+					submenuLabel[activeTabIndex].setColor(fontColor);
+				}
+				activeTabIndex = i;
+				submenuView[activeTabIndex].setBackgroundColor(activeBgColor);
+				submenuView[activeTabIndex].setBorderColor(activeBorderColor);
+				submenuLabel[activeTabIndex].setColor(activeFontColor);
 				webview.setUrl(url);
 				webview.reload();
 			});
-		})(url);
+		})(url, i);
 	}
 };
 exports.viewHelper = viewHelper;
