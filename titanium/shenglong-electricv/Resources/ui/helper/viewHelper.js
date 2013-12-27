@@ -116,6 +116,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	var submenuLabel = [];
 	var submenuName = "";
 	var left = 0;
+	var url = "";
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
 		buttonWidth = fontWidth * submenuName.length;
@@ -143,10 +144,17 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			height: 'auto'
 		}));
 		submenuView[i].add(submenuLabel[i]);
-		submenuView[i].addEventListener('click', function(e) {
-			webview.setUrl("http://www.google.com");
-			webview.reload();
-		});
+		if(submenus[i].url == "") {
+			url = "http://m.shenglong-electric.com.cn/";
+		} else {
+			url = submenus[i].url;
+		}
+		(function(url) {
+			submenuView[i].addEventListener('click', function(e) {
+				webview.setUrl(url);
+				webview.reload();
+			});
+		})(url);
 	}
 };
 exports.viewHelper = viewHelper;

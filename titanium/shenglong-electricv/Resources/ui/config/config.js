@@ -2,18 +2,18 @@ var config = {};
 config.menus = [{
 	name: "home",
 	showName: "关于盛隆",
-	url: '',
+	url: 'http://m.shenglong-electric.com.cn/aboutMe',
 	icon: '/images/KS_nav_ui.png',
 	submenus: [{
 		name: "introduction",
 		showName: "公司简介",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/13',
 		icon: '',
 		submenus: []
 	}, {
 		name: "partyProfile",
 		showName: "党建概况",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/14',
 		icon: '',
 		submenus: []
 	}, {
@@ -24,26 +24,26 @@ config.menus = [{
 		submenus: [{
 			name: "corporateStrategy_long-term",
 			showName: "长期目标",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/30',
 			icon: '',
 			submenus: []
 		}, {
 			name: "corporateStrategy_medium-term",
 			showName: "中期目标",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/31',
 			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "history",
 		showName: "发展历程",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/15',
 		icon: '',
 		submenus: []
 	}, {
 		name: "qualification",
 		showName: "资质认证",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/16',
 		icon: '',
 		submenus: []
 	}, {
@@ -54,61 +54,61 @@ config.menus = [{
 		submenus: [{
 			name: "culture_purpose",
 			showName: "盛隆宗旨",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/18',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_idea",
 			showName: "盛隆理念",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/19',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_target",
 			showName: "盛隆文化目标",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/20',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_mechanism",
 			showName: "盛隆机制",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/21',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_song",
 			showName: "盛隆之歌",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/22',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_badge",
 			showName: "盛隆徽",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/23',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_flag",
 			showName: "盛隆旗",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/24',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_rule",
 			showName: "盛隆法则",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/25',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_ethic",
 			showName: "盛隆理论",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/26',
 			icon: '',
 			submenus: []
 		}, {
 			name: "culture_philosophy",
 			showName: "盛隆哲学",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/27',
 			icon: '',
 			submenus: []
 		}]
@@ -116,24 +116,24 @@ config.menus = [{
 }, {
 	name: "news",
 	showName: "新闻中心",
-	url: '',
+	url: 'http://m.shenglong-electric.com.cn/news',
 	icon: '',
 	submenus: [{
 		name: "company",
 		showName: "公司新闻",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/news/dirlist/cid/7',
 		icon: '',
 		submenus: []
 	}, {
 		name: "media",
 		showName: "媒体报道",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/news/dirlist/cid/13',
 		icon: '',
 		submenus: []
 	}, {
 		name: "video",
 		showName: "视频报道",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/news/dirlist/cid/14',
 		icon: '',
 		submenus: []
 	}, {
@@ -146,7 +146,7 @@ config.menus = [{
 }, {
 	name: "product",
 	showName: "产品与服务",
-	url: '',
+	url: 'http://m.shenglong-electric.com.cn/product',
 	icon: '',
 	submenus: [{
 		name: "ctspdsb",
@@ -156,31 +156,31 @@ config.menus = [{
 		submenus: [{
 			name: "gyxl",
 			showName: "高压系列",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/20',
 			icon: '',
 			submenus: []
 		}, {
 			name: "gydyyzsbdz",
 			showName: "高压/低压预装式变电站",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/21',
 			icon: '',
 			submenus: []
 		}, {
 			name: "dyxl",
 			showName: "低压系列",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/22',
 			icon: '',
 			submenus: []
 		}, {
 			name: "kzbhp",
 			showName: "控制保护屏",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/23',
 			icon: '',
 			submenus: []
 		}, {
 			name: "sxxl",
 			showName: "三箱系列",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/24',
 			icon: '',
 			submenus: []
 		}]
@@ -192,25 +192,25 @@ config.menus = [{
 		submenus: [{
 			name: "znwldgnyb",
 			showName: "智能网路多功能仪表",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/25',
 			icon: '',
 			submenus: []
 		}, {
 			name: "znpdjkxt",
 			showName: "智能配电监控系统",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/26',
 			icon: '',
 			submenus: []
 		}, {
 			name: "dqhzjkxt",
 			showName: "电气火灾监控系统",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/27',
 			icon: '',
 			submenus: []
 		}, {
 			name: "zbjdlbhxt",
 			showName: "综保及电力保护系统",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/29',
 			icon: '',
 			submenus: []
 		}]
@@ -222,13 +222,13 @@ config.menus = [{
 		submenus: [{
 			name: "yydllbq",
 			showName: "有源电力滤波器",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/28',
 			icon: '',
 			submenus: []
 		}, {
 			name: "dgnxbbhq",
 			showName: "多功能谐波保护器",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/30',
 			icon: '',
 			submenus: []
 		}]
@@ -240,19 +240,19 @@ config.menus = [{
 		submenus: [{
 			name: "ywgs",
 			showName: "业务概述",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/17',
 			icon: '',
 			submenus: []
 		}, {
 			name: "ywfw",
 			showName: "业务范围",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/18',
 			icon: '',
 			submenus: []
 		}, {
 			name: "zzrz",
 			showName: "资质认证",
-			url: '',
+			url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/19',
 			icon: '',
 			submenus: []
 		}]
@@ -260,30 +260,30 @@ config.menus = [{
 }, {
 	name: "customer",
 	showName: "客户与成功案例",
-	url: '',
+	url: 'http://m.shenglong-electric.com.cn/opus',
 	icon: '',
 	submenus: [{
 		name: "hbdbxb",
 		showName: "华北、东北、西北地区",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/opus/detail/page_id/29',
 		icon: '',
 		submenus: []
 	}, {
 		name: "hzxn",
 		showName: "华中、西南地区",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/opus/detail/page_id/28',
 		icon: '',
 		submenus: []
 	}, {
 		name: "hdhn",
 		showName: "华东、华南地区",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/opus/detail/page_id/31',
 		icon: '',
 		submenus: []
 	}, {
 		name: "otherCountryAndArea",
 		showName: "其它国家和地区",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/opus/detail/page_id/30',
 		icon: '',
 		submenus: []
 	}, {
@@ -296,12 +296,12 @@ config.menus = [{
 }, {
 	name: "connect",
 	showName: "联系我们",
-	url: '',
+	url: 'http://m.shenglong-electric.com.cn/contact',
 	icon: '',
 	submenus: [{
 		name: "companys",
 		showName: "五大营",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/contact/detail/page_id/2',
 		icon: '',
 		submenus: [{
 			name: "wuhan",
@@ -337,7 +337,7 @@ config.menus = [{
 	}, {
 		name: "consultAndFeedback",
 		showName: "咨询与反馈",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/email',
 		icon: '',
 		submenus: []
 	}, {
