@@ -3,4 +3,8 @@ function BaseUIWindow(title) {
 		title: title,
 		backgroundColor: 'white'
 	});
+	
+	return self;
 }
+
+module.exports = BaseUIWindow;
