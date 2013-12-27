@@ -22,6 +22,17 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	
 	var submenus = opts.menu.submenus;
 	
+	contentWidth = 0;
+	for(var i = 0, l = submenus.length ; i < l ; i++) {
+		submenuName = submenus[i].showName;
+		buttonWidth = fontWidth * submenusName.length;
+		contentWidth += buttonWidth + marginLeft;
+	}
+	contentWidth += 20;
+	if(contentWidth < 260) {
+		contentWidth = 260;
+	}
+	
 	var transform_arrow = Ti.UI.create2DMatrix();
 	transform_arrow.scale(0.5, 0.5);
 	

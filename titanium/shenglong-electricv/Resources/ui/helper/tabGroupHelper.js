@@ -31,3 +31,4 @@ tabGroupHelper.createAppTabs = function(window) {
 	}
 };
 exports.tabGroupHelper = tabGroupHelper;
+exports.createAppTabs = tabGroupHelper.createAppTabs;
