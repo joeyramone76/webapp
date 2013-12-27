@@ -3,7 +3,7 @@ tabGroupHelper.createAppTabs = function(window) {
 	var Window = require('ui/common/ApplicationWindow');
 	
 	var config = require('ui/config/config');
-	var menus = config.menus();
+	var menus = config.menus;
 	
 	var appTabs = [];
 	var appWin = [];
