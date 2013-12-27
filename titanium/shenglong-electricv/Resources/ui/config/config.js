@@ -3,94 +3,113 @@ config.menus = [{
 	name: "home",
 	showName: "关于盛隆",
 	url: '',
+	icon: '',
 	submenus: [{
 		name: "introduction",
 		showName: "公司简介",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "partyProfile",
 		showName: "党建概况",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "corporateStrategy_long-term",
 		showName: "公司战略",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "corporateStrategy_long-term",
 			showName: "长期目标",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "corporateStrategy_medium-term",
 			showName: "中期目标",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "history",
 		showName: "发展历程",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "qualification",
 		showName: "资质认证",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "culture_purpose",
 		showName: "盛隆文化",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "culture_purpose",
 			showName: "盛隆宗旨",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_idea",
 			showName: "盛隆理念",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_target",
 			showName: "盛隆文化目标",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_mechanism",
 			showName: "盛隆机制",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_song",
 			showName: "盛隆之歌",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_badge",
 			showName: "盛隆徽",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_flag",
 			showName: "盛隆旗",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_rule",
 			showName: "盛隆法则",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_ethic",
 			showName: "盛隆理论",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "culture_philosophy",
 			showName: "盛隆哲学",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}]
@@ -98,119 +117,143 @@ config.menus = [{
 	name: "news",
 	showName: "新闻中心",
 	url: '',
+	icon: '',
 	submenus: [{
 		name: "company",
 		showName: "公司新闻",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "media",
 		showName: "媒体报道",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "video",
 		showName: "视频报道",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "elegant_demeanour",
 		showName: "盛隆风采",
 		url: '',
+		icon: '',
 		submenus: []
 	}]
 }, {
 	name: "product",
 	showName: "产品与服务",
 	url: '',
+	icon: '',
 	submenus: [{
 		name: "ctspdsb",
 		showName: "成套输配电设备",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "gyxl",
 			showName: "高压系列",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "gydyyzsbdz",
 			showName: "高压/低压预装式变电站",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "dyxl",
 			showName: "低压系列",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "kzbhp",
 			showName: "控制保护屏",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "sxxl",
 			showName: "三箱系列",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "dlzndlbhcpjjfa",
 		showName: "电力智能、电力保护产品解决方案",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "znwldgnyb",
 			showName: "智能网路多功能仪表",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "znpdjkxt",
 			showName: "智能配电监控系统",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "dqhzjkxt",
 			showName: "电气火灾监控系统",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "zbjdlbhxt",
 			showName: "综保及电力保护系统",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "dljnjzxcpjjfa",
 		showName: "电力节能及增效产品解决方案",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "yydllbq",
 			showName: "有源电力滤波器",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "dgnxbbhq",
 			showName: "多功能谐波保护器",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "dlgczcbfw",
 		showName: "电力工程总承包服务",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "ywgs",
 			showName: "业务概述",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "ywfw",
 			showName: "业务范围",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "zzrz",
 			showName: "资质认证",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}]
@@ -218,75 +261,90 @@ config.menus = [{
 	name: "customer",
 	showName: "客户与成功案例",
 	url: '',
+	icon: '',
 	submenus: [{
 		name: "hbdbxb",
 		showName: "华北、东北、西北地区",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "hzxn",
 		showName: "华中、西南地区",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "hdhn",
 		showName: "华东、华南地区",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "otherCountryAndArea",
 		showName: "其它国家和地区",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "near",
 		showName: "附近",
 		url: '',
+		icon: '',
 		submenus: []
 	}]
 }, {
 	name: "connect",
 	showName: "联系我们",
 	url: '',
+	icon: '',
 	submenus: [{
 		name: "companys",
 		showName: "五大营",
 		url: '',
+		icon: '',
 		submenus: [{
 			name: "wuhan",
 			showName: "武汉公司",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "beijing",
 			showName: "北京公司",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "guangzhou",
 			showName: "广州公司",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "shanghai",
 			showName: "上海公司",
 			url: '',
+			icon: '',
 			submenus: []
 		}, {
 			name: "chongqing",
 			showName: "重庆公司",
 			url: '',
+			icon: '',
 			submenus: []
 		}]
 	}, {
 		name: "consultAndFeedback",
 		showName: "咨询与反馈",
 		url: '',
+		icon: '',
 		submenus: []
 	}, {
 		name: "interview",
 		showName: "人才招聘",
 		url: '',
+		icon: '',
 		submenus: []
 	}]
 }];
