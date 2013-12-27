@@ -1,5 +1,5 @@
 var viewHelper = {};
-viewHelper.createSubMenu = function(window) {
+viewHelper.createSubMenu = function(window, webview, opts) {
 	var arrowWidth = 30,
 		arrowHeight = 30,
 		arrowTop = 5,
@@ -14,12 +14,13 @@ viewHelper.createSubMenu = function(window) {
 		contentHeight = 40,
 		submenuHeight = 30,
 		scrollViewWidth = 260,// 320 arrowWidth
-		left = 10,
-		buttonWidth = 70,
-		fontSize = 13;
+		marginLeft = 10,
+		buttonWidth = 60,
+		fontSize = 13,
+		fontWidth = 15;
 	
 	
-	var submenuText = ["公司简介","党建概况","公司战略","发展历程","资质认证","盛隆文化"];
+	var submenus = opts.menu.submenus;
 	
 	var transform_arrow = Ti.UI.create2DMatrix();
 	transform_arrow.scale(0.5, 0.5);
@@ -102,19 +103,22 @@ viewHelper.createSubMenu = function(window) {
 	
 	var submenuView = [];
 	var submenuLabel = [];
-	for(var i = 0 ; i < submenuText.length ; i++) {
+	var submenuName = "";
+	for(var i = 0, l = submenus.length ; i < l ; i++) {
+		submenuName = submenus[i].showName;
+		buttonWidth = fontWidth * submenusName.length;
 		submenuView.push(Ti.UI.createView({
 			backgroundColor: '#336699',
 			borderRadius: 10,
 			borderWidth: 1,
 			borderColor: '#336699',
-			width: 60,
+			width: buttonWidth,
 			height: submenuHeight,
-			left: left + i * buttonWidth
+			left: marginLeft + i * (buttonWidth + marginLeft)
 		}));
 		scrollView.add(submenuView[i]);
 		submenuLabel.push(Ti.UI.createLabel({
-			text: submenuText[i],
+			text: submenuName,
 			font: {fontSize: fontSize},
 			color: '#fff',
 			width: 'auto',
@@ -123,7 +127,8 @@ viewHelper.createSubMenu = function(window) {
 		}));
 		submenuView[i].add(submenuLabel[i]);
 		submenuView[i].addEventListener('click', function(e) {
-			alert(i);
+			webview.setUrl("http://www.google.com");
+			webview.reload();
 		});
 	}
 };
