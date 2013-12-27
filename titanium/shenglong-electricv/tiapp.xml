@@ -7,7 +7,7 @@
     <url>http://www.shenglong-electric.com.cn/</url>
     <description>盛隆电气</description>
     <copyright>2013 by peter</copyright>
-    <icon>appicon.png</icon>
+    <icon>appicon_256x256.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
@@ -37,6 +37,7 @@
                 <string>UIStatusBarStyleDefault</string>
             </dict>
         </plist>
+        <!--<min-ios-ver>5.1</min-ios-ver>-->
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <mobileweb>
