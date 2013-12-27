@@ -5,7 +5,10 @@ function ApplicationTabGroup() {
 		Window = require('ui/common/ApplicationWindow');
 
 	//create app tabs
-	var winHome = new Window(L('home'), 'http://www.google.com'),
+	var winHome = new Window({
+			title: L('home'),
+			menuName: "home"
+		}),
 		winNews = new Window(L('news'), 'http://m.shenglong-electric.com.cn/'),
 		winProduct = new Window(L('product'), 'http://www.google.com'),
 		winCustomer = new Window(L('customer'), 'http://m.shenglong-electric.com.cn/'),

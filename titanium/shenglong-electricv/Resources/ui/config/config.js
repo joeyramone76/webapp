@@ -3,7 +3,7 @@ config.menus = [{
 	name: "home",
 	showName: "关于盛隆",
 	url: '',
-	icon: '',
+	icon: '/images/KS_nav_ui.png',
 	submenus: [{
 		name: "introduction",
 		showName: "公司简介",

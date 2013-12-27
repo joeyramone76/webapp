@@ -1,15 +1,15 @@
-function ApplicationWindow(title, url) {
+function ApplicationWindow(opts) {
 	var self = Ti.UI.createWindow({
-		title:title,
+		title: opts.title,
 		backgroundColor:'white'
 	});
 
 	var webview = Ti.UI.createWebView({
-		url: url
+		url: opts.url
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");
-	viewHelper.createSubMenu(self);
+	viewHelper.createSubMenu(self, opts);
 	
 	self.add(webview);
 
