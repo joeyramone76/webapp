@@ -1,1 +1,6 @@
 Place your change log text here.  This file will be incorporated with your app at package time.
+
+2013-12-27
+1.webview loading view ActivityIndicatorStyle ActivityIndicator
+2.submenu as one line
+3.submenu highlight

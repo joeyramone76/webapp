@@ -10,13 +10,30 @@ function ApplicationWindow(opts) {
 	}
 
 	var webview = Ti.UI.createWebView({
-		url: url
+		url: url,
+		hideLoadIndicator: true
+	});
+	
+	var ActivityIndicator = require("ui/common/ActivityIndicator");
+	var activityIndicator = new ActivityIndicator();
+	
+	webview.addEventListener('beforeload', function(e) {
+		activityIndicator.show();
+	});
+	
+	webview.addEventListener('error', function(e) {
+		activityIndicator.hide();
+	});
+	
+	webview.addEventListener('load', function(e) {
+		activityIndicator.hide();
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");
 	viewHelper.createSubMenu(self, webview, opts);
 	
 	self.add(webview);
+	self.add(activityIndicator);
 
 	return self;
 };

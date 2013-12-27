@@ -10,4 +10,6 @@
 	<string name="connect">联系我们</string>
 	
 	<string name="settings">设置</string>
+	
+	<string name="loading">努力加载中...</string>
 </resources>
