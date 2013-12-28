@@ -289,7 +289,7 @@ config.menus = [{
 	}, {
 		name: "near",
 		showName: "附近",
-		url: 'http://ditu.google.cn',
+		url: 'http://map.baidu.com',
 		icon: '',
 		submenus: []
 	}]
