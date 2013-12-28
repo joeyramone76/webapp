@@ -1,6 +1,5 @@
 // use a closure to (a) test it and (b) not expose this into global scope
-(function()
-{
+(function() {
 	tabGroup.addEventListener("open", function(e) {
 		// window container
 		var welcomeWindow = Titanium.UI.createWindow({
@@ -22,7 +21,7 @@
 
 		// message
 		var message = Titanium.UI.createLabel({
-			text:'Appcelerator Titanium '+Titanium.version,
+			text:'盛隆电气欢迎您',
 			color:'#fff',
 			textAlign:'center',
 			font:{fontSize:18,fontWeight:'bold'},
@@ -35,10 +34,9 @@
 		var animationProperties = {delay: 1500, duration: 1000, opacity: 0.1};
 		if (Ti.Platform.osname == "iPhone OS") {
 			animationProperties.transform =
-				Ti.UI.create2DMatrix().translate(-200,200).scale(0);
+				Ti.UI.create2DMatrix().translate(-200, 200).scale(0);
 		}
-		welcomeWindow.animate(animationProperties, function()
-		{
+		welcomeWindow.animate(animationProperties, function() {
 			welcomeWindow.close();
 		});
 	});

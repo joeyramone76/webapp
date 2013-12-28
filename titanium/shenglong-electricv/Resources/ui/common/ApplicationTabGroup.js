@@ -6,6 +6,7 @@ function ApplicationTabGroup() {
 	var tabGroupHelper = require("ui/helper/tabGroupHelper");
 	tabGroupHelper.createAppTabs(self);
 
+	tabGroupHelper.bindEvent(self);
 	return self;
 };
 
