@@ -3,7 +3,7 @@ config.menus = [{
 	name: "home",
 	showName: "关于盛隆",
 	url: 'http://m.shenglong-electric.com.cn/aboutMe',
-	icon: '/images/KS_nav_ui.png',
+	icon: '/images/tabs/index_03-2.png',
 	submenus: [{
 		name: "introduction",
 		showName: "公司简介",
@@ -117,7 +117,7 @@ config.menus = [{
 	name: "news",
 	showName: "新闻中心",
 	url: 'http://m.shenglong-electric.com.cn/news',
-	icon: '',
+	icon: '/images/tabs/index_06-2.png',
 	submenus: [{
 		name: "company",
 		showName: "公司新闻",
@@ -147,7 +147,7 @@ config.menus = [{
 	name: "product",
 	showName: "产品与服务",
 	url: 'http://m.shenglong-electric.com.cn/product',
-	icon: '',
+	icon: '/images/tabs/index_08-2.png',
 	submenus: [{
 		name: "ctspdsb",
 		showName: "成套输配电设备",
@@ -261,7 +261,7 @@ config.menus = [{
 	name: "customer",
 	showName: "客户与成功案例",
 	url: 'http://m.shenglong-electric.com.cn/opus',
-	icon: '',
+	icon: '/images/tabs/index_10-2.png',
 	submenus: [{
 		name: "hbdbxb",
 		showName: "华北、东北、西北地区",
@@ -297,7 +297,7 @@ config.menus = [{
 	name: "connect",
 	showName: "联系我们",
 	url: 'http://m.shenglong-electric.com.cn/contact',
-	icon: '',
+	icon: '/images/tabs/index_14-2.png',
 	submenus: [{
 		name: "companys",
 		showName: "五大营",
