@@ -19,7 +19,7 @@ config.menus = [{
 	}, {
 		name: "corporateStrategy_long-term",
 		showName: "公司战略",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/30',
 		icon: '',
 		submenus: [{
 			name: "corporateStrategy_long-term",
@@ -49,7 +49,7 @@ config.menus = [{
 	}, {
 		name: "culture_purpose",
 		showName: "盛隆文化",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/18',
 		icon: '',
 		submenus: [{
 			name: "culture_purpose",
@@ -139,7 +139,7 @@ config.menus = [{
 	}, {
 		name: "elegant_demeanour",
 		showName: "盛隆风采",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/gallery',
 		icon: '',
 		submenus: []
 	}]
@@ -151,7 +151,7 @@ config.menus = [{
 	submenus: [{
 		name: "ctspdsb",
 		showName: "成套输配电设备",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/20',
 		icon: '',
 		submenus: [{
 			name: "gyxl",
@@ -187,7 +187,7 @@ config.menus = [{
 	}, {
 		name: "dlzndlbhcpjjfa",
 		showName: "电力智能、电力保护产品解决方案",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/25',
 		icon: '',
 		submenus: [{
 			name: "znwldgnyb",
@@ -217,7 +217,7 @@ config.menus = [{
 	}, {
 		name: "dljnjzxcpjjfa",
 		showName: "电力节能及增效产品解决方案",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/28',
 		icon: '',
 		submenus: [{
 			name: "yydllbq",
@@ -235,7 +235,7 @@ config.menus = [{
 	}, {
 		name: "dlgczcbfw",
 		showName: "电力工程总承包服务",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/product/detail/page_id/17',
 		icon: '',
 		submenus: [{
 			name: "ywgs",
@@ -289,7 +289,7 @@ config.menus = [{
 	}, {
 		name: "near",
 		showName: "附近",
-		url: '',
+		url: 'http://ditu.google.cn',
 		icon: '',
 		submenus: []
 	}]
