@@ -343,7 +343,7 @@ config.menus = [{
 	}, {
 		name: "interview",
 		showName: "人才招聘",
-		url: '',
+		url: 'http://m.shenglong-electric.com.cn/jobs',
 		icon: '',
 		submenus: []
 	}]
