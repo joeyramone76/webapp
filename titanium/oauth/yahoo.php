@@ -33,6 +33,7 @@
 	//print_r($headers);
 
 	$rsp = curl_exec($ch);
+	curl_close($ch);
 
 	//print_r("\nHere is the XML response for Placefinder\n");//woeid
 	print_r($rsp);
