@@ -6,8 +6,16 @@
 	$cc_secret = "ddab6eff9a2675046fc1c4496510c8e2697da513";
 
 	$args = array();
-	$args["location"] = "37.787082+-122.400929";
-	$args["gflags"] = "R";
+	$location = $_GET["location"];
+	if(array_key_exists("location", $_GET)) {
+		$location = $_GET["location"];
+	}
+	$gflags = "R";
+	if(array_key_exists("gflags", $_GET)) {
+		$gflags = $_GET["gflags"];
+	}
+	$args["location"] = $location;
+	$args["gflags"] = $gflags;
 
 	$consumer = new OAuthConsumer($cc_key, $cc_secret);
 	$request = OAuthRequest::from_consumer_and_token($consumer, NULL,"GET", $url, $args);
