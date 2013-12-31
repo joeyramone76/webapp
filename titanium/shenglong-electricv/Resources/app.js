@@ -35,6 +35,7 @@ if (Ti.version < 1.8) {
 	
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 	var tabGroup = new ApplicationTabGroup();
+	Ti.Geolocation.purpose = "盛隆电气想使用您的定位服务";
 	if(osname === 'iphone' || osname === 'ipad') {
 		//tabGroup.open({transition: Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
 		tabGroup.open();

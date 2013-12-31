@@ -1,5 +1,8 @@
 function WelcomeWindow() {
 	var date = new Date();
+	var self = this;
+	this.isAndroid = Ti.Platform.name === 'android';
+	this.isTizen = Ti.Platform.osname === 'tizen';
 		
 	// 天气预报、车辆先行、定位
 	var welcomeWindow = Ti.UI.createWindow({
@@ -7,8 +10,12 @@ function WelcomeWindow() {
 		backgroundImage: 'images/springFestival.jpg',
 		layout: 'vertical'
 	});
+	this.welcomeWindow = welcomeWindow;
+	this.weatherImagePath = 'images/weather/icons/day/';
+	this.weatherImageCachePath = '';
 	
 	var fontColor = '#fff';
+	this.fontColor = fontColor;
 	
 	//日期
 	var dateView = Ti.UI.createView({
@@ -52,49 +59,6 @@ function WelcomeWindow() {
 	dateView.add(weekLabel);
 	
 	//天气情况
-	var todayWeather = Ti.UI.createView({
-		height: Ti.UI.SIZE,
-		layout: 'horizontal'
-	});
-	welcomeWindow.add(todayWeather);
-	
-	var temperatureLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 60},
-		showColor: '#aaa',
-		showOffset: {x:5, y:5},
-		shadowRadius: 3,
-		text: '2°',
-		top: 10,
-		left: 10,
-		width: Ti.UI.SIZE,
-		height: Ti.UI.SIZE
-	});
-	todayWeather.add(temperatureLabel);
-	var situationImageLabel = Ti.UI.createLabel({
-		backgroundImage: 'images/weather/icons/duoyun.png',
-		width: 42,
-		height: 30,
-		bottom: 14
-	});
-	//todayWeather.add(situationImageLabel);
-	var situationTextLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 24},
-		showColor: '#aaa',
-		showOffset: {x:5, y:5},
-		shadowRadius: 3,
-		text: '北京',
-		width: Ti.UI.SIZE,
-		height: Ti.UI.SIZE,
-		left: 10,
-		bottom: 10
-	});
-	todayWeather.add(situationTextLabel);
-	
-	var weathersView = Ti.UI.createView({
-		height: 140
-	});
 	var weathersData = [],
 		row,
 		firstLabelTop = 10,
@@ -103,73 +67,131 @@ function WelcomeWindow() {
 		marginLeft = 60,
 		top,
 		left,
-		weatherLabel,
-		windLabel,
-		temperatureLabel;
-	for(var i = 0 ; i < 4 ; i++) {
+		dateLabels = [],
+		weatherLabels = [],
+		windLabels = [],
+		situationImageLabels = [],
+		temperatureLabels = [];
+	this.dateLabels = dateLabels;
+	this.weatherLabels = weatherLabels;
+	this.windLabels = windLabels;
+	this.situationImageLabels = situationImageLabels;
+	this.temperatureLabels = temperatureLabels;
+	
+	weathersData = this.readFile("data/weather/weather.txt");
+	
+	var todayWeather = Ti.UI.createView({
+		height: Ti.UI.SIZE,
+		layout: 'horizontal'
+	});
+	welcomeWindow.add(todayWeather);
+	
+	this.temperatureLabel = Ti.UI.createLabel({
+		color: fontColor,
+		font: {fontSize: 60},
+		showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: weathersData.results[0].weather_data[0].temperature + '',//°
+		top: 10,
+		left: 10,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	todayWeather.add(this.temperatureLabel);
+	var fileName = this.getFileName(weathersData.results[0].weather_data[0].dayPictureUrl);
+	this.situationImageLabel = Ti.UI.createLabel({
+		backgroundImage: this.weatherImagePath + fileName,
+		width: 42,
+		height: 30,
+		bottom: 14
+	});
+	//todayWeather.add(this.situationImageLabel);
+	this.situationTextLabel = Ti.UI.createLabel({
+		color: fontColor,
+		font: {fontSize: 24},
+		showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: weathersData.results[0].currentCity,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		left: 10,
+		bottom: 10
+	});
+	todayWeather.add(this.situationTextLabel);
+	
+	// weathersView
+	var weathersView = Ti.UI.createView({
+		height: 140
+	});
+	
+	var weather_data = weathersData.results[0].weather_data;
+	for(var i = 0 ; i < weather_data.length ; i++) {
 		top = firstLabelTop + i * marginTop;
 		left = firstLabelLeft;
 		//date
-		dateLabel = Ti.UI.createLabel({
+		dateLabels.push(Ti.UI.createLabel({
 			color: fontColor,
 			left: left,
-			text: '今天',
+			text: weather_data[i].date.substr(0, 2),
 			width: Ti.UI.SIZE,
 			height: 20,
 			top: top,
 			showOffset: {x:5, y:5},
-		});
-		weathersView.add(dateLabel);
+		}));
+		weathersView.add(dateLabels[i]);
 		
 		//temperature
-		left = firstLabelLeft + 1 * marginLeft;
-		temperatureLabel = Ti.UI.createLabel({
+		left = firstLabelLeft + 1 * marginLeft - 20;
+		temperatureLabels.push(Ti.UI.createLabel({
 			color: fontColor,
 			left: left,
-			text: '2°',
+			text: weather_data[i].temperature,//°
 			width: Ti.UI.SIZE,
 			height: 20,
 			top: top,
 			showOffset: {x:5, y:5},
-		});
-		weathersView.add(temperatureLabel);
+		}));
+		weathersView.add(temperatureLabels[i]);
 		
 		//picture
 		left = firstLabelLeft + 2 * marginLeft;
-		situationImageLabel = Ti.UI.createLabel({
-			backgroundImage: 'images/weather/icons/duoyun.png',
+		fileName = this.getFileName(weather_data[i].dayPictureUrl);
+		situationImageLabels.push(Ti.UI.createLabel({
+			backgroundImage: this.weatherImagePath + fileName,
 			width: 32,//42
 			height: 20,//30
 			top: top,
-			left: left - 10
-		});
-		weathersView.add(situationImageLabel);
+			left: left
+		}));
+		weathersView.add(situationImageLabels[i]);
 		
 		//weather
-		left = firstLabelLeft + 3 * marginLeft;
-		weatherLabel = Ti.UI.createLabel({
+		left = firstLabelLeft + 3 * marginLeft + 10;
+		weatherLabels.push(Ti.UI.createLabel({
 			color: fontColor,
 			left: left,
-			text: '晴朗',
+			text: weather_data[i].weather,
 			width: Ti.UI.SIZE,
 			height: 20,
 			top: top,
 			showOffset: {x:5, y:5},
-		});
-		weathersView.add(weatherLabel);
+		}));
+		weathersView.add(weatherLabels[i]);
 		
 		//wind
 		left = firstLabelLeft + 4 * marginLeft;
-		windLabel = Ti.UI.createLabel({
+		windLabels.push(Ti.UI.createLabel({
 			color: fontColor,
 			left: left,
-			text: '微风',
+			text: weather_data[i].wind,
 			width: Ti.UI.SIZE,
 			height: 20,
 			top: top,
 			showOffset: {x:5, y:5},
-		});
-		weathersView.add(windLabel);
+		}));
+		weathersView.add(windLabels[i]);
 	}
 	welcomeWindow.add(weathersView);
 	
@@ -209,7 +231,106 @@ function WelcomeWindow() {
 	enterBtn.addEventListener('click', function() {
 		welcomeWindow.close();
 	});
+	
+	welcomeWindow.addEventListener('open', function() {
+		var weatherUtil = require('utils/weatherUtil');
+		var weathersData = Ti.App.Properties.getString("weathersData");
+		if(weathersData == null || weathersData == "") {
+			var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "data/weather/weather.txt");
+			var blob = file.read();
+			var readText = blob.text;
+			file = null;
+			blob = null;
+			weathersData = JSON.parse(readText);
+		} else {
+			self.updateData(JSON.parse(weathersData));
+		}
+		weatherUtil.getWeather(function(weathersData) {
+			Ti.App.Properties.setString("weathersData", weathersData);
+			weathersData = JSON.parse(weathersData);
+			if(weathersData.error == 0) {
+				if(weathersData.status == "success") {
+					self.updateData(weathersData);
+				} else {
+					Ti.UI.createAlertDialog({
+						title: '提示',
+						message: '暂不支持该城市天气预报'
+					}).show();
+				}
+			} else {
+				Ti.UI.createAlertDialog({
+					title: '提示',
+					message: '暂不支持该城市天气预报'
+				}).show();
+			}
+		});
+	});
 	return welcomeWindow;
+};
+
+WelcomeWindow.prototype.createWeathersView = function() {
+	
+};
+
+WelcomeWindow.prototype.updateData = function(weathersData) {
+	var self = this;
+	this.temperatureLabel.setText(weathersData.results[0].weather_data[0].temperature);
+	this.situationTextLabel.setText(weathersData.results[0].currentCity);
+	var weather_data = weathersData.results[0].weather_data;
+	var fileName;
+	for(var i = 0 ; i < weather_data.length ; i++) {
+		weather_data[i].dayPictureUrl = "http://api.map.baidu.com/images/weather/day/leizhenyu.png";
+		fileName = this.getFileName(weather_data[i].dayPictureUrl);
+		this.dateLabels[i].setText(weather_data[i].date.substr(0, 2));
+		this.weatherLabels[i].setText(weather_data[i].weather);
+		this.windLabels[i].setText(weather_data[i].wind);
+		this.saveFile(fileName, i, weather_data[i].dayPictureUrl, function(i, fileName) {
+			self.situationImageLabels[i].setBackgroundImage(fileName);
+		});
+		this.temperatureLabels[i].setText(weather_data[i].temperature);
+	}
+};
+
+WelcomeWindow.prototype.readFile = function(fileName) {
+	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
+	var blob = file.read();
+	var readText = blob.text;
+	file = null;
+	blob = null;
+	var weathersData = JSON.parse(readText);
+	return weathersData;
+};
+
+WelcomeWindow.prototype.saveFile = function(fileName, index, url, callback) {
+	var self = this;
+	
+	var imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,            
+	    'downloaded_images');
+	if (!imageDir.exists()) {
+	    imageDir.createDirectory();
+	}
+	
+	var file = Ti.Filesystem.getFile(imageDir.resolve(), fileName);
+	if(!file.exists()) {
+		var client = Titanium.Network.createHTTPClient();
+		client.setTimeout(10000);
+		client.onload = function() {
+			var file = Ti.Filesystem.getFile(imageDir.resolve(), fileName);
+			file.write(this.responseData);
+			callback(index, imageDir.resolve() + "/" + fileName);
+		};
+		client.open('GET', url);
+		client.send();
+	} else {
+		callback(index, imageDir.resolve() + "/" + fileName);
+	}
+	file = null;
+};
+
+WelcomeWindow.prototype.getFileName = function(url) {
+	var fileName = "";
+	fileName = url.substr(url.lastIndexOf("/") + 1);
+	return fileName;
 };
 
 module.exports = WelcomeWindow;
