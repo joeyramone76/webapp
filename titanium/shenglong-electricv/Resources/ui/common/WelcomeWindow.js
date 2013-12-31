@@ -273,18 +273,31 @@ WelcomeWindow.prototype.createWeathersView = function() {
 };
 
 WelcomeWindow.prototype.updateData = function(weathersData) {
+	var date = new Date();
 	var self = this;
 	this.temperatureLabel.setText(weathersData.results[0].weather_data[0].temperature);
 	this.situationTextLabel.setText(weathersData.results[0].currentCity);
 	var weather_data = weathersData.results[0].weather_data;
+	var dirName = "day";
+	if(date.getHours() >= 6 && date.getHours() <= 18) {
+		dirName = "day";
+	} else {
+		dirName = "night";
+	}
 	var fileName;
+	var url;
 	for(var i = 0 ; i < weather_data.length ; i++) {
-		weather_data[i].dayPictureUrl = "http://api.map.baidu.com/images/weather/day/leizhenyu.png";
-		fileName = this.getFileName(weather_data[i].dayPictureUrl);
+		if(dirName == "day") {
+			url = weather_data[i].dayPictureUrl;
+		} else {
+			url = weather_data[i].nightPictureUrl;
+		}
+		fileName = this.getFileName(url);
+		
 		this.dateLabels[i].setText(weather_data[i].date.substr(0, 2));
 		this.weatherLabels[i].setText(weather_data[i].weather);
 		this.windLabels[i].setText(weather_data[i].wind);
-		this.saveFile(fileName, i, weather_data[i].dayPictureUrl, function(i, fileName) {
+		this.saveFile(dirName, fileName, i, url, function(i, fileName) {
 			self.situationImageLabels[i].setBackgroundImage(fileName);
 		});
 		this.temperatureLabels[i].setText(weather_data[i].temperature);
@@ -301,11 +314,11 @@ WelcomeWindow.prototype.readFile = function(fileName) {
 	return weathersData;
 };
 
-WelcomeWindow.prototype.saveFile = function(fileName, index, url, callback) {
+WelcomeWindow.prototype.saveFile = function(dirName, fileName, index, url, callback) {
 	var self = this;
 	
 	var imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,            
-	    'downloaded_images');
+	    'downloaded_images/' + dirName);
 	if (!imageDir.exists()) {
 	    imageDir.createDirectory();
 	}
@@ -317,12 +330,12 @@ WelcomeWindow.prototype.saveFile = function(fileName, index, url, callback) {
 		client.onload = function() {
 			var file = Ti.Filesystem.getFile(imageDir.resolve(), fileName);
 			file.write(this.responseData);
-			callback(index, imageDir.resolve() + "/" + fileName);
+			callback(index, file.nativePath);
 		};
 		client.open('GET', url);
 		client.send();
 	} else {
-		callback(index, imageDir.resolve() + "/" + fileName);
+		callback(index, file.nativePath);
 	}
 	file = null;
 };
