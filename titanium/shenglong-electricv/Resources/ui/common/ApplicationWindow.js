@@ -35,6 +35,14 @@ function ApplicationWindow(opts) {
 	
 	self.add(webview);
 	self.add(activityIndicator);
+	
+	var welcomebutton = Ti.UI.createButton({
+		title: '@'
+	});
+	welcomebutton.addEventListener('click', function() {
+		opts.welcomeWindow.open({modal: true});
+	});
+	self.rightNavButton = welcomebutton;
 
 	return self;
 };
