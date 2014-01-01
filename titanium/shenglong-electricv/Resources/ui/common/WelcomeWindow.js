@@ -204,8 +204,8 @@ function WelcomeWindow() {
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
 		text: trafficControls.todayLimitCar,
-		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 		top: 10,
+		left: 20,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
@@ -218,8 +218,8 @@ function WelcomeWindow() {
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
 		text: trafficControls.tomorrowLimitCar,
-		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 		top: 10,
+		left: 20,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
