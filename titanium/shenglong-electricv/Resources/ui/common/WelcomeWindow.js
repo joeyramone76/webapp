@@ -358,6 +358,10 @@ WelcomeWindow.prototype.saveFile = function(dirName, fileName, index, url, callb
 			file.write(this.responseData);
 			callback(index, file.nativePath);
 		};
+		client.onerror = function() {
+			var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, self.weatherImagePath + fileName);
+			callback(index, file.nativePath);
+		};
 		client.open('GET', url);
 		client.send();
 	} else {

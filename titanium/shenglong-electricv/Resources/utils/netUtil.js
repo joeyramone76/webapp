@@ -20,4 +20,5 @@ netUtil.request = function(url, callback) {
 	client.send();
 };
 
-exports.netUtil = netUtil;
+//exports.netUtil = netUtil;
+//exports.request = netUtil.request;
