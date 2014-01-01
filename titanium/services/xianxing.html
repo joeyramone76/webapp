@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<style type="text/css">
+			.xianhao {
+				color: #666666;
+				font-family:simsun;
+				font-size:14px;
+				font-weight: bold;
+				line-height:24px;
+			}
+			.today,.todaynum,.tomorrow,.tomorrownum {
+				color:red;
+			}
+			.normal {
+				font-weight:normal;
+				font-size:12px;
+			}
+			.normal a {
+				color:#666666;
+				text-decoration: none;
+			}
+		</style>
+
+		<span id="sday" style="display:none">
+			2014-01-01
+		</span>
+		<div id="xianhao" class="xianhao">
+			<span class="today" id="todayweek"></span>&nbsp;限行尾号是：<span class="todaynum" id="todaynum"></span><br />
+			<span class="tomorrow" id="tomorrowweek"></span>&nbsp;限行尾号是：<span class="tomorrownum" id="tomorrownum"></span>　<span class="normal"><a href="http://www.bjjtgl.gov.cn/zhuanti/10weihao/index.html" target="_blank">限行详情>></a></span>
+		</div>
+		<script type="text/javascript">
+			function getXHNumber(tDate, sDate) {// 2014-01-01 2012-10-08
+				var nDayNum = tDate.getDay() == 0 ? 7 : tDate.getDay();//星期 0 1 2 3 4 5 6
+				if(nDayNum > 5)
+					return nDayNum;
+				console.log((tDate - sDate) / 1000 / 3600 / 24 / 7);//已实行多少周
+				var nDiff = (tDate - sDate) / 1000 / 3600 / 24 / 7 / 13;//秒 分钟 小时 天 周 13周轮换一次
+				
+				console.log(nDiff);
+				nDiff = Math.floor(nDiff) % 5;
+				console.log(nDiff);
+				nDayNum = 5 - nDiff + nDayNum ;
+				console.log(nDayNum);
+				if(nDayNum > 5)
+					nDayNum -= 5;
+				return nDayNum;	
+			}
+			var sStartDate = '2012-10-08';//开始星期，周一的日期
+			var x1 = '1和6';//1
+			var x2 = '2和7';//2
+			var x3 = '3和8';//3
+			var x4 = '不限行';//4
+			var x5 = '5和0';//5
+			var x6 = '不限行1';//6
+			var x7 = '不限行2';//0
+			
+			var arr1 = sStartDate.split("-");
+			var vStartDate = new Date(arr1[0], arr1[1] - 1, arr1[2]);
+			console.log(vStartDate);
+			
+			var arr2 = document.getElementById("sday").innerHTML.split("-");
+			var vToday = new Date(arr2[0], arr2[1] - 1, arr2[2]);
+			console.log(vToday);
+			
+			var nTodayNum = getXHNumber(vToday, vStartDate);
+			vToday.setDate(vToday.getDate() + 1);
+			var nTomorrowNum = getXHNumber(vToday, vStartDate);
+			
+			/***start week***/
+			var arr_week = new Array("星期六", "星期日", "星期一", "星期二", "星期三", "星期四", "星期五");
+			var todayweek = vToday.getDay();
+			document.getElementById("todayweek").innerHTML = arr_week[todayweek];
+			document.getElementById("tomorrowweek").innerHTML = arr_week[(todayweek+1) == 7 ? 0 : todayweek + 1];
+			/***end week***/
+			document.getElementById("todaynum").innerHTML = eval('x' + nTodayNum);
+			document.getElementById("tomorrownum").innerHTML = eval('x' + nTomorrowNum);
+		</script>
+	</body>
+</html>
