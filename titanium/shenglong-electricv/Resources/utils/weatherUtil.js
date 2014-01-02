@@ -10,6 +10,8 @@ weatherUtil.getWeather = function(callback) {
 		var BaiduService = require('baidu/BaiduService');
 		var baiduService = new BaiduService();
 		baiduService.getWeatherReport(args, callback);
+		
+		baiduService = null;
 	});
 };
 

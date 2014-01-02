@@ -7,7 +7,7 @@
     <url>http://www.shenglong-electric.com.cn/</url>
     <description>盛隆电气</description>
     <copyright>2013 by peter</copyright>
-    <icon>appicon.png</icon>
+    <icon>appicon_512x512.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>

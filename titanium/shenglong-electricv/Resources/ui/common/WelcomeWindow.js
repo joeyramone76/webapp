@@ -23,40 +23,40 @@ function WelcomeWindow() {
 		layout: 'horizontal'
 	});
 	welcomeWindow.add(dateView);
-	var dateLabel = Ti.UI.createLabel({
+	this.dateLabel = Ti.UI.createLabel({
 		color: fontColor,
 		font: {fontSize: 26},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: date.getFullYear() + "年" + date.getMonth() + "月" + date.getDate() + "日",
+		text: date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日",
 		top: 20,
 		left: 10,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	dateView.add(dateLabel);
+	dateView.add(this.dateLabel);
 	
-	var weekday = new Array(7);
-	weekday[0] = "星期天";
-	weekday[1] = "星期一";
-	weekday[2] = "星期二";
-	weekday[3] = "星期三";
-	weekday[4] = "星期四";
-	weekday[5] = "星期五";
-	weekday[6] = "星期六";
-	var weekLabel = Ti.UI.createLabel({
+	this.weekday = new Array(7);
+	this.weekday[0] = "星期天";
+	this.weekday[1] = "星期一";
+	this.weekday[2] = "星期二";
+	this.weekday[3] = "星期三";
+	this.weekday[4] = "星期四";
+	this.weekday[5] = "星期五";
+	this.weekday[6] = "星期六";
+	this.weekLabel = Ti.UI.createLabel({
 		color: fontColor,
 		font: {fontSize: 16},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: weekday[date.getDay()],
+		text: this.weekday[date.getDay()],
 		bottom: 3,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	dateView.add(weekLabel);
+	dateView.add(this.weekLabel);
 	
 	//天气情况
 	var weathersData = [],
@@ -195,33 +195,35 @@ function WelcomeWindow() {
 	}
 	welcomeWindow.add(weathersView);
 	
-	var todayLimitCarLabel = Ti.UI.createLabel({
-		color: '#fff',
-		font: {fontSize: 20},
-		showColor: '#aaa',
-		showOffset: {x:5, y:5},
-		shadowRadius: 3,
-		text: '星期六 限行尾号是：不限行',
-		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-		top: 10,
-		width: Ti.UI.SIZE,
-		height: Ti.UI.SIZE
-	});
-	welcomeWindow.add(todayLimitCarLabel);
+	trafficControls = this.readFile("data/services/trafficControls.txt");
 	
-	var tomorrowLimitCarLabel = Ti.UI.createLabel({
+	this.todayLimitCarLabel = Ti.UI.createLabel({
 		color: '#fff',
 		font: {fontSize: 20},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: '星期日 限行尾号是：不限行',
-		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+		text: trafficControls.todayLimitCar,
 		top: 10,
+		left: 20,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	welcomeWindow.add(tomorrowLimitCarLabel);
+	welcomeWindow.add(this.todayLimitCarLabel);
+	
+	this.tomorrowLimitCarLabel = Ti.UI.createLabel({
+		color: '#fff',
+		font: {fontSize: 20},
+		showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: trafficControls.tomorrowLimitCar,
+		top: 10,
+		left: 20,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	welcomeWindow.add(this.tomorrowLimitCarLabel);
 	
 	enterBtn = Ti.UI.createButton({
 		title: '进入应用',
@@ -233,7 +235,9 @@ function WelcomeWindow() {
 	});
 	
 	welcomeWindow.addEventListener('open', function() {
+		self.updateDateLabel();
 		var weatherUtil = require('utils/weatherUtil');
+		var serviceUtil = require('utils/serviceUtil');
 		var weathersData = Ti.App.Properties.getString("weathersData");
 		if(weathersData == null || weathersData == "") {
 			var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "data/weather/weather.txt");
@@ -243,26 +247,43 @@ function WelcomeWindow() {
 			blob = null;
 			weathersData = JSON.parse(readText);
 		} else {
-			self.updateData(JSON.parse(weathersData));
+			self.updateWeatherData(JSON.parse(weathersData));
 		}
-		weatherUtil.getWeather(function(weathersData) {
-			Ti.App.Properties.setString("weathersData", weathersData);
-			weathersData = JSON.parse(weathersData);
-			if(weathersData.error == 0) {
-				if(weathersData.status == "success") {
-					self.updateData(weathersData);
-				} else {
-					Ti.UI.createAlertDialog({
-						title: '提示',
-						message: '暂不支持该城市天气预报'
-					}).show();
+		
+		var trafficControls = Ti.App.Properties.getString("trafficControlsData");
+		if(trafficControls == null || trafficControls == "") {
+			
+		} else {
+			self.updateTrafficControlsData(JSON.parse(trafficControls));
+		}
+		
+		weatherUtil.getWeather(function(err, weathersData) {
+			serviceUtil.getTrafficControls(function(err, trafficControls) {
+				if(weathersData != null) {
+					weathersData = JSON.parse(weathersData);
+					console.log(weathersData);
+					if(weathersData.error == 0) {
+						Ti.App.Properties.setString("weathersData", JSON.stringify(weathersData));
+						if(weathersData.status == "success") {
+							self.updateWeatherData(weathersData);
+						} else {
+							Ti.UI.createAlertDialog({
+								title: '提示',
+								message: '暂不支持该城市天气预报'
+							}).show();
+						}
+					} else {
+						Ti.UI.createAlertDialog({
+							title: '提示',
+							message: '暂不支持该城市天气预报'
+						}).show();
+					}
 				}
-			} else {
-				Ti.UI.createAlertDialog({
-					title: '提示',
-					message: '暂不支持该城市天气预报'
-				}).show();
-			}
+				if(trafficControls != null) {
+					Ti.App.Properties.setString("trafficControlsData", trafficControls);
+					self.updateTrafficControlsData(JSON.parse(trafficControls));
+				}
+			});
 		});
 	});
 	return welcomeWindow;
@@ -272,7 +293,14 @@ WelcomeWindow.prototype.createWeathersView = function() {
 	
 };
 
-WelcomeWindow.prototype.updateData = function(weathersData) {
+WelcomeWindow.prototype.updateDateLabel = function() {
+	var date = new Date();
+	var self = this;
+	this.dateLabel.setText(date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日");
+	this.weekLabel.setText(this.weekday[date.getDay()]);
+};
+
+WelcomeWindow.prototype.updateWeatherData = function(weathersData) {
 	var date = new Date();
 	var self = this;
 	this.temperatureLabel.setText(weathersData.results[0].weather_data[0].temperature);
@@ -304,20 +332,33 @@ WelcomeWindow.prototype.updateData = function(weathersData) {
 	}
 };
 
+WelcomeWindow.prototype.updateTrafficControlsData = function(trafficControls) {
+	var date = new Date();
+	var self = this;
+	this.todayLimitCarLabel.setText(trafficControls.todayLimitCar);
+	this.tomorrowLimitCarLabel.setText(trafficControls.tomorrowLimitCar);
+};
+
 WelcomeWindow.prototype.readFile = function(fileName) {
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
 	var blob = file.read();
 	var readText = blob.text;
 	file = null;
 	blob = null;
-	var weathersData = JSON.parse(readText);
-	return weathersData;
+	var data = JSON.parse(readText);
+	return data;
 };
 
 WelcomeWindow.prototype.saveFile = function(dirName, fileName, index, url, callback) {
 	var self = this;
 	
 	var imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,            
+	    'downloaded_images/');
+	if (!imageDir.exists()) {
+	    imageDir.createDirectory();
+	}
+	
+	imageDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,            
 	    'downloaded_images/' + dirName);
 	if (!imageDir.exists()) {
 	    imageDir.createDirectory();
@@ -330,6 +371,10 @@ WelcomeWindow.prototype.saveFile = function(dirName, fileName, index, url, callb
 		client.onload = function() {
 			var file = Ti.Filesystem.getFile(imageDir.resolve(), fileName);
 			file.write(this.responseData);
+			callback(index, file.nativePath);
+		};
+		client.onerror = function() {
+			var file = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, self.weatherImagePath + fileName);
 			callback(index, file.nativePath);
 		};
 		client.open('GET', url);
