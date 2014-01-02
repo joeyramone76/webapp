@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery.mobile.loadPage demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+ 
+  <div data-role="header">
+      <h1>loadPage() demo</h1>
+    </div><!-- /header -->
+ 
+  <div data-role="content">
+ 
+    <p>First check if the 'About us' page is in the DOM, Load the page in the DOM and check again</p>
+    <input type="button" id="domcheck" data-inline="true" value="Is 'About us' in the DOM?"/>
+    <input type="button" id="loadpage" data-inline="true" value="Load the 'About us' page"/><br />
+    <div id="myResult">'About Us' is in the DOM: <span id="result">The result will be displayed here</span></div>
+  </div>
+ 
+<script>
+  $( "#domcheck" ).on( "click", function() {
+    var check = $( "#aboutUs" ).length === 1;
+    $( "#result" ).text( check );
+  });
+  $( "#loadpage" ).on( "click", function() {
+    //$.mobile.loadPage( "./us.html");
+	$.mobile.loadPage( "./us.html", true, {
+	  type: "post",
+	  data: $( "form#search" ).serialize()
+	});
+  });
+</script>
+ 
+</body>
+</html>

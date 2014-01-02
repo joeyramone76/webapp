@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    	<meta charset="UTF-8" />
+    	<link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <link rel="stylesheet" type="text/css" href="./css/index.css" />
+            <link rel="stylesheet" type="text/css" href="./css/slider.css" />
+            <script type="text/javascript" src="./js/jquery.js"></script>
+            <script type="text/javascript" src="./js/Slider.js"></script>
+            <title>盛隆电气集团欢迎您!</title>
+            </head>
+    <body>
+        <div class="wrapper">
+            <header class="clearfix">
+                <div class="logo">
+                    <a href="/"><img src="./images/logo.png" alt=""/></a>
+                </div>
+                <a class="search" href="/search"><img src="./images/search_ico.png" alt=""/></a>
+            </header>
+            <div class="banner" id="banner">
+                <div class="slider" id="Slider">
+                    <div class="slider_box">
+                        <a href="#"><img src="http://m.shenglong-electric.com.cn/uploads/slider/wuhan100m.jpg" /></a><a href="#"><img src="http://m.shenglong-electric.com.cn/uploads/slider/Asia500m.jpg" /></a><a href="#"><img src="http://m.shenglong-electric.com.cn/uploads/slider/s01.jpg" /></a><a href="#"><img src="http://m.shenglong-electric.com.cn/uploads/slider/s02.jpg" /></a><a href="#"><img src="http://m.shenglong-electric.com.cn/uploads/slider/s03.jpg" /></a>        </div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="menu">
+                    <a href="/aboutMe">
+                        <span class="ico"><img class="menu_ico" src="./images/index_03.png" alt=""/></span>
+                        <div class="menu_title">关于盛隆</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/news">
+                        <span class="ico"><img class="menu_ico" src="./images/index_06.png" alt=""/></span>
+                        <div class="menu_title">新闻中心</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/product">
+                        <span class="ico"><img class="menu_ico" src="./images/index_08.png" alt=""/></span>
+                        <div class="menu_title">产品与服务</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/opus">
+                        <span class="ico"><img class="menu_ico" src="./images/index_10.png" alt=""/></span>
+                        <div class="menu_title">客户及成功案例</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/jobs">
+                        <span class="ico"><img class="menu_ico" src="./images/index_12.png" alt=""/></span>
+                        <div class="menu_title">人才招聘</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+                <div class="menu">
+                    <a href="/contact">
+                        <span class="ico"><img class="menu_ico" src="./images/index_14.png" alt=""/></span>
+                        <div class="menu_title">联系我们</div>
+                        <div class="arrow">
+                            <img src="./images/arrow.png" alt=""/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <footer>
+                <div class="weibo">
+                    <a href="http://weibo.com/shenglongelectric"><img src="./images/sina_ico.png" alt=""/></a>
+                    <a href="http://t.qq.com/shenglong-electric"><img src="./images/tencent_ico.png" alt=""/></a>
+                </div>
+                <div class="copyright">
+                    <div><a href="http://shenglong-electric.com.cn/?Platform=m">PC版</a> | <a href="/sitemap">网站地图</a></div>
+                    <div>盛隆电气集团©2013</div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="./js/zepto.min.js"></script>
+        <script type="text/javascript">
+            /*<![CDATA[*/
+            jQuery(function($) {
+                   
+                   var slider = document.getElementById('Slider');
+                   Slider(slider,{
+                          'speed' : 300, //轮播速度
+                          'autoPlay' : true, //是否自动轮播
+                          'autoTime' : 3000, //动画自动播放间隔 3'，默认3'
+                          'swipe' : true
+                          });
+                   
+                   });
+                   /*]]>*/
+            </script>
+    </body>
+    
+</html>

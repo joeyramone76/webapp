@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string name="home">Home</string>
+	<string name="introduction">introduction</string>
+	
+	<string name="news">news</string>
+	<string name="product">product</string>
+	<string name="customer">customer</string>
+	<string name="connect">connect</string>
+	
+	<string name="settings">Settings</string>
+</resources>

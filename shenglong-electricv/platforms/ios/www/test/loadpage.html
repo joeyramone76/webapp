@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery.mobile.loadPage demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.js"></script>
+</head>
+<body>
+ 
+  <div data-role="page">
+    <form id="search">
+      <p>Please fill in the form below:<br /><br />
+      <label for="choice">Favorite framework:</label>
+      <input type="text" name="choice" id="choice" value="jQuery Mobile" />
+ 
+      <a href="#formResults" data-role="button" data-inline="true" data-rel="dialog">Show Results</a>
+	  <a href="#page2">My link</a>
+	  <a id="test">test</a>
+      </p>
+    </form>
+  </div>
+	 
+	<div data-role="page" id="page2">
+		<div data-role="header"></div>
+		<div data-role="page">test</div>
+		<div data-role="footer"></div>
+	</div>
+<script>
+console.log($( "form#search" ).serialize());
+$("#test").click(function() {
+	$.mobile.loadPage( "./result.html", true, {
+	  type: "post",
+	  data: $( "form#search" ).serialize()
+	});
+});
+</script>
+ 
+</body>
+</html>

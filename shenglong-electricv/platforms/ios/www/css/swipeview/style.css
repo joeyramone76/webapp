@@ -1,0 +1,29 @@
+#wrapper {
+	width:100%;
+	min-width:320px;
+	min-height:500px;
+}
+
+@media screen and (max-width: 360px) {
+	#wrapper span ul {
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 360px) {
+	
+}
+
+.ui-li-static.ui-li-has-thumb {
+	min-height: 20px;
+	padding-left: 20px;
+}
+
+.ui-li-thumb {
+	position: static;
+	max-height: 80px;
+	max-width: 80px; 
+	float: left;
+	margin-right: 10px;
+	line-height: 20px;
+}

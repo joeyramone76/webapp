@@ -1,0 +1,24 @@
+<div data-role="header" data-id="submenu" data-position="fixed">
+	<a data-type="back" href="#" data-icon="back">返回</a>
+	<h1>天气预报</h1>
+	<a href="#" id="setting" data-icon="gear" class="ui-btn-right">设置</a>
+</div>
+<div data-role="content">
+	<article data-role="article" id="article" data-enhance="false">
+
+	</article>
+</div>
+<div data-role="footer" data-id="menu" data-position="fixed">
+
+</div>
+<script type="text/html" id='weatherTemplate'>
+	<h1><%= weather.cityName%></h1>
+	<ul data-role="listview" data-inset="true">
+		<% _.each(weather.weathers, function(data) { %>
+			<li><img src="<%= data.img%>"></img> 风力:<%= data.fl%> 舒适度:<%= data.st%> <%= data.temp%> <%= data.weather%> <%= data.wind%></li>
+		<%});%>
+		<% if(weather.weathers.length == 0) {%>
+		<li>暂时无数据</li>
+		<%}%>
+	</ul>
+</script>

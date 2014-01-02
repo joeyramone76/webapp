@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery.mobile.changePage demo</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+ 
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>Page 1</h1>
+  </div>
+  <div data-role="content">
+	<a id="test">test</a>
+  </div>
+</div>
+
+<div data-role="page" id="page2">
+  <div data-role="header">
+    <h1>Page 1</h1>
+  </div>
+  <div data-role="content">
+	<a id="test">test</a>
+  </div>
+</div>
+ 
+<script>
+$("#test").click(function() {
+	/*$.mobile.changePage("./confirm.html", {
+	  transition: "pop",
+	  reverse: false,
+	  changeHash: false
+	});*/
+	$.mobile.changePage("#page2", {
+	  transition: "pop",
+	  reverse: false,
+	  changeHash: false
+	});
+});
+</script>
+ 
+</body>
+</html>
