@@ -5,6 +5,8 @@ import os
 import MySQLdb as mdb
 import datetime
 import time
+import SearchFile
+import re
 
 conn = None;
 
@@ -12,6 +14,7 @@ def sayHello(argv=None):
 	print sys.argv;
 	print len(sys.argv);
 	print sys.argv[:];
+	print sys.path;
 	
 def test():
 	try:
@@ -51,6 +54,58 @@ def test():
 			
 def update():
 	print "update";
+	
+def searchHtmlFile():
+	print "searchHtmlFile";
+	searchFile = SearchFile.SearchFile("m.shenglong-electric.com.cn/", ".html");
+	files = searchFile.getAllFiles();
+	print files;
+
+def testUpdate():
+	print "testUpdate";
+	filePath = "m.shenglong-electric.com.cn/aboutMe.html";
+	content = readFile(filePath);
+	#正则匹配 路径
+	#href="/"
+	#href="/aboutMe/detail/page_id/13"
+	#match = re.search(r'href="/"', content);
+	#match = re.match(r'href="/"', content);
+	
+	#src = 'aabcdddd'
+	#print re.sub('(ab).*(d)', '\\1e\\2', src)
+	#src  = 'aabcdddd'
+	#rgx = re.compile('(?<=ab).*?(?=d)')
+	#print rgx.sub('e',src)
+	src  = 'aabcdddd'
+	rgx = re.compile(r'(ab)(.*?)(d)')
+	print rgx.sub(r'\1\2\3', src)
+
+	match = re.findall(r'href="/[\w|/]*"', content);
+	if(match):
+		print match;
+	rgx = re.compile(r'(href=")/(")');
+	content = rgx.sub(r'\1./index.html\2', content)
+	rgx = re.compile(r'(href=")(/[\w|/]+)(")');
+	content = rgx.sub(r'\1.\2.html\3', content);
+	writeFile(filePath, content);
+	
+def readFile(filePath):
+	print "readFile";
+	f = file(filePath, "r");
+	content = "";
+	while True:
+		line = f.readline();
+		if(len(line) == 0):
+			break;
+		content += line;
+	f.close();
+	return content;
+
+def writeFile(filePath, content):
+	print "writeFile";
+	f = file(filePath, "w");
+	f.write(content);
+	f.close();
 	
 #将conn设定为全局连接
 conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
@@ -132,3 +187,7 @@ if __name__ == "__main__":
 		test();
 	elif(methodName == "update"):
 		update();
+	elif(methodName == "searchHtmlFile"):
+		searchHtmlFile();
+	elif(methodName == "testUpdate"):
+		testUpdate();

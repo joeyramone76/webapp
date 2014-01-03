@@ -5,6 +5,10 @@ if "%1"=="sayHello" (
 	python updateHtml.py test
 ) else if "%1"=="update" (
 	python updateHtml.py update
+) else if "%1"=="searchHtmlFile" (
+	python updateHtml.py searchHtmlFile
+) else if "%1"=="testUpdate" (
+	python updateHtml.py testUpdate
 ) else if "%1"=="help" (
 	echo updateHtml command:
 	echo updateHtml sayHello
@@ -12,6 +16,8 @@ if "%1"=="sayHello" (
 	echo     sayHello
 	echo     test
 	echo     update
+	echo     searchHtmlFile
+	echo     testUpdate
 ) else (
 	echo wrong command
 )
