@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    	<meta charset="UTF-8" />
+    	<link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />
+        <link rel="shortcut icon" href="./favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="./css/about.css" />
+<title>盛隆电气集团欢迎您!</title>
+    </head>
+    <body>
+    <div class="wrapper">
+        <header class="clearfix">
+            <div class="logo">
+                <a href="/"><img src="./images/logo.png" alt=""/></a>
+            </div>
+            <a class="search" href="/search"><img src="./images/search_ico.png" alt=""/></a>
+        </header>
+		        <div class="slider">
+            <img src="./uploads/2013/03/aboutus.jpg" alt=""/>
+        </div>
+        <div class="content">
+            <div class="bread_crumbs">
+                <a href="/">首页</a>
+                <span> &gt; </span>
+                <span>关于盛隆</span>
+            </div>
+            <div class="content_wrap clearfix">
+               <div class="side_bar">
+                   <div class="pages_list">
+                       <ul>
+                                                    <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/13" class="f_name"><span>公司简介</span></a>
+                                                              </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/14" class="f_name"><span>党建概况</span></a>
+                                                              </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/28" class="f_name"><span>公司战略</span></a>
+                               <em class="handle_ico"></em><div class="s_menu"><ul><li><a href="/aboutMe/detail/page_id/30">长期目标</a></li><li><a href="/aboutMe/detail/page_id/31">中期目标</a></li></ul></div>                               </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/15" class="f_name"><span>发展历程</span></a>
+                                                              </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/16" class="f_name"><span>资质认证</span></a>
+                                                              </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/17" class="f_name"><span>盛隆文化</span></a>
+                               <em class="handle_ico"></em><div class="s_menu"><ul><li><a href="/aboutMe/detail/page_id/18">盛隆宗旨</a></li><li><a href="/aboutMe/detail/page_id/19">盛隆理念</a></li><li class="cur"><a href="/aboutMe/detail/page_id/20">盛隆文化目标</a></li><li><a href="/aboutMe/detail/page_id/21">盛隆机制</a></li><li><a href="/aboutMe/detail/page_id/22">盛隆之歌</a></li><li><a href="/aboutMe/detail/page_id/23">盛隆微</a></li><li><a href="/aboutMe/detail/page_id/24">盛隆旗</a></li><li><a href="/aboutMe/detail/page_id/25">盛隆法则</a></li><li><a href="/aboutMe/detail/page_id/26">盛隆伦理</a></li><li><a href="/aboutMe/detail/page_id/27">盛隆哲学</a></li></ul></div>                               </li>
+                                                         <li class="f_item">
+                               <a href="/aboutMe/detail/page_id/29" class="f_name"><span>社会评价</span></a>
+                                                              </li>
+                               <li class="f_item"><a href="/gallery" class="f_name">盛隆风采</a></li>                       </ul>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <footer>
+            <div class="weibo">
+                <a href="http://weibo.com/shenglongelectric"><img src="./images/sina_ico.png" alt=""/></a>
+                <a href="http://t.qq.com/shenglong-electric"><img src="./images/tencent_ico.png" alt=""/></a>
+            </div>
+            <div class="copyright">
+                <div><a href="http://shenglong-electric.com.cn/?Platform=m">PC版</a> | <a href="/sitemap">网站地图</a></div>
+                <div>盛隆电气集团©2014</div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript">
+/*<![CDATA[*/
+
+    $(function(){
+        $('.s_menu').has('li.cur').css('display','block');
+        $('.f_item').has('.s_menu').find('.f_name').on('click',function(e){
+            e.preventDefault();
+            var sibling = $(this).siblings('.s_menu'),
+                ico = $(this).siblings('.handle_ico'),
+                display = sibling.css('display');
+            if(display && display=='none'){
+                sibling.css('display','block');
+                ico.addClass('opened');
+            }else{
+                sibling.css('display','none');
+                ico.removeClass('opened');
+            }
+        })
+    })
+
+/*]]>*/
+</script>
+</body>
+</html>

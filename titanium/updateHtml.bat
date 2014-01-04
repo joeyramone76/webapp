@@ -9,6 +9,8 @@ if "%1"=="sayHello" (
 	python updateHtml.py searchHtmlFile
 ) else if "%1"=="testUpdate" (
 	python updateHtml.py testUpdate
+) else if "%1"=="getPrefixPath" (
+	python updateHtml.py getPrefixPath
 ) else if "%1"=="help" (
 	echo updateHtml command:
 	echo updateHtml sayHello
@@ -18,6 +20,7 @@ if "%1"=="sayHello" (
 	echo     update
 	echo     searchHtmlFile
 	echo     testUpdate
+	echo     getPrefixPath
 ) else (
 	echo wrong command
 )
