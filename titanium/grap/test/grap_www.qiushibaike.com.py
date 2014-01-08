@@ -2,8 +2,8 @@
 #----------------------------------------------
 # 程序: grap qiushibaike
 # 版本: 0.2
-# 作者: why
-# 日期: 2013-05-15
+# 作者: peter
+# 日期: 2014-01-08
 # 语言: Python 2.7
 # 操作: 输入quit退出
 # 功能: 按下回车依次浏览今日的热点
@@ -87,4 +87,48 @@ class HTML_Model:
 					print '无法连接网站'
 			else:
 				time.sleep(1);
+				
+	def ShowPage(self, q, page):
+		for items in q:
+			print u'第%d页' % page, items[0];
+			print self.myTool.Replace_Char(items[1]);
+			myInput = raw_input();
+			if(myInput == "quit"):
+				self.enable = False;
+				break;
+				
+	def Start(self):
+		self.enable = True;
+		page = self.page;
+		
+		print u'正在加载中请稍候......';
+		
+		#新建一个线程在后台加载段子并存储
+		thread.start_new_thread(self.LoadPage, ());
+		
+		#---------处理内容----------
+		while(self.enable):
+			if(self.pages):
+				nowPage = self.pages[0];
+				del self.pages[0];
+				self.ShowPage(nowPage, page);
+				page += 1;
 #----------加载处理内容-------------
+
+#----------程序的入口---------------
+print u"""
+-------------------------------------
+ 程序: grap qiushibaike
+ 版本: 0.2
+ 作者: peter
+ 日期: 2014-01-08
+ 语言: Python 2.7
+ 操作: 输入quit退出
+ 功能: 按下回车依次浏览今日的热点
+ 更新: 解决了命令提示行下乱码的问题
+-------------------------------------
+"""
+print r'请按下回车浏览今日的内容：'
+raw_input(' ');
+myModel = HTML_Model();
+myModel.Start();
