@@ -7,6 +7,8 @@ if "%1"=="sayHello" (
 	python grap.py testUrl
 ) else if "%1"=="initMenus" (
 	python grap.py initMenus
+) else if "%1"=="readJson" (
+	python grap.py readJson
 ) else if "%1"=="help" (
 	echo grap command:
 	echo grap sayHello
@@ -15,6 +17,7 @@ if "%1"=="sayHello" (
 	echo     test
 	echo     testUrl
 	echo     initMenus
+	echo     readJson
 ) else (
 	echo wrong command
 )
