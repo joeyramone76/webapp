@@ -169,3 +169,11 @@ s = 'We say, hello world!';
 print p.subn(r'\2 \1', s);
 
 print p.subn(func, s);
+
+pat = re.compile(r'^\s+');
+s = '  \t  foo  \t  bar \t   ';
+print s;
+s = pat.sub('', s);
+pat = re.compile(r'\s+$');
+print pat.sub('', s);
+print s.strip();
