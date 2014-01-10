@@ -51,6 +51,7 @@ def test():
 			print row
 			
 		cur.execute("select cityCode from weather_citys");
+		#cur.execute("insert into t(test) values (?)", ('test'));
 		for row in cur.fetchall():
 			print row[0]
 	finally:
@@ -66,6 +67,8 @@ def testUrl():
 def getMenus(menus):
 	print menus;
 	
+#将conn设定为全局连接
+conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
 def readJson():
 	jsonstring = readFile('json/menus.json');
 	jsonstring = jsonstring.replace('\t', '').replace('\n', '');
@@ -82,24 +85,32 @@ def readJson():
 	#]
 	print type(menus);
 	#f = file("insert_menus.sql", "a+");
+	cursor = conn.cursor();
+	sql = "truncate table app_menus";
+	cursor.execute(sql);
+	conn.commit();
+	
 	f = codecs.open("insert_menus.sql", "w", "utf-8")
-	getMenus(f, menus, 1, "");
+	getMenus(f, menus, 1, 0, "");
+	
 	f.close();
+	cursor.close();
+	conn.close();
 		
-def getMenus(file, menus, level, parentCode):
+def getMenus(file, menus, level, parentId, parentCode):
 	sql = "";
 	menu_code = 1;
 	menu_codestring = "";
 	menu_name = "";
 	menu_showName = "";
-	type = 1; # 1 - page 2 - news
+	type = 0; # 1 - page 2 - news
 	icon = "";
 	url = "";
 	sl_url = "";
-	parentId = 0;
 	hasSubMenu = 1; # 0 - 没有 1 - 有
 	date = int(time.time());
 	submenus = [];
+		
 	for menu in menus:
 		menu_name = menu["name"];
 		menu_showName = menu["showName"];
@@ -109,18 +120,19 @@ def getMenus(file, menus, level, parentCode):
 		submenus = menu["submenus"];
 		
 		hasSubMenu = 1;
-		type = 1;
-		if(menu_name == "news"):
-			type = 2;
+		type = 0;
 		if(len(submenus) == 0):
+			type = 1;
+			if(parentCode == "002"):
+				type = 2;
 			if(level == 1):
 				menu_codestring = string.zfill(menu_code, 3);
 			else:
 				menu_codestring = parentCode + string.zfill(menu_code, 3);
-			parentId = 0;
 			hasSubMenu = 0;
 			#sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,hasSubMenu,`date`) VALUES (?,?,?,?,?,?,?,?,?,?)";
-			sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,hasSubMenu,`date`) VALUES ('%s','%s','%s',%d,'%s','%s','%s',%d,%d,%d);\n" % (menu_codestring,menu_name,menu_showName,type,icon,url,sl_url,parentId,hasSubMenu,date);
+			sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,parentCode,hasSubMenu,`date`) VALUES ('%s','%s','%s',%d,'%s','%s','%s',%d,'%s',%d,%d);\n" % (menu_codestring,menu_name,menu_showName,type,icon,url,sl_url,parentId,parentCode,hasSubMenu,date);
+			
 			print sql;
 			file.write(sql);
 		else:
@@ -128,17 +140,32 @@ def getMenus(file, menus, level, parentCode):
 				menu_codestring = string.zfill(menu_code, 3);
 			else:
 				menu_codestring = parentCode + string.zfill(menu_code, 3);
-			parentId = 0;
 			hasSubMenu = 1;
 			url = "";
 			sl_url = "";
 			#sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,hasSubMenu,`date`) VALUES (?,?,?,?,?,?,?,?,?,?)";
-			sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,hasSubMenu,`date`) VALUES ('%s','%s','%s',%d,'%s','%s','%s',%d,%d,%d);\n" % (menu_codestring,menu_name,menu_showName,type,icon,url,sl_url,parentId,hasSubMenu,date);
+			sql = "INSERT INTO app_menus(menu_code,menu_name,menu_showName,`type`,icon,url,sl_url,parentId,parentCode,hasSubMenu,`date`) VALUES ('%s','%s','%s',%d,'%s','%s','%s',%d,'%s',%d,%d);\n" % (menu_codestring,menu_name,menu_showName,type,icon,url,sl_url,parentId,parentCode,hasSubMenu,date);
 			print sql;
 			file.write(sql);
 			level += 1;
-			getMenus(file, submenus, level, menu_codestring);
+			getMenus(file, submenus, level, parentId, menu_codestring);
 		menu_code += 1;
+	
+def addMenus():
+	cursor = conn.cursor();
+	sql = "truncate table app_menus";
+	cursor.execute(sql);
+	cursor.execute("SET NAMES utf8");
+	cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
+	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
+	conn.commit();
+	
+	sql = "";
+	cursor.execute(sql.encode('utf-8'));
+	conn.commit();
+	
+	cursor.close();
+	conn.close();
 			
 def readFile(filePath):
 	f = file(filePath, "r");
