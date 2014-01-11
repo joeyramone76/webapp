@@ -1,0 +1,69 @@
+header{
+    margin: .5em;
+}
+header .logo{
+    float: left;
+    display: inline-block;
+}
+header .logo img{
+    display: block;
+    height: 3em;
+}
+header .search{
+    float: right;
+    display: inline-blockblock;
+    margin-top: .5em;
+}
+header .search img{
+    width: 1.8em;
+    vertical-align: middle;
+}
+.banner{
+
+}
+.banner img{
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid #ccc;
+}
+.menu-list{
+
+}
+.menu{
+    margin-bottom: 1px;
+}
+.menu a{
+    display: block;
+    background: #f3f3f3;
+    width: 100%;
+    padding: .5em 0 .7em;
+    text-decoration: none;
+}
+.menu .ico{
+    float: left;
+    display: table-cell;
+    width: 10%;
+    min-width: 2em;
+    margin-left: .3em;
+}
+.menu .ico img{
+    width: 2em;
+    vertical-align: middle;
+}
+.menu .menu_title{
+    display: table-cell;
+    width: 100%;
+    font-weight: 900;
+    color: #666;
+    font-size: 1.1em;
+    padding-top: .2em;
+}
+.menu .arrow{
+    display: table-cell;
+    width: 10%;
+    min-width: 1em;
+}
+.menu .arrow img{
+    vertical-align: middle;
+    width: .5em;
+}

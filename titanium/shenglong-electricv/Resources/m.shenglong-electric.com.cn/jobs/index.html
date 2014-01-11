@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    	<meta charset="UTF-8" />
+    	<link rel="stylesheet" type="text/css" href="../css/base_mobile.css" />
+        <link rel="shortcut icon" href="../favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/about.css" />
+<title>盛隆电气集团欢迎您!</title>
+    </head>
+    <body>
+    <div class="wrapper">
+        <header class="clearfix">
+            <div class="logo">
+                <a href="../index.html"><img src="../images/logo.png" alt=""/></a>
+            </div>
+            <a class="search" href="../search.html"><img src="../images/search_ico.png" alt=""/></a>
+        </header>
+		        <div class="slider">
+            <img src="../uploads/2013/03/banner-2.jpg" alt=""/>
+        </div>
+        <div class="content">
+            <div class="bread_crumbs">
+                <a href="../index.html">首页</a>
+                <span> &gt; </span>
+                <span>人才招聘</span>
+            </div>
+            <div class="content_wrap clearfix">
+               <div class="side_bar">
+                   <div class="pages_list">
+                       <ul>
+                                                      <li class="f_item">
+                               <a href="../jobs/detail/page_id/20.html" class="f_name"><span>职业发展</span></a>
+                           </li>
+                                                      <li class="f_item">
+                               <a href="../jobs/detail/page_id/32.html" class="f_name"><span>校园招聘</span></a>
+                           </li>
+                                                      <li class="f_item">
+                               <a href="../jobs/detail/page_id/31.html" class="f_name"><span>社会招聘</span></a>
+                           </li>
+                                                  </ul>
+                   </div>
+               </div>
+            </div>
+        </div>        <footer>
+            <div class="weibo">
+                <a href="http://weibo.com/shenglongelectric"><img src="../images/sina_ico.png" alt=""/></a>
+                <a href="http://t.qq.com/shenglong-electric"><img src="../images/tencent_ico.png" alt=""/></a>
+            </div>
+            <div class="copyright">
+                <div><a href="http://shenglong-electric.com.cn/?Platform=m">PC版</a> | <a href="../sitemap.html">网站地图</a></div>
+                <div>盛隆电气集团©2014</div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="../js/zepto.min.js"></script>
+    <script type="text/javascript">
+/*<![CDATA[*/
+
+    $(function(){
+        $('.s_menu').has('li.cur').css('display','block');
+        $('.f_item').has('.s_menu').find('.f_name').on('click',function(e){
+            e.preventDefault();
+            var sibling = $(this).siblings('.s_menu'),
+                ico = $(this).siblings('.handle_ico'),
+                display = sibling.css('display');
+            if(display && display=='none'){
+                sibling.css('display','block');
+                ico.addClass('opened');
+            }else{
+                sibling.css('display','none');
+                ico.removeClass('opened');
+            }
+        })
+    })
+
+/*]]>*/
+</script>
+</body>
+</html>
