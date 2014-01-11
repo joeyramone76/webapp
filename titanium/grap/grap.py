@@ -15,6 +15,8 @@ import math;
 import codecs;
 
 conn = None;
+#reload(sys)
+#sys.setdefaultencoding('utf-8');
 
 def sayHello(argv=None):
 	print sys.argv;
@@ -481,8 +483,8 @@ def readFile(filePath):
 def exportMenus():
 	'''导出菜单'''
 	fileName = "menus.txt";
-	f = file(fileName, "w");
-	#f = codecs.open(fileName, "w", 'utf-8');
+	#f = file(fileName, "w");
+	f = codecs.open(fileName, "w", 'utf-8');
 	
 	cursor = conn.cursor();
 	cursor.execute("SET NAMES utf8");
@@ -548,7 +550,8 @@ def exportMenus():
 		addSubmenu(menu);
 		menus.append(menu);
 		
-	f.write(json.dumps(menus, sort_keys=True, indent=4, separators=(',', ': ')));
+	f.write(json.dumps(menus, sort_keys=True, indent=4, separators=(',', ': '), encoding="utf-8", ensure_ascii=False).decode("utf-8"));
+	#print sys.getdefaultencoding();
 	
 	f.close();
 	cursor.close();
