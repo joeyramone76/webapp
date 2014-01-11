@@ -1,4 +1,10 @@
 var viewHelper = {};
+/**
+ * createSubMenu
+ * @param {Object} window
+ * @param {Object} webview
+ * @param {Object} opts
+ */
 viewHelper.createSubMenu = function(window, webview, opts) {
 	var arrowWidth = 30,
 		arrowHeight = 30,
@@ -126,7 +132,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		submenuBgColor,
 		submenuBorderColor,
 		submenuFontColor,
-		activeTabIndex = -1;
+		activeTabIndex = 0;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
 		buttonWidth = fontWidth * submenuName.length;

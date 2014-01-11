@@ -410,7 +410,7 @@ config.menus = [
             }
         ],
         "type": 0,
-        "url": "/website/page_template.html"
+        "url": "/website/newslist_template.html"
     },
     {
         "banner": "",

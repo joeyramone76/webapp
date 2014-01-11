@@ -15,19 +15,32 @@ function ApplicationWindow(opts) {
 		top: 40
 	});
 	
+	/**
+	 * 正在加载提示
+	 */
 	var ActivityIndicator = require("ui/common/ActivityIndicator");
 	var activityIndicator = new ActivityIndicator();
 	
+	/**
+	 * beforeload
+	 */
 	webview.addEventListener('beforeload', function(e) {
 		activityIndicator.show();
 	});
 	
+	/**
+	 * error
+	 */
 	webview.addEventListener('error', function(e) {
 		activityIndicator.hide();
 	});
 	
+	/**
+	 * load
+	 */
 	webview.addEventListener('load', function(e) {
 		activityIndicator.hide();
+		//change content
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");
