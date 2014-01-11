@@ -101,3 +101,7 @@ ALTER TABLE app_news ADD COLUMN page INT(10) NOT NULL DEFAULT 0 COMMENT 'page';
 SELECT id,sl_url FROM app_menus WHERE `type`=1;
 SHOW CREATE TABLE app_pages;
 SHOW CREATE TABLE app_news;
+
+-- 2014-01-11
+SELECT * FROM app_news;
+SELECT * FROM app_news WHERE content LIKE '%uploads%';

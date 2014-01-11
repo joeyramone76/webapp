@@ -410,6 +410,9 @@ def get_news(url):
 		content = match.group(1);
 		content = content.replace("\n", "").replace("\t", "").replace("    ", "").replace("\r", "");
 		content = content.strip();
+		imagePrefix = "http://m.shenglong-electric.com.cn";
+		pattern = re.compile(r'(src=")/(uploads)');
+		content = pattern.sub('\\1' + imagePrefix + '/\\2', content);
 		news["content"] = content;
 	
 	return news;
