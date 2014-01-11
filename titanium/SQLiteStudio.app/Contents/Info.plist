@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>*</string>
+			</array>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/x-tcl</string>
+				<string>text/plain</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>NSStringPboardType</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>TEXT</string>
+				<string>****</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Wish</string>
+	<key>CFBundleGetInfoString</key>
+	<string>SQLiteStudio by Pawel Salawa (http://sqlitestudio.one.pl)</string>
+	<key>CFBundleIconFile</key>
+	<string>Wish.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>pl.one.sqlitestudio</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SQLiteStudio</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1.5</string>
+	<key>CFBundleSignature</key>
+	<string>SQLiteStudio</string>
+	<key>CFBundleVersion</key>
+	<string>2.1.5</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.4.0</string>
+</dict>
+</plist>
+

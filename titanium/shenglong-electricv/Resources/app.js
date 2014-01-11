@@ -25,6 +25,9 @@ if (Ti.version < 1.8) {
 	
 	var Window;
 	
+	Ti.include('data/initData.js');
+	initData.initDB();
+	
 	if(osname === 'iphone' || osname === 'ipad') {
 		Window = require('ui/handheld/ios/ApplicationWindow');
 	} else if(osname === 'mobileweb') {

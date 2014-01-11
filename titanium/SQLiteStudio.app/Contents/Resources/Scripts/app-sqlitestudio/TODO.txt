@@ -1,0 +1,126 @@
+*** 2.2.0
+* Add "Disconnect All" button.
+* After filtering table data (with filter field) the exporting doesn't apply the filter - still exports entire table.
+* Refresh data in "Text view" of SELECT results (possibly also for Table window) if the data was modified directly from the results.
+* 726 (show/hide fts tables option)
+* Modify Column dialog, so constraints are listed like in Table dialog - multiple constraints of the same type can occur.
+* Option to allow only single DB to be open at once. Connecting to any other would cause old one to close.
+* Support for autoupdate, even if placed in restricted directory ("elevate" on windows, sudo/su on macosx/unix).
+* KDE4 associations support (~/.local/share/mime/<sqlitestudio-x.x.x>.desktop)
+* Plugins support for:
+	- Preview for blob:
+		> PDF (?, mupdf - mudraw konwertuje do obrazka, ale wazy 6.5mb po stripie, ),
+		> JPEG,
+		> BMP,
+		> TIFF,
+		> HTML,
+		> XML,
+		> Tcl,
+		> SQL,
+		> WAV/MP3 (snack::sound)
+	- Exporting:
+		> XML already done, but: option for XML exporting - generate XSD,
+		  customizable XML exporting format by attaching XSD,
+		> ODS (OpenOffice Calc format, example at http://wiki.tcl.tk/27147 - requires zlib, so wait for Tcl 8.6),
+	- Importing:
+		> JSON,
+* Modify "Custom SQL Functions" dialog to be a MDI window.
+* highlighting statement that has insertion cursor at the moment (good testing example in 597)
+* rewrite Dnd to be application-global and registerable for various widget pairs, while keeping the most api compatibility as possible.
+* Updates checking should display release notes and full changelog at the "ask to update" dialog already
+  and also after new version is installed. Might be an URL to changelog page.
+* NewVersionDialog could display changes in new version.
+* enabling create similar indexes/triggers/views like create similar tables
+* Dynamically downloaded/updated external plugins
+* Remember settings of certain plugins (exporting, importing, populating).
+* Remember window sizes by window groups, like ViewDialog would be displayed always with remembered size for this kind of windows.
+* At the first start inform user that the "auto updates checking" is enabled and if he wants to disable it.
+* "Set from expression" - same as for "Set NULL" on a cell, just with a SQL expression to type. Useful for md5 values, etc.
+* cell value directly from file (with [incrblobdac]). Use [incrblob] also for file() function.
+  Add "from file" and "to file" for blob columns, maybe even for all columns. Same options for BlobPanel.
+* Dialog window to load SQLite extensions.
+* 457 (comments in formatter)
+* Modify Signal class, so its instances would create a list containing these instances, so there could be procedure
+  like 'proc emit {receiver args} {...}' or something like that. Generally do it more like in Qt, so it would work
+  better and faster. A separate thread for asynchronous signals could be added as well.
+* Move gray frame and bind for raise checking into separate class: MDIArea.
+* Make SQLite documentation (from menu) available in internal (MDIWindow + html widget) as option.
+  All http calls should be configured globally to use internal html or external webbrowser.
+* Custom collating sequences, just like there are custom SQL functions.
+* Custom filter expression (not just text occurances, but full 'expr').
+* DataGrid/ResultGrid column hint colors and fonts configurable.
+* 210 (inserting data to form for several referenced tables)
+* 211 (execution SQL line-by-line)
+* Color picker dialog: add preset colors
+* Enhance schema importing, so user can select what does he want to import.
+* From forum:
+	What I'd like to see, is an option for optionally(!) limiting the quick filtering to the currently selected column.
+	(At the moment, filtering works globally across all columns of a table/view.) Although the column-specific filter
+	can easily be replaced by an SQL query, an additional filter button would provide quicker access in many circumstances.
+* 214 (open specified table/record from command line option)
+* 212 (intelligent layout with vertical preference)
+* 1422 (Foreign key name and data type)
+* Possibility to preview REFERENCEd row from referenced table while browsing table data (a la Plasma Button showing for reference column).
+* Automatic checking if there are new responses to reports registered in Reports History.
+* legacy sqlite format with PRAGMA
+* Schema and data comparer
+* setting in options to copy column header when copying ctrl+c in grid.
+
+*** 2.3.0
+* Isolate app logic from interface, then create automatic tests, web ui, console ui, ...
+* Selected area marking with Ctrl (specific cells selection)
+* Temporary triggers to transparently display changes in table on the fly, so it's possible to see
+  what data changes are made by external application on the database.
+  !!! Above won't work. New idea: create separate table, register triggers on orig table to do inserts in new table, observe (with timer) new table for new entries and update the monitor view
+* moving (d&d) snippets from templates window to sql editor window and vice versa,
+* Detecting if blob cell data is displayable and if yes - display it's value in grid as text, otherwise display symbolic image
+  - connected with preview plugins.
+* [db profile] <- use for SQLite3 as real execution time provider
+* AES encrypted SQLite 3 databases support (open source engine: http://sqlcipher.net/ and http://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki and http://stackoverflow.com/questions/5669905/sqlite-with-encryption-password-protection ).
+* Paging buttons in results and in table data should have a page number in the middle so it's possible to quick jump to desired page.
+* SQL custom functions in others, like python, perl, ruby, php, Shell (bash for Unix, batch for Windows),
+* DB stress testing.
+* Drawing diagrams on [canvas], or tkpath, or tkzinc.
+* Possibility to edit ddl of object being created/edited, but when switching to design tab and then back to ddl tab the manual changes to ddl would be discarted
+* Visual query editor.
+* "Rownum/rowid" column stays visible when horizontal scrolling (#482).
+* RSS reader for SQLiteStudio news. New entries will notify user in gentle way, so he doesn't get tired of it. Possibility to disable.
+* Images in blob cells preview as miniatures. Generating miniatures in threads, so it's smooth process.
+* Some fancy look&feel for the hint widget (using ttk::frame and custom style), toolbar, taskbar and menubar widgets.
+  Additionaly fade-in for hint under windows and macosx.
+  Toolbar should look appropriately for osx and windows.
+* TaskBar should be configured in positioning regards (on top, on bottom, etc), or even made to be a toolbar for D&D.
+* Rework DB::getColumnInfo so it's more general method describing table or column and make DB::getColumnInfo to just use this more general method.
+
+*** 2.4.0
+* Upgrade MDI area to support auto-scrollbars for windows moved out of area.
+* Migrate all UI texts to "textvariable", so the interface language gets applied immediately (menus need manual update).
+* Remote databases using TclVFS (ftp, zip).
+* Switch validation of dialog windows to dialog-less warning with "drones" and status message.
+* Layout of exported PDF would have a kind of "report visual editor", so user can design output layout of exported PDF, PNG, etc.
+* Databases diff.
+* Printing support. One way would be to use PDF exporting.
+* Add list of directories to Themes Configuration tab, so user can point the directory where additional
+  themes might be placed.
+* Update documentation and use doxygen.
+* Translations like in jackins/hadson
+* Source code generating - stubs (and maybe database accessing), with XSD as option, for:
+  - C
+  - C++
+  - Java
+  - C#
+  - Tcl (Itcl, TclOO, other?)
+  - PHP
+  - Python
+  - Ruby
+  - Perl
+
+*** Future versions:
+* Web interface with jQuery -- http://jquery.com/?
+* Fancy support for Android SQLite databases when it becomes possible. At the moment it's pretty much impossible to access databases from device without root access.
+* Importing from RRD.
+
+*** Internal changes, meaningless for regular user:
+* Exclude base functionality from some of classes (like Grid) to make them totally independend
+  from local context. There should be base Grid class and some extending class used for this project.
+  Same thing with other classes. It will make a nice widgets library.
