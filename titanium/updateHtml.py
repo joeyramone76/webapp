@@ -5,6 +5,9 @@ import os
 import MySQLdb as mdb
 import datetime
 import time
+import SearchFile
+import re
+import string;
 
 conn = None;
 
@@ -12,6 +15,7 @@ def sayHello(argv=None):
 	print sys.argv;
 	print len(sys.argv);
 	print sys.argv[:];
+	print sys.path;
 	
 def test():
 	try:
@@ -51,6 +55,144 @@ def test():
 			
 def update():
 	print "update";
+	files = searchHtmlFile();
+	for filePath in files:
+		print filePath;
+		content = readFile(filePath);
+		
+		#./css href="./css
+		content = replace(filePath, content, r'(href=")\./(css)');
+		#./favicon
+		content = replace(filePath, content, r'(href=")\./(favicon)');
+		#./js
+		content = replace(filePath, content, r'(src=")\./(js)');
+		#./images
+		content = replace(filePath, content, r'(src=")\./(images)');
+		#./uploads
+		content = replace(filePath, content, r'(src=")\./(uploads)');
+		#./imgGallery
+		content = replace(filePath, content, r'(src=")\./(imgGallery)');
+		
+		#href="/"
+		prefixPath = getPrefixPath(filePath);
+		rgx = re.compile(r'(href=")/(")');
+		content = rgx.sub('\\1'+prefixPath+'/index.html\\2', content);
+		
+		#href="/aboutMe/detail/page_id/13"
+		prefixPath = getPrefixPath(filePath);
+		rgx = re.compile(r'(href=")(/[\w|/]+)(")');
+		content = rgx.sub('\\1'+prefixPath+'\\2.html\\3', content);
+		
+		writeFile(filePath, content);
+	
+def searchHtmlFile():
+	print "searchHtmlFile";
+	searchFile = SearchFile.SearchFile("m.shenglong-electric.com.cn/", ".html");
+	files = searchFile.getAllFiles();
+	newFiles = [];
+	for filePath in files:
+		filePath = string.replace(filePath, "/", "\\");
+		newFiles.append(filePath);
+	return newFiles;
+
+def testUpdate():
+	print "testUpdate";
+	#filePath = "m.shenglong-electric.com.cn\\aboutMe.html";
+	filePath = "m.shenglong-electric.com.cn\\aboutMe\\detail\\page_id\\13.html";
+	content = readFile(filePath);
+	#正则匹配 路径
+	#.    匹配除换行符以外的任意字符
+	#^    匹配字符串的开始
+	#$    匹配字符串的结束
+	#[]   用来匹配一个指定的字符类别
+	#？   对于前一个字符字符重复0次到1次
+	#*    对于前一个字符重复0次到无穷次
+	#{}   对于前一个字符重复m次
+	#{m，n} 对前一个字符重复为m到n次
+	#\d   匹配数字，相当于[0-9]
+	#\D   匹配任何非数字字符，相当于[^0-9]
+	#\s   匹配任意的空白符，相当于[ fv]
+	#\S   匹配任何非空白字符，相当于[^ fv]
+	#\w   匹配任何字母数字字符，相当于[a-zA-Z0-9_]
+	#\W   匹配任何非字母数字字符，相当于[^a-zA-Z0-9_]
+	#\b   匹配单词的开始或结束
+	#href="/"
+	#href="/aboutMe/detail/page_id/13"
+	#match = re.search(r'href="/"', content);
+	#match = re.match(r'href="/"', content);
+	
+	#src = 'aabcdddd'
+	#print re.sub('(ab).*(d)', '\\1e\\2', src)
+	#src  = 'aabcdddd'
+	#rgx = re.compile('(?<=ab).*?(?=d)')
+	#print rgx.sub('e',src)
+	src  = 'aabcdddd'
+	rgx = re.compile(r'(ab)(.*?)(d)')
+	print rgx.sub(r'\1\2\3', src)
+
+	match = re.findall(r'href="/[\w|/]*"', content);
+	if(match):
+		print match;
+	
+	#./css href="./css
+	content = replace(filePath, content, r'(href=")\./(css)');
+	#./favicon
+	content = replace(filePath, content, r'(href=")\./(favicon)');
+	#./js
+	content = replace(filePath, content, r'(src=")\./(js)');
+	#./images
+	content = replace(filePath, content, r'(src=")\./(images)');
+	#./uploads
+	content = replace(filePath, content, r'(src=")\./(uploads)');
+	#./imgGallery
+	content = replace(filePath, content, r'(src=")\./(imgGallery)');
+	
+	#href="/"
+	prefixPath = getPrefixPath(filePath);
+	rgx = re.compile(r'(href=")/(")');
+	content = rgx.sub('\\1'+prefixPath+'/index.html\\2', content);
+	
+	#href="/aboutMe/detail/page_id/13"
+	prefixPath = getPrefixPath(filePath);
+	rgx = re.compile(r'(href=")(/[\w|/]+)(")');
+	content = rgx.sub('\\1'+prefixPath+'\\2.html\\3', content);
+	#print content;
+	
+	writeFile(filePath, content);
+	
+def replace(filePath, content, strPattern):
+	prefixPath = getPrefixPath(filePath);
+	rgx = re.compile(strPattern);
+	content = rgx.sub('\\1'+prefixPath+'/\\2', content);
+	return content;
+	
+def getPrefixPath(filePath):
+	'''获得url前缀'''
+	count = string.count(filePath, "\\");
+	prefixPath = "";
+	if(count == 1):
+		prefixPath = "./";
+	else:
+		for i in range(1, count):
+			prefixPath += "../";
+	prefixPath = prefixPath[:len(prefixPath) - 1];
+	return prefixPath;
+	
+def readFile(filePath):
+	f = file(filePath, "r");
+	content = "";
+	while True:
+		line = f.readline();
+		if(len(line) == 0):
+			break;
+		content += line;
+	f.close();
+	return content;
+
+def writeFile(filePath, content):
+	f = file(filePath, "w");
+	f.write(content);
+	f.close();
 	
 #将conn设定为全局连接
 conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
@@ -132,3 +274,9 @@ if __name__ == "__main__":
 		test();
 	elif(methodName == "update"):
 		update();
+	elif(methodName == "searchHtmlFile"):
+		searchHtmlFile();
+	elif(methodName == "testUpdate"):
+		testUpdate();
+	elif(methodName == "getPrefixPath"):
+		print getPrefixPath("\\\\");

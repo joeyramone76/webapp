@@ -1,0 +1,228 @@
+.slider{
+	position: relative;
+}
+.slider img{
+    display: block;
+    width: 100%;
+}
+.side_bar{}
+.pages_list{
+    border-top: 1px solid #ccc;
+}
+.side_bar h1{
+	background: #b70000;
+	color: #fff;
+	padding: 13px 10px;
+	font-weight: 900;
+	font-size: 16px;
+}
+.side_bar h1 span{
+	font-weight: normal;
+	font-size: 13px;
+	font-family: Arial;
+}
+.side_bar .f_item{
+	border-bottom: 1px solid #ccc;
+    position: relative;
+    background: -webkit-linear-gradient(top,#fff 0%,#f3f3f3 100%);
+    background: -o-linear-gradient(top,#fff 0%,#f3f3f3 100%);
+    background: -moz-linear-gradient(top,#fff 0%,#f3f3f3 100%);
+    background: linear-gradient(top,#fff 0%,#f3f3f3 100%);
+}
+.side_bar .f_name{
+	display: block;
+    padding: 12px 5px 12px 15px;
+	color: #333;
+	text-decoration: none;
+	outline:none;
+	ie-dummy: expression(this.hideFocus=true);
+}
+.side_bar li.cur .f_name{
+	color: #b70000;
+	font-weight: 900;
+	background: url(/images/side_bar_li_ico.png) left center no-repeat;
+}
+.side_bar .f_name span{
+	display: block;
+}
+.side_bar .s_menu{
+	display: none
+}
+.side_bar .s_menu li{
+	margin-left: 35px;
+}
+.side_bar .s_menu li a{
+	display: block;
+	height: 34px;
+	line-height: 34px;
+	color: #333;
+	background: url(/images/s_menu_li_arrow.png) no-repeat left top;
+	padding-left: 8px;
+	text-decoration: none;
+	outline:none;
+	ie-dummy: expression(this.hideFocus=true)
+}
+.side_bar .s_menu li.cur a,.side_bar .s_menu li a:hover{
+	background-position: left -34px;
+}
+.handle_ico{
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/plus.gif);
+}
+ul li.cur .handle_ico,.opened{
+    background-position: 0 -48px;
+}
+ul li.cur .closed{
+    background-position: 0 0;
+}
+.page_main{}
+.page_content{
+	padding: .5em;
+    font-size: 16px;
+}
+.page_content p{
+    margin: 5px 0;
+}
+.page_content img{
+    height: auto!important;
+    width: 100%!important;
+}
+.page_header{
+	padding:10px 10px;
+	border-bottom:1px solid #ccc;
+}
+.page_header h2{
+	display: inline-block;
+	float: left;
+	color: #b70000;
+}
+.bread_crumbs{
+    margin: .8em .5em;
+}
+.bread_crumbs a{color: #09f;}
+.base_slider{
+    position: relative;
+    margin-top:15px;
+}
+a.prev,a.next{
+    height: 16px;
+    background: #ddd url(../images/arrow_up.png) no-repeat center 40%;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+a.next{
+    background: #ccc url(../images/arrow_down.png) no-repeat center center;
+}
+a.last{
+    background-image: none;
+}
+.base_box{
+    margin: 15px 0 5px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    width: 100%;
+}
+.base_container li{
+    margin-bottom:10px;
+    width: 220px;
+    height: 90px;
+    overflow: hidden;
+}
+.base_container li img{
+    display: block;
+}
+
+.img_item{
+    position: relative;
+    width: 208px;
+    margin: 0 auto 1em;
+}
+.cover{
+    background: #fff;
+    position: relative;
+    z-index: 100;
+    width: 208px;
+    height: 153px;
+}
+.cover img{
+    display: block;
+}
+.cover_inner{
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+.cover a{
+    display: block;
+    height: 130px;
+    width: 200px;
+    overflow: hidden;
+}
+.gname{
+    font-size: 12px;
+}
+.gname a{
+    color: #333;
+    font-size: 12px;
+}
+.img_item img.tips{
+    position: absolute;
+    top: -30px;
+    left: 80px;
+    z-index: 9999;
+}
+/*date_cat*/
+.date_cat{
+    margin-top: 15px
+}
+.base_nav{
+    height: 25px;
+    line-height: 25px;
+    background: #eee;
+}
+.base_nav a{
+    display: block;
+    float: left;
+    text-align: center;
+    color: #666;
+    background:#fff;
+    padding-left: 2px;
+    text-decoration: none;
+    margin-bottom:.5em;
+}
+.base_nav a:hover span{
+    text-decoration: none;
+    color: #fff;
+    background: #B70000
+}
+.base_nav a span{
+    display: block;
+    background: #eee;
+    padding: 0 .5em;
+}
+.base_nav a.cur span,.base_nav a.cur:hover span{
+    background: #fff;
+    color: #B70000;
+    font-weight: 900;
+    cursor: default
+}
+.back_btn{
+    margin-top: 10px;
+    text-align: right;
+    margin-right: .5em;
+}
+.back_btn a{
+    color: #333;
+    font-size: 13px;
+}
+.back_btn img {
+    vertical-align: text-bottom;
+    margin-right: 5px;
+}

@@ -1,0 +1,13 @@
+Package sqlite3 3.7.16.1
+Meta as::author      {Richard Hipp}
+Meta as::build::date 2013-04-01
+Meta as::changelog   http://www.sqlite.org/changes.html
+Meta as::origin      http://www.sqlite.org
+Meta category        Database
+Meta description     Tcl interface to an embedded full-fledged sql
+Meta description     database
+Meta license         {Public Domain}
+Meta platform        macosx10.5-i386-x86_64
+Meta require         {Tcl 8.4}
+Meta subject         sql database table dbms rdbms column cell embedded
+Meta summary         Tcl binding to the sqlite embedded database

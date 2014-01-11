@@ -1,0 +1,13 @@
+Package img::png 1.4.1
+Meta as::build::date 2011-12-06
+Meta as::origin      http://sourceforge.net/projects/tkimg
+Meta category        Tk Image Format
+Meta description     This is support for the png image format.
+Meta license         BSD
+Meta platform        macosx10.5-i386-x86_64
+Meta require         {img::base 1.4-2}
+Meta require         {Tcl 8.4}
+Meta require         {Tk 8.4}
+Meta require         pngtcl
+Meta subject         png
+Meta summary         png Image Support

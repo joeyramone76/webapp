@@ -1,8 +1,10 @@
 var dbUtil = {};
 
 dbUtil.initDB = function() {
-	var db = Ti.Database.open('shenglongdb');
-	db.execute('create table if not exists weather(date text,address text,data text)');
+	var db = Ti.Database.open('shenglong-electricv');
+	var fileUtil = require('utils/fileUtil');
+	var sql = fileUtil.readFile('db/shenglong-electricv.sql');
+	db.execute(sql);
 };
 
 dbUtil.test = function() {

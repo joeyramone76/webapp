@@ -1,0 +1,42 @@
+.slider{
+    overflow: hidden;
+    position: relative;
+}
+.slider a{
+    display: block;
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.slider img {
+    display: block;
+    float: left;
+    width: 100%;
+}
+.thumbs{
+    text-align: center;
+    overflow: hidden;
+    clear: both;
+    position: absolute;
+    right: .5em;
+    bottom: 1em;
+}
+.thumbs_inner{
+    width: 6em;
+    margin: 0 auto;
+}
+.thumbs span{
+    display: block;
+    background: #000;
+    margin: 0 .3em;
+    height: .7em;
+    width: .7em;
+    overflow: hidden;
+    text-indent: -9999em;
+    border-radius: .7em;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    float: left;
+}
+.thumbs span.cur{
+    background: #db0424;
+}

@@ -1,0 +1,39 @@
+Homepage of SQLiteStudio
+========================
+http://sqlitestudio.pl
+
+Author
+======
+Pawel Salawa
+
+Features of SQLiteStudio
+========================
+
+* Single executable file - it's portable and there's no need to install
+  or uninstall it,
+
+* Intuitive interface,
+
+* All SQLite3 and SQLite2 features wrapped witin simple GUI,
+
+* Cross-platform - runs on Windows 9x/2k/XP/2003/Vista/7, Linux, MacOS X,
+  Solaris, FreeBSD and should work on other Unixes (not tested yet).
+
+* Localizations (English, Polish, German, Spainish, Russian),
+
+* Exporting to various formats (SQL statements, CSV, HTML, XML),
+
+* Numerous small additions, like formatting code, history of queries executed
+  in editor windows, on-the-fly syntax checking, and more,
+
+* UTF-8 support,
+
+* Skinnable (interface can look native for Windows 9x/XP, KDE, GTK, Mac OS X,
+  or draw widgets to fit for other environments, like Gnome, WindowMaker, etc),
+
+* Configurable colors, fonts and shortcuts.
+
+* Open source and free - Released under GPLv2 licence.
+
+* Licenced under GPLv2.
+
