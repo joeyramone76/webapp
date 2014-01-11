@@ -513,9 +513,9 @@ def exportMenus():
 	menus = [];
 	menu = {
 		'id': id,
-		'menu_code': menu_code,
-		'menu_name': menu_name,
-		'menu_showName': menu_showName,
+		'code': menu_code,
+		'name': menu_name,
+		'showName': menu_showName,
 		'type': type,
 		'icon': icon,
 		'banner': banner,
@@ -531,9 +531,9 @@ def exportMenus():
 	for row in cursor.fetchall():
 		menu = {
 			'id': row[0],
-			'menu_code': row[1],
-			'menu_name': row[2],
-			'menu_showName': row[3],
+			'code': row[1],
+			'name': row[2],
+			'showName': row[3],
 			'type': row[4],
 			'icon': row[5],
 			'banner': row[6],
@@ -564,7 +564,7 @@ def addSubmenu(menu):
 	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
 	conn.commit();
 	
-	sql = "SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='%s'" % menu["menu_code"];
+	sql = "SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='%s'" % menu["code"];
 	
 	cursor.execute(sql);
 	
@@ -586,9 +586,9 @@ def addSubmenu(menu):
 	submenus = [];
 	submenu = {
 		'id': id,
-		'menu_code': menu_code,
-		'menu_name': menu_name,
-		'menu_showName': menu_showName,
+		'code': menu_code,
+		'name': menu_name,
+		'showName': menu_showName,
 		'type': type,
 		'icon': icon,
 		'banner': banner,
@@ -604,9 +604,9 @@ def addSubmenu(menu):
 	for row in cursor.fetchall():
 		submenu = {
 			'id': row[0],
-			'menu_code': row[1],
-			'menu_name': row[2],
-			'menu_showName': row[3],
+			'code': row[1],
+			'name': row[2],
+			'showName': row[3],
 			'type': row[4],
 			'icon': row[5],
 			'banner': row[6],
@@ -620,7 +620,7 @@ def addSubmenu(menu):
 			'submenus': []
 		};
 		
-		sql = "SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='%s'" % submenu["menu_code"];
+		sql = "SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='%s'" % submenu["code"];
 		cur = conn.cursor()
 		cur.execute(sql);
 		row = cur.fetchone();
