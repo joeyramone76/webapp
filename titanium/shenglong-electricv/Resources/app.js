@@ -28,6 +28,9 @@ if (Ti.version < 1.8) {
 	Ti.include('data/initData.js');
 	initData.initDB();
 	
+	var config = require('ui/config/config');
+	Ti.App.menus = config.menus;//global
+	
 	if(osname === 'iphone' || osname === 'ipad') {
 		Window = require('ui/handheld/ios/ApplicationWindow');
 	} else if(osname === 'mobileweb') {

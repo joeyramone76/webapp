@@ -36,6 +36,9 @@ tabGroupHelper.bindEvent = function(window, welcomeWindow) {
 	window.addEventListener("open", function(e) {
 		welcomeWindow.open({modal: true});
 	});
+	window.addEventListener("singletap", function(e) {
+		
+	});
 };
 
 exports.tabGroupHelper = tabGroupHelper;

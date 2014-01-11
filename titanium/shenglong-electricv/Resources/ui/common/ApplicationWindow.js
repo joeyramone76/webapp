@@ -12,7 +12,15 @@ function ApplicationWindow(opts) {
 	var webview = Ti.UI.createWebView({
 		url: url,
 		hideLoadIndicator: true,
-		top: 40
+		top: 40,
+		menu: opts.menu,
+		code: opts.menu.code,
+		type: opts.type,
+		pageId: opts.menu.pageId,
+		newsId: opts.menu.newsId,
+		parentCode: opts.menu.parentCode,
+		sl_cid: opts.menu.sl_cid,
+		url: opts.menu.url//template
 	});
 	
 	/**
@@ -41,6 +49,14 @@ function ApplicationWindow(opts) {
 	webview.addEventListener('load', function(e) {
 		activityIndicator.hide();
 		//change content
+		url = this.url;
+		
+		webUtil = require('utils/webUtil');
+		webUtil.getContent(this);
+		
+		Ti.App.fireEvent('app:changeContent', {
+			pageId: this.menu.pageId
+		});
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");
