@@ -103,5 +103,12 @@ SHOW CREATE TABLE app_pages;
 SHOW CREATE TABLE app_news;
 
 -- 2014-01-11
+SELECT * FROM app_menus;
 SELECT * FROM app_news;
 SELECT * FROM app_news WHERE content LIKE '%uploads%';
+
+UPDATE app_menus SET url='/website/page_template.html' WHERE TYPE=1;
+-- /website/submenu.html
+SELECT * FROM app_menus WHERE LENGTH(parentCode)=6;
+SELECT * FROM app_menus WHERE menu_code IN (SELECT DISTINCT parentCode FROM app_menus WHERE LENGTH(parentCode)=6);
+SELECT * FROM app_menus;
