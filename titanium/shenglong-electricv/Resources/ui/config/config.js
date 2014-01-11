@@ -7,7 +7,7 @@ config.menus = [
         "id": 1,
         "name": "home",
         "newsId": "",
-        "pageId": "",
+        "pageId": "13",
         "parentCode": "",
         "parentId": 0,
         "showName": "关于盛隆",
@@ -332,12 +332,12 @@ config.menus = [
         "icon": "/images/tabs/news.png",
         "id": 20,
         "name": "news",
-        "newsId": "",
+        "newsId": "7",
         "pageId": "",
         "parentCode": "",
         "parentId": 0,
         "showName": "新闻中心",
-        "sl_cid": "",
+        "sl_cid": "7",
         "sl_url": "",
         "submenus": [
             {
@@ -738,7 +738,7 @@ config.menus = [
             }
         ],
         "type": 0,
-        "url": "/website/page_template.html"
+        "url": "/website/submenu.html"
     },
     {
         "banner": "",
@@ -747,7 +747,7 @@ config.menus = [
         "id": 44,
         "name": "customer",
         "newsId": "",
-        "pageId": "",
+        "pageId": "29",
         "parentCode": "",
         "parentId": 0,
         "showName": "客户与成功案例",
@@ -864,12 +864,12 @@ config.menus = [
                 "id": 51,
                 "name": "companys",
                 "newsId": "",
-                "pageId": "",
+                "pageId": "2",
                 "parentCode": "005",
                 "parentId": 0,
                 "showName": "五大营",
                 "sl_cid": "",
-                "sl_url": "",
+                "sl_url": "http://m.shenglong-electric.com.cn/contact/detail/page_id/2",
                 "submenus": [
                     {
                         "banner": "",
@@ -878,7 +878,7 @@ config.menus = [
                         "id": 52,
                         "name": "wuhan",
                         "newsId": "",
-                        "pageId": "",
+                        "pageId": "-1",
                         "parentCode": "005001",
                         "parentId": 0,
                         "showName": "武汉公司",
@@ -886,7 +886,7 @@ config.menus = [
                         "sl_url": "",
                         "submenus": [],
                         "type": 3,
-                        "url": ""
+                        "url": "/website/page_template.html"
                     },
                     {
                         "banner": "",
@@ -895,7 +895,7 @@ config.menus = [
                         "id": 53,
                         "name": "beijing",
                         "newsId": "",
-                        "pageId": "",
+                        "pageId": "-2",
                         "parentCode": "005001",
                         "parentId": 0,
                         "showName": "北京公司",
@@ -903,7 +903,7 @@ config.menus = [
                         "sl_url": "",
                         "submenus": [],
                         "type": 3,
-                        "url": ""
+                        "url": "/website/page_template.html"
                     },
                     {
                         "banner": "",
@@ -912,7 +912,7 @@ config.menus = [
                         "id": 54,
                         "name": "guangzhou",
                         "newsId": "",
-                        "pageId": "",
+                        "pageId": "-3",
                         "parentCode": "005001",
                         "parentId": 0,
                         "showName": "广州公司",
@@ -920,7 +920,7 @@ config.menus = [
                         "sl_url": "",
                         "submenus": [],
                         "type": 3,
-                        "url": ""
+                        "url": "/website/page_template.html"
                     },
                     {
                         "banner": "",
@@ -929,7 +929,7 @@ config.menus = [
                         "id": 55,
                         "name": "shanghai",
                         "newsId": "",
-                        "pageId": "",
+                        "pageId": "-4",
                         "parentCode": "005001",
                         "parentId": 0,
                         "showName": "上海公司",
@@ -937,7 +937,7 @@ config.menus = [
                         "sl_url": "",
                         "submenus": [],
                         "type": 3,
-                        "url": ""
+                        "url": "/website/page_template.html"
                     },
                     {
                         "banner": "",
@@ -946,7 +946,7 @@ config.menus = [
                         "id": 56,
                         "name": "chongqing",
                         "newsId": "",
-                        "pageId": "",
+                        "pageId": "-5",
                         "parentCode": "005001",
                         "parentId": 0,
                         "showName": "重庆公司",
@@ -954,7 +954,7 @@ config.menus = [
                         "sl_url": "",
                         "submenus": [],
                         "type": 3,
-                        "url": ""
+                        "url": "/website/page_template.html"
                     }
                 ],
                 "type": 0,
@@ -996,7 +996,7 @@ config.menus = [
             }
         ],
         "type": 0,
-        "url": "/website/page_template.html"
+        "url": "/website/submenu.html"
     }
 ];
 exports.config = config;

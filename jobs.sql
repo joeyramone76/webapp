@@ -119,3 +119,11 @@ SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parent
 SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001';
 SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001003002';
 SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001004';
+
+-- 2014-01-12
+SELECT * FROM app_menus;
+SHOW CREATE TABLE app_menus;
+SHOW CREATE TABLE app_pages;
+SELECT * FROM app_pages;
+
+SELECT * FROM app_menus WHERE parentCode='';
