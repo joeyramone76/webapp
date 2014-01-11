@@ -11,6 +11,8 @@ if "%1"=="sayHello" (
 	python grap.py readJson
 ) else if "%1"=="grap_content" (
 	python grap.py grap_content
+) else if "%1"=="exportMenus" (
+	python grap.py exportMenus
 ) else if "%1"=="help" (
 	echo grap command:
 	echo grap sayHello
@@ -21,6 +23,7 @@ if "%1"=="sayHello" (
 	echo     initMenus
 	echo     readJson
 	echo     grap_content
+	echo     exportMenus
 ) else (
 	echo wrong command
 )

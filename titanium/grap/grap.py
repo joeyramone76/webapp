@@ -478,6 +478,159 @@ def readFile(filePath):
 	f.close();
 	return content;
 	
+def exportMenus():
+	'''导出菜单'''
+	fileName = "menus.txt";
+	f = file(fileName, "w");
+	#f = codecs.open(fileName, "w", 'utf-8');
+	
+	cursor = conn.cursor();
+	cursor.execute("SET NAMES utf8");
+	cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
+	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
+	conn.commit();
+	
+	sql = "SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode=''";
+	
+	cursor.execute(sql);
+	id = 0;
+	menu_code = "";
+	menu_name = "";
+	menu_showName = "";
+	type = 0;
+	icon = "";
+	banner = "";
+	url = "";
+	sl_url = "";
+	parentId = 0;
+	parentCode = "";
+	pageId = 0;
+	newsId = 0;
+	sl_cid = 0;
+	
+	menus = [];
+	menu = {
+		'id': id,
+		'menu_code': menu_code,
+		'menu_name': menu_name,
+		'menu_showName': menu_showName,
+		'type': type,
+		'icon': icon,
+		'banner': banner,
+		'url': url,
+		'sl_url': sl_url,
+		'parentId': parentId,
+		'parentCode': parentCode,
+		'pageId': pageId,
+		'newsId': newsId,
+		'sl_cid': sl_cid,
+		'submenus': []
+	};
+	for row in cursor.fetchall():
+		menu = {
+			'id': row[0],
+			'menu_code': row[1],
+			'menu_name': row[2],
+			'menu_showName': row[3],
+			'type': row[4],
+			'icon': row[5],
+			'banner': row[6],
+			'url': row[7],
+			'sl_url': row[8],
+			'parentId': row[9],
+			'parentCode': row[10],
+			'pageId': row[11],
+			'newsId': row[12],
+			'sl_cid': row[13],
+			'submenus': []
+		};
+		
+		addSubmenu(menu);
+		menus.append(menu);
+		
+	f.write(json.dumps(menus, sort_keys=True, indent=4, separators=(',', ': ')));
+	
+	f.close();
+	cursor.close();
+	conn.close();
+	
+def addSubmenu(menu):
+	cursor = conn.cursor();
+	cursor.execute("SET NAMES utf8");
+	cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
+	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
+	conn.commit();
+	
+	sql = "SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='%s'" % menu["menu_code"];
+	
+	cursor.execute(sql);
+	
+	id = 0;
+	menu_code = "";
+	menu_name = "";
+	menu_showName = "";
+	type = 0;
+	icon = "";
+	banner = "";
+	url = "";
+	sl_url = "";
+	parentId = 0;
+	parentCode = "";
+	pageId = 0;
+	newsId = 0;
+	sl_cid = 0;
+	
+	submenus = [];
+	submenu = {
+		'id': id,
+		'menu_code': menu_code,
+		'menu_name': menu_name,
+		'menu_showName': menu_showName,
+		'type': type,
+		'icon': icon,
+		'banner': banner,
+		'url': url,
+		'sl_url': sl_url,
+		'parentId': parentId,
+		'parentCode': parentCode,
+		'pageId': pageId,
+		'newsId': newsId,
+		'sl_cid': sl_cid,
+		'submenus': []
+	};
+	for row in cursor.fetchall():
+		submenu = {
+			'id': row[0],
+			'menu_code': row[1],
+			'menu_name': row[2],
+			'menu_showName': row[3],
+			'type': row[4],
+			'icon': row[5],
+			'banner': row[6],
+			'url': row[7],
+			'sl_url': row[8],
+			'parentId': row[9],
+			'parentCode': row[10],
+			'pageId': row[11],
+			'newsId': row[12],
+			'sl_cid': row[13],
+			'submenus': []
+		};
+		
+		sql = "SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='%s'" % submenu["menu_code"];
+		cur = conn.cursor()
+		cur.execute(sql);
+		row = cur.fetchone();
+		count = row[0];
+		cur.close();
+		if(count > 0):
+			addSubmenu(submenu);
+		submenus.append(submenu);
+		
+	menu["submenus"] = submenus;
+		
+	cursor.close();
+	
 if __name__ == "__main__":
 	methodName = sys.argv[1];
 	if(methodName == "sayHello"):
@@ -494,3 +647,5 @@ if __name__ == "__main__":
 		else:
 			type = 2;
 		grap_content(type);
+	elif(methodName == "exportMenus"):
+		exportMenus();

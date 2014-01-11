@@ -1,5 +1,4 @@
-var config = {};
-config.menus = [
+[
     {
         "banner": "",
         "icon": "/images/tabs/home.png",
@@ -998,6 +997,4 @@ config.menus = [
         "type": 0,
         "url": "/website/page_template.html"
     }
-];
-exports.config = config;
-exports.menus = config.menus;
+]

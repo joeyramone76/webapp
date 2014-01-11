@@ -112,3 +112,10 @@ UPDATE app_menus SET url='/website/page_template.html' WHERE TYPE=1;
 SELECT * FROM app_menus WHERE LENGTH(parentCode)=6;
 SELECT * FROM app_menus WHERE menu_code IN (SELECT DISTINCT parentCode FROM app_menus WHERE LENGTH(parentCode)=6);
 SELECT * FROM app_menus;
+SELECT * FROM app_menus WHERE url='';
+
+SELECT * FROM app_menus WHERE parentCode='';
+SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='';
+SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001';
+SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001003002';
+SELECT COUNT(1) `count` FROM app_menus WHERE parentCode='001004';
