@@ -1,5 +1,5 @@
 function TrafficControlsService() {
-	this.url = "http://html5share.duapp.com/services/trafficControls.php";
+	this.url = "http://iMarket.duapp.com/services/trafficControls.php";
 }
 
 Ti.include('utils/netUtil.js');
