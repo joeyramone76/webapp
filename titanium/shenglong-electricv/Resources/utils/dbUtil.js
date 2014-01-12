@@ -55,6 +55,29 @@ dbUtil.getData = function(sql, columns) {
 	return datas;
 };
 
+dbUtil.getPageByMenuCode = function(menu_code) {
+	var db = Ti.Database.open('shenglong-electricv');
+	var sql = "SELECT id,sl_page_id,title,image,content,post_date,post_time,date FROM app_pages WHERE menu_code='" + menu_code + "'";
+	var rows = db.execute(sql);
+	
+	var count = rows.rowCount;
+	var columns = ["id","sl_page_id","title","image","content","post_date","post_time","date"];
+	var datas = [];
+	var data = {};
+	while(rows.isValidRow()) {
+		for(var i = 0 ; i < columns.length ; i++) {
+			data[columns[i]] = rows.fieldByName(columns[i]);
+		}
+		datas.push(data);
+		rows.next();
+	}
+	
+	rows.close();
+	db.close();
+	
+	return datas;
+};
+
 dbUtil.getPage = function(pageId) {
 	var db = Ti.Database.open('shenglong-electricv');
 	var sql = "SELECT id,sl_page_id,title,image,content,post_date,post_time,date FROM app_pages WHERE sl_page_id=?";
@@ -123,3 +146,4 @@ exports.dbUtil = dbUtil;
 exports.initDB = dbUtil.initDB;
 exports.getData = dbUtil.getData;
 exports.getPage = dbUtil.getPage;
+exports.getPageByMenuCode = dbUtil.getPageByMenuCode;

@@ -5,15 +5,17 @@ webUtil.getContent = function(webview) {
 	var dbUtil = require('utils/dbUtil');
 	var datas = [];
 	var template_url = webview.template_url;
+	var code = "";
 	if(webview.type == 1) {// pages
 		//use db
-		datas = dbUtil.getPage(webview.pageId);
+		datas = dbUtil.getPageByMenuCode(webview.code);
 		content = datas[0].content;
 	} else if(webview.type == 2) {//newslist
 		
 	} else {
 		if(template_url.indexOf("page_template") > 0) {
-			datas = dbUtil.getPage(webview.pageId);
+			code = webview.code + "001";
+			datas = dbUtil.getPageByMenuCode(code);
 			content = datas[0].content;
 		} else if(template_url.indexOf("newslist_template") > 0) {
 			
