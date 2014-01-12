@@ -26,6 +26,7 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 			title: L(menus[i].name),
 			icon: icon,
 			window: appWin[i],
+			tabIndex: i,
 			menu: menus[i],
 			code: menus[i].code,
 			type: menus[i].type,
@@ -40,12 +41,16 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 	}
 };
 
-tabGroupHelper.bindEvent = function(window, welcomeWindow) {
-	window.addEventListener("open", function(e) {
+tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
+	tabGroup.addEventListener("open", function(e) {
 		welcomeWindow.open({modal: true});
 	});
-	window.addEventListener("singletap", function(e) {
+	tabGroup.addEventListener("singletap", function(e) {
 		
+	});
+	tabGroup.addEventListener("focus", function(e) {
+		var webview = e.tab.getWindow().getChildren()[3];
+		webview.reload();
 	});
 };
 
