@@ -127,3 +127,6 @@ SHOW CREATE TABLE app_pages;
 SELECT * FROM app_pages;
 
 SELECT * FROM app_menus WHERE parentCode='';
+
+SELECT id,sl_page_id,title,image,content,post_date,post_time,`date` FROM app_pages WHERE sl_page_id=13;
+SELECT id,sl_cid,sl_news_id,title,post_date,post_time,`year`,image,content,`date`,sl_url,icon,post_desc,page FROM app_news WHERE sl_cid=7;
