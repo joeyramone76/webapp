@@ -1,0 +1,1 @@
+/Users/peter/phonegap/webapp/titanium/shenglong-electricv/Resources/ui/common/baseui/scroll_views_tabs.js

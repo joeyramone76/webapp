@@ -1,0 +1,1 @@
+/Users/peter/phonegap/webapp/titanium/shenglong-electricv/Resources/libs/oauth/sha1.js
