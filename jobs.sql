@@ -130,3 +130,25 @@ SELECT * FROM app_menus WHERE parentCode='';
 
 SELECT id,sl_page_id,title,image,content,post_date,post_time,`date` FROM app_pages WHERE sl_page_id=13;
 SELECT id,sl_cid,sl_news_id,title,post_date,post_time,`year`,image,content,`date`,sl_url,icon,post_desc,page FROM app_news WHERE sl_cid=7;
+
+SELECT * FROM app_menus WHERE TYPE<>1 && TYPE<>2;
+SELECT * FROM app_menus WHERE parentCode='';
+
+SELECT id,sl_page_id,title,image,content,post_date,post_time,`date` FROM app_pages WHERE sl_page_id=29;
+
+ALTER TABLE app_pages ADD COLUMN menu_id INT(10) NOT NULL DEFAULT 0 COMMENT 'menu_id';
+ALTER TABLE app_pages ADD COLUMN menu_code VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'menu_code';
+
+SELECT id,menu_code,sl_url FROM app_menus WHERE TYPE=1;
+SELECT * FROM app_news;
+ALTER TABLE app_news ADD COLUMN menu_id INT(10) NOT NULL DEFAULT 0 COMMENT 'menu_id';
+ALTER TABLE app_news ADD COLUMN menu_code VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'menu_code';
+
+ALTER TABLE app_news ADD COLUMN menu_id INT(10) NOT NULL DEFAULT 0 COMMENT 'menu_id';
+ALTER TABLE app_menus ADD COLUMN page_menu_code VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'page_menu_code';
+
+SELECT * FROM app_menus;
+SELECT * FROM app_pages;
+SELECT * FROM app_news;
+
+UPDATE app_menus SET page_menu_code=menu_code WHERE TYPE=1;
