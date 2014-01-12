@@ -21,7 +21,7 @@ initData.initDB = function() {
 	db.execute("drop table if exists weather_citys");
 	db.execute("drop table if exists writers");
 	
-	var sql = fileUtil.readFile('db/shenglong-electricv-sqlite1.sql');
+	var sql = fileUtil.readFile('db/shenglong-electricv-sqlite.sql');
 	//var sql = fileUtil.readFile('db/testsql.sql');
 	var sql_array = sql.split(");");
 	for(var i = 0 ; i < sql_array.length ; i++) {
