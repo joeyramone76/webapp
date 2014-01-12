@@ -12,21 +12,53 @@ function ApplicationWindow(opts) {
 	var webview = Ti.UI.createWebView({
 		url: url,
 		hideLoadIndicator: true,
-		top: 40
+		top: 40,
+		menu: opts.menu,
+		code: opts.menu.code,
+		type: opts.menu.type,
+		pageId: opts.menu.pageId,
+		newsId: opts.menu.newsId,
+		parentCode: opts.menu.parentCode,
+		sl_cid: opts.menu.sl_cid,
+		template_url: opts.menu.url//template
 	});
 	
+	/**
+	 * 正在加载提示
+	 */
 	var ActivityIndicator = require("ui/common/ActivityIndicator");
 	var activityIndicator = new ActivityIndicator();
 	
+	/**
+	 * beforeload
+	 */
 	webview.addEventListener('beforeload', function(e) {
 		activityIndicator.show();
 	});
 	
+	/**
+	 * error
+	 */
 	webview.addEventListener('error', function(e) {
 		activityIndicator.hide();
 	});
 	
+	/**
+	 * load
+	 */
 	webview.addEventListener('load', function(e) {
+		//change content
+		url = this.url;
+		
+		webUtil = require('utils/webUtil');
+		content = webUtil.getContent(this);
+		
+		Ti.App.fireEvent('app:changeContent', {
+			type: this.menu.type,
+			pageId: this.menu.pageId,
+			content: content
+		});
+		
 		activityIndicator.hide();
 	});
 	

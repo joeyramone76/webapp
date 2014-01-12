@@ -10,6 +10,7 @@ function ApplicationTabGroup() {
 	tabGroupHelper.createAppTabs(self, welcomeWindow);
 
 	tabGroupHelper.bindEvent(self, welcomeWindow);
+	self.setActiveTab(1);
 	return self;
 };
 

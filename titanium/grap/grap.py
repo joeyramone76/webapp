@@ -155,7 +155,7 @@ def getMenus(file, menus, level, parentId, parentCode):
 		
 def grap_content(type):
 	'''grap_page'''
-	sql = "SELECT id,sl_url FROM app_menus WHERE type=%d" % type;
+	sql = "SELECT id,menu_code,sl_url FROM app_menus WHERE type=%d" % type;
 	
 	cursor = conn.cursor();
 	
@@ -198,7 +198,8 @@ def grap_content(type):
 	tableName = "";
 	for row in cursor.fetchall():
 		id = row[0];
-		sl_url = row[1];
+		menu_code = row[1];
+		sl_url = row[2];
 		
 		# http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/13
 		sl_content_id = int(sl_url[string.rfind(sl_url, "/") + 1:]);
@@ -213,8 +214,8 @@ def grap_content(type):
 			content = page["content"];
 			post_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S');
 			post_time = date;
-			sql = "insert into app_pages(sl_page_id,title,image,content,post_date,post_time,date) values (%d,'%s','%s','%s','%s',%d,%d)" % (sl_content_id,title,image,content,post_date,post_time,date);
-			sqlstring = "insert into app_pages(sl_page_id,title,image,content,post_date,post_time,date) values (%d,'%s','%s','%s','%s',%d,%d);\n" % (sl_content_id,title,image,content,post_date,post_time,date);
+			sql = "insert into app_pages(menu_id,menu_code,sl_page_id,title,image,content,post_date,post_time,date) values (%d,'%s',%d,'%s','%s','%s','%s',%d,%d)" % (id,menu_code,sl_content_id,title,image,content,post_date,post_time,date);
+			sqlstring = "insert into app_pages(menu_id,menu_code,sl_page_id,title,image,content,post_date,post_time,date) values (%d,'%s',%d,'%s','%s','%s','%s',%d,%d);\n" % (id,menu_code,sl_content_id,title,image,content,post_date,post_time,date);
 			file.write(sqlstring.decode('utf-8'));
 			cursor.execute(sql);
 			conn.commit();
@@ -233,8 +234,8 @@ def grap_content(type):
 				date_time = getDatetime(post_date);
 				post_time = time.mktime(date_time.timetuple());
 				date = int(time.time());
-				sql = "insert into app_news(sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date) values (%d,%d,'%s','%s','%s','%s','%s',%d,'%s',%d,%d)" % (sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date);
-				sqlstring = "insert into app_news(sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date) values (%d,%d,'%s','%s','%s','%s','%s',%d,'%s',%d,%d);\n" % (sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date);
+				sql = "insert into app_news(menu_id,menu_code,sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date) values (%d,'%s',%d,%d,'%s','%s','%s','%s','%s',%d,'%s',%d,%d)" % (id,menu_code,sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date);
+				sqlstring = "insert into app_news(menu_id,menu_code,sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date) values (%d,'%s',%d,%d,'%s','%s','%s','%s','%s',%d,'%s',%d,%d);\n" % (id,menu_code,sl_cid,sl_news_id,sl_url,title,image,content,post_desc,page,post_date,post_time,date);
 				#file.write(sqlstring.decode('utf-8'));
 				cursor.execute(sql);
 				conn.commit();
