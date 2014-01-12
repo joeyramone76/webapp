@@ -132,7 +132,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		submenuBgColor,
 		submenuBorderColor,
 		submenuFontColor,
-		activeTabIndex = 0;
+		activeTabIndex = 0,
+		menu;
 	for(var i = 0, l = submenus.length ; i < l ; i++) {
 		submenuName = submenus[i].showName;
 		buttonWidth = fontWidth * submenuName.length;
@@ -175,6 +176,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		} else {
 			url = submenus[i].url;
 		}
+		
+		menu = submenus[i];
+		
 		(function(url, i) {
 			submenuView[i].addEventListener('click', function(e) {
 				if(i == activeTabIndex) {
@@ -191,7 +195,14 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				submenuView[activeTabIndex].setBackgroundColor(activeBgColor);
 				submenuView[activeTabIndex].setBorderColor(activeBorderColor);
 				submenuLabel[activeTabIndex].setColor(activeFontColor);
+				
+				//webview change content
 				webview.setUrl(url);
+				
+				var menu = submenus[i];
+				webUtil = require('utils/webUtil');
+				webUtil.setWebviewAttribute(webview, menu);
+			
 				webview.reload();
 			});
 		})(url, i);

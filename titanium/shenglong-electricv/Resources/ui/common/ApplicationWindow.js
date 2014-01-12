@@ -15,12 +15,12 @@ function ApplicationWindow(opts) {
 		top: 40,
 		menu: opts.menu,
 		code: opts.menu.code,
-		type: opts.type,
+		type: opts.menu.type,
 		pageId: opts.menu.pageId,
 		newsId: opts.menu.newsId,
 		parentCode: opts.menu.parentCode,
 		sl_cid: opts.menu.sl_cid,
-		url: opts.menu.url//template
+		template_url: opts.menu.url//template
 	});
 	
 	/**
@@ -47,16 +47,19 @@ function ApplicationWindow(opts) {
 	 * load
 	 */
 	webview.addEventListener('load', function(e) {
-		activityIndicator.hide();
 		//change content
 		url = this.url;
 		
 		webUtil = require('utils/webUtil');
-		webUtil.getContent(this);
+		content = webUtil.getContent(this);
 		
 		Ti.App.fireEvent('app:changeContent', {
-			pageId: this.menu.pageId
+			type: this.menu.type,
+			pageId: this.menu.pageId,
+			content: content
 		});
+		
+		activityIndicator.hide();
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");

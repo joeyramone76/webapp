@@ -25,7 +25,15 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 		appTabs.push(Ti.UI.createTab({
 			title: L(menus[i].name),
 			icon: icon,
-			window: appWin[i]
+			window: appWin[i],
+			menu: menus[i],
+			code: menus[i].code,
+			type: menus[i].type,
+			pageId: menus[i].pageId,
+			newsId: menus[i].newsId,
+			parentCode: menus[i].parentCode,
+			sl_cid: menus[i].sl_cid,
+			template_url: menus[i].url//template
 		}));
 		appWin[i].containingTab = appTabs[i];
 		window.addTab(appTabs[i]);
