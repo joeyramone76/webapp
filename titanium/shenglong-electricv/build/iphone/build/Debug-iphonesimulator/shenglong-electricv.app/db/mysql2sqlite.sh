@@ -1,1 +1,0 @@
-/Users/peter/phonegap/webapp/titanium/shenglong-electricv/Resources/db/mysql2sqlite.sh

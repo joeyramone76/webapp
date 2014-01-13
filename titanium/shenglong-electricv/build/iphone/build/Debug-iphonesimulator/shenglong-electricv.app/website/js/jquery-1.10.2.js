@@ -1,1 +1,0 @@
-/Users/peter/phonegap/webapp/titanium/shenglong-electricv/Resources/website/js/jquery-1.10.2.js
