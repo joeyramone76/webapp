@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ids</key>
+	<dict>
+		<key>app</key>
+		<dict>
+			<key>tabGroup1</key>
+			<dict>
+				<key>barColor</key>
+				<string>#336699</string>
+			</dict>
+			<key>tab1</key>
+			<dict>
+				<key>icon</key>
+				<string>'images/KS_nav_ui.png',
+	titleid: 'base_ui_title'</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>classes</key>
+	<dict>
+		<key>app</key>
+		<dict>
+			<key>win1</key>
+			<dict>
+				<key>url</key>
+				<string>main_windows/base_ui.js</string>
+				<key>titleid</key>
+				<string>base_ui_title</string>
+				<key>titleImage</key>
+				<string>images/icon_small.png</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

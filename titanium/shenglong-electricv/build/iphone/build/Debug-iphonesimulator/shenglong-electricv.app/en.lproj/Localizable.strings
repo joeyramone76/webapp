@@ -1,0 +1,12 @@
+/**
+ * Appcelerator Titanium
+ * this is a generated file - DO NOT EDIT
+ */
+
+"home" = "Home";
+"introduction" = "introduction";
+"news" = "news";
+"product" = "product";
+"customer" = "customer";
+"connect" = "connect";
+"settings" = "Settings";

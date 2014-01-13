@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "universal",
+	"iosSdkPath": "/Users/peter/Library/Application Support/Titanium/mobilesdk/osx/3.2.0.GA/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "d9182d6",
+	"name": "shenglong-electricv",
+	"id": "com.shenglongelectricv.app",
+	"analytics": true,
+	"publisher": "peter",
+	"url": "http://www.shenglong-electric.com.cn/",
+	"version": "1.0.0",
+	"description": "盛隆电气",
+	"copyright": "2013 by peter",
+	"guid": "ade3f3f4-74e5-4292-b855-94a6c148f0a7",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}
