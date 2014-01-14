@@ -40,9 +40,13 @@
 			%>
 		</script>
 		<script type="text/javascript">
-			Ti.App.addEventListener("app:changeContent", function(e) {
-				changeContent(e.content);
-			});
+			if(typeof Ti != "undefined") {
+				Ti.App.addEventListener("app:changeContent", function(e) {
+					changeContent(e.content);
+				});
+			} else {
+				changeContent("");
+			}
 			function changeContent(content) {
 				var template = $("#contentTemplate").html();
 				$("#content").html(_.template(template, {content: content}));

@@ -35,9 +35,11 @@
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
 		<script type="text/javascript">
-			Ti.App.addEventListener("app:changeContent", function(e) {
-				
-			});
+			if(typeof Ti != "undefined") {
+				Ti.App.addEventListener("app:changeContent", function(e) {
+					
+				});
+			}
 		</script>
 	</body>
 </html>

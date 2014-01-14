@@ -40,12 +40,14 @@
 		<script type="text/javascript">
 			var menu = {};
 			var submenus = [];
-			Ti.App.addEventListener("app:changeSubmenu", function(e) {
-				changeSubmenu();
-			});
-			Ti.App.addEventListener("app:changeContent", function(e) {
-				changeSubmenu();
-			});
+			if(typeof Ti != "undefined") {
+				Ti.App.addEventListener("app:changeSubmenu", function(e) {
+					changeSubmenu();
+				});
+				Ti.App.addEventListener("app:changeContent", function(e) {
+					changeSubmenu();
+				});
+			}
 			function visitPage() {
 				Ti.App.fireEvent("app:visitPage", {
 					menu: menu
