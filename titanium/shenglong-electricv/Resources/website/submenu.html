@@ -47,6 +47,8 @@
 				Ti.App.addEventListener("app:changeContent", function(e) {
 					changeSubmenu();
 				});
+			} else {
+				changeSubmenu();
 			}
 			function visitPage() {
 				Ti.App.fireEvent("app:visitPage", {
