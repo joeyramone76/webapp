@@ -56,6 +56,7 @@ function ApplicationWindow(opts) {
 		Ti.App.fireEvent('app:changeContent', {
 			type: this.menu.type,
 			pageId: this.menu.pageId,
+			newsId: this.menu.newsId,
 			content: content
 		});
 		
@@ -69,6 +70,15 @@ function ApplicationWindow(opts) {
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
+	
+		webview.reload();
+	});
+	Ti.App.addEventListener('app:visitNews', function(e) {
+		var sl_news_id = e.sl_news_id;
+		
+		webview.setUrl('/website/news_template.html');
+		webview.type = 4;
+		webview.sl_news_id = sl_news_id;
 	
 		webview.reload();
 	});
