@@ -33,29 +33,55 @@
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
 		<script type="text/html" id="submenuTemplate">
-			<li class="f_item">
-				<a href="./page_template.html" class="f_name"><span>成套输配电设备</span></a>
-			</li>
+			<%
+				if(submenus != null) {
+					_.each(submenus, function(submenu) {
+			%>
+					<li class="f_item">
+						<a href="#" class="f_name" onclick="visitPage(<%= submenu.id%>)"><span><%= submenu.showName%></span></a>
+					</li>
+			<%
+					})
+				} else {
+			%>
+				<li class="f_item">
+					<a href="./page_template.html" class="f_name"><span>成套输配电设备</span></a>
+				</li>
+			<%
+				}
+			%>
 		</script>
 		<script type="text/javascript">
 			var menu = {};
 			var submenus = [];
 			if(typeof Ti != "undefined") {
 				Ti.App.addEventListener("app:changeSubmenu", function(e) {
-					changeSubmenu();
+					submenus = JSON.parse(e.submenus);
+					changeSubmenu(submenus);
 				});
 				Ti.App.addEventListener("app:changeContent", function(e) {
-					changeSubmenu();
+					submenus = JSON.parse(e.content);
+					changeSubmenu(submenus);
 				});
 			} else {
-				changeSubmenu();
+				changeSubmenu(null);
 			}
-			function visitPage() {
+			function visitPage(menuId) {
+				var menu = getMenu(menuId);
 				Ti.App.fireEvent("app:visitPage", {
-					menu: menu
+					menu: JSON.stringify(menu)
 				});
+				return false;
 			}
-			function changeSubmenu() {
+			function getMenu(menuId) {
+				for(var i = 0 ; i < submenus.length ; i++) {
+					if(menuId == submenus[i].id) {
+						return submenus[i];
+					}
+				}
+				return null;
+			}
+			function changeSubmenu(submenus) {
 				var template = $("#submenuTemplate").html();
 				$("#submenu").html(_.template(template, {submenus: submenus}));
 			}

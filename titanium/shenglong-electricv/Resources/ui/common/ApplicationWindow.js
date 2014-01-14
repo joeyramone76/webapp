@@ -62,6 +62,17 @@ function ApplicationWindow(opts) {
 		activityIndicator.hide();
 	});
 	
+	Ti.App.addEventListener('app:visitPage', function(e) {
+		var menu = JSON.parse(e.menu);
+		
+		webview.setUrl(menu.url);
+		
+		webUtil = require('utils/webUtil');
+		webUtil.setWebviewAttribute(webview, menu);
+	
+		webview.reload();
+	});
+	
 	var viewHelper = require("ui/helper/viewHelper");
 	viewHelper.createSubMenu(self, webview, opts);
 	

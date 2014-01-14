@@ -182,9 +182,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		(function(url, i) {
 			submenuView[i].addEventListener('click', function(e) {
 				if(i == activeTabIndex) {
-					webview.setUrl(url);
+					/*webview.setUrl(url);
 					webview.reload();
-					return;
+					return;*/
 				}
 				if(activeTabIndex >= 0) {
 					submenuView[activeTabIndex].setBackgroundColor(scrollBgColor);

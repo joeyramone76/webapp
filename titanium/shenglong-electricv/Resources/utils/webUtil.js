@@ -20,7 +20,8 @@ webUtil.getContent = function(webview) {
 		} else if(template_url.indexOf("newslist_template") > 0) {
 			
 		} else if(template_url.indexOf("submenu") > 0) {
-			
+			var submenus = webview.menu.submenus;
+			content = JSON.stringify(submenus);
 		}
 	}
 	return content;
