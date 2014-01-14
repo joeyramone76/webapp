@@ -49,7 +49,16 @@ tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
 		
 	});
 	tabGroup.addEventListener("focus", function(e) {
+		//check tabIndex
+		var tab = this.tabs[e.index];
 		var webview = e.tab.getWindow().getChildren()[3];
+		
+		var menu = tab.menu;
+		
+		webview.setUrl(menu.url);
+		webUtil = require('utils/webUtil');
+		webUtil.setWebviewAttribute(webview, menu);
+		
 		webview.reload();
 	});
 };

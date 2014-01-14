@@ -95,6 +95,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	rightBg.add(rightImage);
 	window.add(rightBg);
 	
+	/**
+	 * scrollView
+	 */
 	var scrollView = Titanium.UI.createScrollView({
 		contentWidth: contentWidth,
 		contentHeight: contentHeight,
