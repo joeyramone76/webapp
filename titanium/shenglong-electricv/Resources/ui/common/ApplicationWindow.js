@@ -4,10 +4,17 @@ function ApplicationWindow(opts) {
 		backgroundColor:'white'
 	});
 	
-	var url = opts.menu.url;
+	var url = "";
+	if(typeof opts.url != "undefined") {
+		url = opts.url;
+	} else {
+		url = opts.menu.url;
+	}
 	if(url == "") {
 		url = "http://m.shenglong-electric.com.cn/";
 	}
+	
+	var logger = require('utils/logger');
 
 	var webview = Ti.UI.createWebView({
 		url: url,
@@ -51,7 +58,11 @@ function ApplicationWindow(opts) {
 		url = this.url;
 		
 		webUtil = require('utils/webUtil');
+		var beginDate = new Date();
+		logger.info("---------------getContent start:" + beginDate.getTime());
 		content = webUtil.getContent(this);
+		var endDate = new Date();
+		logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
 		
 		Ti.App.fireEvent('app:changeContent', {
 			type: this.menu.type,
@@ -65,6 +76,9 @@ function ApplicationWindow(opts) {
 	
 	Ti.App.addEventListener('app:visitPage', function(e) {
 		var menu = JSON.parse(e.menu);
+		if(menu.code == webview.code) {
+			return;
+		}
 		
 		webview.setUrl(menu.url);
 		
@@ -73,14 +87,22 @@ function ApplicationWindow(opts) {
 	
 		webview.reload();
 	});
+	
 	Ti.App.addEventListener('app:visitNews', function(e) {
 		var sl_news_id = e.sl_news_id;
+		if(sl_news_id == webview.sl_news_id) {
+			return;
+		}
 		
 		webview.setUrl('/website/news_template.html');
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
 	
 		webview.reload();
+	});
+	
+	Ti.App.addEventListener('app:log', function(e) {
+		logger.info('------------------webview:' + e.message);
 	});
 	
 	var viewHelper = require("ui/helper/viewHelper");
@@ -92,9 +114,11 @@ function ApplicationWindow(opts) {
 	var welcomebutton = Ti.UI.createButton({
 		title: '@'
 	});
+	
 	welcomebutton.addEventListener('click', function() {
 		opts.welcomeWindow.open({modal: true});
 	});
+	
 	self.rightNavButton = welcomebutton;
 
 	return self;

@@ -23,5 +23,5 @@ $(function(){
 
     $('.s_sub').click(function(e){
         console.log($(this).closest('form').attr('action'));
-    })
-})
+    });
+});

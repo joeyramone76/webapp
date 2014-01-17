@@ -27,7 +27,6 @@ initData.initDB = function() {
 	for(var i = 0 ; i < sql_array.length ; i++) {
 		if(sql_array[i] == "")
 			continue;
-		Titanium.API.info(sql_array[i] + ")");
 		db.execute(sql_array[i] + ")");
 	}
 	

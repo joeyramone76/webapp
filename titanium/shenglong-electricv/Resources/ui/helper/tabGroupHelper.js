@@ -8,12 +8,22 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 	var appTabs = [];
 	var appWin = [];
 	for(var i = 0, l = menus.length ; i < l ; i++) {
-		appWin.push(new Window({
-			title: L(menus[i].name),
-			menuName: menus[i].name,
-			menu: menus[i],
-			welcomeWindow: welcomeWindow
-		}));
+		if(i == 0) {
+			appWin.push(new Window({
+				title: L(menus[i].name),
+				menuName: menus[i].name,
+				menu: menus[i],
+				welcomeWindow: welcomeWindow,
+				url: 'website/page_home_template.html'
+			}));
+		} else {
+			appWin.push(new Window({
+				title: L(menus[i].name),
+				menuName: menus[i].name,
+				menu: menus[i],
+				welcomeWindow: welcomeWindow
+			}));
+		}
 	}
 	var icon = "";
 	for(var i = 0, l = menus.length ; i < l ; i++) {

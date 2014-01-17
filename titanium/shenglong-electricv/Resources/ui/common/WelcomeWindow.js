@@ -261,7 +261,6 @@ function WelcomeWindow() {
 			serviceUtil.getTrafficControls(function(err, trafficControls) {
 				if(weathersData != null) {
 					weathersData = JSON.parse(weathersData);
-					console.log(weathersData);
 					if(weathersData.error == 0) {
 						Ti.App.Properties.setString("weathersData", JSON.stringify(weathersData));
 						if(weathersData.status == "success") {
