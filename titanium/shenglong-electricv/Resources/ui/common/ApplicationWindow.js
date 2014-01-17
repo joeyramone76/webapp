@@ -16,19 +16,36 @@ function ApplicationWindow(opts) {
 	
 	var logger = require('utils/logger');
 
-	var webview = Ti.UI.createWebView({
-		url: url,
-		hideLoadIndicator: true,
-		top: 40,
-		menu: opts.menu,
-		code: opts.menu.code,
-		type: opts.menu.type,
-		pageId: opts.menu.pageId,
-		newsId: opts.menu.newsId,
-		parentCode: opts.menu.parentCode,
-		sl_cid: opts.menu.sl_cid,
-		template_url: opts.menu.url//template
-	});
+	var webview;
+	if(opts.menu.code == '001') {
+		webview = Ti.UI.createWebView({
+			url: url,
+			hideLoadIndicator: true,
+			top: 40,
+			menu: opts.menu,
+			code: opts.menu.code,
+			type: opts.menu.type,
+			pageId: opts.menu.pageId,
+			newsId: opts.menu.newsId,
+			parentCode: opts.menu.parentCode,
+			sl_cid: opts.menu.sl_cid,
+			template_url: opts.menu.url//template
+		});
+	} else {
+		webview = Ti.UI.createWebView({
+			hideLoadIndicator: true,
+			top: 40,
+			menu: opts.menu,
+			code: opts.menu.code,
+			type: opts.menu.type,
+			pageId: opts.menu.pageId,
+			newsId: opts.menu.newsId,
+			parentCode: opts.menu.parentCode,
+			sl_cid: opts.menu.sl_cid,
+			template_url: opts.menu.url//template
+		});
+	}
+	
 	
 	/**
 	 * 正在加载提示
@@ -66,6 +83,7 @@ function ApplicationWindow(opts) {
 		
 		Ti.App.fireEvent('app:changeContent', {
 			type: this.menu.type,
+			code: this.menu.code,
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
 			content: content
@@ -79,24 +97,41 @@ function ApplicationWindow(opts) {
 		if(menu.code == webview.code) {
 			return;
 		}
+		if(e.timestamp == webview.timestamp) {
+			return;
+		}
+		if(e.sl_news_id) {
+			return;
+		}
+		if(webview.code.indexOf(menu.code.substr(0, 3)) != 0) {
+			return;
+		}
 		
 		webview.setUrl(menu.url);
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
+		webview.timestamp = e.timestamp;
 	
 		webview.reload();
 	});
 	
 	Ti.App.addEventListener('app:visitNews', function(e) {
 		var sl_news_id = e.sl_news_id;
-		if(sl_news_id == webview.sl_news_id) {
+		if(e.timestamp == webview.timestamp) {
+			return;
+		}
+		if(e.menu) {
+			return;
+		}
+		if(webview.code.indexOf("002") != 0) {
 			return;
 		}
 		
 		webview.setUrl('/website/news_template.html');
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
+		webview.timestamp = e.timestamp;
 	
 		webview.reload();
 	});

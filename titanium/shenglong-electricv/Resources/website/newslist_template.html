@@ -68,8 +68,10 @@
 				changeContent(null);
 			}
 			function visitNews(sl_news_id) {
+				var timestamp = (new Date()).getTime();
 				Ti.App.fireEvent("app:visitNews", {
-					sl_news_id: sl_news_id
+					sl_news_id: sl_news_id,
+					timestamp: timestamp
 				});
 				return false;
 			}

@@ -42,7 +42,9 @@
 		<script type="text/javascript">
 			if(typeof Ti != "undefined") {
 				Ti.App.addEventListener("app:changeContent", function(e) {
-					changeContent(e.content);
+					if(e.code == '001') {
+						changeContent(e.content);
+					}
 				});
 			} else {
 				changeContent("");

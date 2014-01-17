@@ -68,8 +68,10 @@
 			}
 			function visitPage(menuId) {
 				var menu = getMenu(menuId);
+				var timestamp = (new Date()).getTime();
 				Ti.App.fireEvent("app:visitPage", {
-					menu: JSON.stringify(menu)
+					menu: JSON.stringify(menu),
+					timestamp: timestamp
 				});
 				return false;
 			}

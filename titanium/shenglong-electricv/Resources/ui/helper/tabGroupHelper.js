@@ -7,6 +7,7 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 	
 	var appTabs = [];
 	var appWin = [];
+	var icon = "";
 	for(var i = 0, l = menus.length ; i < l ; i++) {
 		if(i == 0) {
 			appWin.push(new Window({
@@ -24,9 +25,7 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 				welcomeWindow: welcomeWindow
 			}));
 		}
-	}
-	var icon = "";
-	for(var i = 0, l = menus.length ; i < l ; i++) {
+		
 		if(menus[i].icon == "") {
 			icon = "/images/KS_nav_ui.png";
 		} else {
