@@ -231,6 +231,10 @@ function WelcomeWindow() {
 	});
 	welcomeWindow.add(enterBtn);
 	enterBtn.addEventListener('click', function() {
+		if(welcomeWindow.menuWindow != null) {
+			welcomeWindow.menuWindow.close();
+			welcomeWindow.menuWindow = null;
+		}
 		welcomeWindow.close();
 	});
 	

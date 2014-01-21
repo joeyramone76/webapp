@@ -5,6 +5,7 @@ function ApplicationTabGroup() {
 	
 	var WelcomeWindow = require('ui/common/WelcomeWindow');
 	var welcomeWindow = new WelcomeWindow();
+	welcomeWindow.menuWindow = null;
 
 	var tabGroupHelper = require("ui/helper/tabGroupHelper");
 	tabGroupHelper.createAppTabs(self, welcomeWindow);
