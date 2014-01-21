@@ -60,7 +60,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: opacity
 	});
 	var leftImage = Ti.UI.createView({
-		backgroundImage: '/images/icon_arrow_left.png',
+		backgroundImage: '/images/slider_thumb.png',
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
@@ -84,7 +84,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: opacity
 	});
 	var rightImage = Ti.UI.createView({
-		backgroundImage: 'images/icon_arrow_right.png',
+		backgroundImage: 'images/camera.png',
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
@@ -111,7 +111,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	});
 	
 	scrollView.addEventListener('scroll', function(e) {
-		Ti.API.info('x ' + e.x + ' y ' + e.y);
+		/*Ti.API.info('x ' + e.x + ' y ' + e.y);
 		
 		if(e.x > 10) {
 			leftImage.show();
@@ -122,8 +122,10 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			rightImage.show();
 		} else {
 			rightImage.hide();
-		}
+		}*/
 	});
+	leftImage.show();
+	rightImage.show();
 	
 	window.add(scrollView);
 	
