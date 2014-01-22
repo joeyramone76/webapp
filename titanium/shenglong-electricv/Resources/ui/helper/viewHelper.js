@@ -12,9 +12,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		arrowIndex = 101,
 		arrowLeft = 0,
 		arrowRight = 0,
-		arrowBgColor = 'F8F8FF',
+		arrowBgColor = '#ffffff',
 		opacity = 1,
-		scrollBgColor = '#F8F8FF',
+		scrollBgColor = '#ffffff',//#F8F8FF
 		scrollBgIndex = 100,
 		scrollBgTop = 0,
 		contentWidth = 440,
@@ -60,7 +60,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: opacity
 	});
 	var leftImage = Ti.UI.createView({
-		backgroundImage: '/images/icon_arrow_left.png',
+		backgroundImage: '/images/slider_thumb.png',
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
@@ -84,7 +84,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: opacity
 	});
 	var rightImage = Ti.UI.createView({
-		backgroundImage: 'images/icon_arrow_right.png',
+		backgroundImage: 'images/camera.png',
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
@@ -94,6 +94,15 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	});
 	rightBg.add(rightImage);
 	window.add(rightBg);
+	
+	var MenuWindow = require('ui/common/MenuWindow');
+	var menuWindow = new MenuWindow(opts);
+	rightBg.addEventListener('click', function(e) {
+		var animation = Ti.UI.createAnimation();
+		animation.duration = 400;
+		animation.bottom = 0;
+		menuWindow.open(animation);
+	});
 	
 	/**
 	 * scrollView
@@ -111,7 +120,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	});
 	
 	scrollView.addEventListener('scroll', function(e) {
-		Ti.API.info('x ' + e.x + ' y ' + e.y);
+		/*Ti.API.info('x ' + e.x + ' y ' + e.y);
 		
 		if(e.x > 10) {
 			leftImage.show();
@@ -122,8 +131,10 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			rightImage.show();
 		} else {
 			rightImage.hide();
-		}
+		}*/
 	});
+	leftImage.show();
+	rightImage.show();
 	
 	window.add(scrollView);
 	

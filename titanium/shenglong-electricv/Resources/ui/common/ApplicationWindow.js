@@ -1,7 +1,8 @@
 function ApplicationWindow(opts) {
 	var self = Ti.UI.createWindow({
 		title: opts.title,
-		backgroundColor:'white'
+		backgroundColor:'white',
+		navBarHidden: true
 	});
 	
 	var url = "";

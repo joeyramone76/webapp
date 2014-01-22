@@ -35,6 +35,9 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 			title: L(menus[i].name),
 			icon: icon,
 			window: appWin[i],
+			//backgroundColor: '#ffffff',
+			//backgroundDisabledColor: '#ffffff',
+			//color: '#000000',
 			tabIndex: i,
 			menu: menus[i],
 			code: menus[i].code,
@@ -62,13 +65,15 @@ tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
 		var tab = this.tabs[e.index];
 		var webview = e.tab.getWindow().getChildren()[3];
 		
-		var menu = tab.menu;
+		//if(typeof webview.url == "undefined") {
+			var menu = tab.menu;
 		
-		webview.setUrl(menu.url);
-		webUtil = require('utils/webUtil');
-		webUtil.setWebviewAttribute(webview, menu);
-		
-		webview.reload();
+			webview.setUrl(menu.url);
+			webUtil = require('utils/webUtil');
+			webUtil.setWebviewAttribute(webview, menu);
+			
+			webview.reload();
+		//}
 	});
 };
 
