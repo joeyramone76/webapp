@@ -17,6 +17,14 @@ function WelcomeWindow() {
 	var fontColor = '#fff';
 	this.fontColor = fontColor;
 	
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi;
+	
+	if(height == 568) {
+		
+	}
+	
 	//日期
 	var dateView = Ti.UI.createView({
 		height: Ti.UI.SIZE,

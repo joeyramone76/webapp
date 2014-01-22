@@ -37,7 +37,14 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		activeFontColor = '#A52A2A',
 		activeBorderColor = 'C0C0C0',
 		activeBgColor = '#fff';
+		
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi;
 	
+	if(height == 568) {
+		//scrollBgTop += 19;
+	}
 	
 	var submenus = opts.menu.submenus;
 	
@@ -124,12 +131,17 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	rightBg.add(rightImage);
 	window.add(rightBg);
 	
+	var MaskWindow = require('ui/common/MaskWindow');
+	var maskWindow = new MaskWindow();
+	
 	var MenuWindow = require('ui/common/MenuWindow');
 	var menuWindow = new MenuWindow(opts);
+	menuWindow.maskWindow = maskWindow;
 	rightBg.addEventListener('click', function(e) {
 		var animation = Ti.UI.createAnimation();
 		animation.duration = 400;
 		animation.bottom = 0;
+		maskWindow.open();
 		menuWindow.open(animation);
 	});
 	

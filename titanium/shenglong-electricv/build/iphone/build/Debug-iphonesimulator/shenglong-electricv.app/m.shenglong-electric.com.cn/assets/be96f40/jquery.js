@@ -1,1 +1,0 @@
-/Users/peter/phonegap/webapp/titanium/shenglong-electricv/Resources/m.shenglong-electric.com.cn/assets/be96f40/jquery.js
