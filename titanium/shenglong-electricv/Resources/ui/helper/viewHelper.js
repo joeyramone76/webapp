@@ -6,25 +6,32 @@ var viewHelper = {};
  * @param {Object} opts
  */
 viewHelper.createSubMenu = function(window, webview, opts) {
-	var arrowWidth = 30,
-		arrowHeight = 30,
-		arrowTop = 5,
+	var arrowWidth = 15,
+		arrowHeight = 15,
+		arrowTop = 12,//(40 - 15) / 2
 		arrowIndex = 101,
-		arrowLeft = 0,
-		arrowRight = 0,
+		arrowLeft = 6,
+		arrowRight = 6,
 		arrowBgColor = '#ffffff',
+		splitWidth = 1,
+		splitHeight = 40,
+		splitTop = 0,
+		leftBackgroundImage = '/images/back_tag.png',
+		rightBackgroundImage = '/images/more_tag.png',
+		splitBackgroundImage = '/images/top_line.png',
 		opacity = 1,
 		scrollBgColor = '#ffffff',//#F8F8FF
 		scrollBgIndex = 100,
 		scrollBgTop = 0,
 		contentWidth = 440,
+		arrowContentWidth = 40,
 		contentHeight = 40,
 		submenuHeight = 30,
 		scrollViewWidth = 260,// 320 arrowWidth
 		marginLeft = 10,
 		buttonWidth = 60,
-		fontSize = 13,
-		fontWidth = 15,
+		fontSize = 16,
+		fontWidth = 18,
 		fontColor = '#808080',
 		borderColor = '#DCDCDC',
 		activeFontColor = '#A52A2A',
@@ -54,13 +61,14 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		top: scrollBgTop,
 		left: 0,
 		height: contentHeight,
-		width: arrowWidth,
+		width: arrowContentWidth,
 		backgroundColor: arrowBgColor,
 		zIndex: scrollBgIndex,
-		opacity: opacity
+		opacity: opacity,
+		layout: 'horizontal'
 	});
 	var leftImage = Ti.UI.createView({
-		backgroundImage: '/images/slider_thumb.png',
+		backgroundImage: leftBackgroundImage,
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
@@ -70,28 +78,49 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: opacity,
 		transform: transform_arrow
 	});
+	var leftSplit = Ti.UI.createView({
+		backgroundImage: splitBackgroundImage,
+		height: splitHeight,
+		width: splitWidth,
+		top: splitTop,
+		left: arrowLeft,
+		visible: false,
+		zIndex: arrowIndex,
+		opacity: opacity
+	});
 	leftBg.add(leftImage);
+	leftBg.add(leftSplit);
 	window.add(leftBg);
 	var rightBg = Ti.UI.createView({
 		contentWidth: arrowWidth,
 		contentHeight: contentHeight,
 		top: scrollBgTop,
-		right: 0,
+		right: -10,
 		height: contentHeight,
-		width: arrowWidth,
+		width: arrowContentWidth,
 		backgroundColor: arrowBgColor,
 		zIndex: scrollBgIndex,
-		opacity: opacity
+		opacity: opacity,
+		layout: 'horizontal'
 	});
 	var rightImage = Ti.UI.createView({
-		backgroundImage: 'images/camera.png',
+		backgroundImage: rightBackgroundImage,
 		height: arrowHeight,
 		width: arrowWidth,
 		top: arrowTop,
-		right: arrowRight,
+		left: arrowLeft,
 		zIndex: arrowIndex,
 		opacity: opacity
 	});
+	var rightSplit = Ti.UI.createView({
+		backgroundImage: splitBackgroundImage,
+		height: splitHeight,
+		width: splitWidth,
+		top: splitTop,
+		zIndex: arrowIndex,
+		opacity: opacity
+	});
+	rightBg.add(rightSplit);
 	rightBg.add(rightImage);
 	window.add(rightBg);
 	
@@ -134,7 +163,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		}*/
 	});
 	leftImage.show();
+	leftSplit.show();
 	rightImage.show();
+	rightSplit.show();
 	
 	window.add(scrollView);
 	
@@ -178,7 +209,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		scrollView.add(submenuView[i]);
 		submenuLabel.push(Ti.UI.createLabel({
 			text: submenuName,
-			font: {fontSize: fontSize},
+			font: {fontSize: fontSize, fontWeight: 'bold'},
 			color: submenuFontColor,
 			width: 'auto',
 			textAlign: 'center',
