@@ -76,7 +76,7 @@ function WelcomeWindow() {
 		}
 	};
 	
-	if(dpi == 320) {
+	if(height == 568) {
 		config.dateView.top = (config.dateView.top) / 2;
 		config.todayWeatherView.top = (config.todayWeatherView.top) / 2;
 		config.weatherReportView.top = (config.weatherReportView.top) / 2;
