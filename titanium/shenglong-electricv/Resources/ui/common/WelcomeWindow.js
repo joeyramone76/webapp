@@ -426,7 +426,7 @@ function WelcomeWindow() {
 		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: trafficControls.tomorrowLimitCar.replace("和", "/"),
+		text: trafficControls.tomorrowLimitCarNum.replace("和", "/"),
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
