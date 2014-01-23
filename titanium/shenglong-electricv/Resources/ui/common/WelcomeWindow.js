@@ -1,14 +1,79 @@
 function WelcomeWindow() {
 	var date = new Date();
 	var self = this;
+	var isMobileWeb = Ti.Platform.osname === 'mobileweb',
+		isTizen = Ti.Platform.osname === 'tizen',
+		isIOS = (Ti.Platform.osname == 'iphone' || Ti.Platform.osname == 'ipad');
+		
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi;
+	
 	this.isAndroid = Ti.Platform.name === 'android';
 	this.isTizen = Ti.Platform.osname === 'tizen';
-		
+	
+	var config = {
+		dateView: {
+			color: '#302C69',
+			width: 532 / 2,
+			height: 70 / 2,
+			//height: Ti.UI.SIZE,
+			layout: 'horizontal',
+			top: 112 / 2,
+			left: 52 / 2
+		},
+		todayWeatherView: {
+			color: '#272356',
+			width: 466 / 2,
+			height: 142 / 2,
+			backgroundImage: '/images/temperature_bg.png',
+			top: 204 / 2,
+			//opacity: 0.5,
+			left: 86 / 2,
+			//height: Ti.UI.SIZE,
+			layout: 'horizontal'
+		},
+		weatherReportView: {
+			color: '#4F4C83',
+			width: 466 / 2,
+			height: 256 / 2,
+			//height: 140,
+			top: 400 / 2,
+			left: 86 / 2
+		},
+		trafficControlsView: {
+			color: '#272557',
+			width: 564 / 2,
+			height: 254 / 2,
+			//backgroundColor: '#BBBFD8',
+			backgroundImage: '/images/temperature_bg.png',
+			//opacity: 0.5,
+			top: 702,
+			left: 38 / 2,
+			layout: 'vertical'
+		},
+		enterButtonView: {
+			title: '进入应用',
+			bottom: 0,
+			color: '#302C69',
+			width: Ti.UI.FILL,
+			height: 100 / 2,
+			backgroundColor: '#A1A1AD',
+			opacity: 0.5
+		}
+	};
+	
+	if(dpi == 320) {
+		config.trafficControlsView.top = (config.trafficControlsView.top) / 2;
+	} else {
+		config.trafficControlsView.top = (config.trafficControlsView.top - 176) / 2;
+	}
+	
 	// 天气预报、车辆先行、定位
 	var welcomeWindow = Ti.UI.createWindow({
 		title: '盛隆提醒',
-		backgroundImage: 'images/springFestival.jpg',
-		layout: 'vertical'
+		//layout: 'vertical',
+		backgroundImage: 'images/springFestival.jpg'
 	});
 	this.welcomeWindow = welcomeWindow;
 	this.weatherImagePath = 'images/weather/icons/day/';
@@ -17,22 +82,11 @@ function WelcomeWindow() {
 	var fontColor = '#fff';
 	this.fontColor = fontColor;
 	
-	var width = Ti.Platform.displayCaps.platformWidth,
-		height = Ti.Platform.displayCaps.platformHeight,
-		dpi = Ti.Platform.displayCaps.dpi;
-	
-	if(height == 568) {
-		
-	}
-	
 	//日期
-	var dateView = Ti.UI.createView({
-		height: Ti.UI.SIZE,
-		layout: 'horizontal'
-	});
+	var dateView = Ti.UI.createView(config.dateView);
 	welcomeWindow.add(dateView);
 	this.dateLabel = Ti.UI.createLabel({
-		color: fontColor,
+		color: config.dateView.color,
 		font: {fontSize: 26},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -54,7 +108,7 @@ function WelcomeWindow() {
 	this.weekday[5] = "星期五";
 	this.weekday[6] = "星期六";
 	this.weekLabel = Ti.UI.createLabel({
-		color: fontColor,
+		color: config.dateView.color,
 		font: {fontSize: 16},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -88,14 +142,11 @@ function WelcomeWindow() {
 	
 	weathersData = this.readFile("data/weather/weather.txt");
 	
-	var todayWeather = Ti.UI.createView({
-		height: Ti.UI.SIZE,
-		layout: 'horizontal'
-	});
+	var todayWeather = Ti.UI.createView(config.todayWeatherView);
 	welcomeWindow.add(todayWeather);
 	
 	this.temperatureLabel = Ti.UI.createLabel({
-		color: fontColor,
+		color: config.todayWeatherView.color,
 		font: {fontSize: 60},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -116,7 +167,7 @@ function WelcomeWindow() {
 	});
 	//todayWeather.add(this.situationImageLabel);
 	this.situationTextLabel = Ti.UI.createLabel({
-		color: fontColor,
+		color: config.todayWeatherView.color,
 		font: {fontSize: 24},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -130,9 +181,7 @@ function WelcomeWindow() {
 	todayWeather.add(this.situationTextLabel);
 	
 	// weathersView
-	var weathersView = Ti.UI.createView({
-		height: 140
-	});
+	var weathersView = Ti.UI.createView(config.weatherReportView);
 	
 	var weather_data = weathersData.results[0].weather_data;
 	for(var i = 0 ; i < weather_data.length ; i++) {
@@ -140,7 +189,7 @@ function WelcomeWindow() {
 		left = firstLabelLeft;
 		//date
 		dateLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].date.substr(0, 2),
 			width: Ti.UI.SIZE,
@@ -153,7 +202,7 @@ function WelcomeWindow() {
 		//temperature
 		left = firstLabelLeft + 1 * marginLeft - 20;
 		temperatureLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].temperature,//°
 			width: Ti.UI.SIZE,
@@ -178,7 +227,7 @@ function WelcomeWindow() {
 		//weather
 		left = firstLabelLeft + 3 * marginLeft + 10;
 		weatherLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].weather,
 			width: Ti.UI.SIZE,
@@ -191,7 +240,7 @@ function WelcomeWindow() {
 		//wind
 		left = firstLabelLeft + 4 * marginLeft;
 		windLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].wind,
 			width: Ti.UI.SIZE,
@@ -203,10 +252,13 @@ function WelcomeWindow() {
 	}
 	welcomeWindow.add(weathersView);
 	
+	//trafficControls
 	trafficControls = this.readFile("data/services/trafficControls.txt");
 	
+	this.trafficControlsView = Ti.UI.createView(config.trafficControlsView);
+	
 	this.todayLimitCarLabel = Ti.UI.createLabel({
-		color: '#fff',
+		color: config.trafficControlsView.color,
 		font: {fontSize: 20},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -217,10 +269,10 @@ function WelcomeWindow() {
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	welcomeWindow.add(this.todayLimitCarLabel);
+	this.trafficControlsView.add(this.todayLimitCarLabel);
 	
 	this.tomorrowLimitCarLabel = Ti.UI.createLabel({
-		color: '#fff',
+		color: config.trafficControlsView.color,
 		font: {fontSize: 20},
 		showColor: '#aaa',
 		showOffset: {x:5, y:5},
@@ -231,12 +283,11 @@ function WelcomeWindow() {
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	welcomeWindow.add(this.tomorrowLimitCarLabel);
+	this.trafficControlsView.add(this.tomorrowLimitCarLabel);
+	welcomeWindow.add(this.trafficControlsView);
 	
-	enterBtn = Ti.UI.createButton({
-		title: '进入应用',
-		top: 20
-	});
+	enterBtn = Ti.UI.createButton(config.enterButtonView);
+	isTizen || (enterBtn.style = Ti.UI.iPhone.SystemButtonStyle.PLAIN);
 	welcomeWindow.add(enterBtn);
 	enterBtn.addEventListener('click', function() {
 		if(welcomeWindow.menuWindow != null) {
