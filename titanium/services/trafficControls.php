@@ -28,7 +28,8 @@
 	z - 一年中的第几天; 如: "0" 至 "365"
 	 */
 	$todayweek = date("w");
-	$array = array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");//0 1 2 3 4 5 6 => 1 2 3 4 5 6 7
+	//$array = array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");//0 1 2 3 4 5 6 => 1 2 3 4 5 6 7
+	$array = array("周日","周一","周二","周三","周四","周五","周六");//0 1 2 3 4 5 6 => 1 2 3 4 5 6 7
 	$tomorrowweek = date("w", strtotime("+1 day"));
 
 	$url = "http://210.75.211.252/xianxing/xianhao.shtml";
@@ -59,8 +60,10 @@
 	$tomorrowTrafficControlNumber = getTrafficControlNumber($date, $startDate);
 	$tomorrowLimitCar = $trafficControls[$tomorrowTrafficControlNumber - 1];
 	$json = new StdClass();
-	$json -> todayLimitCar = $array[$todayweek] . " 限行的尾号是：" . $todayLimitCar;
-	$json -> tomorrowLimitCar = $array[$tomorrowweek] . " 限行的尾号是：" . $tomorrowLimitCar;
+	$json -> todayLimitCar = $array[$todayweek] . " ：" . $todayLimitCar;
+	$json -> tomorrowLimitCar = $array[$tomorrowweek] . " ：" . $tomorrowLimitCar;
+	$json -> todayLimitCarNum = $todayLimitCar;
+	$json -> tomorrowLimitCarNum = $tomorrowLimitCar;
 	echo json_encode($json);
 
 	function getTrafficControlNumber($date, $startDate) {// 2014-01-01 2012-10-08
