@@ -1,14 +1,98 @@
 function WelcomeWindow() {
 	var date = new Date();
 	var self = this;
+	var isMobileWeb = Ti.Platform.osname === 'mobileweb',
+		isTizen = Ti.Platform.osname === 'tizen',
+		isIOS = (Ti.Platform.osname == 'iphone' || Ti.Platform.osname == 'ipad');
+		
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi;
+	
 	this.isAndroid = Ti.Platform.name === 'android';
 	this.isTizen = Ti.Platform.osname === 'tizen';
-		
+	
+	var config = {
+		dateView: {
+			color: '#302C69',
+			width: 532 / 2,
+			height: 70 / 2,
+			//height: Ti.UI.SIZE,
+			layout: 'horizontal',
+			top: 112,
+			left: 52 / 2
+		},
+		todayWeatherView: {
+			color: '#272356',
+			width: 466 / 2,
+			height: 142 / 2,
+			backgroundImage: '/images/temperature_bg.png',
+			top: 204,
+			//opacity: 0.5,
+			left: 86 / 2,
+			//height: Ti.UI.SIZE,
+			layout: 'vertical'
+		},
+		weatherReportView: {
+			color: '#4F4C83',
+			width: 466 / 2,
+			height: 256 / 2,
+			//height: 140,
+			top: 400,
+			left: 86 / 2
+		},
+		trafficControlsView: {
+			color: '#272557',
+			width: 564 / 2,
+			height: 254 / 2,
+			//backgroundColor: '#BBBFD8',
+			backgroundImage: '/images/temperature_bg.png',
+			//opacity: 0.5,
+			top: 702,
+			left: 38 / 2,
+			layout: 'vertical',
+			subView: {
+				trafficControlsTitleImage: {
+					backgroundImage: '/images/car_icon.png',
+					width: 54 / 2,
+					height: 36 / 2,
+					top: 36 / 2
+				},
+				trafficControlsImage: {
+					backgroundImage: '/images/forbidden_icon.png',
+					width: 36 / 2,
+					height: 36 / 2
+				}
+			}
+		},
+		enterButtonView: {
+			title: '进入应用',
+			bottom: 0,
+			color: '#302C69',
+			width: Ti.UI.FILL,
+			height: 100 / 2,
+			backgroundColor: '#A1A1AD',
+			opacity: 0.5
+		}
+	};
+	
+	if(height == 568) {
+		config.dateView.top = (config.dateView.top) / 2;
+		config.todayWeatherView.top = (config.todayWeatherView.top) / 2;
+		config.weatherReportView.top = (config.weatherReportView.top) / 2;
+		config.trafficControlsView.top = (config.trafficControlsView.top) / 2;
+	} else {
+		config.dateView.top = (config.dateView.top - 100) / 2 + 5;
+		config.todayWeatherView.top = (config.todayWeatherView.top - 100) / 2;
+		config.weatherReportView.top = (config.weatherReportView.top - 140) / 2;
+		config.trafficControlsView.top = (config.trafficControlsView.top - 176) / 2;
+	}
+	
 	// 天气预报、车辆先行、定位
 	var welcomeWindow = Ti.UI.createWindow({
 		title: '盛隆提醒',
-		backgroundImage: 'images/springFestival.jpg',
-		layout: 'vertical'
+		//layout: 'vertical',
+		backgroundImage: 'images/springFestival.jpg'
 	});
 	this.welcomeWindow = welcomeWindow;
 	this.weatherImagePath = 'images/weather/icons/day/';
@@ -17,33 +101,79 @@ function WelcomeWindow() {
 	var fontColor = '#fff';
 	this.fontColor = fontColor;
 	
-	var width = Ti.Platform.displayCaps.platformWidth,
-		height = Ti.Platform.displayCaps.platformHeight,
-		dpi = Ti.Platform.displayCaps.dpi;
-	
-	if(height == 568) {
-		
-	}
-	
 	//日期
-	var dateView = Ti.UI.createView({
-		height: Ti.UI.SIZE,
-		layout: 'horizontal'
-	});
+	var dateView = Ti.UI.createView(config.dateView);
 	welcomeWindow.add(dateView);
-	this.dateLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 26},
-		showColor: '#aaa',
+	this.dateYearLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 30},
+		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日",
-		top: 20,
-		left: 10,
+		text: date.getFullYear(),
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
+	this.dateYearUnitLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 16},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: "年",
+		bottom: 5,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	this.dateMonthLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 30},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: (date.getMonth() + 1),
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	this.dateMonthUnitLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 16},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: "月",
+		bottom: 5,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	this.dateLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 30},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: date.getDate(),
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	this.dateUnitLabel = Ti.UI.createLabel({
+		color: config.dateView.color,
+		font: {fontSize: 16},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: "日",
+		bottom: 5,
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	dateView.add(this.dateYearLabel);
+	dateView.add(this.dateYearUnitLabel);
+	dateView.add(this.dateMonthLabel);
+	dateView.add(this.dateMonthUnitLabel);
 	dateView.add(this.dateLabel);
+	dateView.add(this.dateUnitLabel);
+
 	
 	this.weekday = new Array(7);
 	this.weekday[0] = "星期天";
@@ -53,14 +183,24 @@ function WelcomeWindow() {
 	this.weekday[4] = "星期四";
 	this.weekday[5] = "星期五";
 	this.weekday[6] = "星期六";
+	
+	this.spoken_weekday = new Array(7);
+	this.spoken_weekday[0] = "周日";
+	this.spoken_weekday[1] = "周一";
+	this.spoken_weekday[2] = "周二";
+	this.spoken_weekday[3] = "周三";
+	this.spoken_weekday[4] = "周四";
+	this.spoken_weekday[5] = "周五";
+	this.spoken_weekday[6] = "周六";
 	this.weekLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 16},
-		showColor: '#aaa',
+		color: config.dateView.color,
+		font: {fontSize: 16, fontStyle: 'italic'},
+		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
 		text: this.weekday[date.getDay()],
-		bottom: 3,
+		left: 40,
+		bottom: 5,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
@@ -88,25 +228,27 @@ function WelcomeWindow() {
 	
 	weathersData = this.readFile("data/weather/weather.txt");
 	
-	var todayWeather = Ti.UI.createView({
-		height: Ti.UI.SIZE,
-		layout: 'horizontal'
-	});
-	welcomeWindow.add(todayWeather);
-	
-	this.temperatureLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 60},
-		showColor: '#aaa',
-		showOffset: {x:5, y:5},
-		shadowRadius: 3,
-		text: weathersData.results[0].weather_data[0].temperature + '',//°
-		top: 10,
-		left: 10,
+	var todayWeather = Ti.UI.createView(config.todayWeatherView);
+	var todayWeatherView = Ti.UI.createView({
+		layout: 'horizontal',
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	todayWeather.add(this.temperatureLabel);
+	todayWeather.add(todayWeatherView);
+	welcomeWindow.add(todayWeather);
+	
+	this.temperatureLabel = Ti.UI.createLabel({
+		color: config.todayWeatherView.color,
+		font: {fontSize: 40},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: weathersData.results[0].weather_data[0].temperature + '',//°
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		top: 12// 71 - (40 + 7)
+	});
+	todayWeatherView.add(this.temperatureLabel);
 	var fileName = this.getFileName(weathersData.results[0].weather_data[0].dayPictureUrl);
 	this.situationImageLabel = Ti.UI.createLabel({
 		backgroundImage: this.weatherImagePath + fileName,
@@ -114,25 +256,23 @@ function WelcomeWindow() {
 		height: 30,
 		bottom: 14
 	});
-	//todayWeather.add(this.situationImageLabel);
+	//todayWeatherView.add(this.situationImageLabel);
 	this.situationTextLabel = Ti.UI.createLabel({
-		color: fontColor,
-		font: {fontSize: 24},
-		showColor: '#aaa',
+		color: config.todayWeatherView.color,
+		font: {fontSize: 16},
+		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
 		text: weathersData.results[0].currentCity,
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE,
 		left: 10,
-		bottom: 10
+		top: 26
 	});
-	todayWeather.add(this.situationTextLabel);
+	todayWeatherView.add(this.situationTextLabel);
 	
 	// weathersView
-	var weathersView = Ti.UI.createView({
-		height: 140
-	});
+	var weathersView = Ti.UI.createView(config.weatherReportView);
 	
 	var weather_data = weathersData.results[0].weather_data;
 	for(var i = 0 ; i < weather_data.length ; i++) {
@@ -140,7 +280,7 @@ function WelcomeWindow() {
 		left = firstLabelLeft;
 		//date
 		dateLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].date.substr(0, 2),
 			width: Ti.UI.SIZE,
@@ -153,7 +293,7 @@ function WelcomeWindow() {
 		//temperature
 		left = firstLabelLeft + 1 * marginLeft - 20;
 		temperatureLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].temperature,//°
 			width: Ti.UI.SIZE,
@@ -178,7 +318,7 @@ function WelcomeWindow() {
 		//weather
 		left = firstLabelLeft + 3 * marginLeft + 10;
 		weatherLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].weather,
 			width: Ti.UI.SIZE,
@@ -186,12 +326,12 @@ function WelcomeWindow() {
 			top: top,
 			showOffset: {x:5, y:5},
 		}));
-		weathersView.add(weatherLabels[i]);
+		//weathersView.add(weatherLabels[i]);
 		
 		//wind
-		left = firstLabelLeft + 4 * marginLeft;
+		left = firstLabelLeft + 3 * marginLeft - 10;
 		windLabels.push(Ti.UI.createLabel({
-			color: fontColor,
+			color: config.weatherReportView.color,
 			left: left,
 			text: weather_data[i].wind,
 			width: Ti.UI.SIZE,
@@ -203,40 +343,99 @@ function WelcomeWindow() {
 	}
 	welcomeWindow.add(weathersView);
 	
+	//trafficControls
 	trafficControls = this.readFile("data/services/trafficControls.txt");
 	
+	this.trafficControlsView = Ti.UI.createView(config.trafficControlsView);
+	
+	var trafficControlsLine1 = Ti.UI.createView({
+		layout: 'horizontal',
+		height: config.trafficControlsView.height / 3,
+   		width: Ti.UI.SIZE
+	});
+	var trafficControlsLine2 = Ti.UI.createView({
+		layout: 'horizontal',
+		height: config.trafficControlsView.height / 3,
+   		width: Ti.UI.SIZE
+	});
+	var trafficControlsLine3 = Ti.UI.createView({
+		layout: 'horizontal',
+		height: config.trafficControlsView.height / 3,
+   		width: Ti.UI.SIZE
+	});
+	this.trafficControlsView.add(trafficControlsLine1);
+	this.trafficControlsView.add(trafficControlsLine2);
+	this.trafficControlsView.add(trafficControlsLine3);
+	
+	var trafficControlsTitleImage = Ti.UI.createView(config.trafficControlsView.subView.trafficControlsTitleImage);
+	var trafficControlsTitle = Ti.UI.createLabel({
+		color: config.trafficControlsView.color,
+		font: {fontSize: 20},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: " 禁行车辆",
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE,
+		top: config.trafficControlsView.subView.trafficControlsTitleImage.top - 4
+	});
+	trafficControlsLine1.add(trafficControlsTitleImage);
+	trafficControlsLine1.add(trafficControlsTitle);
+	
+	var trafficControlsImage1 = Ti.UI.createView(config.trafficControlsView.subView.trafficControlsImage);
+	trafficControlsLine2.add(trafficControlsImage1);
+	this.todayLimitCarWeekLabel = Ti.UI.createLabel({
+		color: config.trafficControlsView.color,
+		font: {fontSize: 20},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: " " + this.spoken_weekday[date.getDay()] + "：  ",
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	trafficControlsLine2.add(this.todayLimitCarWeekLabel);
 	this.todayLimitCarLabel = Ti.UI.createLabel({
-		color: '#fff',
-		font: {fontSize: 20},
-		showColor: '#aaa',
+		color: config.trafficControlsView.color,
+		font: {fontSize: 26,fontWeight: 'bold'},
+		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: trafficControls.todayLimitCar,
-		top: 10,
-		left: 20,
+		text: trafficControls.todayLimitCarNum.replace("和", "/"),
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	welcomeWindow.add(this.todayLimitCarLabel);
+	trafficControlsLine2.add(this.todayLimitCarLabel);
 	
+	var trafficControlsImage2 = Ti.UI.createView(config.trafficControlsView.subView.trafficControlsImage);
+	trafficControlsLine3.add(trafficControlsImage2);
+	this.tomorrowLimitCarWeekLabel = Ti.UI.createLabel({
+		color: config.trafficControlsView.color,
+		font: {fontSize: 20},
+		//showColor: '#aaa',
+		showOffset: {x:5, y:5},
+		shadowRadius: 3,
+		text: " " + this.spoken_weekday[this.getTomorrowWeek(date)] + "：  ",
+		width: Ti.UI.SIZE,
+		height: Ti.UI.SIZE
+	});
+	trafficControlsLine3.add(this.tomorrowLimitCarWeekLabel);
 	this.tomorrowLimitCarLabel = Ti.UI.createLabel({
-		color: '#fff',
-		font: {fontSize: 20},
-		showColor: '#aaa',
+		color: config.trafficControlsView.color,
+		font: {fontSize: 26,fontWeight: 'bold'},
+		//showColor: '#aaa',
 		showOffset: {x:5, y:5},
 		shadowRadius: 3,
-		text: trafficControls.tomorrowLimitCar,
-		top: 10,
-		left: 20,
+		text: trafficControls.tomorrowLimitCarNum.replace("和", "/"),
 		width: Ti.UI.SIZE,
 		height: Ti.UI.SIZE
 	});
-	welcomeWindow.add(this.tomorrowLimitCarLabel);
+	trafficControlsLine3.add(this.tomorrowLimitCarLabel);
 	
-	enterBtn = Ti.UI.createButton({
-		title: '进入应用',
-		top: 20
-	});
+	welcomeWindow.add(this.trafficControlsView);
+	
+	enterBtn = Ti.UI.createButton(config.enterButtonView);
+	isTizen || (enterBtn.style = Ti.UI.iPhone.SystemButtonStyle.PLAIN);
 	welcomeWindow.add(enterBtn);
 	enterBtn.addEventListener('click', function() {
 		if(welcomeWindow.menuWindow != null) {
@@ -304,10 +503,22 @@ WelcomeWindow.prototype.createWeathersView = function() {
 	
 };
 
+WelcomeWindow.prototype.getTomorrowWeek = function(date) {
+	var day = date.getDay();
+	day++;
+	if(day >= 7) {
+		day = 0;
+	}
+	return day;
+};
+
 WelcomeWindow.prototype.updateDateLabel = function() {
 	var date = new Date();
 	var self = this;
-	this.dateLabel.setText(date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日");
+	//this.dateLabel.setText(date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日");
+	this.dateYearLabel.setText(date.getFullYear());
+	this.dateMonthLabel.setText((date.getMonth() + 1));
+	this.dateLabel.setText(date.getDate());
 	this.weekLabel.setText(this.weekday[date.getDay()]);
 };
 
@@ -346,8 +557,8 @@ WelcomeWindow.prototype.updateWeatherData = function(weathersData) {
 WelcomeWindow.prototype.updateTrafficControlsData = function(trafficControls) {
 	var date = new Date();
 	var self = this;
-	this.todayLimitCarLabel.setText(trafficControls.todayLimitCar);
-	this.tomorrowLimitCarLabel.setText(trafficControls.tomorrowLimitCar);
+	this.todayLimitCarLabel.setText(trafficControls.todayLimitCarNum.replace("和", "/"));
+	this.tomorrowLimitCarLabel.setText(trafficControls.tomorrowLimitCarNum.replace("和", "/"));
 };
 
 WelcomeWindow.prototype.readFile = function(fileName) {

@@ -43,7 +43,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		dpi = Ti.Platform.displayCaps.dpi;
 	
 	if(height == 568) {
-		//scrollBgTop += 19;
+		scrollBgTop += 19;
 	}
 	
 	var submenus = opts.menu.submenus;

@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>appicon_512x512.png</string>
+	<string>appicon1024.png</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -58,7 +58,7 @@
 	</array>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>appicon_512x512.png</string>
+		<string>appicon1024.png</string>
 	</array>
 </dict>
 </plist>
