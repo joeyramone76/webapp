@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 应用主窗口webview
+ */
 function ApplicationWindow(opts) {
 	var self = Ti.UI.createWindow({
 		title: opts.title,
@@ -18,12 +25,12 @@ function ApplicationWindow(opts) {
 	var logger = require('utils/logger');
 
 	var webview;
-	if(opts.menu.code == '001') {
+	if(opts.menu.code == '001') {// first time to open app
 		webview = Ti.UI.createWebView({
 			url: url,
 			hideLoadIndicator: true,
 			top: 40,
-			menu: opts.menu,
+			menu: opts.menu,//menu
 			code: opts.menu.code,
 			type: opts.menu.type,
 			pageId: opts.menu.pageId,
@@ -36,7 +43,7 @@ function ApplicationWindow(opts) {
 		webview = Ti.UI.createWebView({
 			hideLoadIndicator: true,
 			top: 40,
-			menu: opts.menu,
+			menu: opts.menu,//menu
 			code: opts.menu.code,
 			type: opts.menu.type,
 			pageId: opts.menu.pageId,
@@ -93,7 +100,7 @@ function ApplicationWindow(opts) {
 		activityIndicator.hide();
 	});
 	
-	Ti.App.addEventListener('app:visitPage', function(e) {
+	Ti.App.addEventListener('app:visitPage', function(e) {//自定义事件
 		var menu = JSON.parse(e.menu);
 		if(menu.code == webview.code) {
 			return;

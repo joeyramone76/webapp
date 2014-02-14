@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 弹出菜单，从下到上弹出
+ */
 function MenuWindow(opts) {
 	var self = this;
 	var isMobileWeb = Ti.Platform.osname === 'mobileweb',

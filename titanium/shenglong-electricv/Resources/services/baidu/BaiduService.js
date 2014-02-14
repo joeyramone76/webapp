@@ -3,11 +3,19 @@
  * Version: 1.0
  * Author: zhangchunsheng
  * Date: 2014-01-27
- * Description: 网络相关
+ * Description: 调用百度天气服务
  */
-var netUtil = {};
+function BaiduService() {
+	this.baidu_ak = "N2GcWGsVLdBHg8gQrVUoZwm8";
+	this.weatherUrl = "http://api.map.baidu.com/telematics/v3/weather?output=json&ak=" + this.baidu_ak;
+}
 
-netUtil.request = function(url, callback) {
+BaiduService.prototype.getWeatherReport = function(location, callback) {
+	var url = this.weatherUrl + "&location=" + location;
+	this.request(url, callback);
+};
+
+BaiduService.prototype.request = function(url, callback) {
 	var client = Ti.Network.createHTTPClient({
 		onload: function(e) {
 			callback(null, this.responseText);
@@ -27,5 +35,4 @@ netUtil.request = function(url, callback) {
 	client.send();
 };
 
-//exports.netUtil = netUtil;
-//exports.request = netUtil.request;
+module.exports = BaiduService;

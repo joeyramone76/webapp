@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 欢迎界面，包括日期，天气，限行等信息
+ */
 function WelcomeWindow() {
 	var date = new Date();
 	var self = this;
