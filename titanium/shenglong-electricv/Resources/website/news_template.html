@@ -70,7 +70,11 @@
 		<script type="text/javascript">
 			var news = {};
 			if(typeof Ti != "undefined") {
+				var time = 0;
 				Ti.App.addEventListener("app:changeContent", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
 					Ti.App.fireEvent("app:log", {
 						message: 'changeContent'
 					});

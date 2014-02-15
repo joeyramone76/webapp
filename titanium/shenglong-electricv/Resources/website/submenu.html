@@ -60,7 +60,11 @@
 			var menu = {};
 			var submenus = [];
 			if(typeof Ti != "undefined") {
+				var time = 0;
 				Ti.App.addEventListener("app:changeSubmenu", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
 					Ti.App.fireEvent("app:log", {
 						message: 'changeSubmenu'
 					});
@@ -68,6 +72,9 @@
 					changeSubmenu(submenus);
 				});
 				Ti.App.addEventListener("app:changeContent", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
 					Ti.App.fireEvent("app:log", {
 						message: 'changeContent'
 					});

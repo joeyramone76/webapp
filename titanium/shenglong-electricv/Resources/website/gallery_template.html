@@ -41,7 +41,11 @@
 		<script type="text/javascript" src="./js/underscore.js"></script>
 		<script type="text/javascript">
 			if(typeof Ti != "undefined") {
+				var time = 0;
 				Ti.App.addEventListener("app:changeContent", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
 					Ti.App.fireEvent("app:log", {
 						message: 'changeContent'
 					});

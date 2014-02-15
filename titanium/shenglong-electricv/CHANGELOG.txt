@@ -10,3 +10,4 @@
 4.调整tabView的click事件，加载数据
 5.调整tabView的click事件，更改子菜单
 6.bug:主菜单切换，内容无法加载
+7.bug:修复主菜单切换，内容无法加载的bug，两次beforeload，setUrl与reload均触发beforeload

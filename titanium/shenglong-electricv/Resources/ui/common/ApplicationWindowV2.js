@@ -57,7 +57,7 @@ function ApplicationWindow(opts) {
 	 * beforeload
 	 */
 	webview.addEventListener('beforeload', function(e) {
-		activityIndicator.show();
+		logger.info("beforeload");
 	});
 	
 	/**
@@ -72,7 +72,7 @@ function ApplicationWindow(opts) {
 	 */
 	webview.addEventListener('load', function(e) {
 		//change content
-		url = this.url;
+		activityIndicator.show();
 		
 		webUtil = require('utils/webUtil');
 		var beginDate = new Date();
@@ -82,15 +82,18 @@ function ApplicationWindow(opts) {
 		var endDate = new Date();
 		logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
 		
-		activityIndicator.hide();
-		
+		var date = new Date();
 		Ti.App.fireEvent('app:changeContent', {
+			time: date.getTime(),
 			type: this.menu.type,
 			code: this.menu.code,
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
 			content: content
 		});
+		
+		logger.info("load");
+		activityIndicator.hide();
 	});
 	
 	Ti.App.addEventListener('app:visitPage', function(e) {//自定义事件
@@ -104,7 +107,7 @@ function ApplicationWindow(opts) {
 		webUtil.setWebviewAttribute(webview, menu);
 		webview.timestamp = e.timestamp;
 	
-		webview.reload();
+		//webview.reload();
 	});
 	
 	Ti.App.addEventListener('app:visitNews', function(e) {
@@ -117,7 +120,7 @@ function ApplicationWindow(opts) {
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;
 	
-		webview.reload();
+		//webview.reload();
 	});
 	
 	Ti.App.addEventListener('app:log', function(e) {

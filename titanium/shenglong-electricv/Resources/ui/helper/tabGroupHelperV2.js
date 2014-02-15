@@ -67,7 +67,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 				
-				webview.reload();
+				//webview.reload();
 				tabGroupView.setActiveTab(index);
 			});
 		})(i);

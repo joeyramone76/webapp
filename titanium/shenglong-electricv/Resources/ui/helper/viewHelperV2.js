@@ -273,7 +273,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 			
-				webview.reload();
+				//webview.reload();
 			});
 		})(url, i);
 	}
@@ -365,7 +365,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					webUtil = require('utils/webUtil');
 					webUtil.setWebviewAttribute(webview, menu);
 				
-					webview.reload();
+					//webview.reload();
 				});
 			})(url, i);
 		}

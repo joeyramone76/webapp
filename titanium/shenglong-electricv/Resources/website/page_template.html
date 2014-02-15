@@ -46,9 +46,14 @@
 		</script>
 		<script type="text/javascript">
 			if(typeof Ti != "undefined") {
+				var time = 0;
 				Ti.App.addEventListener("app:changeContent", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
+					var date = new Date();
 					Ti.App.fireEvent("app:log", {
-						message: 'changeContent'
+						message: e.time + " " + date.getTime() + ' changeContent ' + e.content
 					});
 					changeContent(e.content);
 				});
@@ -56,8 +61,17 @@
 				changeContent("");
 			}
 			function changeContent(content) {
+				var date = new Date();
+				Ti.App.fireEvent("app:log", {
+					message: date.getTime() + ' template ' + content
+				});
 				var template = $("#contentTemplate").html();
-				$("#content").html(_.template(template, {content: content}));
+				$("#content").append(_.template(template, {content: content}));
+				
+				date = new Date();
+				Ti.App.fireEvent("app:log", {
+					message: date.getTime() + ' $("#content").html() ' + $("#content").html()
+				});
 			}
 		</script>
 	</body>
