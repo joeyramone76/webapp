@@ -10,11 +10,11 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="clearfix">
+			<!--<header class="clearfix">
 				<div class="logo">
 					<a href="./index.html"><img src="./images/logo.png" alt=""/></a>
 				</div>
-			</header>
+			</header>-->
 			<div class="slider">
 				<img src="./uploads/2013/03/aboutus.jpg" alt=""/>
 			</div>
@@ -40,9 +40,13 @@
 			%>
 		</script>
 		<script type="text/javascript">
-			Ti.App.addEventListener("app:changeContent", function(e) {
-				changeContent(e.content);
-			});
+			if(typeof Ti != "undefined") {
+				Ti.App.addEventListener("app:changeContent", function(e) {
+					changeContent(e.content);
+				});
+			} else {
+				changeContent("");
+			}
 			function changeContent(content) {
 				var template = $("#contentTemplate").html();
 				$("#content").html(_.template(template, {content: content}));

@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: loading提示
+ */
 function ActivityIndicator() {
 	var style;
 	if(Ti.Platform.name === 'iPhone OS') {

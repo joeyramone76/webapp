@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 消息提示窗口
+ */
 function MessageWindow() {
 	var win = Ti.UI.createWindow({
 		height: 30,

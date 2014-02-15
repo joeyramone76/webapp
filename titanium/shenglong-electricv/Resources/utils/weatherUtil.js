@@ -7,7 +7,7 @@ weatherUtil.getCity = function() {
 weatherUtil.getWeather = function(callback) {
 	weatherUtil.getBJLocation(function(location) {
 		var args = location.longitude + "," + location.latitude;
-		var BaiduService = require('baidu/BaiduService');
+		var BaiduService = require('services/baidu/BaiduService');
 		var baiduService = new BaiduService();
 		baiduService.getWeatherReport(args, callback);
 		

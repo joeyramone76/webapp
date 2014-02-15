@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 数据库相关
+ */
 var dbUtil = {};
 
 dbUtil.initDB = function() {
@@ -27,7 +34,6 @@ dbUtil.initDB = function() {
 	for(var i = 0 ; i < sql_array.length ; i++) {
 		if(sql_array[i] == "")
 			continue;
-		Titanium.API.info(sql_array[i] + ")");
 		db.execute(sql_array[i] + ")");
 	}
 	
@@ -40,8 +46,8 @@ dbUtil.getData = function(sql, columns) {
 	
 	var count = rows.rowCount;
 	var datas = [];
-	var data = {};
 	while(rows.isValidRow()) {
+		var data = {};
 		for(var i = 0 ; i < columns.length ; i++) {
 			data[columns[i]] = rows.fieldByName(columns[i]);
 		}
@@ -101,6 +107,18 @@ dbUtil.getPage = function(pageId) {
 	return datas;
 };
 
+dbUtil.getNewsList = function(sl_cid) {
+	var sql = "SELECT id,sl_cid,sl_news_id,title,image,post_desc,post_date,post_time,date FROM app_news WHERE sl_cid=" + sl_cid + "";
+	var columns = ["id","sl_cid","sl_news_id","title","image","post_desc","post_date","post_time","date"];
+	return dbUtil.getData(sql, columns);
+};
+
+dbUtil.getNews = function(sl_news_id) {
+	var sql = "SELECT id,sl_cid,sl_news_id,title,image,post_desc,content,post_date,post_time,date FROM app_news WHERE sl_news_id=" + sl_news_id + "";
+	var columns = ["id","sl_cid","sl_news_id","title","image","post_desc","content","post_date","post_time","date"];
+	return dbUtil.getData(sql, columns);
+};
+
 dbUtil.test = function() {
 	var db = Ti.Database.open('mydb1Installed');
 	db.execute('CREATE TABLE IF NOT EXISTS people (name TEXT, phone_number TEXT, city TEXT)');
@@ -147,3 +165,5 @@ exports.initDB = dbUtil.initDB;
 exports.getData = dbUtil.getData;
 exports.getPage = dbUtil.getPage;
 exports.getPageByMenuCode = dbUtil.getPageByMenuCode;
+exports.getNewsList = dbUtil.getNewsList;
+exports.getNews = dbUtil.getNews;
