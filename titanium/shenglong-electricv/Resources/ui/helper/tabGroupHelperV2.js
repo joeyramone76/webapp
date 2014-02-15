@@ -2,49 +2,37 @@
  * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
  * Version: 1.0
  * Author: zhangchunsheng
- * Date: 2014-01-27
+ * Date: 2014-02-15
  * Description: 创建tabGroup
  */
 var tabGroupHelper = {};
-tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
+tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 	var Window = require('ui/common/ApplicationWindow');
+	var TabView = require('ui/common/view/TabView');
 	
 	var config = require('ui/config/config');
 	var menus = config.menus;
+	var menu = menus[0];
 	
 	var appTabs = [];
-	var appWin = [];
+	var appWin = new Window({
+		title: L(menu.name),
+		menuName: menu.name,
+		menu: menu,
+		welcomeWindow: welcomeWindow,
+		url: 'website/page_home_template.html'
+	});
 	var icon = "";
 	for(var i = 0, l = menus.length ; i < l ; i++) {
-		if(i == 0) {
-			appWin.push(new Window({
-				title: L(menus[i].name),
-				menuName: menus[i].name,
-				menu: menus[i],
-				welcomeWindow: welcomeWindow,
-				url: 'website/page_home_template.html'
-			}));
-		} else {
-			appWin.push(new Window({
-				title: L(menus[i].name),
-				menuName: menus[i].name,
-				menu: menus[i],
-				welcomeWindow: welcomeWindow
-			}));
-		}
-		
 		if(menus[i].icon == "") {
 			icon = "/images/KS_nav_ui.png";
 		} else {
 			icon = menus[i].icon;
 		}
-		appTabs.push(Ti.UI.createTab({
+		appTabs.push(new TabView({
 			title: L(menus[i].name),
 			icon: icon,
-			window: appWin[i],
-			//backgroundColor: '#ffffff',
-			//backgroundDisabledColor: '#ffffff',
-			//color: '#000000',
+			window: appWin,
 			tabIndex: i,
 			menu: menus[i],
 			code: menus[i].code,
@@ -55,30 +43,17 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 			sl_cid: menus[i].sl_cid,
 			template_url: menus[i].url//template
 		}));
-		appWin[i].containingTab = appTabs[i];
-		window.addTab(appTabs[i]);
+		tabGroupView.addTab(appTabs[i]);
 	}
+	tabGroupView.addWindow(appWin);
 };
 
 tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
 	tabGroup.addEventListener("open", function(e) {
 		welcomeWindow.open({modal: true});
 	});
-	tabGroup.addEventListener("singletap", function(e) {
-		
-	});
 	tabGroup.addEventListener("focus", function(e) {
-		//check tabIndex
-		var tab = this.tabs[e.index];
-		var webview = e.tab.getWindow().getChildren()[3];
 		
-		var menu = tab.menu;
-	
-		webview.setUrl(menu.url);
-		webUtil = require('utils/webUtil');
-		webUtil.setWebviewAttribute(webview, menu);
-		
-		webview.reload();
 	});
 };
 
