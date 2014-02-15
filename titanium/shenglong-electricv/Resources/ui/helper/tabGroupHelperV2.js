@@ -54,8 +54,12 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				if(tabGroupView.tabIndex == index) {
 					return;
 				}
+				
 				var webview = appWin.webview;
 				var menu = menus[index];
+				
+				var submenu = appWin.submenu;
+				submenu.changeSubmenu(menu.submenus);
 			
 				webview.setUrl(menu.url);
 				webUtil = require('utils/webUtil');

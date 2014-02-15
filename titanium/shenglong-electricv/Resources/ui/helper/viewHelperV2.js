@@ -2,7 +2,7 @@
  * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
  * Version: 1.0
  * Author: zhangchunsheng
- * Date: 2014-01-27
+ * Date: 2014-02-15
  * Description: 创建子菜单
  */
 var viewHelper = {};
@@ -46,6 +46,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		activeBorderColor: 'C0C0C0',
 		activeBgColor: '#fff'
 	};
+	this.config = config;
 		
 	var width = Ti.Platform.displayCaps.platformWidth,
 		height = Ti.Platform.displayCaps.platformHeight,
@@ -168,6 +169,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		zIndex: config.scrollBgIndex,
 		opacity: config.opacity
 	});
+	this.scrollView = scrollView;
+	this.webview = webview;
 	
 	scrollView.addEventListener('scroll', function(e) {
 		/*Ti.API.info('x ' + e.x + ' y ' + e.y);
@@ -273,6 +276,98 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			});
 		})(url, i);
 	}
+	
+	this.changeSubmenu = function(submenus) {
+		var submenuView = [];
+		var submenuLabel = [],
+			submenuName = "",
+			left = 0,
+			url = "",
+			submenuBgColor,
+			submenuBorderColor,
+			submenuFontColor,
+			activeTabIndex = 0,
+			menu,
+			config = this.config,
+			webview = this.webview;
+		
+		this.scrollView.removeAllChildren();
+		
+		for(var i = 0, l = submenus.length ; i < l ; i++) {
+			submenuName = submenus[i].showName;
+			config.buttonWidth = config.fontWidth * submenuName.length;
+			if(i == 0) {
+				left = config.marginLeft;	
+			} else {
+				left = submenuView[i - 1].getLeft() + submenuView[i - 1].getWidth() + config.marginLeft;
+			}
+			if(i == activeTabIndex) {
+				submenuBgColor = config.activeBgColor;
+				submenuBorderColor = config.activeBorderColor;
+				submenuFontColor = config.activeFontColor;
+			} else {
+				submenuBgColor = config.scrollBgColor;
+				submenuBorderColor = config.borderColor;
+				submenuFontColor = config.fontColor;
+			}
+			submenuView.push(Ti.UI.createView({
+				backgroundColor: submenuBgColor,
+				borderRadius: 10,
+				borderWidth: 1,
+				borderColor: submenuBorderColor,
+				width: config.buttonWidth,
+				height: config.submenuHeight,
+				left: left,
+				name: submenus[i].name
+			}));
+			this.scrollView.add(submenuView[i]);
+			
+			submenuLabel.push(Ti.UI.createLabel({
+				text: submenuName,
+				font: {fontSize: config.fontSize, fontWeight: 'bold'},
+				color: submenuFontColor,
+				width: 'auto',
+				textAlign: 'center',
+				height: 'auto'
+			}));
+			submenuView[i].add(submenuLabel[i]);
+			if(submenus[i].url == "") {
+				url = "http://m.shenglong-electric.com.cn/";
+			} else {
+				url = submenus[i].url;
+			}
+			
+			menu = submenus[i];
+			
+			(function(url, i) {
+				submenuView[i].addEventListener('click', function(e) {
+					if(i == activeTabIndex) {
+						/*webview.setUrl(url);
+						webview.reload();
+						return;*/
+					}
+					if(activeTabIndex >= 0) {
+						submenuView[activeTabIndex].setBackgroundColor(config.scrollBgColor);
+						submenuView[activeTabIndex].setBorderColor(config.borderColor);
+						submenuLabel[activeTabIndex].setColor(config.fontColor);
+					}
+					activeTabIndex = i;
+					submenuView[activeTabIndex].setBackgroundColor(config.activeBgColor);
+					submenuView[activeTabIndex].setBorderColor(config.activeBorderColor);
+					submenuLabel[activeTabIndex].setColor(config.activeFontColor);
+					
+					//webview change content
+					webview.setUrl(url);
+					
+					var menu = submenus[i];
+					webUtil = require('utils/webUtil');
+					webUtil.setWebviewAttribute(webview, menu);
+				
+					webview.reload();
+				});
+			})(url, i);
+		}
+	};
 };
 exports.viewHelper = viewHelper;
 exports.createSubMenu = viewHelper.createSubMenu;

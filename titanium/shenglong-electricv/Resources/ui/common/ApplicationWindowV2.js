@@ -117,8 +117,8 @@ function ApplicationWindow(opts) {
 		logger.info('------------------webview:' + e.message);
 	});
 	
-	var viewHelper = require("ui/helper/viewHelper");
-	viewHelper.createSubMenu(this.window, webview, opts);
+	var viewHelper = require("ui/helper/viewHelperV2");
+	this.submenu = new viewHelper.createSubMenu(this.window, webview, opts);
 	
 	this.window.add(webview);
 	this.window.add(activityIndicator);
