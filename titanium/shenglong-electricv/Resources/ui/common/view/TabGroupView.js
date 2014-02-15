@@ -35,11 +35,11 @@ TabGroupView.prototype.addTab = function(tab) {
 
 TabGroupView.prototype.addWindow = function(window) {
 	this.window = window;
-	this.window.add(this.tabGroupView);
+	this.window.window.add(this.tabGroupView);
 };
 
 TabGroupView.prototype.open = function() {
-	this.window.open();
+	this.window.window.open();
 };
 
 /**
@@ -60,7 +60,7 @@ TabGroupView.prototype.setActiveTab = function(tabIndex) {
 
 TabGroupView.prototype.addEventListener = function(name, callback) {
 	if(name == "open") {
-		this.window.addEventListener(name, callback);
+		this.window.window.addEventListener(name, callback);
 	} else {
 		this.tabGroupView.addEventListener(name, callback);
 	}

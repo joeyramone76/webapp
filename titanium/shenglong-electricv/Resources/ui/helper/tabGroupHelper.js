@@ -23,14 +23,14 @@ tabGroupHelper.createAppTabs = function(window, welcomeWindow) {
 				menu: menus[i],
 				welcomeWindow: welcomeWindow,
 				url: 'website/page_home_template.html'
-			}));
+			}).window);
 		} else {
 			appWin.push(new Window({
 				title: L(menus[i].name),
 				menuName: menus[i].name,
 				menu: menus[i],
 				welcomeWindow: welcomeWindow
-			}));
+			}).window);
 		}
 		
 		if(menus[i].icon == "") {

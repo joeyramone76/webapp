@@ -51,6 +51,17 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		tabGroupView.addTab(appTabs[i]);
 		(function(index) {
 			appTabs[i].addEventListener('click', function(e) {
+				if(tabGroupView.tabIndex == index) {
+					return;
+				}
+				var webview = appWin.webview;
+				var menu = menus[index];
+			
+				webview.setUrl(menu.url);
+				webUtil = require('utils/webUtil');
+				webUtil.setWebviewAttribute(webview, menu);
+				
+				webview.reload();
 				tabGroupView.setActiveTab(index);
 			});
 		})(i);
