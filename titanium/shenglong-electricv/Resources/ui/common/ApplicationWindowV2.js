@@ -28,6 +28,8 @@ function ApplicationWindow(opts) {
 	}
 	
 	var logger = require('utils/logger');
+	
+	url = url + "?r=" + new Date().getTime();
 
 	var webview = Ti.UI.createWebView({
 		url: url,
@@ -76,8 +78,11 @@ function ApplicationWindow(opts) {
 		var beginDate = new Date();
 		logger.info("---------------getContent start:" + beginDate.getTime());
 		content = webUtil.getContent(this);
+		logger.info(content);
 		var endDate = new Date();
 		logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+		
+		activityIndicator.hide();
 		
 		Ti.App.fireEvent('app:changeContent', {
 			type: this.menu.type,
@@ -86,14 +91,14 @@ function ApplicationWindow(opts) {
 			newsId: this.menu.newsId,
 			content: content
 		});
-		
-		activityIndicator.hide();
 	});
 	
 	Ti.App.addEventListener('app:visitPage', function(e) {//自定义事件
 		var menu = JSON.parse(e.menu);
 		
-		webview.setUrl(menu.url);
+		//url = menu.url + "?r=" + new Date().getTime();
+		url = menu.url;
+		webview.setUrl(url);
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
@@ -105,7 +110,9 @@ function ApplicationWindow(opts) {
 	Ti.App.addEventListener('app:visitNews', function(e) {
 		var sl_news_id = e.sl_news_id;
 		
-		webview.setUrl('/website/news_template.html');
+		url = '/website/news_template.html' + "?r=" + new Date().getTime();
+		url = '/website/news_template.html';
+		webview.setUrl(url);
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;

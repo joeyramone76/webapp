@@ -74,7 +74,9 @@ tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
 		
 		var menu = tab.menu;
 	
-		webview.setUrl(menu.url);
+		//url = menu.url + "?r=" + new Date().getTime();
+		url = menu.url;
+		webview.setUrl(url);
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
 		

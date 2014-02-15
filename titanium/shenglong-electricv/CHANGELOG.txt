@@ -9,3 +9,4 @@
 3.增加tabView的click事件，改变activeTab
 4.调整tabView的click事件，加载数据
 5.调整tabView的click事件，更改子菜单
+6.bug:主菜单切换，内容无法加载

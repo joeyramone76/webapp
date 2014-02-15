@@ -61,7 +61,9 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				var submenu = appWin.submenu;
 				submenu.changeSubmenu(menu.submenus);
 			
-				webview.setUrl(menu.url);
+				//url = menu.url + "?r=" + new Date().getTime();
+				url = menu.url;
+				webview.setUrl(url);
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 				

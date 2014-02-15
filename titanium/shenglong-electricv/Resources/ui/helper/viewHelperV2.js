@@ -265,6 +265,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				submenuView[activeTabIndex].setBorderColor(config.activeBorderColor);
 				submenuLabel[activeTabIndex].setColor(config.activeFontColor);
 				
+				//url = url + "?r=" + new Date().getTime();
 				//webview change content
 				webview.setUrl(url);
 				
@@ -356,6 +357,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					submenuView[activeTabIndex].setBorderColor(config.activeBorderColor);
 					submenuLabel[activeTabIndex].setColor(config.activeFontColor);
 					
+					//url = url + "?r=" + new Date().getTime();
 					//webview change content
 					webview.setUrl(url);
 					

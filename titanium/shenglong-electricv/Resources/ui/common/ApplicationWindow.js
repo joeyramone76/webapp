@@ -122,7 +122,9 @@ function ApplicationWindow(opts) {
 			return;
 		}
 		
-		webview.setUrl(menu.url);
+		//url = menu.url + "?r=" + new Date().getTime();
+		url = menu.url;
+		webview.setUrl(url);
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
@@ -143,7 +145,9 @@ function ApplicationWindow(opts) {
 			return;
 		}
 		
-		webview.setUrl('/website/news_template.html');
+		//url = '/website/news_template.html' + "?r=" + new Date().getTime();
+		url = '/website/news_template.html';
+		webview.setUrl(url);
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;
