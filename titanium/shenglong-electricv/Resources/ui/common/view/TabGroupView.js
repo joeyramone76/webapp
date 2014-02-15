@@ -8,11 +8,18 @@
 function TabGroupView(opts) {
 	this.tabs = [];
 	this.window = null;
+	var config = {
+		height: 90,
+		backgroundColor: '#F0F0F0',
+		focusColor: '#113788'
+	};
+	config.height = config.height / 2;
 	
 	this.tabGroupView = Ti.UI.createView({
-		backgroundColor: 'white',
+		backgroundColor: config.backgroundColor,
 		width: Ti.UI.FILL,
-		height: 90,
+		height: config.height,
+		bottom: 0,
 		borderRadius: 0,
 		layout: 'horizontal'
 	});

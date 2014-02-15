@@ -6,6 +6,11 @@
  * Description: 应用主窗口webview
  */
 function ApplicationWindow(opts) {
+	var config = {
+		top: 30,
+		tabHeight: 45
+	};
+	
 	var self = Ti.UI.createWindow({
 		title: opts.title,
 		backgroundColor:'white',
@@ -29,7 +34,8 @@ function ApplicationWindow(opts) {
 		webview = Ti.UI.createWebView({
 			url: url,
 			hideLoadIndicator: true,
-			top: 40,
+			top: config.top,
+			height: Ti.App.height - config.top - config.tabHeight,
 			menu: opts.menu,//menu
 			code: opts.menu.code,
 			type: opts.menu.type,

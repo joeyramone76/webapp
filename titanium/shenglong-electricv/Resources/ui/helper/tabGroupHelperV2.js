@@ -23,6 +23,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		url: 'website/page_home_template.html'
 	});
 	var icon = "";
+	var width = Math.floor(640 / menus.length / 2);
 	for(var i = 0, l = menus.length ; i < l ; i++) {
 		if(menus[i].icon == "") {
 			icon = "/images/KS_nav_ui.png";
@@ -30,6 +31,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			icon = menus[i].icon;
 		}
 		appTabs.push(new TabView({
+			width: width,
 			title: L(menus[i].name),
 			icon: icon,
 			window: appWin,

@@ -21,7 +21,8 @@ if (Ti.version < 1.8) {
   	var osname = Ti.Platform.osname,
     	version = Ti.Platform.version,
     	height = Ti.Platform.displayCaps.platformHeight,
-    	width = Ti.Platform.displayCaps.platformWidth;
+    	width = Ti.Platform.displayCaps.platformWidth,
+    	dpi = Ti.Platform.displayCaps.dpi;
 	
 	var Window;
 	
@@ -30,6 +31,10 @@ if (Ti.version < 1.8) {
 	
 	var config = require('ui/config/config');
 	Ti.App.menus = config.menus;//global
+	
+	Ti.App.width = width;
+	Ti.App.height = height;
+	Ti.App.dpi = dpi;
 	
 	if(osname === 'iphone' || osname === 'ipad') {
 		Window = require('ui/handheld/ios/ApplicationWindow');
