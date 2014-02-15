@@ -7,23 +7,26 @@
  */
 var tabGroupHelper = {};
 tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
-	var Window = require('ui/common/ApplicationWindow');
-	var TabView = require('ui/common/view/TabView');
+	var Window = require('ui/common/ApplicationWindowV2'),
+		TabView = require('ui/common/view/TabView');
 	
-	var config = require('ui/config/config');
-	var menus = config.menus;
-	var menu = menus[0];
+	var config = require('ui/config/config'),
+		menus = config.menus,
+		menu = menus[0];
 	
-	var appTabs = [];
-	var appWin = new Window({
+	var appTabs = [],
+		appWin = new Window({
 		title: L(menu.name),
 		menuName: menu.name,
 		menu: menu,
 		welcomeWindow: welcomeWindow,
 		url: 'website/page_home_template.html'
 	});
-	var icon = "";
-	var width = Math.floor(640 / menus.length / 2);
+	
+	var icon = "",
+		width = Math.floor(640 / menus.length / 2),
+		activeIndex = 0;
+		
 	for(var i = 0, l = menus.length ; i < l ; i++) {
 		if(menus[i].icon == "") {
 			icon = "/images/KS_nav_ui.png";
@@ -46,8 +49,14 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			template_url: menus[i].url//template
 		}));
 		tabGroupView.addTab(appTabs[i]);
+		(function(index) {
+			appTabs[i].addEventListener('click', function(e) {
+				tabGroupView.setActiveTab(index);
+			});
+		})(i);
 	}
 	tabGroupView.addWindow(appWin);
+	tabGroupView.setActiveTab(activeIndex);
 };
 
 tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {

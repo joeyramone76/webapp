@@ -6,16 +6,23 @@
  * Description: tabView
  */
 function TabView(opts) {
+	this.tabGroupView = opts.tabGroupView;
+	this.isActive = 0;
+	
 	var config = {
 		height: 90,
 		iconWidth: 50,
 		iconHeight: 42,
 		fontSize: 9,
+		fontWeight: 'bold',
 		fontColor: '#939393',
 		focusColor: '#113788',
 		layout: 'vertical',
 		top: 19
 	};
+	
+	this.fontColor = config.fontColor;
+	this.focusColor = config.focusColor;
 	
 	config.iconWidth = config.iconWidth / 2;
 	config.iconHeight = config.iconHeight / 2;
@@ -24,30 +31,50 @@ function TabView(opts) {
 	opts.height = config.height / 2;
 	opts.layout = config.layout;
 	
-	var self = Ti.UI.createView(opts);
+	this.tabView = Ti.UI.createView(opts);
 	
 	//icon
-	var icon = Ti.UI.createView({
+	this.icon = Ti.UI.createView({
 		backgroundImage: opts.icon,
+		backgroundFocusedImage: opts.icon.replace(".png", "") + "_h.png",
 		width: config.iconWidth,
 		height: config.iconHeight,
 		top: config.top
 	});
-	self.add(icon);
+	this.tabView.add(this.icon);
 	
 	//title
-	var title = Ti.UI.createLabel({
+	this.title = Ti.UI.createLabel({
 		text: opts.title,
 		color: config.fontColor,
-		font: {fontSize: config.fontSize}
+		font: {fontSize: config.fontSize, fontWeight: config.fontWeight}
 	});
-	self.add(title);
-	
-	return self;
+	this.tabView.add(this.title);
 };
 
 TabView.prototype.addEventListener = function(name, callback) {
-	this.addEventListener(name, callback);
+	this.tabView.addEventListener(name, callback);
+};
+
+TabView.prototype.appendTo = function(tabGroupView) {
+	this.tabGroupView = tabGroupView;
+	this.tabGroupView.add(this.tabView);
+};
+
+TabView.prototype.setTabGroupView = function(tabGroupView) {
+	this.tabGroupView = tabGroupView;
+};
+
+TabView.prototype.setActive = function() {
+	this.icon.setFocusable(true);
+	this.icon.setBackgroundImage(this.icon.backgroundImage.replace(".png", "") + "_h.png");
+	this.title.setColor(this.focusColor);
+};
+
+TabView.prototype.unsetActive = function() {
+	this.icon.setFocusable(false);
+	this.icon.setBackgroundImage(this.icon.backgroundImage.replace("_h.png", "") + ".png");
+	this.title.setColor(this.fontColor);
 };
 
 module.exports = TabView;

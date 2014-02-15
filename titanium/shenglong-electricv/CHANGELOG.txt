@@ -6,3 +6,4 @@
 2014-02-15
 1.更改tab菜单
 2.调整tab菜单样式
+3.增加tabView的click事件，改变activeTab

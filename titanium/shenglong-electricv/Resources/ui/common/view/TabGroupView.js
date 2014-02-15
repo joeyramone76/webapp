@@ -8,6 +8,8 @@
 function TabGroupView(opts) {
 	this.tabs = [];
 	this.window = null;
+	this.tabIndex = -1;
+	
 	var config = {
 		height: 90,
 		backgroundColor: '#F0F0F0',
@@ -27,7 +29,8 @@ function TabGroupView(opts) {
 
 TabGroupView.prototype.addTab = function(tab) {
 	this.tabs.push(tab);
-	this.tabGroupView.add(tab);
+	tab.setTabGroupView(this);
+	this.tabGroupView.add(tab.tabView);
 };
 
 TabGroupView.prototype.addWindow = function(window) {
@@ -44,7 +47,15 @@ TabGroupView.prototype.open = function() {
  * @param {Object} tabIndex
  */
 TabGroupView.prototype.setActiveTab = function(tabIndex) {
-	
+	if(this.tabIndex == tabIndex) {
+		return;
+	}
+	//remove current active tab
+	if(this.tabIndex != -1) {
+		this.tabs[this.tabIndex].unsetActive();
+	}
+	this.tabIndex = tabIndex;
+	this.tabs[this.tabIndex].setActive();
 };
 
 TabGroupView.prototype.addEventListener = function(name, callback) {
