@@ -21,7 +21,8 @@ if (Ti.version < 1.8) {
   	var osname = Ti.Platform.osname,
     	version = Ti.Platform.version,
     	height = Ti.Platform.displayCaps.platformHeight,
-    	width = Ti.Platform.displayCaps.platformWidth;
+    	width = Ti.Platform.displayCaps.platformWidth,
+    	dpi = Ti.Platform.displayCaps.dpi;
 	
 	var Window;
 	
@@ -31,6 +32,43 @@ if (Ti.version < 1.8) {
 	var config = require('ui/config/config');
 	Ti.App.menus = config.menus;//global
 	
+	Ti.App.width = width;
+	Ti.App.height = height;
+	Ti.App.dpi = dpi;
+	
+	//状态信息
+	Ti.App.visitInfo = {
+		activeTabIndex: 0,
+		activeSubMenu: [{
+			index: 0,
+			left: 0
+		}, {
+			index: 0,
+			left: 0
+		}, {
+			index: 0,
+			left: 0
+		}, {
+			index: 0,
+			left: 0
+		}, {
+			index: 0,
+			left: 0
+		}],
+		activeMenu: [{
+			
+		}, {
+			
+		}, {
+			
+		}, {
+			
+		}, {
+			
+		}]
+	};
+	Ti.App.Properties.setObject('Ti.App.visitInfo', Ti.App.visitInfo);
+	
 	if(osname === 'iphone' || osname === 'ipad') {
 		Window = require('ui/handheld/ios/ApplicationWindow');
 	} else if(osname === 'mobileweb') {
@@ -39,6 +77,7 @@ if (Ti.version < 1.8) {
 		Window = require('ui/handheld/android/ApplicationWindow');
 	}
 	
+	//入口程序
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroupV2');
 	var tabGroup = new ApplicationTabGroup();
 	

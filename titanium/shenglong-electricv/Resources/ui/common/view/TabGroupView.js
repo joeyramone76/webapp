@@ -8,11 +8,20 @@
 function TabGroupView(opts) {
 	this.tabs = [];
 	this.window = null;
+	this.tabIndex = -1;
+	
+	var config = {
+		height: 90,
+		backgroundColor: '#F0F0F0',
+		focusColor: '#113788'
+	};
+	config.height = config.height / 2;
 	
 	this.tabGroupView = Ti.UI.createView({
-		backgroundColor: 'white',
+		backgroundColor: config.backgroundColor,
 		width: Ti.UI.FILL,
-		height: 90,
+		height: config.height,
+		bottom: 0,
 		borderRadius: 0,
 		layout: 'horizontal'
 	});
@@ -20,16 +29,17 @@ function TabGroupView(opts) {
 
 TabGroupView.prototype.addTab = function(tab) {
 	this.tabs.push(tab);
-	this.tabGroupView.add(tab);
+	tab.setTabGroupView(this);
+	this.tabGroupView.add(tab.tabView);
 };
 
 TabGroupView.prototype.addWindow = function(window) {
 	this.window = window;
-	this.window.add(this.tabGroupView);
+	this.window.window.add(this.tabGroupView);
 };
 
 TabGroupView.prototype.open = function() {
-	this.window.open();
+	this.window.window.open();
 };
 
 /**
@@ -37,12 +47,20 @@ TabGroupView.prototype.open = function() {
  * @param {Object} tabIndex
  */
 TabGroupView.prototype.setActiveTab = function(tabIndex) {
-	
+	if(this.tabIndex == tabIndex) {
+		return;
+	}
+	//remove current active tab
+	if(this.tabIndex != -1) {
+		this.tabs[this.tabIndex].unsetActive();
+	}
+	this.tabIndex = tabIndex;
+	this.tabs[this.tabIndex].setActive();
 };
 
 TabGroupView.prototype.addEventListener = function(name, callback) {
 	if(name == "open") {
-		this.window.addEventListener(name, callback);
+		this.window.window.addEventListener(name, callback);
 	} else {
 		this.tabGroupView.addEventListener(name, callback);
 	}

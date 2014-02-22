@@ -18,7 +18,7 @@ function ActivityIndicator() {
 		font: {fontFamily:'Helvetica Neue', fontSize:13, fontWeight:'bold'},
 		message: L('loading'),
 		style: style,
-		top: 180,
+		top: Ti.App.height / 2 - 30,
 		left: 110,
 		height: Ti.UI.SIZE,
 		width: Ti.UI.SIZE

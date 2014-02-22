@@ -1,7 +1,30 @@
-2013-12-27
+[shenglong-electricv_1.0.0.1 2013-12-27 张春生]
 1.webview loading view ActivityIndicatorStyle ActivityIndicator
 2.submenu as one line
 3.submenu highlight
 
-2014-02-15
-1.更改tab菜单
+[shenglong-electricv_1.0.0.1 2014-02-15 张春生]
+1.新功能:更改tab菜单
+2.新功能:调整tab菜单样式
+3.新功能:增加tabView的click事件，改变activeTab
+4.新功能:调整tabView的click事件，加载数据
+5.新功能:调整tabView的click事件，更改子菜单
+6.bug:主菜单切换，内容无法加载
+7.bug:修复主菜单切换，内容无法加载的bug，两次beforeload，setUrl与reload均触发beforeload
+
+[shenglong-electricv_1.0.0.1 2014-02-22 张春生]
+1.新功能：增加左侧菜单返回功能
+2.重构：更改launch image
+3.新功能：保存submenu的activeIndex位置
+
+--备注分类
+1、新功能：
+2、Bug:
+3、需求变更：
+4、重构：
+5、merge:
+
+--格式：
+[shenglong-electricv_1.0.0.1 2014-02-22 张春生]
+版本号 日期 提交人
+版本号：产品名 版本类型 主版本 辅版本 新功能版本 缺陷版本
