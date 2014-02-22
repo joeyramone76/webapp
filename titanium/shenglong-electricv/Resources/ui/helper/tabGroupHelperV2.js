@@ -49,17 +49,25 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			template_url: menus[i].url//template
 		}));
 		tabGroupView.addTab(appTabs[i]);
+		
+		//bind tab event
 		(function(index) {
 			appTabs[i].addEventListener('click', function(e) {
 				if(tabGroupView.tabIndex == index) {
 					return;
 				}
+				var visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
+				visitInfo.activeTabIndex = index;
+				Ti.App.Properties.setObject('Ti.App.visitInfo', visitInfo);
 				
 				var webview = appWin.webview;
 				var menu = menus[index];
 				
+				//改变submenu信息
 				var submenu = appWin.submenu;
 				submenu.changeSubmenu(menu.submenus);
+				visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
+				menu = visitInfo.activeMenu[index];
 			
 				//url = menu.url + "?r=" + new Date().getTime();
 				url = menu.url;
@@ -69,7 +77,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				//webview.reload();
 				webview.setUrl(url);
 				
-				tabGroupView.setActiveTab(index);
+				tabGroupView.setActiveTab(visitInfo.activeTabIndex);
 			});
 		})(i);
 	}

@@ -199,92 +199,24 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	
 	window.add(scrollView);
 	
-	var submenuView = [];
-	var submenuLabel = [],
-		submenuName = "",
-		left = 0,
-		url = "",
-		submenuBgColor,
-		submenuBorderColor,
-		submenuFontColor,
-		activeTabIndex = 0,
-		menu;
-	for(var i = 0, l = submenus.length ; i < l ; i++) {
-		submenuName = submenus[i].showName;
-		config.buttonWidth = config.fontWidth * submenuName.length;
-		if(i == 0) {
-			left = config.marginLeft;	
-		} else {
-			left = submenuView[i - 1].getLeft() + submenuView[i - 1].getWidth() + config.marginLeft;
-		}
-		if(i == activeTabIndex) {
-			submenuBgColor = config.activeBgColor;
-			submenuBorderColor = config.activeBorderColor;
-			submenuFontColor = config.activeFontColor;
-		} else {
-			submenuBgColor = config.scrollBgColor;
-			submenuBorderColor = config.borderColor;
-			submenuFontColor = config.fontColor;
-		}
-		submenuView.push(Ti.UI.createView({
-			backgroundColor: submenuBgColor,
-			borderRadius: 10,
-			borderWidth: 1,
-			borderColor: submenuBorderColor,
-			width: config.buttonWidth,
-			height: config.submenuHeight,
-			left: left,
-			name: submenus[i].name
-		}));
-		scrollView.add(submenuView[i]);
-		submenuLabel.push(Ti.UI.createLabel({
-			text: submenuName,
-			font: {fontSize: config.fontSize, fontWeight: 'bold'},
-			color: submenuFontColor,
-			width: 'auto',
-			textAlign: 'center',
-			height: 'auto'
-		}));
-		submenuView[i].add(submenuLabel[i]);
-		if(submenus[i].url == "") {
-			url = "http://m.shenglong-electric.com.cn/";
-		} else {
-			url = submenus[i].url;
-		}
+	this.backBtn = {};
+	this.backBtn.menu = {};
+	
+	this.showLeftButton = function(menu) {
+		this.leftImage.show();
+		this.leftSplit.show();
 		
-		menu = submenus[i];
-		
-		(function(url, i) {
-			submenuView[i].addEventListener('click', function(e) {
-				if(i == activeTabIndex) {
-					/*webview.setUrl(url);
-					webview.reload();
-					return;*/
-				}
-				if(activeTabIndex >= 0) {
-					submenuView[activeTabIndex].setBackgroundColor(config.scrollBgColor);
-					submenuView[activeTabIndex].setBorderColor(config.borderColor);
-					submenuLabel[activeTabIndex].setColor(config.fontColor);
-				}
-				activeTabIndex = i;
-				submenuView[activeTabIndex].setBackgroundColor(config.activeBgColor);
-				submenuView[activeTabIndex].setBorderColor(config.activeBorderColor);
-				submenuLabel[activeTabIndex].setColor(config.activeFontColor);
-				
-				//url = url + "?r=" + new Date().getTime();
-				//webview change content
-				
-				var menu = submenus[i];
-				webUtil = require('utils/webUtil');
-				webUtil.setWebviewAttribute(webview, menu);
-			
-				//webview.reload();
-				webview.setUrl(url);
-			});
-		})(url, i);
-	}
+		this.backBtn.menu = menu;
+	};
+	
+	this.hideLeftButton = function() {
+		this.leftImage.hide();
+		this.leftSplit.hide();
+	};
 	
 	this.changeSubmenu = function(submenus) {
+		var that = this;
+		
 		var submenuView = [];
 		var submenuLabel = [],
 			submenuName = "",
@@ -299,6 +231,10 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			webview = this.webview;
 		
 		this.scrollView.removeAllChildren();
+		
+		var visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
+		var bottomTabIndex = visitInfo.activeTabIndex;
+		activeTabIndex = visitInfo.activeSubMenu[bottomTabIndex].index;
 		
 		for(var i = 0, l = submenus.length ; i < l ; i++) {
 			submenuName = submenus[i].showName;
@@ -345,20 +281,32 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			}
 			
 			menu = submenus[i];
+			if(i == activeTabIndex) {
+				visitInfo.activeMenu[bottomTabIndex] = menu;
+			}
+			Ti.App.Properties.setObject('Ti.App.visitInfo', visitInfo);
+			this.hideLeftButton();
 			
 			(function(url, i) {
+				//submenu click event
 				submenuView[i].addEventListener('click', function(e) {
+					var visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
+					var bottomTabIndex = visitInfo.activeTabIndex;
+		
 					if(i == activeTabIndex) {
 						/*webview.setUrl(url);
 						webview.reload();
 						return;*/
 					}
+					//remove current activeTab
 					if(activeTabIndex >= 0) {
 						submenuView[activeTabIndex].setBackgroundColor(config.scrollBgColor);
 						submenuView[activeTabIndex].setBorderColor(config.borderColor);
 						submenuLabel[activeTabIndex].setColor(config.fontColor);
 					}
+					
 					activeTabIndex = i;
+					
 					submenuView[activeTabIndex].setBackgroundColor(config.activeBgColor);
 					submenuView[activeTabIndex].setBorderColor(config.activeBorderColor);
 					submenuLabel[activeTabIndex].setColor(config.activeFontColor);
@@ -369,28 +317,21 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					var menu = submenus[i];
 					webUtil = require('utils/webUtil');
 					webUtil.setWebviewAttribute(webview, menu);
+					
+					visitInfo.activeSubMenu[bottomTabIndex].index = activeTabIndex;
+					visitInfo.activeMenu[bottomTabIndex] = menu;
+					Ti.App.Properties.setObject('Ti.App.visitInfo', visitInfo);
 				
 					//webview.reload();
 					webview.setUrl(url);
+					
+					that.hideLeftButton();
 				});
 			})(url, i);
 		}
 	};
 	
-	this.backBtn = {};
-	this.backBtn.menu = {};
-	
-	this.showLeftButton = function(menu) {
-		this.leftImage.show();
-		this.leftSplit.show();
-		
-		this.backBtn.menu = menu;
-	};
-	
-	this.hideLeftButton = function() {
-		this.leftImage.hide();
-		this.leftSplit.hide();
-	};
+	this.changeSubmenu(submenus);
 };
 exports.viewHelper = viewHelper;
 exports.createSubMenu = viewHelper.createSubMenu;

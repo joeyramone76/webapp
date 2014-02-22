@@ -11,7 +11,7 @@ function ApplicationWindow(opts) {
 		tabHeight: 45
 	};
 	
-	that = this;
+	var that = this;
 	
 	this.window = Ti.UI.createWindow({
 		title: opts.title,
