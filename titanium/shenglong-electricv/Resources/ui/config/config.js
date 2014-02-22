@@ -892,7 +892,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -909,7 +909,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -926,7 +926,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -943,7 +943,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -960,7 +960,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     }
                 ],
