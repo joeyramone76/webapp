@@ -4,6 +4,7 @@
  * Author: zhangchunsheng
  * Date: 2014-02-15
  * Description: 创建子菜单
+ * Modify: 2014-02-16 左侧返回功能
  */
 var viewHelper = {};
 /**
