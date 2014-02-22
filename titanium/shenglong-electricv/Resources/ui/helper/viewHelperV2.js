@@ -232,6 +232,18 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		
 		this.scrollView.removeAllChildren();
 		
+		var contentWidth = 0;
+		for(var i = 0, l = submenus.length ; i < l ; i++) {
+			submenuName = submenus[i].showName;
+			config.buttonWidth = config.fontWidth * submenuName.length;
+			contentWidth += config.buttonWidth + config.marginLeft;
+		}
+		contentWidth += 20;
+		if(contentWidth < 260) {
+			contentWidth = 260;
+		}
+		this.scrollView.setContentWidth(contentWidth);
+		
 		var visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
 		var bottomTabIndex = visitInfo.activeTabIndex;
 		activeTabIndex = visitInfo.activeSubMenu[bottomTabIndex].index;
