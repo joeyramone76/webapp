@@ -12,8 +12,10 @@
 6.bug:主菜单切换，内容无法加载
 7.bug:修复主菜单切换，内容无法加载的bug，两次beforeload，setUrl与reload均触发beforeload
 
-[shenglong-electricv_1.0.0.1 2014-02-16 张春生]
-1.新功能:增加左侧菜单返回功能
+[shenglong-electricv_1.0.0.1 2014-02-22 张春生]
+1.新功能：增加左侧菜单返回功能
+2.重构：更改launch image
+3.新功能：保存submenu的activeIndex位置
 
 --备注分类
 1、新功能：
@@ -23,6 +25,6 @@
 5、merge:
 
 --格式：
-[seaking_server_1.0.0.1 2013-09-22 张春生]
+[shenglong-electricv_1.0.0.1 2014-02-22 张春生]
 版本号 日期 提交人
 版本号：产品名 版本类型 主版本 辅版本 新功能版本 缺陷版本

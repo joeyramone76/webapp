@@ -63,11 +63,12 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			
 				//url = menu.url + "?r=" + new Date().getTime();
 				url = menu.url;
-				webview.setUrl(url);
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 				
 				//webview.reload();
+				webview.setUrl(url);
+				
 				tabGroupView.setActiveTab(index);
 			});
 		})(i);

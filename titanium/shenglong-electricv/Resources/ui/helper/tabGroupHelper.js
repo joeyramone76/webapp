@@ -76,11 +76,12 @@ tabGroupHelper.bindEvent = function(tabGroup, welcomeWindow) {
 	
 		//url = menu.url + "?r=" + new Date().getTime();
 		url = menu.url;
-		webview.setUrl(url);
+		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
 		
-		webview.reload();
+		//webview.reload();
+		webview.setUrl(url);
 	});
 };
 

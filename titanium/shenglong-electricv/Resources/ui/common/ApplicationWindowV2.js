@@ -7,9 +7,11 @@
  */
 function ApplicationWindow(opts) {
 	var config = {
-		top: 30,
+		top: 40,
 		tabHeight: 45
 	};
+	
+	that = this;
 	
 	this.window = Ti.UI.createWindow({
 		title: opts.title,
@@ -69,8 +71,12 @@ function ApplicationWindow(opts) {
 	
 	/**
 	 * load
+	 * this表示webview
 	 */
 	webview.addEventListener('load', function(e) {
+		if(this.isBack) {
+			this.isBack = false;
+		}
 		//change content
 		activityIndicator.show();
 		
@@ -89,46 +95,77 @@ function ApplicationWindow(opts) {
 			code: this.menu.code,
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
-			content: content
+			content: content.content,
+			parentMenu: content.menu
 		});
 		
 		logger.info("load");
 		activityIndicator.hide();
 	});
 	
-	Ti.App.addEventListener('app:visitPage', function(e) {//自定义事件
+	/**
+	 * 自定义事件
+	 * 由三级菜单进入页面，显示返回按钮
+	 */
+	Ti.App.addEventListener('app:visitPage', function(e) {
+		//显示返回按钮
+		that.submenu.showLeftButton(JSON.parse(e.parentMenu));
+		
 		var menu = JSON.parse(e.menu);
 		
 		//url = menu.url + "?r=" + new Date().getTime();
 		url = menu.url;
-		webview.setUrl(url);
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
 		webview.timestamp = e.timestamp;
 	
 		//webview.reload();
+		webview.setUrl(url);
 	});
 	
 	Ti.App.addEventListener('app:visitNews', function(e) {
+		//显示返回按钮
+		that.submenu.showLeftButton(JSON.parse(e.parentMenu));
+		
 		var sl_news_id = e.sl_news_id;
 		
 		url = '/website/news_template.html' + "?r=" + new Date().getTime();
 		url = '/website/news_template.html';
-		webview.setUrl(url);
+		
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;
 	
 		//webview.reload();
+		webview.setUrl(url);
 	});
 	
 	Ti.App.addEventListener('app:log', function(e) {
 		logger.info('------------------webview:' + e.message);
 	});
 	
+	/**
+	 * 构建子菜单
+	 */
 	var viewHelper = require("ui/helper/viewHelperV2");
 	this.submenu = new viewHelper.createSubMenu(this.window, webview, opts);
+	
+	this.submenu.leftImage.addEventListener('click', function(e) {
+		webview.isBack = true;
+		that.submenu.hideLeftButton();
+		
+		//change webview menu
+		var menu = that.submenu.backBtn.menu;
+		
+		//url = menu.url;
+		
+		webUtil = require('utils/webUtil');
+		webUtil.setWebviewAttribute(webview, menu);
+		
+		webview.goBack();
+		//webview.setUrl(url);
+	});
 	
 	this.window.add(webview);
 	this.window.add(activityIndicator);

@@ -5,17 +5,17 @@
  * Date: 2014-01-27
  * Description: 工具
  */
-var utils = {};
+var util = {};
 
-utils.pixelsToDPUnits = function(thePixels) {
+util.pixelsToDPUnits = function(thePixels) {
 	return (thePixels / (Ti.Platform.displayCaps.dpi / 160));
 };
 
-utils.dpUnitsToPixels = function(theDPUnits) {
+util.dpUnitsToPixels = function(theDPUnits) {
 	return (theDPUnits * (Ti.Platform.displayCaps.dpi / 160));
 };
 
-utils.getWeekdays = function() {
+util.getWeekdays = function() {
 	this.weekday = new Array(7);
 	this.weekday[0] = "星期天";
 	this.weekday[1] = "星期一";
@@ -27,7 +27,7 @@ utils.getWeekdays = function() {
 	return this.weekday;
 };
 
-utils.getSpokenWeekday = function() {
+util.getSpokenWeekday = function() {
 	this.weekday = new Array(7);
 	this.weekday[0] = "周日";
 	this.weekday[1] = "周一";
@@ -39,7 +39,22 @@ utils.getSpokenWeekday = function() {
 	return this.weekday;
 };
 
-exports.utils = utils;
-exports.pixelsToDPUnits = utils.pixelsToDPUnits;
-exports.dpUnitsToPixels = utils.dpUnitsToPixels;
-exports.getWeekdays = utils.getWeekdays;
+/**
+ * get first level menu
+ * @param {Object} menuId
+ */
+util.getMenu = function(menuId) {
+	var menus = Ti.App.menus;
+	for(var i = 0 ; i < menus.length ; i++) {
+		if(menus[i].id == menuId) {
+			return menus[i];
+		}
+	}
+	return null;
+};
+
+exports.util = util;
+exports.pixelsToDPUnits = util.pixelsToDPUnits;
+exports.dpUnitsToPixels = util.dpUnitsToPixels;
+exports.getWeekdays = util.getWeekdays;
+exports.getMenu = util.getMenu;

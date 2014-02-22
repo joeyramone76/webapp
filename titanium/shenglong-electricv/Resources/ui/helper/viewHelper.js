@@ -264,13 +264,13 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				
 				//url = url + "?r=" + new Date().getTime();
 				//webview change content
-				webview.setUrl(url);
 				
 				var menu = submenus[i];
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 			
-				webview.reload();
+				//webview.reload();
+				webview.setUrl(url);
 			});
 		})(url, i);
 	}

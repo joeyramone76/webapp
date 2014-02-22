@@ -49,6 +49,10 @@ function TabView(opts) {
 		color: config.fontColor,
 		font: {fontSize: config.fontSize, fontWeight: config.fontWeight}
 	});
+	
+	this.menu = {};
+	this.visitInfo = {};//访问页面信息
+	
 	this.tabView.add(this.title);
 };
 

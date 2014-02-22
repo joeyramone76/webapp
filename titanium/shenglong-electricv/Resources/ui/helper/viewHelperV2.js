@@ -73,7 +73,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	var transform_arrow = Ti.UI.create2DMatrix();
 	transform_arrow.scale(0.5, 0.5);
 	
-	var leftBg = Ti.UI.createView({
+	//左侧返回按钮
+	this.leftBg = Ti.UI.createView({
 		contentWidth: config.arrowWidth,
 		contentHeight: config.contentHeight,
 		top: config.scrollBgTop,
@@ -85,7 +86,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: config.opacity,
 		layout: 'horizontal'
 	});
-	var leftImage = Ti.UI.createView({
+	this.leftImage = Ti.UI.createView({
 		backgroundImage: config.leftBackgroundImage,
 		height: config.arrowHeight,
 		width: config.arrowWidth,
@@ -96,7 +97,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: config.opacity,
 		transform: config.transform_arrow
 	});
-	var leftSplit = Ti.UI.createView({
+	this.leftSplit = Ti.UI.createView({
 		backgroundImage: config.splitBackgroundImage,
 		height: config.splitHeight,
 		width: config.splitWidth,
@@ -106,9 +107,11 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		zIndex: config.arrowIndex,
 		opacity: config.opacity
 	});
-	leftBg.add(leftImage);
-	leftBg.add(leftSplit);
-	window.add(leftBg);
+	this.leftBg.add(this.leftImage);
+	this.leftBg.add(this.leftSplit);
+	window.add(this.leftBg);
+	
+	//右侧菜单按钮
 	var rightBg = Ti.UI.createView({
 		contentWidth: config.arrowWidth,
 		contentHeight: config.contentHeight,
@@ -142,9 +145,11 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	rightBg.add(rightImage);
 	window.add(rightBg);
 	
+	//mask窗口
 	var MaskWindow = require('ui/common/MaskWindow');
 	var maskWindow = new MaskWindow();
 	
+	//menu窗口
 	var MenuWindow = require('ui/common/MenuWindow');
 	var menuWindow = new MenuWindow(opts);
 	menuWindow.maskWindow = maskWindow;
@@ -187,8 +192,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			rightImage.hide();
 		}*/
 	});
-	leftImage.show();
-	leftSplit.show();
+	//this.leftImage.show();
+	//this.leftSplit.show();
 	rightImage.show();
 	rightSplit.show();
 	
@@ -268,13 +273,13 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				
 				//url = url + "?r=" + new Date().getTime();
 				//webview change content
-				webview.setUrl(url);
 				
 				var menu = submenus[i];
 				webUtil = require('utils/webUtil');
 				webUtil.setWebviewAttribute(webview, menu);
 			
 				//webview.reload();
+				webview.setUrl(url);
 			});
 		})(url, i);
 	}
@@ -360,16 +365,31 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					
 					//url = url + "?r=" + new Date().getTime();
 					//webview change content
-					webview.setUrl(url);
 					
 					var menu = submenus[i];
 					webUtil = require('utils/webUtil');
 					webUtil.setWebviewAttribute(webview, menu);
 				
 					//webview.reload();
+					webview.setUrl(url);
 				});
 			})(url, i);
 		}
+	};
+	
+	this.backBtn = {};
+	this.backBtn.menu = {};
+	
+	this.showLeftButton = function(menu) {
+		this.leftImage.show();
+		this.leftSplit.show();
+		
+		this.backBtn.menu = menu;
+	};
+	
+	this.hideLeftButton = function() {
+		this.leftImage.hide();
+		this.leftSplit.hide();
 	};
 };
 exports.viewHelper = viewHelper;

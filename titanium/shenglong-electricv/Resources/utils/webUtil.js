@@ -45,7 +45,15 @@ webUtil.getContent = function(webview) {
 			content = JSON.stringify(submenus);
 		}
 	}
-	return content;
+	var menu = JSON.stringify(webview.menu);
+	var menuId = webview.menu.id;
+	var menuCode = webview.menu.code;
+	return {
+		menu: menu,
+		menuId: menuId,
+		menuCode: menuCode,
+		content: content
+	};
 };
 
 webUtil.setWebviewAttribute = function(webview, menu) {

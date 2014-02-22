@@ -101,7 +101,7 @@ function ApplicationWindow(opts) {
 			code: this.menu.code,
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
-			content: content
+			content: content.content
 		});
 		
 		activityIndicator.hide();
@@ -124,13 +124,13 @@ function ApplicationWindow(opts) {
 		
 		//url = menu.url + "?r=" + new Date().getTime();
 		url = menu.url;
-		webview.setUrl(url);
 		
 		webUtil = require('utils/webUtil');
 		webUtil.setWebviewAttribute(webview, menu);
 		webview.timestamp = e.timestamp;
 	
-		webview.reload();
+		//webview.reload();
+		webview.setUrl(url);
 	});
 	
 	Ti.App.addEventListener('app:visitNews', function(e) {
@@ -147,12 +147,13 @@ function ApplicationWindow(opts) {
 		
 		//url = '/website/news_template.html' + "?r=" + new Date().getTime();
 		url = '/website/news_template.html';
-		webview.setUrl(url);
+		
 		webview.type = 4;
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;
 	
-		webview.reload();
+		//webview.reload();
+		webview.setUrl(url);
 	});
 	
 	Ti.App.addEventListener('app:log', function(e) {
