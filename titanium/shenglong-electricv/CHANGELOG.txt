@@ -17,6 +17,7 @@
 2.重构：更改launch image
 3.新功能：保存submenu的activeIndex位置
 4.新功能：增加下拉刷新功能
+5.bug：弹出菜单从底部开始
 
 --备注分类
 1、新功能：
