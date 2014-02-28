@@ -13,4 +13,18 @@ LoadView.prototype.addEventListener = function(name, callback) {
 	
 };
 
+/**
+ * show
+ */
+LoadView.prototype.show = function() {
+	
+};
+
+/**
+ * hide
+ */
+LoadView.prototype.hide = function() {
+	
+};
+
 module.exports = LoadView;
