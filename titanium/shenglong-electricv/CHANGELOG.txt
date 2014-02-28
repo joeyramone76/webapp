@@ -21,6 +21,10 @@
 6.bug：重新计算子菜单长度
 7.bug：添加五大营数据
 
+[shenglong-electricv_1.0.0.1 2014-02-28 张春生]
+1.bug：iPhone5 webview should more far from the top,change the distance
+2.bug：show load when read and render the data
+
 --备注分类
 1、新功能：
 2、Bug:

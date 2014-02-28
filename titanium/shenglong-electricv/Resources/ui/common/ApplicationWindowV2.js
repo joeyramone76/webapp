@@ -3,13 +3,21 @@
  * Version: 1.0
  * Author: zhangchunsheng
  * Date: 2014-02-15
- * Description: 应用主窗口webview
+ * Description: 应用主窗口webview，创建webview，添加监听事件，loading加载提示
  */
 function ApplicationWindow(opts) {
 	var config = {
 		top: 40,
 		tabHeight: 45
 	};
+	
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi;
+	
+	if(height == 568) {
+		config.top += 19;
+	}
 	
 	var that = this;
 	
