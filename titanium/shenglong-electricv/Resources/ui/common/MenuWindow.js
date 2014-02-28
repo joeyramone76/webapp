@@ -7,6 +7,7 @@
  */
 function MenuWindow(opts) {
 	var self = this;
+	
 	var isMobileWeb = Ti.Platform.osname === 'mobileweb',
 		isTizen = Ti.Platform.osname === 'tizen',
 		isIOS = (Ti.Platform.osname == 'iphone' || Ti.Platform.osname == 'ipad');
@@ -72,7 +73,7 @@ function MenuWindow(opts) {
 		//layout: 'vertical',
 		width: Ti.UI.Fill,
 		height: config.windowHeight,
-		bottom: -200,
+		bottom: -320,
 		zIndex: 1001
 	});
 	
@@ -153,6 +154,10 @@ function MenuWindow(opts) {
 		opts.welcomeWindow.open({modal: true});
 	});
 	
+	mapButton.addEventListener('click', function() {
+		self.close();
+	});
+	
 	var cancelButton = Ti.UI.createButton({
 		title: '取   消',
 		borderWidth: config.cancelButtonBorderWidth,
@@ -168,10 +173,7 @@ function MenuWindow(opts) {
 	menuWindow.add(cancelButton);
 	
 	cancelButton.addEventListener('click', function() {
-		var animation = Ti.UI.createAnimation();
-		animation.duration = 400;
-		animation.bottom = -200;
-		menuWindow.close(animation);
+		self.close();
 	});
 	
 	this.maskWindow = null;
@@ -183,10 +185,33 @@ function MenuWindow(opts) {
 	});*/
 	
 	menuWindow.addEventListener('close', function(e) {
-		this.maskWindow.close();
+		self.maskWindow.close();
 	});
 	
-	return menuWindow;
+	this.menuWindow = menuWindow;
 }
+
+MenuWindow.prototype.open = function() {
+	var animation = Ti.UI.createAnimation();
+	animation.duration = 400;
+	animation.bottom = 0;
+	this.maskWindow.open();
+	this.menuWindow.open(animation);
+};
+
+MenuWindow.prototype.close = function() {
+	var animation = Ti.UI.createAnimation();
+	animation.duration = 200;
+	animation.bottom = -320;
+	this._close(animation);
+};
+
+MenuWindow.prototype._open = function(animation) {
+	this.menuWindow.open(animation);
+};
+
+MenuWindow.prototype._close = function(animation) {
+	this.menuWindow.close(animation);
+};
 
 module.exports = MenuWindow;

@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-	<string name="home">Home</string>
+	<!--<string name="home">Home</string>
 	<string name="introduction">introduction</string>
 	
 	<string name="news">news</string>
 	<string name="product">product</string>
 	<string name="customer">customer</string>
-	<string name="connect">connect</string>
+	<string name="connect">connect</string>-->
+	
+	<string name="home">关于盛隆</string>
+	<string name="introduction">公司简介</string>
+	
+	<string name="news">新闻中心</string>
+	<string name="product">产品与服务</string>
+	<string name="customer">客户与成功案例</string>
+	<string name="connect">联系我们</string>
 	
 	<string name="settings">Settings</string>
 </resources>

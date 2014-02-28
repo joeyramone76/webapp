@@ -146,12 +146,12 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	var MenuWindow = require('ui/common/MenuWindow');
 	var menuWindow = new MenuWindow(opts);
 	menuWindow.maskWindow = maskWindow;
+	
+	maskWindow.addEventListener('click', function(e) {
+		menuWindow.close();
+	});
 	rightBg.addEventListener('click', function(e) {
-		var animation = Ti.UI.createAnimation();
-		animation.duration = 400;
-		animation.bottom = 0;
-		maskWindow.open();
-		menuWindow.open(animation);
+		menuWindow.open();
 	});
 	
 	/**
