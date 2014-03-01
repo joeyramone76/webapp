@@ -3,13 +3,24 @@
  * Version: 1.0
  * Author: zhangchunsheng
  * Date: 2014-02-15
- * Description: 应用主窗口webview
+ * Description: 应用主窗口webview，创建webview，添加监听事件，loading加载提示
+ * 		创建tableView以实现pull to refresh的功能
  */
 function ApplicationWindow(opts) {
 	var config = {
 		top: 40,
 		tabHeight: 45
 	};
+	
+	var width = Ti.Platform.displayCaps.platformWidth,
+		height = Ti.Platform.displayCaps.platformHeight,
+		dpi = Ti.Platform.displayCaps.dpi,
+		webviewHeight = 0;
+	
+	if(height == 568) {
+		config.top += 19;
+	}
+	webviewHeight = Ti.App.height - config.top - config.tabHeight;
 	
 	var that = this;
 	
@@ -37,7 +48,7 @@ function ApplicationWindow(opts) {
 		url: url,
 		hideLoadIndicator: true,
 		top: 0,
-		height: Ti.App.height - config.top - config.tabHeight,
+		height: webviewHeight,
 		menu: opts.menu,//menu
 		code: opts.menu.code,
 		type: opts.menu.type,
