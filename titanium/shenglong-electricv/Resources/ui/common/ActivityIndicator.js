@@ -6,22 +6,28 @@
  * Description: loading提示
  */
 function ActivityIndicator() {
-	var style;
+	var config = {
+		top: Ti.App.height / 2 - 30,
+		left: 110,
+		style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
+		zIndex: 102
+	};
 	if(Ti.Platform.name === 'iPhone OS') {
-		style = Ti.UI.iPhone.ActivityIndicatorStyle.DARK;
+		config.style = Ti.UI.iPhone.ActivityIndicatorStyle.DARK;
 	} else {
-		style = Ti.UI.ActivityIndicatorStyle.DARK;
+		config.style = Ti.UI.ActivityIndicatorStyle.DARK;
 	}
 	
 	var activityIndicator = Ti.UI.createActivityIndicator({
 		color: 'black',
 		font: {fontFamily:'Helvetica Neue', fontSize:13, fontWeight:'bold'},
 		message: L('loading'),
-		style: style,
-		top: Ti.App.height / 2 - 30,
-		left: 110,
+		style: config.style,
+		top: config.top,
+		left: config.left,
 		height: Ti.UI.SIZE,
-		width: Ti.UI.SIZE
+		width: Ti.UI.SIZE,
+		zIndex: config.zIndex
 	});
 	
 	return activityIndicator;

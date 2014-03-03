@@ -87,6 +87,12 @@
 			function changeContent(news) {
 				var template = $("#contentTemplate").html();
 				$("#content").html(_.template(template, {news: news}));
+				
+				setTimeout(function() {
+					Ti.App.fireEvent("app:hideLoading", {
+						
+					});
+				}, 200);
 			}
 		</script>
 	</body>

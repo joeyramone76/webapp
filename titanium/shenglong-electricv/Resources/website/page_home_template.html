@@ -51,8 +51,9 @@
 					if(time == e.time)
 						return;
 					time = e.time;
+					var date = new Date();
 					Ti.App.fireEvent("app:log", {
-						message: 'changeContent'
+						message: e.time + " " + date.getTime() + ' changeContent ' + e.content
 					});
 					if(e.code == '001') {
 						changeContent(e.content);
@@ -62,8 +63,23 @@
 				changeContent("");
 			}
 			function changeContent(content) {
+				var date = new Date();
+				Ti.App.fireEvent("app:log", {
+					message: date.getTime() + ' template ' + content
+				});
 				var template = $("#contentTemplate").html();
-				$("#content").html(_.template(template, {content: content}));
+				$("#content").append(_.template(template, {content: content}));
+				
+				setTimeout(function() {
+					Ti.App.fireEvent("app:hideLoading", {
+						
+					});
+				}, 200);
+				
+				date = new Date();
+				Ti.App.fireEvent("app:log", {
+					message: date.getTime() + ' $("#content").html() ' + $("#content").html()
+				});
 			}
 		</script>
 	</body>

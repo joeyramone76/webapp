@@ -21,6 +21,9 @@ function ApplicationWindow(opts) {
 		config.top += 19;
 	}
 	webviewHeight = Ti.App.height - config.top - config.tabHeight;
+	if(height == 480) {
+		webviewHeight -= 19;
+	}
 	
 	var that = this;
 	
@@ -63,6 +66,11 @@ function ApplicationWindow(opts) {
 	/**
 	 * 正在加载提示
 	 */
+	var LoadView = require("ui/common/view/LoadView");
+	var loadView = new LoadView({
+		top: config.top,
+		height: webviewHeight
+	});
 	var ActivityIndicator = require("ui/common/ActivityIndicator");
 	var activityIndicator = new ActivityIndicator();
 	
@@ -89,7 +97,8 @@ function ApplicationWindow(opts) {
 			this.isBack = false;
 		}
 		//change content
-		activityIndicator.show();
+		loadView.show();
+		//activityIndicator.show();
 		
 		webUtil = require('utils/webUtil');
 		var beginDate = new Date();
@@ -111,7 +120,9 @@ function ApplicationWindow(opts) {
 		});
 		
 		logger.info("load");
-		activityIndicator.hide();
+		//after render then hide
+		//activityIndicator.hide();
+		//loadView.hide();
 	});
 	
 	/**
@@ -273,6 +284,12 @@ function ApplicationWindow(opts) {
 		webview.setUrl(url);
 	});
 	
+	Ti.App.addEventListener('app:hideLoading', function(e) {
+		logger.info("app:hideLoading");
+		activityIndicator.hide();
+		loadView.hide();
+	});
+	
 	Ti.App.addEventListener('app:log', function(e) {
 		logger.info('------------------webview:' + e.message);
 	});
@@ -300,6 +317,7 @@ function ApplicationWindow(opts) {
 	});
 	
 	this.window.add(tableView);
+	this.window.add(loadView.loadView);
 	this.window.add(activityIndicator);
 	
 	var welcomebutton = Ti.UI.createButton({

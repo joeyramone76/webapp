@@ -25,6 +25,9 @@
 1.bug：iPhone5 webview should more far from the top,change the distance
 2.bug：show load when read and render the data
 
+[shenglong-electricv_1.0.0.1 2014-03-03 张春生]
+1.bug：show load when read and render the data
+
 --备注分类
 1、新功能：
 2、Bug:
