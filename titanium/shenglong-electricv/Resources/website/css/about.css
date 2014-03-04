@@ -65,11 +65,11 @@
 .side_bar .selected{
 	background: url(../images/arrow_selected.png) no-repeat;
 	background-size: 10px 10px;
-	background-position: 6px 21px;
+	background-position: 6px 19px;
 }
 .side_bar .f_name{
 	display: block;
-    padding: 14px 5px 14px 22px;
+    padding: 12px 5px 14px 22px;
 	color: #9ea4b5;
 	font-size: 16px;
 	text-decoration: none;
