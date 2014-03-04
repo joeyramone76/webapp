@@ -17,14 +17,15 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	var config = {
 		arrowWidth: 15,
 		arrowHeight: 15,
-		arrowTop: 12,//(40 - 15) / 2
+		arrowTop: Math.floor((Ti.App.app_config.submenuHeight - 15) / 2),//(40 - 15) / 2
 		arrowIndex: 101,
-		arrowLeft: 6,
+		arrowLeft: Math.floor((Ti.App.app_config.submenuHeight - 15) / 2),
 		arrowRight: 6,
 		arrowBgColor: '#ffffff',
 		splitWidth: 1,
-		splitHeight: 40,
+		splitHeight: Ti.App.app_config.submenuHeight,
 		splitTop: 0,
+		leftWidth: 10,
 		leftBackgroundImage: '/images/back_tag.png',
 		rightBackgroundImage: '/images/more_tag.png',
 		splitBackgroundImage: '/images/top_line.png',
@@ -33,8 +34,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		scrollBgIndex: 100,
 		scrollBgTop: 0,
 		contentWidth: 440,
-		arrowContentWidth: 40,
-		contentHeight: 40,
+		arrowContentWidth: Ti.App.app_config.submenuHeight,
+		contentHeight: Ti.App.app_config.submenuHeight,
 		submenuHeight: 30,
 		scrollViewWidth: 260,// 320 arrowWidth
 		marginLeft: 10,
@@ -49,8 +50,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		activeBorderColor: '#ffffff',//#C0C0C0
 		activeBgColor: '#DBDBDB'//#ffffff
 	};
+	config.scrollViewWidth = Ti.App.width - config.leftWidth - config.arrowContentWidth;
 	this.config = config;
-		
+	
 	var width = Ti.Platform.displayCaps.platformWidth,
 		height = Ti.Platform.displayCaps.platformHeight,
 		dpi = Ti.Platform.displayCaps.dpi;
@@ -118,7 +120,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		contentWidth: config.arrowWidth,
 		contentHeight: config.contentHeight,
 		top: config.scrollBgTop,
-		right: -10,
+		right: 0,
 		height: config.contentHeight,
 		width: config.arrowContentWidth,
 		backgroundColor: config.arrowBgColor,
@@ -174,6 +176,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		width: config.scrollViewWidth,
 		//borderRadius: 10,
 		backgroundColor: config.scrollBgColor,
+		left: config.leftWidth,
 		zIndex: config.scrollBgIndex,
 		opacity: config.opacity
 	});
@@ -208,12 +211,18 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		this.leftImage.show();
 		this.leftSplit.show();
 		
+		this.scrollView.setLeft(config.arrowContentWidth);
+		this.scrollView.setWidth(Ti.App.width - config.arrowContentWidth - config.arrowContentWidth);
+		
 		this.backBtn.menu = menu;
 	};
 	
 	this.hideLeftButton = function() {
 		this.leftImage.hide();
 		this.leftSplit.hide();
+		
+		this.scrollView.setLeft(config.leftWidth);
+		this.scrollView.setWidth(Ti.App.width - config.leftWidth - config.arrowContentWidth);
 	};
 	
 	this.changeSubmenu = function(submenus) {

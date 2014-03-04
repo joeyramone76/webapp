@@ -33,7 +33,8 @@ if (Ti.version < 1.8) {
 	var config = require('ui/config/config');
 	Ti.App.menus = config.menus;//global
 	Ti.App.app_config = {
-		submenuHeight: 44//88
+		submenuHeight: 44,//40
+		tabHeight: 45
 	};
 	
 	Ti.App.width = width;
