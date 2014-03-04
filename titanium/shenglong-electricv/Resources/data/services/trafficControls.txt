@@ -1,1 +1,1 @@
-{"todayLimitCar":"\u661f\u671f\u4e09 \u9650\u884c\u7684\u5c3e\u53f7\u662f\uff1a\u4e0d\u9650\u884c","tomorrowLimitCar":"\u661f\u671f\u56db \u9650\u884c\u7684\u5c3e\u53f7\u662f\uff1a5\u548c0"}
+{"todayLimitCar":"\u5468\u56db \uff1a4\u548c9","tomorrowLimitCar":"\u5468\u4e94 \uff1a5\u548c0","todayLimitCarNum":"4\u548c9","tomorrowLimitCarNum":"5\u548c0"}

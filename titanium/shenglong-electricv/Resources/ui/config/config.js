@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 应用配置信息
+ */
 var config = {};
 config.menus = [
     {
@@ -885,7 +892,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -902,7 +909,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -919,7 +926,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -936,7 +943,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     },
                     {
@@ -953,7 +960,7 @@ config.menus = [
                         "sl_cid": "",
                         "sl_url": "",
                         "submenus": [],
-                        "type": 3,
+                        "type": 1,
                         "url": "/website/page_template.html"
                     }
                 ],

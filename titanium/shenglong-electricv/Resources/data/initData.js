@@ -1,3 +1,10 @@
+/**
+ * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
+ * Version: 1.0
+ * Author: zhangchunsheng
+ * Date: 2014-01-27
+ * Description: 初始化数据库
+ */
 var initData = {};
 
 initData.initDB = function() {
@@ -27,7 +34,6 @@ initData.initDB = function() {
 	for(var i = 0 ; i < sql_array.length ; i++) {
 		if(sql_array[i] == "")
 			continue;
-		Titanium.API.info(sql_array[i] + ")");
 		db.execute(sql_array[i] + ")");
 	}
 	

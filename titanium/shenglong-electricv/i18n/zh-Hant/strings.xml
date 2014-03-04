@@ -2,7 +2,7 @@
 <resources>
 	<!-- 一级菜单 -->
 	<string name="home">关于盛隆</string>
-		<string name="introduction">公司简介</string>
+	<string name="introduction">公司简介</string>
 	
 	<string name="news">新闻中心</string>
 	<string name="product">产品与服务</string>

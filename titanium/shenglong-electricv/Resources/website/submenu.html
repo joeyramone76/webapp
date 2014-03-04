@@ -5,16 +5,21 @@
 		<link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />
 		<link rel="shortcut icon" href="./favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />-->
 		<link rel="stylesheet" type="text/css" href="./css/about.css" />
 		<title>盛隆电气集团欢迎您!</title>
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="clearfix">
+			<!--<header class="clearfix">
 				<div class="logo">
 					<a href="./index.html"><img src="./images/logo.png" alt=""/></a>
 				</div>
-			</header>
+			</header>-->
 			<div class="slider">
 				<img src="./uploads/2013/03/power.jpg" alt=""/>
 			</div>
@@ -33,27 +38,82 @@
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
 		<script type="text/html" id="submenuTemplate">
-			<li class="f_item">
-				<a href="./page_template.html" class="f_name"><span>成套输配电设备</span></a>
-			</li>
+			<%
+				if(submenus != null) {
+					_.each(submenus, function(submenu) {
+			%>
+					<li class="f_item">
+						<a href="#" class="f_name" onclick="visitPage(<%= submenu.id%>)"><span><%= submenu.showName%></span></a>
+					</li>
+			<%
+					})
+				} else {
+			%>
+				<li class="f_item">
+					<a href="./page_template.html" class="f_name"><span>成套输配电设备</span></a>
+				</li>
+			<%
+				}
+			%>
 		</script>
 		<script type="text/javascript">
 			var menu = {};
 			var submenus = [];
-			Ti.App.addEventListener("app:changeSubmenu", function(e) {
-				changeSubmenu();
-			});
-			Ti.App.addEventListener("app:changeContent", function(e) {
-				changeSubmenu();
-			});
-			function visitPage() {
-				Ti.App.fireEvent("app:visitPage", {
-					menu: menu
+			var parentMenu = 0;
+			if(typeof Ti != "undefined") {
+				var time = 0;
+				Ti.App.addEventListener("app:changeSubmenu", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
+					Ti.App.fireEvent("app:log", {
+						message: 'changeSubmenu'
+					});
+					submenus = JSON.parse(e.submenus);
+					parentMenu = JSON.parse(e.parentMenu);
+					changeSubmenu(submenus);
 				});
+				Ti.App.addEventListener("app:changeContent", function(e) {
+					if(time == e.time)
+						return;
+					time = e.time;
+					Ti.App.fireEvent("app:log", {
+						message: 'changeContent'
+					});
+					submenus = JSON.parse(e.content);
+					parentMenu = JSON.parse(e.parentMenu);
+					changeSubmenu(submenus);
+				});
+			} else {
+				changeSubmenu(null);
 			}
-			function changeSubmenu() {
+			function visitPage(menuId) {
+				var menu = getMenu(menuId);
+				var timestamp = (new Date()).getTime();
+				Ti.App.fireEvent("app:visitPage", {
+					menu: JSON.stringify(menu),
+					parentMenu: JSON.stringify(parentMenu),
+					timestamp: timestamp
+				});
+				return false;
+			}
+			function getMenu(menuId) {
+				for(var i = 0 ; i < submenus.length ; i++) {
+					if(menuId == submenus[i].id) {
+						return submenus[i];
+					}
+				}
+				return null;
+			}
+			function changeSubmenu(submenus) {
 				var template = $("#submenuTemplate").html();
 				$("#submenu").html(_.template(template, {submenus: submenus}));
+				
+				setTimeout(function() {
+					Ti.App.fireEvent("app:hideLoading", {
+						
+					});
+				}, 200);
 			}
 		</script>
 	</body>
