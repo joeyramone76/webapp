@@ -25,8 +25,15 @@ webUtil.getContent = function(webview) {
 		var sl_news_id = webview.sl_news_id;
 		datas = dbUtil.getNews(sl_news_id);
 		content = JSON.stringify(datas[0]);
+	} else if(webview.type == 5) {//customers
+		datas = dbUtil.getPageByMenuCode(webview.code);
+		content = datas[0].content;
 	} else {
 		if(template_url.indexOf("page_template") > 0) {
+			code = webview.code + "001";
+			datas = dbUtil.getPageByMenuCode(code);
+			content = datas[0].content;
+		} else if(template_url.indexOf("page_customer_template") > 0) {
 			code = webview.code + "001";
 			datas = dbUtil.getPageByMenuCode(code);
 			content = datas[0].content;

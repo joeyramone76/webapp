@@ -43,7 +43,7 @@ if (Ti.version < 1.8) {
 	
 	//状态信息
 	Ti.App.visitInfo = {
-		activeTabIndex: 0,
+		activeTabIndex: 1,
 		activeSubMenu: [{
 			index: 0,
 			left: 0

@@ -12,7 +12,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 	
 	var config = require('ui/config/config'),
 		menus = config.menus,
-		menu = menus[0];
+		menu = menus[Ti.App.visitInfo.activeTabIndex];
 	
 	var appTabs = [],
 		appWin = new Window({
@@ -20,7 +20,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		menuName: menu.name,
 		menu: menu,
 		welcomeWindow: welcomeWindow,
-		url: 'website/page_home_template.html'
+		url: menu.url.substring(1)
 	});
 	
 	var icon = "",
