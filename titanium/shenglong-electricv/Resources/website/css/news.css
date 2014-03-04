@@ -9,6 +9,14 @@
 	background-position: -450px 0px;
 	background-size:960px 164px;
 }
+.slider > .title{
+    position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 136px;
+	color: #ffffff;
+	font-size: 14px;
+}
 .side_bar{}
 .pages_list{
     border-top: 1px solid #ccc;
@@ -106,11 +114,15 @@
 .post_cover{
 	float: left;
 	display: block;
-	width: 64px;
-	height: 64px;
+	width: 87px;
+	height: 64x;
 	overflow: hidden;
 	background: #f1f1f1;
-	margin-right: 10px;
+	margin-right: 6px;
+}
+.post_cover img{
+	width: 87px;
+	height: 64px;
 }
 .post_msg *{
     overflow: hidden;
@@ -118,7 +130,7 @@
     white-space: nowrap;
 }
 .post_msg h2{
-	font-size:13px;
+	font-size: 14px;
 	font-weight: 900;
 }
 .post_msg h2 a{
@@ -129,19 +141,21 @@
 }
 .post_time{
 	color: #888;
-	font-size: 12px;
+	font-size: 11px;
 }
 .post_desc{
-	font-size: 12px;
-	color: #555;
-	margin-top:5px;
+	font-size: 11px;
+	color: #888;
+	margin-top: 10px;
 }
 .post_item{
-	margin-bottom: 15px;
-    padding:0 .5em;
+	margin-bottom: 10px;
+    padding: 0 .5em;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
 }
 .gap_line{
-	border-bottom: 1px dotted #ccc;
+	border-bottom: 1px solid #ccc;
 }
 .post_item2{
 	text-align: right;
