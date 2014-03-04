@@ -98,7 +98,7 @@ function ApplicationWindow(opts) {
 		}
 		//change content
 		loadView.show();
-		//activityIndicator.show();
+		activityIndicator.show();
 		
 		webUtil = require('utils/webUtil');
 		var beginDate = new Date();

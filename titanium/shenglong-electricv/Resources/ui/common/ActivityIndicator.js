@@ -7,8 +7,8 @@
  */
 function ActivityIndicator() {
 	var config = {
-		top: Ti.App.height / 2 - 30,
-		left: 110,
+		top: Ti.App.height / 2 - 50,
+		left: Ti.App.width / 2 - 10,
 		style: Ti.UI.iPhone.ActivityIndicatorStyle.DARK,
 		zIndex: 102
 	};
@@ -21,7 +21,7 @@ function ActivityIndicator() {
 	var activityIndicator = Ti.UI.createActivityIndicator({
 		color: 'black',
 		font: {fontFamily:'Helvetica Neue', fontSize:13, fontWeight:'bold'},
-		message: L('loading'),
+		//message: L('loading'),
 		style: config.style,
 		top: config.top,
 		left: config.left,

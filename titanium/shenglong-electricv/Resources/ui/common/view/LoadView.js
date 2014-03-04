@@ -17,10 +17,10 @@ function LoadView(opts) {
 		width: Ti.UI.FILL,
 		height: opts.height,
 		zIndex: 101,
-		image: 'images/icon.png',
-		imageWidth: 100,
-		imageHeight: 100,
-		imageTop: Ti.App.height / 2 - 50 - 30
+		image: 'images/loading.png',
+		imageWidth: 232,
+		imageHeight: 80,
+		imageTop: Ti.App.height / 2 - 50 - 10
 	};
 	
 	config.imageWidth = config.imageWidth / 2;

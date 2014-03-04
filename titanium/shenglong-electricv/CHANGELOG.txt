@@ -28,6 +28,10 @@
 [shenglong-electricv_1.0.0.1 2014-03-03 张春生]
 1.bug：show load when read and render the data
 
+[shenglong-electricv_1.0.0.1 2014-03-04 张春生]
+1.重构：调整submenus样式和高度
+2.重构：更改loading样式
+
 --备注分类
 1、新功能：
 2、Bug:

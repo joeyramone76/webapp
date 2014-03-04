@@ -41,11 +41,13 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		buttonWidth: 60,
 		fontSize: 16,
 		fontWidth: 18,
-		fontColor: '#808080',
-		borderColor: '#DCDCDC',
-		activeFontColor: '#A52A2A',
-		activeBorderColor: 'C0C0C0',
-		activeBgColor: '#fff'
+		fontColor: '#696969',//#808080
+		borderColor: '#ffffff',//DCDCDC
+		borderRadius: 15,
+		borderWidth: 1,
+		activeFontColor: '#a62723',//#A52A2A
+		activeBorderColor: '#ffffff',//#C0C0C0
+		activeBgColor: '#DBDBDB'//#ffffff
 	};
 	this.config = config;
 		
@@ -267,8 +269,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 			}
 			submenuView.push(Ti.UI.createView({
 				backgroundColor: submenuBgColor,
-				borderRadius: 10,
-				borderWidth: 1,
+				borderRadius: config.borderRadius,
+				borderWidth: config.borderWidth,
 				borderColor: submenuBorderColor,
 				width: config.buttonWidth,
 				height: config.submenuHeight,
