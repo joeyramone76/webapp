@@ -108,14 +108,15 @@
 }
 
 /* post_cover */
-.post_list{
+.post_list {
 	margin-top: 1em;
 }
-.post_cover{
+.post_cover {
 	float: left;
 	display: block;
 	width: 87px;
 	height: 64x;
+	max-height: 64px;
 	overflow: hidden;
 	background: #f1f1f1;
 	margin-right: 6px;
