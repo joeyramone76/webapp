@@ -94,11 +94,13 @@
 				var template = $("#contentTemplate").html();
 				$("#newslist").html(_.template(template, {newslist: newslist}));
 				
-				setTimeout(function() {
-					Ti.App.fireEvent("app:hideLoading", {
-						
-					});
-				}, 200);
+				if(typeof Ti != "undefined") {
+					setTimeout(function() {
+						Ti.App.fireEvent("app:hideLoading", {
+							
+						});
+					}, 200);
+				}
 			}
 		</script>
 	</body>

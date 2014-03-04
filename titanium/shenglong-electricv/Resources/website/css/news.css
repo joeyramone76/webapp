@@ -4,9 +4,10 @@
 .slider > .banner{
     display: block;
     width: 100%;
-	height: 328px;
+	height: 164px;
 	background: url(../uploads/newscenter/banner-5.jpg) no-repeat;
-	background-position: -910px 0px
+	background-position: -450px 0px;
+	background-size:960px 164px;
 }
 .side_bar{}
 .pages_list{
@@ -45,7 +46,7 @@
 .side_bar li.cur .f_name{
 	color: #b70000;
 	font-weight: 900;
-	background: url(/images/side_bar_li_ico.png) left center no-repeat;
+	background: url(../images/side_bar_li_ico.png) left center no-repeat;
 
 }
 .side_bar .f_name span{
@@ -62,7 +63,7 @@
 	height: 34px;
 	line-height: 34px;
 	color: #333;
-	background: url(/images/s_menu_li_arrow.png) no-repeat left top;
+	background: url(../images/s_menu_li_arrow.png) no-repeat left top;
 	padding-left: 13px;
 	text-decoration: none;
 	outline:none;

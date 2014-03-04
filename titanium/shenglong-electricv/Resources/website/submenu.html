@@ -109,11 +109,13 @@
 				var template = $("#submenuTemplate").html();
 				$("#submenu").html(_.template(template, {submenus: submenus}));
 				
-				setTimeout(function() {
-					Ti.App.fireEvent("app:hideLoading", {
-						
-					});
-				}, 200);
+				if(typeof Ti != "undefined") {
+					setTimeout(function() {
+						Ti.App.fireEvent("app:hideLoading", {
+							
+						});
+					}, 200);
+				}
 			}
 		</script>
 	</body>
