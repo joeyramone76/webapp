@@ -96,6 +96,9 @@ function ApplicationWindow(opts) {
 		if(this.isBack) {
 			this.isBack = false;
 		}
+		if(this.template_url.indexOf("http") == 0) {
+			return;
+		}
 		//change content
 		loadView.show();
 		activityIndicator.show();
