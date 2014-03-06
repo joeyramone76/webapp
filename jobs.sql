@@ -173,3 +173,76 @@ INSERT INTO app_pages(sl_page_id,content,menu_id,menu_code,bz) VALUES (-5,'<div 
 -- 2014-03-05
 SELECT * FROM app_menus;
 SELECT * FROM app_pages WHERE sl_page_id=29;
+
+-- 2014-03-06
+SELECT * FROM app_menus;
+DROP TABLE pm2_5_citys;
+DROP TABLE pm2_5_station;
+CREATE TABLE pm2_5_citys(
+	id INT(10) NOT NULL AUTO_INCREMENT,
+	cityCode VARCHAR(60) NOT NULL DEFAULT '' COMMENT '区号',
+	cityName VARCHAR(60) NOT NULL DEFAULT '' COMMENT '城市名称',
+	spellName VARCHAR(60) NOT NULL DEFAULT '' COMMENT '拼音',
+	`date` INT(10) NOT NULL DEFAULT 0 COMMENT '日期',
+	bz INT(10) NOT NULL DEFAULT 0 COMMENT '1 - 可用 2 - 不可用',
+	PRIMARY KEY(id)
+);
+CREATE TABLE pm2_5_station(
+	id INT(10) NOT NULL AUTO_INCREMENT,
+	station_code VARCHAR(60) NOT NULL DEFAULT '' COMMENT '监测点编码',
+	station_name VARCHAR(60) NOT NULL DEFAULT '' COMMENT '监测点名称',
+	`date` INT(10) NOT NULL DEFAULT 0 COMMENT '日期',
+	bz INT(10) NOT NULL DEFAULT 0 COMMENT '1 - 可用 2 - 不可用',
+	PRIMARY KEY(id)
+);
+-- "aqi":109,"area":"天津","co":1.278,"co_24h":1.264,"no2":94,"no2_24h":55,"o3":3,"o3_24h":70,"o3_8h":31,"o3_8h_24h":59,"pm10":125,"pm10_24h":82,"pm2_5":82,"pm2_5_24h":53,"position_name":"市监测中心","primary_pollutant":"细颗粒物(PM2.5)","quality":"轻度污染","so2":113,"so2_24h":98,"station_code":"1013A","time_point":"2014-03-06T00:00:00Z"
+CREATE TABLE pm2_5_data2014(
+	id INT(10) NOT NULL AUTO_INCREMENT,
+	aqi INT(10) NOT NULL DEFAULT 0 COMMENT '空气质量指数',
+	cityCode VARCHAR(60) NOT NULL DEFAULT '' COMMENT '区号',
+	`area` VARCHAR(60) NOT NULL DEFAULT '' COMMENT '城市名称',
+	cityName VARCHAR(60) NOT NULL DEFAULT '' COMMENT '城市名称',
+	spellName VARCHAR(60) NOT NULL DEFAULT '' COMMENT '拼音',
+	co DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '一氧化碳1小时平均',
+	co_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '一氧化碳24小时滑动平均',
+	no2 DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '二氧化氮1小时平均',
+	no2_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '二氧化氮24小时滑动平均',
+	o3 DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '臭氧1小时平均',
+	o3_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '臭氧日最大1小时平均',
+	o3_8h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '臭氧8小时滑动平均',
+	o3_8h_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '臭氧日最大8小时滑动平均',
+	pm10 DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '颗粒物（粒径小于等于10μm）1小时平均',
+	pm10_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '颗粒物（粒径小于等于10μm）24小时滑动平均',
+	pm2_5 DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '颗粒物（粒径小于等于2.5μm）1小时平均',
+	pm2_5_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '颗粒物（粒径小于等于2.5μm）24小时滑动平均',
+	so2 DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '二氧化硫1小时平均',
+	so2_24h DECIMAL(16,6) NOT NULL DEFAULT 0 COMMENT '二氧化硫24小时滑动平均',
+	primary_pollutant VARCHAR(60) NOT NULL DEFAULT 0 COMMENT '首要污染物',
+	quality VARCHAR(60) NOT NULL DEFAULT 0 COMMENT '空气质量指数类别，有“优、良、轻度污染、中度污染、重度污染、严重污染”6类',
+	station_code VARCHAR(60) NOT NULL DEFAULT '' COMMENT '监测点编码',
+	position_name VARCHAR(60) NOT NULL DEFAULT '' COMMENT '监测点名称',
+	time_point VARCHAR(60) NOT NULL DEFAULT 0 COMMENT '数据发布的时间',
+	publishDate INT(10) NOT NULL DEFAULT 0 COMMENT 'publishDate',
+	`date` INT(10) NOT NULL DEFAULT 0 COMMENT '日期',
+	bz INT(10) NOT NULL DEFAULT 0 COMMENT '1 - 可用 2 - 不可用',
+	PRIMARY KEY(id)
+);
+
+SELECT * FROM pm2_5_citys;
+SELECT * FROM pm2_5_station;
+SELECT * FROM pm2_5_data2014;
+
+SELECT * FROM app_menus;
+ALTER TABLE app_menus ADD COLUMN banner_title TEXT COMMENT 'banner_title';
+ALTER TABLE app_menus ADD COLUMN bannerTitleClass TEXT COMMENT 'bannerTitleClass';
+ALTER TABLE app_menus CHANGE COLUMN bannerTitleClass bannerTitleClass VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'bannerTitleClass';
+SELECT banner_title FROM app_menus;
+UPDATE app_menus SET banner_title='';
+SELECT UNIX_TIMESTAMP(NOW());
+-- type 1 - page 2 - newslist 3 - 未定义 4 - news 5 - customers
+SELECT SUBSTR(menu_code,1,3) FROM app_menus;
+UPDATE app_menus SET banner='banner',banner_title='人民大会堂盛隆电气盛恩答谢年欢会',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='002';
+UPDATE app_menus SET banner='aboutus',banner_title='盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日',bannerTitleClass='aboutus_title' WHERE SUBSTR(menu_code,1,3)='001';
+UPDATE app_menus SET banner='banner',banner_title='让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='003';
+UPDATE app_menus SET banner='map',banner_title='',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='004';
+UPDATE app_menus SET banner='counselAndFeedback',banner_title='',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='005';

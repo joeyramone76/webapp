@@ -21,18 +21,32 @@
 					<a href="./index.html"><img src="./images/logo.png" alt=""/></a>
 				</div>
 			</header>-->
-			<div class="slider">
-				<div class="banner"></div>
-				<div class="title">人民大会堂盛隆电气盛恩答谢年欢会</div>
+			<div id="banner" class="slider">
+				
 			</div>
 			<div class="page_main">
 				<div id="newslist" class="post_list">
-					
+
 				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
+		<script type="text/html" id="bannerTemplate">
+			<%
+				if(banner != null) {
+			%>
+				<div class="<%= banner.banner%>"></div>
+				<div class="<%= banner.bannerTitleClass%>"><%= banner.banner_title%></div>
+			<%
+				} else {
+			%>
+				<div class="banner"></div>
+				<div class="title">人民大会堂盛隆电气盛恩答谢年欢会</div>
+			<%
+				}
+			%>
+		</script>
 		<script type="text/html" id="contentTemplate">
 			<%
 				if(newslist != null) {
@@ -46,7 +60,7 @@
 							<p class="post_desc"><%= news.post_desc%></p>
 						</div>
 					</div>
-			<%	
+			<%
 					});
 				} else {
 			%>
@@ -85,11 +99,14 @@
 					});
 					newslist = JSON.parse(e.content);
 					parentMenu = JSON.parse(e.parentMenu);
+					changeBanner(JSON.parse(e.banner));
 					changeContent(newslist);
 				});
 			} else {
+				changeBanner(null);
 				changeContent(null);
 			}
+
 			function visitNews(sl_news_id) {
 				var timestamp = (new Date()).getTime();
 				Ti.App.fireEvent("app:visitNews", {
@@ -99,14 +116,20 @@
 				});
 				return false;
 			}
+
+			function changeBanner(banner) {
+				var template = $("#bannerTemplate").html();
+				$("#banner").html(_.template(template, {banner: banner}));
+			}
+
 			function changeContent(newslist) {
 				var template = $("#contentTemplate").html();
 				$("#newslist").html(_.template(template, {newslist: newslist}));
-				
+
 				if(typeof Ti != "undefined") {
 					setTimeout(function() {
 						Ti.App.fireEvent("app:hideLoading", {
-							
+
 						});
 					}, 200);
 				}

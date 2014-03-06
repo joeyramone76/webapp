@@ -21,6 +21,14 @@
 	background-position: -300px 0px;
 	background-size: 960px 164px;
 }
+.slider > .counselAndFeedback{
+    display: block;
+    width: 100%;
+	height: 70px;
+	background: url(../uploads/2013/04/banner-8.jpg) no-repeat;
+	background-position: -120px 0px;
+	background-size: 540px 70px;
+}
 .slider > .map{
     display: block;
     width: 100%;

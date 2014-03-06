@@ -20,23 +20,15 @@
 					<a href="./index.html"><img src="./images/logo.png" alt=""/></a>
 				</div>
 			</header>-->
-			<div class="slider">
-				<!--<img src="./uploads/2013/03/power.jpg" alt=""/>-->
-				<div class="banner"></div>
-				<div class="title">
-					让一度电创造更多GDP，
-					<br/>
-					让电使幸福生活更幸福，
-					<br/>
-					让电是美丽中国更美丽！
-				</div>
+			<div id="banner" class="slider">
+				
 			</div>
 			<div class="content">
 				<div class="content_wrap clearfix">
 					<div class="side_bar">
 						<div class="pages_list">
 							<ul id="submenu">
-								
+
 							</ul>
 						</div>
 					</div>
@@ -45,6 +37,27 @@
 		</div>
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
+		<script type="text/html" id="bannerTemplate">
+			<%
+				if(banner != null) {
+			%>
+				<div class="<%= banner.banner%>"></div>
+				<div class="<%= banner.bannerTitleClass%>"><%= banner.banner_title%></div>
+			<%
+				} else {
+			%>
+				<div class="banner"></div>
+				<div class="title">
+					让一度电创造更多GDP，
+					<br/>
+					让电使幸福生活更幸福，
+					<br/>
+					让电是美丽中国更美丽！
+				</div>
+			<%
+				}
+			%>
+		</script>
 		<script type="text/html" id="submenuTemplate">
 			<%
 				if(submenus != null) {
@@ -82,6 +95,8 @@
 					});
 					submenus = JSON.parse(e.submenus);
 					parentMenu = JSON.parse(e.parentMenu);
+					
+					changeBanner(JSON.parse(e.banner));
 					changeSubmenu(submenus);
 				});
 				Ti.App.addEventListener("app:changeContent", function(e) {
@@ -93,11 +108,15 @@
 					});
 					submenus = JSON.parse(e.content);
 					parentMenu = JSON.parse(e.parentMenu);
+					
+					changeBanner(JSON.parse(e.banner));
 					changeSubmenu(submenus);
 				});
 			} else {
+				changeBanner(null);
 				changeSubmenu(null);
 			}
+			
 			function visitPage(menuId) {
 				var menu = getMenu(menuId);
 				var timestamp = (new Date()).getTime();
@@ -108,6 +127,7 @@
 				});
 				return false;
 			}
+			
 			function getMenu(menuId) {
 				for(var i = 0 ; i < submenus.length ; i++) {
 					if(menuId == submenus[i].id) {
@@ -116,14 +136,20 @@
 				}
 				return null;
 			}
+			
+			function changeBanner(banner) {
+				var template = $("#bannerTemplate").html();
+				$("#banner").html(_.template(template, {banner: banner}));
+			}
+			
 			function changeSubmenu(submenus) {
 				var template = $("#submenuTemplate").html();
 				$("#submenu").html(_.template(template, {submenus: submenus}));
-				
+
 				if(typeof Ti != "undefined") {
 					setTimeout(function() {
 						Ti.App.fireEvent("app:hideLoading", {
-							
+
 						});
 					}, 200);
 				}
