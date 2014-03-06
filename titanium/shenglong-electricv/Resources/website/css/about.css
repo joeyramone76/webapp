@@ -5,6 +5,54 @@
     display: block;
     width: 100%;
 }
+.slider > .banner{
+    display: block;
+    width: 100%;
+	height: 164px;
+	background: url(../uploads/2013/03/power.jpg) no-repeat;
+	background-position: 0px 0px;
+	background-size: 960px 164px;
+}
+.slider > .aboutus{
+    display: block;
+    width: 100%;
+	height: 164px;
+	background: url(../uploads/2013/03/aboutus.jpg) no-repeat;
+	background-position: -300px 0px;
+	background-size: 960px 164px;
+}
+.slider > .counselAndFeedback{
+    display: block;
+    width: 100%;
+	height: 70px;
+	background: url(../uploads/2013/04/banner-8.jpg) no-repeat;
+	background-position: -120px 0px;
+	background-size: 540px 70px;
+}
+.slider > .map{
+    display: block;
+    width: 100%;
+	height: 164px;
+	background: url(../images/map_bg.png) no-repeat;
+	background-position: 0px 0px;
+	background-size: 320px 164px;
+}
+.slider > .title{
+    position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 90px;
+	color: #ffffff;
+	font-size: 14px;
+}
+.slider > .aboutus_title{
+    position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 130px;
+	color: #000000;
+	font-size: 12px;
+}
 .side_bar{}
 .pages_list{
     border-top: 1px solid #ccc;
@@ -28,19 +76,26 @@
     background: -o-linear-gradient(top,#fff 0%,#f3f3f3 100%);
     background: -moz-linear-gradient(top,#fff 0%,#f3f3f3 100%);
     background: linear-gradient(top,#fff 0%,#f3f3f3 100%);
+	height: 49px;
+}
+.side_bar .selected{
+	background: url(../images/arrow_selected.png) no-repeat;
+	background-size: 10px 10px;
+	background-position: 6px 19px;
 }
 .side_bar .f_name{
 	display: block;
-    padding: 12px 5px 12px 15px;
-	color: #333;
+    padding: 12px 5px 14px 22px;
+	color: #9ea4b5;
+	font-size: 16px;
 	text-decoration: none;
-	outline:none;
+	outline: none;
 	ie-dummy: expression(this.hideFocus=true);
 }
 .side_bar li.cur .f_name{
 	color: #b70000;
 	font-weight: 900;
-	background: url(/images/side_bar_li_ico.png) left center no-repeat;
+	background: url(../images/side_bar_li_ico.png) left center no-repeat;
 }
 .side_bar .f_name span{
 	display: block;
@@ -56,7 +111,7 @@
 	height: 34px;
 	line-height: 34px;
 	color: #333;
-	background: url(/images/s_menu_li_arrow.png) no-repeat left top;
+	background: url(../images/s_menu_li_arrow.png) no-repeat left top;
 	padding-left: 8px;
 	text-decoration: none;
 	outline:none;
@@ -79,6 +134,12 @@ ul li.cur .handle_ico,.opened{
 }
 ul li.cur .closed{
     background-position: 0 0;
+}
+.list {
+	margin-left: 10px;
+}
+.list li {
+	padding-bottom: 10px;
 }
 .page_main{}
 .page_content{

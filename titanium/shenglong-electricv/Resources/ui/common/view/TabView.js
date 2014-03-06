@@ -13,7 +13,7 @@ function TabView(opts) {
 		height: 90,
 		iconWidth: 50,
 		iconHeight: 42,
-		fontSize: 9,
+		fontSize: 10,//9
 		fontWeight: 'bold',
 		fontColor: '#939393',
 		focusColor: '#113788',

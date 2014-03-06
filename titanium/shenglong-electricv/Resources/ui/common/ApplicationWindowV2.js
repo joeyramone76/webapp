@@ -8,8 +8,8 @@
  */
 function ApplicationWindow(opts) {
 	var config = {
-		top: 40,
-		tabHeight: 45
+		top: Ti.App.app_config.submenuHeight,
+		tabHeight: Ti.App.app_config.tabHeight
 	};
 	
 	var width = Ti.Platform.displayCaps.platformWidth,
@@ -96,9 +96,12 @@ function ApplicationWindow(opts) {
 		if(this.isBack) {
 			this.isBack = false;
 		}
+		if(this.template_url.indexOf("http") == 0) {
+			return;
+		}
 		//change content
 		loadView.show();
-		//activityIndicator.show();
+		activityIndicator.show();
 		
 		webUtil = require('utils/webUtil');
 		var beginDate = new Date();

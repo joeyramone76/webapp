@@ -20,19 +20,34 @@
 					<a href="./index.html"><img src="./images/logo.png" alt=""/></a>
 				</div>
 			</header>-->
-			<div class="slider">
-				<img src="./uploads/newscenter/banner-5.jpg" alt=""/>
+			<div id="banner" class="slider">
+				
 			</div>
 			<div class="content">
 				<div class="content_wrap clearfix">
 					<div id="content" class="page_main">
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="./js/zepto.min.js"></script>
 		<script type="text/javascript" src="./js/underscore.js"></script>
+		<script type="text/html" id="bannerTemplate">
+			<%
+				if(banner != null) {
+			%>
+				<div class="<%= banner.banner%>"></div>
+				<div class="<%= banner.bannerTitleClass%>"><%= banner.banner_title%></div>
+			<%
+				} else {
+			%>
+				<div class="banner"></div>
+				<div class="title">人民大会堂盛隆电气盛恩答谢年欢会</div>
+			<%
+				}
+			%>
+		</script>
 		<script type="text/html" id="contentTemplate">
 			<%
 				if(news != null) {
@@ -42,9 +57,9 @@
 					<p class="post_date">( <%= news.post_date%> )</p>
 				</div>
 				<div class="post_content">
-					<%= news.content%>                     
+					<%= news.content%>
 				</div>
-			<%	
+			<%
 				} else {
 			%>
 				<div class="post_title">
@@ -61,7 +76,7 @@
 					<p style="margin:0cm 0cm 0px" class="MsoNormal"><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">施耐德电气中国有限公司</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">财务总裁</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">马晓云</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">（左五）</span></p>
 					<p style="margin:0cm 0cm 0px" class="MsoNormal"><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">施耐德电气中国有限公司</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">华中区销售总监</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">姜亚军</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">（右四）</span></p>
 					<p style="margin:0cm 0cm 0px" class="MsoNormal"><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">施耐德电气中国有限公司</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">华中区盘厂销售经理</span><span style="font-family:times new roman">&nbsp;</span><span style="font-family:宋体, simsun;font-size:12px;mso-ascii-font-family:&#39;times new roman&#39;;mso-hansi-font-family:&#39;times new roman&#39;">李美华（左二）</span></p>
-					<span style="line-height:0px;display:none" id="_baidu_bookmark_start_26">‍</span>                       
+					<span style="line-height:0px;display:none" id="_baidu_bookmark_start_26">‍</span>
 				</div>
 			<%
 				}
@@ -79,20 +94,30 @@
 						message: 'changeContent'
 					});
 					news = JSON.parse(e.content);
+					changeBanner(JSON.parse(e.banner));
 					changeContent(news);
 				});
 			} else {
+				changeBanner(null);
 				changeContent(null);
 			}
+			
+			function changeBanner(banner) {
+				var template = $("#bannerTemplate").html();
+				$("#banner").html(_.template(template, {banner: banner}));
+			}
+			
 			function changeContent(news) {
 				var template = $("#contentTemplate").html();
 				$("#content").html(_.template(template, {news: news}));
-				
-				setTimeout(function() {
-					Ti.App.fireEvent("app:hideLoading", {
-						
-					});
-				}, 200);
+
+				if(typeof Ti != "undefined") {
+					setTimeout(function() {
+						Ti.App.fireEvent("app:hideLoading", {
+
+						});
+					}, 200);
+				}
 			}
 		</script>
 	</body>

@@ -775,8 +775,8 @@ config.menus = [
                 "sl_cid": "",
                 "sl_url": "http://m.shenglong-electric.com.cn/opus/detail/page_id/29",
                 "submenus": [],
-                "type": 1,
-                "url": "/website/page_template.html"
+                "type": 5,
+                "url": "/website/page_customer_template.html"
             },
             {
                 "banner": "",
@@ -792,8 +792,8 @@ config.menus = [
                 "sl_cid": "",
                 "sl_url": "http://m.shenglong-electric.com.cn/opus/detail/page_id/28",
                 "submenus": [],
-                "type": 1,
-                "url": "/website/page_template.html"
+                "type": 5,
+                "url": "/website/page_customer_template.html"
             },
             {
                 "banner": "",
@@ -809,8 +809,8 @@ config.menus = [
                 "sl_cid": "",
                 "sl_url": "http://m.shenglong-electric.com.cn/opus/detail/page_id/31",
                 "submenus": [],
-                "type": 1,
-                "url": "/website/page_template.html"
+                "type": 5,
+                "url": "/website/page_customer_template.html"
             },
             {
                 "banner": "",
@@ -826,8 +826,8 @@ config.menus = [
                 "sl_cid": "",
                 "sl_url": "http://m.shenglong-electric.com.cn/opus/detail/page_id/30",
                 "submenus": [],
-                "type": 1,
-                "url": "/website/page_template.html"
+                "type": 5,
+                "url": "/website/page_customer_template.html"
             },
             {
                 "banner": "",
@@ -848,7 +848,7 @@ config.menus = [
             }
         ],
         "type": 0,
-        "url": "/website/page_template.html"
+        "url": "/website/page_customer_template.html"
     },
     {
         "banner": "",

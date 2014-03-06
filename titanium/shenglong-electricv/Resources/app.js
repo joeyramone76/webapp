@@ -29,8 +29,13 @@ if (Ti.version < 1.8) {
 	Ti.include('data/initData.js');
 	initData.initDB();
 	
+	//全局配置信息
 	var config = require('ui/config/config');
 	Ti.App.menus = config.menus;//global
+	Ti.App.app_config = {
+		submenuHeight: 44,//40
+		tabHeight: 45
+	};
 	
 	Ti.App.width = width;
 	Ti.App.height = height;
@@ -38,7 +43,7 @@ if (Ti.version < 1.8) {
 	
 	//状态信息
 	Ti.App.visitInfo = {
-		activeTabIndex: 0,
+		activeTabIndex: 1,
 		activeSubMenu: [{
 			index: 0,
 			left: 0
