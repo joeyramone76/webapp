@@ -153,16 +153,17 @@ def getMenus(file, menus, level, parentId, parentCode):
 			getMenus(file, submenus, level, parentId, menu_codestring);
 		menu_code += 1;
 		
-def grap_content(type):
+def grap_content(type, isTruncate):
 	'''grap_page'''
-	sql = "SELECT id,menu_code,sl_url FROM app_menus WHERE type=%d" % type;
+	sql = "SELECT id,menu_code,sl_url FROM app_menus WHERE type=%d and bz=0" % type;
 	
 	cursor = conn.cursor();
 	
-	if(type == 1):
-		cursor.execute("truncate table app_pages");
-	else:
-		cursor.execute("truncate table app_news");
+	if(isTruncate):
+		if(type == 1):
+			cursor.execute("truncate table app_pages");
+		else:
+			cursor.execute("truncate table app_news");
 	cursor.execute("SET NAMES utf8");
 	cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
 	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
@@ -203,7 +204,7 @@ def grap_content(type):
 		
 		# http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/13
 		sl_content_id = int(sl_url[string.rfind(sl_url, "/") + 1:]);
-		sql = "update app_menus set %s='%d' where id=%d" % (columnName, sl_content_id, id);
+		sql = "update app_menus set %s='%d',bz=1 where id=%d" % (columnName, sl_content_id, id);
 		print sql;
 		cursor.execute(sql);
 		conn.commit();
@@ -240,7 +241,7 @@ def grap_content(type):
 				cursor.execute(sql);
 				conn.commit();
 		
-	file.close;
+	file.close();
 	cursor.close();
 	conn.close();
 	
@@ -453,22 +454,6 @@ def getDate(post_date):
 		'month': month,
 		'day': day
 	};
-	
-def addMenus():
-	cursor = conn.cursor();
-	sql = "truncate table app_menus";
-	cursor.execute(sql);
-	cursor.execute("SET NAMES utf8");
-	cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
-	cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
-	conn.commit();
-	
-	sql = "";
-	cursor.execute(sql.encode('utf-8'));
-	conn.commit();
-	
-	cursor.close();
-	conn.close();
 			
 def readFile(filePath):
 	f = file(filePath, "r");
@@ -658,10 +643,14 @@ if __name__ == "__main__":
 	elif(methodName == "readJson"):
 		readJson();
 	elif(methodName == "grap_content"):
+		isTruncate = False;
 		if(len(sys.argv) > 2):
-			type = sys.argv[2];
+			type = int(sys.argv[2]);
 		else:
 			type = 2;
-		grap_content(type);
+		if(len(sys.argv) > 3):
+			if(int(sys.argv[3]) == 1):
+				isTruncate = True;
+		grap_content(type, isTruncate);
 	elif(methodName == "exportMenus"):
 		exportMenus();

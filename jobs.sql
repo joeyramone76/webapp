@@ -258,3 +258,26 @@ ALTER TABLE pm2_5_station ADD COLUMN spellName VARCHAR(60) NOT NULL DEFAULT '' C
 SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='';
 
 SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,banner_title,bannerTitleClass,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='';
+
+SELECT * FROM app_menus;
+SHOW CREATE TABLE app_menus;
+SELECT * FROM app_menus WHERE bz=0;
+
+SELECT * FROM pm2_5_cities;
+SELECT * FROM pm2_5_station;
+SELECT * FROM pm2_5_data2014;
+SELECT * FROM pm2_5_data2014 WHERE `area`='徐州';
+SELECT COUNT(1) FROM pm2_5_data2014;
+SELECT id,aqi,cityCode,`area`,cityName,spellName,co,co_24h,no2,no2_24h,o3,o3_24h,o3_8h,o3_8h_24h,pm10,pm10_24h,pm2_5,pm2_5_24h,so2,so2_24h,primary_pollutant,quality,station_code,position_name,time_point,publishDate,`date`,bz FROM pm2_5_data2014;
+SELECT id,station_code,station_name,cityCode,cityName,spellName,`date`,bz FROM pm2_5_station;
+SELECT id,cityCode,cityName,spellName,`date`,bz FROM pm2_5_citys;
+SHOW CREATE TABLE pm2_5_data2014;
+SHOW CREATE TABLE pm2_5_station;
+SHOW CREATE TABLE pm2_5_citys;
+RENAME TABLE pm2_5_citys TO pm2_5_cities;
+RENAME TABLE weather_citys TO weather_cities;
+TRUNCATE TABLE pm2_5_data2014;
+TRUNCATE TABLE pm2_5_station;
+
+INSERT INTO pm2_5_data2014(aqi,cityCode,`area`,cityName,spellName,co,co_24h,no2,no2_24h,o3,o3_24h,o3_8h,o3_8h_24h,pm10,pm10_24h,pm2_5,pm2_5_24h,so2,so2_24h,primary_pollutant,quality,station_code,position_name,time_point,publishDate,`date`,bz) VALUES (26,'','天津','天津','tianjin',0,0,16,53,66,70,46,68,26,72,17,45,27,102,'None','优','1013A','市监测中心','2014-03-06T14:00:00Z',1394085600,1394124295,1);
+SELECT COUNT(1) `count` FROM pm2_5_data2014 WHERE time_point='2014-03-06T14:00:00Z';
