@@ -8,7 +8,9 @@
 var config = {};
 config.menus = [
     {
-        "banner": "",
+        "banner": "aboutus",
+        "bannerTitleClass": "aboutus_title",
+        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
         "code": "001",
         "icon": "/images/tabs/home.png",
         "id": 1,
@@ -22,7 +24,9 @@ config.menus = [
         "sl_url": "",
         "submenus": [
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001001",
                 "icon": "",
                 "id": 2,
@@ -39,7 +43,9 @@ config.menus = [
                 "url": "/website/page_template.html"
             },
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001002",
                 "icon": "",
                 "id": 3,
@@ -56,7 +62,9 @@ config.menus = [
                 "url": "/website/page_template.html"
             },
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001003",
                 "icon": "",
                 "id": 4,
@@ -70,7 +78,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001003001",
                         "icon": "",
                         "id": 5,
@@ -87,7 +97,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001003002",
                         "icon": "",
                         "id": 6,
@@ -108,7 +120,9 @@ config.menus = [
                 "url": "/website/submenu.html"
             },
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001004",
                 "icon": "",
                 "id": 7,
@@ -125,7 +139,9 @@ config.menus = [
                 "url": "/website/page_template.html"
             },
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001005",
                 "icon": "",
                 "id": 8,
@@ -142,7 +158,9 @@ config.menus = [
                 "url": "/website/page_template.html"
             },
             {
-                "banner": "",
+                "banner": "aboutus",
+                "bannerTitleClass": "aboutus_title",
+                "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                 "code": "001006",
                 "icon": "",
                 "id": 9,
@@ -156,7 +174,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006001",
                         "icon": "",
                         "id": 10,
@@ -173,7 +193,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006002",
                         "icon": "",
                         "id": 11,
@@ -190,7 +212,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006003",
                         "icon": "",
                         "id": 12,
@@ -207,7 +231,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006004",
                         "icon": "",
                         "id": 13,
@@ -224,7 +250,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006005",
                         "icon": "",
                         "id": 14,
@@ -241,7 +269,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006006",
                         "icon": "",
                         "id": 15,
@@ -258,7 +288,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006007",
                         "icon": "",
                         "id": 16,
@@ -275,7 +307,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006008",
                         "icon": "",
                         "id": 17,
@@ -292,7 +326,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006009",
                         "icon": "",
                         "id": 18,
@@ -309,7 +345,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "aboutus",
+                        "bannerTitleClass": "aboutus_title",
+                        "banner_title": "盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日",
                         "code": "001006010",
                         "icon": "",
                         "id": 19,
@@ -334,7 +372,9 @@ config.menus = [
         "url": "/website/page_template.html"
     },
     {
-        "banner": "",
+        "banner": "banner",
+        "bannerTitleClass": "title",
+        "banner_title": "人民大会堂盛隆电气盛恩答谢年欢会",
         "code": "002",
         "icon": "/images/tabs/news.png",
         "id": 20,
@@ -348,7 +388,9 @@ config.menus = [
         "sl_url": "",
         "submenus": [
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "人民大会堂盛隆电气盛恩答谢年欢会",
                 "code": "002001",
                 "icon": "",
                 "id": 21,
@@ -365,7 +407,9 @@ config.menus = [
                 "url": "/website/newslist_template.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "人民大会堂盛隆电气盛恩答谢年欢会",
                 "code": "002002",
                 "icon": "",
                 "id": 22,
@@ -382,7 +426,9 @@ config.menus = [
                 "url": "/website/newslist_template.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "人民大会堂盛隆电气盛恩答谢年欢会",
                 "code": "002003",
                 "icon": "",
                 "id": 23,
@@ -399,7 +445,9 @@ config.menus = [
                 "url": "/website/newslist_template.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "人民大会堂盛隆电气盛恩答谢年欢会",
                 "code": "002004",
                 "icon": "",
                 "id": 24,
@@ -420,7 +468,9 @@ config.menus = [
         "url": "/website/newslist_template.html"
     },
     {
-        "banner": "",
+        "banner": "banner",
+        "bannerTitleClass": "title",
+        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
         "code": "003",
         "icon": "/images/tabs/product.png",
         "id": 25,
@@ -434,7 +484,9 @@ config.menus = [
         "sl_url": "",
         "submenus": [
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                 "code": "003001",
                 "icon": "",
                 "id": 26,
@@ -448,7 +500,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003001001",
                         "icon": "",
                         "id": 27,
@@ -465,7 +519,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003001002",
                         "icon": "",
                         "id": 28,
@@ -482,7 +538,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003001003",
                         "icon": "",
                         "id": 29,
@@ -499,7 +557,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003001004",
                         "icon": "",
                         "id": 30,
@@ -516,7 +576,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003001005",
                         "icon": "",
                         "id": 31,
@@ -537,7 +599,9 @@ config.menus = [
                 "url": "/website/submenu.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                 "code": "003002",
                 "icon": "",
                 "id": 32,
@@ -551,7 +615,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003002001",
                         "icon": "",
                         "id": 33,
@@ -568,7 +634,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003002002",
                         "icon": "",
                         "id": 34,
@@ -585,7 +653,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003002003",
                         "icon": "",
                         "id": 35,
@@ -602,7 +672,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003002004",
                         "icon": "",
                         "id": 36,
@@ -623,7 +695,9 @@ config.menus = [
                 "url": "/website/submenu.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                 "code": "003003",
                 "icon": "",
                 "id": 37,
@@ -637,7 +711,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003003001",
                         "icon": "",
                         "id": 38,
@@ -654,7 +730,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003003002",
                         "icon": "",
                         "id": 39,
@@ -675,7 +753,9 @@ config.menus = [
                 "url": "/website/submenu.html"
             },
             {
-                "banner": "",
+                "banner": "banner",
+                "bannerTitleClass": "title",
+                "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                 "code": "003004",
                 "icon": "",
                 "id": 40,
@@ -689,7 +769,9 @@ config.menus = [
                 "sl_url": "",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003004001",
                         "icon": "",
                         "id": 41,
@@ -706,7 +788,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003004002",
                         "icon": "",
                         "id": 42,
@@ -723,7 +807,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "banner",
+                        "bannerTitleClass": "title",
+                        "banner_title": "让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！",
                         "code": "003004003",
                         "icon": "",
                         "id": 43,
@@ -748,7 +834,9 @@ config.menus = [
         "url": "/website/submenu.html"
     },
     {
-        "banner": "",
+        "banner": "map",
+        "bannerTitleClass": "title",
+        "banner_title": "",
         "code": "004",
         "icon": "/images/tabs/customer.png",
         "id": 44,
@@ -762,7 +850,9 @@ config.menus = [
         "sl_url": "",
         "submenus": [
             {
-                "banner": "",
+                "banner": "map",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "004001",
                 "icon": "",
                 "id": 45,
@@ -779,7 +869,9 @@ config.menus = [
                 "url": "/website/page_customer_template.html"
             },
             {
-                "banner": "",
+                "banner": "map",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "004002",
                 "icon": "",
                 "id": 46,
@@ -796,7 +888,9 @@ config.menus = [
                 "url": "/website/page_customer_template.html"
             },
             {
-                "banner": "",
+                "banner": "map",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "004003",
                 "icon": "",
                 "id": 47,
@@ -813,7 +907,9 @@ config.menus = [
                 "url": "/website/page_customer_template.html"
             },
             {
-                "banner": "",
+                "banner": "map",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "004004",
                 "icon": "",
                 "id": 48,
@@ -830,7 +926,9 @@ config.menus = [
                 "url": "/website/page_customer_template.html"
             },
             {
-                "banner": "",
+                "banner": "map",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "004005",
                 "icon": "",
                 "id": 49,
@@ -851,7 +949,9 @@ config.menus = [
         "url": "/website/page_customer_template.html"
     },
     {
-        "banner": "",
+        "banner": "counselAndFeedback",
+        "bannerTitleClass": "title",
+        "banner_title": "",
         "code": "005",
         "icon": "/images/tabs/connect.png",
         "id": 50,
@@ -865,13 +965,15 @@ config.menus = [
         "sl_url": "",
         "submenus": [
             {
-                "banner": "",
+                "banner": "counselAndFeedback",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "005001",
                 "icon": "",
                 "id": 51,
                 "name": "companys",
                 "newsId": "",
-                "pageId": "2",
+                "pageId": "",
                 "parentCode": "005",
                 "parentId": 0,
                 "showName": "五大营",
@@ -879,7 +981,9 @@ config.menus = [
                 "sl_url": "http://m.shenglong-electric.com.cn/contact/detail/page_id/2",
                 "submenus": [
                     {
-                        "banner": "",
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
                         "code": "005001001",
                         "icon": "",
                         "id": 52,
@@ -896,7 +1000,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
                         "code": "005001002",
                         "icon": "",
                         "id": 53,
@@ -913,7 +1019,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
                         "code": "005001003",
                         "icon": "",
                         "id": 54,
@@ -930,7 +1038,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
                         "code": "005001004",
                         "icon": "",
                         "id": 55,
@@ -947,7 +1057,9 @@ config.menus = [
                         "url": "/website/page_template.html"
                     },
                     {
-                        "banner": "",
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
                         "code": "005001005",
                         "icon": "",
                         "id": 56,
@@ -968,7 +1080,9 @@ config.menus = [
                 "url": "/website/submenu.html"
             },
             {
-                "banner": "",
+                "banner": "counselAndFeedback",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "005002",
                 "icon": "",
                 "id": 57,
@@ -979,13 +1093,15 @@ config.menus = [
                 "parentId": 0,
                 "showName": "咨询与反馈",
                 "sl_cid": "",
-                "sl_url": "http://m.shenglong-electric.com.cn/email",
+                "sl_url": "",
                 "submenus": [],
                 "type": 3,
-                "url": "http://m.shenglong-electric.com.cn/email"
+                "url": "/website/page_counselAndFeedback.html"
             },
             {
-                "banner": "",
+                "banner": "counselAndFeedback",
+                "bannerTitleClass": "title",
+                "banner_title": "",
                 "code": "005003",
                 "icon": "",
                 "id": 58,
@@ -996,10 +1112,68 @@ config.menus = [
                 "parentId": 0,
                 "showName": "人才招聘",
                 "sl_cid": "",
-                "sl_url": "http://m.shenglong-electric.com.cn/jobs",
-                "submenus": [],
-                "type": 3,
-                "url": "http://m.shenglong-electric.com.cn/jobs"
+                "sl_url": "",
+                "submenus": [
+                    {
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
+                        "code": "005003001",
+                        "icon": "",
+                        "id": 59,
+                        "name": "zhiyefazhan",
+                        "newsId": "",
+                        "pageId": "",
+                        "parentCode": "005003",
+                        "parentId": 0,
+                        "showName": "职业发展",
+                        "sl_cid": "",
+                        "sl_url": "",
+                        "submenus": [],
+                        "type": 1,
+                        "url": "/website/page_template.html"
+                    },
+                    {
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
+                        "code": "005003002",
+                        "icon": "",
+                        "id": 60,
+                        "name": "xiaoyuanzhaopin",
+                        "newsId": "",
+                        "pageId": "",
+                        "parentCode": "005003",
+                        "parentId": 0,
+                        "showName": "校园招聘",
+                        "sl_cid": "",
+                        "sl_url": "",
+                        "submenus": [],
+                        "type": 1,
+                        "url": "/website/page_template.html"
+                    },
+                    {
+                        "banner": "counselAndFeedback",
+                        "bannerTitleClass": "title",
+                        "banner_title": "",
+                        "code": "005003003",
+                        "icon": "",
+                        "id": 61,
+                        "name": "shehuizhaopin",
+                        "newsId": "",
+                        "pageId": "",
+                        "parentCode": "005003",
+                        "parentId": 0,
+                        "showName": "社会招聘",
+                        "sl_cid": "",
+                        "sl_url": "",
+                        "submenus": [],
+                        "type": 1,
+                        "url": "/website/page_template.html"
+                    }
+                ],
+                "type": 0,
+                "url": "/website/submenu.html"
             }
         ],
         "type": 0,

@@ -246,3 +246,15 @@ UPDATE app_menus SET banner='aboutus',banner_title='盛隆电气集团三十周�
 UPDATE app_menus SET banner='banner',banner_title='让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='003';
 UPDATE app_menus SET banner='map',banner_title='',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='004';
 UPDATE app_menus SET banner='counselAndFeedback',banner_title='',bannerTitleClass='title' WHERE SUBSTR(menu_code,1,3)='005';
+
+SELECT * FROM pm2_5_citys;
+SELECT * FROM pm2_5_station;
+SELECT * FROM pm2_5_data2014;
+
+ALTER TABLE pm2_5_station ADD COLUMN cityCode VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'cityCode';
+ALTER TABLE pm2_5_station ADD COLUMN cityName VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'cityName';
+ALTER TABLE pm2_5_station ADD COLUMN spellName VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'spellName';
+
+SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='';
+
+SELECT id,menu_code,menu_name,menu_showName,`type`,icon,banner,banner_title,bannerTitleClass,url,sl_url,parentId,parentCode,pageId,newsId,sl_cid FROM app_menus WHERE parentCode='';
