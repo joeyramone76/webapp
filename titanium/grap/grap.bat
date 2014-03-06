@@ -10,7 +10,7 @@ if "%1"=="sayHello" (
 ) else if "%1"=="readJson" (
 	python grap.py readJson
 ) else if "%1"=="grap_content" (
-	python grap.py grap_content
+	python grap.py grap_content %2 %3
 ) else if "%1"=="exportMenus" (
 	python grap.py exportMenus
 ) else if "%1"=="help" (
