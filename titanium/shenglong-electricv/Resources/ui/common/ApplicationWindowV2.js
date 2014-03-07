@@ -119,7 +119,8 @@ function ApplicationWindow(opts) {
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
 			content: content.content,
-			parentMenu: content.menu
+			parentMenu: content.menu,
+			banner: content.banner
 		});
 		
 		logger.info("load");

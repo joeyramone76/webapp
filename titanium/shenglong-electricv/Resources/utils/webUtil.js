@@ -55,8 +55,14 @@ webUtil.getContent = function(webview) {
 	var menu = JSON.stringify(webview.menu);
 	var menuId = webview.menu.id;
 	var menuCode = webview.menu.code;
+	var banner = {
+		banner: webview.menu.banner,
+        bannerTitleClass: webview.menu.bannerTitleClass,
+        banner_title: webview.menu.banner_title,
+	};
 	return {
 		menu: menu,
+		banner: JSON.stringify(banner),
 		menuId: menuId,
 		menuCode: menuCode,
 		content: content
