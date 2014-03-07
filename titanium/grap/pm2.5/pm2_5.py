@@ -28,7 +28,7 @@ def sayHello(argv=None):
 def test():
 	try:
 		#连接mysql方法: connect('ip','user','password','dbname')
-		conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
+		conn = mdb.connect('localhost', 'root', 'root', 'pm2_5');
 		
 		#所有的查询，都在连接con的一个模块cursor上面运行的
 		cur = conn.cursor();
@@ -68,7 +68,7 @@ def testUrl():
 	print html;
 	
 #将conn设定为全局连接
-conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
+conn = mdb.connect('localhost', 'root', 'root', 'pm2_5');
 token = "5j1znBVAsnSf5xQyNQyq";
 
 def readJson(fileName):
