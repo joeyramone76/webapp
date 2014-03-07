@@ -281,3 +281,7 @@ TRUNCATE TABLE pm2_5_station;
 
 INSERT INTO pm2_5_data2014(aqi,cityCode,`area`,cityName,spellName,co,co_24h,no2,no2_24h,o3,o3_24h,o3_8h,o3_8h_24h,pm10,pm10_24h,pm2_5,pm2_5_24h,so2,so2_24h,primary_pollutant,quality,station_code,position_name,time_point,publishDate,`date`,bz) VALUES (26,'','天津','天津','tianjin',0,0,16,53,66,70,46,68,26,72,17,45,27,102,'None','优','1013A','市监测中心','2014-03-06T14:00:00Z',1394085600,1394124295,1);
 SELECT COUNT(1) `count` FROM pm2_5_data2014 WHERE time_point='2014-03-06T14:00:00Z';
+
+-- 2014-03-07
+SELECT * FROM app_menus;
+SELECT * FROM app_pages;
