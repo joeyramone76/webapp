@@ -288,6 +288,14 @@ function ApplicationWindow(opts) {
 		webview.setUrl(url);
 	});
 	
+	Ti.App.addEventListener('app:submit', function(e) {
+		//提交表单
+		Ti.UI.createAlertDialog({
+			title: '提示',
+			message: '提交成功！'
+		}).show();
+	});
+	
 	Ti.App.addEventListener('app:hideLoading', function(e) {
 		logger.info("app:hideLoading");
 		activityIndicator.hide();
