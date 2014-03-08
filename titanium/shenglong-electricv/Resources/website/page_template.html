@@ -77,6 +77,11 @@
 					changeBanner(JSON.parse(e.banner));
 					changeContent(e.content);
 				});
+				
+				Ti.App.addEventListener("app:getScrollY", function(e) {
+					var scrollY = window.scrollY;
+					return scrollY;
+				});
 			} else {
 				changeBanner(null);
 				changeContent("");
