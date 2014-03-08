@@ -119,7 +119,8 @@ function ApplicationWindow(opts) {
 			pageId: this.menu.pageId,
 			newsId: this.menu.newsId,
 			content: content.content,
-			parentMenu: content.menu
+			parentMenu: content.menu,
+			banner: content.banner
 		});
 		
 		logger.info("load");
@@ -131,122 +132,11 @@ function ApplicationWindow(opts) {
 	/**
 	 * webview pull to refresh
 	 */
-	var webviewSection = Ti.UI.createTableViewSection({
-		
-	});
-	var webviewRow = Ti.UI.createTableViewRow({
-		height: 'auto',
-		layout: 'vertical'
-	});
-	webviewRow.add(webview);
-	webviewSection.add(webviewRow);
-	var tableView = Ti.UI.createTableView({
+	var RefreshView = require("ui/common/view/RefreshView");
+	var refreshView = new RefreshView({
+		webview: webview,
 		top: config.top,
-		data: [webviewSection]
-	});
-	
-	var border = Ti.UI.createView({
-		backgroundColor: "#576c89",
-		height: 2,
-		bottom: 0
-	});
-	var tableHeader = Ti.UI.createView({
-		backgroundColor: "#e2e7ed",
-		width: 320,
-		height: 60
-	});
-	//bottom border 2 pixel
-	tableHeader.add(border);
-	
-	var arrow = Ti.UI.createView({
-		backgroundImage: "/images/whiteArrow.png",
-		width: 23,
-		height: 60,
-		bottom: 10,
-		left: 20
-	});
-	var statusLabel = Ti.UI.createLabel({
-		text: "下拉刷新页面",
-		left: 55,
-		width: 200,
-		bottom: 30,
-		height: "auto",
-		color: "#576c89",
-		textAlign: "center",
-		font: {fontSize:13,fontWeight:"bold"},
-		shadowColor: "#999",
-		shadowOffset: {x:0,y:1}
-	});
-	
-	var companyNameLabel = Ti.UI.createLabel({
-		text: "盛隆电气",
-		left: 55,
-		width: 200,
-		bottom: 15,
-		height: "auto",
-		color: "#576c89",
-		textAlign: "center",
-		font: {fontSize: 12},
-		shadowColor: "#999",
-		shadowOffset: {x:0,y:1}
-	});
-	
-	var actInd = Ti.UI.createActivityIndicator({
-		left: 20,
-		bottom: 13,
-		width: 30,
-		height: 30
-	});
-	tableHeader.add(arrow);
-	tableHeader.add(statusLabel);
-	tableHeader.add(companyNameLabel);
-	tableHeader.add(actInd);
-	
-	tableView.headerPullView = tableHeader;
-	var pulling = false;
-	var reloading = false;
-	
-	function beginReloading() {
-		// just mock out the reload
-		setTimeout(endReloading, 2000);
-	}
-	
-	function endReloading() {
-		// simulate loading
-		tableView.setContentInsets({top: 0}, {animated: true});
-		reloading = false;
-		statusLabel.text = "下拉刷新页面";
-		actInd.hide();
-		arrow.show();
-	}
-	
-	tableView.addEventListener('scroll', function(e) {
-		var offset = e.contentOffset.y;
-		if(offset <= -65.0 && !pulling && !reloading) {
-			var t = Ti.UI.create2DMatrix();
-			t = t.rotate(-180);
-			pulling = true;
-			arrow.animate({transform: t, duration: 180});
-			statusLabel.text = "释放即可刷新";
-		}
-	});
-	
-	var event_dragEnd = "dragEnd";
-	if(Ti.version >= '3.0.0') {
-		event_dragEnd = "dragend";
-	}
-	tableView.addEventListener(event_dragEnd, function(e) {
-		if(pulling && !reloading) {
-			reloading = true;
-			pulling = false;
-			arrow.hide();
-			actInd.show();
-			
-			statusLabel.text = "努力加载中...";
-			tableView.setContentInsets({top: 60}, {animated: true});
-			arrow.transform = Ti.UI.create2DMatrix();
-			beginReloading();
-		}
+		tabHeight: config.tabHeight
 	});
 	
 	/**
@@ -287,6 +177,14 @@ function ApplicationWindow(opts) {
 		webview.setUrl(url);
 	});
 	
+	Ti.App.addEventListener('app:submit', function(e) {
+		//提交表单
+		Ti.UI.createAlertDialog({
+			title: '提示',
+			message: '提交成功！'
+		}).show();
+	});
+	
 	Ti.App.addEventListener('app:hideLoading', function(e) {
 		logger.info("app:hideLoading");
 		activityIndicator.hide();
@@ -319,7 +217,7 @@ function ApplicationWindow(opts) {
 		//webview.setUrl(url);
 	});
 	
-	this.window.add(tableView);
+	this.window.add(refreshView.tableView);
 	this.window.add(loadView.loadView);
 	this.window.add(activityIndicator);
 	

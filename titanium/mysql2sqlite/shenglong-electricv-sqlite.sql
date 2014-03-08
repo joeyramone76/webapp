@@ -1,3 +1,6 @@
+PRAGMA synchronous = OFF;
+PRAGMA journal_mode = MEMORY;
+BEGIN TRANSACTION;
 CREATE TABLE "app_menus" (
   "id" int(10) NOT NULL ,
   "menu_code" varchar(60) NOT NULL DEFAULT '',
@@ -4634,3 +4637,4 @@ INSERT INTO "writers" VALUES (2,'Honore de Balzac');
 INSERT INTO "writers" VALUES (3,'Lion Feuchtwanger');
 INSERT INTO "writers" VALUES (4,'Guy de Maupasant');
 INSERT INTO "writers" VALUES (5,'Truman Capote');
+END TRANSACTION;

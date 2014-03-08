@@ -1,0 +1,19 @@
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.1.99 -u root -proot shenglong-electricv | sqlite3 shenglong-electricv.sqlite
+./mysql2sqlite.sh --default-character-set=utf8 -hHost -uUser -pPass db | sqlite3 db.sqlite
+
+mysqldump --skip-extended-insert --compact -h 192.168.1.99 -u root -proot shenglong-electricv > mysql_dump.db
+cat mysql_dump.db | sed -e 's/`/"/g' | sed -e "s/\\'/''/g" | sed -e 's/\\"/"/g' | sed -e 's/\r//g' | sed -e 's/\n//g' | sqlite3 evite.db
+
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.1.99 -u root -proot shenglong-electricv > shenglong-electricv-sqlite.sql
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.1.99 -u root -proot shenglong-electricv > test.sql
+cat test.sql | sqlite3 test.sqlite
+
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.6.99 -u root -proot shenglong-electricv | sqlite3 shenglong-electricv.sqlite
+./mysql2sqlite.sh --default-character-set=utf8 -hHost -uUser -pPass db | sqlite3 db.sqlite
+
+mysqldump --skip-extended-insert --compact -h 192.168.6.99 -u root -proot shenglong-electricv > mysql_dump.db
+cat mysql_dump.db | sed -e 's/`/"/g' | sed -e "s/\\'/''/g" | sed -e 's/\\"/"/g' | sed -e 's/\r//g' | sed -e 's/\n//g' | sqlite3 evite.db
+
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.6.99 -u root -proot shenglong-electricv > shenglong-electricv-sqlite.sql
+./mysql2sqlite.sh --default-character-set=utf8 -h 192.168.6.99 -u root -proot shenglong-electricv > test.sql
+cat test.sql | sqlite3 test.sqlite

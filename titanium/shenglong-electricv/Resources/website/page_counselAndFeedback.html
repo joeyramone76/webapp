@@ -77,6 +77,15 @@
 
 					return false;
 				});
+				if(typeof Ti != "undefined") {
+					if(typeof Ti != "undefined") {
+						setTimeout(function() {
+							Ti.App.fireEvent("app:hideLoading", {
+	
+							});
+						}, 200);
+					}
+				}
 			});
 		</script>
 	</body>
