@@ -22,7 +22,7 @@ function RefreshView(opts) {
 		
 	});
 	var webviewRow = Ti.UI.createTableViewRow({
-		height: 'auto',
+		height: opts.webviewHeight,
 		layout: 'vertical'
 	});
 	webviewRow.add(webview);
@@ -129,6 +129,7 @@ function RefreshView(opts) {
 	}
 	
 	tableView.addEventListener('scroll', function(e) {
+	    Ti.API.info(JSON.stringify(e));
 		var offset = e.contentOffset.y;
 		if(offset <= -65.0 && !pulling && !reloading) {
 			var t = Ti.UI.create2DMatrix();
@@ -156,6 +157,21 @@ function RefreshView(opts) {
 			beginReloading();
 		}
 	});
+	
+	var event_dragStart = "dragStart";
+    if(Ti.version >= '3.0.0') {
+        event_dragStart = "dragstart";
+    }
+    tableView.addEventListener(event_dragStart, function(e) {
+        var scrollY = webview.evalJS("window.scrollY");
+        if(scrollY == 0) {
+            pulling = false;
+            tableView.headerPullView = tableHeader;
+        } else {
+            pulling = true;
+            tableView.headerPullView = null;
+        }
+    });
 	
 	this.tableView = tableView;
 };

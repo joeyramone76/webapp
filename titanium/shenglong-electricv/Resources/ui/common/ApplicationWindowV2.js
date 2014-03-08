@@ -136,7 +136,8 @@ function ApplicationWindow(opts) {
 	var refreshView = new RefreshView({
 		webview: webview,
 		top: config.top,
-		tabHeight: config.tabHeight
+		tabHeight: config.tabHeight,
+		webviewHeight: webviewHeight
 	});
 	
 	/**
