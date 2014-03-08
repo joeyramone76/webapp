@@ -208,6 +208,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	this.backBtn.menu = {};
 	
 	this.showLeftButton = function(menu) {
+		that = this;
 		this.leftImage.show();
 		this.leftSplit.show();
 		
@@ -215,6 +216,22 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		this.scrollView.setWidth(Ti.App.width - config.arrowContentWidth - config.arrowContentWidth);
 		
 		this.backBtn.menu = menu;
+		
+		this.leftBg.addEventListener('click', function(e) {
+			webview.isBack = true;
+			that.hideLeftButton();
+			
+			//change webview menu
+			var menu = that.backBtn.menu;
+			
+			//url = menu.url;
+			
+			webUtil = require('utils/webUtil');
+			webUtil.setWebviewAttribute(webview, menu);
+			
+			webview.goBack();
+			//webview.setUrl(url);
+		});
 	};
 	
 	this.hideLeftButton = function() {
@@ -223,6 +240,10 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		
 		this.scrollView.setLeft(config.leftWidth);
 		this.scrollView.setWidth(Ti.App.width - config.leftWidth - config.arrowContentWidth);
+		
+		this.leftBg.removeEventListener('click', function() {
+			
+		});
 	};
 	
 	this.changeSubmenu = function(submenus) {
