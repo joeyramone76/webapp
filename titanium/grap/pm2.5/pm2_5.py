@@ -89,13 +89,36 @@ def readJson(fileName):
 		
 		header = {
 			'Host':'www.pm25.in',
-			'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-			'Accept-Encoding':'gzip,deflate,sdch'
-			'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6'
-			'Cache-Control':'max-age=0'
-			'Connection':'keep-alive'
-			'Cookie':'_aqi_query_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFRkkiJTYzOTJhODhmMzE4ZGEyNGEwNDA5NTNkN2NmMDk4OWM2BjsAVEkiDGNhcHRjaGEGOwBGIi0xYTYzYjE4ODFhNTVlNjkzYzg0NjZlNTUyMTU0MzUwMDM5MmY2MGIwSSIQX2NzcmZfdG9rZW4GOwBGSSIxalZKSVNEVktpMkQzYTJwaU41Z2ZqQml6dGhHSnJkTjJzdzVQLzdLR2prOD0GOwBGSSIdd2FyZGVuLnVzZXIuYXBpX3VzZXIua2V5BjsAVFsHWwZpAkIDSSIiJDJhJDEwJFhGQzRsazhwOFdOOFZUWHVQaXl3R08GOwBU--85ea51d98e7f5d26be86e0873d0c54d244acfaba; __utma=162682429.2026272355.1394015987.1394036995.1394089170.3; __utmc=162682429; __utmz=162682429.1394015987.1.1.utmcsr=malagis.com|utmccn=(referral)|utmcmd=referral|utmcct=/recommended-air-quality-data-pm10-pm2-5.html'
-			'If-None-Match':'"ab09f8d133334c65fafc2ae8925c9414"'
+			'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+			'Accept-Encoding':'gzip,deflate,sdch',
+			'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6',
+			'Cache-Control':'max-age=0',
+			'Connection':'keep-alive',
+			'Cookie':'_aqi_query_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFRkkiJTYzOTJhODhmMzE4ZGEyNGEwNDA5NTNkN2NmMDk4OWM2BjsAVEkiDGNhcHRjaGEGOwBGIi0xYTYzYjE4ODFhNTVlNjkzYzg0NjZlNTUyMTU0MzUwMDM5MmY2MGIwSSIQX2NzcmZfdG9rZW4GOwBGSSIxalZKSVNEVktpMkQzYTJwaU41Z2ZqQml6dGhHSnJkTjJzdzVQLzdLR2prOD0GOwBGSSIdd2FyZGVuLnVzZXIuYXBpX3VzZXIua2V5BjsAVFsHWwZpAkIDSSIiJDJhJDEwJFhGQzRsazhwOFdOOFZUWHVQaXl3R08GOwBU--85ea51d98e7f5d26be86e0873d0c54d244acfaba; __utma=162682429.2026272355.1394015987.1394036995.1394089170.3; __utmc=162682429; __utmz=162682429.1394015987.1.1.utmcsr=malagis.com|utmccn=(referral)|utmcmd=referral|utmcct=/recommended-air-quality-data-pm10-pm2-5.html',
+			'If-None-Match':'"ab09f8d133334c65fafc2ae8925c9414"',
+			'User-Agent':'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36'
+		};
+		httpConnection = httplib.HTTPConnection("www.pm25.in");
+		httpConnection.request(method='GET',url='/api/querys/all_cities.json',headers=header);
+		res = httpConnection.getresponse();
+		jsons = json.loads(res.read());
+		httpConnection.close();
+		
+	return jsons;
+	
+def testHttplib():
+	httpConnection = None;
+	
+	try:
+		header = {
+			'Host':'www.pm25.in',
+			'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+			'Accept-Encoding':'gzip,deflate,sdch',
+			'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6',
+			'Cache-Control':'max-age=0',
+			'Connection':'keep-alive',
+			'Cookie':'_aqi_query_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFRkkiJTYzOTJhODhmMzE4ZGEyNGEwNDA5NTNkN2NmMDk4OWM2BjsAVEkiDGNhcHRjaGEGOwBGIi0xYTYzYjE4ODFhNTVlNjkzYzg0NjZlNTUyMTU0MzUwMDM5MmY2MGIwSSIQX2NzcmZfdG9rZW4GOwBGSSIxalZKSVNEVktpMkQzYTJwaU41Z2ZqQml6dGhHSnJkTjJzdzVQLzdLR2prOD0GOwBGSSIdd2FyZGVuLnVzZXIuYXBpX3VzZXIua2V5BjsAVFsHWwZpAkIDSSIiJDJhJDEwJFhGQzRsazhwOFdOOFZUWHVQaXl3R08GOwBU--85ea51d98e7f5d26be86e0873d0c54d244acfaba; __utma=162682429.2026272355.1394015987.1394036995.1394089170.3; __utmc=162682429; __utmz=162682429.1394015987.1.1.utmcsr=malagis.com|utmccn=(referral)|utmcmd=referral|utmcct=/recommended-air-quality-data-pm10-pm2-5.html',
+			'If-None-Match':'"ab09f8d133334c65fafc2ae8925c9414"',
 			'User-Agent':'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36'
 		};
 		httpConnection = httplib.HTTPConnection("www.pm25.in");
@@ -103,7 +126,35 @@ def readJson(fileName):
 		res = httpConnection.getresponse();
 		res.read();
 		httpConnection.close();
-	return jsons;
+		
+		print res.status;
+		print res.reason;
+		print res.read();
+		
+		if(res.getheader('Set-Cookie') != None):
+			header['Cookie'] = res.getheader('Set-Cookie').split(';')[0];
+		else:
+			print 'no cookie';
+		header['Referer'] = 'www.pm25.in';
+		
+		params = urllib.urlencode({'name':'tom', 'age':22});
+		headers = {
+			"Content-type": "application/x-www-form-urlencoded",
+			"Accept": "text/plain"
+		};
+		httpConnection = httplib.HTTPConnection("localhost", 80, timeout=30);
+		httpConnection.request("POST", "/test.php", params, headers);
+		
+		response = httpConnection.getresponse();
+		print response.status;
+		print response.reason;
+		print response.read();
+		print response.getheaders();
+	except Exception, e:
+		print e;
+	finally:
+		if httpConnection:
+			httpConnection.close();
 		
 def getAllData(fileName):
 	'''getAllData'''
@@ -127,6 +178,14 @@ def getAllData(fileName):
 		return;
 	
 	p = Pinyin();
+		
+	time_point = jsons[0]['time_point'];
+	sql = "SELECT COUNT(1) `count` FROM pm2_5_data2014 WHERE time_point='%s'" % time_point;
+	cursor.execute(sql);
+	conn.commit();
+	count = cursor.fetchone()[0];
+	if(count >= 1):
+		return;
 	
 	for data in jsons:
 		aqi = data['aqi'];
@@ -156,13 +215,6 @@ def getAllData(fileName):
 		publishDate = time.mktime(datetime.datetime.strptime(time_point, '%Y-%m-%dT%H:%M:%SZ').timetuple());
 		date = int(time.time());
 		bz = 1;
-		
-		sql = "SELECT COUNT(1) `count` FROM pm2_5_data2014 WHERE time_point='%s'" % time_point;
-		cursor.execute(sql);
-		conn.commit();
-		count = cursor.fetchone()[0];
-		if(count >= 1):
-			break;
 		
 		columns = "aqi,cityCode,`area`,cityName,spellName,co,co_24h,no2,no2_24h,o3,o3_24h,o3_8h,o3_8h_24h,pm10,pm10_24h,pm2_5,pm2_5_24h,so2,so2_24h,primary_pollutant,quality,station_code,position_name,time_point,publishDate,`date`,bz";
 		values = "%d,'%s','%s','%s','%s',%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,'%s','%s','%s','%s','%s',%d,%d,%d" % (aqi,cityCode,area,cityName,spellName,co,co_24h,no2,no2_24h,o3,o3_24h,o3_8h,o3_8h_24h,pm10,pm10_24h,pm2_5,pm2_5_24h,so2,so2_24h,primary_pollutant,quality,station_code,position_name,time_point,publishDate,date,bz);

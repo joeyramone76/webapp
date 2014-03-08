@@ -285,3 +285,10 @@ SELECT COUNT(1) `count` FROM pm2_5_data2014 WHERE time_point='2014-03-06T14:00:0
 -- 2014-03-07
 SELECT * FROM app_menus;
 SELECT * FROM app_pages;
+
+SELECT * FROM pm2_5.pm2_5_data2014 ORDER BY id DESC;
+SELECT * FROM pm2_5.pm2_5_data2014 WHERE publishDate='1394247600';
+ALTER TABLE pm2_5.pm2_5_data2014 AUTO_INCREMENT = 946;
+
+-- 2014-03-07
+SELECT * FROM app_menus;
