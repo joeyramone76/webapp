@@ -27,9 +27,21 @@ function RefreshView(opts) {
 	});
 	webviewRow.add(webview);
 	webviewSection.add(webviewRow);
+	
+	var control = Ti.UI.createRefreshControl({
+        tintColor: '#939393'
+    });
+    control.addEventListener('refreshstart', function(e) {
+        Ti.API.info('refreshstart');
+        setTimeout(function() {
+            Ti.API.debug('Timeout');
+            control.endRefreshing();
+        }, 2000);
+    });
 	var tableView = Ti.UI.createTableView({
 		top: config.top,
-		data: [webviewSection]
+		//refreshControl: control,
+        data: [webviewSection]
 	});
 	
 	var border = Ti.UI.createView({
