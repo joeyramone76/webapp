@@ -190,6 +190,8 @@ function ApplicationWindow(opts) {
 		logger.info("app:hideLoading");
 		activityIndicator.hide();
 		loadView.hide();
+		
+		refreshView.tableView.height = webview.evalJS("document.body.scrollHeight");
 	});
 	
 	Ti.App.addEventListener('app:log', function(e) {

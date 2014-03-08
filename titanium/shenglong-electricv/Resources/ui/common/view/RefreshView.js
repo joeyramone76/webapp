@@ -163,14 +163,14 @@ function RefreshView(opts) {
         event_dragStart = "dragstart";
     }
     tableView.addEventListener(event_dragStart, function(e) {
-        var scrollY = webview.evalJS("window.scrollY");
+        /*var scrollY = webview.evalJS("window.scrollY");
         if(scrollY == 0) {
             pulling = false;
             tableView.headerPullView = tableHeader;
         } else {
             pulling = true;
             tableView.headerPullView = null;
-        }
+        }*/
     });
 	
 	this.tableView = tableView;
