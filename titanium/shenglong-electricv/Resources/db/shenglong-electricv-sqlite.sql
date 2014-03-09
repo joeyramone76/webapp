@@ -17,66 +17,71 @@ CREATE TABLE "app_menus" (
   "sl_cid" varchar(60) NOT NULL DEFAULT '',
   "page_menu_code" varchar(60) NOT NULL DEFAULT '',
   "bz" int(1) NOT NULL DEFAULT '1',
+  "banner_title" text,
+  "bannerTitleClass" varchar(60) NOT NULL DEFAULT '',
   PRIMARY KEY ("id")
 );
-INSERT INTO "app_menus" VALUES (1,'001','home','关于盛隆',0,'/images/tabs/home.png','','/website/page_template.html','',0,1,1389335674,'','13','','','001001',1);
-INSERT INTO "app_menus" VALUES (2,'001001','introduction','公司简介',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/13',0,0,1389335674,'001','13','','','001001',1);
-INSERT INTO "app_menus" VALUES (3,'001002','partyProfile','党建概况',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/14',0,0,1389335674,'001','14','','','001002',1);
-INSERT INTO "app_menus" VALUES (4,'001003','corporateStrategy_long-term','公司战略',0,'','','/website/submenu.html','',0,1,1389335674,'001','','','','',1);
-INSERT INTO "app_menus" VALUES (5,'001003001','corporateStrategy_long-term','长期目标',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/30',0,0,1389335674,'001003','30','','','001003001',1);
-INSERT INTO "app_menus" VALUES (6,'001003002','corporateStrategy_medium-term','中期目标',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/31',0,0,1389335674,'001003','31','','','001003002',1);
-INSERT INTO "app_menus" VALUES (7,'001004','history','发展历程',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/15',0,0,1389335674,'001','15','','','001004',1);
-INSERT INTO "app_menus" VALUES (8,'001005','qualification','资质认证',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/16',0,0,1389335674,'001','16','','','001005',1);
-INSERT INTO "app_menus" VALUES (9,'001006','culture_purpose','盛隆文化',0,'','','/website/submenu.html','',0,1,1389335674,'001','','','','',1);
-INSERT INTO "app_menus" VALUES (10,'001006001','culture_purpose','盛隆宗旨',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/18',0,0,1389335674,'001006','18','','','001006001',1);
-INSERT INTO "app_menus" VALUES (11,'001006002','culture_idea','盛隆理念',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/19',0,0,1389335674,'001006','19','','','001006002',1);
-INSERT INTO "app_menus" VALUES (12,'001006003','culture_target','盛隆文化目标',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/20',0,0,1389335674,'001006','20','','','001006003',1);
-INSERT INTO "app_menus" VALUES (13,'001006004','culture_mechanism','盛隆机制',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/21',0,0,1389335674,'001006','21','','','001006004',1);
-INSERT INTO "app_menus" VALUES (14,'001006005','culture_song','盛隆之歌',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/22',0,0,1389335674,'001006','22','','','001006005',1);
-INSERT INTO "app_menus" VALUES (15,'001006006','culture_badge','盛隆徽',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/23',0,0,1389335674,'001006','23','','','001006006',1);
-INSERT INTO "app_menus" VALUES (16,'001006007','culture_flag','盛隆旗',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/24',0,0,1389335674,'001006','24','','','001006007',1);
-INSERT INTO "app_menus" VALUES (17,'001006008','culture_rule','盛隆法则',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/25',0,0,1389335674,'001006','25','','','001006008',1);
-INSERT INTO "app_menus" VALUES (18,'001006009','culture_ethic','盛隆理论',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/26',0,0,1389335674,'001006','26','','','001006009',1);
-INSERT INTO "app_menus" VALUES (19,'001006010','culture_philosophy','盛隆哲学',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/27',0,0,1389335674,'001006','27','','','001006010',1);
-INSERT INTO "app_menus" VALUES (20,'002','news','新闻中心',0,'/images/tabs/news.png','','/website/newslist_template.html','',0,1,1389335674,'','','7','7','',1);
-INSERT INTO "app_menus" VALUES (21,'002001','company','公司新闻',2,'','','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/7',0,0,1389335674,'002','','7','7','',1);
-INSERT INTO "app_menus" VALUES (22,'002002','media','媒体报道',2,'','','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/13',0,0,1389335674,'002','','13','13','',1);
-INSERT INTO "app_menus" VALUES (23,'002003','video','视频报道',2,'','','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/14',0,0,1389335674,'002','','14','14','',1);
-INSERT INTO "app_menus" VALUES (24,'002004','elegant_demeanour','盛隆风采',3,'','','/website/gallery_template.html','http://m.shenglong-electric.com.cn/gallery',0,0,1389335674,'002','','','','',1);
-INSERT INTO "app_menus" VALUES (25,'003','product','产品与服务',0,'/images/tabs/product.png','','/website/submenu.html','',0,1,1389335674,'','','','','',1);
-INSERT INTO "app_menus" VALUES (26,'003001','ctspdsb','成套输配电设备',0,'','','/website/submenu.html','',0,1,1389335674,'003','','','','',1);
-INSERT INTO "app_menus" VALUES (27,'003001001','gyxl','高压系列',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/20',0,0,1389335674,'003001','20','','','003001001',1);
-INSERT INTO "app_menus" VALUES (28,'003001002','gydyyzsbdz','高压/低压预装式变电站',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/21',0,0,1389335674,'003001','21','','','003001002',1);
-INSERT INTO "app_menus" VALUES (29,'003001003','dyxl','低压系列',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/22',0,0,1389335674,'003001','22','','','003001003',1);
-INSERT INTO "app_menus" VALUES (30,'003001004','kzbhp','控制保护屏',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/23',0,0,1389335674,'003001','23','','','003001004',1);
-INSERT INTO "app_menus" VALUES (31,'003001005','sxxl','三箱系列',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/24',0,0,1389335674,'003001','24','','','003001005',1);
-INSERT INTO "app_menus" VALUES (32,'003002','dlzndlbhcpjjfa','电力智能、电力保护产品解决方案',0,'','','/website/submenu.html','',0,1,1389335674,'003','','','','',1);
-INSERT INTO "app_menus" VALUES (33,'003002001','znwldgnyb','智能网路多功能仪表',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/25',0,0,1389335674,'003002','25','','','003002001',1);
-INSERT INTO "app_menus" VALUES (34,'003002002','znpdjkxt','智能配电监控系统',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/26',0,0,1389335674,'003002','26','','','003002002',1);
-INSERT INTO "app_menus" VALUES (35,'003002003','dqhzjkxt','电气火灾监控系统',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/27',0,0,1389335674,'003002','27','','','003002003',1);
-INSERT INTO "app_menus" VALUES (36,'003002004','zbjdlbhxt','综保及电力保护系统',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/29',0,0,1389335674,'003002','29','','','003002004',1);
-INSERT INTO "app_menus" VALUES (37,'003003','dljnjzxcpjjfa','电力节能及增效产品解决方案',0,'','','/website/submenu.html','',0,1,1389335674,'003','','','','',1);
-INSERT INTO "app_menus" VALUES (38,'003003001','yydllbq','有源电力滤波器',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/28',0,0,1389335674,'003003','28','','','003003001',1);
-INSERT INTO "app_menus" VALUES (39,'003003002','dgnxbbhq','多功能谐波保护器',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/30',0,0,1389335674,'003003','30','','','003003002',1);
-INSERT INTO "app_menus" VALUES (40,'003004','dlgczcbfw','电力工程总承包服务',0,'','','/website/submenu.html','',0,1,1389335674,'003','','','','',1);
-INSERT INTO "app_menus" VALUES (41,'003004001','ywgs','业务概述',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/17',0,0,1389335674,'003004','17','','','003004001',1);
-INSERT INTO "app_menus" VALUES (42,'003004002','ywfw','业务范围',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/18',0,0,1389335674,'003004','18','','','003004002',1);
-INSERT INTO "app_menus" VALUES (43,'003004003','zzrz','资质认证',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/19',0,0,1389335674,'003004','19','','','003004003',1);
-INSERT INTO "app_menus" VALUES (44,'004','customer','客户与成功案例',0,'/images/tabs/customer.png','','/website/page_template.html','',0,1,1389335674,'','29','','','004001',1);
-INSERT INTO "app_menus" VALUES (45,'004001','hbdbxb','华北、东北、西北地区',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/29',0,0,1389335674,'004','29','','','004001',1);
-INSERT INTO "app_menus" VALUES (46,'004002','hzxn','华中、西南地区',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/28',0,0,1389335674,'004','28','','','004002',1);
-INSERT INTO "app_menus" VALUES (47,'004003','hdhn','华东、华南地区',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/31',0,0,1389335674,'004','31','','','004003',1);
-INSERT INTO "app_menus" VALUES (48,'004004','otherCountryAndArea','其它国家和地区',1,'','','/website/page_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/30',0,0,1389335674,'004','30','','','004004',1);
-INSERT INTO "app_menus" VALUES (49,'004005','near','附近',3,'','','http://map.baidu.com','http://map.baidu.com',0,0,1389335674,'004','','','','',1);
-INSERT INTO "app_menus" VALUES (50,'005','connect','联系我们',0,'/images/tabs/connect.png','','/website/submenu.html','',0,1,1389335674,'','','','','',1);
-INSERT INTO "app_menus" VALUES (51,'005001','companys','五大营',0,'','','/website/submenu.html','http://m.shenglong-electric.com.cn/contact/detail/page_id/2',0,1,1389335674,'005','2','','','',1);
-INSERT INTO "app_menus" VALUES (52,'005001001','wuhan','武汉公司',3,'','','/website/page_template.html','',0,0,1389335674,'005001','-1','','','',1);
-INSERT INTO "app_menus" VALUES (53,'005001002','beijing','北京公司',3,'','','/website/page_template.html','',0,0,1389335674,'005001','-2','','','',1);
-INSERT INTO "app_menus" VALUES (54,'005001003','guangzhou','广州公司',3,'','','/website/page_template.html','',0,0,1389335674,'005001','-3','','','',1);
-INSERT INTO "app_menus" VALUES (55,'005001004','shanghai','上海公司',3,'','','/website/page_template.html','',0,0,1389335674,'005001','-4','','','',1);
-INSERT INTO "app_menus" VALUES (56,'005001005','chongqing','重庆公司',3,'','','/website/page_template.html','',0,0,1389335674,'005001','-5','','','',1);
-INSERT INTO "app_menus" VALUES (57,'005002','consultAndFeedback','咨询与反馈',3,'','','http://m.shenglong-electric.com.cn/email','http://m.shenglong-electric.com.cn/email',0,0,1389335674,'005','','','','',1);
-INSERT INTO "app_menus" VALUES (58,'005003','interview','人才招聘',3,'','','http://m.shenglong-electric.com.cn/jobs','http://m.shenglong-electric.com.cn/jobs',0,0,1389335674,'005','','','','',1);
+INSERT INTO "app_menus" VALUES (1,'001','home','关于盛隆',0,'/images/tabs/home.png','aboutus','/website/page_template.html','',0,1,1389335674,'','13','','','001001',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (2,'001001','introduction','公司简介',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/13',0,0,1389335674,'001','13','','','001001',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (3,'001002','partyProfile','党建概况',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/14',0,0,1389335674,'001','14','','','001002',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (4,'001003','corporateStrategy_long-term','公司战略',0,'','aboutus','/website/submenu.html','',0,1,1389335674,'001','','','','',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (5,'001003001','corporateStrategy_long-term','长期目标',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/30',0,0,1389335674,'001003','30','','','001003001',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (6,'001003002','corporateStrategy_medium-term','中期目标',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/31',0,0,1389335674,'001003','31','','','001003002',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (7,'001004','history','发展历程',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/15',0,0,1389335674,'001','15','','','001004',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (8,'001005','qualification','资质认证',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/16',0,0,1389335674,'001','16','','','001005',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (9,'001006','culture_purpose','盛隆文化',0,'','aboutus','/website/submenu.html','',0,1,1389335674,'001','','','','',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (10,'001006001','culture_purpose','盛隆宗旨',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/18',0,0,1389335674,'001006','18','','','001006001',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (11,'001006002','culture_idea','盛隆理念',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/19',0,0,1389335674,'001006','19','','','001006002',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (12,'001006003','culture_target','盛隆文化目标',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/20',0,0,1389335674,'001006','20','','','001006003',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (13,'001006004','culture_mechanism','盛隆机制',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/21',0,0,1389335674,'001006','21','','','001006004',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (14,'001006005','culture_song','盛隆之歌',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/22',0,0,1389335674,'001006','22','','','001006005',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (15,'001006006','culture_badge','盛隆徽',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/23',0,0,1389335674,'001006','23','','','001006006',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (16,'001006007','culture_flag','盛隆旗',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/24',0,0,1389335674,'001006','24','','','001006007',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (17,'001006008','culture_rule','盛隆法则',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/25',0,0,1389335674,'001006','25','','','001006008',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (18,'001006009','culture_ethic','盛隆理论',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/26',0,0,1389335674,'001006','26','','','001006009',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (19,'001006010','culture_philosophy','盛隆哲学',1,'','aboutus','/website/page_template.html','http://m.shenglong-electric.com.cn/aboutMe/detail/page_id/27',0,0,1389335674,'001006','27','','','001006010',1,'盛隆电气集团三十周年庆典合影钓鱼台国宾馆2009年5月2日','aboutus_title');
+INSERT INTO "app_menus" VALUES (20,'002','news','新闻中心',0,'/images/tabs/news.png','banner','/website/newslist_template.html','',0,1,1389335674,'','','7','7','',1,'人民大会堂盛隆电气盛恩答谢年欢会','title');
+INSERT INTO "app_menus" VALUES (21,'002001','company','公司新闻',2,'','banner','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/7',0,0,1389335674,'002','','7','7','',1,'人民大会堂盛隆电气盛恩答谢年欢会','title');
+INSERT INTO "app_menus" VALUES (22,'002002','media','媒体报道',2,'','banner','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/13',0,0,1389335674,'002','','13','13','',1,'人民大会堂盛隆电气盛恩答谢年欢会','title');
+INSERT INTO "app_menus" VALUES (23,'002003','video','视频报道',2,'','banner','/website/newslist_template.html','http://m.shenglong-electric.com.cn/news/dirlist/cid/14',0,0,1389335674,'002','','14','14','',1,'人民大会堂盛隆电气盛恩答谢年欢会','title');
+INSERT INTO "app_menus" VALUES (24,'002004','elegant_demeanour','盛隆风采',3,'','banner','/website/gallery_template.html','http://m.shenglong-electric.com.cn/gallery',0,0,1389335674,'002','','','','',1,'人民大会堂盛隆电气盛恩答谢年欢会','title');
+INSERT INTO "app_menus" VALUES (25,'003','product','产品与服务',0,'/images/tabs/product.png','banner','/website/submenu.html','',0,1,1389335674,'','','','','',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (26,'003001','ctspdsb','成套输配电设备',0,'','banner','/website/submenu.html','',0,1,1389335674,'003','','','','',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (27,'003001001','gyxl','高压系列',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/20',0,0,1389335674,'003001','20','','','003001001',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (28,'003001002','gydyyzsbdz','高压/低压预装式变电站',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/21',0,0,1389335674,'003001','21','','','003001002',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (29,'003001003','dyxl','低压系列',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/22',0,0,1389335674,'003001','22','','','003001003',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (30,'003001004','kzbhp','控制保护屏',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/23',0,0,1389335674,'003001','23','','','003001004',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (31,'003001005','sxxl','三箱系列',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/24',0,0,1389335674,'003001','24','','','003001005',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (32,'003002','dlzndlbhcpjjfa','电力智能、电力保护产品解决方案',0,'','banner','/website/submenu.html','',0,1,1389335674,'003','','','','',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (33,'003002001','znwldgnyb','智能网路多功能仪表',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/25',0,0,1389335674,'003002','25','','','003002001',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (34,'003002002','znpdjkxt','智能配电监控系统',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/26',0,0,1389335674,'003002','26','','','003002002',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (35,'003002003','dqhzjkxt','电气火灾监控系统',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/27',0,0,1389335674,'003002','27','','','003002003',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (36,'003002004','zbjdlbhxt','综保及电力保护系统',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/29',0,0,1389335674,'003002','29','','','003002004',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (37,'003003','dljnjzxcpjjfa','电力节能及增效产品解决方案',0,'','banner','/website/submenu.html','',0,1,1389335674,'003','','','','',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (38,'003003001','yydllbq','有源电力滤波器',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/28',0,0,1389335674,'003003','28','','','003003001',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (39,'003003002','dgnxbbhq','多功能谐波保护器',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/30',0,0,1389335674,'003003','30','','','003003002',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (40,'003004','dlgczcbfw','电力工程总承包服务',0,'','banner','/website/submenu.html','',0,1,1389335674,'003','','','','',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (41,'003004001','ywgs','业务概述',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/17',0,0,1389335674,'003004','17','','','003004001',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (42,'003004002','ywfw','业务范围',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/18',0,0,1389335674,'003004','18','','','003004002',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (43,'003004003','zzrz','资质认证',1,'','banner','/website/page_template.html','http://m.shenglong-electric.com.cn/product/detail/page_id/19',0,0,1389335674,'003004','19','','','003004003',1,'让一度电创造更多GDP，<br/>让电使幸福生活更幸福，<br/>让电是美丽中国更美丽！','title');
+INSERT INTO "app_menus" VALUES (44,'004','customer','客户与成功案例',0,'/images/tabs/customer.png','map','/website/page_customer_template.html','',0,1,1389335674,'','29','','','004001',1,'','title');
+INSERT INTO "app_menus" VALUES (45,'004001','hbdbxb','华北、东北、西北地区',5,'','map','/website/page_customer_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/29',0,0,1389335674,'004','29','','','004001',1,'','title');
+INSERT INTO "app_menus" VALUES (46,'004002','hzxn','华中、西南地区',5,'','map','/website/page_customer_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/28',0,0,1389335674,'004','28','','','004002',1,'','title');
+INSERT INTO "app_menus" VALUES (47,'004003','hdhn','华东、华南地区',5,'','map','/website/page_customer_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/31',0,0,1389335674,'004','31','','','004003',1,'','title');
+INSERT INTO "app_menus" VALUES (48,'004004','otherCountryAndArea','其它国家和地区',5,'','map','/website/page_customer_template.html','http://m.shenglong-electric.com.cn/opus/detail/page_id/30',0,0,1389335674,'004','30','','','004004',1,'','title');
+INSERT INTO "app_menus" VALUES (49,'004005','near','附近',3,'','map','http://map.baidu.com','http://map.baidu.com',0,0,1389335674,'004','','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (50,'005','connect','联系我们',0,'/images/tabs/connect.png','counselAndFeedback','/website/submenu.html','',0,1,1389335674,'','','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (51,'005001','companys','五大营',0,'','counselAndFeedback','/website/submenu.html','http://m.shenglong-electric.com.cn/contact/detail/page_id/2',0,1,1389335674,'005','','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (52,'005001001','wuhan','武汉公司',1,'','counselAndFeedback','/website/page_template.html','',0,0,1389335674,'005001','-1','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (53,'005001002','beijing','北京公司',1,'','counselAndFeedback','/website/page_template.html','',0,0,1389335674,'005001','-2','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (54,'005001003','guangzhou','广州公司',1,'','counselAndFeedback','/website/page_template.html','',0,0,1389335674,'005001','-3','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (55,'005001004','shanghai','上海公司',1,'','counselAndFeedback','/website/page_template.html','',0,0,1389335674,'005001','-4','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (56,'005001005','chongqing','重庆公司',1,'','counselAndFeedback','/website/page_template.html','',0,0,1389335674,'005001','-5','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (57,'005002','consultAndFeedback','咨询与反馈',3,'','counselAndFeedback','/website/page_counselAndFeedback.html','',0,0,1389335674,'005','','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (58,'005003','interview','人才招聘',0,'','counselAndFeedback','/website/submenu.html','',0,1,1389335674,'005','','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (59,'005003001','zhiyefazhan','职业发展',1,'','counselAndFeedback','/website/page_template.html','http://m.shenglong-electric.com.cn/jobs/detail/page_id/20',20,0,1394090927,'005003','20','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (60,'005003002','xiaoyuanzhaopin','校园招聘',1,'','counselAndFeedback','/website/page_template.html','http://m.shenglong-electric.com.cn/jobs/detail/page_id/32',32,0,1394090927,'005003','32','','','',1,'','title');
+INSERT INTO "app_menus" VALUES (61,'005003003','shehuizhaopin','社会招聘',1,'','counselAndFeedback','/website/page_template.html','http://m.shenglong-electric.com.cn/jobs/detail/page_id/31',33,0,1394090927,'005003','31','','','',1,'','title');
 CREATE TABLE "app_news" (
   "id" int(10) NOT NULL ,
   "sl_cid" int(10) NOT NULL DEFAULT '0',
@@ -276,7 +281,10 @@ INSERT INTO "app_pages" VALUES (36,-2,'','','<div class="base_t clearfix"><h4><s
 INSERT INTO "app_pages" VALUES (37,-3,'','','<div class="base_t clearfix"><h4><span style="font-size:14px">广州公司</span></h4><div class="base_l"><div><span style="font-size:14px">办公地址：东莞市东城区东升路鸿怡大厦4A</span></div><div><span style="font-size:14px">工厂地址：东莞市万江区上甲工业区<span style="line-height:0px;display:none" id="_baidu_bookmark_start_1">‍</span></span></div></div><div class="base_r"><div><span style="font-size:14px">电话：0769-23052820</span></div><div><span style="font-size:14px">传真：0769-23052820</span></div></div></div>','',0,0,54,'005001003',1);
 INSERT INTO "app_pages" VALUES (38,-4,'','','<div class="base_t clearfix"><h4><span style="font-size:14px">上海公司</span></h4><div class="base_l"><div><span style="font-size:14px">办公地址：上海市<span style="line-height:0px;display:none" id="_baidu_bookmark_start_2">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_3">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_4">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_5">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_6">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_7">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_8">‍</span></span>长宁区<span style="line-height:0px;display:none" id="_baidu_bookmark_start_9">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_10">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_11">‍</span></span>中山<span style="line-height:0px;display:none" id="_baidu_bookmark_start_12">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_13">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_14">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_15">‍</span></span>西路<span style="line-height:0px;display:none" id="_baidu_bookmark_start_16">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_17">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_18">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_19">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_20">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_21">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_22">‍</span></span>SOHO<span style="line-height:0px;display:none" id="_baidu_bookmark_start_23">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_24">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_25">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_26">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_27">‍</span></span>中山<span style="line-height:0px;display:none" id="_baidu_bookmark_start_28">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_29">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_30">‍</span></span>广场<span style="line-height:0px;display:none" id="_baidu_bookmark_start_31">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_32">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_33">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_34">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_35">‍</span></span>A<span style="line-height:0px;display:none" id="_baidu_bookmark_start_36">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_37">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_38">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_39">‍</span></span>座<span style="line-height:0px;display:none" id="_baidu_bookmark_start_40">‍</span>6<span style="line-height:0px;display:none" id="_baidu_bookmark_start_41">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_42">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_43">‍</span></span>层<span style="line-height:0px;display:none" id="_baidu_bookmark_start_44">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_45">‍</span><span style="line-height:0px;display:none" id="_baidu_bookmark_start_46">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_47">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_48">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_49">‍<span style="line-height:0px;display:none" id="_baidu_bookmark_start_50">‍</span></span></span></span></span></span></span></div><div><span style="font-size:14px">工厂地址：上海市青浦区宏城经济开发区4501弄80号</span></div></div><div class="base_r"><div><span style="font-size:14px">电话：021-33865211、39271600、39271603</span></div><div><span style="font-size:14px">传真：021-33865216</span></div></div></div>','',0,0,55,'005001004',1);
 INSERT INTO "app_pages" VALUES (39,-5,'','','<div class="base_t clearfix"><h4><span style="font-size:14px">重庆公司</span></h4><div class="base_l"><div><span style="font-size:14px">办公地址：重庆市渝中区解放碑英利国际金融大厦36层</span></div></div><div class="base_r"><div><span style="font-size:14px">电话：023-68190140</span></div><div><span style="font-size:14px">传真：023-68190140</span></div><span style="font-size:14px"></span></div></div>','',0,0,56,'005001005',1);
-CREATE TABLE "weather_citys" (
+INSERT INTO "app_pages" VALUES (40,20,'','','<p style="margin-bottom:15px;"><span style="color:#383838;font-family:宋体;font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;尊重、理解、信任是愉快地进行共同奋斗的纽带。在盛隆，实力与勤奋比学历、资历更胜一筹，积极、友善的工作空间会激发你的灵感。优秀是一种习惯，进步没有止境。我们总在努力追求卓越，瞻望远方。盛隆为每个员工营造创新的空间，在盛隆，我们提供的不只是一份工作，我们注重的是帮助您成就一番事业，点亮你的人生。请相信，优秀的企业，不会让你无法施展。</span><span style="color:#383838;font-family:宋体;"></span></p><p style="text-align:left;line-height:22px;"><span style="color:#383838;font-family:宋体;font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p>','2014-03-07 11:36:46',1394163406,1394163406,59,'005003001',1);
+INSERT INTO "app_pages" VALUES (41,32,'','','<p style="text-indent:28px;margin-bottom:10px;"><span style="font-family:宋体;font-size:13px;">盛隆电气集团2013校园招聘已正式启动，我们欢迎来自全国各地的优秀应届毕业生来这里实现梦想。</span></p><p style="text-indent:28px;margin-bottom:10px;"><span style="font-family:宋体;font-size:13px;">盛隆电气，这个拥有雄厚实力且蓬勃发展的朝阳企业，始终吸纳着新鲜的血液。盛隆为广大的应届毕业生提供施展自己才华的广阔舞台。加入盛隆，你可以通过积极努力学习快速提高自己的行业专业水平和个人竞争力；加入盛隆，你可以与优秀的业界专业人士合作，感受不一样的工作氛围；加入盛隆，你可以拥有机遇与挑战，收获丰富的工作经验；加入盛隆，你可以培养自己多元化能力，最大程度的实现自己的个人价值!</span></p><p style="text-indent:28px;margin-bottom:10px;"><span style="font-family:宋体;font-size:13px;">盛隆期待您的加入！</span></p><p style="text-indent:28px;"><span style="font-family:宋体;font-size:13px;">请关注我们的网站，了解我们最新的校园招聘信息。</span></p><p>&nbsp;</p>','2014-03-07 11:36:47',1394163406,1394163406,60,'005003002',1);
+INSERT INTO "app_pages" VALUES (42,31,'','','<p style="margin:0px 0px 12px;line-height:21px;text-indent:29px;"><span style="color:#444444;font-family:宋体;font-size:13px;">盛隆电气集团求贤若渴，广纳良才，这里</span><span style="color:#333333;font-family:宋体;font-size:13px;">将为您提供一个展示才华超越自我的平台。</span><span style="color:#444444;font-family:宋体;font-size:13px;">加入我们的行列，您不仅能与业界精英亲密合作，还可以感受盛隆独特的企业文化，更有机会在盛隆这个充满机遇与梦想的舞台上，挑战自我，与我们一起进步、共同发展、创造辉煌！</span></p><p style="margin:0px 0px 12px;line-height:21px;text-indent:29px;"><span style="color:#444444;font-family:宋体;font-size:13px;">盛隆欢迎您的加入！</span></p><p style="margin:0px 0px 12px;line-height:21px;text-indent:29px;"><span style="color:#444444;font-family:宋体;font-size:13px;"></span><span style="color:#444444;font-family:宋体;font-size:13px;">请访问盛隆电气集团的招聘合作网站，了解我们最新的职位需求：</span></p><p style="margin:0px 0px 12px;line-height:21px;text-indent:29px;"><a href="http://special.zhaopin.com/pagepublish/40718412/index.html" target="_blank"><span style="color:#444444;font-family:宋体;font-size:13px;"><span style="font-family:times new roman;"><img width="92" height="42" style="width:92px !important;height:42px !important;" src="http://m.shenglong-electric.com.cn/uploads/20130322/13639516868567.png" border="0" vspace="0" hspace="0" /></span></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://search.51job.com/list/co,c,2479564,000000,10,1.html" target="_blank"><span style="color:#444444;font-family:宋体;font-size:13px;"><span style="font-family:;"><span style="color:#000000;text-underline:none;"><img width="90" height="33" style="width:90px !important;height:33px !important;" src="http://m.shenglong-electric.com.cn/uploads/20130410/13655641505521.gif" border="0" vspace="0" hspace="0" /></span></span></span></a></p><p style="margin:0px 0px 12px;line-height:21px;text-indent:29px;"><br /></p>','2014-03-07 11:36:47',1394163406,1394163406,61,'005003003',1);
+CREATE TABLE "pm2_5_cities" (
   "id" int(10) NOT NULL ,
   "cityCode" varchar(60) NOT NULL DEFAULT '',
   "cityName" varchar(60) NOT NULL DEFAULT '',
@@ -285,6 +293,4337 @@ CREATE TABLE "weather_citys" (
   "bz" int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY ("id")
 );
+INSERT INTO "pm2_5_cities" VALUES (1,'','三亚','sanya',1394127546,1);
+INSERT INTO "pm2_5_cities" VALUES (2,'','三门峡','sanmenxia',1394127546,1);
+INSERT INTO "pm2_5_cities" VALUES (3,'','上海','shanghai',1394127547,1);
+INSERT INTO "pm2_5_cities" VALUES (4,'','东莞','dongguan',1394127547,1);
+INSERT INTO "pm2_5_cities" VALUES (5,'','东营','dongying',1394127548,1);
+INSERT INTO "pm2_5_cities" VALUES (6,'','中山','zhongshan',1394127548,1);
+INSERT INTO "pm2_5_cities" VALUES (7,'','临安','linan',1394127549,1);
+INSERT INTO "pm2_5_cities" VALUES (8,'','临汾','linfen',1394127549,1);
+INSERT INTO "pm2_5_cities" VALUES (9,'','临沂','linyi',1394127549,1);
+INSERT INTO "pm2_5_cities" VALUES (10,'','丹东','dandong',1394127550,1);
+INSERT INTO "pm2_5_cities" VALUES (11,'','丽水','lishui',1394127550,1);
+INSERT INTO "pm2_5_cities" VALUES (12,'','义乌','yiwu',1394127551,1);
+INSERT INTO "pm2_5_cities" VALUES (13,'','乌鲁木齐','wulumuqi',1394127551,1);
+INSERT INTO "pm2_5_cities" VALUES (14,'','九江','jiujiang',1394127551,1);
+INSERT INTO "pm2_5_cities" VALUES (15,'','乳山','rushan',1394127552,1);
+INSERT INTO "pm2_5_cities" VALUES (16,'','云浮','yunfu',1394127552,1);
+INSERT INTO "pm2_5_cities" VALUES (17,'','佛山','foshan',1394127553,1);
+INSERT INTO "pm2_5_cities" VALUES (18,'','保定','baoding',1394127553,1);
+INSERT INTO "pm2_5_cities" VALUES (19,'','克拉玛依','kelamayi',1394127554,1);
+INSERT INTO "pm2_5_cities" VALUES (20,'','兰州','lanzhou',1394127554,1);
+INSERT INTO "pm2_5_cities" VALUES (21,'','包头','baotou',1394127555,1);
+INSERT INTO "pm2_5_cities" VALUES (22,'','北京','beijing',1394127555,1);
+INSERT INTO "pm2_5_cities" VALUES (23,'','北海','beihai',1394127556,1);
+INSERT INTO "pm2_5_cities" VALUES (24,'','南京','nanjing',1394127557,1);
+INSERT INTO "pm2_5_cities" VALUES (25,'','南充','nanchong',1394127558,1);
+INSERT INTO "pm2_5_cities" VALUES (26,'','南宁','nanning',1394127559,1);
+INSERT INTO "pm2_5_cities" VALUES (27,'','南昌','nanchang',1394127559,1);
+INSERT INTO "pm2_5_cities" VALUES (28,'','南通','nantong',1394127559,1);
+INSERT INTO "pm2_5_cities" VALUES (29,'','即墨','jimo',1394127560,1);
+INSERT INTO "pm2_5_cities" VALUES (30,'','厦门','shamen',1394127560,1);
+INSERT INTO "pm2_5_cities" VALUES (31,'','句容','jurong',1394127561,1);
+INSERT INTO "pm2_5_cities" VALUES (32,'','台州','taizhou',1394127561,1);
+INSERT INTO "pm2_5_cities" VALUES (33,'','合肥','hefei',1394127561,1);
+INSERT INTO "pm2_5_cities" VALUES (34,'','吉林','jilin',1394127562,1);
+INSERT INTO "pm2_5_cities" VALUES (35,'','吴江','wujiang',1394127562,1);
+INSERT INTO "pm2_5_cities" VALUES (36,'','呼和浩特','huhehaote',1394127563,1);
+INSERT INTO "pm2_5_cities" VALUES (37,'','咸阳','xianyang',1394127563,1);
+INSERT INTO "pm2_5_cities" VALUES (38,'','哈尔滨','haerbin',1394127564,1);
+INSERT INTO "pm2_5_cities" VALUES (39,'','唐山','tangshan',1394127564,1);
+INSERT INTO "pm2_5_cities" VALUES (40,'','嘉兴','jiaxing',1394127565,1);
+INSERT INTO "pm2_5_cities" VALUES (41,'','嘉峪关','jiayuguan',1394127565,1);
+INSERT INTO "pm2_5_cities" VALUES (42,'','大同','datong',1394127566,1);
+INSERT INTO "pm2_5_cities" VALUES (43,'','大庆','daqing',1394127566,1);
+INSERT INTO "pm2_5_cities" VALUES (44,'','大连','dalian',1394127567,1);
+INSERT INTO "pm2_5_cities" VALUES (45,'','天津','tianjin',1394127567,1);
+INSERT INTO "pm2_5_cities" VALUES (46,'','太仓','taicang',1394127568,1);
+INSERT INTO "pm2_5_cities" VALUES (47,'','太原','taiyuan',1394127570,1);
+INSERT INTO "pm2_5_cities" VALUES (48,'','威海','weihai',1394127571,1);
+INSERT INTO "pm2_5_cities" VALUES (49,'','宁波','ningbo',1394127572,1);
+INSERT INTO "pm2_5_cities" VALUES (50,'','安阳','anyang',1394127572,1);
+INSERT INTO "pm2_5_cities" VALUES (51,'','宜兴','yixing',1394127572,1);
+INSERT INTO "pm2_5_cities" VALUES (52,'','宜宾','yibin',1394127573,1);
+INSERT INTO "pm2_5_cities" VALUES (53,'','宜昌','yichang',1394127573,1);
+INSERT INTO "pm2_5_cities" VALUES (54,'','宝鸡','baoji',1394127573,1);
+INSERT INTO "pm2_5_cities" VALUES (55,'','宿迁','suqian',1394127574,1);
+INSERT INTO "pm2_5_cities" VALUES (56,'','富阳','fuyang',1394127574,1);
+INSERT INTO "pm2_5_cities" VALUES (57,'','寿光','shouguang',1394127575,1);
+INSERT INTO "pm2_5_cities" VALUES (58,'','岳阳','yueyang',1394127576,1);
+INSERT INTO "pm2_5_cities" VALUES (59,'','常州','changzhou',1394127577,1);
+INSERT INTO "pm2_5_cities" VALUES (60,'','常德','changde',1394127577,1);
+INSERT INTO "pm2_5_cities" VALUES (61,'','常熟','changshu',1394127577,1);
+INSERT INTO "pm2_5_cities" VALUES (62,'','平度','pingdu',1394127578,1);
+INSERT INTO "pm2_5_cities" VALUES (63,'','平顶山','pingdingshan',1394127578,1);
+INSERT INTO "pm2_5_cities" VALUES (64,'','广州','guangzhou',1394127578,1);
+INSERT INTO "pm2_5_cities" VALUES (65,'','库尔勒','kuerle',1394127579,1);
+INSERT INTO "pm2_5_cities" VALUES (66,'','廊坊','langfang',1394127579,1);
+INSERT INTO "pm2_5_cities" VALUES (67,'','延安','yanan',1394127580,1);
+INSERT INTO "pm2_5_cities" VALUES (68,'','开封','kaifeng',1394127580,1);
+INSERT INTO "pm2_5_cities" VALUES (69,'','张家口','zhangjiakou',1394127581,1);
+INSERT INTO "pm2_5_cities" VALUES (70,'','张家港','zhangjiagang',1394127583,1);
+INSERT INTO "pm2_5_cities" VALUES (71,'','张家界','zhangjiajie',1394127583,1);
+INSERT INTO "pm2_5_cities" VALUES (72,'','徐州','xuzhou',1394127584,1);
+INSERT INTO "pm2_5_cities" VALUES (73,'','德州','dezhou',1394127585,1);
+INSERT INTO "pm2_5_cities" VALUES (74,'','德阳','deyang',1394127585,1);
+INSERT INTO "pm2_5_cities" VALUES (75,'','惠州','huizhou',1394127585,1);
+INSERT INTO "pm2_5_cities" VALUES (76,'','成都','chengdu',1394127586,1);
+INSERT INTO "pm2_5_cities" VALUES (77,'','扬州','yangzhou',1394127586,1);
+INSERT INTO "pm2_5_cities" VALUES (78,'','承德','chengde',1394127587,1);
+INSERT INTO "pm2_5_cities" VALUES (79,'','抚顺','fushun',1394127588,1);
+INSERT INTO "pm2_5_cities" VALUES (80,'','拉萨','lasa',1394127588,1);
+INSERT INTO "pm2_5_cities" VALUES (81,'','招远','zhaoyuan',1394127589,1);
+INSERT INTO "pm2_5_cities" VALUES (82,'','揭阳','jieyang',1394127589,1);
+INSERT INTO "pm2_5_cities" VALUES (83,'','攀枝花','panzhihua',1394127590,1);
+INSERT INTO "pm2_5_cities" VALUES (84,'','文登','wendeng',1394127590,1);
+INSERT INTO "pm2_5_cities" VALUES (85,'','无锡','wuxi',1394127591,1);
+INSERT INTO "pm2_5_cities" VALUES (86,'','日照','rizhao',1394127591,1);
+INSERT INTO "pm2_5_cities" VALUES (87,'','昆山','kunshan',1394127592,1);
+INSERT INTO "pm2_5_cities" VALUES (88,'','昆明','kunming',1394127592,1);
+INSERT INTO "pm2_5_cities" VALUES (89,'','曲靖','qujing',1394127593,1);
+INSERT INTO "pm2_5_cities" VALUES (90,'','本溪','benxi',1394127594,1);
+INSERT INTO "pm2_5_cities" VALUES (91,'','杭州','hangzhou',1394127595,1);
+INSERT INTO "pm2_5_cities" VALUES (92,'','枣庄','zaozhuang',1394127596,1);
+INSERT INTO "pm2_5_cities" VALUES (93,'','柳州','liuzhou',1394127596,1);
+INSERT INTO "pm2_5_cities" VALUES (94,'','株洲','zhuzhou',1394127597,1);
+INSERT INTO "pm2_5_cities" VALUES (95,'','桂林','guilin',1394127597,1);
+INSERT INTO "pm2_5_cities" VALUES (96,'','梅州','meizhou',1394127598,1);
+INSERT INTO "pm2_5_cities" VALUES (97,'','武汉','wuhan',1394127598,1);
+INSERT INTO "pm2_5_cities" VALUES (98,'','汕头','shantou',1394127599,1);
+INSERT INTO "pm2_5_cities" VALUES (99,'','汕尾','shanwei',1394127599,1);
+INSERT INTO "pm2_5_cities" VALUES (100,'','江门','jiangmen',1394127600,1);
+INSERT INTO "pm2_5_cities" VALUES (101,'','江阴','jiangyin',1394127600,1);
+INSERT INTO "pm2_5_cities" VALUES (102,'','沈阳','chenyang',1394127601,1);
+INSERT INTO "pm2_5_cities" VALUES (103,'','沧州','cangzhou',1394127601,1);
+INSERT INTO "pm2_5_cities" VALUES (104,'','河源','heyuan',1394127601,1);
+INSERT INTO "pm2_5_cities" VALUES (105,'','泉州','quanzhou',1394127602,1);
+INSERT INTO "pm2_5_cities" VALUES (106,'','泰安','taian',1394127602,1);
+INSERT INTO "pm2_5_cities" VALUES (107,'','泰州','taizhou',1394127602,1);
+INSERT INTO "pm2_5_cities" VALUES (108,'','泸州','luzhou',1394127603,1);
+INSERT INTO "pm2_5_cities" VALUES (109,'','洛阳','luoyang',1394127603,1);
+INSERT INTO "pm2_5_cities" VALUES (110,'','济南','jinan',1394127604,1);
+INSERT INTO "pm2_5_cities" VALUES (111,'','济宁','jining',1394127604,1);
+INSERT INTO "pm2_5_cities" VALUES (112,'','海口','haikou',1394127605,1);
+INSERT INTO "pm2_5_cities" VALUES (113,'','海门','haimen',1394127605,1);
+INSERT INTO "pm2_5_cities" VALUES (114,'','淄博','zibo',1394127606,1);
+INSERT INTO "pm2_5_cities" VALUES (115,'','淮安','huaian',1394127607,1);
+INSERT INTO "pm2_5_cities" VALUES (116,'','深圳','shenzhen',1394127608,1);
+INSERT INTO "pm2_5_cities" VALUES (117,'','清远','qingyuan',1394127609,1);
+INSERT INTO "pm2_5_cities" VALUES (118,'','温州','wenzhou',1394127609,1);
+INSERT INTO "pm2_5_cities" VALUES (119,'','渭南','weinan',1394127610,1);
+INSERT INTO "pm2_5_cities" VALUES (120,'','湖州','huzhou',1394127611,1);
+INSERT INTO "pm2_5_cities" VALUES (121,'','湘潭','xiangtan',1394127611,1);
+INSERT INTO "pm2_5_cities" VALUES (122,'','湛江','zhanjiang',1394127612,1);
+INSERT INTO "pm2_5_cities" VALUES (123,'','溧阳','liyang',1394127612,1);
+INSERT INTO "pm2_5_cities" VALUES (124,'','滨州','binzhou',1394127613,1);
+INSERT INTO "pm2_5_cities" VALUES (125,'','潍坊','weifang',1394127614,1);
+INSERT INTO "pm2_5_cities" VALUES (126,'','潮州','chaozhou',1394127614,1);
+INSERT INTO "pm2_5_cities" VALUES (127,'','烟台','yantai',1394127615,1);
+INSERT INTO "pm2_5_cities" VALUES (128,'','焦作','jiaozuo',1394127615,1);
+INSERT INTO "pm2_5_cities" VALUES (129,'','牡丹江','mudanjiang',1394127616,1);
+INSERT INTO "pm2_5_cities" VALUES (130,'','玉溪','yuxi',1394127616,1);
+INSERT INTO "pm2_5_cities" VALUES (131,'','珠海','zhuhai',1394127617,1);
+INSERT INTO "pm2_5_cities" VALUES (132,'','瓦房店','wafangdian',1394127617,1);
+INSERT INTO "pm2_5_cities" VALUES (133,'','盐城','yancheng',1394127617,1);
+INSERT INTO "pm2_5_cities" VALUES (134,'','盘锦','panjin',1394127618,1);
+INSERT INTO "pm2_5_cities" VALUES (135,'','石嘴山','shizuishan',1394127619,1);
+INSERT INTO "pm2_5_cities" VALUES (136,'','石家庄','shijiazhuang',1394127620,1);
+INSERT INTO "pm2_5_cities" VALUES (137,'','福州','fuzhou',1394127621,1);
+INSERT INTO "pm2_5_cities" VALUES (138,'','秦皇岛','qinhuangdao',1394127621,1);
+INSERT INTO "pm2_5_cities" VALUES (139,'','章丘','zhangqiu',1394127622,1);
+INSERT INTO "pm2_5_cities" VALUES (140,'','绍兴','shaoxing',1394127622,1);
+INSERT INTO "pm2_5_cities" VALUES (141,'','绵阳','mianyang',1394127623,1);
+INSERT INTO "pm2_5_cities" VALUES (142,'','聊城','liaocheng',1394127623,1);
+INSERT INTO "pm2_5_cities" VALUES (143,'','肇庆','zhaoqing',1394127624,1);
+INSERT INTO "pm2_5_cities" VALUES (144,'','胶南','xiaonan',1394127624,1);
+INSERT INTO "pm2_5_cities" VALUES (145,'','胶州','xiaozhou',1394127624,1);
+INSERT INTO "pm2_5_cities" VALUES (146,'','自贡','zigong',1394127625,1);
+INSERT INTO "pm2_5_cities" VALUES (147,'','舟山','zhoushan',1394127626,1);
+INSERT INTO "pm2_5_cities" VALUES (148,'','芜湖','wuhu',1394127626,1);
+INSERT INTO "pm2_5_cities" VALUES (149,'','苏州','suzhou',1394127627,1);
+INSERT INTO "pm2_5_cities" VALUES (150,'','茂名','maoming',1394127628,1);
+INSERT INTO "pm2_5_cities" VALUES (151,'','荆州','jingzhou',1394127628,1);
+INSERT INTO "pm2_5_cities" VALUES (152,'','荣成','rongcheng',1394127629,1);
+INSERT INTO "pm2_5_cities" VALUES (153,'','莱州','laizhou',1394127629,1);
+INSERT INTO "pm2_5_cities" VALUES (154,'','莱芜','laiwu',1394127629,1);
+INSERT INTO "pm2_5_cities" VALUES (155,'','莱西','laixi',1394127630,1);
+INSERT INTO "pm2_5_cities" VALUES (156,'','菏泽','heze',1394127630,1);
+INSERT INTO "pm2_5_cities" VALUES (157,'','营口','yingkou',1394127631,1);
+INSERT INTO "pm2_5_cities" VALUES (158,'','葫芦岛','huludao',1394127632,1);
+INSERT INTO "pm2_5_cities" VALUES (159,'','蓬莱','penglai',1394127634,1);
+INSERT INTO "pm2_5_cities" VALUES (160,'','衡水','hengshui',1394127635,1);
+INSERT INTO "pm2_5_cities" VALUES (161,'','衢州','quzhou',1394127636,1);
+INSERT INTO "pm2_5_cities" VALUES (162,'','西宁','xining',1394127636,1);
+INSERT INTO "pm2_5_cities" VALUES (163,'','西安','xian',1394127637,1);
+INSERT INTO "pm2_5_cities" VALUES (164,'','诸暨','zhuji',1394127637,1);
+INSERT INTO "pm2_5_cities" VALUES (165,'','贵阳','guiyang',1394127637,1);
+INSERT INTO "pm2_5_cities" VALUES (166,'','赤峰','chifeng',1394127638,1);
+INSERT INTO "pm2_5_cities" VALUES (167,'','连云港','lianyungang',1394127639,1);
+INSERT INTO "pm2_5_cities" VALUES (168,'','遵义','zunyi',1394127639,1);
+INSERT INTO "pm2_5_cities" VALUES (169,'','邢台','xingtai',1394127640,1);
+INSERT INTO "pm2_5_cities" VALUES (170,'','邯郸','handan',1394127640,1);
+INSERT INTO "pm2_5_cities" VALUES (171,'','郑州','zhengzhou',1394127640,1);
+INSERT INTO "pm2_5_cities" VALUES (172,'','鄂尔多斯','eerduosi',1394127641,1);
+INSERT INTO "pm2_5_cities" VALUES (173,'','重庆','zhongqing',1394127641,1);
+INSERT INTO "pm2_5_cities" VALUES (174,'','金华','jinhua',1394127642,1);
+INSERT INTO "pm2_5_cities" VALUES (175,'','金坛','jintan',1394127643,1);
+INSERT INTO "pm2_5_cities" VALUES (176,'','金昌','jinchang',1394127643,1);
+INSERT INTO "pm2_5_cities" VALUES (177,'','铜川','tongchuan',1394127643,1);
+INSERT INTO "pm2_5_cities" VALUES (178,'','银川','yinchuan',1394127644,1);
+INSERT INTO "pm2_5_cities" VALUES (179,'','锦州','jinzhou',1394127645,1);
+INSERT INTO "pm2_5_cities" VALUES (180,'','镇江','zhenjiang',1394127645,1);
+INSERT INTO "pm2_5_cities" VALUES (181,'','长春','changchun',1394127646,1);
+INSERT INTO "pm2_5_cities" VALUES (182,'','长沙','changsha',1394127647,1);
+INSERT INTO "pm2_5_cities" VALUES (183,'','长治','changzhi',1394127648,1);
+INSERT INTO "pm2_5_cities" VALUES (184,'','阳江','yangjiang',1394127649,1);
+INSERT INTO "pm2_5_cities" VALUES (185,'','阳泉','yangquan',1394127649,1);
+INSERT INTO "pm2_5_cities" VALUES (186,'','青岛','qingdao',1394127650,1);
+INSERT INTO "pm2_5_cities" VALUES (187,'','鞍山','anshan',1394127651,1);
+INSERT INTO "pm2_5_cities" VALUES (188,'','韶关','shaoguan',1394127651,1);
+INSERT INTO "pm2_5_cities" VALUES (189,'','马鞍山','maanshan',1394127652,1);
+INSERT INTO "pm2_5_cities" VALUES (190,'','齐齐哈尔','qiqihaer',1394127652,1);
+CREATE TABLE "pm2_5_data2014" (
+  "id" int(10) NOT NULL ,
+  "aqi" int(10) NOT NULL DEFAULT '0',
+  "cityCode" varchar(60) NOT NULL DEFAULT '',
+  "area" varchar(60) NOT NULL DEFAULT '',
+  "cityName" varchar(60) NOT NULL DEFAULT '',
+  "spellName" varchar(60) NOT NULL DEFAULT '',
+  "co" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "co_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "no2" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "no2_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "o3" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "o3_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "o3_8h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "o3_8h_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "pm10" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "pm10_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "pm2_5" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "pm2_5_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "so2" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "so2_24h" decimal(16,6) NOT NULL DEFAULT '0.000000',
+  "primary_pollutant" varchar(60) NOT NULL DEFAULT '0',
+  "quality" varchar(60) NOT NULL DEFAULT '0',
+  "station_code" varchar(60) NOT NULL DEFAULT '',
+  "position_name" varchar(60) NOT NULL DEFAULT '',
+  "time_point" varchar(60) NOT NULL DEFAULT '0',
+  "publishDate" int(10) NOT NULL DEFAULT '0',
+  "date" int(10) NOT NULL DEFAULT '0',
+  "bz" int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY ("id")
+);
+INSERT INTO "pm2_5_data2014" VALUES (1,26,'','天津','天津','tianjin',0.000000,0.000000,16.000000,53.000000,66.000000,70.000000,46.000000,68.000000,26.000000,72.000000,17.000000,45.000000,27.000000,102.000000,'None','优','1013A','市监测中心','2014-03-06T14:00:00Z',1394085600,1394125668,1);
+INSERT INTO "pm2_5_data2014" VALUES (2,0,'','天津','天津','tianjin',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1014A','机车车辆厂','2014-03-06T14:00:00Z',1394085600,1394125669,1);
+INSERT INTO "pm2_5_data2014" VALUES (3,27,'','天津','天津','tianjin',1.000000,1.000000,14.000000,48.000000,84.000000,89.000000,61.000000,85.000000,18.000000,63.000000,15.000000,41.000000,52.000000,68.000000,'None','优','1015A','继电器厂','2014-03-06T14:00:00Z',1394085600,1394125670,1);
+INSERT INTO "pm2_5_data2014" VALUES (4,25,'','天津','天津','tianjin',2.000000,2.000000,16.000000,50.000000,71.000000,71.000000,51.000000,66.000000,20.000000,66.000000,17.000000,41.000000,24.000000,74.000000,'None','优','1016A','南京路','2014-03-06T14:00:00Z',1394085600,1394125671,1);
+INSERT INTO "pm2_5_data2014" VALUES (5,29,'','天津','天津','tianjin',1.000000,1.000000,23.000000,52.000000,75.000000,80.000000,51.000000,76.000000,27.000000,63.000000,20.000000,42.000000,29.000000,63.000000,'None','优','1017A','河东站','2014-03-06T14:00:00Z',1394085600,1394125672,1);
+INSERT INTO "pm2_5_data2014" VALUES (6,0,'','天津','天津','tianjin',0.000000,1.000000,0.000000,55.000000,0.000000,65.000000,0.000000,63.000000,0.000000,94.000000,0.000000,65.000000,0.000000,72.000000,'None','None','1018A','河西站','2014-03-06T14:00:00Z',1394085600,1394125673,1);
+INSERT INTO "pm2_5_data2014" VALUES (7,28,'','天津','天津','tianjin',0.000000,1.000000,12.000000,57.000000,88.000000,88.000000,61.000000,82.000000,23.000000,81.000000,19.000000,34.000000,8.000000,44.000000,'None','优','1019A','北辰科技园区','2014-03-06T14:00:00Z',1394085600,1394125674,1);
+INSERT INTO "pm2_5_data2014" VALUES (8,25,'','天津','天津','tianjin',1.000000,1.000000,26.000000,49.000000,76.000000,76.000000,51.000000,74.000000,18.000000,62.000000,17.000000,46.000000,0.000000,55.000000,'None','优','1020A','天山路','2014-03-06T14:00:00Z',1394085600,1394125676,1);
+INSERT INTO "pm2_5_data2014" VALUES (9,31,'','天津','天津','tianjin',1.000000,1.000000,12.000000,40.000000,83.000000,85.000000,54.000000,80.000000,31.000000,77.000000,20.000000,45.000000,32.000000,69.000000,'None','优','1021A','东丽中学','2014-03-06T14:00:00Z',1394085600,1394125677,1);
+INSERT INTO "pm2_5_data2014" VALUES (10,48,'','天津','天津','tianjin',0.000000,0.000000,23.000000,49.000000,55.000000,59.000000,41.000000,59.000000,0.000000,67.000000,33.000000,41.000000,35.000000,70.000000,'None','优','1022A','梅江小区','2014-03-06T14:00:00Z',1394085600,1394125678,1);
+INSERT INTO "pm2_5_data2014" VALUES (11,52,'','天津','天津','tianjin',0.000000,0.000000,37.000000,52.000000,43.000000,43.000000,23.000000,41.000000,54.000000,77.000000,22.000000,39.000000,20.000000,18.000000,'颗粒物(PM10)','良','1023A','泰丰工业园','2014-03-06T14:00:00Z',1394085600,1394125679,1);
+INSERT INTO "pm2_5_data2014" VALUES (12,42,'','天津','天津','tianjin',0.000000,1.000000,12.000000,43.000000,45.000000,59.000000,29.000000,59.000000,42.000000,65.000000,21.000000,40.000000,32.000000,44.000000,'None','优','1024A','永明路','2014-03-06T14:00:00Z',1394085600,1394125681,1);
+INSERT INTO "pm2_5_data2014" VALUES (13,37,'','天津','天津','tianjin',1.000000,1.000000,8.000000,40.000000,81.000000,81.000000,59.000000,75.000000,37.000000,55.000000,13.000000,37.000000,15.000000,44.000000,'None','优','1025A','空港物流加工区','2014-03-06T14:00:00Z',1394085600,1394125682,1);
+INSERT INTO "pm2_5_data2014" VALUES (14,42,'','天津','天津','tianjin',2.000000,2.000000,21.000000,62.000000,78.000000,78.000000,52.000000,74.000000,42.000000,72.000000,27.000000,48.000000,23.000000,42.000000,'None','优','1026A','中新生态城','2014-03-06T14:00:00Z',1394085600,1394125683,1);
+INSERT INTO "pm2_5_data2014" VALUES (15,40,'','天津','天津','tianjin',3.000000,2.000000,23.000000,42.000000,75.000000,88.000000,55.000000,87.000000,0.000000,72.000000,18.000000,48.000000,34.000000,56.000000,'None','优','1027A','团泊洼','2014-03-06T14:00:00Z',1394085600,1394125685,1);
+INSERT INTO "pm2_5_data2014" VALUES (16,63,'','石家庄','石家庄','shijiazhuang',0.000000,1.000000,7.000000,28.000000,75.000000,75.000000,38.000000,68.000000,76.000000,160.000000,27.000000,86.000000,9.000000,39.000000,'颗粒物(PM10)','良','1028A','化工学校','2014-03-06T14:00:00Z',1394085600,1394125686,1);
+INSERT INTO "pm2_5_data2014" VALUES (17,62,'','石家庄','石家庄','shijiazhuang',0.000000,1.000000,27.000000,63.000000,84.000000,84.000000,39.000000,74.000000,73.000000,154.000000,2.000000,41.000000,34.000000,73.000000,'颗粒物(PM10)','良','1029A','职工医院','2014-03-06T14:00:00Z',1394085600,1394125688,1);
+INSERT INTO "pm2_5_data2014" VALUES (18,55,'','石家庄','石家庄','shijiazhuang',0.000000,1.000000,18.000000,62.000000,25.000000,26.000000,14.000000,26.000000,60.000000,149.000000,24.000000,85.000000,20.000000,86.000000,'颗粒物(PM10)','良','1030A','高新区','2014-03-06T14:00:00Z',1394085600,1394125689,1);
+INSERT INTO "pm2_5_data2014" VALUES (19,58,'','石家庄','石家庄','shijiazhuang',0.000000,1.000000,10.000000,27.000000,77.000000,77.000000,41.000000,66.000000,65.000000,157.000000,32.000000,78.000000,9.000000,31.000000,'颗粒物(PM10)','良','1031A','西北水源','2014-03-06T14:00:00Z',1394085600,1394125690,1);
+INSERT INTO "pm2_5_data2014" VALUES (20,62,'','石家庄','石家庄','shijiazhuang',0.000000,1.000000,19.000000,46.000000,68.000000,68.000000,36.000000,64.000000,70.000000,154.000000,44.000000,93.000000,49.000000,81.000000,'细颗粒物(PM2.5)','良','1032A','西南高教','2014-03-06T14:00:00Z',1394085600,1394125691,1);
+INSERT INTO "pm2_5_data2014" VALUES (21,52,'','石家庄','石家庄','shijiazhuang',0.000000,0.000000,16.000000,53.000000,94.000000,94.000000,53.000000,89.000000,54.000000,138.000000,31.000000,81.000000,29.000000,64.000000,'颗粒物(PM10)','良','1033A','世纪公园','2014-03-06T14:00:00Z',1394085600,1394125694,1);
+INSERT INTO "pm2_5_data2014" VALUES (22,59,'','石家庄','石家庄','shijiazhuang',0.000000,0.000000,29.000000,68.000000,81.000000,81.000000,46.000000,64.000000,68.000000,140.000000,33.000000,76.000000,19.000000,73.000000,'颗粒物(PM10)','良','1034A','人民会堂','2014-03-06T14:00:00Z',1394085600,1394125695,1);
+INSERT INTO "pm2_5_data2014" VALUES (23,88,'','石家庄','石家庄','shijiazhuang',0.000000,0.000000,8.000000,31.000000,88.000000,88.000000,57.000000,82.000000,126.000000,136.000000,32.000000,69.000000,39.000000,70.000000,'颗粒物(PM10)','良','1035A','封龙山','2014-03-06T14:00:00Z',1394085600,1394125696,1);
+INSERT INTO "pm2_5_data2014" VALUES (24,84,'','唐山','唐山','tangshan',1.000000,1.000000,33.000000,58.000000,76.000000,87.000000,55.000000,87.000000,118.000000,118.000000,53.000000,55.000000,115.000000,160.000000,'颗粒物(PM10)','良','1036A','供销社','2014-03-06T14:00:00Z',1394085600,1394125697,1);
+INSERT INTO "pm2_5_data2014" VALUES (25,62,'','唐山','唐山','tangshan',1.000000,2.000000,22.000000,51.000000,87.000000,99.000000,60.000000,99.000000,73.000000,98.000000,22.000000,53.000000,23.000000,49.000000,'颗粒物(PM10)','良','1037A','雷达站','2014-03-06T14:00:00Z',1394085600,1394125698,1);
+INSERT INTO "pm2_5_data2014" VALUES (26,83,'','唐山','唐山','tangshan',0.000000,1.000000,29.000000,46.000000,28.000000,38.000000,24.000000,38.000000,78.000000,99.000000,61.000000,60.000000,32.000000,56.000000,'细颗粒物(PM2.5)','良','1038A','物资局','2014-03-06T14:00:00Z',1394085600,1394125699,1);
+INSERT INTO "pm2_5_data2014" VALUES (27,61,'','唐山','唐山','tangshan',2.000000,2.000000,26.000000,45.000000,71.000000,81.000000,55.000000,81.000000,72.000000,95.000000,40.000000,61.000000,29.000000,67.000000,'颗粒物(PM10)','良','1039A','陶瓷公司','2014-03-06T14:00:00Z',1394085600,1394125700,1);
+INSERT INTO "pm2_5_data2014" VALUES (28,70,'','唐山','唐山','tangshan',1.000000,1.000000,34.000000,65.000000,89.000000,104.000000,63.000000,104.000000,84.000000,105.000000,51.000000,59.000000,29.000000,64.000000,'细颗粒物(PM2.5)','良','1040A','十二中','2014-03-06T14:00:00Z',1394085600,1394125701,1);
+INSERT INTO "pm2_5_data2014" VALUES (29,68,'','唐山','唐山','tangshan',1.000000,1.000000,36.000000,63.000000,66.000000,84.000000,45.000000,84.000000,85.000000,94.000000,34.000000,63.000000,34.000000,79.000000,'颗粒物(PM10)','良','1041A','小山','2014-03-06T14:00:00Z',1394085600,1394125702,1);
+INSERT INTO "pm2_5_data2014" VALUES (30,25,'','秦皇岛','秦皇岛','qinhuangdao',0.000000,0.000000,8.000000,18.000000,74.000000,81.000000,69.000000,78.000000,25.000000,62.000000,9.000000,34.000000,8.000000,40.000000,'None','优','1042A','北戴河环保局','2014-03-06T14:00:00Z',1394085600,1394125704,1);
+INSERT INTO "pm2_5_data2014" VALUES (31,32,'','秦皇岛','秦皇岛','qinhuangdao',0.000000,0.000000,4.000000,34.000000,89.000000,97.000000,71.000000,94.000000,32.000000,77.000000,9.000000,40.000000,14.000000,22.000000,'None','优','1043A','第一关','2014-03-06T14:00:00Z',1394085600,1394125706,1);
+INSERT INTO "pm2_5_data2014" VALUES (32,36,'','秦皇岛','秦皇岛','qinhuangdao',0.000000,0.000000,11.000000,36.000000,99.000000,101.000000,68.000000,100.000000,0.000000,58.000000,25.000000,46.000000,22.000000,56.000000,'None','优','1044A','监测站','2014-03-06T14:00:00Z',1394085600,1394125708,1);
+INSERT INTO "pm2_5_data2014" VALUES (33,27,'','秦皇岛','秦皇岛','qinhuangdao',0.000000,0.000000,9.000000,29.000000,85.000000,90.000000,62.000000,87.000000,23.000000,74.000000,17.000000,46.000000,41.000000,52.000000,'None','优','1045A','市政府','2014-03-06T14:00:00Z',1394085600,1394125709,1);
+INSERT INTO "pm2_5_data2014" VALUES (34,41,'','秦皇岛','秦皇岛','qinhuangdao',0.000000,1.000000,11.000000,40.000000,78.000000,79.000000,54.000000,77.000000,41.000000,100.000000,15.000000,43.000000,11.000000,40.000000,'None','优','1046A','建设大夏','2014-03-06T14:00:00Z',1394085600,1394125710,1);
+INSERT INTO "pm2_5_data2014" VALUES (35,125,'','邯郸','邯郸','handan',0.000000,1.000000,29.000000,60.000000,55.000000,55.000000,26.000000,48.000000,161.000000,191.000000,95.000000,117.000000,28.000000,52.000000,'细颗粒物(PM2.5)','轻度污染','1047A','环保局','2014-03-06T14:00:00Z',1394085600,1394125711,1);
+INSERT INTO "pm2_5_data2014" VALUES (36,104,'','邯郸','邯郸','handan',0.000000,1.000000,35.000000,70.000000,28.000000,38.000000,13.000000,33.000000,158.000000,216.000000,73.000000,139.000000,49.000000,97.000000,'颗粒物(PM10)','轻度污染','1048A','东污水处理厂','2014-03-06T14:00:00Z',1394085600,1394125712,1);
+INSERT INTO "pm2_5_data2014" VALUES (37,117,'','邯郸','邯郸','handan',0.000000,1.000000,44.000000,66.000000,65.000000,65.000000,24.000000,63.000000,173.000000,212.000000,88.000000,117.000000,41.000000,65.000000,'细颗粒物(PM2.5)','轻度污染','1049A','矿院','2014-03-06T14:00:00Z',1394085600,1394125713,1);
+INSERT INTO "pm2_5_data2014" VALUES (38,129,'','邯郸','邯郸','handan',0.000000,1.000000,67.000000,60.000000,58.000000,69.000000,23.000000,66.000000,172.000000,174.000000,98.000000,145.000000,48.000000,91.000000,'细颗粒物(PM2.5)','轻度污染','1050A','丛台公园','2014-03-06T14:00:00Z',1394085600,1394125714,1);
+INSERT INTO "pm2_5_data2014" VALUES (39,53,'','保定','保定','baoding',1.000000,2.000000,15.000000,67.000000,88.000000,97.000000,53.000000,96.000000,56.000000,146.000000,6.000000,67.000000,27.000000,123.000000,'颗粒物(PM10)','良','1051A','游泳馆','2014-03-06T14:00:00Z',1394085600,1394125716,1);
+INSERT INTO "pm2_5_data2014" VALUES (40,53,'','保定','保定','baoding',1.000000,3.000000,0.000000,0.000000,43.000000,52.000000,20.000000,52.000000,55.000000,158.000000,6.000000,87.000000,27.000000,67.000000,'颗粒物(PM10)','良','1052A','华电二区','2014-03-06T14:00:00Z',1394085600,1394125718,1);
+INSERT INTO "pm2_5_data2014" VALUES (41,53,'','保定','保定','baoding',2.000000,3.000000,22.000000,51.000000,49.000000,51.000000,26.000000,45.000000,56.000000,149.000000,17.000000,83.000000,14.000000,36.000000,'颗粒物(PM10)','良','1053A','接待中心','2014-03-06T14:00:00Z',1394085600,1394125721,1);
+INSERT INTO "pm2_5_data2014" VALUES (42,58,'','保定','保定','baoding',0.000000,1.000000,32.000000,58.000000,77.000000,94.000000,51.000000,91.000000,65.000000,160.000000,10.000000,88.000000,25.000000,51.000000,'颗粒物(PM10)','良','1054A','地表水厂','2014-03-06T14:00:00Z',1394085600,1394125723,1);
+INSERT INTO "pm2_5_data2014" VALUES (43,57,'','保定','保定','baoding',0.000000,1.000000,32.000000,44.000000,88.000000,110.000000,63.000000,107.000000,64.000000,134.000000,20.000000,77.000000,22.000000,48.000000,'颗粒物(PM10)','良','1055A','胶片厂','2014-03-06T14:00:00Z',1394085600,1394125724,1);
+INSERT INTO "pm2_5_data2014" VALUES (44,33,'','保定','保定','baoding',2.000000,3.000000,0.000000,105.000000,0.000000,143.000000,16.000000,99.000000,33.000000,129.000000,8.000000,78.000000,18.000000,110.000000,'None','优','1056A','监测站','2014-03-06T14:00:00Z',1394085600,1394125725,1);
+INSERT INTO "pm2_5_data2014" VALUES (45,58,'','张家口','张家口','zhangjiakou',0.000000,0.000000,20.000000,16.000000,87.000000,87.000000,62.000000,87.000000,66.000000,61.000000,7.000000,17.000000,72.000000,79.000000,'颗粒物(PM10)','良','1057A','人民公园','2014-03-06T14:00:00Z',1394085600,1394125726,1);
+INSERT INTO "pm2_5_data2014" VALUES (46,48,'','张家口','张家口','zhangjiakou',0.000000,0.000000,11.000000,20.000000,81.000000,81.000000,51.000000,78.000000,48.000000,56.000000,12.000000,25.000000,22.000000,59.000000,'None','优','1058A','探机厂','2014-03-06T14:00:00Z',1394085600,1394125727,1);
+INSERT INTO "pm2_5_data2014" VALUES (47,39,'','张家口','张家口','zhangjiakou',1.000000,1.000000,0.000000,23.000000,78.000000,99.000000,61.000000,99.000000,39.000000,48.000000,17.000000,14.000000,0.000000,54.000000,'None','优','1059A','五金库','2014-03-06T14:00:00Z',1394085600,1394125728,1);
+INSERT INTO "pm2_5_data2014" VALUES (48,48,'','张家口','张家口','zhangjiakou',0.000000,0.000000,0.000000,60.000000,39.000000,42.000000,24.000000,42.000000,48.000000,68.000000,7.000000,32.000000,6.000000,66.000000,'None','优','1060A','世纪豪园','2014-03-06T14:00:00Z',1394085600,1394125728,1);
+INSERT INTO "pm2_5_data2014" VALUES (49,45,'','张家口','张家口','zhangjiakou',1.000000,1.000000,8.000000,11.000000,0.000000,0.000000,0.000000,0.000000,45.000000,41.000000,5.000000,28.000000,68.000000,71.000000,'None','优','1061A','北泵房','2014-03-06T14:00:00Z',1394085600,1394125729,1);
+INSERT INTO "pm2_5_data2014" VALUES (50,35,'','承德','承德','chengde',0.000000,0.000000,8.000000,21.000000,90.000000,90.000000,66.000000,86.000000,35.000000,35.000000,8.000000,17.000000,7.000000,34.000000,'None','优','1062A','铁路','2014-03-06T14:00:00Z',1394085600,1394125730,1);
+INSERT INTO "pm2_5_data2014" VALUES (51,51,'','承德','承德','chengde',0.000000,0.000000,18.000000,35.000000,75.000000,75.000000,45.000000,67.000000,51.000000,44.000000,10.000000,23.000000,72.000000,78.000000,'颗粒物(PM10)','良','1063A','中国银行','2014-03-06T14:00:00Z',1394085600,1394125731,1);
+INSERT INTO "pm2_5_data2014" VALUES (52,27,'','承德','承德','chengde',0.000000,0.000000,7.000000,17.000000,69.000000,69.000000,46.000000,64.000000,27.000000,28.000000,5.000000,6.000000,7.000000,16.000000,'None','优','1064A','开发区','2014-03-06T14:00:00Z',1394085600,1394125732,1);
+INSERT INTO "pm2_5_data2014" VALUES (53,27,'','承德','承德','chengde',0.000000,0.000000,9.000000,23.000000,85.000000,85.000000,62.000000,78.000000,25.000000,50.000000,10.000000,25.000000,16.000000,14.000000,'None','优','1065A','文化中心','2014-03-06T14:00:00Z',1394085600,1394125734,1);
+INSERT INTO "pm2_5_data2014" VALUES (54,29,'','承德','承德','chengde',0.000000,0.000000,6.000000,10.000000,91.000000,91.000000,76.000000,88.000000,29.000000,45.000000,16.000000,35.000000,3.000000,6.000000,'None','优','1066A','离宫','2014-03-06T14:00:00Z',1394085600,1394125735,1);
+INSERT INTO "pm2_5_data2014" VALUES (55,31,'','廊坊','廊坊','langfang',0.000000,0.000000,21.000000,42.000000,78.000000,86.000000,61.000000,86.000000,31.000000,70.000000,7.000000,34.000000,5.000000,21.000000,'None','优','1067A','药材公司','2014-03-06T14:00:00Z',1394085600,1394125736,1);
+INSERT INTO "pm2_5_data2014" VALUES (56,23,'','廊坊','廊坊','langfang',0.000000,0.000000,14.000000,37.000000,47.000000,51.000000,40.000000,51.000000,23.000000,67.000000,8.000000,32.000000,5.000000,20.000000,'None','优','1068A','开发区','2014-03-06T14:00:00Z',1394085600,1394125737,1);
+INSERT INTO "pm2_5_data2014" VALUES (57,23,'','廊坊','廊坊','langfang',0.000000,0.000000,6.000000,27.000000,60.000000,68.000000,50.000000,68.000000,23.000000,68.000000,11.000000,44.000000,13.000000,35.000000,'None','优','1069A','环境监测监理中心','2014-03-06T14:00:00Z',1394085600,1394125738,1);
+INSERT INTO "pm2_5_data2014" VALUES (58,0,'','廊坊','廊坊','langfang',0.000000,0.000000,0.000000,38.000000,0.000000,57.000000,40.000000,57.000000,0.000000,77.000000,0.000000,33.000000,0.000000,18.000000,'None','None','1070A','北华航天学校','2014-03-06T14:00:00Z',1394085600,1394125740,1);
+INSERT INTO "pm2_5_data2014" VALUES (59,39,'','沧州','沧州','cangzhou',1.000000,2.000000,8.000000,24.000000,25.000000,30.000000,19.000000,29.000000,38.000000,105.000000,27.000000,76.000000,51.000000,28.000000,'None','优','1071A','沧县城建局','2014-03-06T14:00:00Z',1394085600,1394125741,1);
+INSERT INTO "pm2_5_data2014" VALUES (60,65,'','沧州','沧州','cangzhou',0.000000,0.000000,16.000000,41.000000,94.000000,103.000000,60.000000,103.000000,79.000000,92.000000,28.000000,62.000000,19.000000,37.000000,'颗粒物(PM10)','良','1072A','电视转播站','2014-03-06T14:00:00Z',1394085600,1394125742,1);
+INSERT INTO "pm2_5_data2014" VALUES (61,55,'','沧州','沧州','cangzhou',1.000000,1.000000,16.000000,25.000000,84.000000,93.000000,54.000000,93.000000,60.000000,78.000000,24.000000,70.000000,22.000000,27.000000,'颗粒物(PM10)','良','1073A','市环保局','2014-03-06T14:00:00Z',1394085600,1394125743,1);
+INSERT INTO "pm2_5_data2014" VALUES (62,50,'','衡水','衡水','hengshui',0.000000,0.000000,1.000000,20.000000,79.000000,79.000000,54.000000,73.000000,50.000000,151.000000,16.000000,83.000000,12.000000,51.000000,'None','优','1074A','电机北厂','2014-03-06T14:00:00Z',1394085600,1394125744,1);
+INSERT INTO "pm2_5_data2014" VALUES (63,51,'','衡水','衡水','hengshui',0.000000,0.000000,1.000000,36.000000,90.000000,90.000000,62.000000,85.000000,52.000000,147.000000,19.000000,75.000000,11.000000,46.000000,'颗粒物(PM10)','良','1075A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125747,1);
+INSERT INTO "pm2_5_data2014" VALUES (64,52,'','衡水','衡水','hengshui',0.000000,0.000000,9.000000,34.000000,75.000000,75.000000,48.000000,75.000000,53.000000,133.000000,7.000000,77.000000,13.000000,49.000000,'颗粒物(PM10)','良','1076A','市环保局','2014-03-06T14:00:00Z',1394085600,1394125747,1);
+INSERT INTO "pm2_5_data2014" VALUES (65,77,'','邢台','邢台','xingtai',0.000000,1.000000,30.000000,70.000000,81.000000,81.000000,40.000000,73.000000,103.000000,197.000000,38.000000,119.000000,31.000000,73.000000,'颗粒物(PM10)','良','1077A','达活泉','2014-03-06T14:00:00Z',1394085600,1394125748,1);
+INSERT INTO "pm2_5_data2014" VALUES (66,105,'','邢台','邢台','xingtai',0.000000,1.000000,25.000000,74.000000,84.000000,84.000000,39.000000,71.000000,124.000000,235.000000,79.000000,154.000000,40.000000,134.000000,'细颗粒物(PM2.5)','轻度污染','1078A','邢师高专','2014-03-06T14:00:00Z',1394085600,1394125749,1);
+INSERT INTO "pm2_5_data2014" VALUES (67,81,'','邢台','邢台','xingtai',0.000000,1.000000,10.000000,60.000000,87.000000,168.000000,40.000000,75.000000,111.000000,242.000000,30.000000,142.000000,19.000000,96.000000,'颗粒物(PM10)','良','1079A','路桥公司','2014-03-06T14:00:00Z',1394085600,1394125751,1);
+INSERT INTO "pm2_5_data2014" VALUES (68,75,'','邢台','邢台','xingtai',0.000000,1.000000,13.000000,63.000000,81.000000,81.000000,40.000000,65.000000,99.000000,205.000000,27.000000,113.000000,4.000000,87.000000,'颗粒物(PM10)','良','1080A','市环保局','2014-03-06T14:00:00Z',1394085600,1394125752,1);
+INSERT INTO "pm2_5_data2014" VALUES (69,44,'','太原','太原','taiyuan',1.000000,1.000000,6.000000,13.000000,52.000000,54.000000,32.000000,49.000000,44.000000,88.000000,11.000000,39.000000,29.000000,31.000000,'None','优','1081A','尖草坪','2014-03-06T14:00:00Z',1394085600,1394125754,1);
+INSERT INTO "pm2_5_data2014" VALUES (70,55,'','太原','太原','taiyuan',1.000000,2.000000,13.000000,29.000000,54.000000,54.000000,34.000000,40.000000,59.000000,104.000000,12.000000,37.000000,50.000000,72.000000,'颗粒物(PM10)','良','1082A','涧河','2014-03-06T14:00:00Z',1394085600,1394125755,1);
+INSERT INTO "pm2_5_data2014" VALUES (71,34,'','太原','太原','taiyuan',1.000000,1.000000,5.000000,15.000000,35.000000,35.000000,27.000000,28.000000,34.000000,72.000000,10.000000,32.000000,11.000000,44.000000,'None','优','1083A','上兰','2014-03-06T14:00:00Z',1394085600,1394125756,1);
+INSERT INTO "pm2_5_data2014" VALUES (72,25,'','太原','太原','taiyuan',0.000000,0.000000,10.000000,25.000000,66.000000,76.000000,41.000000,74.000000,25.000000,41.000000,5.000000,18.000000,33.000000,56.000000,'None','优','1084A','晋源','2014-03-06T14:00:00Z',1394085600,1394125758,1);
+INSERT INTO "pm2_5_data2014" VALUES (73,41,'','太原','太原','taiyuan',1.000000,1.000000,8.000000,22.000000,26.000000,27.000000,17.000000,27.000000,41.000000,79.000000,10.000000,27.000000,4.000000,35.000000,'None','优','1085A','小店','2014-03-06T14:00:00Z',1394085600,1394125760,1);
+INSERT INTO "pm2_5_data2014" VALUES (74,28,'','太原','太原','taiyuan',1.000000,1.000000,7.000000,23.000000,36.000000,37.000000,23.000000,34.000000,28.000000,70.000000,5.000000,27.000000,25.000000,43.000000,'None','优','1086A','桃园','2014-03-06T14:00:00Z',1394085600,1394125761,1);
+INSERT INTO "pm2_5_data2014" VALUES (75,32,'','太原','太原','taiyuan',1.000000,1.000000,10.000000,22.000000,39.000000,42.000000,28.000000,41.000000,32.000000,61.000000,13.000000,27.000000,20.000000,44.000000,'None','优','1087A','坞城','2014-03-06T14:00:00Z',1394085600,1394125763,1);
+INSERT INTO "pm2_5_data2014" VALUES (76,18,'','太原','太原','taiyuan',0.000000,0.000000,10.000000,18.000000,32.000000,45.000000,26.000000,45.000000,18.000000,37.000000,6.000000,19.000000,6.000000,19.000000,'None','优','1088A','南寨','2014-03-06T14:00:00Z',1394085600,1394125764,1);
+INSERT INTO "pm2_5_data2014" VALUES (77,30,'','太原','太原','taiyuan',1.000000,2.000000,6.000000,27.000000,96.000000,105.000000,63.000000,96.000000,30.000000,56.000000,9.000000,21.000000,31.000000,73.000000,'None','优','1089A','金胜','2014-03-06T14:00:00Z',1394085600,1394125765,1);
+INSERT INTO "pm2_5_data2014" VALUES (78,45,'','呼和浩特','呼和浩特','huhehaote',0.000000,0.000000,8.000000,18.000000,40.000000,49.000000,29.000000,49.000000,45.000000,42.000000,15.000000,13.000000,92.000000,62.000000,'None','优','1090A','呼市一监','2014-03-06T14:00:00Z',1394085600,1394125766,1);
+INSERT INTO "pm2_5_data2014" VALUES (79,82,'','呼和浩特','呼和浩特','huhehaote',4.000000,4.000000,38.000000,42.000000,27.000000,33.000000,22.000000,33.000000,113.000000,54.000000,44.000000,19.000000,128.000000,117.000000,'颗粒物(PM10)','良','1091A','小召','2014-03-06T14:00:00Z',1394085600,1394125767,1);
+INSERT INTO "pm2_5_data2014" VALUES (80,76,'','呼和浩特','呼和浩特','huhehaote',0.000000,0.000000,37.000000,33.000000,40.000000,58.000000,32.000000,58.000000,102.000000,45.000000,36.000000,12.000000,98.000000,55.000000,'颗粒物(PM10)','良','1092A','兴松小区','2014-03-06T14:00:00Z',1394085600,1394125768,1);
+INSERT INTO "pm2_5_data2014" VALUES (81,74,'','呼和浩特','呼和浩特','huhehaote',0.000000,1.000000,33.000000,22.000000,19.000000,20.000000,18.000000,20.000000,97.000000,61.000000,39.000000,21.000000,180.000000,145.000000,'颗粒物(PM10)','良','1093A','糖厂','2014-03-06T14:00:00Z',1394085600,1394125770,1);
+INSERT INTO "pm2_5_data2014" VALUES (82,61,'','呼和浩特','呼和浩特','huhehaote',0.000000,0.000000,27.000000,19.000000,65.000000,84.000000,52.000000,84.000000,42.000000,20.000000,22.000000,10.000000,224.000000,47.000000,'二氧化硫','良','1094A','如意水处理厂','2014-03-06T14:00:00Z',1394085600,1394125772,1);
+INSERT INTO "pm2_5_data2014" VALUES (83,53,'','呼和浩特','呼和浩特','huhehaote',1.000000,1.000000,22.000000,22.000000,13.000000,17.000000,10.000000,17.000000,56.000000,38.000000,25.000000,12.000000,153.000000,66.000000,'颗粒物(PM10)','良','1095A','二十九中','2014-03-06T14:00:00Z',1394085600,1394125773,1);
+INSERT INTO "pm2_5_data2014" VALUES (84,66,'','呼和浩特','呼和浩特','huhehaote',3.000000,3.000000,12.000000,20.000000,46.000000,51.000000,30.000000,49.000000,81.000000,46.000000,33.000000,14.000000,24.000000,31.000000,'颗粒物(PM10)','良','1096A','工大金川校区','2014-03-06T14:00:00Z',1394085600,1394125774,1);
+INSERT INTO "pm2_5_data2014" VALUES (85,48,'','呼和浩特','呼和浩特','huhehaote',1.000000,1.000000,13.000000,19.000000,60.000000,65.000000,44.000000,65.000000,48.000000,40.000000,21.000000,13.000000,43.000000,47.000000,'None','优','1097A','化肥厂生活区','2014-03-06T14:00:00Z',1394085600,1394125775,1);
+INSERT INTO "pm2_5_data2014" VALUES (86,26,'','沈阳','沈阳','chenyang',0.000000,1.000000,2.000000,18.000000,82.000000,92.000000,72.000000,92.000000,0.000000,42.000000,16.000000,24.000000,5.000000,18.000000,'None','优','1098A','辉山','2014-03-06T14:00:00Z',1394085600,1394125776,1);
+INSERT INTO "pm2_5_data2014" VALUES (87,25,'','沈阳','沈阳','chenyang',0.000000,0.000000,12.000000,37.000000,79.000000,86.000000,69.000000,86.000000,20.000000,50.000000,9.000000,23.000000,19.000000,51.000000,'None','优','1099A','浑南二','2014-03-06T14:00:00Z',1394085600,1394125777,1);
+INSERT INTO "pm2_5_data2014" VALUES (88,52,'','沈阳','沈阳','chenyang',0.000000,0.000000,3.000000,16.000000,80.000000,89.000000,70.000000,89.000000,0.000000,58.000000,36.000000,39.000000,17.000000,46.000000,'细颗粒物(PM2.5)','良','1100A','东软','2014-03-06T14:00:00Z',1394085600,1394125778,1);
+INSERT INTO "pm2_5_data2014" VALUES (89,39,'','沈阳','沈阳','chenyang',0.000000,0.000000,17.000000,40.000000,51.000000,53.000000,42.000000,52.000000,39.000000,75.000000,14.000000,36.000000,41.000000,101.000000,'None','优','1101A','张士','2014-03-06T14:00:00Z',1394085600,1394125780,1);
+INSERT INTO "pm2_5_data2014" VALUES (90,24,'','沈阳','沈阳','chenyang',0.000000,0.000000,5.000000,33.000000,75.000000,81.000000,61.000000,81.000000,19.000000,48.000000,5.000000,16.000000,6.000000,50.000000,'None','优','1102A','炮兵学院','2014-03-06T14:00:00Z',1394085600,1394125781,1);
+INSERT INTO "pm2_5_data2014" VALUES (91,26,'','沈阳','沈阳','chenyang',0.000000,0.000000,4.000000,33.000000,82.000000,85.000000,72.000000,85.000000,19.000000,59.000000,10.000000,32.000000,4.000000,82.000000,'None','优','1103A','北陵','2014-03-06T14:00:00Z',1394085600,1394125783,1);
+INSERT INTO "pm2_5_data2014" VALUES (92,18,'','沈阳','沈阳','chenyang',0.000000,0.000000,9.000000,32.000000,45.000000,49.000000,40.000000,49.000000,16.000000,50.000000,12.000000,32.000000,24.000000,80.000000,'None','优','1104A','文艺路','2014-03-06T14:00:00Z',1394085600,1394125784,1);
+INSERT INTO "pm2_5_data2014" VALUES (93,22,'','沈阳','沈阳','chenyang',0.000000,0.000000,12.000000,34.000000,69.000000,73.000000,60.000000,73.000000,20.000000,51.000000,14.000000,28.000000,21.000000,75.000000,'None','优','1105A','小河沿','2014-03-06T14:00:00Z',1394085600,1394125785,1);
+INSERT INTO "pm2_5_data2014" VALUES (94,24,'','沈阳','沈阳','chenyang',0.000000,0.000000,28.000000,58.000000,51.000000,51.000000,41.000000,51.000000,24.000000,61.000000,12.000000,37.000000,25.000000,94.000000,'None','优','1106A','太原街','2014-03-06T14:00:00Z',1394085600,1394125786,1);
+INSERT INTO "pm2_5_data2014" VALUES (95,25,'','沈阳','沈阳','chenyang',0.000000,0.000000,14.000000,38.000000,57.000000,63.000000,46.000000,63.000000,25.000000,59.000000,13.000000,36.000000,10.000000,104.000000,'None','优','1107A','二毛','2014-03-06T14:00:00Z',1394085600,1394125787,1);
+INSERT INTO "pm2_5_data2014" VALUES (96,27,'','沈阳','沈阳','chenyang',0.000000,0.000000,8.000000,29.000000,84.000000,94.000000,75.000000,94.000000,14.000000,45.000000,8.000000,22.000000,3.000000,27.000000,'None','优','1108A','辽大','2014-03-06T14:00:00Z',1394085600,1394125788,1);
+INSERT INTO "pm2_5_data2014" VALUES (97,54,'','大连','大连','dalian',0.000000,0.000000,10.000000,33.000000,70.000000,70.000000,53.000000,64.000000,57.000000,71.000000,20.000000,32.000000,6.000000,29.000000,'颗粒物(PM10)','良','1109A','甘井子','2014-03-06T14:00:00Z',1394085600,1394125789,1);
+INSERT INTO "pm2_5_data2014" VALUES (98,55,'','大连','大连','dalian',0.000000,0.000000,23.000000,39.000000,53.000000,59.000000,31.000000,51.000000,60.000000,65.000000,14.000000,33.000000,0.000000,52.000000,'颗粒物(PM10)','良','1110A','周水子','2014-03-06T14:00:00Z',1394085600,1394125790,1);
+INSERT INTO "pm2_5_data2014" VALUES (99,43,'','大连','大连','dalian',0.000000,0.000000,14.000000,21.000000,60.000000,67.000000,40.000000,60.000000,43.000000,47.000000,21.000000,30.000000,14.000000,58.000000,'None','优','1111A','星海三站','2014-03-06T14:00:00Z',1394085600,1394125792,1);
+INSERT INTO "pm2_5_data2014" VALUES (100,45,'','大连','大连','dalian',0.000000,0.000000,18.000000,31.000000,54.000000,67.000000,35.000000,55.000000,45.000000,47.000000,18.000000,30.000000,11.000000,37.000000,'None','优','1112A','青泥洼桥','2014-03-06T14:00:00Z',1394085600,1394125793,1);
+INSERT INTO "pm2_5_data2014" VALUES (101,29,'','大连','大连','dalian',0.000000,0.000000,17.000000,21.000000,42.000000,48.000000,31.000000,47.000000,27.000000,41.000000,20.000000,25.000000,21.000000,39.000000,'None','优','1113A','傅家庄','2014-03-06T14:00:00Z',1394085600,1394125794,1);
+INSERT INTO "pm2_5_data2014" VALUES (102,49,'','大连','大连','dalian',1.000000,1.000000,52.000000,58.000000,54.000000,60.000000,41.000000,58.000000,49.000000,46.000000,21.000000,28.000000,14.000000,25.000000,'None','优','1114A','七贤岭','2014-03-06T14:00:00Z',1394085600,1394125795,1);
+INSERT INTO "pm2_5_data2014" VALUES (103,33,'','大连','大连','dalian',0.000000,0.000000,3.000000,95.000000,63.000000,69.000000,54.000000,62.000000,33.000000,40.000000,19.000000,28.000000,12.000000,26.000000,'None','优','1115A','旅顺','2014-03-06T14:00:00Z',1394085600,1394125797,1);
+INSERT INTO "pm2_5_data2014" VALUES (104,26,'','大连','大连','dalian',0.000000,0.000000,10.000000,35.000000,64.000000,64.000000,48.000000,62.000000,0.000000,60.000000,18.000000,38.000000,9.000000,59.000000,'None','优','1116A','金州','2014-03-06T14:00:00Z',1394085600,1394125798,1);
+INSERT INTO "pm2_5_data2014" VALUES (105,28,'','大连','大连','dalian',0.000000,0.000000,6.000000,17.000000,0.000000,89.000000,0.000000,89.000000,22.000000,40.000000,19.000000,31.000000,18.000000,42.000000,'None','优','1117A','开发区','2014-03-06T14:00:00Z',1394085600,1394125799,1);
+INSERT INTO "pm2_5_data2014" VALUES (106,18,'','大连','大连','dalian',0.000000,0.000000,10.000000,21.000000,56.000000,56.000000,49.000000,56.000000,12.000000,38.000000,7.000000,25.000000,10.000000,9.000000,'None','优','1118A','双D港','2014-03-06T14:00:00Z',1394085600,1394125800,1);
+INSERT INTO "pm2_5_data2014" VALUES (107,72,'','长春','长春','changchun',0.000000,0.000000,14.000000,30.000000,75.000000,80.000000,48.000000,80.000000,94.000000,117.000000,26.000000,39.000000,9.000000,47.000000,'颗粒物(PM10)','良','1119A','食品厂','2014-03-06T14:00:00Z',1394085600,1394125802,1);
+INSERT INTO "pm2_5_data2014" VALUES (108,66,'','长春','长春','changchun',0.000000,0.000000,19.000000,30.000000,44.000000,48.000000,30.000000,48.000000,81.000000,92.000000,15.000000,29.000000,13.000000,90.000000,'颗粒物(PM10)','良','1120A','客车厂','2014-03-06T14:00:00Z',1394085600,1394125803,1);
+INSERT INTO "pm2_5_data2014" VALUES (109,60,'','长春','长春','changchun',0.000000,0.000000,42.000000,45.000000,62.000000,62.000000,38.000000,61.000000,70.000000,91.000000,23.000000,29.000000,16.000000,60.000000,'颗粒物(PM10)','良','1121A','邮电学院','2014-03-06T14:00:00Z',1394085600,1394125804,1);
+INSERT INTO "pm2_5_data2014" VALUES (110,43,'','长春','长春','changchun',0.000000,0.000000,9.000000,31.000000,55.000000,58.000000,36.000000,58.000000,43.000000,67.000000,24.000000,34.000000,14.000000,73.000000,'None','优','1122A','劳动公园','2014-03-06T14:00:00Z',1394085600,1394125805,1);
+INSERT INTO "pm2_5_data2014" VALUES (111,29,'','长春','长春','changchun',0.000000,0.000000,5.000000,34.000000,69.000000,73.000000,55.000000,73.000000,27.000000,70.000000,20.000000,34.000000,4.000000,61.000000,'None','优','1123A','园林处','2014-03-06T14:00:00Z',1394085600,1394125806,1);
+INSERT INTO "pm2_5_data2014" VALUES (112,29,'','长春','长春','changchun',0.000000,0.000000,6.000000,18.000000,79.000000,87.000000,56.000000,87.000000,21.000000,50.000000,20.000000,25.000000,16.000000,43.000000,'None','优','1124A','净月潭','2014-03-06T14:00:00Z',1394085600,1394125807,1);
+INSERT INTO "pm2_5_data2014" VALUES (113,25,'','长春','长春','changchun',0.000000,0.000000,3.000000,10.000000,74.000000,79.000000,59.000000,79.000000,25.000000,38.000000,16.000000,26.000000,2.000000,12.000000,'None','优','1125A','甩湾子','2014-03-06T14:00:00Z',1394085600,1394125810,1);
+INSERT INTO "pm2_5_data2014" VALUES (114,29,'','长春','长春','changchun',0.000000,0.000000,6.000000,32.000000,62.000000,91.000000,38.000000,70.000000,29.000000,70.000000,20.000000,30.000000,8.000000,105.000000,'None','优','1126A','经开区环卫处','2014-03-06T14:00:00Z',1394085600,1394125811,1);
+INSERT INTO "pm2_5_data2014" VALUES (115,27,'','长春','长春','changchun',0.000000,0.000000,2.000000,11.000000,84.000000,89.000000,65.000000,89.000000,24.000000,54.000000,12.000000,23.000000,2.000000,12.000000,'None','优','1127A','高新区管委会','2014-03-06T14:00:00Z',1394085600,1394125812,1);
+INSERT INTO "pm2_5_data2014" VALUES (116,24,'','长春','长春','changchun',0.000000,0.000000,7.000000,15.000000,76.000000,163.000000,58.000000,119.000000,24.000000,47.000000,16.000000,22.000000,4.000000,18.000000,'None','优','1128A','岱山公园','2014-03-06T14:00:00Z',1394085600,1394125814,1);
+INSERT INTO "pm2_5_data2014" VALUES (117,34,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,14.000000,34.000000,67.000000,73.000000,53.000000,73.000000,34.000000,34.000000,12.000000,22.000000,36.000000,15.000000,'None','优','1129A','岭北','2014-03-06T14:00:00Z',1394085600,1394125815,1);
+INSERT INTO "pm2_5_data2014" VALUES (118,45,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,16.000000,29.000000,59.000000,66.000000,46.000000,66.000000,45.000000,39.000000,17.000000,27.000000,29.000000,31.000000,'None','优','1130A','松北商大','2014-03-06T14:00:00Z',1394085600,1394125816,1);
+INSERT INTO "pm2_5_data2014" VALUES (119,49,'','哈尔滨','哈尔滨','haerbin',2.000000,0.000000,22.000000,42.000000,62.000000,72.000000,46.000000,61.000000,49.000000,84.000000,18.000000,32.000000,32.000000,33.000000,'None','优','1131A','阿城会宁','2014-03-06T14:00:00Z',1394085600,1394125817,1);
+INSERT INTO "pm2_5_data2014" VALUES (120,29,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,11.000000,48.000000,78.000000,78.000000,52.000000,76.000000,29.000000,72.000000,6.000000,30.000000,15.000000,92.000000,'None','优','1132A','南岗学府路','2014-03-06T14:00:00Z',1394085600,1394125818,1);
+INSERT INTO "pm2_5_data2014" VALUES (121,73,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,30.000000,47.000000,62.000000,71.000000,42.000000,65.000000,95.000000,62.000000,32.000000,26.000000,82.000000,79.000000,'颗粒物(PM10)','良','1133A','太平宏伟公园','2014-03-06T14:00:00Z',1394085600,1394125819,1);
+INSERT INTO "pm2_5_data2014" VALUES (122,44,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,25.000000,48.000000,44.000000,48.000000,31.000000,48.000000,44.000000,58.000000,17.000000,24.000000,25.000000,86.000000,'None','优','1134A','道外承德广场','2014-03-06T14:00:00Z',1394085600,1394125820,1);
+INSERT INTO "pm2_5_data2014" VALUES (123,58,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,77.000000,53.000000,60.000000,64.000000,36.000000,54.000000,66.000000,73.000000,22.000000,30.000000,61.000000,78.000000,'颗粒物(PM10)','良','1135A','香坊红旗大街','2014-03-06T14:00:00Z',1394085600,1394125823,1);
+INSERT INTO "pm2_5_data2014" VALUES (124,61,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,23.000000,59.000000,69.000000,71.000000,42.000000,71.000000,71.000000,80.000000,24.000000,35.000000,85.000000,119.000000,'颗粒物(PM10)','良','1136A','动力和平路','2014-03-06T14:00:00Z',1394085600,1394125825,1);
+INSERT INTO "pm2_5_data2014" VALUES (125,41,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,0.000000,0.000000,51.000000,55.000000,37.000000,51.000000,41.000000,45.000000,27.000000,28.000000,13.000000,51.000000,'None','优','1137A','道里建国路','2014-03-06T14:00:00Z',1394085600,1394125826,1);
+INSERT INTO "pm2_5_data2014" VALUES (126,28,'','哈尔滨','哈尔滨','haerbin',0.000000,1.000000,7.000000,51.000000,3.000000,5.000000,3.000000,5.000000,28.000000,77.000000,10.000000,48.000000,11.000000,29.000000,'None','优','1138A','平房东轻厂','2014-03-06T14:00:00Z',1394085600,1394125827,1);
+INSERT INTO "pm2_5_data2014" VALUES (127,24,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,2.000000,28.000000,65.000000,69.000000,59.000000,69.000000,24.000000,49.000000,14.000000,41.000000,27.000000,22.000000,'None','优','1139A','呼兰师专','2014-03-06T14:00:00Z',1394085600,1394125828,1);
+INSERT INTO "pm2_5_data2014" VALUES (128,59,'','哈尔滨','哈尔滨','haerbin',0.000000,0.000000,14.000000,41.000000,85.000000,85.000000,41.000000,54.000000,66.000000,61.000000,42.000000,31.000000,1.000000,111.000000,'细颗粒物(PM2.5)','良','1140A','省农科院','2014-03-06T14:00:00Z',1394085600,1394125829,1);
+INSERT INTO "pm2_5_data2014" VALUES (129,33,'','上海','上海','shanghai',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,33.000000,45.000000,16.000000,21.000000,0.000000,0.000000,'None','优','1141A','普陀','2014-03-06T14:00:00Z',1394085600,1394125830,1);
+INSERT INTO "pm2_5_data2014" VALUES (130,49,'','上海','上海','shanghai',0.000000,0.000000,31.000000,30.000000,77.000000,101.000000,78.000000,100.000000,37.000000,41.000000,34.000000,25.000000,9.000000,14.000000,'None','优','1142A','十五厂','2014-03-06T14:00:00Z',1394085600,1394125831,1);
+INSERT INTO "pm2_5_data2014" VALUES (131,27,'','上海','上海','shanghai',0.000000,0.000000,22.000000,26.000000,78.000000,136.000000,71.000000,124.000000,27.000000,37.000000,16.000000,19.000000,10.000000,11.000000,'None','优','1143A','虹口','2014-03-06T14:00:00Z',1394085600,1394125833,1);
+INSERT INTO "pm2_5_data2014" VALUES (132,30,'','上海','上海','shanghai',0.000000,0.000000,27.000000,31.000000,68.000000,93.000000,68.000000,93.000000,0.000000,0.000000,21.000000,37.000000,12.000000,19.000000,'None','优','1144A','徐汇上师大','2014-03-06T14:00:00Z',1394085600,1394125833,1);
+INSERT INTO "pm2_5_data2014" VALUES (133,30,'','上海','上海','shanghai',0.000000,1.000000,22.000000,26.000000,80.000000,237.000000,98.000000,99.000000,30.000000,39.000000,14.000000,20.000000,11.000000,23.000000,'None','优','1145A','杨浦四漂','2014-03-06T14:00:00Z',1394085600,1394125835,1);
+INSERT INTO "pm2_5_data2014" VALUES (134,53,'','上海','上海','shanghai',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,55.000000,55.000000,0.000000,0.000000,0.000000,0.000000,'颗粒物(PM10)','良','1146A','青浦淀山湖','2014-03-06T14:00:00Z',1394085600,1394125837,1);
+INSERT INTO "pm2_5_data2014" VALUES (135,31,'','上海','上海','shanghai',0.000000,0.000000,27.000000,32.000000,70.000000,94.000000,69.000000,94.000000,31.000000,41.000000,15.000000,19.000000,12.000000,15.000000,'None','优','1147A','静安监测站','2014-03-06T14:00:00Z',1394085600,1394125838,1);
+INSERT INTO "pm2_5_data2014" VALUES (136,33,'','上海','上海','shanghai',0.000000,0.000000,11.000000,15.000000,85.000000,144.000000,87.000000,113.000000,33.000000,43.000000,11.000000,22.000000,5.000000,17.000000,'None','优','1148A','浦东川沙','2014-03-06T14:00:00Z',1394085600,1394125839,1);
+INSERT INTO "pm2_5_data2014" VALUES (137,69,'','上海','上海','shanghai',0.000000,0.000000,19.000000,25.000000,78.000000,98.000000,76.000000,98.000000,0.000000,39.000000,50.000000,35.000000,5.000000,7.000000,'细颗粒物(PM2.5)','良','1149A','浦东新区监测站','2014-03-06T14:00:00Z',1394085600,1394125840,1);
+INSERT INTO "pm2_5_data2014" VALUES (138,28,'','上海','上海','shanghai',0.000000,0.000000,22.000000,28.000000,84.000000,100.000000,88.000000,100.000000,27.000000,41.000000,19.000000,21.000000,10.000000,12.000000,'None','优','1150A','浦东张江','2014-03-06T14:00:00Z',1394085600,1394125842,1);
+INSERT INTO "pm2_5_data2014" VALUES (139,73,'','南京','南京','nanjing',0.000000,0.000000,44.000000,46.000000,81.000000,104.000000,61.000000,104.000000,96.000000,90.000000,49.000000,50.000000,30.000000,35.000000,'颗粒物(PM10)','良','1151A','迈皋桥','2014-03-06T14:00:00Z',1394085600,1394125843,1);
+INSERT INTO "pm2_5_data2014" VALUES (140,69,'','南京','南京','nanjing',0.000000,0.000000,41.000000,47.000000,89.000000,106.000000,70.000000,95.000000,88.000000,96.000000,45.000000,50.000000,22.000000,30.000000,'颗粒物(PM10)','良','1152A','草场门','2014-03-06T14:00:00Z',1394085600,1394125845,1);
+INSERT INTO "pm2_5_data2014" VALUES (141,65,'','南京','南京','nanjing',0.000000,0.000000,40.000000,46.000000,71.000000,89.000000,66.000000,74.000000,80.000000,92.000000,44.000000,46.000000,29.000000,30.000000,'颗粒物(PM10)','良','1153A','山西路','2014-03-06T14:00:00Z',1394085600,1394125846,1);
+INSERT INTO "pm2_5_data2014" VALUES (142,64,'','南京','南京','nanjing',0.000000,0.000000,33.000000,37.000000,75.000000,97.000000,55.000000,91.000000,78.000000,93.000000,33.000000,44.000000,37.000000,43.000000,'颗粒物(PM10)','良','1154A','中华门','2014-03-06T14:00:00Z',1394085600,1394125847,1);
+INSERT INTO "pm2_5_data2014" VALUES (143,60,'','南京','南京','nanjing',0.000000,0.000000,42.000000,45.000000,69.000000,90.000000,53.000000,81.000000,69.000000,84.000000,37.000000,47.000000,27.000000,34.000000,'颗粒物(PM10)','良','1155A','瑞金路','2014-03-06T14:00:00Z',1394085600,1394125849,1);
+INSERT INTO "pm2_5_data2014" VALUES (144,65,'','南京','南京','nanjing',0.000000,0.000000,28.000000,37.000000,85.000000,97.000000,67.000000,82.000000,80.000000,80.000000,45.000000,46.000000,28.000000,26.000000,'颗粒物(PM10)','良','1156A','玄武湖','2014-03-06T14:00:00Z',1394085600,1394125851,1);
+INSERT INTO "pm2_5_data2014" VALUES (145,62,'','南京','南京','nanjing',0.000000,0.000000,38.000000,45.000000,85.000000,104.000000,63.000000,93.000000,73.000000,87.000000,38.000000,47.000000,32.000000,34.000000,'颗粒物(PM10)','良','1157A','浦口','2014-03-06T14:00:00Z',1394085600,1394125852,1);
+INSERT INTO "pm2_5_data2014" VALUES (146,63,'','南京','南京','nanjing',0.000000,0.000000,31.000000,39.000000,81.000000,88.000000,59.000000,84.000000,76.000000,93.000000,38.000000,50.000000,20.000000,30.000000,'颗粒物(PM10)','良','1158A','奥体中心','2014-03-06T14:00:00Z',1394085600,1394125852,1);
+INSERT INTO "pm2_5_data2014" VALUES (147,75,'','南京','南京','nanjing',0.000000,0.000000,34.000000,32.000000,66.000000,80.000000,62.000000,80.000000,100.000000,91.000000,49.000000,47.000000,27.000000,37.000000,'颗粒物(PM10)','良','1159A','仙林大学城','2014-03-06T14:00:00Z',1394085600,1394125854,1);
+INSERT INTO "pm2_5_data2014" VALUES (148,59,'','苏州','苏州','suzhou',0.000000,0.000000,45.000000,37.000000,0.000000,0.000000,0.000000,0.000000,59.000000,57.000000,42.000000,36.000000,3.000000,3.000000,'细颗粒物(PM2.5)','良','1160A','上方山','2014-03-06T14:00:00Z',1394085600,1394125855,1);
+INSERT INTO "pm2_5_data2014" VALUES (149,50,'','苏州','苏州','suzhou',0.000000,0.000000,61.000000,45.000000,48.000000,101.000000,47.000000,101.000000,50.000000,49.000000,0.000000,33.000000,20.000000,16.000000,'None','优','1161A','南门','2014-03-06T14:00:00Z',1394085600,1394125856,1);
+INSERT INTO "pm2_5_data2014" VALUES (150,50,'','苏州','苏州','suzhou',0.000000,0.000000,42.000000,29.000000,70.000000,119.000000,72.000000,119.000000,39.000000,42.000000,35.000000,30.000000,26.000000,25.000000,'None','优','1162A','彩香','2014-03-06T14:00:00Z',1394085600,1394125856,1);
+INSERT INTO "pm2_5_data2014" VALUES (151,60,'','苏州','苏州','suzhou',0.000000,0.000000,58.000000,49.000000,0.000000,0.000000,0.000000,0.000000,69.000000,51.000000,39.000000,31.000000,10.000000,11.000000,'颗粒物(PM10)','良','1163A','轧钢厂','2014-03-06T14:00:00Z',1394085600,1394125857,1);
+INSERT INTO "pm2_5_data2014" VALUES (152,49,'','苏州','苏州','suzhou',0.000000,0.000000,33.000000,29.000000,51.000000,86.000000,49.000000,86.000000,0.000000,45.000000,34.000000,29.000000,6.000000,5.000000,'None','优','1164A','吴中区','2014-03-06T14:00:00Z',1394085600,1394125859,1);
+INSERT INTO "pm2_5_data2014" VALUES (153,68,'','苏州','苏州','suzhou',0.000000,0.000000,49.000000,38.000000,44.000000,86.000000,47.000000,84.000000,68.000000,53.000000,49.000000,32.000000,13.000000,13.000000,'细颗粒物(PM2.5)','良','1165A','苏州新区','2014-03-06T14:00:00Z',1394085600,1394125860,1);
+INSERT INTO "pm2_5_data2014" VALUES (154,68,'','苏州','苏州','suzhou',1.000000,0.000000,52.000000,33.000000,53.000000,95.000000,53.000000,95.000000,67.000000,48.000000,49.000000,36.000000,27.000000,27.000000,'细颗粒物(PM2.5)','良','1166A','苏州工业园区','2014-03-06T14:00:00Z',1394085600,1394125862,1);
+INSERT INTO "pm2_5_data2014" VALUES (155,58,'','苏州','苏州','suzhou',0.000000,0.000000,52.000000,40.000000,52.000000,97.000000,54.000000,97.000000,49.000000,46.000000,41.000000,29.000000,17.000000,18.000000,'细颗粒物(PM2.5)','良','1167A','相城区','2014-03-06T14:00:00Z',1394085600,1394125864,1);
+INSERT INTO "pm2_5_data2014" VALUES (156,42,'','南通','南通','nantong',0.000000,0.000000,9.000000,14.000000,92.000000,114.000000,81.000000,114.000000,42.000000,59.000000,28.000000,34.000000,39.000000,33.000000,'None','优','1168A','南郊','2014-03-06T14:00:00Z',1394085600,1394125864,1);
+INSERT INTO "pm2_5_data2014" VALUES (157,49,'','南通','南通','nantong',0.000000,0.000000,11.000000,21.000000,90.000000,106.000000,83.000000,106.000000,49.000000,60.000000,30.000000,34.000000,14.000000,22.000000,'None','优','1169A','虹桥','2014-03-06T14:00:00Z',1394085600,1394125866,1);
+INSERT INTO "pm2_5_data2014" VALUES (158,47,'','南通','南通','nantong',0.000000,0.000000,16.000000,22.000000,84.000000,91.000000,74.000000,91.000000,47.000000,55.000000,25.000000,33.000000,30.000000,27.000000,'None','优','1170A','城中','2014-03-06T14:00:00Z',1394085600,1394125867,1);
+INSERT INTO "pm2_5_data2014" VALUES (159,43,'','南通','南通','nantong',0.000000,0.000000,20.000000,23.000000,86.000000,109.000000,79.000000,109.000000,43.000000,53.000000,29.000000,33.000000,13.000000,18.000000,'None','优','1171A','星湖花园','2014-03-06T14:00:00Z',1394085600,1394125868,1);
+INSERT INTO "pm2_5_data2014" VALUES (160,51,'','南通','南通','nantong',0.000000,0.000000,16.000000,19.000000,81.000000,104.000000,72.000000,104.000000,52.000000,61.000000,35.000000,42.000000,20.000000,10.000000,'颗粒物(PM10)','良','1172A','紫琅学院','2014-03-06T14:00:00Z',1394085600,1394125869,1);
+INSERT INTO "pm2_5_data2014" VALUES (161,62,'','连云港','连云港','lianyungang',0.000000,0.000000,31.000000,35.000000,114.000000,116.000000,95.000000,114.000000,72.000000,57.000000,44.000000,41.000000,23.000000,24.000000,'细颗粒物(PM2.5)','良','1173A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394125869,1);
+INSERT INTO "pm2_5_data2014" VALUES (162,65,'','连云港','连云港','lianyungang',0.000000,0.000000,24.000000,29.000000,111.000000,112.000000,86.000000,109.000000,80.000000,61.000000,40.000000,28.000000,22.000000,26.000000,'颗粒物(PM10)','良','1174A','洪门派出所','2014-03-06T14:00:00Z',1394085600,1394125871,1);
+INSERT INTO "pm2_5_data2014" VALUES (163,85,'','连云港','连云港','lianyungang',1.000000,1.000000,43.000000,57.000000,72.000000,82.000000,51.000000,79.000000,104.000000,96.000000,63.000000,56.000000,40.000000,49.000000,'细颗粒物(PM2.5)','良','1175A','墟沟核电专家村','2014-03-06T14:00:00Z',1394085600,1394125872,1);
+INSERT INTO "pm2_5_data2014" VALUES (164,0,'','连云港','连云港','lianyungang',0.000000,0.000000,0.000000,14.000000,0.000000,81.000000,62.000000,79.000000,0.000000,77.000000,0.000000,39.000000,0.000000,23.000000,'None','None','1176A','开发区恒瑞医药公司','2014-03-06T14:00:00Z',1394085600,1394125873,1);
+INSERT INTO "pm2_5_data2014" VALUES (165,63,'','徐州','徐州','xuzhou',0.000000,0.000000,29.000000,35.000000,71.000000,71.000000,47.000000,57.000000,76.000000,79.000000,26.000000,38.000000,63.000000,41.000000,'颗粒物(PM10)','良','1177A','黄河新村','2014-03-06T14:00:00Z',1394085600,1394125876,1);
+INSERT INTO "pm2_5_data2014" VALUES (166,60,'','徐州','徐州','xuzhou',0.000000,1.000000,12.000000,29.000000,91.000000,91.000000,54.000000,84.000000,70.000000,86.000000,41.000000,53.000000,23.000000,37.000000,'颗粒物(PM10)','良','1178A','淮塔','2014-03-06T14:00:00Z',1394085600,1394125877,1);
+INSERT INTO "pm2_5_data2014" VALUES (167,54,'','徐州','徐州','xuzhou',0.000000,0.000000,28.000000,46.000000,68.000000,68.000000,38.000000,64.000000,58.000000,79.000000,36.000000,51.000000,53.000000,47.000000,'颗粒物(PM10)','良','1179A','铜山兽医院','2014-03-06T14:00:00Z',1394085600,1394125878,1);
+INSERT INTO "pm2_5_data2014" VALUES (168,65,'','徐州','徐州','xuzhou',0.000000,0.000000,21.000000,39.000000,61.000000,61.000000,40.000000,59.000000,69.000000,93.000000,47.000000,59.000000,25.000000,22.000000,'细颗粒物(PM2.5)','良','1180A','新城区','2014-03-06T14:00:00Z',1394085600,1394125879,1);
+INSERT INTO "pm2_5_data2014" VALUES (169,57,'','徐州','徐州','xuzhou',0.000000,0.000000,13.000000,27.000000,86.000000,86.000000,46.000000,77.000000,64.000000,85.000000,38.000000,52.000000,19.000000,33.000000,'颗粒物(PM10)','良','1181A','桃园路','2014-03-06T14:00:00Z',1394085600,1394125881,1);
+INSERT INTO "pm2_5_data2014" VALUES (170,59,'','徐州','徐州','xuzhou',1.000000,1.000000,10.000000,26.000000,71.000000,79.000000,48.000000,79.000000,67.000000,85.000000,40.000000,50.000000,19.000000,27.000000,'颗粒物(PM10)','良','1182A','农科院','2014-03-06T14:00:00Z',1394085600,1394125881,1);
+INSERT INTO "pm2_5_data2014" VALUES (171,58,'','徐州','徐州','xuzhou',0.000000,0.000000,28.000000,47.000000,97.000000,97.000000,68.000000,91.000000,66.000000,89.000000,35.000000,52.000000,19.000000,24.000000,'颗粒物(PM10)','良','1183A','铜山区环保局','2014-03-06T14:00:00Z',1394085600,1394125883,1);
+INSERT INTO "pm2_5_data2014" VALUES (172,61,'','扬州','扬州','yangzhou',0.000000,0.000000,30.000000,30.000000,49.000000,63.000000,38.000000,63.000000,71.000000,68.000000,38.000000,37.000000,26.000000,25.000000,'颗粒物(PM10)','良','1184A','城东财政所','2014-03-06T14:00:00Z',1394085600,1394125884,1);
+INSERT INTO "pm2_5_data2014" VALUES (173,54,'','扬州','扬州','yangzhou',0.000000,0.000000,20.000000,23.000000,88.000000,99.000000,72.000000,98.000000,0.000000,0.000000,38.000000,34.000000,25.000000,24.000000,'细颗粒物(PM2.5)','良','1185A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125885,1);
+INSERT INTO "pm2_5_data2014" VALUES (174,82,'','扬州','扬州','yangzhou',0.000000,0.000000,35.000000,34.000000,84.000000,111.000000,71.000000,111.000000,103.000000,76.000000,60.000000,45.000000,100.000000,74.000000,'细颗粒物(PM2.5)','良','1186A','邗江监测站','2014-03-06T14:00:00Z',1394085600,1394125886,1);
+INSERT INTO "pm2_5_data2014" VALUES (175,67,'','扬州','扬州','yangzhou',0.000000,0.000000,44.000000,41.000000,8.000000,19.000000,9.000000,19.000000,65.000000,69.000000,48.000000,53.000000,18.000000,14.000000,'细颗粒物(PM2.5)','良','1187A','第四医院','2014-03-06T14:00:00Z',1394085600,1394125888,1);
+INSERT INTO "pm2_5_data2014" VALUES (176,67,'','无锡','无锡','wuxi',0.000000,0.000000,38.000000,32.000000,78.000000,100.000000,71.000000,100.000000,68.000000,54.000000,48.000000,37.000000,16.000000,15.000000,'细颗粒物(PM2.5)','良','1188A','大学城','2014-03-06T14:00:00Z',1394085600,1394125889,1);
+INSERT INTO "pm2_5_data2014" VALUES (177,67,'','无锡','无锡','wuxi',1.000000,0.000000,35.000000,43.000000,80.000000,99.000000,73.000000,99.000000,80.000000,77.000000,48.000000,44.000000,17.000000,26.000000,'细颗粒物(PM2.5)','良','1189A','市北高中','2014-03-06T14:00:00Z',1394085600,1394125891,1);
+INSERT INTO "pm2_5_data2014" VALUES (178,0,'','无锡','无锡','wuxi',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1190A','曹张','2014-03-06T14:00:00Z',1394085600,1394125891,1);
+INSERT INTO "pm2_5_data2014" VALUES (179,70,'','无锡','无锡','wuxi',0.000000,0.000000,34.000000,29.000000,84.000000,95.000000,74.000000,95.000000,79.000000,61.000000,51.000000,39.000000,24.000000,23.000000,'细颗粒物(PM2.5)','良','1191A','漆塘','2014-03-06T14:00:00Z',1394085600,1394125892,1);
+INSERT INTO "pm2_5_data2014" VALUES (180,51,'','无锡','无锡','wuxi',0.000000,0.000000,35.000000,36.000000,42.000000,49.000000,37.000000,49.000000,51.000000,50.000000,33.000000,33.000000,20.000000,23.000000,'颗粒物(PM10)','良','1192A','东亭','2014-03-06T14:00:00Z',1394085600,1394125893,1);
+INSERT INTO "pm2_5_data2014" VALUES (181,59,'','无锡','无锡','wuxi',0.000000,0.000000,38.000000,37.000000,66.000000,88.000000,57.000000,88.000000,61.000000,56.000000,42.000000,34.000000,23.000000,17.000000,'细颗粒物(PM2.5)','良','1193A','旺庄','2014-03-06T14:00:00Z',1394085600,1394125895,1);
+INSERT INTO "pm2_5_data2014" VALUES (182,68,'','无锡','无锡','wuxi',0.000000,0.000000,41.000000,36.000000,40.000000,63.000000,35.000000,63.000000,85.000000,69.000000,32.000000,29.000000,35.000000,32.000000,'颗粒物(PM10)','良','1194A','育红小学','2014-03-06T14:00:00Z',1394085600,1394125896,1);
+INSERT INTO "pm2_5_data2014" VALUES (183,58,'','无锡','无锡','wuxi',1.000000,1.000000,22.000000,25.000000,82.000000,95.000000,73.000000,93.000000,66.000000,61.000000,32.000000,32.000000,23.000000,27.000000,'颗粒物(PM10)','良','1195A','堰桥','2014-03-06T14:00:00Z',1394085600,1394125897,1);
+INSERT INTO "pm2_5_data2014" VALUES (184,62,'','常州','常州','changzhou',1.000000,1.000000,0.000000,0.000000,72.000000,96.000000,66.000000,95.000000,73.000000,68.000000,40.000000,38.000000,0.000000,0.000000,'颗粒物(PM10)','良','1196A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125897,1);
+INSERT INTO "pm2_5_data2014" VALUES (185,66,'','常州','常州','changzhou',1.000000,0.000000,51.000000,44.000000,64.000000,94.000000,60.000000,94.000000,81.000000,72.000000,39.000000,40.000000,30.000000,31.000000,'颗粒物(PM10)','良','1197A','城建学校','2014-03-06T14:00:00Z',1394085600,1394125898,1);
+INSERT INTO "pm2_5_data2014" VALUES (186,59,'','常州','常州','changzhou',0.000000,0.000000,15.000000,20.000000,84.000000,103.000000,72.000000,103.000000,68.000000,67.000000,40.000000,38.000000,36.000000,44.000000,'颗粒物(PM10)','良','1198A','常工院','2014-03-06T14:00:00Z',1394085600,1394125900,1);
+INSERT INTO "pm2_5_data2014" VALUES (187,60,'','常州','常州','changzhou',0.000000,0.000000,29.000000,31.000000,68.000000,77.000000,62.000000,76.000000,70.000000,68.000000,40.000000,42.000000,33.000000,39.000000,'颗粒物(PM10)','良','1199A','潞城','2014-03-06T14:00:00Z',1394085600,1394125902,1);
+INSERT INTO "pm2_5_data2014" VALUES (188,55,'','常州','常州','changzhou',0.000000,0.000000,38.000000,45.000000,105.000000,127.000000,88.000000,127.000000,59.000000,63.000000,32.000000,36.000000,0.000000,0.000000,'颗粒物(PM10)','良','1200A','武进监测站','2014-03-06T14:00:00Z',1394085600,1394125903,1);
+INSERT INTO "pm2_5_data2014" VALUES (189,63,'','常州','常州','changzhou',0.000000,0.000000,27.000000,34.000000,66.000000,87.000000,58.000000,86.000000,75.000000,64.000000,40.000000,36.000000,40.000000,46.000000,'颗粒物(PM10)','良','1201A','安家','2014-03-06T14:00:00Z',1394085600,1394125904,1);
+INSERT INTO "pm2_5_data2014" VALUES (190,64,'','镇江','镇江','zhenjiang',1.000000,0.000000,42.000000,34.000000,53.000000,82.000000,47.000000,80.000000,77.000000,63.000000,44.000000,35.000000,34.000000,28.000000,'颗粒物(PM10)','良','1202A','环境监测站','2014-03-06T14:00:00Z',1394085600,1394125905,1);
+INSERT INTO "pm2_5_data2014" VALUES (191,95,'','镇江','镇江','zhenjiang',1.000000,0.000000,27.000000,22.000000,49.000000,69.000000,43.000000,69.000000,92.000000,69.000000,71.000000,44.000000,23.000000,12.000000,'细颗粒物(PM2.5)','良','1203A','新区办事处','2014-03-06T14:00:00Z',1394085600,1394125906,1);
+INSERT INTO "pm2_5_data2014" VALUES (192,72,'','镇江','镇江','zhenjiang',1.000000,1.000000,35.000000,34.000000,66.000000,87.000000,59.000000,87.000000,93.000000,82.000000,48.000000,38.000000,35.000000,43.000000,'颗粒物(PM10)','良','1204A','职教中心','2014-03-06T14:00:00Z',1394085600,1394125908,1);
+INSERT INTO "pm2_5_data2014" VALUES (193,77,'','镇江','镇江','zhenjiang',0.000000,0.000000,37.000000,28.000000,62.000000,85.000000,57.000000,82.000000,73.000000,66.000000,56.000000,42.000000,35.000000,19.000000,'细颗粒物(PM2.5)','良','1205A','丹徒区监测站','2014-03-06T14:00:00Z',1394085600,1394125908,1);
+INSERT INTO "pm2_5_data2014" VALUES (194,69,'','泰州','泰州','taizhou',2.000000,1.000000,8.000000,9.000000,64.000000,66.000000,58.000000,66.000000,80.000000,70.000000,50.000000,43.000000,47.000000,31.000000,'细颗粒物(PM2.5)','良','1206A','公园路','2014-03-06T14:00:00Z',1394085600,1394125909,1);
+INSERT INTO "pm2_5_data2014" VALUES (195,73,'','泰州','泰州','taizhou',1.000000,1.000000,10.000000,12.000000,0.000000,0.000000,0.000000,0.000000,63.000000,60.000000,53.000000,49.000000,22.000000,22.000000,'细颗粒物(PM2.5)','良','1207A','莲花','2014-03-06T14:00:00Z',1394085600,1394125910,1);
+INSERT INTO "pm2_5_data2014" VALUES (196,59,'','泰州','泰州','taizhou',1.000000,1.000000,7.000000,8.000000,0.000000,0.000000,0.000000,0.000000,66.000000,60.000000,42.000000,38.000000,29.000000,27.000000,'细颗粒物(PM2.5)','良','1208A','高港区政府','2014-03-06T14:00:00Z',1394085600,1394125911,1);
+INSERT INTO "pm2_5_data2014" VALUES (197,73,'','泰州','泰州','taizhou',0.000000,0.000000,8.000000,8.000000,47.000000,48.000000,43.000000,48.000000,0.000000,0.000000,53.000000,37.000000,17.000000,14.000000,'细颗粒物(PM2.5)','良','1209A','留学生创业园','2014-03-06T14:00:00Z',1394085600,1394125913,1);
+INSERT INTO "pm2_5_data2014" VALUES (198,73,'','淮安','淮安','huaian',1.000000,0.000000,10.000000,16.000000,110.000000,110.000000,83.000000,106.000000,0.000000,0.000000,53.000000,42.000000,0.000000,0.000000,'细颗粒物(PM2.5)','良','1210A','钵池山','2014-03-06T14:00:00Z',1394085600,1394125915,1);
+INSERT INTO "pm2_5_data2014" VALUES (199,72,'','淮安','淮安','huaian',0.000000,0.000000,6.000000,8.000000,94.000000,94.000000,62.000000,91.000000,92.000000,67.000000,52.000000,40.000000,14.000000,11.000000,'细颗粒物(PM2.5)','良','1211A','北京南路','2014-03-06T14:00:00Z',1394085600,1394125916,1);
+INSERT INTO "pm2_5_data2014" VALUES (200,66,'','淮安','淮安','huaian',0.000000,0.000000,0.000000,0.000000,77.000000,81.000000,61.000000,81.000000,81.000000,116.000000,44.000000,72.000000,28.000000,23.000000,'颗粒物(PM10)','良','1212A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125917,1);
+INSERT INTO "pm2_5_data2014" VALUES (201,80,'','淮安','淮安','huaian',1.000000,1.000000,11.000000,23.000000,127.000000,127.000000,94.000000,121.000000,0.000000,0.000000,59.000000,47.000000,0.000000,0.000000,'细颗粒物(PM2.5)','良','1213A','楚州区监测站','2014-03-06T14:00:00Z',1394085600,1394125918,1);
+INSERT INTO "pm2_5_data2014" VALUES (202,75,'','淮安','淮安','huaian',1.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,89.000000,71.000000,55.000000,44.000000,33.000000,36.000000,'细颗粒物(PM2.5)','良','1214A','淮阴区监测站','2014-03-06T14:00:00Z',1394085600,1394125919,1);
+INSERT INTO "pm2_5_data2014" VALUES (203,74,'','盐城','盐城','yancheng',0.000000,0.000000,23.000000,25.000000,42.000000,57.000000,40.000000,57.000000,86.000000,63.000000,54.000000,39.000000,1.000000,15.000000,'细颗粒物(PM2.5)','良','1215A','盐城电厂','2014-03-06T14:00:00Z',1394085600,1394125920,1);
+INSERT INTO "pm2_5_data2014" VALUES (204,83,'','盐城','盐城','yancheng',0.000000,0.000000,15.000000,17.000000,82.000000,86.000000,70.000000,86.000000,78.000000,64.000000,61.000000,44.000000,27.000000,12.000000,'细颗粒物(PM2.5)','良','1216A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125921,1);
+INSERT INTO "pm2_5_data2014" VALUES (205,69,'','盐城','盐城','yancheng',0.000000,0.000000,33.000000,31.000000,108.000000,112.000000,98.000000,112.000000,76.000000,54.000000,50.000000,34.000000,34.000000,11.000000,'细颗粒物(PM2.5)','良','1217A','文峰中学','2014-03-06T14:00:00Z',1394085600,1394125922,1);
+INSERT INTO "pm2_5_data2014" VALUES (206,60,'','盐城','盐城','yancheng',0.000000,0.000000,24.000000,27.000000,91.000000,93.000000,79.000000,93.000000,70.000000,52.000000,41.000000,34.000000,31.000000,19.000000,'颗粒物(PM10)','良','1218A','开发区管委会','2014-03-06T14:00:00Z',1394085600,1394125924,1);
+INSERT INTO "pm2_5_data2014" VALUES (207,69,'','宿迁','宿迁','suqian',0.000000,0.000000,13.000000,15.000000,73.000000,73.000000,57.000000,71.000000,70.000000,75.000000,50.000000,50.000000,13.000000,11.000000,'细颗粒物(PM2.5)','良','1219A','市监测站','2014-03-06T14:00:00Z',1394085600,1394125925,1);
+INSERT INTO "pm2_5_data2014" VALUES (208,56,'','宿迁','宿迁','suqian',0.000000,0.000000,19.000000,29.000000,0.000000,210.000000,84.000000,84.000000,62.000000,73.000000,37.000000,42.000000,17.000000,19.000000,'颗粒物(PM10)','良','1220A','宿迁学院','2014-03-06T14:00:00Z',1394085600,1394125927,1);
+INSERT INTO "pm2_5_data2014" VALUES (209,67,'','宿迁','宿迁','suqian',3.000000,3.000000,29.000000,33.000000,36.000000,38.000000,30.000000,38.000000,84.000000,72.000000,26.000000,35.000000,55.000000,49.000000,'颗粒物(PM10)','良','1221A','宿迁中学','2014-03-06T14:00:00Z',1394085600,1394125928,1);
+INSERT INTO "pm2_5_data2014" VALUES (210,55,'','宿迁','宿迁','suqian',1.000000,1.000000,18.000000,27.000000,93.000000,96.000000,72.000000,95.000000,60.000000,70.000000,35.000000,47.000000,21.000000,18.000000,'颗粒物(PM10)','良','1222A','宿豫区环保局','2014-03-06T14:00:00Z',1394085600,1394125929,1);
+INSERT INTO "pm2_5_data2014" VALUES (211,59,'','杭州','杭州','hangzhou',0.000000,0.000000,43.000000,41.000000,58.000000,109.000000,60.000000,97.000000,56.000000,81.000000,42.000000,44.000000,29.000000,31.000000,'细颗粒物(PM2.5)','良','1223A','滨江','2014-03-06T14:00:00Z',1394085600,1394125930,1);
+INSERT INTO "pm2_5_data2014" VALUES (212,58,'','杭州','杭州','hangzhou',0.000000,0.000000,35.000000,39.000000,53.000000,97.000000,50.000000,86.000000,41.000000,68.000000,41.000000,45.000000,19.000000,28.000000,'细颗粒物(PM2.5)','良','1224A','西溪','2014-03-06T14:00:00Z',1394085600,1394125931,1);
+INSERT INTO "pm2_5_data2014" VALUES (213,29,'','杭州','杭州','hangzhou',0.000000,0.000000,5.000000,11.000000,91.000000,136.000000,89.000000,128.000000,0.000000,73.000000,18.000000,30.000000,7.000000,15.000000,'None','优','1225A','千岛湖','2014-03-06T14:00:00Z',1394085600,1394125932,1);
+INSERT INTO "pm2_5_data2014" VALUES (214,62,'','杭州','杭州','hangzhou',0.000000,0.000000,37.000000,37.000000,35.000000,74.000000,36.000000,67.000000,0.000000,70.000000,44.000000,40.000000,31.000000,28.000000,'细颗粒物(PM2.5)','良','1226A','下沙','2014-03-06T14:00:00Z',1394085600,1394125933,1);
+INSERT INTO "pm2_5_data2014" VALUES (215,67,'','杭州','杭州','hangzhou',0.000000,0.000000,38.000000,29.000000,25.000000,58.000000,31.000000,57.000000,0.000000,0.000000,48.000000,45.000000,9.000000,19.000000,'细颗粒物(PM2.5)','良','1227A','卧龙桥','2014-03-06T14:00:00Z',1394085600,1394125934,1);
+INSERT INTO "pm2_5_data2014" VALUES (216,57,'','杭州','杭州','hangzhou',0.000000,0.000000,50.000000,39.000000,23.000000,49.000000,22.000000,45.000000,52.000000,61.000000,40.000000,39.000000,26.000000,22.000000,'细颗粒物(PM2.5)','良','1228A','浙江农大','2014-03-06T14:00:00Z',1394085600,1394125935,1);
+INSERT INTO "pm2_5_data2014" VALUES (217,62,'','杭州','杭州','hangzhou',0.000000,0.000000,58.000000,52.000000,31.000000,69.000000,31.000000,67.000000,0.000000,53.000000,44.000000,42.000000,27.000000,25.000000,'细颗粒物(PM2.5)','良','1229A','朝晖五区','2014-03-06T14:00:00Z',1394085600,1394125936,1);
+INSERT INTO "pm2_5_data2014" VALUES (218,65,'','杭州','杭州','hangzhou',0.000000,0.000000,61.000000,51.000000,38.000000,95.000000,37.000000,85.000000,50.000000,65.000000,47.000000,45.000000,22.000000,25.000000,'细颗粒物(PM2.5)','良','1230A','和睦小学','2014-03-06T14:00:00Z',1394085600,1394125937,1);
+INSERT INTO "pm2_5_data2014" VALUES (219,59,'','杭州','杭州','hangzhou',0.000000,0.000000,36.000000,33.000000,68.000000,111.000000,55.000000,107.000000,62.000000,67.000000,42.000000,49.000000,15.000000,20.000000,'细颗粒物(PM2.5)','良','1231A','临平镇','2014-03-06T14:00:00Z',1394085600,1394125939,1);
+INSERT INTO "pm2_5_data2014" VALUES (220,70,'','杭州','杭州','hangzhou',0.000000,0.000000,56.000000,44.000000,42.000000,84.000000,46.000000,79.000000,65.000000,73.000000,51.000000,44.000000,41.000000,43.000000,'细颗粒物(PM2.5)','良','1232A','城厢镇','2014-03-06T14:00:00Z',1394085600,1394125941,1);
+INSERT INTO "pm2_5_data2014" VALUES (221,52,'','杭州','杭州','hangzhou',0.000000,0.000000,43.000000,42.000000,50.000000,96.000000,58.000000,91.000000,50.000000,76.000000,36.000000,40.000000,18.000000,30.000000,'细颗粒物(PM2.5)','良','1233A','云栖','2014-03-06T14:00:00Z',1394085600,1394125942,1);
+INSERT INTO "pm2_5_data2014" VALUES (222,31,'','宁波','宁波','ningbo',0.000000,0.000000,23.000000,34.000000,64.000000,97.000000,58.000000,97.000000,31.000000,39.000000,18.000000,23.000000,8.000000,9.000000,'None','优','1234A','区环保大楼','2014-03-06T14:00:00Z',1394085600,1394125943,1);
+INSERT INTO "pm2_5_data2014" VALUES (223,52,'','宁波','宁波','ningbo',0.000000,0.000000,47.000000,55.000000,55.000000,103.000000,41.000000,103.000000,40.000000,63.000000,36.000000,38.000000,14.000000,12.000000,'细颗粒物(PM2.5)','良','1235A','万里学院','2014-03-06T14:00:00Z',1394085600,1394125944,1);
+INSERT INTO "pm2_5_data2014" VALUES (224,40,'','宁波','宁波','ningbo',0.000000,0.000000,35.000000,27.000000,79.000000,126.000000,87.000000,126.000000,40.000000,33.000000,24.000000,18.000000,20.000000,16.000000,'None','优','1236A','龙赛医院','2014-03-06T14:00:00Z',1394085600,1394125945,1);
+INSERT INTO "pm2_5_data2014" VALUES (225,60,'','宁波','宁波','ningbo',0.000000,0.000000,55.000000,54.000000,60.000000,116.000000,59.000000,116.000000,64.000000,60.000000,43.000000,37.000000,15.000000,14.000000,'细颗粒物(PM2.5)','良','1237A','三江中学','2014-03-06T14:00:00Z',1394085600,1394125946,1);
+INSERT INTO "pm2_5_data2014" VALUES (226,55,'','宁波','宁波','ningbo',1.000000,1.000000,42.000000,36.000000,61.000000,105.000000,63.000000,105.000000,59.000000,55.000000,34.000000,26.000000,17.000000,14.000000,'颗粒物(PM10)','良','1238A','市政管理站','2014-03-06T14:00:00Z',1394085600,1394125948,1);
+INSERT INTO "pm2_5_data2014" VALUES (227,35,'','宁波','宁波','ningbo',0.000000,0.000000,17.000000,39.000000,98.000000,120.000000,55.000000,120.000000,35.000000,56.000000,24.000000,34.000000,11.000000,11.000000,'None','优','1239A','钱湖水厂','2014-03-06T14:00:00Z',1394085600,1394125949,1);
+INSERT INTO "pm2_5_data2014" VALUES (228,54,'','宁波','宁波','ningbo',1.000000,1.000000,43.000000,41.000000,59.000000,114.000000,62.000000,114.000000,58.000000,45.000000,36.000000,27.000000,19.000000,16.000000,'颗粒物(PM10)','良','1240A','太古小学','2014-03-06T14:00:00Z',1394085600,1394125950,1);
+INSERT INTO "pm2_5_data2014" VALUES (229,56,'','宁波','宁波','ningbo',0.000000,0.000000,56.000000,47.000000,50.000000,118.000000,55.000000,118.000000,62.000000,56.000000,35.000000,30.000000,11.000000,10.000000,'颗粒物(PM10)','良','1241A','市环境监测中心','2014-03-06T14:00:00Z',1394085600,1394125952,1);
+INSERT INTO "pm2_5_data2014" VALUES (230,48,'','温州','温州','wenzhou',1.000000,1.000000,48.000000,48.000000,37.000000,96.000000,40.000000,95.000000,48.000000,55.000000,30.000000,34.000000,4.000000,5.000000,'None','优','1242A','瓯海','2014-03-06T14:00:00Z',1394085600,1394125953,1);
+INSERT INTO "pm2_5_data2014" VALUES (231,39,'','温州','温州','wenzhou',1.000000,1.000000,38.000000,37.000000,40.000000,81.000000,39.000000,81.000000,39.000000,54.000000,24.000000,32.000000,8.000000,14.000000,'None','优','1243A','南浦','2014-03-06T14:00:00Z',1394085600,1394125954,1);
+INSERT INTO "pm2_5_data2014" VALUES (232,50,'','温州','温州','wenzhou',1.000000,0.000000,80.000000,39.000000,12.000000,108.000000,39.000000,108.000000,50.000000,48.000000,33.000000,29.000000,9.000000,14.000000,'None','优','1244A','龙湾','2014-03-06T14:00:00Z',1394085600,1394125955,1);
+INSERT INTO "pm2_5_data2014" VALUES (233,30,'','温州','温州','wenzhou',1.000000,0.000000,16.000000,31.000000,63.000000,98.000000,60.000000,96.000000,30.000000,47.000000,20.000000,30.000000,5.000000,15.000000,'None','优','1245A','市站','2014-03-06T14:00:00Z',1394085600,1394125956,1);
+INSERT INTO "pm2_5_data2014" VALUES (234,0,'','绍兴','绍兴','shaoxing',0.000000,0.000000,0.000000,41.000000,0.000000,45.000000,45.000000,45.000000,0.000000,37.000000,0.000000,23.000000,0.000000,17.000000,'None','None','1246A','袍江站','2014-03-06T14:00:00Z',1394085600,1394125958,1);
+INSERT INTO "pm2_5_data2014" VALUES (235,53,'','绍兴','绍兴','shaoxing',0.000000,0.000000,27.000000,34.000000,77.000000,117.000000,58.000000,112.000000,55.000000,55.000000,30.000000,37.000000,16.000000,24.000000,'颗粒物(PM10)','良','1247A','城东开发委','2014-03-06T14:00:00Z',1394085600,1394125959,1);
+INSERT INTO "pm2_5_data2014" VALUES (236,50,'','绍兴','绍兴','shaoxing',0.000000,0.000000,52.000000,56.000000,50.000000,74.000000,40.000000,70.000000,45.000000,56.000000,35.000000,40.000000,20.000000,23.000000,'None','优','1248A','市环保站','2014-03-06T14:00:00Z',1394085600,1394125960,1);
+INSERT INTO "pm2_5_data2014" VALUES (237,68,'','湖州','湖州','huzhou',0.000000,0.000000,38.000000,39.000000,74.000000,124.000000,62.000000,124.000000,58.000000,64.000000,49.000000,41.000000,24.000000,34.000000,'细颗粒物(PM2.5)','良','1249A','城北水厂','2014-03-06T14:00:00Z',1394085600,1394125960,1);
+INSERT INTO "pm2_5_data2014" VALUES (238,60,'','湖州','湖州','huzhou',0.000000,0.000000,41.000000,47.000000,72.000000,307.000000,81.000000,121.000000,70.000000,72.000000,39.000000,38.000000,24.000000,30.000000,'颗粒物(PM10)','良','1250A','城西水厂','2014-03-06T14:00:00Z',1394085600,1394125961,1);
+INSERT INTO "pm2_5_data2014" VALUES (239,58,'','湖州','湖州','huzhou',0.000000,0.000000,32.000000,38.000000,45.000000,75.000000,35.000000,75.000000,58.000000,70.000000,41.000000,40.000000,16.000000,30.000000,'细颗粒物(PM2.5)','良','1251A','吉山新村','2014-03-06T14:00:00Z',1394085600,1394125964,1);
+INSERT INTO "pm2_5_data2014" VALUES (240,54,'','嘉兴','嘉兴','jiaxing',0.000000,0.000000,27.000000,32.000000,84.000000,123.000000,70.000000,123.000000,58.000000,53.000000,36.000000,39.000000,11.000000,14.000000,'颗粒物(PM10)','良','1252A','清河小学','2014-03-06T14:00:00Z',1394085600,1394125966,1);
+INSERT INTO "pm2_5_data2014" VALUES (241,59,'','嘉兴','嘉兴','jiaxing',1.000000,1.000000,22.000000,27.000000,88.000000,122.000000,72.000000,122.000000,52.000000,50.000000,42.000000,27.000000,14.000000,16.000000,'细颗粒物(PM2.5)','良','1253A','嘉兴学院','2014-03-06T14:00:00Z',1394085600,1394125967,1);
+INSERT INTO "pm2_5_data2014" VALUES (242,49,'','嘉兴','嘉兴','jiaxing',0.000000,0.000000,33.000000,42.000000,101.000000,154.000000,80.000000,154.000000,49.000000,55.000000,31.000000,29.000000,12.000000,19.000000,'None','优','1254A','监测站','2014-03-06T14:00:00Z',1394085600,1394125968,1);
+INSERT INTO "pm2_5_data2014" VALUES (243,36,'','台州','台州','taizhou',1.000000,1.000000,22.000000,24.000000,56.000000,116.000000,51.000000,116.000000,36.000000,49.000000,23.000000,32.000000,6.000000,12.000000,'None','优','1255A','黄岩环保大楼','2014-03-06T14:00:00Z',1394085600,1394125968,1);
+INSERT INTO "pm2_5_data2014" VALUES (244,32,'','台州','台州','taizhou',0.000000,0.000000,21.000000,19.000000,64.000000,115.000000,64.000000,109.000000,32.000000,43.000000,20.000000,26.000000,4.000000,9.000000,'None','优','1256A','台州环保大楼','2014-03-06T14:00:00Z',1394085600,1394125970,1);
+INSERT INTO "pm2_5_data2014" VALUES (245,39,'','台州','台州','taizhou',0.000000,0.000000,33.000000,24.000000,57.000000,109.000000,58.000000,109.000000,38.000000,49.000000,27.000000,32.000000,5.000000,10.000000,'None','优','1257A','路桥田洋王','2014-03-06T14:00:00Z',1394085600,1394125971,1);
+INSERT INTO "pm2_5_data2014" VALUES (246,25,'','舟山','舟山','zhoushan',1.000000,1.000000,2.000000,4.000000,78.000000,108.000000,84.000000,108.000000,18.000000,29.000000,9.000000,18.000000,4.000000,5.000000,'None','优','1258A','定海檀枫','2014-03-06T14:00:00Z',1394085600,1394125972,1);
+INSERT INTO "pm2_5_data2014" VALUES (247,0,'','舟山','舟山','zhoushan',0.000000,1.000000,0.000000,5.000000,0.000000,123.000000,90.000000,123.000000,0.000000,34.000000,0.000000,15.000000,0.000000,2.000000,'None','None','1259A','普陀东港','2014-03-06T14:00:00Z',1394085600,1394125973,1);
+INSERT INTO "pm2_5_data2014" VALUES (248,36,'','舟山','舟山','zhoushan',0.000000,0.000000,13.000000,12.000000,72.000000,102.000000,77.000000,102.000000,36.000000,47.000000,10.000000,16.000000,3.000000,3.000000,'None','优','1260A','临城新区','2014-03-06T14:00:00Z',1394085600,1394125973,1);
+INSERT INTO "pm2_5_data2014" VALUES (249,46,'','金华','金华','jinhua',0.000000,0.000000,40.000000,30.000000,20.000000,45.000000,23.000000,45.000000,36.000000,58.000000,32.000000,45.000000,13.000000,20.000000,'None','优','1261A','四中','2014-03-06T14:00:00Z',1394085600,1394125975,1);
+INSERT INTO "pm2_5_data2014" VALUES (250,48,'','金华','金华','jinhua',0.000000,0.000000,36.000000,21.000000,46.000000,103.000000,62.000000,93.000000,37.000000,59.000000,33.000000,48.000000,16.000000,32.000000,'None','优','1262A','十五中','2014-03-06T14:00:00Z',1394085600,1394125977,1);
+INSERT INTO "pm2_5_data2014" VALUES (251,49,'','金华','金华','jinhua',1.000000,1.000000,36.000000,22.000000,50.000000,114.000000,66.000000,110.000000,34.000000,64.000000,34.000000,44.000000,57.000000,22.000000,'None','优','1263A','监测站','2014-03-06T14:00:00Z',1394085600,1394125979,1);
+INSERT INTO "pm2_5_data2014" VALUES (252,38,'','衢州','衢州','quzhou',0.000000,0.000000,27.000000,25.000000,63.000000,92.000000,66.000000,88.000000,0.000000,63.000000,26.000000,48.000000,7.000000,17.000000,'None','优','1264A','环保大楼','2014-03-06T14:00:00Z',1394085600,1394125981,1);
+INSERT INTO "pm2_5_data2014" VALUES (253,45,'','衢州','衢州','quzhou',0.000000,0.000000,3.000000,3.000000,80.000000,80.000000,80.000000,80.000000,0.000000,0.000000,31.000000,53.000000,16.000000,16.000000,'None','优','1265A','实验学校','2014-03-06T14:00:00Z',1394085600,1394125982,1);
+INSERT INTO "pm2_5_data2014" VALUES (254,48,'','衢州','衢州','quzhou',0.000000,0.000000,10.000000,14.000000,61.000000,89.000000,63.000000,83.000000,48.000000,92.000000,20.000000,45.000000,14.000000,23.000000,'None','优','1266A','衢州学院','2014-03-06T14:00:00Z',1394085600,1394125983,1);
+INSERT INTO "pm2_5_data2014" VALUES (255,29,'','丽水','丽水','lishui',0.000000,0.000000,20.000000,24.000000,70.000000,271.000000,97.000000,97.000000,25.000000,56.000000,20.000000,34.000000,8.000000,21.000000,'None','优','1267A','监测站大楼','2014-03-06T14:00:00Z',1394085600,1394125984,1);
+INSERT INTO "pm2_5_data2014" VALUES (256,39,'','丽水','丽水','lishui',0.000000,0.000000,13.000000,21.000000,66.000000,149.000000,83.000000,93.000000,0.000000,54.000000,27.000000,43.000000,3.000000,12.000000,'None','优','1268A','莲都小学','2014-03-06T14:00:00Z',1394085600,1394125984,1);
+INSERT INTO "pm2_5_data2014" VALUES (257,46,'','丽水','丽水','lishui',0.000000,0.000000,41.000000,39.000000,59.000000,97.000000,77.000000,85.000000,44.000000,64.000000,32.000000,47.000000,18.000000,19.000000,'None','优','1269A','余庄前','2014-03-06T14:00:00Z',1394085600,1394125985,1);
+INSERT INTO "pm2_5_data2014" VALUES (258,52,'','合肥','合肥','hefei',0.000000,0.000000,27.000000,35.000000,64.000000,73.000000,41.000000,73.000000,52.000000,61.000000,36.000000,54.000000,18.000000,20.000000,'细颗粒物(PM2.5)','良','1270A','明珠广场','2014-03-06T14:00:00Z',1394085600,1394125986,1);
+INSERT INTO "pm2_5_data2014" VALUES (259,81,'','合肥','合肥','hefei',0.000000,0.000000,51.000000,57.000000,62.000000,86.000000,46.000000,86.000000,111.000000,93.000000,47.000000,58.000000,33.000000,40.000000,'颗粒物(PM10)','良','1271A','三里街','2014-03-06T14:00:00Z',1394085600,1394125988,1);
+INSERT INTO "pm2_5_data2014" VALUES (260,57,'','合肥','合肥','hefei',0.000000,0.000000,8.000000,13.000000,64.000000,70.000000,41.000000,70.000000,63.000000,61.000000,40.000000,55.000000,23.000000,26.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1272A','琥珀山庄','2014-03-06T14:00:00Z',1394085600,1394125989,1);
+INSERT INTO "pm2_5_data2014" VALUES (261,105,'','合肥','合肥','hefei',0.000000,0.000000,14.000000,26.000000,77.000000,88.000000,51.000000,87.000000,160.000000,74.000000,40.000000,44.000000,10.000000,22.000000,'颗粒物(PM10)','轻度污染','1273A','董铺水库','2014-03-06T14:00:00Z',1394085600,1394125990,1);
+INSERT INTO "pm2_5_data2014" VALUES (262,72,'','合肥','合肥','hefei',0.000000,0.000000,15.000000,21.000000,35.000000,38.000000,25.000000,38.000000,74.000000,81.000000,52.000000,59.000000,9.000000,16.000000,'细颗粒物(PM2.5)','良','1274A','长江中路','2014-03-06T14:00:00Z',1394085600,1394125991,1);
+INSERT INTO "pm2_5_data2014" VALUES (263,78,'','合肥','合肥','hefei',0.000000,0.000000,16.000000,17.000000,16.000000,20.000000,16.000000,18.000000,105.000000,83.000000,40.000000,54.000000,8.000000,7.000000,'颗粒物(PM10)','良','1275A','庐阳区','2014-03-06T14:00:00Z',1394085600,1394125993,1);
+INSERT INTO "pm2_5_data2014" VALUES (264,72,'','合肥','合肥','hefei',1.000000,0.000000,56.000000,38.000000,93.000000,118.000000,93.000000,102.000000,0.000000,16.000000,52.000000,55.000000,18.000000,18.000000,'细颗粒物(PM2.5)','良','1276A','瑶海区','2014-03-06T14:00:00Z',1394085600,1394125994,1);
+INSERT INTO "pm2_5_data2014" VALUES (265,52,'','合肥','合肥','hefei',0.000000,0.000000,14.000000,12.000000,3.000000,46.000000,24.000000,42.000000,43.000000,56.000000,36.000000,54.000000,31.000000,21.000000,'细颗粒物(PM2.5)','良','1277A','包河区','2014-03-06T14:00:00Z',1394085600,1394125995,1);
+INSERT INTO "pm2_5_data2014" VALUES (266,48,'','合肥','合肥','hefei',0.000000,0.000000,20.000000,27.000000,25.000000,28.000000,19.000000,22.000000,47.000000,62.000000,33.000000,51.000000,16.000000,20.000000,'None','优','1278A','滨湖新区','2014-03-06T14:00:00Z',1394085600,1394125996,1);
+INSERT INTO "pm2_5_data2014" VALUES (267,55,'','合肥','合肥','hefei',0.000000,0.000000,8.000000,18.000000,29.000000,30.000000,20.000000,29.000000,60.000000,72.000000,37.000000,60.000000,17.000000,30.000000,'颗粒物(PM10)','良','1279A','高新区','2014-03-06T14:00:00Z',1394085600,1394125997,1);
+INSERT INTO "pm2_5_data2014" VALUES (268,23,'','福州','福州','fuzhou',1.000000,1.000000,21.000000,5.000000,52.000000,139.000000,84.000000,126.000000,20.000000,38.000000,16.000000,21.000000,4.000000,6.000000,'None','优','1280A','鼓山','2014-03-06T14:00:00Z',1394085600,1394125998,1);
+INSERT INTO "pm2_5_data2014" VALUES (269,32,'','福州','福州','fuzhou',0.000000,0.000000,23.000000,22.000000,74.000000,129.000000,85.000000,123.000000,32.000000,47.000000,11.000000,23.000000,1.000000,5.000000,'None','优','1281A','快安','2014-03-06T14:00:00Z',1394085600,1394125999,1);
+INSERT INTO "pm2_5_data2014" VALUES (270,81,'','福州','福州','fuzhou',0.000000,0.000000,72.000000,55.000000,24.000000,53.000000,29.000000,46.000000,111.000000,73.000000,24.000000,28.000000,8.000000,11.000000,'颗粒物(PM10)','良','1282A','师大','2014-03-06T14:00:00Z',1394085600,1394126000,1);
+INSERT INTO "pm2_5_data2014" VALUES (271,20,'','福州','福州','fuzhou',0.000000,0.000000,40.000000,30.000000,58.000000,102.000000,65.000000,87.000000,15.000000,44.000000,13.000000,25.000000,14.000000,14.000000,'None','优','1283A','五四北路','2014-03-06T14:00:00Z',1394085600,1394126001,1);
+INSERT INTO "pm2_5_data2014" VALUES (272,19,'','福州','福州','fuzhou',1.000000,1.000000,37.000000,33.000000,40.000000,64.000000,36.000000,56.000000,0.000000,39.000000,13.000000,28.000000,3.000000,8.000000,'None','优','1284A','杨桥西路','2014-03-06T14:00:00Z',1394085600,1394126002,1);
+INSERT INTO "pm2_5_data2014" VALUES (273,22,'','福州','福州','fuzhou',0.000000,0.000000,33.000000,26.000000,45.000000,79.000000,46.000000,73.000000,0.000000,42.000000,15.000000,26.000000,4.000000,7.000000,'None','优','1285A','紫阳','2014-03-06T14:00:00Z',1394085600,1394126003,1);
+INSERT INTO "pm2_5_data2014" VALUES (274,49,'','厦门','厦门','shamen',0.000000,0.000000,12.000000,16.000000,89.000000,93.000000,87.000000,87.000000,49.000000,55.000000,31.000000,39.000000,7.000000,9.000000,'None','优','1286A','溪东','2014-03-06T14:00:00Z',1394085600,1394126006,1);
+INSERT INTO "pm2_5_data2014" VALUES (275,51,'','厦门','厦门','shamen',0.000000,0.000000,38.000000,31.000000,77.000000,107.000000,79.000000,106.000000,51.000000,60.000000,25.000000,34.000000,18.000000,23.000000,'颗粒物(PM10)','良','1287A','洪文','2014-03-06T14:00:00Z',1394085600,1394126007,1);
+INSERT INTO "pm2_5_data2014" VALUES (276,51,'','厦门','厦门','shamen',0.000000,0.000000,28.000000,23.000000,99.000000,130.000000,99.000000,130.000000,51.000000,57.000000,14.000000,25.000000,9.000000,12.000000,'颗粒物(PM10)','良','1288A','鼓浪屿','2014-03-06T14:00:00Z',1394085600,1394126008,1);
+INSERT INTO "pm2_5_data2014" VALUES (277,63,'','厦门','厦门','shamen',0.000000,0.000000,43.000000,28.000000,80.000000,107.000000,77.000000,99.000000,75.000000,70.000000,31.000000,37.000000,20.000000,16.000000,'颗粒物(PM10)','良','1289A','湖里','2014-03-06T14:00:00Z',1394085600,1394126009,1);
+INSERT INTO "pm2_5_data2014" VALUES (278,45,'','南昌','南昌','nanchang',0.000000,0.000000,31.000000,35.000000,39.000000,66.000000,31.000000,64.000000,40.000000,61.000000,31.000000,42.000000,4.000000,9.000000,'None','优','1290A','省外办','2014-03-06T14:00:00Z',1394085600,1394126010,1);
+INSERT INTO "pm2_5_data2014" VALUES (279,59,'','南昌','南昌','nanchang',0.000000,0.000000,14.000000,22.000000,52.000000,81.000000,42.000000,77.000000,0.000000,65.000000,42.000000,48.000000,7.000000,9.000000,'细颗粒物(PM2.5)','良','1291A','省林业公司','2014-03-06T14:00:00Z',1394085600,1394126011,1);
+INSERT INTO "pm2_5_data2014" VALUES (280,32,'','南昌','南昌','nanchang',0.000000,0.000000,14.000000,14.000000,46.000000,86.000000,46.000000,83.000000,27.000000,54.000000,22.000000,38.000000,20.000000,17.000000,'None','优','1292A','林科所','2014-03-06T14:00:00Z',1394085600,1394126012,1);
+INSERT INTO "pm2_5_data2014" VALUES (281,22,'','南昌','南昌','nanchang',0.000000,0.000000,6.000000,13.000000,69.000000,95.000000,59.000000,90.000000,0.000000,59.000000,7.000000,34.000000,3.000000,6.000000,'None','优','1293A','京东镇政府','2014-03-06T14:00:00Z',1394085600,1394126012,1);
+INSERT INTO "pm2_5_data2014" VALUES (282,36,'','南昌','南昌','nanchang',0.000000,0.000000,27.000000,28.000000,43.000000,80.000000,37.000000,76.000000,30.000000,75.000000,25.000000,46.000000,26.000000,25.000000,'None','优','1294A','建工学校','2014-03-06T14:00:00Z',1394085600,1394126013,1);
+INSERT INTO "pm2_5_data2014" VALUES (283,19,'','南昌','南昌','nanchang',0.000000,0.000000,27.000000,33.000000,60.000000,88.000000,52.000000,83.000000,19.000000,63.000000,0.000000,0.000000,6.000000,11.000000,'None','优','1295A','象湖','2014-03-06T14:00:00Z',1394085600,1394126015,1);
+INSERT INTO "pm2_5_data2014" VALUES (284,19,'','南昌','南昌','nanchang',0.000000,0.000000,22.000000,19.000000,58.000000,96.000000,56.000000,94.000000,17.000000,62.000000,0.000000,0.000000,13.000000,14.000000,'None','优','1296A','武术学校','2014-03-06T14:00:00Z',1394085600,1394126016,1);
+INSERT INTO "pm2_5_data2014" VALUES (285,30,'','南昌','南昌','nanchang',0.000000,0.000000,9.000000,26.000000,51.000000,69.000000,45.000000,66.000000,30.000000,64.000000,21.000000,41.000000,3.000000,15.000000,'None','优','1297A','石化','2014-03-06T14:00:00Z',1394085600,1394126017,1);
+INSERT INTO "pm2_5_data2014" VALUES (286,23,'','南昌','南昌','nanchang',0.000000,0.000000,17.000000,23.000000,50.000000,75.000000,43.000000,72.000000,0.000000,59.000000,16.000000,43.000000,3.000000,6.000000,'None','优','1298A','省站','2014-03-06T14:00:00Z',1394085600,1394126019,1);
+INSERT INTO "pm2_5_data2014" VALUES (287,115,'','济南','济南','jinan',1.000000,2.000000,220.000000,140.000000,31.000000,89.000000,22.000000,89.000000,0.000000,228.000000,87.000000,84.000000,152.000000,110.000000,'细颗粒物(PM2.5)','轻度污染','1299A','科干所','2014-03-06T14:00:00Z',1394085600,1394126020,1);
+INSERT INTO "pm2_5_data2014" VALUES (288,114,'','济南','济南','jinan',2.000000,3.000000,49.000000,79.000000,54.000000,84.000000,28.000000,83.000000,174.000000,237.000000,86.000000,112.000000,172.000000,126.000000,'细颗粒物(PM2.5)','轻度污染','1300A','农科所','2014-03-06T14:00:00Z',1394085600,1394126021,1);
+INSERT INTO "pm2_5_data2014" VALUES (289,101,'','济南','济南','jinan',1.000000,1.000000,49.000000,75.000000,54.000000,83.000000,29.000000,83.000000,151.000000,202.000000,75.000000,96.000000,126.000000,118.000000,'颗粒物(PM10)','轻度污染','1301A','开发区','2014-03-06T14:00:00Z',1394085600,1394126022,1);
+INSERT INTO "pm2_5_data2014" VALUES (290,107,'','济南','济南','jinan',0.000000,1.000000,48.000000,74.000000,35.000000,53.000000,22.000000,53.000000,114.000000,195.000000,80.000000,126.000000,278.000000,158.000000,'细颗粒物(PM2.5)','轻度污染','1302A','济南化工厂','2014-03-06T14:00:00Z',1394085600,1394126023,1);
+INSERT INTO "pm2_5_data2014" VALUES (291,90,'','济南','济南','jinan',0.000000,1.000000,38.000000,77.000000,58.000000,90.000000,39.000000,90.000000,129.000000,242.000000,65.000000,121.000000,246.000000,162.000000,'颗粒物(PM10)','良','1303A','省种子仓库','2014-03-06T14:00:00Z',1394085600,1394126024,1);
+INSERT INTO "pm2_5_data2014" VALUES (292,114,'','济南','济南','jinan',1.000000,1.000000,51.000000,77.000000,54.000000,88.000000,32.000000,88.000000,171.000000,212.000000,86.000000,105.000000,237.000000,157.000000,'细颗粒物(PM2.5)','轻度污染','1304A','机床二厂','2014-03-06T14:00:00Z',1394085600,1394126025,1);
+INSERT INTO "pm2_5_data2014" VALUES (293,110,'','济南','济南','jinan',1.000000,1.000000,59.000000,85.000000,46.000000,79.000000,25.000000,79.000000,165.000000,225.000000,83.000000,96.000000,171.000000,164.000000,'细颗粒物(PM2.5)','轻度污染','1305A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126026,1);
+INSERT INTO "pm2_5_data2014" VALUES (294,149,'','济南','济南','jinan',1.000000,1.000000,100.000000,109.000000,56.000000,73.000000,30.000000,73.000000,203.000000,169.000000,114.000000,93.000000,194.000000,123.000000,'细颗粒物(PM2.5)','轻度污染','1306A','长清党校','2014-03-06T14:00:00Z',1394085600,1394126027,1);
+INSERT INTO "pm2_5_data2014" VALUES (295,63,'','青岛','青岛','qingdao',0.000000,0.000000,73.000000,69.000000,95.000000,113.000000,71.000000,113.000000,0.000000,0.000000,45.000000,47.000000,30.000000,19.000000,'细颗粒物(PM2.5)','良','1307A','仰口','2014-03-06T14:00:00Z',1394085600,1394126028,1);
+INSERT INTO "pm2_5_data2014" VALUES (296,80,'','青岛','青岛','qingdao',0.000000,0.000000,40.000000,43.000000,0.000000,0.000000,0.000000,0.000000,109.000000,105.000000,44.000000,47.000000,81.000000,51.000000,'颗粒物(PM10)','良','1308A','李沧区子站','2014-03-06T14:00:00Z',1394085600,1394126029,1);
+INSERT INTO "pm2_5_data2014" VALUES (297,88,'','青岛','青岛','qingdao',2.000000,2.000000,19.000000,31.000000,58.000000,140.000000,74.000000,111.000000,0.000000,0.000000,65.000000,42.000000,33.000000,33.000000,'细颗粒物(PM2.5)','良','1309A','市北区子站','2014-03-06T14:00:00Z',1394085600,1394126031,1);
+INSERT INTO "pm2_5_data2014" VALUES (298,93,'','青岛','青岛','qingdao',0.000000,0.000000,30.000000,32.000000,107.000000,109.000000,79.000000,108.000000,136.000000,89.000000,59.000000,36.000000,31.000000,25.000000,'颗粒物(PM10)','良','1310A','市南区东部子站','2014-03-06T14:00:00Z',1394085600,1394126033,1);
+INSERT INTO "pm2_5_data2014" VALUES (299,94,'','青岛','青岛','qingdao',1.000000,0.000000,36.000000,47.000000,108.000000,108.000000,73.000000,96.000000,107.000000,61.000000,70.000000,42.000000,60.000000,88.000000,'细颗粒物(PM2.5)','良','1311A','四方区子站','2014-03-06T14:00:00Z',1394085600,1394126033,1);
+INSERT INTO "pm2_5_data2014" VALUES (300,77,'','青岛','青岛','qingdao',2.000000,1.000000,30.000000,39.000000,93.000000,110.000000,52.000000,103.000000,104.000000,74.000000,0.000000,0.000000,70.000000,70.000000,'颗粒物(PM10)','良','1312A','市南区西部子站','2014-03-06T14:00:00Z',1394085600,1394126034,1);
+INSERT INTO "pm2_5_data2014" VALUES (301,98,'','青岛','青岛','qingdao',0.000000,0.000000,10.000000,45.000000,158.000000,158.000000,98.000000,98.000000,0.000000,93.000000,73.000000,55.000000,52.000000,46.000000,'细颗粒物(PM2.5)','良','1313A','崂山区子站','2014-03-06T14:00:00Z',1394085600,1394126035,1);
+INSERT INTO "pm2_5_data2014" VALUES (302,102,'','青岛','青岛','qingdao',1.000000,0.000000,57.000000,67.000000,57.000000,57.000000,36.000000,53.000000,124.000000,98.000000,76.000000,60.000000,9.000000,9.000000,'细颗粒物(PM2.5)','轻度污染','1314A','黄岛区子站','2014-03-06T14:00:00Z',1394085600,1394126036,1);
+INSERT INTO "pm2_5_data2014" VALUES (303,74,'','青岛','青岛','qingdao',0.000000,0.000000,43.000000,71.000000,81.000000,92.000000,38.000000,92.000000,54.000000,82.000000,54.000000,48.000000,50.000000,54.000000,'细颗粒物(PM2.5)','良','1315A','城阳区子站','2014-03-06T14:00:00Z',1394085600,1394126037,1);
+INSERT INTO "pm2_5_data2014" VALUES (304,96,'','郑州','郑州','zhengzhou',1.000000,1.000000,54.000000,59.000000,19.000000,24.000000,13.000000,24.000000,141.000000,83.000000,26.000000,46.000000,15.000000,23.000000,'颗粒物(PM10)','良','1316A','烟厂','2014-03-06T14:00:00Z',1394085600,1394126039,1);
+INSERT INTO "pm2_5_data2014" VALUES (305,199,'','郑州','郑州','zhengzhou',2.000000,2.000000,27.000000,29.000000,22.000000,24.000000,15.000000,23.000000,0.000000,72.000000,149.000000,91.000000,31.000000,28.000000,'细颗粒物(PM2.5)','中度污染','1317A','郑纺机','2014-03-06T14:00:00Z',1394085600,1394126040,1);
+INSERT INTO "pm2_5_data2014" VALUES (306,99,'','郑州','郑州','zhengzhou',2.000000,2.000000,53.000000,60.000000,35.000000,36.000000,24.000000,35.000000,125.000000,91.000000,74.000000,57.000000,36.000000,32.000000,'细颗粒物(PM2.5)','良','1318A','银行学校','2014-03-06T14:00:00Z',1394085600,1394126041,1);
+INSERT INTO "pm2_5_data2014" VALUES (307,99,'','郑州','郑州','zhengzhou',1.000000,1.000000,26.000000,32.000000,40.000000,40.000000,20.000000,35.000000,147.000000,97.000000,68.000000,51.000000,62.000000,48.000000,'颗粒物(PM10)','良','1319A','供水公司','2014-03-06T14:00:00Z',1394085600,1394126042,1);
+INSERT INTO "pm2_5_data2014" VALUES (308,104,'','郑州','郑州','zhengzhou',1.000000,1.000000,27.000000,40.000000,33.000000,33.000000,16.000000,28.000000,157.000000,91.000000,73.000000,47.000000,35.000000,36.000000,'颗粒物(PM10)','轻度污染','1320A','经开区管委','2014-03-06T14:00:00Z',1394085600,1394126045,1);
+INSERT INTO "pm2_5_data2014" VALUES (309,82,'','郑州','郑州','zhengzhou',1.000000,1.000000,48.000000,56.000000,41.000000,43.000000,24.000000,43.000000,114.000000,81.000000,55.000000,42.000000,43.000000,37.000000,'颗粒物(PM10)','良','1321A','四十七中','2014-03-06T14:00:00Z',1394085600,1394126046,1);
+INSERT INTO "pm2_5_data2014" VALUES (310,91,'','郑州','郑州','zhengzhou',1.000000,1.000000,63.000000,60.000000,24.000000,30.000000,18.000000,30.000000,132.000000,103.000000,67.000000,55.000000,27.000000,20.000000,'颗粒物(PM10)','良','1322A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126047,1);
+INSERT INTO "pm2_5_data2014" VALUES (311,97,'','郑州','郑州','zhengzhou',1.000000,1.000000,48.000000,47.000000,32.000000,45.000000,25.000000,45.000000,129.000000,87.000000,72.000000,52.000000,31.000000,39.000000,'细颗粒物(PM2.5)','良','1323A','河医大','2014-03-06T14:00:00Z',1394085600,1394126049,1);
+INSERT INTO "pm2_5_data2014" VALUES (312,97,'','郑州','郑州','zhengzhou',1.000000,1.000000,21.000000,30.000000,43.000000,43.000000,19.000000,33.000000,143.000000,106.000000,55.000000,41.000000,30.000000,15.000000,'颗粒物(PM10)','良','1324A','岗李水库','2014-03-06T14:00:00Z',1394085600,1394126050,1);
+INSERT INTO "pm2_5_data2014" VALUES (313,105,'','武汉','武汉','wuhan',0.000000,0.000000,35.000000,38.000000,96.000000,192.000000,83.000000,192.000000,0.000000,99.000000,79.000000,77.000000,19.000000,35.000000,'细颗粒物(PM2.5)','轻度污染','1325A','东湖梨园','2014-03-06T14:00:00Z',1394085600,1394126051,1);
+INSERT INTO "pm2_5_data2014" VALUES (314,99,'','武汉','武汉','wuhan',0.000000,0.000000,39.000000,63.000000,96.000000,166.000000,65.000000,164.000000,0.000000,97.000000,74.000000,81.000000,5.000000,17.000000,'细颗粒物(PM2.5)','良','1326A','汉阳月湖','2014-03-06T14:00:00Z',1394085600,1394126052,1);
+INSERT INTO "pm2_5_data2014" VALUES (315,109,'','武汉','武汉','wuhan',0.000000,1.000000,30.000000,49.000000,16.000000,246.000000,11.000000,45.000000,0.000000,89.000000,82.000000,87.000000,13.000000,39.000000,'细颗粒物(PM2.5)','轻度污染','1327A','汉口花桥','2014-03-06T14:00:00Z',1394085600,1394126053,1);
+INSERT INTO "pm2_5_data2014" VALUES (316,102,'','武汉','武汉','wuhan',0.000000,1.000000,30.000000,52.000000,62.000000,291.000000,37.000000,118.000000,0.000000,101.000000,76.000000,79.000000,12.000000,36.000000,'细颗粒物(PM2.5)','轻度污染','1328A','武昌紫阳','2014-03-06T14:00:00Z',1394085600,1394126054,1);
+INSERT INTO "pm2_5_data2014" VALUES (317,122,'','武汉','武汉','wuhan',0.000000,1.000000,37.000000,46.000000,66.000000,310.000000,46.000000,135.000000,0.000000,105.000000,92.000000,93.000000,32.000000,49.000000,'细颗粒物(PM2.5)','轻度污染','1329A','青山钢花','2014-03-06T14:00:00Z',1394085600,1394126055,1);
+INSERT INTO "pm2_5_data2014" VALUES (318,109,'','武汉','武汉','wuhan',1.000000,1.000000,45.000000,60.000000,56.000000,120.000000,41.000000,118.000000,85.000000,104.000000,82.000000,83.000000,19.000000,51.000000,'细颗粒物(PM2.5)','轻度污染','1330A','沌口新区','2014-03-06T14:00:00Z',1394085600,1394126058,1);
+INSERT INTO "pm2_5_data2014" VALUES (319,102,'','武汉','武汉','wuhan',0.000000,0.000000,38.000000,45.000000,58.000000,136.000000,46.000000,132.000000,0.000000,76.000000,76.000000,80.000000,20.000000,36.000000,'细颗粒物(PM2.5)','轻度污染','1331A','汉口江滩','2014-03-06T14:00:00Z',1394085600,1394126058,1);
+INSERT INTO "pm2_5_data2014" VALUES (320,112,'','武汉','武汉','wuhan',1.000000,0.000000,0.000000,41.000000,56.000000,141.000000,47.000000,141.000000,0.000000,78.000000,84.000000,80.000000,34.000000,24.000000,'细颗粒物(PM2.5)','轻度污染','1332A','东湖高新','2014-03-06T14:00:00Z',1394085600,1394126059,1);
+INSERT INTO "pm2_5_data2014" VALUES (321,100,'','武汉','武汉','wuhan',0.000000,1.000000,27.000000,58.000000,61.000000,312.000000,39.000000,113.000000,0.000000,124.000000,75.000000,89.000000,25.000000,48.000000,'细颗粒物(PM2.5)','良','1333A','吴家山','2014-03-06T14:00:00Z',1394085600,1394126060,1);
+INSERT INTO "pm2_5_data2014" VALUES (322,78,'','武汉','武汉','wuhan',0.000000,1.000000,16.000000,23.000000,79.000000,328.000000,64.000000,144.000000,0.000000,83.000000,57.000000,65.000000,4.000000,10.000000,'细颗粒物(PM2.5)','良','1334A','沉湖七壕','2014-03-06T14:00:00Z',1394085600,1394126061,1);
+INSERT INTO "pm2_5_data2014" VALUES (323,55,'','长沙','长沙','changsha',0.000000,1.000000,41.000000,48.000000,56.000000,71.000000,59.000000,64.000000,0.000000,116.000000,39.000000,79.000000,14.000000,22.000000,'细颗粒物(PM2.5)','良','1335A','经开区环保局','2014-03-06T14:00:00Z',1394085600,1394126063,1);
+INSERT INTO "pm2_5_data2014" VALUES (324,54,'','长沙','长沙','changsha',0.000000,0.000000,27.000000,32.000000,73.000000,73.000000,64.000000,64.000000,0.000000,97.000000,38.000000,74.000000,16.000000,31.000000,'细颗粒物(PM2.5)','良','1336A','高开区环保局','2014-03-06T14:00:00Z',1394085600,1394126063,1);
+INSERT INTO "pm2_5_data2014" VALUES (325,59,'','长沙','长沙','changsha',1.000000,2.000000,25.000000,7.000000,40.000000,51.000000,46.000000,50.000000,0.000000,33.000000,42.000000,91.000000,12.000000,18.000000,'细颗粒物(PM2.5)','良','1337A','马坡岭','2014-03-06T14:00:00Z',1394085600,1394126064,1);
+INSERT INTO "pm2_5_data2014" VALUES (326,60,'','长沙','长沙','changsha',1.000000,1.000000,39.000000,41.000000,15.000000,20.000000,12.000000,20.000000,0.000000,39.000000,43.000000,85.000000,15.000000,19.000000,'细颗粒物(PM2.5)','良','1338A','湖南师范大学','2014-03-06T14:00:00Z',1394085600,1394126065,1);
+INSERT INTO "pm2_5_data2014" VALUES (327,64,'','长沙','长沙','changsha',0.000000,1.000000,32.000000,43.000000,37.000000,41.000000,27.000000,41.000000,46.000000,86.000000,46.000000,95.000000,10.000000,13.000000,'细颗粒物(PM2.5)','良','1339A','雨花区环保局','2014-03-06T14:00:00Z',1394085600,1394126067,1);
+INSERT INTO "pm2_5_data2014" VALUES (328,58,'','长沙','长沙','changsha',1.000000,1.000000,38.000000,54.000000,17.000000,17.000000,8.000000,11.000000,0.000000,44.000000,41.000000,86.000000,10.000000,17.000000,'细颗粒物(PM2.5)','良','1340A','伍家岭','2014-03-06T14:00:00Z',1394085600,1394126068,1);
+INSERT INTO "pm2_5_data2014" VALUES (329,72,'','长沙','长沙','changsha',0.000000,0.000000,47.000000,67.000000,33.000000,33.000000,22.000000,31.000000,61.000000,106.000000,52.000000,98.000000,12.000000,23.000000,'细颗粒物(PM2.5)','良','1341A','火车新站','2014-03-06T14:00:00Z',1394085600,1394126070,1);
+INSERT INTO "pm2_5_data2014" VALUES (330,52,'','长沙','长沙','changsha',0.000000,1.000000,47.000000,68.000000,37.000000,53.000000,39.000000,39.000000,0.000000,34.000000,36.000000,82.000000,11.000000,22.000000,'细颗粒物(PM2.5)','良','1342A','天心区环保局','2014-03-06T14:00:00Z',1394085600,1394126071,1);
+INSERT INTO "pm2_5_data2014" VALUES (331,55,'','长沙','长沙','changsha',1.000000,1.000000,36.000000,49.000000,64.000000,79.000000,56.000000,79.000000,0.000000,34.000000,39.000000,78.000000,15.000000,29.000000,'细颗粒物(PM2.5)','良','1343A','湖南中医药大学','2014-03-06T14:00:00Z',1394085600,1394126072,1);
+INSERT INTO "pm2_5_data2014" VALUES (332,56,'','长沙','长沙','changsha',0.000000,0.000000,29.000000,41.000000,76.000000,91.000000,78.000000,82.000000,62.000000,103.000000,39.000000,71.000000,28.000000,36.000000,'颗粒物(PM10)','良','1344A','沙坪','2014-03-06T14:00:00Z',1394085600,1394126073,1);
+INSERT INTO "pm2_5_data2014" VALUES (333,82,'','广州','广州','guangzhou',1.000000,1.000000,95.000000,73.000000,65.000000,73.000000,62.000000,71.000000,68.000000,68.000000,60.000000,53.000000,17.000000,18.000000,'细颗粒物(PM2.5)','良','1345A','广雅中学','2014-03-06T14:00:00Z',1394085600,1394126074,1);
+INSERT INTO "pm2_5_data2014" VALUES (334,83,'','广州','广州','guangzhou',0.000000,1.000000,101.000000,76.000000,22.000000,25.000000,14.000000,25.000000,81.000000,72.000000,61.000000,55.000000,24.000000,29.000000,'细颗粒物(PM2.5)','良','1346A','市五中','2014-03-06T14:00:00Z',1394085600,1394126075,1);
+INSERT INTO "pm2_5_data2014" VALUES (335,88,'','广州','广州','guangzhou',0.000000,1.000000,104.000000,74.000000,28.000000,58.000000,32.000000,58.000000,91.000000,61.000000,65.000000,49.000000,28.000000,23.000000,'细颗粒物(PM2.5)','良','1347A','天河职幼','2014-03-06T14:00:00Z',1394085600,1394126076,1);
+INSERT INTO "pm2_5_data2014" VALUES (336,89,'','广州','广州','guangzhou',0.000000,1.000000,77.000000,55.000000,39.000000,46.000000,29.000000,29.000000,97.000000,78.000000,66.000000,51.000000,26.000000,19.000000,'细颗粒物(PM2.5)','良','1348A','广东商学院','2014-03-06T14:00:00Z',1394085600,1394126077,1);
+INSERT INTO "pm2_5_data2014" VALUES (337,87,'','广州','广州','guangzhou',0.000000,1.000000,104.000000,66.000000,75.000000,75.000000,59.000000,66.000000,100.000000,78.000000,64.000000,48.000000,39.000000,34.000000,'细颗粒物(PM2.5)','良','1349A','市八十六中','2014-03-06T14:00:00Z',1394085600,1394126078,1);
+INSERT INTO "pm2_5_data2014" VALUES (338,79,'','广州','广州','guangzhou',0.000000,1.000000,53.000000,63.000000,52.000000,52.000000,30.000000,30.000000,77.000000,76.000000,58.000000,59.000000,14.000000,33.000000,'细颗粒物(PM2.5)','良','1350A','番禺中学','2014-03-06T14:00:00Z',1394085600,1394126079,1);
+INSERT INTO "pm2_5_data2014" VALUES (339,84,'','广州','广州','guangzhou',0.000000,0.000000,79.000000,51.000000,25.000000,70.000000,16.000000,70.000000,86.000000,58.000000,62.000000,41.000000,23.000000,18.000000,'细颗粒物(PM2.5)','良','1351A','花都师范','2014-03-06T14:00:00Z',1394085600,1394126081,1);
+INSERT INTO "pm2_5_data2014" VALUES (340,84,'','广州','广州','guangzhou',1.000000,1.000000,103.000000,74.000000,16.000000,20.000000,11.000000,17.000000,97.000000,82.000000,62.000000,52.000000,21.000000,18.000000,'细颗粒物(PM2.5)','良','1352A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126083,1);
+INSERT INTO "pm2_5_data2014" VALUES (341,98,'','广州','广州','guangzhou',1.000000,1.000000,26.000000,20.000000,75.000000,75.000000,36.000000,60.000000,74.000000,52.000000,73.000000,42.000000,17.000000,12.000000,'细颗粒物(PM2.5)','良','1353A','九龙镇镇龙','2014-03-06T14:00:00Z',1394085600,1394126084,1);
+INSERT INTO "pm2_5_data2014" VALUES (342,85,'','广州','广州','guangzhou',0.000000,1.000000,86.000000,58.000000,57.000000,90.000000,50.000000,53.000000,91.000000,73.000000,63.000000,55.000000,20.000000,46.000000,'细颗粒物(PM2.5)','良','1354A','麓湖','2014-03-06T14:00:00Z',1394085600,1394126085,1);
+INSERT INTO "pm2_5_data2014" VALUES (343,78,'','广州','广州','guangzhou',0.000000,0.000000,44.000000,26.000000,58.000000,76.000000,61.000000,74.000000,86.000000,53.000000,57.000000,42.000000,15.000000,11.000000,'细颗粒物(PM2.5)','良','1355A','帽峰山森林公园','2014-03-06T14:00:00Z',1394085600,1394126086,1);
+INSERT INTO "pm2_5_data2014" VALUES (344,55,'','深圳','深圳','shenzhen',0.000000,0.000000,31.000000,22.000000,68.000000,80.000000,67.000000,77.000000,59.000000,44.000000,39.000000,26.000000,3.000000,6.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1356A','荔园','2014-03-06T14:00:00Z',1394085600,1394126087,1);
+INSERT INTO "pm2_5_data2014" VALUES (345,62,'','深圳','深圳','shenzhen',0.000000,1.000000,25.000000,26.000000,121.000000,140.000000,115.000000,127.000000,68.000000,52.000000,44.000000,30.000000,4.000000,5.000000,'细颗粒物(PM2.5)','良','1357A','洪湖','2014-03-06T14:00:00Z',1394085600,1394126088,1);
+INSERT INTO "pm2_5_data2014" VALUES (346,63,'','深圳','深圳','shenzhen',1.000000,1.000000,38.000000,33.000000,66.000000,98.000000,78.000000,87.000000,76.000000,48.000000,25.000000,28.000000,2.000000,4.000000,'颗粒物(PM10)','良','1358A','华侨城','2014-03-06T14:00:00Z',1394085600,1394126089,1);
+INSERT INTO "pm2_5_data2014" VALUES (347,56,'','深圳','深圳','shenzhen',1.000000,1.000000,14.000000,16.000000,97.000000,103.000000,95.000000,101.000000,62.000000,52.000000,36.000000,28.000000,4.000000,6.000000,'颗粒物(PM10)','良','1359A','南油','2014-03-06T14:00:00Z',1394085600,1394126090,1);
+INSERT INTO "pm2_5_data2014" VALUES (348,0,'','深圳','深圳','shenzhen',0.000000,0.000000,0.000000,58.000000,0.000000,97.000000,89.000000,89.000000,0.000000,41.000000,0.000000,22.000000,0.000000,19.000000,'None','None','1360A','盐田','2014-03-06T14:00:00Z',1394085600,1394126091,1);
+INSERT INTO "pm2_5_data2014" VALUES (349,52,'','深圳','深圳','shenzhen',1.000000,1.000000,18.000000,21.000000,57.000000,68.000000,53.000000,53.000000,40.000000,43.000000,36.000000,29.000000,5.000000,5.000000,'细颗粒物(PM2.5)','良','1361A','龙岗','2014-03-06T14:00:00Z',1394085600,1394126092,1);
+INSERT INTO "pm2_5_data2014" VALUES (350,53,'','深圳','深圳','shenzhen',1.000000,1.000000,30.000000,28.000000,26.000000,44.000000,31.000000,42.000000,55.000000,52.000000,35.000000,31.000000,10.000000,7.000000,'颗粒物(PM10)','良','1362A','西乡','2014-03-06T14:00:00Z',1394085600,1394126093,1);
+INSERT INTO "pm2_5_data2014" VALUES (351,54,'','深圳','深圳','shenzhen',0.000000,0.000000,9.000000,12.000000,92.000000,104.000000,90.000000,99.000000,54.000000,45.000000,38.000000,29.000000,5.000000,6.000000,'细颗粒物(PM2.5)','良','1363A','南澳','2014-03-06T14:00:00Z',1394085600,1394126096,1);
+INSERT INTO "pm2_5_data2014" VALUES (352,52,'','深圳','深圳','shenzhen',0.000000,0.000000,16.000000,14.000000,34.000000,37.000000,30.000000,30.000000,0.000000,34.000000,36.000000,29.000000,5.000000,5.000000,'细颗粒物(PM2.5)','良','1364A','葵涌','2014-03-06T14:00:00Z',1394085600,1394126097,1);
+INSERT INTO "pm2_5_data2014" VALUES (353,57,'','深圳','深圳','shenzhen',0.000000,0.000000,17.000000,16.000000,97.000000,110.000000,92.000000,106.000000,53.000000,43.000000,40.000000,28.000000,5.000000,5.000000,'细颗粒物(PM2.5)','良','1365A','梅沙','2014-03-06T14:00:00Z',1394085600,1394126097,1);
+INSERT INTO "pm2_5_data2014" VALUES (354,56,'','深圳','深圳','shenzhen',0.000000,0.000000,28.000000,34.000000,84.000000,89.000000,81.000000,81.000000,61.000000,61.000000,34.000000,32.000000,8.000000,20.000000,'颗粒物(PM10)','良','1366A','观澜','2014-03-06T14:00:00Z',1394085600,1394126098,1);
+INSERT INTO "pm2_5_data2014" VALUES (355,32,'','珠海','珠海','zhuhai',0.000000,0.000000,29.000000,28.000000,89.000000,116.000000,94.000000,109.000000,27.000000,39.000000,22.000000,26.000000,7.000000,8.000000,'None','优','1367A','吉大','2014-03-06T14:00:00Z',1394085600,1394126100,1);
+INSERT INTO "pm2_5_data2014" VALUES (356,33,'','珠海','珠海','zhuhai',0.000000,0.000000,65.000000,60.000000,53.000000,80.000000,54.000000,72.000000,33.000000,39.000000,23.000000,25.000000,2.000000,5.000000,'None','优','1368A','前山','2014-03-06T14:00:00Z',1394085600,1394126101,1);
+INSERT INTO "pm2_5_data2014" VALUES (357,40,'','珠海','珠海','zhuhai',0.000000,0.000000,19.000000,26.000000,71.000000,71.000000,51.000000,56.000000,40.000000,45.000000,28.000000,32.000000,11.000000,14.000000,'None','优','1369A','唐家','2014-03-06T14:00:00Z',1394085600,1394126102,1);
+INSERT INTO "pm2_5_data2014" VALUES (358,32,'','珠海','珠海','zhuhai',0.000000,0.000000,36.000000,54.000000,78.000000,78.000000,66.000000,66.000000,27.000000,53.000000,22.000000,32.000000,3.000000,14.000000,'None','优','1370A','斗门','2014-03-06T14:00:00Z',1394085600,1394126103,1);
+INSERT INTO "pm2_5_data2014" VALUES (359,52,'','佛山','佛山','foshan',0.000000,0.000000,79.000000,83.000000,29.000000,29.000000,14.000000,22.000000,52.000000,55.000000,36.000000,39.000000,18.000000,20.000000,'细颗粒物(PM2.5)','良','1371A','湾梁','2014-03-06T14:00:00Z',1394085600,1394126104,1);
+INSERT INTO "pm2_5_data2014" VALUES (360,57,'','佛山','佛山','foshan',1.000000,1.000000,99.000000,82.000000,15.000000,22.000000,8.000000,22.000000,49.000000,45.000000,40.000000,37.000000,26.000000,27.000000,'细颗粒物(PM2.5)','良','1372A','华材职中','2014-03-06T14:00:00Z',1394085600,1394126105,1);
+INSERT INTO "pm2_5_data2014" VALUES (361,59,'','佛山','佛山','foshan',1.000000,1.000000,95.000000,81.000000,18.000000,18.000000,7.000000,18.000000,68.000000,53.000000,41.000000,34.000000,16.000000,16.000000,'颗粒物(PM10)','良','1373A','南海气象局','2014-03-06T14:00:00Z',1394085600,1394126106,1);
+INSERT INTO "pm2_5_data2014" VALUES (362,55,'','佛山','佛山','foshan',0.000000,1.000000,47.000000,52.000000,31.000000,34.000000,21.000000,26.000000,60.000000,68.000000,21.000000,38.000000,23.000000,25.000000,'颗粒物(PM10)','良','1374A','顺德苏岗','2014-03-06T14:00:00Z',1394085600,1394126108,1);
+INSERT INTO "pm2_5_data2014" VALUES (363,54,'','佛山','佛山','foshan',1.000000,1.000000,64.000000,72.000000,39.000000,46.000000,29.000000,34.000000,58.000000,69.000000,27.000000,40.000000,38.000000,36.000000,'颗粒物(PM10)','良','1375A','容桂街道办','2014-03-06T14:00:00Z',1394085600,1394126110,1);
+INSERT INTO "pm2_5_data2014" VALUES (364,62,'','佛山','佛山','foshan',1.000000,1.000000,65.000000,72.000000,32.000000,40.000000,25.000000,40.000000,65.000000,56.000000,44.000000,43.000000,31.000000,22.000000,'细颗粒物(PM2.5)','良','1376A','高明孔堂','2014-03-06T14:00:00Z',1394085600,1394126112,1);
+INSERT INTO "pm2_5_data2014" VALUES (365,100,'','佛山','佛山','foshan',2.000000,1.000000,79.000000,69.000000,5.000000,33.000000,5.000000,33.000000,106.000000,59.000000,75.000000,47.000000,45.000000,27.000000,'细颗粒物(PM2.5)','良','1377A','三水监测站','2014-03-06T14:00:00Z',1394085600,1394126113,1);
+INSERT INTO "pm2_5_data2014" VALUES (366,95,'','佛山','佛山','foshan',1.000000,1.000000,64.000000,46.000000,22.000000,28.000000,16.000000,28.000000,84.000000,51.000000,71.000000,41.000000,31.000000,22.000000,'细颗粒物(PM2.5)','良','1378A','三水云东海','2014-03-06T14:00:00Z',1394085600,1394126114,1);
+INSERT INTO "pm2_5_data2014" VALUES (367,34,'','中山','中山','zhongshan',1.000000,1.000000,68.000000,68.000000,25.000000,321.000000,20.000000,72.000000,18.000000,31.000000,17.000000,28.000000,9.000000,42.000000,'None','优','1379A','华柏园','2014-03-06T14:00:00Z',1394085600,1394126115,1);
+INSERT INTO "pm2_5_data2014" VALUES (368,0,'','中山','中山','zhongshan',0.000000,1.000000,0.000000,46.000000,0.000000,12.000000,0.000000,12.000000,0.000000,42.000000,0.000000,30.000000,0.000000,29.000000,'None','None','1380A','张溪','2014-03-06T14:00:00Z',1394085600,1394126116,1);
+INSERT INTO "pm2_5_data2014" VALUES (369,42,'','中山','中山','zhongshan',1.000000,2.000000,17.000000,46.000000,41.000000,249.000000,32.000000,71.000000,34.000000,60.000000,29.000000,55.000000,7.000000,49.000000,'None','优','1381A','紫马岭','2014-03-06T14:00:00Z',1394085600,1394126117,1);
+INSERT INTO "pm2_5_data2014" VALUES (370,38,'','中山','中山','zhongshan',1.000000,1.000000,31.000000,44.000000,83.000000,83.000000,72.000000,72.000000,38.000000,55.000000,22.000000,35.000000,6.000000,8.000000,'None','优','1382A','长江旅游区','2014-03-06T14:00:00Z',1394085600,1394126119,1);
+INSERT INTO "pm2_5_data2014" VALUES (371,81,'','江门','江门','jiangmen',1.000000,1.000000,58.000000,53.000000,25.000000,25.000000,18.000000,18.000000,111.000000,92.000000,59.000000,58.000000,43.000000,50.000000,'颗粒物(PM10)','良','1383A','北街','2014-03-06T14:00:00Z',1394085600,1394126119,1);
+INSERT INTO "pm2_5_data2014" VALUES (372,85,'','江门','江门','jiangmen',1.000000,1.000000,41.000000,46.000000,24.000000,30.000000,23.000000,26.000000,119.000000,95.000000,63.000000,52.000000,56.000000,57.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1384A','西区','2014-03-06T14:00:00Z',1394085600,1394126121,1);
+INSERT INTO "pm2_5_data2014" VALUES (373,77,'','江门','江门','jiangmen',0.000000,1.000000,37.000000,37.000000,20.000000,26.000000,15.000000,15.000000,89.000000,92.000000,56.000000,58.000000,30.000000,48.000000,'细颗粒物(PM2.5)','良','1385A','圭峰西','2014-03-06T14:00:00Z',1394085600,1394126123,1);
+INSERT INTO "pm2_5_data2014" VALUES (374,118,'','江门','江门','jiangmen',0.000000,0.000000,95.000000,79.000000,18.000000,31.000000,16.000000,19.000000,127.000000,89.000000,89.000000,64.000000,65.000000,40.000000,'细颗粒物(PM2.5)','轻度污染','1386A','东湖','2014-03-06T14:00:00Z',1394085600,1394126124,1);
+INSERT INTO "pm2_5_data2014" VALUES (375,67,'','东莞','东莞','dongguan',0.000000,0.000000,50.000000,50.000000,77.000000,77.000000,51.000000,51.000000,67.000000,64.000000,48.000000,56.000000,19.000000,22.000000,'细颗粒物(PM2.5)','良','1387A','实验中学','2014-03-06T14:00:00Z',1394085600,1394126125,1);
+INSERT INTO "pm2_5_data2014" VALUES (376,54,'','东莞','东莞','dongguan',0.000000,1.000000,47.000000,48.000000,83.000000,361.000000,54.000000,89.000000,58.000000,63.000000,35.000000,48.000000,15.000000,54.000000,'颗粒物(PM10)','良','1388A','南城元岭','2014-03-06T14:00:00Z',1394085600,1394126126,1);
+INSERT INTO "pm2_5_data2014" VALUES (377,63,'','东莞','东莞','dongguan',0.000000,0.000000,47.000000,48.000000,83.000000,83.000000,66.000000,66.000000,64.000000,66.000000,45.000000,46.000000,18.000000,20.000000,'细颗粒物(PM2.5)','良','1389A','莞城二水厂','2014-03-06T14:00:00Z',1394085600,1394126127,1);
+INSERT INTO "pm2_5_data2014" VALUES (378,52,'','东莞','东莞','dongguan',0.000000,1.000000,43.000000,49.000000,87.000000,289.000000,56.000000,90.000000,54.000000,59.000000,36.000000,47.000000,12.000000,46.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1390A','东城石井','2014-03-06T14:00:00Z',1394085600,1394126128,1);
+INSERT INTO "pm2_5_data2014" VALUES (379,53,'','东莞','东莞','dongguan',0.000000,1.000000,35.000000,53.000000,105.000000,287.000000,65.000000,95.000000,55.000000,58.000000,37.000000,42.000000,19.000000,51.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1391A','南城西平','2014-03-06T14:00:00Z',1394085600,1394126129,1);
+INSERT INTO "pm2_5_data2014" VALUES (380,48,'','惠州','惠州','huizhou',0.000000,0.000000,11.000000,22.000000,114.000000,114.000000,94.000000,94.000000,38.000000,56.000000,33.000000,36.000000,17.000000,17.000000,'None','优','1392A','河南岸金山湖子站','2014-03-06T14:00:00Z',1394085600,1394126130,1);
+INSERT INTO "pm2_5_data2014" VALUES (381,49,'','惠州','惠州','huizhou',0.000000,0.000000,25.000000,31.000000,86.000000,86.000000,69.000000,69.000000,46.000000,54.000000,34.000000,35.000000,14.000000,15.000000,'None','优','1393A','下埔横江三路子站','2014-03-06T14:00:00Z',1394085600,1394126131,1);
+INSERT INTO "pm2_5_data2014" VALUES (382,52,'','惠州','惠州','huizhou',0.000000,0.000000,25.000000,32.000000,106.000000,106.000000,76.000000,79.000000,54.000000,58.000000,31.000000,32.000000,8.000000,10.000000,'颗粒物(PM10)','良','1394A','江北云山西路子站','2014-03-06T14:00:00Z',1394085600,1394126132,1);
+INSERT INTO "pm2_5_data2014" VALUES (383,48,'','惠州','惠州','huizhou',0.000000,0.000000,20.000000,27.000000,106.000000,106.000000,92.000000,98.000000,48.000000,52.000000,28.000000,30.000000,15.000000,16.000000,'None','优','1395A','惠阳区承修路船湖子站','2014-03-06T14:00:00Z',1394085600,1394126133,1);
+INSERT INTO "pm2_5_data2014" VALUES (384,51,'','惠州','惠州','huizhou',0.000000,0.000000,15.000000,21.000000,113.000000,113.000000,97.000000,105.000000,52.000000,60.000000,29.000000,26.000000,29.000000,28.000000,'颗粒物(PM10)','良','1396A','大亚湾管委会子站','2014-03-06T14:00:00Z',1394085600,1394126136,1);
+INSERT INTO "pm2_5_data2014" VALUES (385,149,'','肇庆','肇庆','zhaoqing',1.000000,1.000000,70.000000,66.000000,19.000000,38.000000,16.000000,38.000000,167.000000,96.000000,114.000000,59.000000,47.000000,50.000000,'细颗粒物(PM2.5)','轻度污染','1397A','睦岗子站','2014-03-06T14:00:00Z',1394085600,1394126137,1);
+INSERT INTO "pm2_5_data2014" VALUES (386,214,'','肇庆','肇庆','zhaoqing',1.000000,2.000000,69.000000,65.000000,5.000000,321.000000,5.000000,47.000000,0.000000,106.000000,164.000000,91.000000,68.000000,96.000000,'细颗粒物(PM2.5)','重度污染','1398A','城中子站','2014-03-06T14:00:00Z',1394085600,1394126138,1);
+INSERT INTO "pm2_5_data2014" VALUES (387,173,'','肇庆','肇庆','zhaoqing',1.000000,1.000000,73.000000,55.000000,46.000000,78.000000,46.000000,77.000000,149.000000,104.000000,131.000000,75.000000,64.000000,60.000000,'细颗粒物(PM2.5)','中度污染','1399A','坑口子站','2014-03-06T14:00:00Z',1394085600,1394126140,1);
+INSERT INTO "pm2_5_data2014" VALUES (388,225,'','肇庆','肇庆','zhaoqing',1.000000,1.000000,36.000000,31.000000,11.000000,64.000000,10.000000,64.000000,0.000000,129.000000,175.000000,100.000000,57.000000,44.000000,'细颗粒物(PM2.5)','重度污染','1400A','七星岩子站','2014-03-06T14:00:00Z',1394085600,1394126141,1);
+INSERT INTO "pm2_5_data2014" VALUES (389,0,'','南宁','南宁','nanning',0.000000,1.000000,0.000000,44.000000,0.000000,46.000000,5.000000,46.000000,0.000000,92.000000,0.000000,60.000000,0.000000,13.000000,'None','None','1401A','振宁花园','2014-03-06T14:00:00Z',1394085600,1394126142,1);
+INSERT INTO "pm2_5_data2014" VALUES (390,85,'','南宁','南宁','nanning',1.000000,1.000000,49.000000,52.000000,11.000000,37.000000,9.000000,37.000000,74.000000,107.000000,63.000000,63.000000,9.000000,10.000000,'细颗粒物(PM2.5)','良','1402A','北湖','2014-03-06T14:00:00Z',1394085600,1394126143,1);
+INSERT INTO "pm2_5_data2014" VALUES (391,75,'','南宁','南宁','nanning',1.000000,1.000000,45.000000,47.000000,9.000000,36.000000,8.000000,35.000000,97.000000,84.000000,55.000000,55.000000,8.000000,10.000000,'细颗粒物(PM2.5)','良','1403A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126144,1);
+INSERT INTO "pm2_5_data2014" VALUES (392,64,'','南宁','南宁','nanning',1.000000,1.000000,12.000000,32.000000,9.000000,47.000000,8.000000,47.000000,0.000000,74.000000,46.000000,52.000000,49.000000,20.000000,'细颗粒物(PM2.5)','良','1404A','大自然花园','2014-03-06T14:00:00Z',1394085600,1394126145,1);
+INSERT INTO "pm2_5_data2014" VALUES (393,82,'','南宁','南宁','nanning',1.000000,1.000000,40.000000,33.000000,12.000000,53.000000,11.000000,53.000000,0.000000,83.000000,60.000000,60.000000,5.000000,7.000000,'细颗粒物(PM2.5)','良','1405A','仙葫','2014-03-06T14:00:00Z',1394085600,1394126146,1);
+INSERT INTO "pm2_5_data2014" VALUES (394,90,'','南宁','南宁','nanning',1.000000,1.000000,46.000000,47.000000,10.000000,31.000000,9.000000,29.000000,96.000000,76.000000,67.000000,55.000000,11.000000,12.000000,'细颗粒物(PM2.5)','良','1406A','区农职院','2014-03-06T14:00:00Z',1394085600,1394126147,1);
+INSERT INTO "pm2_5_data2014" VALUES (395,90,'','南宁','南宁','nanning',1.000000,1.000000,17.000000,42.000000,7.000000,44.000000,8.000000,40.000000,80.000000,86.000000,67.000000,68.000000,61.000000,43.000000,'细颗粒物(PM2.5)','良','1408A','沙井镇街道办','2014-03-06T14:00:00Z',1394085600,1394126149,1);
+INSERT INTO "pm2_5_data2014" VALUES (396,27,'','海口','海口','haikou',0.000000,0.000000,4.000000,12.000000,46.000000,48.000000,37.000000,37.000000,27.000000,35.000000,16.000000,23.000000,4.000000,4.000000,'None','优','1409A','东寨港','2014-03-06T14:00:00Z',1394085600,1394126150,1);
+INSERT INTO "pm2_5_data2014" VALUES (397,38,'','海口','海口','haikou',0.000000,0.000000,1.000000,14.000000,61.000000,61.000000,50.000000,50.000000,38.000000,46.000000,16.000000,25.000000,4.000000,5.000000,'None','优','1410A','海南大学','2014-03-06T14:00:00Z',1394085600,1394126151,1);
+INSERT INTO "pm2_5_data2014" VALUES (398,38,'','海口','海口','haikou',0.000000,0.000000,14.000000,29.000000,46.000000,46.000000,35.000000,35.000000,38.000000,49.000000,18.000000,28.000000,3.000000,4.000000,'None','优','1411A','秀英海南医院','2014-03-06T14:00:00Z',1394085600,1394126152,1);
+INSERT INTO "pm2_5_data2014" VALUES (399,33,'','海口','海口','haikou',0.000000,0.000000,3.000000,19.000000,29.000000,42.000000,30.000000,30.000000,33.000000,48.000000,20.000000,28.000000,3.000000,2.000000,'None','优','1412A','海南师范大学','2014-03-06T14:00:00Z',1394085600,1394126153,1);
+INSERT INTO "pm2_5_data2014" VALUES (400,0,'','海口','海口','haikou',0.000000,0.000000,0.000000,42.000000,0.000000,40.000000,29.000000,35.000000,0.000000,57.000000,0.000000,32.000000,0.000000,4.000000,'None','None','1413A','龙华路环保局宿舍','2014-03-06T14:00:00Z',1394085600,1394126154,1);
+INSERT INTO "pm2_5_data2014" VALUES (401,72,'','重庆','重庆','zhongqing',0.000000,0.000000,29.000000,22.000000,34.000000,79.000000,23.000000,67.000000,77.000000,72.000000,52.000000,49.000000,26.000000,25.000000,'细颗粒物(PM2.5)','良','1414A','缙云山','2014-03-06T14:00:00Z',1394085600,1394126155,1);
+INSERT INTO "pm2_5_data2014" VALUES (402,63,'','重庆','重庆','zhongqing',0.000000,1.000000,30.000000,45.000000,50.000000,57.000000,21.000000,55.000000,54.000000,95.000000,45.000000,68.000000,28.000000,28.000000,'细颗粒物(PM2.5)','良','1415A','高家花园','2014-03-06T14:00:00Z',1394085600,1394126156,1);
+INSERT INTO "pm2_5_data2014" VALUES (403,67,'','重庆','重庆','zhongqing',0.000000,0.000000,24.000000,41.000000,59.000000,59.000000,20.000000,58.000000,66.000000,83.000000,48.000000,53.000000,32.000000,43.000000,'细颗粒物(PM2.5)','良','1416A','天生','2014-03-06T14:00:00Z',1394085600,1394126157,1);
+INSERT INTO "pm2_5_data2014" VALUES (404,69,'','重庆','重庆','zhongqing',1.000000,1.000000,41.000000,41.000000,42.000000,52.000000,24.000000,52.000000,86.000000,90.000000,50.000000,50.000000,21.000000,15.000000,'细颗粒物(PM2.5)','良','1417A','两路','2014-03-06T14:00:00Z',1394085600,1394126158,1);
+INSERT INTO "pm2_5_data2014" VALUES (405,69,'','重庆','重庆','zhongqing',0.000000,1.000000,41.000000,37.000000,25.000000,69.000000,13.000000,66.000000,83.000000,91.000000,50.000000,57.000000,32.000000,36.000000,'细颗粒物(PM2.5)','良','1418A','虎溪','2014-03-06T14:00:00Z',1394085600,1394126159,1);
+INSERT INTO "pm2_5_data2014" VALUES (406,47,'','重庆','重庆','zhongqing',0.000000,0.000000,13.000000,32.000000,78.000000,84.000000,50.000000,84.000000,47.000000,72.000000,25.000000,51.000000,31.000000,27.000000,'None','优','1419A','南坪','2014-03-06T14:00:00Z',1394085600,1394126159,1);
+INSERT INTO "pm2_5_data2014" VALUES (407,64,'','重庆','重庆','zhongqing',0.000000,0.000000,23.000000,31.000000,53.000000,61.000000,33.000000,61.000000,73.000000,84.000000,46.000000,61.000000,25.000000,21.000000,'细颗粒物(PM2.5)','良','1420A','唐家沱','2014-03-06T14:00:00Z',1394085600,1394126161,1);
+INSERT INTO "pm2_5_data2014" VALUES (408,38,'','重庆','重庆','zhongqing',1.000000,1.000000,11.000000,37.000000,66.000000,66.000000,38.000000,49.000000,37.000000,104.000000,26.000000,51.000000,32.000000,24.000000,'None','优','1421A','茶园','2014-03-06T14:00:00Z',1394085600,1394126162,1);
+INSERT INTO "pm2_5_data2014" VALUES (409,69,'','重庆','重庆','zhongqing',1.000000,0.000000,36.000000,33.000000,26.000000,69.000000,20.000000,67.000000,76.000000,82.000000,50.000000,59.000000,78.000000,37.000000,'细颗粒物(PM2.5)','良','1422A','白市驿','2014-03-06T14:00:00Z',1394085600,1394126163,1);
+INSERT INTO "pm2_5_data2014" VALUES (410,59,'','重庆','重庆','zhongqing',0.000000,0.000000,17.000000,26.000000,37.000000,62.000000,24.000000,34.000000,50.000000,82.000000,42.000000,60.000000,31.000000,29.000000,'细颗粒物(PM2.5)','良','1423A','解放碑','2014-03-06T14:00:00Z',1394085600,1394126164,1);
+INSERT INTO "pm2_5_data2014" VALUES (411,0,'','重庆','重庆','zhongqing',0.000000,1.000000,0.000000,38.000000,0.000000,61.000000,40.000000,61.000000,0.000000,85.000000,0.000000,45.000000,0.000000,24.000000,'None','None','1424A','杨家坪','2014-03-06T14:00:00Z',1394085600,1394126165,1);
+INSERT INTO "pm2_5_data2014" VALUES (412,79,'','重庆','重庆','zhongqing',1.000000,1.000000,17.000000,24.000000,53.000000,61.000000,32.000000,61.000000,76.000000,81.000000,58.000000,59.000000,24.000000,19.000000,'细颗粒物(PM2.5)','良','1425A','空港','2014-03-06T14:00:00Z',1394085600,1394126167,1);
+INSERT INTO "pm2_5_data2014" VALUES (413,49,'','重庆','重庆','zhongqing',0.000000,0.000000,42.000000,49.000000,28.000000,45.000000,13.000000,45.000000,46.000000,75.000000,34.000000,48.000000,47.000000,29.000000,'None','优','1426A','新山村','2014-03-06T14:00:00Z',1394085600,1394126167,1);
+INSERT INTO "pm2_5_data2014" VALUES (414,65,'','重庆','重庆','zhongqing',0.000000,0.000000,35.000000,41.000000,32.000000,46.000000,16.000000,46.000000,80.000000,87.000000,46.000000,56.000000,38.000000,21.000000,'颗粒物(PM10)','良','1427A','礼嘉','2014-03-06T14:00:00Z',1394085600,1394126169,1);
+INSERT INTO "pm2_5_data2014" VALUES (415,52,'','重庆','重庆','zhongqing',1.000000,1.000000,15.000000,23.000000,66.000000,69.000000,30.000000,69.000000,54.000000,79.000000,31.000000,43.000000,26.000000,32.000000,'颗粒物(PM10)','良','1429A','鱼新街','2014-03-06T14:00:00Z',1394085600,1394126170,1);
+INSERT INTO "pm2_5_data2014" VALUES (416,40,'','成都','成都','chengdu',0.000000,0.000000,29.000000,42.000000,48.000000,48.000000,28.000000,33.000000,40.000000,87.000000,25.000000,58.000000,18.000000,22.000000,'None','优','1431A','金泉两河','2014-03-06T14:00:00Z',1394085600,1394126171,1);
+INSERT INTO "pm2_5_data2014" VALUES (417,29,'','成都','成都','chengdu',0.000000,1.000000,32.000000,56.000000,49.000000,53.000000,21.000000,40.000000,29.000000,81.000000,20.000000,57.000000,14.000000,25.000000,'None','优','1432A','十里店','2014-03-06T14:00:00Z',1394085600,1394126173,1);
+INSERT INTO "pm2_5_data2014" VALUES (418,37,'','成都','成都','chengdu',1.000000,1.000000,51.000000,79.000000,34.000000,34.000000,15.000000,17.000000,37.000000,97.000000,24.000000,70.000000,11.000000,26.000000,'None','优','1433A','三瓦窑','2014-03-06T14:00:00Z',1394085600,1394126175,1);
+INSERT INTO "pm2_5_data2014" VALUES (419,30,'','成都','成都','chengdu',1.000000,2.000000,42.000000,63.000000,39.000000,42.000000,19.000000,30.000000,30.000000,85.000000,15.000000,56.000000,11.000000,20.000000,'None','优','1434A','沙河铺','2014-03-06T14:00:00Z',1394085600,1394126176,1);
+INSERT INTO "pm2_5_data2014" VALUES (420,35,'','成都','成都','chengdu',0.000000,1.000000,49.000000,63.000000,51.000000,56.000000,30.000000,46.000000,31.000000,69.000000,24.000000,50.000000,16.000000,23.000000,'None','优','1435A','梁家巷','2014-03-06T14:00:00Z',1394085600,1394126177,1);
+INSERT INTO "pm2_5_data2014" VALUES (421,35,'','成都','成都','chengdu',0.000000,1.000000,34.000000,51.000000,50.000000,50.000000,24.000000,37.000000,34.000000,91.000000,24.000000,55.000000,15.000000,28.000000,'None','优','1436A','草堂寺','2014-03-06T14:00:00Z',1394085600,1394126178,1);
+INSERT INTO "pm2_5_data2014" VALUES (422,33,'','成都','成都','chengdu',0.000000,1.000000,13.000000,32.000000,42.000000,42.000000,16.000000,27.000000,30.000000,88.000000,23.000000,66.000000,14.000000,23.000000,'None','优','1437A','人民公园','2014-03-06T14:00:00Z',1394085600,1394126179,1);
+INSERT INTO "pm2_5_data2014" VALUES (423,25,'','成都','成都','chengdu',0.000000,0.000000,18.000000,19.000000,54.000000,96.000000,51.000000,86.000000,0.000000,44.000000,17.000000,38.000000,12.000000,13.000000,'None','优','1438A','灵岩寺','2014-03-06T14:00:00Z',1394085600,1394126180,1);
+INSERT INTO "pm2_5_data2014" VALUES (424,46,'','贵阳','贵阳','guiyang',0.000000,0.000000,19.000000,21.000000,48.000000,48.000000,33.000000,38.000000,46.000000,28.000000,21.000000,20.000000,26.000000,17.000000,'None','优','1439A','马鞍山','2014-03-06T14:00:00Z',1394085600,1394126181,1);
+INSERT INTO "pm2_5_data2014" VALUES (425,48,'','贵阳','贵阳','guiyang',1.000000,1.000000,30.000000,37.000000,39.000000,39.000000,25.000000,31.000000,48.000000,48.000000,30.000000,31.000000,37.000000,25.000000,'None','优','1440A','市环保站','2014-03-06T14:00:00Z',1394085600,1394126182,1);
+INSERT INTO "pm2_5_data2014" VALUES (426,73,'','贵阳','贵阳','guiyang',1.000000,1.000000,30.000000,33.000000,37.000000,41.000000,26.000000,34.000000,64.000000,52.000000,53.000000,28.000000,46.000000,20.000000,'细颗粒物(PM2.5)','良','1441A','金阳新区','2014-03-06T14:00:00Z',1394085600,1394126184,1);
+INSERT INTO "pm2_5_data2014" VALUES (427,35,'','贵阳','贵阳','guiyang',0.000000,0.000000,21.000000,28.000000,48.000000,48.000000,31.000000,38.000000,35.000000,46.000000,12.000000,29.000000,11.000000,13.000000,'None','优','1442A','乌当区','2014-03-06T14:00:00Z',1394085600,1394126185,1);
+INSERT INTO "pm2_5_data2014" VALUES (428,54,'','贵阳','贵阳','guiyang',0.000000,0.000000,22.000000,30.000000,48.000000,56.000000,37.000000,56.000000,43.000000,45.000000,38.000000,34.000000,58.000000,37.000000,'细颗粒物(PM2.5)','良','1443A','花溪区','2014-03-06T14:00:00Z',1394085600,1394126188,1);
+INSERT INTO "pm2_5_data2014" VALUES (429,45,'','贵阳','贵阳','guiyang',1.000000,1.000000,25.000000,37.000000,39.000000,39.000000,27.000000,35.000000,45.000000,49.000000,29.000000,33.000000,56.000000,43.000000,'None','优','1444A','小河区','2014-03-06T14:00:00Z',1394085600,1394126189,1);
+INSERT INTO "pm2_5_data2014" VALUES (430,32,'','贵阳','贵阳','guiyang',0.000000,1.000000,26.000000,36.000000,52.000000,56.000000,33.000000,49.000000,28.000000,49.000000,22.000000,35.000000,32.000000,29.000000,'None','优','1445A','鸿边门','2014-03-06T14:00:00Z',1394085600,1394126190,1);
+INSERT INTO "pm2_5_data2014" VALUES (431,33,'','贵阳','贵阳','guiyang',1.000000,1.000000,12.000000,19.000000,46.000000,48.000000,32.000000,36.000000,23.000000,37.000000,23.000000,31.000000,22.000000,7.000000,'None','优','1446A','冶金厅','2014-03-06T14:00:00Z',1394085600,1394126190,1);
+INSERT INTO "pm2_5_data2014" VALUES (432,0,'','贵阳','贵阳','guiyang',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1447A','太慈桥','2014-03-06T14:00:00Z',1394085600,1394126192,1);
+INSERT INTO "pm2_5_data2014" VALUES (433,54,'','昆明','昆明','kunming',0.000000,0.000000,17.000000,31.000000,113.000000,116.000000,88.000000,116.000000,58.000000,106.000000,34.000000,47.000000,13.000000,19.000000,'颗粒物(PM10)','良','1449A','关上','2014-03-06T14:00:00Z',1394085600,1394126193,1);
+INSERT INTO "pm2_5_data2014" VALUES (434,69,'','昆明','昆明','kunming',6.000000,1.000000,18.000000,20.000000,101.000000,111.000000,93.000000,106.000000,87.000000,72.000000,41.000000,40.000000,7.000000,18.000000,'颗粒物(PM10)','良','1450A','呈贡新区','2014-03-06T14:00:00Z',1394085600,1394126194,1);
+INSERT INTO "pm2_5_data2014" VALUES (435,33,'','昆明','昆明','kunming',0.000000,0.000000,11.000000,15.000000,104.000000,114.000000,96.000000,113.000000,32.000000,53.000000,21.000000,31.000000,19.000000,35.000000,'None','优','1451A','西山森林公园','2014-03-06T14:00:00Z',1394085600,1394126195,1);
+INSERT INTO "pm2_5_data2014" VALUES (436,84,'','昆明','昆明','kunming',0.000000,0.000000,16.000000,54.000000,102.000000,105.000000,74.000000,100.000000,0.000000,59.000000,62.000000,76.000000,6.000000,33.000000,'细颗粒物(PM2.5)','良','1452A','龙泉镇','2014-03-06T14:00:00Z',1394085600,1394126196,1);
+INSERT INTO "pm2_5_data2014" VALUES (437,40,'','昆明','昆明','kunming',0.000000,0.000000,21.000000,37.000000,32.000000,36.000000,22.000000,35.000000,40.000000,72.000000,28.000000,42.000000,11.000000,26.000000,'None','优','1453A','东风东路','2014-03-06T14:00:00Z',1394085600,1394126197,1);
+INSERT INTO "pm2_5_data2014" VALUES (438,38,'','昆明','昆明','kunming',0.000000,0.000000,20.000000,48.000000,99.000000,105.000000,74.000000,100.000000,38.000000,76.000000,25.000000,46.000000,6.000000,28.000000,'None','优','1454A','金鼎山','2014-03-06T14:00:00Z',1394085600,1394126198,1);
+INSERT INTO "pm2_5_data2014" VALUES (439,51,'','昆明','昆明','kunming',0.000000,1.000000,0.000000,59.000000,94.000000,101.000000,74.000000,94.000000,52.000000,100.000000,32.000000,52.000000,11.000000,36.000000,'颗粒物(PM10)','良','1455A','碧鸡广场','2014-03-06T14:00:00Z',1394085600,1394126200,1);
+INSERT INTO "pm2_5_data2014" VALUES (440,32,'','拉萨','拉萨','lasa',0.000000,0.000000,4.000000,8.000000,101.000000,101.000000,73.000000,91.000000,20.000000,40.000000,13.000000,26.000000,5.000000,5.000000,'None','优','1456A','八廓街','2014-03-06T14:00:00Z',1394085600,1394126201,1);
+INSERT INTO "pm2_5_data2014" VALUES (441,0,'','拉萨','拉萨','lasa',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1457A','市环保局','2014-03-06T14:00:00Z',1394085600,1394126203,1);
+INSERT INTO "pm2_5_data2014" VALUES (442,36,'','拉萨','拉萨','lasa',0.000000,0.000000,3.000000,13.000000,114.000000,114.000000,77.000000,100.000000,18.000000,39.000000,9.000000,13.000000,6.000000,7.000000,'None','优','1458A','区监测站','2014-03-06T14:00:00Z',1394085600,1394126204,1);
+INSERT INTO "pm2_5_data2014" VALUES (443,30,'','拉萨','拉萨','lasa',0.000000,0.000000,2.000000,4.000000,95.000000,95.000000,71.000000,89.000000,21.000000,25.000000,11.000000,14.000000,10.000000,11.000000,'None','优','1459A','西藏大学','2014-03-06T14:00:00Z',1394085600,1394126205,1);
+INSERT INTO "pm2_5_data2014" VALUES (444,88,'','拉萨','拉萨','lasa',2.000000,2.000000,4.000000,17.000000,117.000000,117.000000,73.000000,103.000000,123.000000,85.000000,65.000000,37.000000,6.000000,7.000000,'细颗粒物(PM2.5)','良','1460A','区辐射站','2014-03-06T14:00:00Z',1394085600,1394126206,1);
+INSERT INTO "pm2_5_data2014" VALUES (445,31,'','拉萨','拉萨','lasa',0.000000,0.000000,1.000000,7.000000,99.000000,99.000000,67.000000,91.000000,18.000000,37.000000,9.000000,13.000000,5.000000,5.000000,'None','优','1461A','拉萨火车站','2014-03-06T14:00:00Z',1394085600,1394126207,1);
+INSERT INTO "pm2_5_data2014" VALUES (446,119,'','西安','西安','xian',2.000000,2.000000,79.000000,71.000000,17.000000,36.000000,17.000000,36.000000,157.000000,179.000000,90.000000,109.000000,118.000000,94.000000,'细颗粒物(PM2.5)','轻度污染','1462A','高压开关厂','2014-03-06T14:00:00Z',1394085600,1394126208,1);
+INSERT INTO "pm2_5_data2014" VALUES (447,199,'','西安','西安','xian',3.000000,3.000000,31.000000,30.000000,14.000000,27.000000,9.000000,26.000000,149.000000,206.000000,149.000000,173.000000,47.000000,36.000000,'细颗粒物(PM2.5)','中度污染','1463A','兴庆小区','2014-03-06T14:00:00Z',1394085600,1394126209,1);
+INSERT INTO "pm2_5_data2014" VALUES (448,144,'','西安','西安','xian',0.000000,0.000000,18.000000,19.000000,20.000000,22.000000,18.000000,21.000000,123.000000,182.000000,110.000000,136.000000,7.000000,11.000000,'细颗粒物(PM2.5)','轻度污染','1464A','纺织城','2014-03-06T14:00:00Z',1394085600,1394126210,1);
+INSERT INTO "pm2_5_data2014" VALUES (449,132,'','西安','西安','xian',2.000000,1.000000,57.000000,54.000000,20.000000,22.000000,20.000000,20.000000,169.000000,218.000000,100.000000,107.000000,88.000000,55.000000,'细颗粒物(PM2.5)','轻度污染','1465A','小寨','2014-03-06T14:00:00Z',1394085600,1394126211,1);
+INSERT INTO "pm2_5_data2014" VALUES (450,186,'','西安','西安','xian',2.000000,2.000000,36.000000,36.000000,11.000000,18.000000,9.000000,18.000000,0.000000,215.000000,140.000000,166.000000,67.000000,39.000000,'细颗粒物(PM2.5)','中度污染','1466A','市人民体育场','2014-03-06T14:00:00Z',1394085600,1394126214,1);
+INSERT INTO "pm2_5_data2014" VALUES (451,170,'','西安','西安','xian',2.000000,1.000000,47.000000,39.000000,11.000000,22.000000,13.000000,22.000000,169.000000,179.000000,129.000000,132.000000,28.000000,18.000000,'细颗粒物(PM2.5)','中度污染','1467A','高新西区','2014-03-06T14:00:00Z',1394085600,1394126215,1);
+INSERT INTO "pm2_5_data2014" VALUES (452,169,'','西安','西安','xian',2.000000,2.000000,71.000000,62.000000,17.000000,31.000000,13.000000,31.000000,0.000000,200.000000,128.000000,152.000000,5.000000,7.000000,'细颗粒物(PM2.5)','中度污染','1468A','经开区','2014-03-06T14:00:00Z',1394085600,1394126216,1);
+INSERT INTO "pm2_5_data2014" VALUES (453,182,'','西安','西安','xian',2.000000,2.000000,60.000000,52.000000,17.000000,24.000000,17.000000,20.000000,168.000000,199.000000,137.000000,135.000000,70.000000,67.000000,'细颗粒物(PM2.5)','中度污染','1469A','长安区','2014-03-06T14:00:00Z',1394085600,1394126217,1);
+INSERT INTO "pm2_5_data2014" VALUES (454,212,'','西安','西安','xian',4.000000,4.000000,73.000000,78.000000,2.000000,8.000000,2.000000,8.000000,230.000000,256.000000,162.000000,148.000000,31.000000,38.000000,'细颗粒物(PM2.5)','重度污染','1470A','阎良区','2014-03-06T14:00:00Z',1394085600,1394126218,1);
+INSERT INTO "pm2_5_data2014" VALUES (455,104,'','西安','西安','xian',3.000000,3.000000,73.000000,69.000000,12.000000,19.000000,14.000000,19.000000,134.000000,160.000000,78.000000,120.000000,51.000000,58.000000,'细颗粒物(PM2.5)','轻度污染','1471A','临潼区','2014-03-06T14:00:00Z',1394085600,1394126219,1);
+INSERT INTO "pm2_5_data2014" VALUES (456,169,'','西安','西安','xian',2.000000,2.000000,37.000000,35.000000,19.000000,37.000000,16.000000,37.000000,0.000000,128.000000,128.000000,165.000000,93.000000,36.000000,'细颗粒物(PM2.5)','中度污染','1472A','草滩','2014-03-06T14:00:00Z',1394085600,1394126221,1);
+INSERT INTO "pm2_5_data2014" VALUES (457,128,'','西安','西安','xian',3.000000,2.000000,42.000000,47.000000,9.000000,15.000000,8.000000,15.000000,120.000000,147.000000,97.000000,109.000000,88.000000,62.000000,'细颗粒物(PM2.5)','轻度污染','1473A','曲江文化产业集团','2014-03-06T14:00:00Z',1394085600,1394126221,1);
+INSERT INTO "pm2_5_data2014" VALUES (458,159,'','西安','西安','xian',3.000000,3.000000,42.000000,43.000000,21.000000,24.000000,15.000000,24.000000,133.000000,169.000000,121.000000,127.000000,18.000000,15.000000,'细颗粒物(PM2.5)','中度污染','1474A','广运潭','2014-03-06T14:00:00Z',1394085600,1394126222,1);
+INSERT INTO "pm2_5_data2014" VALUES (459,500,'','兰州','兰州','lanzhou',2.000000,0.000000,54.000000,45.000000,1200.000000,1200.000000,300.000000,300.000000,0.000000,121.000000,57.000000,41.000000,13.000000,22.000000,'臭氧1小时','严重污染','1475A','职工医院','2014-03-06T14:00:00Z',1394085600,1394126223,1);
+INSERT INTO "pm2_5_data2014" VALUES (460,103,'','兰州','兰州','lanzhou',0.000000,0.000000,33.000000,34.000000,58.000000,58.000000,39.000000,53.000000,156.000000,132.000000,71.000000,41.000000,34.000000,44.000000,'颗粒物(PM10)','轻度污染','1476A','兰炼宾馆','2014-03-06T14:00:00Z',1394085600,1394126224,1);
+INSERT INTO "pm2_5_data2014" VALUES (461,70,'','兰州','兰州','lanzhou',0.000000,0.000000,18.000000,20.000000,95.000000,96.000000,54.000000,91.000000,89.000000,112.000000,29.000000,34.000000,11.000000,13.000000,'颗粒物(PM10)','良','1477A','榆中兰大校区','2014-03-06T14:00:00Z',1394085600,1394126226,1);
+INSERT INTO "pm2_5_data2014" VALUES (462,94,'','兰州','兰州','lanzhou',0.000000,0.000000,34.000000,47.000000,46.000000,1200.000000,20.000000,300.000000,138.000000,146.000000,42.000000,39.000000,64.000000,57.000000,'颗粒物(PM10)','良','1478A','生物制品所','2014-03-06T14:00:00Z',1394085600,1394126228,1);
+INSERT INTO "pm2_5_data2014" VALUES (463,97,'','兰州','兰州','lanzhou',0.000000,1.000000,45.000000,60.000000,86.000000,88.000000,45.000000,88.000000,144.000000,129.000000,52.000000,38.000000,18.000000,30.000000,'颗粒物(PM10)','良','1479A','铁路设计院','2014-03-06T14:00:00Z',1394085600,1394126229,1);
+INSERT INTO "pm2_5_data2014" VALUES (464,95,'','西宁','西宁','xining',0.000000,0.000000,34.000000,36.000000,82.000000,82.000000,47.000000,73.000000,139.000000,128.000000,64.000000,47.000000,35.000000,36.000000,'颗粒物(PM10)','良','1480A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126230,1);
+INSERT INTO "pm2_5_data2014" VALUES (465,32,'','西宁','西宁','xining',1.000000,1.000000,28.000000,21.000000,27.000000,35.000000,20.000000,34.000000,32.000000,110.000000,12.000000,36.000000,23.000000,20.000000,'None','优','1481A','省医药仓库','2014-03-06T14:00:00Z',1394085600,1394126231,1);
+INSERT INTO "pm2_5_data2014" VALUES (466,68,'','西宁','西宁','xining',1.000000,0.000000,26.000000,28.000000,12.000000,38.000000,9.000000,35.000000,86.000000,91.000000,47.000000,40.000000,17.000000,17.000000,'颗粒物(PM10)','良','1482A','四陆医院','2014-03-06T14:00:00Z',1394085600,1394126232,1);
+INSERT INTO "pm2_5_data2014" VALUES (467,0,'','西宁','西宁','xining',0.000000,0.000000,0.000000,26.000000,0.000000,20.000000,10.000000,19.000000,0.000000,136.000000,0.000000,44.000000,0.000000,27.000000,'None','None','1483A','第五水厂','2014-03-06T14:00:00Z',1394085600,1394126233,1);
+INSERT INTO "pm2_5_data2014" VALUES (468,27,'','银川','银川','yinchuan',0.000000,0.000000,9.000000,13.000000,46.000000,54.000000,40.000000,52.000000,27.000000,34.000000,11.000000,15.000000,45.000000,63.000000,'None','优','1484A','贺兰山马莲口','2014-03-06T14:00:00Z',1394085600,1394126234,1);
+INSERT INTO "pm2_5_data2014" VALUES (469,42,'','银川','银川','yinchuan',0.000000,0.000000,36.000000,46.000000,65.000000,72.000000,30.000000,72.000000,33.000000,55.000000,29.000000,26.000000,116.000000,133.000000,'None','优','1486A','宁安大街','2014-03-06T14:00:00Z',1394085600,1394126235,1);
+INSERT INTO "pm2_5_data2014" VALUES (470,49,'','银川','银川','yinchuan',1.000000,1.000000,14.000000,24.000000,58.000000,64.000000,40.000000,63.000000,49.000000,65.000000,15.000000,29.000000,136.000000,137.000000,'None','优','1487A','宁化生活区','2014-03-06T14:00:00Z',1394085600,1394126235,1);
+INSERT INTO "pm2_5_data2014" VALUES (471,53,'','银川','银川','yinchuan',0.000000,0.000000,18.000000,28.000000,70.000000,81.000000,44.000000,81.000000,55.000000,65.000000,24.000000,35.000000,42.000000,70.000000,'颗粒物(PM10)','良','1488A','贺兰山东路','2014-03-06T14:00:00Z',1394085600,1394126236,1);
+INSERT INTO "pm2_5_data2014" VALUES (472,25,'','银川','银川','yinchuan',0.000000,1.000000,16.000000,33.000000,74.000000,80.000000,44.000000,80.000000,25.000000,65.000000,14.000000,31.000000,48.000000,68.000000,'None','优','1489A','学院路','2014-03-06T14:00:00Z',1394085600,1394126238,1);
+INSERT INTO "pm2_5_data2014" VALUES (473,303,'','乌鲁木齐','乌鲁木齐','wulumuqi',3.000000,2.000000,109.000000,99.000000,16.000000,36.000000,8.000000,33.000000,275.000000,177.000000,253.000000,164.000000,48.000000,30.000000,'细颗粒物(PM2.5)','严重污染','1490A','监测站','2014-03-06T14:00:00Z',1394085600,1394126240,1);
+INSERT INTO "pm2_5_data2014" VALUES (474,225,'','乌鲁木齐','乌鲁木齐','wulumuqi',4.000000,2.000000,160.000000,118.000000,17.000000,36.000000,10.000000,32.000000,367.000000,212.000000,144.000000,104.000000,60.000000,40.000000,'颗粒物(PM10)','重度污染','1491A','收费所','2014-03-06T14:00:00Z',1394085600,1394126241,1);
+INSERT INTO "pm2_5_data2014" VALUES (475,252,'','乌鲁木齐','乌鲁木齐','wulumuqi',2.000000,1.000000,80.000000,77.000000,52.000000,89.000000,22.000000,82.000000,225.000000,208.000000,202.000000,178.000000,109.000000,61.000000,'细颗粒物(PM2.5)','重度污染','1492A','新疆农科院农场','2014-03-06T14:00:00Z',1394085600,1394126243,1);
+INSERT INTO "pm2_5_data2014" VALUES (476,153,'','乌鲁木齐','乌鲁木齐','wulumuqi',5.000000,5.000000,108.000000,107.000000,27.000000,60.000000,9.000000,60.000000,255.000000,148.000000,94.000000,64.000000,95.000000,68.000000,'颗粒物(PM10)','中度污染','1493A','铁路局','2014-03-06T14:00:00Z',1394085600,1394126244,1);
+INSERT INTO "pm2_5_data2014" VALUES (477,350,'','乌鲁木齐','乌鲁木齐','wulumuqi',4.000000,3.000000,105.000000,96.000000,26.000000,46.000000,12.000000,38.000000,361.000000,246.000000,300.000000,191.000000,71.000000,52.000000,'细颗粒物(PM2.5)','严重污染','1494A','三十一中学','2014-03-06T14:00:00Z',1394085600,1394126245,1);
+INSERT INTO "pm2_5_data2014" VALUES (478,225,'','乌鲁木齐','乌鲁木齐','wulumuqi',2.000000,2.000000,77.000000,98.000000,24.000000,73.000000,12.000000,62.000000,200.000000,176.000000,175.000000,156.000000,61.000000,47.000000,'细颗粒物(PM2.5)','重度污染','1495A','七十四中学','2014-03-06T14:00:00Z',1394085600,1394126246,1);
+INSERT INTO "pm2_5_data2014" VALUES (479,229,'','乌鲁木齐','乌鲁木齐','wulumuqi',2.000000,1.000000,58.000000,82.000000,42.000000,60.000000,24.000000,57.000000,264.000000,213.000000,179.000000,117.000000,47.000000,44.000000,'细颗粒物(PM2.5)','重度污染','1496A','米东区环保局','2014-03-06T14:00:00Z',1394085600,1394126247,1);
+INSERT INTO "pm2_5_data2014" VALUES (480,72,'','重庆','重庆','zhongqing',0.000000,0.000000,21.000000,36.000000,55.000000,75.000000,21.000000,75.000000,79.000000,99.000000,52.000000,58.000000,30.000000,24.000000,'细颗粒物(PM2.5)','良','1428A','蔡家','2014-03-06T14:00:00Z',1394085600,1394126248,1);
+INSERT INTO "pm2_5_data2014" VALUES (481,38,'','重庆','重庆','zhongqing',1.000000,1.000000,11.000000,17.000000,84.000000,84.000000,75.000000,75.000000,38.000000,64.000000,23.000000,44.000000,29.000000,24.000000,'None','优','1430A','南泉','2014-03-06T14:00:00Z',1394085600,1394126249,1);
+INSERT INTO "pm2_5_data2014" VALUES (482,29,'','贵阳','贵阳','guiyang',0.000000,0.000000,14.000000,22.000000,63.000000,63.000000,48.000000,58.000000,27.000000,18.000000,20.000000,16.000000,42.000000,25.000000,'None','优','1552A','桐木岭','2014-03-06T14:00:00Z',1394085600,1394126250,1);
+INSERT INTO "pm2_5_data2014" VALUES (483,75,'','银川','银川','yinchuan',0.000000,0.000000,23.000000,42.000000,87.000000,94.000000,40.000000,93.000000,100.000000,75.000000,32.000000,41.000000,77.000000,248.000000,'颗粒物(PM10)','良','1485A','银湖巷','2014-03-06T14:00:00Z',1394085600,1394126251,1);
+INSERT INTO "pm2_5_data2014" VALUES (484,29,'','北京','北京','beijing',0.000000,0.000000,3.000000,28.000000,92.000000,92.000000,64.000000,86.000000,0.000000,42.000000,11.000000,19.000000,6.000000,17.000000,'None','优','1001A','万寿西宫','2014-03-06T14:00:00Z',1394085600,1394126253,1);
+INSERT INTO "pm2_5_data2014" VALUES (485,25,'','北京','北京','beijing',0.000000,0.000000,4.000000,3.000000,77.000000,84.000000,67.000000,79.000000,25.000000,22.000000,14.000000,10.000000,15.000000,10.000000,'None','优','1002A','定陵','2014-03-06T14:00:00Z',1394085600,1394126255,1);
+INSERT INTO "pm2_5_data2014" VALUES (486,25,'','北京','北京','beijing',0.000000,0.000000,12.000000,25.000000,78.000000,84.000000,61.000000,81.000000,0.000000,37.000000,11.000000,20.000000,8.000000,10.000000,'None','优','1003A','东四','2014-03-06T14:00:00Z',1394085600,1394126256,1);
+INSERT INTO "pm2_5_data2014" VALUES (487,24,'','北京','北京','beijing',0.000000,0.000000,19.000000,33.000000,74.000000,82.000000,52.000000,80.000000,5.000000,27.000000,3.000000,17.000000,9.000000,14.000000,'None','优','1004A','天坛','2014-03-06T14:00:00Z',1394085600,1394126257,1);
+INSERT INTO "pm2_5_data2014" VALUES (488,25,'','北京','北京','beijing',0.000000,0.000000,8.000000,27.000000,80.000000,80.000000,60.000000,75.000000,9.000000,31.000000,6.000000,19.000000,8.000000,14.000000,'None','优','1005A','农展馆','2014-03-06T14:00:00Z',1394085600,1394126257,1);
+INSERT INTO "pm2_5_data2014" VALUES (489,25,'','北京','北京','beijing',0.000000,0.000000,20.000000,38.000000,79.000000,79.000000,51.000000,76.000000,5.000000,29.000000,3.000000,18.000000,4.000000,18.000000,'None','优','1006A','官园','2014-03-06T14:00:00Z',1394085600,1394126258,1);
+INSERT INTO "pm2_5_data2014" VALUES (490,24,'','北京','北京','beijing',0.000000,0.000000,10.000000,47.000000,74.000000,74.000000,44.000000,63.000000,10.000000,45.000000,8.000000,22.000000,10.000000,25.000000,'None','优','1007A','海淀区万柳','2014-03-06T14:00:00Z',1394085600,1394126259,1);
+INSERT INTO "pm2_5_data2014" VALUES (491,25,'','北京','北京','beijing',0.000000,0.000000,17.000000,26.000000,80.000000,80.000000,70.000000,70.000000,13.000000,31.000000,6.000000,16.000000,3.000000,7.000000,'None','优','1008A','顺义新城','2014-03-06T14:00:00Z',1394085600,1394126261,1);
+INSERT INTO "pm2_5_data2014" VALUES (492,29,'','北京','北京','beijing',0.000000,0.000000,8.000000,18.000000,91.000000,91.000000,63.000000,84.000000,12.000000,22.000000,10.000000,11.000000,8.000000,15.000000,'None','优','1009A','怀柔镇','2014-03-06T14:00:00Z',1394085600,1394126262,1);
+INSERT INTO "pm2_5_data2014" VALUES (493,25,'','北京','北京','beijing',0.000000,0.000000,12.000000,24.000000,79.000000,79.000000,55.000000,76.000000,17.000000,26.000000,10.000000,14.000000,13.000000,23.000000,'None','优','1010A','昌平镇','2014-03-06T14:00:00Z',1394085600,1394126263,1);
+INSERT INTO "pm2_5_data2014" VALUES (494,25,'','北京','北京','beijing',0.000000,0.000000,10.000000,30.000000,77.000000,77.000000,53.000000,69.000000,10.000000,31.000000,3.000000,17.000000,10.000000,13.000000,'None','优','1011A','奥体中心','2014-03-06T14:00:00Z',1394085600,1394126264,1);
+INSERT INTO "pm2_5_data2014" VALUES (495,27,'','北京','北京','beijing',0.000000,2.000000,10.000000,36.000000,85.000000,90.000000,64.000000,89.000000,6.000000,44.000000,3.000000,21.000000,5.000000,14.000000,'None','优','1012A','古城','2014-03-06T14:00:00Z',1394085600,1394126266,1);
+INSERT INTO "pm2_5_data2014" VALUES (496,301,'','湘潭','湘潭','xiangtan',0.000000,0.000000,54.000000,72.000000,30.000000,38.000000,23.000000,34.000000,0.000000,120.000000,251.000000,116.000000,7.000000,15.000000,'细颗粒物(PM2.5)','严重污染','1508A','板塘','2014-03-06T14:00:00Z',1394085600,1394126267,1);
+INSERT INTO "pm2_5_data2014" VALUES (497,215,'','湘潭','湘潭','xiangtan',0.000000,1.000000,58.000000,55.000000,22.000000,34.000000,20.000000,34.000000,0.000000,142.000000,165.000000,85.000000,12.000000,25.000000,'细颗粒物(PM2.5)','重度污染','1511A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126268,1);
+INSERT INTO "pm2_5_data2014" VALUES (498,64,'','湘潭','湘潭','xiangtan',0.000000,1.000000,34.000000,49.000000,47.000000,59.000000,32.000000,59.000000,76.000000,142.000000,46.000000,93.000000,15.000000,28.000000,'细颗粒物(PM2.5)','良','1512A','江麓','2014-03-06T14:00:00Z',1394085600,1394126269,1);
+INSERT INTO "pm2_5_data2014" VALUES (499,69,'','湘潭','湘潭','xiangtan',0.000000,1.000000,41.000000,50.000000,53.000000,80.000000,43.000000,80.000000,54.000000,127.000000,50.000000,92.000000,24.000000,31.000000,'细颗粒物(PM2.5)','良','1513A','岳塘','2014-03-06T14:00:00Z',1394085600,1394126270,1);
+INSERT INTO "pm2_5_data2014" VALUES (500,59,'','湘潭','湘潭','xiangtan',0.000000,0.000000,66.000000,94.000000,52.000000,61.000000,36.000000,57.000000,50.000000,115.000000,42.000000,90.000000,7.000000,18.000000,'细颗粒物(PM2.5)','良','1514A','科大','2014-03-06T14:00:00Z',1394085600,1394126271,1);
+INSERT INTO "pm2_5_data2014" VALUES (501,49,'','株洲','株洲','zhuzhou',0.000000,0.000000,36.000000,48.000000,32.000000,42.000000,30.000000,42.000000,49.000000,100.000000,30.000000,67.000000,29.000000,36.000000,'None','优','1515A','天台山庄','2014-03-06T14:00:00Z',1394085600,1394126272,1);
+INSERT INTO "pm2_5_data2014" VALUES (502,61,'','株洲','株洲','zhuzhou',0.000000,0.000000,24.000000,40.000000,28.000000,33.000000,29.000000,31.000000,72.000000,110.000000,38.000000,83.000000,5.000000,16.000000,'颗粒物(PM10)','良','1518A','株冶医院','2014-03-06T14:00:00Z',1394085600,1394126273,1);
+INSERT INTO "pm2_5_data2014" VALUES (503,59,'','株洲','株洲','zhuzhou',0.000000,0.000000,11.000000,23.000000,53.000000,58.000000,52.000000,58.000000,67.000000,114.000000,31.000000,78.000000,12.000000,24.000000,'颗粒物(PM10)','良','1519A','市四中','2014-03-06T14:00:00Z',1394085600,1394126274,1);
+INSERT INTO "pm2_5_data2014" VALUES (504,52,'','株洲','株洲','zhuzhou',0.000000,1.000000,23.000000,38.000000,44.000000,54.000000,39.000000,54.000000,38.000000,63.000000,36.000000,76.000000,20.000000,32.000000,'细颗粒物(PM2.5)','良','1520A','火车站','2014-03-06T14:00:00Z',1394085600,1394126275,1);
+INSERT INTO "pm2_5_data2014" VALUES (505,54,'','株洲','株洲','zhuzhou',0.000000,1.000000,36.000000,49.000000,26.000000,38.000000,26.000000,38.000000,53.000000,106.000000,38.000000,77.000000,35.000000,44.000000,'细颗粒物(PM2.5)','良','1524A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126276,1);
+INSERT INTO "pm2_5_data2014" VALUES (506,49,'','株洲','株洲','zhuzhou',0.000000,0.000000,11.000000,15.000000,58.000000,69.000000,60.000000,69.000000,35.000000,74.000000,34.000000,54.000000,7.000000,10.000000,'None','优','1559A','大京风景区','2014-03-06T14:00:00Z',1394085600,1394126278,1);
+INSERT INTO "pm2_5_data2014" VALUES (507,138,'','湘潭','湘潭','xiangtan',1.000000,1.000000,22.000000,33.000000,47.000000,57.000000,41.000000,41.000000,0.000000,152.000000,105.000000,95.000000,17.000000,36.000000,'细颗粒物(PM2.5)','轻度污染','1562A','昭山','2014-03-06T14:00:00Z',1394085600,1394126280,1);
+INSERT INTO "pm2_5_data2014" VALUES (508,0,'','湘潭','湘潭','xiangtan',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1564A','韶山','2014-03-06T14:00:00Z',1394085600,1394126281,1);
+INSERT INTO "pm2_5_data2014" VALUES (509,55,'','河源','河源','heyuan',1.000000,1.000000,15.000000,15.000000,37.000000,45.000000,16.000000,45.000000,59.000000,45.000000,39.000000,32.000000,14.000000,13.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1696A','市自来水厂','2014-03-06T14:00:00Z',1394085600,1394126281,1);
+INSERT INTO "pm2_5_data2014" VALUES (510,66,'','河源','河源','heyuan',1.000000,1.000000,35.000000,34.000000,42.000000,42.000000,17.000000,39.000000,82.000000,56.000000,45.000000,38.000000,19.000000,20.000000,'颗粒物(PM10)','良','1697A','市三小','2014-03-06T14:00:00Z',1394085600,1394126282,1);
+INSERT INTO "pm2_5_data2014" VALUES (511,60,'','河源','河源','heyuan',0.000000,1.000000,18.000000,23.000000,45.000000,45.000000,18.000000,40.000000,52.000000,49.000000,43.000000,34.000000,17.000000,15.000000,'细颗粒物(PM2.5)','良','1698A','河源中学','2014-03-06T14:00:00Z',1394085600,1394126283,1);
+INSERT INTO "pm2_5_data2014" VALUES (512,105,'','清远','清远','qingyuan',2.000000,2.000000,46.000000,27.000000,13.000000,31.000000,3.000000,31.000000,95.000000,54.000000,79.000000,42.000000,18.000000,51.000000,'细颗粒物(PM2.5)','轻度污染','1702A','环保局','2014-03-06T14:00:00Z',1394085600,1394126284,1);
+INSERT INTO "pm2_5_data2014" VALUES (513,103,'','清远','清远','qingyuan',1.000000,1.000000,9.000000,7.000000,33.000000,496.000000,8.000000,131.000000,90.000000,51.000000,77.000000,40.000000,16.000000,16.000000,'细颗粒物(PM2.5)','轻度污染','1703A','凤城街办','2014-03-06T14:00:00Z',1394085600,1394126285,1);
+INSERT INTO "pm2_5_data2014" VALUES (514,37,'','营口','营口','yingkou',0.000000,0.000000,6.000000,30.000000,118.000000,124.000000,94.000000,123.000000,30.000000,42.000000,9.000000,17.000000,17.000000,48.000000,'None','优','1598A','三水厂','2014-03-06T14:00:00Z',1394085600,1394126286,1);
+INSERT INTO "pm2_5_data2014" VALUES (515,29,'','营口','营口','yingkou',0.000000,0.000000,7.000000,23.000000,92.000000,104.000000,78.000000,104.000000,20.000000,39.000000,13.000000,21.000000,16.000000,28.000000,'None','优','1599A','西炮台','2014-03-06T14:00:00Z',1394085600,1394126288,1);
+INSERT INTO "pm2_5_data2014" VALUES (516,27,'','丹东','丹东','dandong',0.000000,0.000000,5.000000,20.000000,78.000000,83.000000,64.000000,83.000000,27.000000,58.000000,11.000000,29.000000,31.000000,35.000000,'None','优','1600A','轴承厂','2014-03-06T14:00:00Z',1394085600,1394126289,1);
+INSERT INTO "pm2_5_data2014" VALUES (517,30,'','丹东','丹东','dandong',0.000000,0.000000,20.000000,27.000000,36.000000,57.000000,34.000000,56.000000,30.000000,59.000000,12.000000,31.000000,21.000000,29.000000,'None','优','1601A','财专','2014-03-06T14:00:00Z',1394085600,1394126291,1);
+INSERT INTO "pm2_5_data2014" VALUES (518,22,'','丹东','丹东','dandong',0.000000,0.000000,3.000000,13.000000,70.000000,79.000000,60.000000,72.000000,21.000000,39.000000,12.000000,25.000000,21.000000,30.000000,'None','优','1602A','元宝山水厂','2014-03-06T14:00:00Z',1394085600,1394126293,1);
+INSERT INTO "pm2_5_data2014" VALUES (519,25,'','丹东','丹东','dandong',0.000000,1.000000,14.000000,32.000000,65.000000,69.000000,49.000000,69.000000,25.000000,58.000000,14.000000,33.000000,20.000000,47.000000,'None','优','1603A','实验小学','2014-03-06T14:00:00Z',1394085600,1394126294,1);
+INSERT INTO "pm2_5_data2014" VALUES (520,23,'','盘锦','盘锦','panjin',1.000000,2.000000,5.000000,22.000000,68.000000,71.000000,57.000000,71.000000,23.000000,48.000000,13.000000,30.000000,17.000000,33.000000,'None','优','1604A','开发区','2014-03-06T14:00:00Z',1394085600,1394126296,1);
+INSERT INTO "pm2_5_data2014" VALUES (521,109,'','清远','清远','qingyuan',2.000000,1.000000,63.000000,41.000000,8.000000,38.000000,3.000000,36.000000,106.000000,73.000000,82.000000,60.000000,94.000000,65.000000,'细颗粒物(PM2.5)','轻度污染','1704A','扶贫区','2014-03-06T14:00:00Z',1394085600,1394126297,1);
+INSERT INTO "pm2_5_data2014" VALUES (522,44,'','玉溪','玉溪','yuxi',1.000000,1.000000,9.000000,19.000000,140.000000,156.000000,82.000000,156.000000,33.000000,51.000000,25.000000,34.000000,18.000000,30.000000,'None','优','1715A','东风水库','2014-03-06T14:00:00Z',1394085600,1394126298,1);
+INSERT INTO "pm2_5_data2014" VALUES (523,49,'','玉溪','玉溪','yuxi',0.000000,1.000000,12.000000,37.000000,0.000000,0.000000,0.000000,0.000000,39.000000,80.000000,34.000000,45.000000,9.000000,38.000000,'None','优','1716A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126299,1);
+INSERT INTO "pm2_5_data2014" VALUES (524,38,'','玉溪','玉溪','yuxi',0.000000,1.000000,4.000000,22.000000,113.000000,121.000000,57.000000,121.000000,28.000000,69.000000,26.000000,39.000000,6.000000,43.000000,'None','优','1717A','大营街镇','2014-03-06T14:00:00Z',1394085600,1394126300,1);
+INSERT INTO "pm2_5_data2014" VALUES (525,54,'','营口','营口','yingkou',0.000000,0.000000,11.000000,34.000000,77.000000,83.000000,51.000000,83.000000,58.000000,55.000000,23.000000,21.000000,14.000000,27.000000,'颗粒物(PM10)','良','1596A','营口大学','2014-03-06T14:00:00Z',1394085600,1394126301,1);
+INSERT INTO "pm2_5_data2014" VALUES (526,34,'','营口','营口','yingkou',0.000000,1.000000,10.000000,50.000000,106.000000,115.000000,82.000000,115.000000,17.000000,57.000000,8.000000,32.000000,16.000000,35.000000,'None','优','1597A','植物园','2014-03-06T14:00:00Z',1394085600,1394126302,1);
+INSERT INTO "pm2_5_data2014" VALUES (527,56,'','包头','包头','baotou',0.000000,0.000000,39.000000,28.000000,30.000000,38.000000,25.000000,38.000000,61.000000,50.000000,22.000000,15.000000,120.000000,45.000000,'颗粒物(PM10)','良','1585A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126303,1);
+INSERT INTO "pm2_5_data2014" VALUES (528,67,'','包头','包头','baotou',0.000000,0.000000,35.000000,27.000000,38.000000,46.000000,28.000000,46.000000,84.000000,54.000000,35.000000,21.000000,55.000000,71.000000,'颗粒物(PM10)','良','1586A','包百大楼','2014-03-06T14:00:00Z',1394085600,1394126305,1);
+INSERT INTO "pm2_5_data2014" VALUES (529,51,'','包头','包头','baotou',0.000000,2.000000,22.000000,39.000000,46.000000,50.000000,34.000000,49.000000,52.000000,83.000000,25.000000,36.000000,44.000000,64.000000,'颗粒物(PM10)','良','1587A','东河城环局','2014-03-06T14:00:00Z',1394085600,1394126307,1);
+INSERT INTO "pm2_5_data2014" VALUES (530,63,'','包头','包头','baotou',0.000000,0.000000,39.000000,23.000000,28.000000,33.000000,24.000000,33.000000,75.000000,58.000000,31.000000,20.000000,164.000000,41.000000,'颗粒物(PM10)','良','1588A','青山宾馆','2014-03-06T14:00:00Z',1394085600,1394126308,1);
+INSERT INTO "pm2_5_data2014" VALUES (531,46,'','包头','包头','baotou',0.000000,0.000000,40.000000,30.000000,62.000000,86.000000,46.000000,86.000000,46.000000,57.000000,16.000000,15.000000,117.000000,41.000000,'None','优','1589A','惠龙物流','2014-03-06T14:00:00Z',1394085600,1394126309,1);
+INSERT INTO "pm2_5_data2014" VALUES (532,47,'','包头','包头','baotou',0.000000,0.000000,21.000000,31.000000,47.000000,52.000000,34.000000,49.000000,47.000000,81.000000,14.000000,29.000000,44.000000,37.000000,'None','优','1590A','东河鸿龙湾','2014-03-06T14:00:00Z',1394085600,1394126310,1);
+INSERT INTO "pm2_5_data2014" VALUES (533,26,'','鄂尔多斯','鄂尔多斯','eerduosi',0.000000,0.000000,13.000000,35.000000,81.000000,81.000000,54.000000,81.000000,21.000000,57.000000,7.000000,13.000000,22.000000,73.000000,'None','优','1591A','综合楼','2014-03-06T14:00:00Z',1394085600,1394126311,1);
+INSERT INTO "pm2_5_data2014" VALUES (534,29,'','盘锦','盘锦','panjin',1.000000,1.000000,5.000000,25.000000,51.000000,55.000000,41.000000,55.000000,29.000000,54.000000,16.000000,32.000000,26.000000,53.000000,'None','优','1605A','兴隆台','2014-03-06T14:00:00Z',1394085600,1394126313,1);
+INSERT INTO "pm2_5_data2014" VALUES (535,28,'','盘锦','盘锦','panjin',2.000000,2.000000,8.000000,15.000000,88.000000,92.000000,73.000000,92.000000,0.000000,35.000000,13.000000,21.000000,9.000000,15.000000,'None','优','1606A','鼎翔','2014-03-06T14:00:00Z',1394085600,1394126314,1);
+INSERT INTO "pm2_5_data2014" VALUES (536,51,'','葫芦岛','葫芦岛','huludao',1.000000,1.000000,10.000000,24.000000,108.000000,109.000000,92.000000,100.000000,51.000000,63.000000,23.000000,31.000000,31.000000,99.000000,'颗粒物(PM10)','良','1607A','葫芦岛市西山坡','2014-03-06T14:00:00Z',1394085600,1394126315,1);
+INSERT INTO "pm2_5_data2014" VALUES (537,23,'','葫芦岛','葫芦岛','huludao',0.000000,1.000000,16.000000,26.000000,71.000000,71.000000,59.000000,71.000000,19.000000,40.000000,6.000000,18.000000,32.000000,30.000000,'None','优','1608A','化工医院','2014-03-06T14:00:00Z',1394085600,1394126316,1);
+INSERT INTO "pm2_5_data2014" VALUES (538,48,'','葫芦岛','葫芦岛','huludao',0.000000,0.000000,13.000000,27.000000,51.000000,52.000000,38.000000,48.000000,48.000000,44.000000,14.000000,22.000000,21.000000,40.000000,'None','优','1609A','新区公园','2014-03-06T14:00:00Z',1394085600,1394126319,1);
+INSERT INTO "pm2_5_data2014" VALUES (539,30,'','葫芦岛','葫芦岛','huludao',1.000000,1.000000,11.000000,20.000000,76.000000,77.000000,67.000000,70.000000,30.000000,49.000000,14.000000,20.000000,65.000000,43.000000,'None','优','1610A','连山区政府','2014-03-06T14:00:00Z',1394085600,1394126319,1);
+INSERT INTO "pm2_5_data2014" VALUES (540,0,'','泉州','泉州','quanzhou',0.000000,1.000000,0.000000,16.000000,0.000000,68.000000,61.000000,68.000000,0.000000,47.000000,0.000000,27.000000,0.000000,9.000000,'None','None','1614A','清源山','2014-03-06T14:00:00Z',1394085600,1394126320,1);
+INSERT INTO "pm2_5_data2014" VALUES (541,29,'','鄂尔多斯','鄂尔多斯','eerduosi',0.000000,0.000000,8.000000,27.000000,90.000000,90.000000,64.000000,89.000000,13.000000,47.000000,8.000000,16.000000,11.000000,28.000000,'None','优','1592A','巴音孟克林场办事处','2014-03-06T14:00:00Z',1394085600,1394126321,1);
+INSERT INTO "pm2_5_data2014" VALUES (542,27,'','鄂尔多斯','鄂尔多斯','eerduosi',0.000000,0.000000,14.000000,20.000000,84.000000,94.000000,52.000000,94.000000,14.000000,23.000000,4.000000,9.000000,20.000000,16.000000,'None','优','1593A','康泽苑','2014-03-06T14:00:00Z',1394085600,1394126322,1);
+INSERT INTO "pm2_5_data2014" VALUES (543,26,'','鄂尔多斯','鄂尔多斯','eerduosi',0.000000,0.000000,9.000000,18.000000,83.000000,91.000000,46.000000,91.000000,13.000000,31.000000,8.000000,10.000000,25.000000,15.000000,'None','优','1594A','华泰汽车城','2014-03-06T14:00:00Z',1394085600,1394126324,1);
+INSERT INTO "pm2_5_data2014" VALUES (544,30,'','鄂尔多斯','鄂尔多斯','eerduosi',0.000000,0.000000,5.000000,15.000000,96.000000,99.000000,64.000000,99.000000,8.000000,40.000000,6.000000,12.000000,40.000000,31.000000,'None','优','1595A','奥林花园','2014-03-06T14:00:00Z',1394085600,1394126325,1);
+INSERT INTO "pm2_5_data2014" VALUES (545,36,'','泉州','泉州','quanzhou',0.000000,0.000000,18.000000,17.000000,47.000000,86.000000,54.000000,78.000000,36.000000,40.000000,22.000000,24.000000,4.000000,6.000000,'None','优','1611A','涂山街','2014-03-06T14:00:00Z',1394085600,1394126326,1);
+INSERT INTO "pm2_5_data2014" VALUES (546,55,'','泉州','泉州','quanzhou',0.000000,0.000000,26.000000,23.000000,55.000000,97.000000,62.000000,91.000000,59.000000,62.000000,23.000000,31.000000,6.000000,10.000000,'颗粒物(PM10)','良','1612A','津头埔','2014-03-06T14:00:00Z',1394085600,1394126327,1);
+INSERT INTO "pm2_5_data2014" VALUES (547,79,'','泉州','泉州','quanzhou',0.000000,0.000000,12.000000,12.000000,70.000000,109.000000,76.000000,103.000000,108.000000,72.000000,24.000000,26.000000,6.000000,8.000000,'颗粒物(PM10)','良','1613A','万安','2014-03-06T14:00:00Z',1394085600,1394126328,1);
+INSERT INTO "pm2_5_data2014" VALUES (548,104,'','莱芜','莱芜','laiwu',1.000000,1.000000,54.000000,82.000000,68.000000,89.000000,23.000000,86.000000,136.000000,158.000000,78.000000,65.000000,156.000000,169.000000,'细颗粒物(PM2.5)','轻度污染','1615A','植物油厂','2014-03-06T14:00:00Z',1394085600,1394126330,1);
+INSERT INTO "pm2_5_data2014" VALUES (549,60,'','德州','德州','dezhou',0.000000,0.000000,33.000000,55.000000,44.000000,50.000000,29.000000,50.000000,69.000000,134.000000,41.000000,93.000000,53.000000,107.000000,'颗粒物(PM10)','良','1623A','黑马集团','2014-03-06T14:00:00Z',1394085600,1394126332,1);
+INSERT INTO "pm2_5_data2014" VALUES (550,60,'','德州','德州','dezhou',1.000000,1.000000,23.000000,49.000000,43.000000,50.000000,29.000000,50.000000,69.000000,118.000000,40.000000,87.000000,40.000000,92.000000,'颗粒物(PM10)','良','1624A','监理站','2014-03-06T14:00:00Z',1394085600,1394126333,1);
+INSERT INTO "pm2_5_data2014" VALUES (551,125,'','聊城','聊城','liaocheng',1.000000,1.000000,69.000000,60.000000,21.000000,35.000000,12.000000,35.000000,149.000000,154.000000,95.000000,87.000000,364.000000,113.000000,'细颗粒物(PM2.5)','轻度污染','1625A','区政府','2014-03-06T14:00:00Z',1394085600,1394126334,1);
+INSERT INTO "pm2_5_data2014" VALUES (552,87,'','聊城','聊城','liaocheng',0.000000,1.000000,70.000000,59.000000,22.000000,39.000000,13.000000,39.000000,124.000000,140.000000,60.000000,64.000000,400.000000,103.000000,'颗粒物(PM10)','良','1627A','党校','2014-03-06T14:00:00Z',1394085600,1394126335,1);
+INSERT INTO "pm2_5_data2014" VALUES (553,65,'','滨州','滨州','binzhou',1.000000,1.000000,25.000000,59.000000,44.000000,50.000000,23.000000,50.000000,0.000000,125.000000,47.000000,79.000000,33.000000,77.000000,'细颗粒物(PM2.5)','良','1628A','市环保局','2014-03-06T14:00:00Z',1394085600,1394126336,1);
+INSERT INTO "pm2_5_data2014" VALUES (554,62,'','滨州','滨州','binzhou',1.000000,1.000000,27.000000,61.000000,41.000000,47.000000,22.000000,47.000000,66.000000,127.000000,44.000000,73.000000,46.000000,94.000000,'细颗粒物(PM2.5)','良','1629A','第二水厂','2014-03-06T14:00:00Z',1394085600,1394126337,1);
+INSERT INTO "pm2_5_data2014" VALUES (555,153,'','莱芜','莱芜','laiwu',1.000000,2.000000,66.000000,98.000000,74.000000,120.000000,24.000000,120.000000,118.000000,137.000000,117.000000,110.000000,122.000000,139.000000,'细颗粒物(PM2.5)','中度污染','1616A','技术学院','2014-03-06T14:00:00Z',1394085600,1394126338,1);
+INSERT INTO "pm2_5_data2014" VALUES (556,185,'','莱芜','莱芜','laiwu',1.000000,1.000000,55.000000,72.000000,21.000000,23.000000,10.000000,23.000000,163.000000,158.000000,139.000000,113.000000,220.000000,146.000000,'细颗粒物(PM2.5)','中度污染','1617A','日升国际','2014-03-06T14:00:00Z',1394085600,1394126339,1);
+INSERT INTO "pm2_5_data2014" VALUES (557,83,'','临沂','临沂','linyi',1.000000,1.000000,60.000000,65.000000,56.000000,77.000000,24.000000,77.000000,116.000000,110.000000,61.000000,70.000000,96.000000,48.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1618A','沂河小区','2014-03-06T14:00:00Z',1394085600,1394126339,1);
+INSERT INTO "pm2_5_data2014" VALUES (558,76,'','临沂','临沂','linyi',0.000000,1.000000,32.000000,65.000000,51.000000,51.000000,24.000000,48.000000,101.000000,114.000000,47.000000,62.000000,39.000000,70.000000,'颗粒物(PM10)','良','1619A','鲁南制药厂','2014-03-06T14:00:00Z',1394085600,1394126340,1);
+INSERT INTO "pm2_5_data2014" VALUES (559,67,'','临沂','临沂','linyi',1.000000,2.000000,30.000000,68.000000,43.000000,43.000000,24.000000,42.000000,70.000000,151.000000,48.000000,75.000000,51.000000,131.000000,'细颗粒物(PM2.5)','良','1620A','新光毛纺厂','2014-03-06T14:00:00Z',1394085600,1394126342,1);
+INSERT INTO "pm2_5_data2014" VALUES (560,93,'','临沂','临沂','linyi',1.000000,1.000000,69.000000,66.000000,21.000000,29.000000,15.000000,29.000000,135.000000,135.000000,61.000000,79.000000,142.000000,55.000000,'颗粒物(PM10)','良','1621A','河东保险公司','2014-03-06T14:00:00Z',1394085600,1394126344,1);
+INSERT INTO "pm2_5_data2014" VALUES (561,68,'','德州','德州','dezhou',1.000000,1.000000,33.000000,63.000000,54.000000,225.000000,52.000000,61.000000,85.000000,154.000000,38.000000,91.000000,59.000000,128.000000,'颗粒物(PM10)','良','1622A','儿童乐园','2014-03-06T14:00:00Z',1394085600,1394126346,1);
+INSERT INTO "pm2_5_data2014" VALUES (562,65,'','枣庄','枣庄','zaozhuang',0.000000,0.000000,16.000000,46.000000,87.000000,87.000000,53.000000,67.000000,79.000000,121.000000,46.000000,76.000000,52.000000,72.000000,'颗粒物(PM10)','良','1638A','薛城环保局','2014-03-06T14:00:00Z',1394085600,1394126347,1);
+INSERT INTO "pm2_5_data2014" VALUES (563,88,'','枣庄','枣庄','zaozhuang',0.000000,0.000000,9.000000,25.000000,89.000000,89.000000,70.000000,77.000000,126.000000,148.000000,49.000000,65.000000,34.000000,34.000000,'颗粒物(PM10)','良','1639A','峄城区政府','2014-03-06T14:00:00Z',1394085600,1394126349,1);
+INSERT INTO "pm2_5_data2014" VALUES (564,82,'','枣庄','枣庄','zaozhuang',0.000000,0.000000,24.000000,60.000000,77.000000,77.000000,42.000000,66.000000,114.000000,147.000000,54.000000,82.000000,19.000000,33.000000,'颗粒物(PM10)','良','1640A','台儿庄区环保局','2014-03-06T14:00:00Z',1394085600,1394126350,1);
+INSERT INTO "pm2_5_data2014" VALUES (565,73,'','枣庄','枣庄','zaozhuang',0.000000,0.000000,8.000000,13.000000,90.000000,96.000000,76.000000,76.000000,96.000000,94.000000,36.000000,51.000000,41.000000,38.000000,'颗粒物(PM10)','良','1641A','山亭区环保局','2014-03-06T14:00:00Z',1394085600,1394126350,1);
+INSERT INTO "pm2_5_data2014" VALUES (566,62,'','烟台','烟台','yantai',0.000000,0.000000,8.000000,41.000000,38.000000,78.000000,25.000000,78.000000,56.000000,75.000000,44.000000,46.000000,17.000000,36.000000,'细颗粒物(PM2.5)','良','1642A','开发区','2014-03-06T14:00:00Z',1394085600,1394126351,1);
+INSERT INTO "pm2_5_data2014" VALUES (567,73,'','滨州','滨州','binzhou',1.000000,1.000000,20.000000,43.000000,63.000000,63.000000,28.000000,45.000000,63.000000,120.000000,53.000000,96.000000,41.000000,88.000000,'细颗粒物(PM2.5)','良','1630A','北中新校','2014-03-06T14:00:00Z',1394085600,1394126353,1);
+INSERT INTO "pm2_5_data2014" VALUES (568,110,'','淄博','淄博','zibo',0.000000,1.000000,25.000000,76.000000,55.000000,55.000000,22.000000,48.000000,0.000000,220.000000,83.000000,140.000000,70.000000,240.000000,'细颗粒物(PM2.5)','轻度污染','1631A','人民公园','2014-03-06T14:00:00Z',1394085600,1394126354,1);
+INSERT INTO "pm2_5_data2014" VALUES (569,72,'','淄博','淄博','zibo',0.000000,1.000000,34.000000,97.000000,50.000000,50.000000,26.000000,47.000000,77.000000,223.000000,52.000000,109.000000,82.000000,203.000000,'细颗粒物(PM2.5)','良','1632A','东风化工厂','2014-03-06T14:00:00Z',1394085600,1394126355,1);
+INSERT INTO "pm2_5_data2014" VALUES (570,193,'','淄博','淄博','zibo',1.000000,2.000000,93.000000,93.000000,52.000000,67.000000,22.000000,67.000000,207.000000,206.000000,145.000000,138.000000,208.000000,218.000000,'细颗粒物(PM2.5)','中度污染','1633A','双山','2014-03-06T14:00:00Z',1394085600,1394126356,1);
+INSERT INTO "pm2_5_data2014" VALUES (571,160,'','淄博','淄博','zibo',0.000000,2.000000,87.000000,112.000000,51.000000,51.000000,26.000000,41.000000,146.000000,215.000000,122.000000,162.000000,0.000000,302.000000,'细颗粒物(PM2.5)','中度污染','1634A','气象站','2014-03-06T14:00:00Z',1394085600,1394126358,1);
+INSERT INTO "pm2_5_data2014" VALUES (572,69,'','淄博','淄博','zibo',1.000000,2.000000,29.000000,69.000000,70.000000,185.000000,36.000000,99.000000,88.000000,183.000000,37.000000,95.000000,51.000000,175.000000,'颗粒物(PM10)','良','1635A','莆田园','2014-03-06T14:00:00Z',1394085600,1394126360,1);
+INSERT INTO "pm2_5_data2014" VALUES (573,104,'','淄博','淄博','zibo',1.000000,2.000000,36.000000,74.000000,54.000000,192.000000,57.000000,74.000000,93.000000,181.000000,78.000000,127.000000,199.000000,145.000000,'细颗粒物(PM2.5)','轻度污染','1636A','三金集团','2014-03-06T14:00:00Z',1394085600,1394126361,1);
+INSERT INTO "pm2_5_data2014" VALUES (574,73,'','枣庄','枣庄','zaozhuang',0.000000,0.000000,16.000000,40.000000,110.000000,111.000000,76.000000,94.000000,96.000000,167.000000,44.000000,80.000000,60.000000,92.000000,'颗粒物(PM10)','良','1637A','市中区政府','2014-03-06T14:00:00Z',1394085600,1394126362,1);
+INSERT INTO "pm2_5_data2014" VALUES (575,145,'','潍坊','潍坊','weifang',1.000000,1.000000,51.000000,56.000000,98.000000,109.000000,53.000000,105.000000,190.000000,175.000000,111.000000,100.000000,123.000000,74.000000,'细颗粒物(PM2.5)','轻度污染','1651A','共达公司','2014-03-06T14:00:00Z',1394085600,1394126363,1);
+INSERT INTO "pm2_5_data2014" VALUES (576,135,'','潍坊','潍坊','weifang',1.000000,1.000000,22.000000,38.000000,99.000000,114.000000,54.000000,113.000000,160.000000,164.000000,103.000000,100.000000,70.000000,80.000000,'细颗粒物(PM2.5)','轻度污染','1652A','寒亭监测站','2014-03-06T14:00:00Z',1394085600,1394126364,1);
+INSERT INTO "pm2_5_data2014" VALUES (577,114,'','济宁','济宁','jining',0.000000,0.000000,40.000000,56.000000,62.000000,62.000000,25.000000,54.000000,145.000000,160.000000,86.000000,74.000000,94.000000,118.000000,'细颗粒物(PM2.5)','轻度污染','1653A','火炬城','2014-03-06T14:00:00Z',1394085600,1394126365,1);
+INSERT INTO "pm2_5_data2014" VALUES (578,123,'','济宁','济宁','jining',0.000000,1.000000,44.000000,58.000000,59.000000,59.000000,27.000000,54.000000,196.000000,188.000000,91.000000,78.000000,91.000000,118.000000,'颗粒物(PM10)','轻度污染','1654A','监测站','2014-03-06T14:00:00Z',1394085600,1394126366,1);
+INSERT INTO "pm2_5_data2014" VALUES (579,140,'','济宁','济宁','jining',1.000000,1.000000,33.000000,55.000000,79.000000,79.000000,31.000000,63.000000,145.000000,132.000000,107.000000,86.000000,86.000000,115.000000,'细颗粒物(PM2.5)','轻度污染','1655A','电化厂','2014-03-06T14:00:00Z',1394085600,1394126367,1);
+INSERT INTO "pm2_5_data2014" VALUES (580,43,'','烟台','烟台','yantai',0.000000,0.000000,23.000000,57.000000,37.000000,38.000000,23.000000,38.000000,0.000000,64.000000,30.000000,38.000000,24.000000,47.000000,'None','优','1643A','轴承厂','2014-03-06T14:00:00Z',1394085600,1394126368,1);
+INSERT INTO "pm2_5_data2014" VALUES (581,41,'','烟台','烟台','yantai',0.000000,0.000000,24.000000,54.000000,105.000000,106.000000,64.000000,106.000000,41.000000,80.000000,25.000000,45.000000,24.000000,36.000000,'None','优','1644A','西郊化工站','2014-03-06T14:00:00Z',1394085600,1394126371,1);
+INSERT INTO "pm2_5_data2014" VALUES (582,44,'','烟台','烟台','yantai',0.000000,0.000000,20.000000,44.000000,85.000000,87.000000,54.000000,87.000000,44.000000,55.000000,30.000000,37.000000,11.000000,30.000000,'None','优','1645A','莱山环保局','2014-03-06T14:00:00Z',1394085600,1394126372,1);
+INSERT INTO "pm2_5_data2014" VALUES (583,46,'','烟台','烟台','yantai',0.000000,1.000000,21.000000,56.000000,96.000000,106.000000,53.000000,106.000000,38.000000,88.000000,32.000000,54.000000,15.000000,25.000000,'None','优','1646A','福山环保局','2014-03-06T14:00:00Z',1394085600,1394126373,1);
+INSERT INTO "pm2_5_data2014" VALUES (584,57,'','烟台','烟台','yantai',0.000000,1.000000,16.000000,39.000000,88.000000,97.000000,50.000000,97.000000,63.000000,84.000000,37.000000,49.000000,19.000000,29.000000,'颗粒物(PM10)','良','1647A','牟平环保局','2014-03-06T14:00:00Z',1394085600,1394126374,1);
+INSERT INTO "pm2_5_data2014" VALUES (585,175,'','潍坊','潍坊','weifang',1.000000,1.000000,43.000000,61.000000,106.000000,124.000000,64.000000,123.000000,192.000000,162.000000,132.000000,99.000000,97.000000,87.000000,'细颗粒物(PM2.5)','中度污染','1648A','仲裁委','2014-03-06T14:00:00Z',1394085600,1394126375,1);
+INSERT INTO "pm2_5_data2014" VALUES (586,175,'','潍坊','潍坊','weifang',0.000000,1.000000,38.000000,61.000000,88.000000,113.000000,51.000000,113.000000,181.000000,157.000000,132.000000,109.000000,95.000000,101.000000,'细颗粒物(PM2.5)','中度污染','1649A','刘家园','2014-03-06T14:00:00Z',1394085600,1394126377,1);
+INSERT INTO "pm2_5_data2014" VALUES (587,155,'','潍坊','潍坊','weifang',1.000000,2.000000,29.000000,43.000000,76.000000,86.000000,53.000000,85.000000,187.000000,165.000000,118.000000,98.000000,85.000000,70.000000,'细颗粒物(PM2.5)','中度污染','1650A','环保局','2014-03-06T14:00:00Z',1394085600,1394126378,1);
+INSERT INTO "pm2_5_data2014" VALUES (588,52,'','威海','威海','weihai',0.000000,0.000000,5.000000,26.000000,118.000000,124.000000,86.000000,124.000000,54.000000,46.000000,34.000000,31.000000,13.000000,14.000000,'颗粒物(PM10)','良','1664A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126378,1);
+INSERT INTO "pm2_5_data2014" VALUES (589,77,'','东营','东营','dongying',0.000000,1.000000,25.000000,63.000000,87.000000,106.000000,49.000000,99.000000,104.000000,130.000000,44.000000,79.000000,53.000000,87.000000,'颗粒物(PM10)','良','1665A','西城阳光环保公司','2014-03-06T14:00:00Z',1394085600,1394126379,1);
+INSERT INTO "pm2_5_data2014" VALUES (590,54,'','东营','东营','dongying',1.000000,1.000000,18.000000,55.000000,78.000000,106.000000,46.000000,106.000000,57.000000,109.000000,37.000000,77.000000,32.000000,81.000000,'颗粒物(PM10)','良','1666A','市环保局','2014-03-06T14:00:00Z',1394085600,1394126380,1);
+INSERT INTO "pm2_5_data2014" VALUES (591,72,'','东营','东营','dongying',0.000000,1.000000,9.000000,61.000000,88.000000,117.000000,49.000000,117.000000,94.000000,138.000000,40.000000,70.000000,38.000000,52.000000,'颗粒物(PM10)','良','1667A','耿井村','2014-03-06T14:00:00Z',1394085600,1394126382,1);
+INSERT INTO "pm2_5_data2014" VALUES (592,58,'','汕头','汕头','shantou',0.000000,1.000000,29.000000,21.000000,41.000000,114.000000,44.000000,60.000000,65.000000,63.000000,36.000000,36.000000,5.000000,13.000000,'颗粒物(PM10)','良','1674A','金平子站','2014-03-06T14:00:00Z',1394085600,1394126382,1);
+INSERT INTO "pm2_5_data2014" VALUES (593,79,'','泰安','泰安','taian',0.000000,1.000000,55.000000,76.000000,21.000000,26.000000,11.000000,25.000000,108.000000,103.000000,57.000000,53.000000,88.000000,131.000000,'颗粒物(PM10)','良','1656A','监测站','2014-03-06T14:00:00Z',1394085600,1394126385,1);
+INSERT INTO "pm2_5_data2014" VALUES (594,89,'','泰安','泰安','taian',0.000000,0.000000,39.000000,53.000000,21.000000,40.000000,12.000000,40.000000,115.000000,111.000000,66.000000,54.000000,52.000000,81.000000,'细颗粒物(PM2.5)','良','1657A','人口学校','2014-03-06T14:00:00Z',1394085600,1394126386,1);
+INSERT INTO "pm2_5_data2014" VALUES (595,73,'','泰安','泰安','taian',0.000000,1.000000,39.000000,71.000000,15.000000,23.000000,8.000000,23.000000,83.000000,108.000000,53.000000,56.000000,77.000000,103.000000,'细颗粒物(PM2.5)','良','1658A','电力学校','2014-03-06T14:00:00Z',1394085600,1394126387,1);
+INSERT INTO "pm2_5_data2014" VALUES (596,108,'','日照','日照','rizhao',1.000000,1.000000,47.000000,54.000000,71.000000,82.000000,38.000000,72.000000,145.000000,122.000000,81.000000,72.000000,49.000000,36.000000,'细颗粒物(PM2.5)','轻度污染','1659A','监测站','2014-03-06T14:00:00Z',1394085600,1394126388,1);
+INSERT INTO "pm2_5_data2014" VALUES (597,120,'','日照','日照','rizhao',1.000000,1.000000,62.000000,54.000000,62.000000,82.000000,38.000000,82.000000,181.000000,113.000000,91.000000,62.000000,56.000000,39.000000,'细颗粒物(PM2.5)','轻度污染','1660A','市政府广场','2014-03-06T14:00:00Z',1394085600,1394126389,1);
+INSERT INTO "pm2_5_data2014" VALUES (598,81,'','日照','日照','rizhao',2.000000,2.000000,75.000000,64.000000,46.000000,83.000000,31.000000,77.000000,112.000000,105.000000,58.000000,55.000000,55.000000,31.000000,'颗粒物(PM10)','良','1661A','港务局','2014-03-06T14:00:00Z',1394085600,1394126390,1);
+INSERT INTO "pm2_5_data2014" VALUES (599,63,'','威海','威海','weihai',0.000000,0.000000,12.000000,12.000000,93.000000,156.000000,82.000000,106.000000,76.000000,46.000000,31.000000,29.000000,10.000000,12.000000,'颗粒物(PM10)','良','1662A','华夏技校','2014-03-06T14:00:00Z',1394085600,1394126391,1);
+INSERT INTO "pm2_5_data2014" VALUES (600,62,'','威海','威海','weihai',0.000000,0.000000,5.000000,12.000000,97.000000,105.000000,86.000000,104.000000,54.000000,43.000000,44.000000,33.000000,16.000000,14.000000,'细颗粒物(PM2.5)','良','1663A','山大分校','2014-03-06T14:00:00Z',1394085600,1394126392,1);
+INSERT INTO "pm2_5_data2014" VALUES (601,38,'','大同','大同','datong',2.000000,2.000000,29.000000,22.000000,41.000000,62.000000,35.000000,61.000000,38.000000,28.000000,11.000000,10.000000,48.000000,35.000000,'None','优','1722A','红旗广场','2014-03-06T14:00:00Z',1394085600,1394126393,1);
+INSERT INTO "pm2_5_data2014" VALUES (602,51,'','大同','大同','datong',1.000000,1.000000,27.000000,19.000000,32.000000,51.000000,26.000000,50.000000,52.000000,41.000000,14.000000,11.000000,54.000000,37.000000,'颗粒物(PM10)','良','1723A','云冈宾馆','2014-03-06T14:00:00Z',1394085600,1394126394,1);
+INSERT INTO "pm2_5_data2014" VALUES (603,51,'','大同','大同','datong',1.000000,1.000000,45.000000,24.000000,59.000000,86.000000,56.000000,75.000000,35.000000,32.000000,9.000000,9.000000,153.000000,51.000000,'二氧化硫','良','1724A','大同大学','2014-03-06T14:00:00Z',1394085600,1394126395,1);
+INSERT INTO "pm2_5_data2014" VALUES (604,40,'','大同','大同','datong',0.000000,1.000000,30.000000,16.000000,62.000000,93.000000,70.000000,92.000000,38.000000,21.000000,16.000000,14.000000,120.000000,36.000000,'None','优','1725A','安家小村','2014-03-06T14:00:00Z',1394085600,1394126398,1);
+INSERT INTO "pm2_5_data2014" VALUES (605,39,'','大同','大同','datong',1.000000,2.000000,20.000000,23.000000,35.000000,42.000000,24.000000,42.000000,39.000000,32.000000,21.000000,17.000000,33.000000,41.000000,'None','优','1726A','教育学院','2014-03-06T14:00:00Z',1394085600,1394126399,1);
+INSERT INTO "pm2_5_data2014" VALUES (606,57,'','汕头','汕头','shantou',0.000000,0.000000,30.000000,24.000000,49.000000,59.000000,51.000000,58.000000,64.000000,61.000000,35.000000,36.000000,6.000000,8.000000,'颗粒物(PM10)','良','1675A','龙湖子站','2014-03-06T14:00:00Z',1394085600,1394126400,1);
+INSERT INTO "pm2_5_data2014" VALUES (607,103,'','阳泉','阳泉','yangquan',1.000000,1.000000,9.000000,15.000000,61.000000,64.000000,26.000000,60.000000,87.000000,113.000000,77.000000,63.000000,81.000000,87.000000,'细颗粒物(PM2.5)','轻度污染','1738A','市中心','2014-03-06T14:00:00Z',1394085600,1394126401,1);
+INSERT INTO "pm2_5_data2014" VALUES (608,66,'','阳泉','阳泉','yangquan',1.000000,1.000000,39.000000,53.000000,18.000000,22.000000,21.000000,22.000000,82.000000,101.000000,26.000000,32.000000,32.000000,39.000000,'颗粒物(PM10)','良','1739A','赛鱼','2014-03-06T14:00:00Z',1394085600,1394126402,1);
+INSERT INTO "pm2_5_data2014" VALUES (609,58,'','阳泉','阳泉','yangquan',0.000000,1.000000,15.000000,22.000000,21.000000,21.000000,18.000000,21.000000,66.000000,103.000000,31.000000,44.000000,93.000000,111.000000,'颗粒物(PM10)','良','1740A','南庄','2014-03-06T14:00:00Z',1394085600,1394126402,1);
+INSERT INTO "pm2_5_data2014" VALUES (610,73,'','阳泉','阳泉','yangquan',0.000000,1.000000,18.000000,34.000000,61.000000,65.000000,25.000000,64.000000,96.000000,166.000000,49.000000,68.000000,11.000000,49.000000,'颗粒物(PM10)','良','1741A','白羊墅','2014-03-06T14:00:00Z',1394085600,1394126404,1);
+INSERT INTO "pm2_5_data2014" VALUES (611,89,'','阳泉','阳泉','yangquan',0.000000,0.000000,31.000000,68.000000,40.000000,40.000000,35.000000,40.000000,128.000000,160.000000,54.000000,71.000000,32.000000,42.000000,'颗粒物(PM10)','良','1742A','平坦','2014-03-06T14:00:00Z',1394085600,1394126405,1);
+INSERT INTO "pm2_5_data2014" VALUES (612,80,'','阳泉','阳泉','yangquan',0.000000,0.000000,49.000000,63.000000,17.000000,17.000000,14.000000,16.000000,78.000000,84.000000,59.000000,81.000000,81.000000,90.000000,'细颗粒物(PM2.5)','良','1743A','大阳泉','2014-03-06T14:00:00Z',1394085600,1394126406,1);
+INSERT INTO "pm2_5_data2014" VALUES (613,31,'','大同','大同','datong',2.000000,2.000000,48.000000,18.000000,80.000000,108.000000,85.000000,104.000000,10.000000,20.000000,6.000000,7.000000,93.000000,23.000000,'None','优','1721A','果树场','2014-03-06T14:00:00Z',1394085600,1394126407,1);
+INSERT INTO "pm2_5_data2014" VALUES (614,52,'','临汾','临汾','linfen',3.000000,4.000000,19.000000,36.000000,50.000000,50.000000,22.000000,23.000000,54.000000,84.000000,24.000000,50.000000,46.000000,76.000000,'颗粒物(PM10)','良','1735A','工商学校','2014-03-06T14:00:00Z',1394085600,1394126409,1);
+INSERT INTO "pm2_5_data2014" VALUES (615,68,'','临汾','临汾','linfen',1.000000,2.000000,12.000000,27.000000,63.000000,63.000000,32.000000,32.000000,86.000000,130.000000,45.000000,71.000000,20.000000,31.000000,'颗粒物(PM10)','良','1736A','市委','2014-03-06T14:00:00Z',1394085600,1394126411,1);
+INSERT INTO "pm2_5_data2014" VALUES (616,52,'','临汾','临汾','linfen',2.000000,2.000000,19.000000,33.000000,56.000000,56.000000,37.000000,37.000000,46.000000,71.000000,36.000000,68.000000,47.000000,74.000000,'细颗粒物(PM2.5)','良','1737A','南机场','2014-03-06T14:00:00Z',1394085600,1394126412,1);
+INSERT INTO "pm2_5_data2014" VALUES (617,40,'','柳州','柳州','liuzhou',0.000000,0.000000,11.000000,18.000000,42.000000,109.000000,40.000000,84.000000,0.000000,86.000000,28.000000,59.000000,6.000000,28.000000,'None','优','1870A','柳东小学','2014-03-06T14:00:00Z',1394085600,1394126413,1);
+INSERT INTO "pm2_5_data2014" VALUES (618,39,'','柳州','柳州','liuzhou',1.000000,1.000000,30.000000,31.000000,49.000000,71.000000,44.000000,71.000000,0.000000,68.000000,27.000000,49.000000,12.000000,43.000000,'None','优','1871A','环保监测站','2014-03-06T14:00:00Z',1394085600,1394126414,1);
+INSERT INTO "pm2_5_data2014" VALUES (619,214,'','长治','长治','changzhi',3.000000,3.000000,37.000000,36.000000,64.000000,64.000000,53.000000,62.000000,190.000000,176.000000,164.000000,110.000000,49.000000,47.000000,'细颗粒物(PM2.5)','重度污染','1727A','清华站','2014-03-06T14:00:00Z',1394085600,1394126415,1);
+INSERT INTO "pm2_5_data2014" VALUES (620,118,'','长治','长治','changzhi',1.000000,1.000000,57.000000,55.000000,71.000000,71.000000,32.000000,62.000000,164.000000,241.000000,89.000000,80.000000,35.000000,36.000000,'细颗粒物(PM2.5)','轻度污染','1728A','监测站','2014-03-06T14:00:00Z',1394085600,1394126416,1);
+INSERT INTO "pm2_5_data2014" VALUES (621,189,'','长治','长治','changzhi',1.000000,2.000000,25.000000,26.000000,40.000000,45.000000,19.000000,45.000000,210.000000,174.000000,142.000000,133.000000,71.000000,66.000000,'细颗粒物(PM2.5)','中度污染','1729A','澳瑞特','2014-03-06T14:00:00Z',1394085600,1394126417,1);
+INSERT INTO "pm2_5_data2014" VALUES (622,148,'','长治','长治','changzhi',1.000000,1.000000,45.000000,39.000000,93.000000,122.000000,81.000000,96.000000,159.000000,172.000000,113.000000,96.000000,55.000000,37.000000,'细颗粒物(PM2.5)','轻度污染','1730A','审计局','2014-03-06T14:00:00Z',1394085600,1394126418,1);
+INSERT INTO "pm2_5_data2014" VALUES (623,192,'','长治','长治','changzhi',1.000000,2.000000,39.000000,39.000000,74.000000,74.000000,31.000000,64.000000,220.000000,213.000000,144.000000,111.000000,30.000000,28.000000,'细颗粒物(PM2.5)','中度污染','1731A','长治八中','2014-03-06T14:00:00Z',1394085600,1394126419,1);
+INSERT INTO "pm2_5_data2014" VALUES (624,59,'','临汾','临汾','linfen',4.000000,4.000000,20.000000,38.000000,75.000000,75.000000,35.000000,36.000000,68.000000,142.000000,40.000000,73.000000,38.000000,64.000000,'颗粒物(PM10)','良','1732A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126420,1);
+INSERT INTO "pm2_5_data2014" VALUES (625,54,'','临汾','临汾','linfen',1.000000,3.000000,18.000000,35.000000,78.000000,116.000000,63.000000,63.000000,58.000000,95.000000,35.000000,53.000000,36.000000,49.000000,'颗粒物(PM10)','良','1733A','临钢医院','2014-03-06T14:00:00Z',1394085600,1394126422,1);
+INSERT INTO "pm2_5_data2014" VALUES (626,74,'','临汾','临汾','linfen',2.000000,2.000000,18.000000,32.000000,70.000000,70.000000,39.000000,42.000000,81.000000,128.000000,54.000000,93.000000,44.000000,73.000000,'细颗粒物(PM2.5)','良','1734A','技工学校','2014-03-06T14:00:00Z',1394085600,1394126424,1);
+INSERT INTO "pm2_5_data2014" VALUES (627,175,'','咸阳','咸阳','xianyang',2.000000,1.000000,37.000000,37.000000,22.000000,58.000000,13.000000,58.000000,164.000000,163.000000,132.000000,122.000000,78.000000,55.000000,'细颗粒物(PM2.5)','中度污染','1918A','气象站','2014-03-06T14:00:00Z',1394085600,1394126425,1);
+INSERT INTO "pm2_5_data2014" VALUES (628,175,'','咸阳','咸阳','xianyang',2.000000,2.000000,45.000000,41.000000,27.000000,58.000000,15.000000,47.000000,135.000000,167.000000,132.000000,118.000000,19.000000,43.000000,'细颗粒物(PM2.5)','中度污染','1919A','中华小区','2014-03-06T14:00:00Z',1394085600,1394126426,1);
+INSERT INTO "pm2_5_data2014" VALUES (629,160,'','咸阳','咸阳','xianyang',1.000000,1.000000,28.000000,21.000000,14.000000,41.000000,10.000000,40.000000,145.000000,155.000000,122.000000,120.000000,96.000000,51.000000,'细颗粒物(PM2.5)','中度污染','1920A','师范学院','2014-03-06T14:00:00Z',1394085600,1394126427,1);
+INSERT INTO "pm2_5_data2014" VALUES (630,156,'','咸阳','咸阳','xianyang',1.000000,1.000000,14.000000,14.000000,29.000000,36.000000,26.000000,36.000000,143.000000,158.000000,119.000000,137.000000,23.000000,16.000000,'细颗粒物(PM2.5)','中度污染','1921A','中医学院','2014-03-06T14:00:00Z',1394085600,1394126429,1);
+INSERT INTO "pm2_5_data2014" VALUES (631,127,'','铜川','铜川','tongchuan',1.000000,2.000000,28.000000,51.000000,85.000000,92.000000,49.000000,92.000000,198.000000,220.000000,96.000000,132.000000,12.000000,7.000000,'细颗粒物(PM2.5)','轻度污染','1922A','党校','2014-03-06T14:00:00Z',1394085600,1394126430,1);
+INSERT INTO "pm2_5_data2014" VALUES (632,32,'','柳州','柳州','liuzhou',1.000000,0.000000,20.000000,17.000000,52.000000,95.000000,59.000000,94.000000,28.000000,61.000000,22.000000,46.000000,55.000000,30.000000,'None','优','1872A','河西水厂','2014-03-06T14:00:00Z',1394085600,1394126430,1);
+INSERT INTO "pm2_5_data2014" VALUES (633,36,'','柳州','柳州','liuzhou',1.000000,1.000000,23.000000,31.000000,23.000000,74.000000,18.000000,74.000000,0.000000,80.000000,25.000000,50.000000,9.000000,10.000000,'None','优','1873A','市四中','2014-03-06T14:00:00Z',1394085600,1394126432,1);
+INSERT INTO "pm2_5_data2014" VALUES (634,46,'','柳州','柳州','liuzhou',1.000000,1.000000,20.000000,29.000000,23.000000,65.000000,15.000000,65.000000,0.000000,70.000000,32.000000,61.000000,23.000000,21.000000,'None','优','1874A','市九中','2014-03-06T14:00:00Z',1394085600,1394126433,1);
+INSERT INTO "pm2_5_data2014" VALUES (635,39,'','柳州','柳州','liuzhou',1.000000,1.000000,17.000000,29.000000,31.000000,372.000000,73.000000,74.000000,0.000000,98.000000,27.000000,56.000000,9.000000,12.000000,'None','优','1875A','古亭山','2014-03-06T14:00:00Z',1394085600,1394126434,1);
+INSERT INTO "pm2_5_data2014" VALUES (636,53,'','北海','北海','beihai',0.000000,1.000000,2.000000,9.000000,0.000000,18.000000,13.000000,18.000000,56.000000,55.000000,31.000000,34.000000,12.000000,12.000000,'颗粒物(PM10)','良','1866A','牛尾岭水库','2014-03-06T14:00:00Z',1394085600,1394126436,1);
+INSERT INTO "pm2_5_data2014" VALUES (637,60,'','北海','北海','beihai',0.000000,0.000000,0.000000,0.000000,100.000000,100.000000,58.000000,58.000000,70.000000,64.000000,19.000000,16.000000,10.000000,11.000000,'颗粒物(PM10)','良','1867A','海滩公园','2014-03-06T14:00:00Z',1394085600,1394126437,1);
+INSERT INTO "pm2_5_data2014" VALUES (638,57,'','北海','北海','beihai',0.000000,1.000000,1.000000,1.000000,102.000000,102.000000,63.000000,63.000000,64.000000,62.000000,14.000000,27.000000,16.000000,14.000000,'颗粒物(PM10)','良','1868A','新市环保局','2014-03-06T14:00:00Z',1394085600,1394126439,1);
+INSERT INTO "pm2_5_data2014" VALUES (639,56,'','北海','北海','beihai',1.000000,1.000000,0.000000,0.000000,87.000000,87.000000,43.000000,43.000000,61.000000,64.000000,28.000000,36.000000,7.000000,4.000000,'颗粒物(PM10)','良','1869A','北海工业园','2014-03-06T14:00:00Z',1394085600,1394126440,1);
+INSERT INTO "pm2_5_data2014" VALUES (640,196,'','渭南','渭南','weinan',1.000000,2.000000,28.000000,42.000000,14.000000,33.000000,6.000000,33.000000,156.000000,190.000000,147.000000,159.000000,87.000000,81.000000,'细颗粒物(PM2.5)','中度污染','1939A','日报社','2014-03-06T14:00:00Z',1394085600,1394126441,1);
+INSERT INTO "pm2_5_data2014" VALUES (641,176,'','渭南','渭南','weinan',1.000000,1.000000,39.000000,49.000000,11.000000,35.000000,5.000000,35.000000,154.000000,182.000000,133.000000,139.000000,80.000000,52.000000,'细颗粒物(PM2.5)','中度污染','1940A','体育馆','2014-03-06T14:00:00Z',1394085600,1394126442,1);
+INSERT INTO "pm2_5_data2014" VALUES (642,150,'','铜川','铜川','tongchuan',1.000000,1.000000,31.000000,42.000000,56.000000,70.000000,31.000000,70.000000,169.000000,193.000000,115.000000,147.000000,53.000000,66.000000,'细颗粒物(PM2.5)','轻度污染','1923A','王益区政府','2014-03-06T14:00:00Z',1394085600,1394126443,1);
+INSERT INTO "pm2_5_data2014" VALUES (643,202,'','铜川','铜川','tongchuan',3.000000,3.000000,54.000000,56.000000,30.000000,48.000000,15.000000,48.000000,217.000000,231.000000,152.000000,161.000000,35.000000,37.000000,'细颗粒物(PM2.5)','重度污染','1924A','新区管委会','2014-03-06T14:00:00Z',1394085600,1394126444,1);
+INSERT INTO "pm2_5_data2014" VALUES (644,240,'','铜川','铜川','tongchuan',3.000000,3.000000,48.000000,51.000000,27.000000,49.000000,13.000000,49.000000,231.000000,191.000000,190.000000,168.000000,12.000000,11.000000,'细颗粒物(PM2.5)','重度污染','1925A','新区兰芝公司','2014-03-06T14:00:00Z',1394085600,1394126445,1);
+INSERT INTO "pm2_5_data2014" VALUES (645,42,'','延安','延安','yanan',0.000000,0.000000,12.000000,11.000000,15.000000,27.000000,10.000000,22.000000,42.000000,60.000000,15.000000,27.000000,30.000000,29.000000,'None','优','1926A','枣园','2014-03-06T14:00:00Z',1394085600,1394126446,1);
+INSERT INTO "pm2_5_data2014" VALUES (646,55,'','延安','延安','yanan',2.000000,4.000000,27.000000,58.000000,81.000000,83.000000,40.000000,83.000000,59.000000,117.000000,16.000000,51.000000,52.000000,69.000000,'颗粒物(PM10)','良','1927A','延大医附院','2014-03-06T14:00:00Z',1394085600,1394126448,1);
+INSERT INTO "pm2_5_data2014" VALUES (647,31,'','延安','延安','yanan',1.000000,2.000000,15.000000,46.000000,59.000000,60.000000,27.000000,60.000000,31.000000,65.000000,13.000000,37.000000,16.000000,30.000000,'None','优','1928A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126450,1);
+INSERT INTO "pm2_5_data2014" VALUES (648,52,'','延安','延安','yanan',1.000000,2.000000,17.000000,48.000000,88.000000,101.000000,49.000000,97.000000,54.000000,139.000000,31.000000,52.000000,19.000000,55.000000,'颗粒物(PM10)','良','1929A','百米大道','2014-03-06T14:00:00Z',1394085600,1394126451,1);
+INSERT INTO "pm2_5_data2014" VALUES (649,178,'','渭南','渭南','weinan',1.000000,1.000000,42.000000,54.000000,14.000000,35.000000,7.000000,34.000000,145.000000,177.000000,134.000000,146.000000,110.000000,73.000000,'细颗粒物(PM2.5)','中度污染','1938A','农科所','2014-03-06T14:00:00Z',1394085600,1394126452,1);
+INSERT INTO "pm2_5_data2014" VALUES (650,86,'','宝鸡','宝鸡','baoji',3.000000,3.000000,75.000000,58.000000,35.000000,67.000000,28.000000,53.000000,122.000000,139.000000,0.000000,0.000000,49.000000,26.000000,'颗粒物(PM10)','良','1931A','竹园沟','2014-03-06T14:00:00Z',1394085600,1394126454,1);
+INSERT INTO "pm2_5_data2014" VALUES (651,153,'','宝鸡','宝鸡','baoji',2.000000,2.000000,66.000000,58.000000,29.000000,51.000000,26.000000,44.000000,194.000000,172.000000,117.000000,107.000000,89.000000,93.000000,'细颗粒物(PM2.5)','中度污染','1932A','三陆医院','2014-03-06T14:00:00Z',1394085600,1394126455,1);
+INSERT INTO "pm2_5_data2014" VALUES (652,59,'','汕头','汕头','shantou',0.000000,0.000000,26.000000,17.000000,86.000000,121.000000,89.000000,113.000000,68.000000,58.000000,38.000000,30.000000,13.000000,15.000000,'颗粒物(PM10)','良','1678A','潮阳子站','2014-03-06T14:00:00Z',1394085600,1394126456,1);
+INSERT INTO "pm2_5_data2014" VALUES (653,65,'','汕头','汕头','shantou',0.000000,1.000000,37.000000,29.000000,79.000000,139.000000,75.000000,101.000000,76.000000,58.000000,47.000000,39.000000,22.000000,28.000000,'细颗粒物(PM2.5)','良','1679A','潮南子站','2014-03-06T14:00:00Z',1394085600,1394126457,1);
+INSERT INTO "pm2_5_data2014" VALUES (654,49,'','韶关','韶关','shaoguan',1.000000,1.000000,58.000000,47.000000,6.000000,38.000000,10.000000,38.000000,47.000000,54.000000,34.000000,39.000000,60.000000,45.000000,'None','优','1669A','市八中','2014-03-06T14:00:00Z',1394085600,1394126458,1);
+INSERT INTO "pm2_5_data2014" VALUES (655,45,'','宝鸡','宝鸡','baoji',3.000000,1.000000,78.000000,58.000000,9.000000,43.000000,8.000000,41.000000,0.000000,172.000000,0.000000,100.000000,133.000000,74.000000,'None','优','1933A','监测站','2014-03-06T14:00:00Z',1394085600,1394126459,1);
+INSERT INTO "pm2_5_data2014" VALUES (656,102,'','宝鸡','宝鸡','baoji',3.000000,3.000000,68.000000,50.000000,19.000000,67.000000,12.000000,54.000000,118.000000,148.000000,76.000000,87.000000,97.000000,49.000000,'细颗粒物(PM2.5)','轻度污染','1934A','技工学校','2014-03-06T14:00:00Z',1394085600,1394126461,1);
+INSERT INTO "pm2_5_data2014" VALUES (657,89,'','宝鸡','宝鸡','baoji',2.000000,3.000000,52.000000,64.000000,28.000000,48.000000,13.000000,48.000000,125.000000,157.000000,66.000000,95.000000,0.000000,30.000000,'细颗粒物(PM2.5)','良','1935A','陈仓区环保局家属楼','2014-03-06T14:00:00Z',1394085600,1394126462,1);
+INSERT INTO "pm2_5_data2014" VALUES (658,139,'','宝鸡','宝鸡','baoji',3.000000,3.000000,37.000000,32.000000,10.000000,36.000000,4.000000,36.000000,228.000000,191.000000,0.000000,68.000000,77.000000,89.000000,'颗粒物(PM10)','轻度污染','1936A','文理学院','2014-03-06T14:00:00Z',1394085600,1394126463,1);
+INSERT INTO "pm2_5_data2014" VALUES (659,110,'','宝鸡','宝鸡','baoji',3.000000,4.000000,65.000000,74.000000,31.000000,54.000000,12.000000,54.000000,170.000000,208.000000,64.000000,79.000000,40.000000,46.000000,'颗粒物(PM10)','轻度污染','1937A','三迪小学','2014-03-06T14:00:00Z',1394085600,1394126464,1);
+INSERT INTO "pm2_5_data2014" VALUES (660,67,'','菏泽','菏泽','heze',0.000000,1.000000,8.000000,35.000000,121.000000,121.000000,100.000000,100.000000,74.000000,108.000000,48.000000,61.000000,37.000000,73.000000,'细颗粒物(PM2.5)','良','1718A','市气象局','2014-03-06T14:00:00Z',1394085600,1394126465,1);
+INSERT INTO "pm2_5_data2014" VALUES (661,69,'','菏泽','菏泽','heze',0.000000,0.000000,27.000000,47.000000,112.000000,112.000000,86.000000,89.000000,81.000000,97.000000,50.000000,58.000000,35.000000,59.000000,'细颗粒物(PM2.5)','良','1719A','市政协','2014-03-06T14:00:00Z',1394085600,1394126466,1);
+INSERT INTO "pm2_5_data2014" VALUES (662,72,'','菏泽','菏泽','heze',0.000000,1.000000,13.000000,38.000000,145.000000,145.000000,124.000000,124.000000,93.000000,115.000000,51.000000,62.000000,25.000000,45.000000,'颗粒物(PM10)','良','1720A','菏泽学院','2014-03-06T14:00:00Z',1394085600,1394126467,1);
+INSERT INTO "pm2_5_data2014" VALUES (663,51,'','汕头','汕头','shantou',0.000000,0.000000,17.000000,10.000000,73.000000,139.000000,81.000000,103.000000,51.000000,47.000000,35.000000,32.000000,4.000000,9.000000,'颗粒物(PM10)','良','1676A','濠江子站','2014-03-06T14:00:00Z',1394085600,1394126468,1);
+INSERT INTO "pm2_5_data2014" VALUES (664,56,'','汕头','汕头','shantou',0.000000,0.000000,28.000000,23.000000,88.000000,190.000000,90.000000,114.000000,62.000000,58.000000,34.000000,35.000000,19.000000,21.000000,'颗粒物(PM10)','良','1677A','澄海子站','2014-03-06T14:00:00Z',1394085600,1394126469,1);
+INSERT INTO "pm2_5_data2014" VALUES (665,42,'','韶关','韶关','shaoguan',2.000000,2.000000,20.000000,18.000000,40.000000,71.000000,35.000000,71.000000,33.000000,40.000000,29.000000,31.000000,21.000000,20.000000,'None','优','1670A','碧湖山庄','2014-03-06T14:00:00Z',1394085600,1394126470,1);
+INSERT INTO "pm2_5_data2014" VALUES (666,50,'','韶关','韶关','shaoguan',1.000000,1.000000,43.000000,31.000000,9.000000,41.000000,14.000000,40.000000,0.000000,43.000000,35.000000,35.000000,26.000000,32.000000,'None','优','1671A','园林处','2014-03-06T14:00:00Z',1394085600,1394126471,1);
+INSERT INTO "pm2_5_data2014" VALUES (667,30,'','韶关','韶关','shaoguan',0.000000,0.000000,21.000000,18.000000,10.000000,43.000000,15.000000,43.000000,28.000000,33.000000,21.000000,28.000000,30.000000,25.000000,'None','优','1672A','韶关学院','2014-03-06T14:00:00Z',1394085600,1394126474,1);
+INSERT INTO "pm2_5_data2014" VALUES (668,58,'','韶关','韶关','shaoguan',2.000000,2.000000,29.000000,24.000000,5.000000,42.000000,8.000000,39.000000,65.000000,43.000000,33.000000,34.000000,13.000000,14.000000,'颗粒物(PM10)','良','1673A','曲江监测站','2014-03-06T14:00:00Z',1394085600,1394126476,1);
+INSERT INTO "pm2_5_data2014" VALUES (669,188,'','渭南','渭南','weinan',2.000000,2.000000,34.000000,42.000000,12.000000,26.000000,9.000000,25.000000,152.000000,188.000000,141.000000,150.000000,87.000000,49.000000,'细颗粒物(PM2.5)','中度污染','1941A','高新一小','2014-03-06T14:00:00Z',1394085600,1394126477,1);
+INSERT INTO "pm2_5_data2014" VALUES (670,100,'','南宁','南宁','nanning',1.000000,1.000000,27.000000,26.000000,10.000000,61.000000,8.000000,61.000000,98.000000,86.000000,75.000000,67.000000,14.000000,10.000000,'细颗粒物(PM2.5)','良','1407A','英华嘉园','2014-03-06T14:00:00Z',1394085600,1394126478,1);
+INSERT INTO "pm2_5_data2014" VALUES (671,42,'','湛江','湛江','zhanjiang',1.000000,1.000000,26.000000,32.000000,79.000000,79.000000,52.000000,52.000000,42.000000,39.000000,17.000000,29.000000,2.000000,3.000000,'None','优','1680A','湛江影剧院','2014-03-06T14:00:00Z',1394085600,1394126479,1);
+INSERT INTO "pm2_5_data2014" VALUES (672,52,'','湛江','湛江','zhanjiang',0.000000,1.000000,10.000000,22.000000,83.000000,83.000000,63.000000,63.000000,54.000000,45.000000,20.000000,29.000000,2.000000,3.000000,'颗粒物(PM10)','良','1681A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126480,1);
+INSERT INTO "pm2_5_data2014" VALUES (673,48,'','湛江','湛江','zhanjiang',1.000000,1.000000,13.000000,19.000000,104.000000,104.000000,66.000000,66.000000,48.000000,38.000000,23.000000,28.000000,5.000000,4.000000,'None','优','1682A','环保局宿舍','2014-03-06T14:00:00Z',1394085600,1394126480,1);
+INSERT INTO "pm2_5_data2014" VALUES (674,52,'','湛江','湛江','zhanjiang',0.000000,1.000000,0.000000,0.000000,117.000000,117.000000,76.000000,76.000000,54.000000,42.000000,21.000000,29.000000,17.000000,16.000000,'颗粒物(PM10)','良','1683A','霞山游泳场','2014-03-06T14:00:00Z',1394085600,1394126481,1);
+INSERT INTO "pm2_5_data2014" VALUES (675,0,'','湛江','湛江','zhanjiang',0.000000,0.000000,0.000000,20.000000,0.000000,86.000000,65.000000,66.000000,0.000000,36.000000,0.000000,30.000000,0.000000,5.000000,'None','None','1684A','麻章区环保局','2014-03-06T14:00:00Z',1394085600,1394126483,1);
+INSERT INTO "pm2_5_data2014" VALUES (676,39,'','湛江','湛江','zhanjiang',1.000000,1.000000,8.000000,19.000000,106.000000,106.000000,72.000000,72.000000,39.000000,56.000000,21.000000,29.000000,6.000000,8.000000,'None','优','1685A','坡头区环保局','2014-03-06T14:00:00Z',1394085600,1394126484,1);
+INSERT INTO "pm2_5_data2014" VALUES (677,44,'','茂名','茂名','maoming',0.000000,0.000000,18.000000,24.000000,96.000000,96.000000,73.000000,73.000000,44.000000,51.000000,27.000000,39.000000,7.000000,6.000000,'None','优','1686A','市环保局茂港分局','2014-03-06T14:00:00Z',1394085600,1394126487,1);
+INSERT INTO "pm2_5_data2014" VALUES (678,52,'','茂名','茂名','maoming',0.000000,1.000000,15.000000,24.000000,84.000000,84.000000,49.000000,49.000000,51.000000,57.000000,36.000000,40.000000,14.000000,14.000000,'细颗粒物(PM2.5)','良','1687A','茂石化七小','2014-03-06T14:00:00Z',1394085600,1394126488,1);
+INSERT INTO "pm2_5_data2014" VALUES (679,55,'','茂名','茂名','maoming',0.000000,1.000000,27.000000,46.000000,79.000000,79.000000,47.000000,47.000000,51.000000,45.000000,39.000000,36.000000,5.000000,4.000000,'细颗粒物(PM2.5)','良','1688A','健康路','2014-03-06T14:00:00Z',1394085600,1394126490,1);
+INSERT INTO "pm2_5_data2014" VALUES (680,46,'','茂名','茂名','maoming',0.000000,1.000000,11.000000,35.000000,100.000000,100.000000,54.000000,54.000000,46.000000,50.000000,25.000000,37.000000,18.000000,33.000000,'None','优','1689A','高岭','2014-03-06T14:00:00Z',1394085600,1394126491,1);
+INSERT INTO "pm2_5_data2014" VALUES (681,44,'','梅州','梅州','meizhou',0.000000,0.000000,6.000000,14.000000,91.000000,91.000000,73.000000,73.000000,44.000000,37.000000,30.000000,31.000000,8.000000,6.000000,'None','优','1690A','嘉应大学','2014-03-06T14:00:00Z',1394085600,1394126492,1);
+INSERT INTO "pm2_5_data2014" VALUES (682,72,'','梅州','梅州','meizhou',1.000000,1.000000,46.000000,44.000000,71.000000,71.000000,44.000000,44.000000,79.000000,50.000000,52.000000,39.000000,11.000000,8.000000,'细颗粒物(PM2.5)','良','1691A','梅县新城','2014-03-06T14:00:00Z',1394085600,1394126493,1);
+INSERT INTO "pm2_5_data2014" VALUES (683,79,'','梅州','梅州','meizhou',0.000000,1.000000,31.000000,28.000000,76.000000,76.000000,51.000000,51.000000,72.000000,60.000000,58.000000,42.000000,10.000000,10.000000,'细颗粒物(PM2.5)','良','1692A','环境监控中心','2014-03-06T14:00:00Z',1394085600,1394126494,1);
+INSERT INTO "pm2_5_data2014" VALUES (684,58,'','汕尾','汕尾','shanwei',0.000000,0.000000,14.000000,11.000000,80.000000,101.000000,73.000000,97.000000,61.000000,53.000000,41.000000,27.000000,10.000000,9.000000,'细颗粒物(PM2.5)','良','1693A','市环保局','2014-03-06T14:00:00Z',1394085600,1394126496,1);
+INSERT INTO "pm2_5_data2014" VALUES (685,63,'','汕尾','汕尾','shanwei',1.000000,1.000000,25.000000,19.000000,78.000000,112.000000,62.000000,106.000000,70.000000,59.000000,45.000000,33.000000,14.000000,13.000000,'细颗粒物(PM2.5)','良','1694A','市政府','2014-03-06T14:00:00Z',1394085600,1394126497,1);
+INSERT INTO "pm2_5_data2014" VALUES (686,64,'','汕尾','汕尾','shanwei',1.000000,1.000000,0.000000,0.000000,76.000000,97.000000,66.000000,90.000000,64.000000,53.000000,46.000000,31.000000,11.000000,9.000000,'细颗粒物(PM2.5)','良','1695A','新城中学','2014-03-06T14:00:00Z',1394085600,1394126499,1);
+INSERT INTO "pm2_5_data2014" VALUES (687,68,'','阳江','阳江','yangjiang',1.000000,1.000000,31.000000,57.000000,60.000000,60.000000,29.000000,29.000000,0.000000,80.000000,49.000000,59.000000,11.000000,19.000000,'细颗粒物(PM2.5)','良','1699A','鸳鸯湖','2014-03-06T14:00:00Z',1394085600,1394126500,1);
+INSERT INTO "pm2_5_data2014" VALUES (688,60,'','阳江','阳江','yangjiang',1.000000,1.000000,36.000000,51.000000,34.000000,34.000000,15.000000,15.000000,65.000000,73.000000,43.000000,54.000000,4.000000,9.000000,'细颗粒物(PM2.5)','良','1700A','南恩路','2014-03-06T14:00:00Z',1394085600,1394126502,1);
+INSERT INTO "pm2_5_data2014" VALUES (689,62,'','阳江','阳江','yangjiang',1.000000,1.000000,33.000000,50.000000,60.000000,60.000000,33.000000,33.000000,74.000000,103.000000,37.000000,54.000000,10.000000,18.000000,'颗粒物(PM10)','良','1701A','马南垌','2014-03-06T14:00:00Z',1394085600,1394126503,1);
+INSERT INTO "pm2_5_data2014" VALUES (690,55,'','潮州','潮州','chaozhou',1.000000,1.000000,38.000000,40.000000,84.000000,85.000000,72.000000,82.000000,60.000000,64.000000,34.000000,42.000000,17.000000,18.000000,'颗粒物(PM10)','良','1705A','西园路','2014-03-06T14:00:00Z',1394085600,1394126504,1);
+INSERT INTO "pm2_5_data2014" VALUES (691,57,'','潮州','潮州','chaozhou',1.000000,1.000000,10.000000,16.000000,101.000000,101.000000,85.000000,88.000000,63.000000,64.000000,36.000000,42.000000,14.000000,20.000000,'颗粒物(PM10)','良','1706A','档案局','2014-03-06T14:00:00Z',1394085600,1394126505,1);
+INSERT INTO "pm2_5_data2014" VALUES (692,63,'','潮州','潮州','chaozhou',0.000000,0.000000,20.000000,21.000000,15.000000,15.000000,14.000000,14.000000,76.000000,69.000000,37.000000,40.000000,13.000000,15.000000,'颗粒物(PM10)','良','1707A','市政公司','2014-03-06T14:00:00Z',1394085600,1394126506,1);
+INSERT INTO "pm2_5_data2014" VALUES (693,60,'','揭阳','揭阳','jieyang',0.000000,0.000000,27.000000,29.000000,127.000000,127.000000,116.000000,116.000000,70.000000,72.000000,40.000000,44.000000,24.000000,26.000000,'颗粒物(PM10)','良','1708A','东湖公园','2014-03-06T14:00:00Z',1394085600,1394126507,1);
+INSERT INTO "pm2_5_data2014" VALUES (694,65,'','揭阳','揭阳','jieyang',0.000000,0.000000,23.000000,21.000000,88.000000,91.000000,90.000000,91.000000,79.000000,88.000000,36.000000,56.000000,24.000000,24.000000,'颗粒物(PM10)','良','1709A','仙滘','2014-03-06T14:00:00Z',1394085600,1394126508,1);
+INSERT INTO "pm2_5_data2014" VALUES (695,63,'','揭阳','揭阳','jieyang',0.000000,0.000000,28.000000,25.000000,91.000000,95.000000,85.000000,86.000000,76.000000,69.000000,43.000000,47.000000,21.000000,15.000000,'颗粒物(PM10)','良','1710A','中长','2014-03-06T14:00:00Z',1394085600,1394126509,1);
+INSERT INTO "pm2_5_data2014" VALUES (696,63,'','揭阳','揭阳','jieyang',0.000000,0.000000,7.000000,9.000000,112.000000,112.000000,105.000000,107.000000,76.000000,66.000000,41.000000,40.000000,18.000000,17.000000,'颗粒物(PM10)','良','1711A','渔湖初级中学','2014-03-06T14:00:00Z',1394085600,1394126510,1);
+INSERT INTO "pm2_5_data2014" VALUES (697,84,'','云浮','云浮','yunfu',1.000000,1.000000,65.000000,53.000000,10.000000,55.000000,9.000000,54.000000,117.000000,52.000000,46.000000,24.000000,24.000000,23.000000,'颗粒物(PM10)','良','1712A','新市府','2014-03-06T14:00:00Z',1394085600,1394126512,1);
+INSERT INTO "pm2_5_data2014" VALUES (698,79,'','云浮','云浮','yunfu',2.000000,1.000000,45.000000,38.000000,7.000000,42.000000,6.000000,42.000000,82.000000,56.000000,58.000000,45.000000,33.000000,32.000000,'细颗粒物(PM2.5)','良','1713A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126513,1);
+INSERT INTO "pm2_5_data2014" VALUES (699,62,'','云浮','云浮','yunfu',2.000000,2.000000,50.000000,46.000000,0.000000,20.000000,0.000000,15.000000,70.000000,49.000000,44.000000,28.000000,18.000000,18.000000,'细颗粒物(PM2.5)','良','1714A','牧羊','2014-03-06T14:00:00Z',1394085600,1394126515,1);
+INSERT INTO "pm2_5_data2014" VALUES (700,54,'','宜昌','宜昌','yichang',2.000000,2.000000,11.000000,20.000000,66.000000,73.000000,35.000000,48.000000,44.000000,186.000000,38.000000,133.000000,7.000000,53.000000,'细颗粒物(PM2.5)','良','1839A','四零三','2014-03-06T14:00:00Z',1394085600,1394126516,1);
+INSERT INTO "pm2_5_data2014" VALUES (701,62,'','宜昌','宜昌','yichang',1.000000,1.000000,40.000000,49.000000,12.000000,20.000000,11.000000,20.000000,57.000000,181.000000,44.000000,148.000000,38.000000,84.000000,'细颗粒物(PM2.5)','良','1840A','白龙岗','2014-03-06T14:00:00Z',1394085600,1394126516,1);
+INSERT INTO "pm2_5_data2014" VALUES (702,74,'','宜昌','宜昌','yichang',1.000000,2.000000,44.000000,76.000000,42.000000,42.000000,21.000000,39.000000,54.000000,231.000000,54.000000,160.000000,46.000000,69.000000,'细颗粒物(PM2.5)','良','1841A','伍家岗','2014-03-06T14:00:00Z',1394085600,1394126517,1);
+INSERT INTO "pm2_5_data2014" VALUES (703,98,'','宜昌','宜昌','yichang',1.000000,0.000000,39.000000,32.000000,46.000000,46.000000,37.000000,37.000000,77.000000,129.000000,73.000000,112.000000,63.000000,60.000000,'细颗粒物(PM2.5)','良','1842A','点军区','2014-03-06T14:00:00Z',1394085600,1394126519,1);
+INSERT INTO "pm2_5_data2014" VALUES (704,54,'','宜昌','宜昌','yichang',1.000000,1.000000,19.000000,28.000000,51.000000,61.000000,34.000000,36.000000,42.000000,188.000000,38.000000,141.000000,17.000000,19.000000,'细颗粒物(PM2.5)','良','1843A','夷陵区','2014-03-06T14:00:00Z',1394085600,1394126520,1);
+INSERT INTO "pm2_5_data2014" VALUES (705,83,'','荆州','荆州','jingzhou',1.000000,1.000000,34.000000,53.000000,54.000000,66.000000,42.000000,66.000000,108.000000,215.000000,61.000000,122.000000,27.000000,46.000000,'细颗粒物(PM2.5)','良','1844A','市图书馆','2014-03-06T14:00:00Z',1394085600,1394126521,1);
+INSERT INTO "pm2_5_data2014" VALUES (706,87,'','荆州','荆州','jingzhou',0.000000,1.000000,23.000000,39.000000,56.000000,61.000000,35.000000,61.000000,124.000000,229.000000,60.000000,117.000000,14.000000,61.000000,'颗粒物(PM10)','良','1845A','市委党校','2014-03-06T14:00:00Z',1394085600,1394126522,1);
+INSERT INTO "pm2_5_data2014" VALUES (707,102,'','荆州','荆州','jingzhou',1.000000,2.000000,26.000000,44.000000,54.000000,66.000000,40.000000,63.000000,111.000000,226.000000,76.000000,136.000000,26.000000,61.000000,'细颗粒物(PM2.5)','轻度污染','1846A','科融环保','2014-03-06T14:00:00Z',1394085600,1394126523,1);
+INSERT INTO "pm2_5_data2014" VALUES (708,70,'','赤峰','赤峰','chifeng',0.000000,0.000000,12.000000,20.000000,37.000000,38.000000,23.000000,38.000000,89.000000,92.000000,7.000000,35.000000,17.000000,56.000000,'颗粒物(PM10)','良','1744A','松山一中','2014-03-06T14:00:00Z',1394085600,1394126525,1);
+INSERT INTO "pm2_5_data2014" VALUES (709,40,'','赤峰','赤峰','chifeng',0.000000,0.000000,8.000000,18.000000,51.000000,51.000000,34.000000,47.000000,40.000000,76.000000,9.000000,27.000000,18.000000,87.000000,'None','优','1745A','哈达街','2014-03-06T14:00:00Z',1394085600,1394126526,1);
+INSERT INTO "pm2_5_data2014" VALUES (710,19,'','赤峰','赤峰','chifeng',0.000000,0.000000,12.000000,21.000000,58.000000,59.000000,38.000000,56.000000,18.000000,38.000000,6.000000,15.000000,2.000000,7.000000,'None','优','1746A','天义路','2014-03-06T14:00:00Z',1394085600,1394126527,1);
+INSERT INTO "pm2_5_data2014" VALUES (711,47,'','赤峰','赤峰','chifeng',1.000000,1.000000,5.000000,14.000000,51.000000,102.000000,49.000000,52.000000,47.000000,53.000000,10.000000,28.000000,7.000000,39.000000,'None','优','1747A','松山路','2014-03-06T14:00:00Z',1394085600,1394126528,1);
+INSERT INTO "pm2_5_data2014" VALUES (712,59,'','克拉玛依','克拉玛依','kelamayi',0.000000,0.000000,41.000000,47.000000,85.000000,109.000000,58.000000,106.000000,0.000000,72.000000,42.000000,54.000000,4.000000,18.000000,'细颗粒物(PM2.5)','良','1951A','长征新村','2014-03-06T14:00:00Z',1394085600,1394126530,1);
+INSERT INTO "pm2_5_data2014" VALUES (713,40,'','克拉玛依','克拉玛依','kelamayi',0.000000,0.000000,48.000000,44.000000,61.000000,101.000000,37.000000,83.000000,40.000000,37.000000,28.000000,31.000000,16.000000,17.000000,'None','优','1952A','南林小区','2014-03-06T14:00:00Z',1394085600,1394126531,1);
+INSERT INTO "pm2_5_data2014" VALUES (714,45,'','克拉玛依','克拉玛依','kelamayi',0.000000,0.000000,28.000000,44.000000,15.000000,18.000000,10.000000,17.000000,32.000000,70.000000,31.000000,41.000000,6.000000,5.000000,'None','优','1953A','白碱滩区','2014-03-06T14:00:00Z',1394085600,1394126532,1);
+INSERT INTO "pm2_5_data2014" VALUES (715,500,'','克拉玛依','克拉玛依','kelamayi',1.000000,1.000000,47.000000,61.000000,104.000000,170.000000,60.000000,138.000000,559.000000,297.000000,518.000000,248.000000,5.000000,5.000000,'细颗粒物(PM2.5)','严重污染','1954A','独山子区','2014-03-06T14:00:00Z',1394085600,1394126533,1);
+INSERT INTO "pm2_5_data2014" VALUES (716,58,'','克拉玛依','克拉玛依','kelamayi',0.000000,3.000000,15.000000,45.000000,74.000000,90.000000,26.000000,86.000000,65.000000,63.000000,29.000000,40.000000,4.000000,3.000000,'颗粒物(PM10)','良','1955A','乌尔禾区商贸楼','2014-03-06T14:00:00Z',1394085600,1394126534,1);
+INSERT INTO "pm2_5_data2014" VALUES (717,205,'','库尔勒','库尔勒','kuerle',0.000000,1.000000,13.000000,47.000000,104.000000,120.000000,36.000000,110.000000,353.000000,369.000000,131.000000,130.000000,7.000000,21.000000,'颗粒物(PM10)','重度污染','1956A','孔雀公园','2014-03-06T14:00:00Z',1394085600,1394126535,1);
+INSERT INTO "pm2_5_data2014" VALUES (718,166,'','库尔勒','库尔勒','kuerle',0.000000,0.000000,16.000000,44.000000,111.000000,124.000000,52.000000,118.000000,281.000000,321.000000,75.000000,93.000000,14.000000,23.000000,'颗粒物(PM10)','中度污染','1957A','棉纺厂','2014-03-06T14:00:00Z',1394085600,1394126537,1);
+INSERT INTO "pm2_5_data2014" VALUES (719,146,'','库尔勒','库尔勒','kuerle',0.000000,0.000000,24.000000,22.000000,94.000000,114.000000,66.000000,111.000000,242.000000,328.000000,0.000000,87.000000,28.000000,15.000000,'颗粒物(PM10)','轻度污染','1958A','经济开发区','2014-03-06T14:00:00Z',1394085600,1394126539,1);
+INSERT INTO "pm2_5_data2014" VALUES (720,32,'','齐齐哈尔','齐齐哈尔','qiqihaer',1.000000,1.000000,29.000000,32.000000,31.000000,36.000000,33.000000,33.000000,32.000000,56.000000,5.000000,15.000000,32.000000,22.000000,'None','优','1779A','安居小区','2014-03-06T14:00:00Z',1394085600,1394126541,1);
+INSERT INTO "pm2_5_data2014" VALUES (721,19,'','齐齐哈尔','齐齐哈尔','qiqihaer',0.000000,0.000000,6.000000,8.000000,20.000000,20.000000,12.000000,14.000000,16.000000,22.000000,13.000000,17.000000,11.000000,44.000000,'None','优','1780A','中心广场','2014-03-06T14:00:00Z',1394085600,1394126542,1);
+INSERT INTO "pm2_5_data2014" VALUES (722,21,'','齐齐哈尔','齐齐哈尔','qiqihaer',0.000000,0.000000,3.000000,23.000000,67.000000,67.000000,51.000000,51.000000,13.000000,41.000000,7.000000,28.000000,21.000000,56.000000,'None','优','1781A','农牧车辆厂','2014-03-06T14:00:00Z',1394085600,1394126543,1);
+INSERT INTO "pm2_5_data2014" VALUES (723,22,'','齐齐哈尔','齐齐哈尔','qiqihaer',0.000000,0.000000,6.000000,9.000000,68.000000,70.000000,55.000000,70.000000,13.000000,29.000000,12.000000,12.000000,8.000000,18.000000,'None','优','1782A','富区环保局','2014-03-06T14:00:00Z',1394085600,1394126544,1);
+INSERT INTO "pm2_5_data2014" VALUES (724,26,'','齐齐哈尔','齐齐哈尔','qiqihaer',0.000000,0.000000,3.000000,18.000000,68.000000,68.000000,49.000000,61.000000,26.000000,58.000000,12.000000,27.000000,1.000000,22.000000,'None','优','1783A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126545,1);
+INSERT INTO "pm2_5_data2014" VALUES (725,51,'','牡丹江','牡丹江','mudanjiang',0.000000,0.000000,8.000000,16.000000,86.000000,101.000000,72.000000,101.000000,52.000000,56.000000,30.000000,40.000000,40.000000,47.000000,'颗粒物(PM10)','良','1784A','环保大楼　','2014-03-06T14:00:00Z',1394085600,1394126546,1);
+INSERT INTO "pm2_5_data2014" VALUES (726,42,'','牡丹江','牡丹江','mudanjiang',0.000000,0.000000,18.000000,36.000000,79.000000,86.000000,61.000000,81.000000,42.000000,55.000000,5.000000,36.000000,32.000000,40.000000,'None','优','1785A','文化广场　','2014-03-06T14:00:00Z',1394085600,1394126547,1);
+INSERT INTO "pm2_5_data2014" VALUES (727,52,'','牡丹江','牡丹江','mudanjiang',0.000000,0.000000,6.000000,14.000000,96.000000,110.000000,77.000000,105.000000,54.000000,51.000000,12.000000,32.000000,6.000000,6.000000,'颗粒物(PM10)','良','1786A','第一医院','2014-03-06T14:00:00Z',1394085600,1394126549,1);
+INSERT INTO "pm2_5_data2014" VALUES (728,40,'','牡丹江','牡丹江','mudanjiang',0.000000,0.000000,6.000000,18.000000,112.000000,129.000000,89.000000,121.000000,40.000000,59.000000,17.000000,36.000000,40.000000,36.000000,'None','优','1787A','机车工厂','2014-03-06T14:00:00Z',1394085600,1394126551,1);
+INSERT INTO "pm2_5_data2014" VALUES (729,45,'','牡丹江','牡丹江','mudanjiang',0.000000,0.000000,19.000000,25.000000,90.000000,110.000000,77.000000,109.000000,45.000000,49.000000,6.000000,36.000000,33.000000,33.000000,'None','优','1788A','第一中学','2014-03-06T14:00:00Z',1394085600,1394126552,1);
+INSERT INTO "pm2_5_data2014" VALUES (730,48,'','曲靖','曲靖','qujing',1.000000,1.000000,12.000000,21.000000,107.000000,126.000000,86.000000,123.000000,0.000000,57.000000,33.000000,38.000000,14.000000,20.000000,'None','优','1916A','环境监测站','2014-03-06T14:00:00Z',1394085600,1394126554,1);
+INSERT INTO "pm2_5_data2014" VALUES (731,61,'','曲靖','曲靖','qujing',0.000000,0.000000,7.000000,16.000000,63.000000,70.000000,53.000000,68.000000,71.000000,84.000000,25.000000,38.000000,9.000000,28.000000,'颗粒物(PM10)','良','1917A','烟厂办公区','2014-03-06T14:00:00Z',1394085600,1394126555,1);
+INSERT INTO "pm2_5_data2014" VALUES (732,20,'','九江','九江','jiujiang',0.000000,0.000000,31.000000,34.000000,20.000000,32.000000,14.000000,29.000000,0.000000,67.000000,14.000000,46.000000,51.000000,62.000000,'None','优','1803A','十里','2014-03-06T14:00:00Z',1394085600,1394126556,1);
+INSERT INTO "pm2_5_data2014" VALUES (733,21,'','九江','九江','jiujiang',0.000000,0.000000,13.000000,20.000000,25.000000,45.000000,21.000000,41.000000,21.000000,64.000000,11.000000,35.000000,12.000000,24.000000,'None','优','1804A','茅山头','2014-03-06T14:00:00Z',1394085600,1394126557,1);
+INSERT INTO "pm2_5_data2014" VALUES (734,18,'','九江','九江','jiujiang',1.000000,0.000000,21.000000,26.000000,28.000000,44.000000,22.000000,41.000000,0.000000,60.000000,12.000000,36.000000,14.000000,18.000000,'None','优','1805A','西园','2014-03-06T14:00:00Z',1394085600,1394126558,1);
+INSERT INTO "pm2_5_data2014" VALUES (735,15,'','九江','九江','jiujiang',0.000000,0.000000,24.000000,25.000000,18.000000,30.000000,15.000000,28.000000,10.000000,65.000000,10.000000,37.000000,0.000000,0.000000,'None','优','1806A','五七二七厂','2014-03-06T14:00:00Z',1394085600,1394126559,1);
+INSERT INTO "pm2_5_data2014" VALUES (736,17,'','九江','九江','jiujiang',0.000000,0.000000,33.000000,35.000000,31.000000,52.000000,25.000000,48.000000,0.000000,67.000000,10.000000,38.000000,3.000000,2.000000,'None','优','1807A','水科所','2014-03-06T14:00:00Z',1394085600,1394126561,1);
+INSERT INTO "pm2_5_data2014" VALUES (737,16,'','九江','九江','jiujiang',0.000000,0.000000,28.000000,31.000000,30.000000,49.000000,24.000000,46.000000,11.000000,66.000000,11.000000,37.000000,2.000000,12.000000,'None','优','1808A','综合工业园','2014-03-06T14:00:00Z',1394085600,1394126563,1);
+INSERT INTO "pm2_5_data2014" VALUES (738,16,'','九江','九江','jiujiang',1.000000,0.000000,32.000000,18.000000,31.000000,50.000000,27.000000,47.000000,0.000000,66.000000,10.000000,37.000000,8.000000,26.000000,'None','优','1809A','石化总厂','2014-03-06T14:00:00Z',1394085600,1394126565,1);
+INSERT INTO "pm2_5_data2014" VALUES (739,12,'','九江','九江','jiujiang',0.000000,0.000000,9.000000,10.000000,38.000000,53.000000,41.000000,53.000000,4.000000,28.000000,4.000000,18.000000,15.000000,19.000000,'None','优','1810A','庐山气象台','2014-03-06T14:00:00Z',1394085600,1394126566,1);
+INSERT INTO "pm2_5_data2014" VALUES (740,63,'','金昌','金昌','jinchang',0.000000,0.000000,11.000000,16.000000,89.000000,99.000000,68.000000,96.000000,76.000000,81.000000,23.000000,28.000000,41.000000,42.000000,'颗粒物(PM10)','良','1942A','市科委','2014-03-06T14:00:00Z',1394085600,1394126567,1);
+INSERT INTO "pm2_5_data2014" VALUES (741,43,'','金昌','金昌','jinchang',1.000000,1.000000,8.000000,14.000000,112.000000,124.000000,79.000000,120.000000,43.000000,50.000000,15.000000,30.000000,44.000000,66.000000,'None','优','1943A','新川苑','2014-03-06T14:00:00Z',1394085600,1394126567,1);
+INSERT INTO "pm2_5_data2014" VALUES (742,91,'','金昌','金昌','jinchang',1.000000,1.000000,19.000000,18.000000,62.000000,75.000000,45.000000,73.000000,132.000000,106.000000,47.000000,39.000000,150.000000,104.000000,'颗粒物(PM10)','良','1944A','公司二招','2014-03-06T14:00:00Z',1394085600,1394126569,1);
+INSERT INTO "pm2_5_data2014" VALUES (743,77,'','嘉峪关','嘉峪关','jiayuguan',1.000000,1.000000,12.000000,35.000000,118.000000,118.000000,51.000000,87.000000,103.000000,81.000000,43.000000,26.000000,22.000000,22.000000,'颗粒物(PM10)','良','1945A','气象局','2014-03-06T14:00:00Z',1394085600,1394126570,1);
+INSERT INTO "pm2_5_data2014" VALUES (744,83,'','嘉峪关','嘉峪关','jiayuguan',0.000000,0.000000,17.000000,40.000000,134.000000,134.000000,71.000000,90.000000,116.000000,103.000000,37.000000,60.000000,17.000000,61.000000,'颗粒物(PM10)','良','1946A','酒钢耐材公司','2014-03-06T14:00:00Z',1394085600,1394126571,1);
+INSERT INTO "pm2_5_data2014" VALUES (745,100,'','洛阳','洛阳','luoyang',2.000000,1.000000,60.000000,58.000000,31.000000,49.000000,22.000000,40.000000,133.000000,99.000000,75.000000,59.000000,41.000000,25.000000,'细颗粒物(PM2.5)','良','1811A','中信二小','2014-03-06T14:00:00Z',1394085600,1394126572,1);
+INSERT INTO "pm2_5_data2014" VALUES (746,112,'','洛阳','洛阳','luoyang',3.000000,3.000000,29.000000,31.000000,13.000000,21.000000,3.000000,12.000000,157.000000,138.000000,84.000000,67.000000,51.000000,19.000000,'细颗粒物(PM2.5)','轻度污染','1812A','市委党校','2014-03-06T14:00:00Z',1394085600,1394126573,1);
+INSERT INTO "pm2_5_data2014" VALUES (747,85,'','洛阳','洛阳','luoyang',1.000000,1.000000,39.000000,34.000000,18.000000,19.000000,18.000000,19.000000,80.000000,64.000000,63.000000,49.000000,81.000000,24.000000,'细颗粒物(PM2.5)','良','1813A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126575,1);
+INSERT INTO "pm2_5_data2014" VALUES (748,113,'','洛阳','洛阳','luoyang',2.000000,1.000000,28.000000,24.000000,38.000000,47.000000,32.000000,38.000000,146.000000,106.000000,85.000000,65.000000,97.000000,38.000000,'细颗粒物(PM2.5)','轻度污染','1814A','豫西宾馆','2014-03-06T14:00:00Z',1394085600,1394126576,1);
+INSERT INTO "pm2_5_data2014" VALUES (749,104,'','洛阳','洛阳','luoyang',5.000000,1.000000,0.000000,54.000000,10.000000,153.000000,28.000000,29.000000,152.000000,122.000000,78.000000,64.000000,0.000000,28.000000,'细颗粒物(PM2.5)','轻度污染','1815A','河南林校','2014-03-06T14:00:00Z',1394085600,1394126577,1);
+INSERT INTO "pm2_5_data2014" VALUES (750,95,'','洛阳','洛阳','luoyang',1.000000,1.000000,40.000000,44.000000,25.000000,33.000000,9.000000,21.000000,75.000000,69.000000,71.000000,62.000000,74.000000,28.000000,'细颗粒物(PM2.5)','良','1816A','开发区管委会','2014-03-06T14:00:00Z',1394085600,1394126578,1);
+INSERT INTO "pm2_5_data2014" VALUES (751,88,'','洛阳','洛阳','luoyang',1.000000,2.000000,42.000000,50.000000,34.000000,95.000000,38.000000,38.000000,90.000000,107.000000,65.000000,62.000000,61.000000,29.000000,'细颗粒物(PM2.5)','良','1817A','市委新办公区','2014-03-06T14:00:00Z',1394085600,1394126579,1);
+INSERT INTO "pm2_5_data2014" VALUES (752,163,'','安阳','安阳','anyang',1.000000,0.000000,56.000000,48.000000,31.000000,38.000000,14.000000,37.000000,191.000000,136.000000,124.000000,75.000000,95.000000,52.000000,'细颗粒物(PM2.5)','中度污染','1818A','棉研所','2014-03-06T14:00:00Z',1394085600,1394126580,1);
+INSERT INTO "pm2_5_data2014" VALUES (753,137,'','安阳','安阳','anyang',1.000000,2.000000,44.000000,48.000000,47.000000,47.000000,17.000000,33.000000,164.000000,131.000000,104.000000,73.000000,115.000000,88.000000,'细颗粒物(PM2.5)','轻度污染','1819A','红庙街','2014-03-06T14:00:00Z',1394085600,1394126582,1);
+INSERT INTO "pm2_5_data2014" VALUES (754,155,'','安阳','安阳','anyang',1.000000,1.000000,54.000000,56.000000,59.000000,64.000000,25.000000,62.000000,162.000000,142.000000,118.000000,80.000000,157.000000,107.000000,'细颗粒物(PM2.5)','中度污染','1820A','银杏小区','2014-03-06T14:00:00Z',1394085600,1394126583,1);
+INSERT INTO "pm2_5_data2014" VALUES (755,143,'','安阳','安阳','anyang',1.000000,1.000000,61.000000,65.000000,37.000000,45.000000,16.000000,43.000000,168.000000,141.000000,109.000000,74.000000,114.000000,68.000000,'细颗粒物(PM2.5)','轻度污染','1821A','环保局','2014-03-06T14:00:00Z',1394085600,1394126583,1);
+INSERT INTO "pm2_5_data2014" VALUES (756,145,'','安阳','安阳','anyang',2.000000,2.000000,55.000000,59.000000,37.000000,38.000000,14.000000,34.000000,173.000000,154.000000,111.000000,89.000000,158.000000,128.000000,'细颗粒物(PM2.5)','轻度污染','1822A','铁佛寺','2014-03-06T14:00:00Z',1394085600,1394126584,1);
+INSERT INTO "pm2_5_data2014" VALUES (757,112,'','开封','开封','kaifeng',3.000000,3.000000,0.000000,0.000000,91.000000,91.000000,40.000000,76.000000,0.000000,84.000000,84.000000,65.000000,0.000000,0.000000,'细颗粒物(PM2.5)','轻度污染','1823A','河大一附院','2014-03-06T14:00:00Z',1394085600,1394126585,1);
+INSERT INTO "pm2_5_data2014" VALUES (758,100,'','开封','开封','kaifeng',1.000000,1.000000,16.000000,23.000000,53.000000,57.000000,35.000000,52.000000,123.000000,107.000000,75.000000,58.000000,38.000000,29.000000,'细颗粒物(PM2.5)','良','1824A','肿瘤医院','2014-03-06T14:00:00Z',1394085600,1394126587,1);
+INSERT INTO "pm2_5_data2014" VALUES (759,85,'','开封','开封','kaifeng',2.000000,2.000000,18.000000,26.000000,44.000000,61.000000,21.000000,59.000000,120.000000,125.000000,58.000000,47.000000,27.000000,25.000000,'颗粒物(PM10)','良','1825A','妇幼保健院','2014-03-06T14:00:00Z',1394085600,1394126589,1);
+INSERT INTO "pm2_5_data2014" VALUES (760,139,'','开封','开封','kaifeng',0.000000,0.000000,16.000000,21.000000,57.000000,57.000000,32.000000,55.000000,130.000000,115.000000,106.000000,73.000000,46.000000,25.000000,'细颗粒物(PM2.5)','轻度污染','1826A','世纪星幼儿园','2014-03-06T14:00:00Z',1394085600,1394126590,1);
+INSERT INTO "pm2_5_data2014" VALUES (761,107,'','焦作','焦作','jiaozuo',1.000000,1.000000,68.000000,70.000000,60.000000,65.000000,30.000000,65.000000,118.000000,101.000000,80.000000,71.000000,73.000000,47.000000,'细颗粒物(PM2.5)','轻度污染','1827A','市监测站　','2014-03-06T14:00:00Z',1394085600,1394126591,1);
+INSERT INTO "pm2_5_data2014" VALUES (762,120,'','焦作','焦作','jiaozuo',1.000000,1.000000,42.000000,32.000000,16.000000,17.000000,16.000000,17.000000,134.000000,113.000000,91.000000,73.000000,58.000000,49.000000,'细颗粒物(PM2.5)','轻度污染','1828A','市环保局　','2014-03-06T14:00:00Z',1394085600,1394126592,1);
+INSERT INTO "pm2_5_data2014" VALUES (763,98,'','焦作','焦作','jiaozuo',1.000000,1.000000,59.000000,66.000000,57.000000,57.000000,21.000000,44.000000,108.000000,106.000000,73.000000,68.000000,65.000000,59.000000,'细颗粒物(PM2.5)','良','1829A','高新区政府','2014-03-06T14:00:00Z',1394085600,1394126594,1);
+INSERT INTO "pm2_5_data2014" VALUES (764,117,'','焦作','焦作','jiaozuo',1.000000,0.000000,74.000000,53.000000,17.000000,166.000000,29.000000,55.000000,150.000000,101.000000,88.000000,61.000000,99.000000,47.000000,'细颗粒物(PM2.5)','轻度污染','1830A','影视城','2014-03-06T14:00:00Z',1394085600,1394126595,1);
+INSERT INTO "pm2_5_data2014" VALUES (765,0,'','平顶山','平顶山','pingdingshan',0.000000,0.000000,0.000000,40.000000,0.000000,38.000000,22.000000,32.000000,0.000000,130.000000,0.000000,66.000000,0.000000,25.000000,'None','None','1831A','高压开关厂','2014-03-06T14:00:00Z',1394085600,1394126595,1);
+INSERT INTO "pm2_5_data2014" VALUES (766,102,'','平顶山','平顶山','pingdingshan',0.000000,1.000000,25.000000,38.000000,95.000000,95.000000,48.000000,56.000000,112.000000,116.000000,76.000000,75.000000,22.000000,26.000000,'细颗粒物(PM2.5)','轻度污染','1832A','新华旅馆','2014-03-06T14:00:00Z',1394085600,1394126596,1);
+INSERT INTO "pm2_5_data2014" VALUES (767,107,'','平顶山','平顶山','pingdingshan',0.000000,0.000000,37.000000,52.000000,82.000000,82.000000,45.000000,45.000000,136.000000,119.000000,80.000000,73.000000,57.000000,57.000000,'细颗粒物(PM2.5)','轻度污染','1833A','规划设计院','2014-03-06T14:00:00Z',1394085600,1394126597,1);
+INSERT INTO "pm2_5_data2014" VALUES (768,114,'','平顶山','平顶山','pingdingshan',0.000000,0.000000,30.000000,38.000000,50.000000,50.000000,25.000000,32.000000,99.000000,117.000000,86.000000,91.000000,39.000000,60.000000,'细颗粒物(PM2.5)','轻度污染','1834A','平顶山工学院','2014-03-06T14:00:00Z',1394085600,1394126599,1);
+INSERT INTO "pm2_5_data2014" VALUES (769,137,'','三门峡','三门峡','sanmenxia',0.000000,0.000000,37.000000,40.000000,17.000000,44.000000,10.000000,44.000000,0.000000,115.000000,104.000000,103.000000,177.000000,106.000000,'细颗粒物(PM2.5)','轻度污染','1835A','市政府','2014-03-06T14:00:00Z',1394085600,1394126600,1);
+INSERT INTO "pm2_5_data2014" VALUES (770,125,'','三门峡','三门峡','sanmenxia',1.000000,1.000000,66.000000,68.000000,13.000000,26.000000,6.000000,25.000000,117.000000,122.000000,95.000000,102.000000,144.000000,73.000000,'细颗粒物(PM2.5)','轻度污染','1836A','开发区','2014-03-06T14:00:00Z',1394085600,1394126602,1);
+INSERT INTO "pm2_5_data2014" VALUES (771,120,'','三门峡','三门峡','sanmenxia',1.000000,1.000000,28.000000,28.000000,20.000000,37.000000,10.000000,37.000000,0.000000,108.000000,91.000000,98.000000,160.000000,72.000000,'细颗粒物(PM2.5)','轻度污染','1837A','二  印','2014-03-06T14:00:00Z',1394085600,1394126603,1);
+INSERT INTO "pm2_5_data2014" VALUES (772,112,'','三门峡','三门峡','sanmenxia',2.000000,2.000000,64.000000,70.000000,22.000000,42.000000,13.000000,42.000000,118.000000,110.000000,84.000000,98.000000,125.000000,73.000000,'细颗粒物(PM2.5)','轻度污染','1838A','风景区','2014-03-06T14:00:00Z',1394085600,1394126604,1);
+INSERT INTO "pm2_5_data2014" VALUES (773,53,'','遵义','遵义','zunyi',1.000000,0.000000,30.000000,43.000000,44.000000,66.000000,23.000000,66.000000,55.000000,64.000000,33.000000,47.000000,36.000000,34.000000,'颗粒物(PM10)','良','1911A','丁字口','2014-03-06T14:00:00Z',1394085600,1394126605,1);
+INSERT INTO "pm2_5_data2014" VALUES (774,33,'','遵义','遵义','zunyi',0.000000,0.000000,29.000000,30.000000,32.000000,69.000000,28.000000,69.000000,33.000000,51.000000,14.000000,41.000000,15.000000,21.000000,'None','优','1912A','凤凰山','2014-03-06T14:00:00Z',1394085600,1394126606,1);
+INSERT INTO "pm2_5_data2014" VALUES (775,48,'','遵义','遵义','zunyi',0.000000,0.000000,18.000000,30.000000,0.000000,71.000000,27.000000,71.000000,39.000000,63.000000,33.000000,45.000000,8.000000,18.000000,'None','优','1913A','忠庄','2014-03-06T14:00:00Z',1394085600,1394126607,1);
+INSERT INTO "pm2_5_data2014" VALUES (776,34,'','遵义','遵义','zunyi',0.000000,0.000000,20.000000,27.000000,67.000000,83.000000,49.000000,83.000000,34.000000,70.000000,14.000000,39.000000,19.000000,29.000000,'None','优','1914A','舟水桥','2014-03-06T14:00:00Z',1394085600,1394126608,1);
+INSERT INTO "pm2_5_data2014" VALUES (777,53,'','遵义','遵义','zunyi',0.000000,0.000000,38.000000,39.000000,42.000000,65.000000,37.000000,65.000000,55.000000,72.000000,27.000000,40.000000,17.000000,11.000000,'颗粒物(PM10)','良','1915A','干田坝','2014-03-06T14:00:00Z',1394085600,1394126609,1);
+INSERT INTO "pm2_5_data2014" VALUES (778,56,'','吴江','吴江','wujiang',0.000000,0.000000,35.000000,29.000000,63.000000,105.000000,59.000000,105.000000,61.000000,56.000000,33.000000,32.000000,11.000000,12.000000,'颗粒物(PM10)','良','1985A','吴江市环保局','2014-03-06T14:00:00Z',1394085600,1394126611,1);
+INSERT INTO "pm2_5_data2014" VALUES (779,60,'','吴江','吴江','wujiang',0.000000,0.000000,45.000000,40.000000,60.000000,102.000000,57.000000,102.000000,69.000000,60.000000,37.000000,32.000000,8.000000,12.000000,'颗粒物(PM10)','良','1986A','教师进修学校','2014-03-06T14:00:00Z',1394085600,1394126613,1);
+INSERT INTO "pm2_5_data2014" VALUES (780,60,'','吴江','吴江','wujiang',0.000000,0.000000,40.000000,33.000000,41.000000,77.000000,40.000000,76.000000,69.000000,55.000000,19.000000,16.000000,14.000000,17.000000,'颗粒物(PM10)','良','1987A','吴江开发区','2014-03-06T14:00:00Z',1394085600,1394126614,1);
+INSERT INTO "pm2_5_data2014" VALUES (781,50,'','昆山','昆山','kunshan',1.000000,1.000000,28.000000,25.000000,73.000000,113.000000,71.000000,113.000000,50.000000,46.000000,24.000000,24.000000,28.000000,27.000000,'None','优','1988A','昆山实验小学','2014-03-06T14:00:00Z',1394085600,1394126617,1);
+INSERT INTO "pm2_5_data2014" VALUES (782,51,'','昆山','昆山','kunshan',1.000000,1.000000,23.000000,18.000000,73.000000,79.000000,62.000000,62.000000,51.000000,48.000000,25.000000,27.000000,25.000000,24.000000,'颗粒物(PM10)','良','1989A','震川中学','2014-03-06T14:00:00Z',1394085600,1394126617,1);
+INSERT INTO "pm2_5_data2014" VALUES (783,43,'','常熟','常熟','changshu',0.000000,0.000000,0.000000,0.000000,0.000000,193.000000,141.000000,193.000000,30.000000,26.000000,30.000000,26.000000,0.000000,130.000000,'None','优','1990A','海虞子站','2014-03-06T14:00:00Z',1394085600,1394126619,1);
+INSERT INTO "pm2_5_data2014" VALUES (784,55,'','常熟','常熟','changshu',0.000000,0.000000,19.000000,27.000000,89.000000,103.000000,77.000000,103.000000,41.000000,31.000000,39.000000,28.000000,31.000000,37.000000,'细颗粒物(PM2.5)','良','1991A','兴福子站','2014-03-06T14:00:00Z',1394085600,1394126620,1);
+INSERT INTO "pm2_5_data2014" VALUES (785,44,'','常熟','常熟','changshu',0.000000,0.000000,44.000000,52.000000,140.000000,162.000000,129.000000,162.000000,0.000000,65.000000,0.000000,54.000000,49.000000,53.000000,'None','优','1992A','菱塘子站','2014-03-06T14:00:00Z',1394085600,1394126621,1);
+INSERT INTO "pm2_5_data2014" VALUES (786,63,'','张家港','张家港','zhangjiagang',0.000000,0.000000,21.000000,24.000000,83.000000,93.000000,70.000000,91.000000,75.000000,61.000000,31.000000,23.000000,23.000000,19.000000,'颗粒物(PM10)','良','1993A','张家港市监测站','2014-03-06T14:00:00Z',1394085600,1394126622,1);
+INSERT INTO "pm2_5_data2014" VALUES (787,75,'','张家港','张家港','zhangjiagang',1.000000,0.000000,25.000000,19.000000,71.000000,88.000000,68.000000,85.000000,99.000000,64.000000,31.000000,23.000000,36.000000,30.000000,'颗粒物(PM10)','良','1994A','城北小学','2014-03-06T14:00:00Z',1394085600,1394126623,1);
+INSERT INTO "pm2_5_data2014" VALUES (788,29,'','太仓','太仓','taicang',0.000000,1.000000,15.000000,19.000000,83.000000,107.000000,81.000000,107.000000,27.000000,79.000000,20.000000,26.000000,38.000000,37.000000,'None','优','1995A','太仓市监测站','2014-03-06T14:00:00Z',1394085600,1394126625,1);
+INSERT INTO "pm2_5_data2014" VALUES (789,41,'','太仓','太仓','taicang',1.000000,1.000000,25.000000,18.000000,71.000000,116.000000,81.000000,114.000000,41.000000,46.000000,19.000000,23.000000,33.000000,25.000000,'None','优','1996A','科教新城实小','2014-03-06T14:00:00Z',1394085600,1394126626,1);
+INSERT INTO "pm2_5_data2014" VALUES (790,67,'','句容','句容','jurong',0.000000,0.000000,49.000000,42.000000,141.000000,215.000000,110.000000,215.000000,48.000000,52.000000,48.000000,49.000000,55.000000,58.000000,'细颗粒物(PM2.5)','良','1997A','消防指挥中心','2014-03-06T14:00:00Z',1394085600,1394126628,1);
+INSERT INTO "pm2_5_data2014" VALUES (791,80,'','句容','句容','jurong',0.000000,0.000000,0.000000,39.000000,70.000000,83.000000,53.000000,83.000000,66.000000,65.000000,59.000000,57.000000,17.000000,18.000000,'细颗粒物(PM2.5)','良','1998A','房家坝','2014-03-06T14:00:00Z',1394085600,1394126629,1);
+INSERT INTO "pm2_5_data2014" VALUES (792,59,'','江阴','江阴','jiangyin',1.000000,1.000000,24.000000,23.000000,61.000000,82.000000,54.000000,82.000000,63.000000,45.000000,42.000000,33.000000,37.000000,32.000000,'细颗粒物(PM2.5)','良','1999A','虹桥邮政','2014-03-06T14:00:00Z',1394085600,1394126630,1);
+INSERT INTO "pm2_5_data2014" VALUES (793,64,'','江阴','江阴','jiangyin',1.000000,0.000000,28.000000,28.000000,85.000000,92.000000,76.000000,92.000000,46.000000,40.000000,46.000000,40.000000,41.000000,34.000000,'细颗粒物(PM2.5)','良','2000A','五星公园','2014-03-06T14:00:00Z',1394085600,1394126631,1);
+INSERT INTO "pm2_5_data2014" VALUES (794,64,'','江阴','江阴','jiangyin',0.000000,0.000000,37.000000,35.000000,82.000000,91.000000,69.000000,89.000000,46.000000,38.000000,46.000000,38.000000,24.000000,20.000000,'细颗粒物(PM2.5)','良','2001A','第二实验小学','2014-03-06T14:00:00Z',1394085600,1394126631,1);
+INSERT INTO "pm2_5_data2014" VALUES (795,43,'','宜兴','宜兴','yixing',0.000000,0.000000,19.000000,22.000000,79.000000,100.000000,65.000000,94.000000,40.000000,50.000000,30.000000,23.000000,32.000000,36.000000,'None','优','2002A','宜兴市环保局','2014-03-06T14:00:00Z',1394085600,1394126633,1);
+INSERT INTO "pm2_5_data2014" VALUES (796,39,'','宜兴','宜兴','yixing',0.000000,0.000000,21.000000,27.000000,87.000000,112.000000,73.000000,104.000000,36.000000,44.000000,27.000000,36.000000,16.000000,24.000000,'None','优','2003A','宜园','2014-03-06T14:00:00Z',1394085600,1394126634,1);
+INSERT INTO "pm2_5_data2014" VALUES (797,59,'','金坛','金坛','jintan',1.000000,1.000000,37.000000,33.000000,76.000000,114.000000,66.000000,114.000000,67.000000,72.000000,42.000000,41.000000,26.000000,32.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','2004A','金坛市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126635,1);
+INSERT INTO "pm2_5_data2014" VALUES (798,63,'','金坛','金坛','jintan',0.000000,0.000000,22.000000,30.000000,78.000000,113.000000,69.000000,113.000000,76.000000,77.000000,39.000000,42.000000,26.000000,38.000000,'颗粒物(PM10)','良','2005A','金坛市自来水公司','2014-03-06T14:00:00Z',1394085600,1394126636,1);
+INSERT INTO "pm2_5_data2014" VALUES (799,60,'','溧阳','溧阳','liyang',0.000000,2.000000,33.000000,30.000000,95.000000,120.000000,85.000000,115.000000,70.000000,79.000000,34.000000,44.000000,29.000000,22.000000,'颗粒物(PM10)','良','2006A','溧阳市东门子站','2014-03-06T14:00:00Z',1394085600,1394126639,1);
+INSERT INTO "pm2_5_data2014" VALUES (800,55,'','溧阳','溧阳','liyang',0.000000,0.000000,36.000000,45.000000,82.000000,110.000000,60.000000,110.000000,60.000000,73.000000,29.000000,42.000000,24.000000,45.000000,'颗粒物(PM10)','良','2007A','燕山子站','2014-03-06T14:00:00Z',1394085600,1394126640,1);
+INSERT INTO "pm2_5_data2014" VALUES (801,37,'','海门','海门','haimen',0.000000,0.000000,10.000000,13.000000,87.000000,108.000000,84.000000,108.000000,37.000000,46.000000,18.000000,24.000000,22.000000,18.000000,'None','优','2008A','海门市监测站','2014-03-06T14:00:00Z',1394085600,1394126641,1);
+INSERT INTO "pm2_5_data2014" VALUES (802,41,'','海门','海门','haimen',0.000000,0.000000,7.000000,10.000000,85.000000,102.000000,79.000000,102.000000,41.000000,48.000000,26.000000,28.000000,14.000000,9.000000,'None','优','2009A','蓓蕾幼儿园','2014-03-06T14:00:00Z',1394085600,1394126642,1);
+INSERT INTO "pm2_5_data2014" VALUES (803,32,'','宝鸡','宝鸡','baoji',3.000000,2.000000,58.000000,42.000000,0.000000,135.000000,37.000000,40.000000,0.000000,160.000000,0.000000,96.000000,63.000000,48.000000,'None','优','1930A','庙沟村','2014-03-06T14:00:00Z',1394085600,1394126644,1);
+INSERT INTO "pm2_5_data2014" VALUES (804,64,'','岳阳','岳阳','yueyang',2.000000,2.000000,28.000000,38.000000,3.000000,3.000000,2.000000,3.000000,78.000000,125.000000,46.000000,83.000000,3.000000,6.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','1847A','南湖风景区','2014-03-06T14:00:00Z',1394085600,1394126645,1);
+INSERT INTO "pm2_5_data2014" VALUES (805,68,'','岳阳','岳阳','yueyang',0.000000,0.000000,2.000000,37.000000,34.000000,35.000000,22.000000,22.000000,71.000000,135.000000,49.000000,75.000000,22.000000,27.000000,'细颗粒物(PM2.5)','良','1848A','城陵矶','2014-03-06T14:00:00Z',1394085600,1394126646,1);
+INSERT INTO "pm2_5_data2014" VALUES (806,60,'','岳阳','岳阳','yueyang',0.000000,0.000000,8.000000,37.000000,3.000000,33.000000,6.000000,33.000000,69.000000,157.000000,39.000000,74.000000,35.000000,36.000000,'颗粒物(PM10)','良','1849A','开发区','2014-03-06T14:00:00Z',1394085600,1394126647,1);
+INSERT INTO "pm2_5_data2014" VALUES (807,128,'','岳阳','岳阳','yueyang',0.000000,1.000000,21.000000,43.000000,41.000000,43.000000,31.000000,34.000000,110.000000,201.000000,97.000000,91.000000,14.000000,32.000000,'细颗粒物(PM2.5)','轻度污染','1850A','云溪区','2014-03-06T14:00:00Z',1394085600,1394126649,1);
+INSERT INTO "pm2_5_data2014" VALUES (808,70,'','岳阳','岳阳','yueyang',0.000000,0.000000,6.000000,13.000000,30.000000,39.000000,29.000000,33.000000,90.000000,172.000000,47.000000,80.000000,2.000000,6.000000,'颗粒物(PM10)','良','1851A','君山区','2014-03-06T14:00:00Z',1394085600,1394126651,1);
+INSERT INTO "pm2_5_data2014" VALUES (809,87,'','岳阳','岳阳','yueyang',0.000000,0.000000,2.000000,19.000000,47.000000,48.000000,26.000000,28.000000,0.000000,132.000000,64.000000,90.000000,21.000000,31.000000,'细颗粒物(PM2.5)','良','1852A','金凤水库','2014-03-06T14:00:00Z',1394085600,1394126652,1);
+INSERT INTO "pm2_5_data2014" VALUES (810,83,'','常德','常德','changde',0.000000,1.000000,16.000000,23.000000,44.000000,58.000000,34.000000,51.000000,66.000000,119.000000,61.000000,108.000000,10.000000,19.000000,'细颗粒物(PM2.5)','良','1853A','市监测站','2014-03-06T14:00:00Z',1394085600,1394126653,1);
+INSERT INTO "pm2_5_data2014" VALUES (811,97,'','常德','常德','changde',0.000000,0.000000,24.000000,36.000000,55.000000,63.000000,41.000000,62.000000,74.000000,164.000000,72.000000,110.000000,21.000000,53.000000,'细颗粒物(PM2.5)','良','1854A','市二中','2014-03-06T14:00:00Z',1394085600,1394126654,1);
+INSERT INTO "pm2_5_data2014" VALUES (812,90,'','常德','常德','changde',1.000000,1.000000,21.000000,30.000000,13.000000,15.000000,10.000000,13.000000,78.000000,172.000000,67.000000,113.000000,34.000000,40.000000,'细颗粒物(PM2.5)','良','1855A','鼎城区环保局','2014-03-06T14:00:00Z',1394085600,1394126655,1);
+INSERT INTO "pm2_5_data2014" VALUES (813,88,'','常德','常德','changde',0.000000,1.000000,37.000000,47.000000,24.000000,31.000000,19.000000,21.000000,87.000000,157.000000,65.000000,106.000000,38.000000,53.000000,'细颗粒物(PM2.5)','良','1856A','市技术监督局','2014-03-06T14:00:00Z',1394085600,1394126656,1);
+INSERT INTO "pm2_5_data2014" VALUES (814,63,'','常德','常德','changde',0.000000,0.000000,9.000000,6.000000,18.000000,22.000000,20.000000,20.000000,65.000000,114.000000,45.000000,75.000000,3.000000,4.000000,'细颗粒物(PM2.5)','良','1857A','百合山','2014-03-06T14:00:00Z',1394085600,1394126658,1);
+INSERT INTO "pm2_5_data2014" VALUES (815,94,'','张家界','张家界','zhangjiajie',1.000000,1.000000,29.000000,31.000000,53.000000,57.000000,44.000000,46.000000,0.000000,151.000000,70.000000,129.000000,34.000000,33.000000,'细颗粒物(PM2.5)','良','1858A','永定新区','2014-03-06T14:00:00Z',1394085600,1394126659,1);
+INSERT INTO "pm2_5_data2014" VALUES (816,73,'','张家界','张家界','zhangjiajie',2.000000,2.000000,16.000000,35.000000,71.000000,72.000000,56.000000,58.000000,72.000000,144.000000,53.000000,111.000000,27.000000,27.000000,'细颗粒物(PM2.5)','良','1859A','电业局','2014-03-06T14:00:00Z',1394085600,1394126660,1);
+INSERT INTO "pm2_5_data2014" VALUES (817,68,'','张家界','张家界','zhangjiajie',0.000000,0.000000,7.000000,8.000000,59.000000,71.000000,61.000000,65.000000,0.000000,130.000000,49.000000,85.000000,11.000000,14.000000,'细颗粒物(PM2.5)','良','1860A','未央路','2014-03-06T14:00:00Z',1394085600,1394126661,1);
+INSERT INTO "pm2_5_data2014" VALUES (818,52,'','张家界','张家界','zhangjiajie',0.000000,0.000000,8.000000,8.000000,87.000000,125.000000,99.000000,119.000000,51.000000,80.000000,36.000000,60.000000,8.000000,12.000000,'细颗粒物(PM2.5)','良','1861A','袁家界','2014-03-06T14:00:00Z',1394085600,1394126664,1);
+INSERT INTO "pm2_5_data2014" VALUES (819,40,'','株洲','株洲','zhuzhou',0.000000,0.000000,19.000000,32.000000,45.000000,48.000000,45.000000,45.000000,40.000000,103.000000,26.000000,65.000000,3.000000,17.000000,'None','优','2031A','云田中学','2014-03-06T14:00:00Z',1394085600,1394126665,1);
+INSERT INTO "pm2_5_data2014" VALUES (820,33,'','绵阳','绵阳','mianyang',0.000000,0.000000,19.000000,25.000000,70.000000,70.000000,52.000000,62.000000,0.000000,53.000000,23.000000,44.000000,7.000000,7.000000,'None','优','1878A','富乐山','2014-03-06T14:00:00Z',1394085600,1394126668,1);
+INSERT INTO "pm2_5_data2014" VALUES (821,32,'','绵阳','绵阳','mianyang',0.000000,1.000000,36.000000,49.000000,67.000000,67.000000,40.000000,43.000000,30.000000,53.000000,22.000000,45.000000,17.000000,15.000000,'None','优','1879A','市人大','2014-03-06T14:00:00Z',1394085600,1394126669,1);
+INSERT INTO "pm2_5_data2014" VALUES (822,36,'','绵阳','绵阳','mianyang',0.000000,0.000000,31.000000,40.000000,85.000000,85.000000,57.000000,60.000000,31.000000,55.000000,25.000000,42.000000,16.000000,17.000000,'None','优','1880A','高新区自来水公司','2014-03-06T14:00:00Z',1394085600,1394126671,1);
+INSERT INTO "pm2_5_data2014" VALUES (823,23,'','绵阳','绵阳','mianyang',0.000000,0.000000,0.000000,34.000000,0.000000,78.000000,55.000000,60.000000,20.000000,55.000000,16.000000,39.000000,0.000000,20.000000,'None','优','1881A','三水厂','2014-03-06T14:00:00Z',1394085600,1394126672,1);
+INSERT INTO "pm2_5_data2014" VALUES (824,89,'','宜宾','宜宾','yibin',0.000000,0.000000,20.000000,28.000000,42.000000,71.000000,32.000000,71.000000,0.000000,69.000000,66.000000,53.000000,27.000000,34.000000,'细颗粒物(PM2.5)','良','1882A','石马中学','2014-03-06T14:00:00Z',1394085600,1394126673,1);
+INSERT INTO "pm2_5_data2014" VALUES (825,92,'','宜宾','宜宾','yibin',0.000000,0.000000,43.000000,43.000000,20.000000,65.000000,17.000000,65.000000,99.000000,82.000000,68.000000,60.000000,33.000000,42.000000,'细颗粒物(PM2.5)','良','1883A','市委','2014-03-06T14:00:00Z',1394085600,1394126674,1);
+INSERT INTO "pm2_5_data2014" VALUES (826,103,'','宜宾','宜宾','yibin',0.000000,0.000000,27.000000,38.000000,29.000000,60.000000,15.000000,60.000000,84.000000,85.000000,77.000000,70.000000,18.000000,25.000000,'细颗粒物(PM2.5)','轻度污染','1884A','宜宾四中','2014-03-06T14:00:00Z',1394085600,1394126676,1);
+INSERT INTO "pm2_5_data2014" VALUES (827,100,'','宜宾','宜宾','yibin',1.000000,1.000000,40.000000,40.000000,23.000000,103.000000,18.000000,103.000000,93.000000,95.000000,75.000000,59.000000,25.000000,36.000000,'细颗粒物(PM2.5)','良','1885A','市政府','2014-03-06T14:00:00Z',1394085600,1394126678,1);
+INSERT INTO "pm2_5_data2014" VALUES (828,93,'','宜宾','宜宾','yibin',0.000000,0.000000,29.000000,40.000000,41.000000,66.000000,31.000000,64.000000,100.000000,105.000000,69.000000,67.000000,13.000000,23.000000,'细颗粒物(PM2.5)','良','1886A','黄金嘴','2014-03-06T14:00:00Z',1394085600,1394126679,1);
+INSERT INTO "pm2_5_data2014" VALUES (829,88,'','宜宾','宜宾','yibin',0.000000,0.000000,18.000000,21.000000,46.000000,84.000000,41.000000,83.000000,79.000000,90.000000,65.000000,61.000000,23.000000,31.000000,'细颗粒物(PM2.5)','良','1887A','沙坪中学','2014-03-06T14:00:00Z',1394085600,1394126680,1);
+INSERT INTO "pm2_5_data2014" VALUES (830,43,'','攀枝花','攀枝花','panzhihua',1.000000,1.000000,26.000000,38.000000,89.000000,93.000000,53.000000,86.000000,43.000000,87.000000,26.000000,43.000000,37.000000,75.000000,'None','优','1888A','弄弄坪','2014-03-06T14:00:00Z',1394085600,1394126681,1);
+INSERT INTO "pm2_5_data2014" VALUES (831,34,'','攀枝花','攀枝花','panzhihua',0.000000,0.000000,5.000000,18.000000,108.000000,115.000000,64.000000,114.000000,0.000000,78.000000,18.000000,33.000000,11.000000,25.000000,'None','优','1889A','河门口','2014-03-06T14:00:00Z',1394085600,1394126682,1);
+INSERT INTO "pm2_5_data2014" VALUES (832,38,'','攀枝花','攀枝花','panzhihua',1.000000,1.000000,31.000000,62.000000,63.000000,66.000000,25.000000,64.000000,38.000000,80.000000,18.000000,33.000000,30.000000,60.000000,'None','优','1890A','炳草岗','2014-03-06T14:00:00Z',1394085600,1394126683,1);
+INSERT INTO "pm2_5_data2014" VALUES (833,32,'','攀枝花','攀枝花','panzhihua',0.000000,0.000000,5.000000,25.000000,101.000000,106.000000,51.000000,105.000000,29.000000,61.000000,14.000000,27.000000,2.000000,12.000000,'None','优','1891A','仁和','2014-03-06T14:00:00Z',1394085600,1394126686,1);
+INSERT INTO "pm2_5_data2014" VALUES (834,57,'','攀枝花','攀枝花','panzhihua',1.000000,2.000000,7.000000,41.000000,23.000000,25.000000,16.000000,20.000000,64.000000,111.000000,19.000000,46.000000,6.000000,91.000000,'颗粒物(PM10)','良','1892A','金江','2014-03-06T14:00:00Z',1394085600,1394126687,1);
+INSERT INTO "pm2_5_data2014" VALUES (835,92,'','泸州','泸州','luzhou',0.000000,0.000000,16.000000,27.000000,71.000000,112.000000,32.000000,111.000000,92.000000,88.000000,68.000000,68.000000,40.000000,37.000000,'细颗粒物(PM2.5)','良','1893A','九狮山','2014-03-06T14:00:00Z',1394085600,1394126689,1);
+INSERT INTO "pm2_5_data2014" VALUES (836,125,'','泸州','泸州','luzhou',1.000000,1.000000,42.000000,57.000000,36.000000,63.000000,11.000000,63.000000,129.000000,134.000000,95.000000,94.000000,53.000000,57.000000,'细颗粒物(PM2.5)','轻度污染','1894A','小市上码头','2014-03-06T14:00:00Z',1394085600,1394126691,1);
+INSERT INTO "pm2_5_data2014" VALUES (837,115,'','泸州','泸州','luzhou',0.000000,0.000000,32.000000,47.000000,23.000000,67.000000,9.000000,67.000000,116.000000,113.000000,87.000000,74.000000,38.000000,38.000000,'细颗粒物(PM2.5)','轻度污染','1895A','兰田宪桥','2014-03-06T14:00:00Z',1394085600,1394126692,1);
+INSERT INTO "pm2_5_data2014" VALUES (838,103,'','泸州','泸州','luzhou',1.000000,1.000000,74.000000,63.000000,15.000000,50.000000,7.000000,50.000000,103.000000,96.000000,77.000000,72.000000,66.000000,55.000000,'细颗粒物(PM2.5)','轻度污染','1896A','市环监站','2014-03-06T14:00:00Z',1394085600,1394126693,1);
+INSERT INTO "pm2_5_data2014" VALUES (839,64,'','自贡','自贡','zigong',0.000000,0.000000,8.000000,10.000000,16.000000,46.000000,26.000000,39.000000,75.000000,90.000000,46.000000,49.000000,18.000000,26.000000,'细颗粒物(PM2.5)','良','1897A','大塘山','2014-03-06T14:00:00Z',1394085600,1394126694,1);
+INSERT INTO "pm2_5_data2014" VALUES (840,99,'','自贡','自贡','zigong',0.000000,1.000000,15.000000,22.000000,28.000000,82.000000,22.000000,46.000000,103.000000,98.000000,74.000000,76.000000,86.000000,65.000000,'细颗粒物(PM2.5)','良','1898A','盐马路','2014-03-06T14:00:00Z',1394085600,1394126695,1);
+INSERT INTO "pm2_5_data2014" VALUES (841,83,'','自贡','自贡','zigong',0.000000,0.000000,20.000000,28.000000,17.000000,34.000000,24.000000,28.000000,63.000000,76.000000,61.000000,65.000000,24.000000,26.000000,'细颗粒物(PM2.5)','良','1899A','檀木林街','2014-03-06T14:00:00Z',1394085600,1394126697,1);
+INSERT INTO "pm2_5_data2014" VALUES (842,88,'','自贡','自贡','zigong',0.000000,0.000000,22.000000,28.000000,46.000000,46.000000,26.000000,39.000000,82.000000,92.000000,65.000000,71.000000,21.000000,21.000000,'细颗粒物(PM2.5)','良','1900A','春华路','2014-03-06T14:00:00Z',1394085600,1394126698,1);
+INSERT INTO "pm2_5_data2014" VALUES (843,21,'','德阳','德阳','deyang',0.000000,0.000000,26.000000,49.000000,66.000000,66.000000,56.000000,56.000000,0.000000,61.000000,13.000000,40.000000,16.000000,18.000000,'None','优','1901A','东山公园','2014-03-06T14:00:00Z',1394085600,1394126699,1);
+INSERT INTO "pm2_5_data2014" VALUES (844,33,'','德阳','德阳','deyang',0.000000,0.000000,19.000000,35.000000,73.000000,73.000000,52.000000,52.000000,0.000000,54.000000,23.000000,43.000000,32.000000,48.000000,'None','优','1902A','西小区','2014-03-06T14:00:00Z',1394085600,1394126700,1);
+INSERT INTO "pm2_5_data2014" VALUES (845,33,'','德阳','德阳','deyang',0.000000,0.000000,19.000000,37.000000,63.000000,63.000000,40.000000,45.000000,33.000000,57.000000,18.000000,45.000000,27.000000,21.000000,'None','优','1903A','市检察院','2014-03-06T14:00:00Z',1394085600,1394126701,1);
+INSERT INTO "pm2_5_data2014" VALUES (846,52,'','德阳','德阳','deyang',0.000000,0.000000,27.000000,43.000000,59.000000,59.000000,34.000000,34.000000,53.000000,98.000000,19.000000,62.000000,18.000000,13.000000,'颗粒物(PM10)','良','1904A','耐火材料厂','2014-03-06T14:00:00Z',1394085600,1394126703,1);
+INSERT INTO "pm2_5_data2014" VALUES (847,79,'','南充','南充','nanchong',0.000000,0.000000,3.000000,3.000000,6.000000,8.000000,5.000000,8.000000,74.000000,92.000000,58.000000,63.000000,4.000000,5.000000,'细颗粒物(PM2.5)','良','1905A','西山风景区','2014-03-06T14:00:00Z',1394085600,1394126705,1);
+INSERT INTO "pm2_5_data2014" VALUES (848,95,'','南充','南充','nanchong',0.000000,0.000000,24.000000,10.000000,6.000000,6.000000,5.000000,5.000000,91.000000,105.000000,71.000000,76.000000,19.000000,23.000000,'细颗粒物(PM2.5)','良','1906A','南充市委','2014-03-06T14:00:00Z',1394085600,1394126706,1);
+INSERT INTO "pm2_5_data2014" VALUES (849,90,'','南充','南充','nanchong',0.000000,0.000000,17.000000,27.000000,61.000000,84.000000,63.000000,76.000000,79.000000,93.000000,67.000000,76.000000,8.000000,14.000000,'细颗粒物(PM2.5)','良','1907A','南充炼油厂','2014-03-06T14:00:00Z',1394085600,1394126707,1);
+INSERT INTO "pm2_5_data2014" VALUES (850,93,'','南充','南充','nanchong',0.000000,0.000000,14.000000,15.000000,42.000000,49.000000,20.000000,49.000000,98.000000,126.000000,69.000000,66.000000,10.000000,19.000000,'细颗粒物(PM2.5)','良','1908A','高坪区监测站','2014-03-06T14:00:00Z',1394085600,1394126708,1);
+INSERT INTO "pm2_5_data2014" VALUES (851,92,'','南充','南充','nanchong',0.000000,0.000000,23.000000,35.000000,24.000000,27.000000,18.000000,26.000000,92.000000,114.000000,68.000000,76.000000,2.000000,52.000000,'细颗粒物(PM2.5)','良','1909A','嘉陵区环保局','2014-03-06T14:00:00Z',1394085600,1394126710,1);
+INSERT INTO "pm2_5_data2014" VALUES (852,93,'','南充','南充','nanchong',0.000000,0.000000,13.000000,16.000000,50.000000,61.000000,41.000000,58.000000,77.000000,95.000000,69.000000,67.000000,7.000000,13.000000,'细颗粒物(PM2.5)','良','1910A','市环境监测站','2014-03-06T14:00:00Z',1394085600,1394126710,1);
+INSERT INTO "pm2_5_data2014" VALUES (853,30,'','三亚','三亚','sanya',0.000000,0.000000,6.000000,8.000000,80.000000,81.000000,78.000000,78.000000,25.000000,38.000000,21.000000,21.000000,2.000000,2.000000,'None','优','1876A','河东子站','2014-03-06T14:00:00Z',1394085600,1394126711,1);
+INSERT INTO "pm2_5_data2014" VALUES (854,26,'','三亚','三亚','sanya',0.000000,0.000000,6.000000,13.000000,81.000000,83.000000,65.000000,65.000000,24.000000,34.000000,18.000000,20.000000,2.000000,1.000000,'None','优','1877A','河西子站','2014-03-06T14:00:00Z',1394085600,1394126712,1);
+INSERT INTO "pm2_5_data2014" VALUES (855,79,'','吉林','吉林','jilin',2.000000,2.000000,15.000000,25.000000,38.000000,42.000000,27.000000,42.000000,107.000000,87.000000,49.000000,34.000000,51.000000,42.000000,'颗粒物(PM10)','良','1772A','哈达湾','2014-03-06T14:00:00Z',1394085600,1394126714,1);
+INSERT INTO "pm2_5_data2014" VALUES (856,70,'','吉林','吉林','jilin',1.000000,1.000000,23.000000,24.000000,84.000000,87.000000,58.000000,87.000000,90.000000,58.000000,40.000000,23.000000,16.000000,20.000000,'颗粒物(PM10)','良','1773A','东局子','2014-03-06T14:00:00Z',1394085600,1394126714,1);
+INSERT INTO "pm2_5_data2014" VALUES (857,59,'','吉林','吉林','jilin',0.000000,3.000000,14.000000,15.000000,92.000000,95.000000,70.000000,95.000000,68.000000,66.000000,37.000000,38.000000,19.000000,18.000000,'颗粒物(PM10)','良','1774A','电力学院','2014-03-06T14:00:00Z',1394085600,1394126715,1);
+INSERT INTO "pm2_5_data2014" VALUES (858,77,'','吉林','吉林','jilin',0.000000,0.000000,21.000000,17.000000,108.000000,108.000000,85.000000,105.000000,104.000000,74.000000,45.000000,29.000000,34.000000,21.000000,'颗粒物(PM10)','良','1775A','江北','2014-03-06T14:00:00Z',1394085600,1394126718,1);
+INSERT INTO "pm2_5_data2014" VALUES (859,62,'','吉林','吉林','jilin',1.000000,1.000000,21.000000,24.000000,42.000000,44.000000,35.000000,44.000000,73.000000,56.000000,41.000000,32.000000,23.000000,30.000000,'颗粒物(PM10)','良','1776A','江南公园','2014-03-06T14:00:00Z',1394085600,1394126719,1);
+INSERT INTO "pm2_5_data2014" VALUES (860,64,'','吉林','吉林','jilin',2.000000,2.000000,10.000000,23.000000,100.000000,100.000000,74.000000,98.000000,78.000000,67.000000,42.000000,30.000000,27.000000,39.000000,'颗粒物(PM10)','良','1777A','农科院','2014-03-06T14:00:00Z',1394085600,1394126720,1);
+INSERT INTO "pm2_5_data2014" VALUES (861,57,'','吉林','吉林','jilin',1.000000,1.000000,10.000000,10.000000,79.000000,81.000000,65.000000,80.000000,64.000000,40.000000,38.000000,23.000000,16.000000,16.000000,'颗粒物(PM10)','良','1778A','丰满','2014-03-06T14:00:00Z',1394085600,1394126721,1);
+INSERT INTO "pm2_5_data2014" VALUES (862,31,'','石嘴山','石嘴山','shizuishan',0.000000,1.000000,9.000000,25.000000,97.000000,102.000000,58.000000,100.000000,26.000000,66.000000,5.000000,32.000000,1.000000,71.000000,'None','优','1947A','沙湖旅游区','2014-03-06T14:00:00Z',1394085600,1394126722,1);
+INSERT INTO "pm2_5_data2014" VALUES (863,39,'','石嘴山','石嘴山','shizuishan',0.000000,0.000000,13.000000,22.000000,78.000000,83.000000,53.000000,83.000000,31.000000,47.000000,25.000000,20.000000,115.000000,105.000000,'None','优','1948A','大武口黄河东街','2014-03-06T14:00:00Z',1394085600,1394126723,1);
+INSERT INTO "pm2_5_data2014" VALUES (864,34,'','石嘴山','石嘴山','shizuishan',0.000000,0.000000,2.000000,18.000000,81.000000,81.000000,56.000000,60.000000,34.000000,62.000000,13.000000,25.000000,30.000000,82.000000,'None','优','1949A','惠农南大街','2014-03-06T14:00:00Z',1394085600,1394126724,1);
+INSERT INTO "pm2_5_data2014" VALUES (865,31,'','石嘴山','石嘴山','shizuishan',0.000000,0.000000,7.000000,17.000000,98.000000,98.000000,64.000000,93.000000,29.000000,51.000000,9.000000,20.000000,17.000000,69.000000,'None','优','1950A','红果子镇惠新街','2014-03-06T14:00:00Z',1394085600,1394126726,1);
+INSERT INTO "pm2_5_data2014" VALUES (866,55,'','临安','临安','linan',0.000000,0.000000,28.000000,28.000000,82.000000,129.000000,83.000000,129.000000,49.000000,104.000000,39.000000,60.000000,14.000000,20.000000,'细颗粒物(PM2.5)','良','2010A','市政府','2014-03-06T14:00:00Z',1394085600,1394126727,1);
+INSERT INTO "pm2_5_data2014" VALUES (867,53,'','临安','临安','linan',0.000000,0.000000,40.000000,41.000000,53.000000,70.000000,48.000000,70.000000,56.000000,113.000000,37.000000,58.000000,8.000000,12.000000,'颗粒物(PM10),细颗粒物(PM2.5)','良','2011A','四中','2014-03-06T14:00:00Z',1394085600,1394126728,1);
+INSERT INTO "pm2_5_data2014" VALUES (868,52,'','富阳','富阳','fuyang',0.000000,0.000000,35.000000,39.000000,58.000000,92.000000,57.000000,82.000000,0.000000,98.000000,36.000000,51.000000,17.000000,32.000000,'细颗粒物(PM2.5)','良','2012A','监测站','2014-03-06T14:00:00Z',1394085600,1394126731,1);
+INSERT INTO "pm2_5_data2014" VALUES (869,39,'','富阳','富阳','fuyang',0.000000,0.000000,22.000000,22.000000,33.000000,52.000000,34.000000,43.000000,31.000000,63.000000,27.000000,38.000000,11.000000,23.000000,'None','优','2013A','富春二小','2014-03-06T14:00:00Z',1394085600,1394126732,1);
+INSERT INTO "pm2_5_data2014" VALUES (870,49,'','义乌','义乌','yiwu',0.000000,0.000000,39.000000,34.000000,59.000000,100.000000,63.000000,100.000000,42.000000,63.000000,34.000000,42.000000,10.000000,15.000000,'None','优','2014A','江东','2014-03-06T14:00:00Z',1394085600,1394126734,1);
+INSERT INTO "pm2_5_data2014" VALUES (871,26,'','义乌','义乌','yiwu',0.000000,0.000000,44.000000,35.000000,51.000000,89.000000,60.000000,89.000000,26.000000,59.000000,16.000000,38.000000,8.000000,17.000000,'None','优','2015A','北苑','2014-03-06T14:00:00Z',1394085600,1394126735,1);
+INSERT INTO "pm2_5_data2014" VALUES (872,46,'','诸暨','诸暨','zhuji',0.000000,0.000000,23.000000,25.000000,17.000000,21.000000,17.000000,19.000000,46.000000,59.000000,31.000000,37.000000,48.000000,51.000000,'None','优','2016A','图书馆','2014-03-06T14:00:00Z',1394085600,1394126736,1);
+INSERT INTO "pm2_5_data2014" VALUES (873,0,'','诸暨','诸暨','zhuji',0.000000,0.000000,0.000000,0.000000,0.000000,106.000000,63.000000,97.000000,0.000000,74.000000,0.000000,45.000000,0.000000,24.000000,'None','None','2017A','富林印务','2014-03-06T14:00:00Z',1394085600,1394126737,1);
+INSERT INTO "pm2_5_data2014" VALUES (874,27,'','鞍山','鞍山','anshan',0.000000,0.000000,7.000000,27.000000,84.000000,84.000000,70.000000,75.000000,19.000000,56.000000,8.000000,31.000000,6.000000,21.000000,'None','优','1748A','深沟寺','2014-03-06T14:00:00Z',1394085600,1394126738,1);
+INSERT INTO "pm2_5_data2014" VALUES (875,32,'','鞍山','鞍山','anshan',0.000000,0.000000,10.000000,32.000000,78.000000,85.000000,70.000000,84.000000,32.000000,60.000000,12.000000,28.000000,17.000000,64.000000,'None','优','1749A','中心站','2014-03-06T14:00:00Z',1394085600,1394126739,1);
+INSERT INTO "pm2_5_data2014" VALUES (876,31,'','鞍山','鞍山','anshan',2.000000,2.000000,6.000000,24.000000,87.000000,91.000000,71.000000,91.000000,31.000000,69.000000,10.000000,35.000000,14.000000,63.000000,'None','优','1750A','太平子站','2014-03-06T14:00:00Z',1394085600,1394126740,1);
+INSERT INTO "pm2_5_data2014" VALUES (877,47,'','鞍山','鞍山','anshan',4.000000,5.000000,15.000000,32.000000,73.000000,85.000000,58.000000,85.000000,47.000000,71.000000,18.000000,34.000000,57.000000,64.000000,'None','优','1751A','铁西','2014-03-06T14:00:00Z',1394085600,1394126741,1);
+INSERT INTO "pm2_5_data2014" VALUES (878,33,'','鞍山','鞍山','anshan',2.000000,2.000000,4.000000,27.000000,59.000000,66.000000,45.000000,64.000000,33.000000,72.000000,16.000000,39.000000,65.000000,157.000000,'None','优','1752A','开发区','2014-03-06T14:00:00Z',1394085600,1394126744,1);
+INSERT INTO "pm2_5_data2014" VALUES (879,30,'','鞍山','鞍山','anshan',0.000000,0.000000,9.000000,29.000000,76.000000,79.000000,64.000000,79.000000,30.000000,52.000000,14.000000,30.000000,20.000000,59.000000,'None','优','1753A','明达新区','2014-03-06T14:00:00Z',1394085600,1394126746,1);
+INSERT INTO "pm2_5_data2014" VALUES (880,0,'','鞍山','鞍山','anshan',0.000000,0.000000,0.000000,7.000000,0.000000,89.000000,0.000000,89.000000,0.000000,42.000000,0.000000,26.000000,0.000000,41.000000,'None','None','1754A','千山公园','2014-03-06T14:00:00Z',1394085600,1394126747,1);
+INSERT INTO "pm2_5_data2014" VALUES (881,29,'','抚顺','抚顺','fushun',0.000000,1.000000,7.000000,28.000000,92.000000,162.000000,81.000000,147.000000,17.000000,58.000000,9.000000,26.000000,15.000000,60.000000,'None','优','1755A','望花','2014-03-06T14:00:00Z',1394085600,1394126748,1);
+INSERT INTO "pm2_5_data2014" VALUES (882,20,'','抚顺','抚顺','fushun',0.000000,1.000000,17.000000,41.000000,57.000000,61.000000,51.000000,61.000000,20.000000,58.000000,8.000000,26.000000,14.000000,37.000000,'None','优','1756A','新华','2014-03-06T14:00:00Z',1394085600,1394126749,1);
+INSERT INTO "pm2_5_data2014" VALUES (883,25,'','抚顺','抚顺','fushun',1.000000,1.000000,3.000000,21.000000,77.000000,80.000000,69.000000,80.000000,17.000000,52.000000,9.000000,30.000000,5.000000,26.000000,'None','优','1757A','东洲','2014-03-06T14:00:00Z',1394085600,1394126750,1);
+INSERT INTO "pm2_5_data2014" VALUES (884,24,'','抚顺','抚顺','fushun',0.000000,1.000000,9.000000,30.000000,49.000000,74.000000,44.000000,74.000000,24.000000,58.000000,9.000000,28.000000,3.000000,27.000000,'None','优','1758A','站前','2014-03-06T14:00:00Z',1394085600,1394126751,1);
+INSERT INTO "pm2_5_data2014" VALUES (885,30,'','抚顺','抚顺','fushun',1.000000,1.000000,8.000000,15.000000,94.000000,101.000000,84.000000,101.000000,22.000000,33.000000,6.000000,9.000000,6.000000,12.000000,'None','优','1759A','水库','2014-03-06T14:00:00Z',1394085600,1394126752,1);
+INSERT INTO "pm2_5_data2014" VALUES (886,23,'','抚顺','抚顺','fushun',0.000000,0.000000,5.000000,25.000000,71.000000,80.000000,63.000000,80.000000,13.000000,47.000000,7.000000,24.000000,11.000000,28.000000,'None','优','1760A','沈抚新城','2014-03-06T14:00:00Z',1394085600,1394126754,1);
+INSERT INTO "pm2_5_data2014" VALUES (887,33,'','本溪','本溪','benxi',2.000000,2.000000,12.000000,15.000000,23.000000,27.000000,17.000000,27.000000,33.000000,52.000000,11.000000,34.000000,28.000000,25.000000,'None','优','1761A','大峪','2014-03-06T14:00:00Z',1394085600,1394126755,1);
+INSERT INTO "pm2_5_data2014" VALUES (888,46,'','本溪','本溪','benxi',4.000000,4.000000,8.000000,11.000000,70.000000,78.000000,57.000000,77.000000,35.000000,49.000000,13.000000,31.000000,22.000000,36.000000,'None','优','1762A','溪湖','2014-03-06T14:00:00Z',1394085600,1394126756,1);
+INSERT INTO "pm2_5_data2014" VALUES (889,41,'','本溪','本溪','benxi',4.000000,4.000000,13.000000,23.000000,63.000000,70.000000,57.000000,70.000000,34.000000,63.000000,13.000000,36.000000,25.000000,57.000000,'None','优','1763A','彩屯','2014-03-06T14:00:00Z',1394085600,1394126756,1);
+INSERT INTO "pm2_5_data2014" VALUES (890,33,'','本溪','本溪','benxi',2.000000,2.000000,14.000000,37.000000,56.000000,61.000000,47.000000,60.000000,33.000000,44.000000,20.000000,34.000000,32.000000,103.000000,'None','优','1764A','东明','2014-03-06T14:00:00Z',1394085600,1394126759,1);
+INSERT INTO "pm2_5_data2014" VALUES (891,39,'','本溪','本溪','benxi',2.000000,2.000000,19.000000,29.000000,44.000000,50.000000,39.000000,46.000000,39.000000,58.000000,14.000000,24.000000,19.000000,16.000000,'None','优','1765A','职业病院','2014-03-06T14:00:00Z',1394085600,1394126760,1);
+INSERT INTO "pm2_5_data2014" VALUES (892,50,'','本溪','本溪','benxi',4.000000,2.000000,15.000000,41.000000,56.000000,66.000000,41.000000,63.000000,0.000000,19.000000,8.000000,18.000000,23.000000,18.000000,'None','优','1766A','威宁','2014-03-06T14:00:00Z',1394085600,1394126761,1);
+INSERT INTO "pm2_5_data2014" VALUES (893,36,'','锦州','锦州','jinzhou',0.000000,1.000000,4.000000,22.000000,95.000000,95.000000,74.000000,86.000000,36.000000,56.000000,8.000000,24.000000,9.000000,54.000000,'None','优','1767A','南山','2014-03-06T14:00:00Z',1394085600,1394126762,1);
+INSERT INTO "pm2_5_data2014" VALUES (894,32,'','锦州','锦州','jinzhou',1.000000,1.000000,9.000000,28.000000,80.000000,80.000000,59.000000,66.000000,32.000000,55.000000,15.000000,28.000000,15.000000,49.000000,'None','优','1768A','开发区','2014-03-06T14:00:00Z',1394085600,1394126763,1);
+INSERT INTO "pm2_5_data2014" VALUES (895,29,'','锦州','锦州','jinzhou',1.000000,1.000000,6.000000,18.000000,91.000000,91.000000,72.000000,75.000000,23.000000,50.000000,10.000000,25.000000,9.000000,20.000000,'None','优','1769A','百股水厂','2014-03-06T14:00:00Z',1394085600,1394126764,1);
+INSERT INTO "pm2_5_data2014" VALUES (896,28,'','锦州','锦州','jinzhou',0.000000,0.000000,12.000000,33.000000,86.000000,86.000000,68.000000,81.000000,28.000000,58.000000,7.000000,25.000000,10.000000,106.000000,'None','优','1770A','监测站','2014-03-06T14:00:00Z',1394085600,1394126765,1);
+INSERT INTO "pm2_5_data2014" VALUES (897,25,'','锦州','锦州','jinzhou',0.000000,1.000000,9.000000,23.000000,76.000000,76.000000,64.000000,68.000000,25.000000,46.000000,4.000000,20.000000,18.000000,64.000000,'None','优','1771A','北湖公园','2014-03-06T14:00:00Z',1394085600,1394126766,1);
+INSERT INTO "pm2_5_data2014" VALUES (898,25,'','瓦房店','瓦房店','wafangdian',0.000000,0.000000,5.000000,17.000000,72.000000,72.000000,60.000000,65.000000,25.000000,43.000000,14.000000,28.000000,8.000000,85.000000,'None','优','2018A','抱龙山庄','2014-03-06T14:00:00Z',1394085600,1394126767,1);
+INSERT INTO "pm2_5_data2014" VALUES (899,28,'','瓦房店','瓦房店','wafangdian',0.000000,0.000000,9.000000,22.000000,71.000000,71.000000,59.000000,70.000000,28.000000,44.000000,7.000000,29.000000,18.000000,44.000000,'None','优','2019A','东山公园','2014-03-06T14:00:00Z',1394085600,1394126768,1);
+INSERT INTO "pm2_5_data2014" VALUES (900,15,'','桂林','桂林','guilin',1.000000,1.000000,13.000000,16.000000,38.000000,68.000000,35.000000,68.000000,0.000000,46.000000,10.000000,33.000000,13.000000,19.000000,'None','优','1862A','电子科大尧山校区','2014-03-06T14:00:00Z',1394085600,1394126769,1);
+INSERT INTO "pm2_5_data2014" VALUES (901,26,'','桂林','桂林','guilin',1.000000,1.000000,27.000000,30.000000,32.000000,76.000000,24.000000,65.000000,25.000000,52.000000,18.000000,54.000000,15.000000,19.000000,'None','优','1863A','监测站','2014-03-06T14:00:00Z',1394085600,1394126772,1);
+INSERT INTO "pm2_5_data2014" VALUES (902,25,'','桂林','桂林','guilin',0.000000,0.000000,13.000000,15.000000,49.000000,84.000000,45.000000,84.000000,24.000000,50.000000,17.000000,47.000000,10.000000,10.000000,'None','优','1864A','龙隐路小学','2014-03-06T14:00:00Z',1394085600,1394126773,1);
+INSERT INTO "pm2_5_data2014" VALUES (903,55,'','桂林','桂林','guilin',1.000000,1.000000,26.000000,29.000000,27.000000,60.000000,23.000000,60.000000,60.000000,59.000000,15.000000,45.000000,4.000000,5.000000,'颗粒物(PM10)','良','1865A','八中','2014-03-06T14:00:00Z',1394085600,1394126774,1);
+INSERT INTO "pm2_5_data2014" VALUES (904,57,'','芜湖','芜湖','wuhu',0.000000,0.000000,10.000000,15.000000,49.000000,78.000000,55.000000,57.000000,46.000000,67.000000,40.000000,36.000000,5.000000,10.000000,'细颗粒物(PM2.5)','良','1794A','监测站','2014-03-06T14:00:00Z',1394085600,1394126775,1);
+INSERT INTO "pm2_5_data2014" VALUES (905,49,'','芜湖','芜湖','wuhu',0.000000,0.000000,13.000000,13.000000,29.000000,35.000000,26.000000,35.000000,49.000000,50.000000,31.000000,37.000000,12.000000,18.000000,'None','优','1795A','科创中心','2014-03-06T14:00:00Z',1394085600,1394126777,1);
+INSERT INTO "pm2_5_data2014" VALUES (906,55,'','芜湖','芜湖','wuhu',0.000000,1.000000,16.000000,19.000000,32.000000,43.000000,32.000000,37.000000,59.000000,86.000000,36.000000,42.000000,24.000000,22.000000,'颗粒物(PM10)','良','1796A','四水厂','2014-03-06T14:00:00Z',1394085600,1394126778,1);
+INSERT INTO "pm2_5_data2014" VALUES (907,60,'','芜湖','芜湖','wuhu',0.000000,0.000000,5.000000,38.000000,43.000000,44.000000,39.000000,39.000000,70.000000,72.000000,42.000000,42.000000,14.000000,17.000000,'颗粒物(PM10)','良','1797A','五七二零厂','2014-03-06T14:00:00Z',1394085600,1394126779,1);
+INSERT INTO "pm2_5_data2014" VALUES (908,61,'','东营','东营','dongying',0.000000,1.000000,14.000000,46.000000,90.000000,121.000000,54.000000,121.000000,72.000000,111.000000,39.000000,76.000000,30.000000,64.000000,'颗粒物(PM10)','良','1668A','广南水库','2014-03-06T14:00:00Z',1394085600,1394126780,1);
+INSERT INTO "pm2_5_data2014" VALUES (909,117,'','胶州','胶州','xiaozhou',0.000000,0.000000,31.000000,33.000000,108.000000,108.000000,101.000000,101.000000,137.000000,130.000000,88.000000,87.000000,71.000000,69.000000,'细颗粒物(PM2.5)','轻度污染','1967A','胶州环保局','2014-03-06T14:00:00Z',1394085600,1394126784,1);
+INSERT INTO "pm2_5_data2014" VALUES (910,78,'','胶州','胶州','xiaozhou',0.000000,0.000000,29.000000,46.000000,100.000000,103.000000,56.000000,103.000000,69.000000,57.000000,57.000000,38.000000,0.000000,0.000000,'细颗粒物(PM2.5)','良','1968A','胶州一中','2014-03-06T14:00:00Z',1394085600,1394126786,1);
+INSERT INTO "pm2_5_data2014" VALUES (911,74,'','章丘','章丘','zhangqiu',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,61.000000,107.000000,54.000000,76.000000,0.000000,0.000000,'细颗粒物(PM2.5)','良','1961A','环境监测站','2014-03-06T14:00:00Z',1394085600,1394126788,1);
+INSERT INTO "pm2_5_data2014" VALUES (912,82,'','章丘','章丘','zhangqiu',0.000000,0.000000,57.000000,65.000000,0.000000,0.000000,0.000000,0.000000,88.000000,113.000000,60.000000,68.000000,112.000000,100.000000,'细颗粒物(PM2.5)','良','1962A','明水开发区','2014-03-06T14:00:00Z',1394085600,1394126791,1);
+INSERT INTO "pm2_5_data2014" VALUES (913,80,'','即墨','即墨','jimo',0.000000,1.000000,21.000000,47.000000,95.000000,102.000000,41.000000,102.000000,96.000000,94.000000,59.000000,91.000000,0.000000,36.000000,'细颗粒物(PM2.5)','良','1963A','环保局子站','2014-03-06T14:00:00Z',1394085600,1394126794,1);
+INSERT INTO "pm2_5_data2014" VALUES (914,60,'','即墨','即墨','jimo',0.000000,0.000000,0.000000,66.000000,81.000000,85.000000,38.000000,85.000000,60.000000,66.000000,43.000000,40.000000,47.000000,66.000000,'细颗粒物(PM2.5)','良','1964A','开发区子站','2014-03-06T14:00:00Z',1394085600,1394126797,1);
+INSERT INTO "pm2_5_data2014" VALUES (915,117,'','平度','平度','pingdu',1.000000,1.000000,29.000000,43.000000,107.000000,107.000000,50.000000,94.000000,99.000000,128.000000,88.000000,92.000000,49.000000,31.000000,'细颗粒物(PM2.5)','轻度污染','1971A','1号','2014-03-06T14:00:00Z',1394085600,1394126801,1);
+INSERT INTO "pm2_5_data2014" VALUES (916,89,'','平度','平度','pingdu',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,108.000000,107.000000,66.000000,66.000000,0.000000,0.000000,'细颗粒物(PM2.5)','良','1972A','2号','2014-03-06T14:00:00Z',1394085600,1394126803,1);
+INSERT INTO "pm2_5_data2014" VALUES (917,115,'','胶南','胶南','xiaonan',1.000000,1.000000,35.000000,43.000000,88.000000,89.000000,54.000000,88.000000,123.000000,118.000000,87.000000,92.000000,67.000000,35.000000,'细颗粒物(PM2.5)','轻度污染','1965A','JN子站','2014-03-06T14:00:00Z',1394085600,1394126804,1);
+INSERT INTO "pm2_5_data2014" VALUES (918,78,'','胶南','胶南','xiaonan',1.000000,1.000000,39.000000,46.000000,59.000000,68.000000,40.000000,68.000000,91.000000,86.000000,57.000000,59.000000,43.000000,37.000000,'细颗粒物(PM2.5)','良','1966A','2号子站','2014-03-06T14:00:00Z',1394085600,1394126806,1);
+INSERT INTO "pm2_5_data2014" VALUES (919,97,'','莱西','莱西','laixi',0.000000,0.000000,36.000000,47.000000,97.000000,109.000000,49.000000,109.000000,85.000000,103.000000,72.000000,67.000000,51.000000,48.000000,'细颗粒物(PM2.5)','良','1969A','环保局子站','2014-03-06T14:00:00Z',1394085600,1394126807,1);
+INSERT INTO "pm2_5_data2014" VALUES (920,109,'','莱西','莱西','laixi',0.000000,0.000000,31.000000,50.000000,0.000000,113.000000,39.000000,113.000000,148.000000,124.000000,82.000000,76.000000,71.000000,52.000000,'细颗粒物(PM2.5)','轻度污染','1970A','人民广场子站','2014-03-06T14:00:00Z',1394085600,1394126808,1);
+INSERT INTO "pm2_5_data2014" VALUES (921,108,'','莱州','莱州','laizhou',0.000000,0.000000,22.000000,42.000000,74.000000,84.000000,45.000000,81.000000,130.000000,114.000000,81.000000,75.000000,56.000000,47.000000,'细颗粒物(PM2.5)','轻度污染','1977A','莱州环保局','2014-03-06T14:00:00Z',1394085600,1394126809,1);
+INSERT INTO "pm2_5_data2014" VALUES (922,104,'','莱州','莱州','laizhou',0.000000,1.000000,17.000000,46.000000,82.000000,96.000000,47.000000,96.000000,125.000000,140.000000,78.000000,80.000000,69.000000,81.000000,'细颗粒物(PM2.5)','轻度污染','1978A','莱州外经委','2014-03-06T14:00:00Z',1394085600,1394126813,1);
+INSERT INTO "pm2_5_data2014" VALUES (923,40,'','蓬莱','蓬莱','penglai',1.000000,2.000000,20.000000,24.000000,72.000000,99.000000,62.000000,99.000000,38.000000,66.000000,28.000000,31.000000,9.000000,28.000000,'None','优','1973A','蓬莱环保局','2014-03-06T14:00:00Z',1394085600,1394126817,1);
+INSERT INTO "pm2_5_data2014" VALUES (924,67,'','蓬莱','蓬莱','penglai',1.000000,1.000000,32.000000,31.000000,76.000000,98.000000,72.000000,98.000000,57.000000,80.000000,48.000000,47.000000,19.000000,27.000000,'细颗粒物(PM2.5)','良','1974A','蓬莱博物馆','2014-03-06T14:00:00Z',1394085600,1394126818,1);
+INSERT INTO "pm2_5_data2014" VALUES (925,104,'','招远','招远','zhaoyuan',0.000000,1.000000,21.000000,41.000000,61.000000,66.000000,32.000000,66.000000,125.000000,111.000000,78.000000,80.000000,20.000000,22.000000,'细颗粒物(PM2.5)','轻度污染','1975A','招远环保局','2014-03-06T14:00:00Z',1394085600,1394126819,1);
+INSERT INTO "pm2_5_data2014" VALUES (926,103,'','招远','招远','zhaoyuan',0.000000,0.000000,18.000000,34.000000,93.000000,105.000000,51.000000,104.000000,131.000000,109.000000,77.000000,76.000000,36.000000,37.000000,'细颗粒物(PM2.5)','轻度污染','1976A','招远教育局','2014-03-06T14:00:00Z',1394085600,1394126820,1);
+INSERT INTO "pm2_5_data2014" VALUES (927,138,'','寿光','寿光','shouguang',1.000000,1.000000,42.000000,54.000000,55.000000,77.000000,33.000000,74.000000,136.000000,143.000000,105.000000,107.000000,98.000000,81.000000,'细颗粒物(PM2.5)','轻度污染','1959A','监测站','2014-03-06T14:00:00Z',1394085600,1394126821,1);
+INSERT INTO "pm2_5_data2014" VALUES (928,155,'','寿光','寿光','shouguang',1.000000,1.000000,40.000000,57.000000,65.000000,96.000000,39.000000,90.000000,142.000000,152.000000,118.000000,112.000000,96.000000,122.000000,'细颗粒物(PM2.5)','中度污染','1960A','世纪学校','2014-03-06T14:00:00Z',1394085600,1394126823,1);
+INSERT INTO "pm2_5_data2014" VALUES (929,73,'','文登','文登','wendeng',1.000000,1.000000,8.000000,14.000000,67.000000,78.000000,49.000000,78.000000,60.000000,68.000000,53.000000,52.000000,37.000000,20.000000,'细颗粒物(PM2.5)','良','1981A','文登市环保局','2014-03-06T14:00:00Z',1394085600,1394126825,1);
+INSERT INTO "pm2_5_data2014" VALUES (930,55,'','文登','文登','wendeng',1.000000,1.000000,8.000000,22.000000,93.000000,108.000000,76.000000,108.000000,59.000000,83.000000,31.000000,48.000000,35.000000,21.000000,'颗粒物(PM10)','良','1982A','文登市丝绸公司','2014-03-06T14:00:00Z',1394085600,1394126825,1);
+INSERT INTO "pm2_5_data2014" VALUES (931,67,'','荣成','荣成','rongcheng',0.000000,0.000000,8.000000,22.000000,94.000000,97.000000,66.000000,93.000000,65.000000,74.000000,48.000000,52.000000,18.000000,22.000000,'细颗粒物(PM2.5)','良','1979A','荣成市环保局办公楼','2014-03-06T14:00:00Z',1394085600,1394126827,1);
+INSERT INTO "pm2_5_data2014" VALUES (932,72,'','荣成','荣成','rongcheng',0.000000,0.000000,17.000000,34.000000,100.000000,106.000000,70.000000,104.000000,66.000000,84.000000,52.000000,56.000000,24.000000,22.000000,'细颗粒物(PM2.5)','良','1980A','山东成山轮胎公司','2014-03-06T14:00:00Z',1394085600,1394126829,1);
+INSERT INTO "pm2_5_data2014" VALUES (933,89,'','乳山','乳山','rushan',2.000000,2.000000,16.000000,20.000000,68.000000,89.000000,42.000000,89.000000,68.000000,101.000000,66.000000,73.000000,49.000000,31.000000,'细颗粒物(PM2.5)','良','1983A','乳山市环保局','2014-03-06T14:00:00Z',1394085600,1394126831,1);
+INSERT INTO "pm2_5_data2014" VALUES (934,70,'','乳山','乳山','rushan',1.000000,1.000000,20.000000,25.000000,85.000000,99.000000,50.000000,99.000000,89.000000,94.000000,0.000000,0.000000,36.000000,27.000000,'颗粒物(PM10)','良','1984A','乳山市气象局','2014-03-06T14:00:00Z',1394085600,1394126832,1);
+INSERT INTO "pm2_5_data2014" VALUES (935,0,'','聊城','聊城','liaocheng',0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,'None','None','1626A','二轻机','2014-03-06T14:00:00Z',1394085600,1394126833,1);
+INSERT INTO "pm2_5_data2014" VALUES (936,55,'','马鞍山','马鞍山','maanshan',0.000000,0.000000,28.000000,32.000000,67.000000,105.000000,51.000000,102.000000,60.000000,59.000000,32.000000,28.000000,14.000000,20.000000,'颗粒物(PM10)','良','1798A','湖东路四小','2014-03-06T14:00:00Z',1394085600,1394126835,1);
+INSERT INTO "pm2_5_data2014" VALUES (937,50,'','马鞍山','马鞍山','maanshan',0.000000,0.000000,25.000000,30.000000,79.000000,115.000000,62.000000,114.000000,42.000000,44.000000,35.000000,34.000000,11.000000,19.000000,'None','优','1799A','天平服装','2014-03-06T14:00:00Z',1394085600,1394126836,1);
+INSERT INTO "pm2_5_data2014" VALUES (938,64,'','马鞍山','马鞍山','maanshan',0.000000,0.000000,22.000000,31.000000,48.000000,67.000000,25.000000,45.000000,68.000000,67.000000,46.000000,46.000000,34.000000,30.000000,'细颗粒物(PM2.5)','良','1800A','慈湖二小','2014-03-06T14:00:00Z',1394085600,1394126837,1);
+INSERT INTO "pm2_5_data2014" VALUES (939,38,'','马鞍山','马鞍山','maanshan',0.000000,0.000000,16.000000,16.000000,7.000000,21.000000,10.000000,21.000000,0.000000,56.000000,26.000000,28.000000,10.000000,12.000000,'None','优','1801A','马钢动力厂','2014-03-06T14:00:00Z',1394085600,1394126838,1);
+INSERT INTO "pm2_5_data2014" VALUES (940,62,'','马鞍山','马鞍山','maanshan',0.000000,0.000000,16.000000,17.000000,33.000000,136.000000,41.000000,87.000000,64.000000,63.000000,44.000000,50.000000,8.000000,15.000000,'细颗粒物(PM2.5)','良','1802A','市教育基地','2014-03-06T14:00:00Z',1394085600,1394126840,1);
+INSERT INTO "pm2_5_data2014" VALUES (941,40,'','大庆','大庆','daqing',0.000000,0.000000,24.000000,26.000000,62.000000,73.000000,46.000000,72.000000,40.000000,68.000000,24.000000,43.000000,26.000000,26.000000,'None','优','1789A','大同区','2014-03-06T14:00:00Z',1394085600,1394126842,1);
+INSERT INTO "pm2_5_data2014" VALUES (942,30,'','大庆','大庆','daqing',0.000000,0.000000,11.000000,15.000000,64.000000,74.000000,51.000000,74.000000,30.000000,37.000000,20.000000,24.000000,14.000000,22.000000,'None','优','1790A','龙凤区','2014-03-06T14:00:00Z',1394085600,1394126844,1);
+INSERT INTO "pm2_5_data2014" VALUES (943,27,'','大庆','大庆','daqing',0.000000,0.000000,7.000000,15.000000,86.000000,94.000000,73.000000,93.000000,14.000000,34.000000,8.000000,24.000000,5.000000,9.000000,'None','优','1791A','红岗区','2014-03-06T14:00:00Z',1394085600,1394126845,1);
+INSERT INTO "pm2_5_data2014" VALUES (944,19,'','大庆','大庆','daqing',0.000000,0.000000,17.000000,23.000000,49.000000,55.000000,45.000000,54.000000,15.000000,30.000000,13.000000,23.000000,10.000000,13.000000,'None','优','1792A','萨尔图区','2014-03-06T14:00:00Z',1394085600,1394126846,1);
+INSERT INTO "pm2_5_data2014" VALUES (945,25,'','大庆','大庆','daqing',0.000000,0.000000,7.000000,25.000000,77.000000,80.000000,61.000000,78.000000,21.000000,36.000000,6.000000,19.000000,5.000000,13.000000,'None','优','1793A','让胡路区','2014-03-06T14:00:00Z',1394085600,1394126847,1);
+CREATE TABLE "pm2_5_station" (
+  "id" int(10) NOT NULL ,
+  "station_code" varchar(60) NOT NULL DEFAULT '',
+  "station_name" varchar(60) NOT NULL DEFAULT '',
+  "date" int(10) NOT NULL DEFAULT '0',
+  "bz" int(10) NOT NULL DEFAULT '0',
+  "cityCode" varchar(60) NOT NULL DEFAULT '',
+  "cityName" varchar(60) NOT NULL DEFAULT '',
+  "spellName" varchar(60) NOT NULL DEFAULT '',
+  PRIMARY KEY ("id")
+);
+INSERT INTO "pm2_5_station" VALUES (1,'1013A','市监测中心',1394125668,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (2,'1014A','机车车辆厂',1394125669,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (3,'1015A','继电器厂',1394125670,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (4,'1016A','南京路',1394125671,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (5,'1017A','河东站',1394125672,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (6,'1018A','河西站',1394125673,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (7,'1019A','北辰科技园区',1394125674,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (8,'1020A','天山路',1394125676,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (9,'1021A','东丽中学',1394125677,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (10,'1022A','梅江小区',1394125678,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (11,'1023A','泰丰工业园',1394125679,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (12,'1024A','永明路',1394125681,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (13,'1025A','空港物流加工区',1394125682,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (14,'1026A','中新生态城',1394125683,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (15,'1027A','团泊洼',1394125685,1,'','天津','tianjin');
+INSERT INTO "pm2_5_station" VALUES (16,'1028A','化工学校',1394125686,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (17,'1029A','职工医院',1394125688,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (18,'1030A','高新区',1394125689,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (19,'1031A','西北水源',1394125690,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (20,'1032A','西南高教',1394125691,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (21,'1033A','世纪公园',1394125694,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (22,'1034A','人民会堂',1394125695,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (23,'1035A','封龙山',1394125696,1,'','石家庄','shijiazhuang');
+INSERT INTO "pm2_5_station" VALUES (24,'1036A','供销社',1394125697,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (25,'1037A','雷达站',1394125698,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (26,'1038A','物资局',1394125699,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (27,'1039A','陶瓷公司',1394125700,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (28,'1040A','十二中',1394125701,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (29,'1041A','小山',1394125702,1,'','唐山','tangshan');
+INSERT INTO "pm2_5_station" VALUES (30,'1042A','北戴河环保局',1394125704,1,'','秦皇岛','qinhuangdao');
+INSERT INTO "pm2_5_station" VALUES (31,'1043A','第一关',1394125706,1,'','秦皇岛','qinhuangdao');
+INSERT INTO "pm2_5_station" VALUES (32,'1044A','监测站',1394125708,1,'','秦皇岛','qinhuangdao');
+INSERT INTO "pm2_5_station" VALUES (33,'1045A','市政府',1394125709,1,'','秦皇岛','qinhuangdao');
+INSERT INTO "pm2_5_station" VALUES (34,'1046A','建设大夏',1394125710,1,'','秦皇岛','qinhuangdao');
+INSERT INTO "pm2_5_station" VALUES (35,'1047A','环保局',1394125711,1,'','邯郸','handan');
+INSERT INTO "pm2_5_station" VALUES (36,'1048A','东污水处理厂',1394125712,1,'','邯郸','handan');
+INSERT INTO "pm2_5_station" VALUES (37,'1049A','矿院',1394125713,1,'','邯郸','handan');
+INSERT INTO "pm2_5_station" VALUES (38,'1050A','丛台公园',1394125714,1,'','邯郸','handan');
+INSERT INTO "pm2_5_station" VALUES (39,'1051A','游泳馆',1394125716,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (40,'1052A','华电二区',1394125718,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (41,'1053A','接待中心',1394125721,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (42,'1054A','地表水厂',1394125723,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (43,'1055A','胶片厂',1394125724,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (44,'1056A','监测站',1394125725,1,'','保定','baoding');
+INSERT INTO "pm2_5_station" VALUES (45,'1057A','人民公园',1394125726,1,'','张家口','zhangjiakou');
+INSERT INTO "pm2_5_station" VALUES (46,'1058A','探机厂',1394125727,1,'','张家口','zhangjiakou');
+INSERT INTO "pm2_5_station" VALUES (47,'1059A','五金库',1394125728,1,'','张家口','zhangjiakou');
+INSERT INTO "pm2_5_station" VALUES (48,'1060A','世纪豪园',1394125728,1,'','张家口','zhangjiakou');
+INSERT INTO "pm2_5_station" VALUES (49,'1061A','北泵房',1394125729,1,'','张家口','zhangjiakou');
+INSERT INTO "pm2_5_station" VALUES (50,'1062A','铁路',1394125730,1,'','承德','chengde');
+INSERT INTO "pm2_5_station" VALUES (51,'1063A','中国银行',1394125731,1,'','承德','chengde');
+INSERT INTO "pm2_5_station" VALUES (52,'1064A','开发区',1394125732,1,'','承德','chengde');
+INSERT INTO "pm2_5_station" VALUES (53,'1065A','文化中心',1394125734,1,'','承德','chengde');
+INSERT INTO "pm2_5_station" VALUES (54,'1066A','离宫',1394125735,1,'','承德','chengde');
+INSERT INTO "pm2_5_station" VALUES (55,'1067A','药材公司',1394125736,1,'','廊坊','langfang');
+INSERT INTO "pm2_5_station" VALUES (56,'1068A','开发区',1394125737,1,'','廊坊','langfang');
+INSERT INTO "pm2_5_station" VALUES (57,'1069A','环境监测监理中心',1394125738,1,'','廊坊','langfang');
+INSERT INTO "pm2_5_station" VALUES (58,'1070A','北华航天学校',1394125740,1,'','廊坊','langfang');
+INSERT INTO "pm2_5_station" VALUES (59,'1071A','沧县城建局',1394125741,1,'','沧州','cangzhou');
+INSERT INTO "pm2_5_station" VALUES (60,'1072A','电视转播站',1394125742,1,'','沧州','cangzhou');
+INSERT INTO "pm2_5_station" VALUES (61,'1073A','市环保局',1394125743,1,'','沧州','cangzhou');
+INSERT INTO "pm2_5_station" VALUES (62,'1074A','电机北厂',1394125744,1,'','衡水','hengshui');
+INSERT INTO "pm2_5_station" VALUES (63,'1075A','市监测站',1394125747,1,'','衡水','hengshui');
+INSERT INTO "pm2_5_station" VALUES (64,'1076A','市环保局',1394125747,1,'','衡水','hengshui');
+INSERT INTO "pm2_5_station" VALUES (65,'1077A','达活泉',1394125748,1,'','邢台','xingtai');
+INSERT INTO "pm2_5_station" VALUES (66,'1078A','邢师高专',1394125749,1,'','邢台','xingtai');
+INSERT INTO "pm2_5_station" VALUES (67,'1079A','路桥公司',1394125751,1,'','邢台','xingtai');
+INSERT INTO "pm2_5_station" VALUES (68,'1080A','市环保局',1394125752,1,'','邢台','xingtai');
+INSERT INTO "pm2_5_station" VALUES (69,'1081A','尖草坪',1394125754,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (70,'1082A','涧河',1394125755,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (71,'1083A','上兰',1394125756,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (72,'1084A','晋源',1394125758,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (73,'1085A','小店',1394125760,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (74,'1086A','桃园',1394125761,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (75,'1087A','坞城',1394125763,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (76,'1088A','南寨',1394125764,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (77,'1089A','金胜',1394125765,1,'','太原','taiyuan');
+INSERT INTO "pm2_5_station" VALUES (78,'1090A','呼市一监',1394125766,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (79,'1091A','小召',1394125767,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (80,'1092A','兴松小区',1394125768,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (81,'1093A','糖厂',1394125770,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (82,'1094A','如意水处理厂',1394125772,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (83,'1095A','二十九中',1394125773,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (84,'1096A','工大金川校区',1394125774,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (85,'1097A','化肥厂生活区',1394125775,1,'','呼和浩特','huhehaote');
+INSERT INTO "pm2_5_station" VALUES (86,'1098A','辉山',1394125776,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (87,'1099A','浑南二',1394125777,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (88,'1100A','东软',1394125778,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (89,'1101A','张士',1394125780,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (90,'1102A','炮兵学院',1394125781,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (91,'1103A','北陵',1394125783,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (92,'1104A','文艺路',1394125784,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (93,'1105A','小河沿',1394125785,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (94,'1106A','太原街',1394125786,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (95,'1107A','二毛',1394125787,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (96,'1108A','辽大',1394125788,1,'','沈阳','chenyang');
+INSERT INTO "pm2_5_station" VALUES (97,'1109A','甘井子',1394125789,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (98,'1110A','周水子',1394125790,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (99,'1111A','星海三站',1394125792,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (100,'1112A','青泥洼桥',1394125793,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (101,'1113A','傅家庄',1394125794,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (102,'1114A','七贤岭',1394125795,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (103,'1115A','旅顺',1394125797,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (104,'1116A','金州',1394125798,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (105,'1117A','开发区',1394125799,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (106,'1118A','双D港',1394125800,1,'','大连','dalian');
+INSERT INTO "pm2_5_station" VALUES (107,'1119A','食品厂',1394125802,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (108,'1120A','客车厂',1394125803,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (109,'1121A','邮电学院',1394125804,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (110,'1122A','劳动公园',1394125805,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (111,'1123A','园林处',1394125806,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (112,'1124A','净月潭',1394125807,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (113,'1125A','甩湾子',1394125810,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (114,'1126A','经开区环卫处',1394125811,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (115,'1127A','高新区管委会',1394125812,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (116,'1128A','岱山公园',1394125814,1,'','长春','changchun');
+INSERT INTO "pm2_5_station" VALUES (117,'1129A','岭北',1394125815,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (118,'1130A','松北商大',1394125816,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (119,'1131A','阿城会宁',1394125817,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (120,'1132A','南岗学府路',1394125818,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (121,'1133A','太平宏伟公园',1394125819,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (122,'1134A','道外承德广场',1394125820,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (123,'1135A','香坊红旗大街',1394125823,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (124,'1136A','动力和平路',1394125825,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (125,'1137A','道里建国路',1394125826,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (126,'1138A','平房东轻厂',1394125827,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (127,'1139A','呼兰师专',1394125828,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (128,'1140A','省农科院',1394125829,1,'','哈尔滨','haerbin');
+INSERT INTO "pm2_5_station" VALUES (129,'1141A','普陀',1394125830,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (130,'1142A','十五厂',1394125831,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (131,'1143A','虹口',1394125833,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (132,'1144A','徐汇上师大',1394125833,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (133,'1145A','杨浦四漂',1394125835,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (134,'1146A','青浦淀山湖',1394125837,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (135,'1147A','静安监测站',1394125838,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (136,'1148A','浦东川沙',1394125839,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (137,'1149A','浦东新区监测站',1394125840,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (138,'1150A','浦东张江',1394125842,1,'','上海','shanghai');
+INSERT INTO "pm2_5_station" VALUES (139,'1151A','迈皋桥',1394125843,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (140,'1152A','草场门',1394125845,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (141,'1153A','山西路',1394125846,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (142,'1154A','中华门',1394125847,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (143,'1155A','瑞金路',1394125849,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (144,'1156A','玄武湖',1394125851,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (145,'1157A','浦口',1394125852,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (146,'1158A','奥体中心',1394125852,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (147,'1159A','仙林大学城',1394125854,1,'','南京','nanjing');
+INSERT INTO "pm2_5_station" VALUES (148,'1160A','上方山',1394125855,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (149,'1161A','南门',1394125856,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (150,'1162A','彩香',1394125856,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (151,'1163A','轧钢厂',1394125857,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (152,'1164A','吴中区',1394125859,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (153,'1165A','苏州新区',1394125860,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (154,'1166A','苏州工业园区',1394125862,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (155,'1167A','相城区',1394125864,1,'','苏州','suzhou');
+INSERT INTO "pm2_5_station" VALUES (156,'1168A','南郊',1394125864,1,'','南通','nantong');
+INSERT INTO "pm2_5_station" VALUES (157,'1169A','虹桥',1394125866,1,'','南通','nantong');
+INSERT INTO "pm2_5_station" VALUES (158,'1170A','城中',1394125867,1,'','南通','nantong');
+INSERT INTO "pm2_5_station" VALUES (159,'1171A','星湖花园',1394125868,1,'','南通','nantong');
+INSERT INTO "pm2_5_station" VALUES (160,'1172A','紫琅学院',1394125869,1,'','南通','nantong');
+INSERT INTO "pm2_5_station" VALUES (161,'1173A','市环境监测站',1394125869,1,'','连云港','lianyungang');
+INSERT INTO "pm2_5_station" VALUES (162,'1174A','洪门派出所',1394125871,1,'','连云港','lianyungang');
+INSERT INTO "pm2_5_station" VALUES (163,'1175A','墟沟核电专家村',1394125872,1,'','连云港','lianyungang');
+INSERT INTO "pm2_5_station" VALUES (164,'1176A','开发区恒瑞医药公司',1394125873,1,'','连云港','lianyungang');
+INSERT INTO "pm2_5_station" VALUES (165,'1177A','黄河新村',1394125876,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (166,'1178A','淮塔',1394125877,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (167,'1179A','铜山兽医院',1394125878,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (168,'1180A','新城区',1394125879,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (169,'1181A','桃园路',1394125881,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (170,'1182A','农科院',1394125881,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (171,'1183A','铜山区环保局',1394125883,1,'','徐州','xuzhou');
+INSERT INTO "pm2_5_station" VALUES (172,'1184A','城东财政所',1394125884,1,'','扬州','yangzhou');
+INSERT INTO "pm2_5_station" VALUES (173,'1185A','市监测站',1394125885,1,'','扬州','yangzhou');
+INSERT INTO "pm2_5_station" VALUES (174,'1186A','邗江监测站',1394125886,1,'','扬州','yangzhou');
+INSERT INTO "pm2_5_station" VALUES (175,'1187A','第四医院',1394125888,1,'','扬州','yangzhou');
+INSERT INTO "pm2_5_station" VALUES (176,'1188A','大学城',1394125889,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (177,'1189A','市北高中',1394125891,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (178,'1190A','曹张',1394125891,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (179,'1191A','漆塘',1394125892,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (180,'1192A','东亭',1394125893,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (181,'1193A','旺庄',1394125895,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (182,'1194A','育红小学',1394125896,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (183,'1195A','堰桥',1394125897,1,'','无锡','wuxi');
+INSERT INTO "pm2_5_station" VALUES (184,'1196A','市监测站',1394125897,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (185,'1197A','城建学校',1394125898,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (186,'1198A','常工院',1394125900,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (187,'1199A','潞城',1394125902,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (188,'1200A','武进监测站',1394125903,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (189,'1201A','安家',1394125904,1,'','常州','changzhou');
+INSERT INTO "pm2_5_station" VALUES (190,'1202A','环境监测站',1394125905,1,'','镇江','zhenjiang');
+INSERT INTO "pm2_5_station" VALUES (191,'1203A','新区办事处',1394125906,1,'','镇江','zhenjiang');
+INSERT INTO "pm2_5_station" VALUES (192,'1204A','职教中心',1394125908,1,'','镇江','zhenjiang');
+INSERT INTO "pm2_5_station" VALUES (193,'1205A','丹徒区监测站',1394125908,1,'','镇江','zhenjiang');
+INSERT INTO "pm2_5_station" VALUES (194,'1206A','公园路',1394125909,1,'','泰州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (195,'1207A','莲花',1394125910,1,'','泰州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (196,'1208A','高港区政府',1394125911,1,'','泰州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (197,'1209A','留学生创业园',1394125913,1,'','泰州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (198,'1210A','钵池山',1394125915,1,'','淮安','huaian');
+INSERT INTO "pm2_5_station" VALUES (199,'1211A','北京南路',1394125916,1,'','淮安','huaian');
+INSERT INTO "pm2_5_station" VALUES (200,'1212A','市监测站',1394125917,1,'','淮安','huaian');
+INSERT INTO "pm2_5_station" VALUES (201,'1213A','楚州区监测站',1394125918,1,'','淮安','huaian');
+INSERT INTO "pm2_5_station" VALUES (202,'1214A','淮阴区监测站',1394125919,1,'','淮安','huaian');
+INSERT INTO "pm2_5_station" VALUES (203,'1215A','盐城电厂',1394125920,1,'','盐城','yancheng');
+INSERT INTO "pm2_5_station" VALUES (204,'1216A','市监测站',1394125921,1,'','盐城','yancheng');
+INSERT INTO "pm2_5_station" VALUES (205,'1217A','文峰中学',1394125922,1,'','盐城','yancheng');
+INSERT INTO "pm2_5_station" VALUES (206,'1218A','开发区管委会',1394125924,1,'','盐城','yancheng');
+INSERT INTO "pm2_5_station" VALUES (207,'1219A','市监测站',1394125925,1,'','宿迁','suqian');
+INSERT INTO "pm2_5_station" VALUES (208,'1220A','宿迁学院',1394125927,1,'','宿迁','suqian');
+INSERT INTO "pm2_5_station" VALUES (209,'1221A','宿迁中学',1394125928,1,'','宿迁','suqian');
+INSERT INTO "pm2_5_station" VALUES (210,'1222A','宿豫区环保局',1394125929,1,'','宿迁','suqian');
+INSERT INTO "pm2_5_station" VALUES (211,'1223A','滨江',1394125930,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (212,'1224A','西溪',1394125931,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (213,'1225A','千岛湖',1394125932,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (214,'1226A','下沙',1394125933,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (215,'1227A','卧龙桥',1394125934,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (216,'1228A','浙江农大',1394125935,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (217,'1229A','朝晖五区',1394125936,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (218,'1230A','和睦小学',1394125937,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (219,'1231A','临平镇',1394125939,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (220,'1232A','城厢镇',1394125941,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (221,'1233A','云栖',1394125942,1,'','杭州','hangzhou');
+INSERT INTO "pm2_5_station" VALUES (222,'1234A','区环保大楼',1394125943,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (223,'1235A','万里学院',1394125944,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (224,'1236A','龙赛医院',1394125945,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (225,'1237A','三江中学',1394125946,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (226,'1238A','市政管理站',1394125948,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (227,'1239A','钱湖水厂',1394125949,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (228,'1240A','太古小学',1394125950,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (229,'1241A','市环境监测中心',1394125952,1,'','宁波','ningbo');
+INSERT INTO "pm2_5_station" VALUES (230,'1242A','瓯海',1394125953,1,'','温州','wenzhou');
+INSERT INTO "pm2_5_station" VALUES (231,'1243A','南浦',1394125954,1,'','温州','wenzhou');
+INSERT INTO "pm2_5_station" VALUES (232,'1244A','龙湾',1394125955,1,'','温州','wenzhou');
+INSERT INTO "pm2_5_station" VALUES (233,'1245A','市站',1394125956,1,'','温州','wenzhou');
+INSERT INTO "pm2_5_station" VALUES (234,'1246A','袍江站',1394125958,1,'','绍兴','shaoxing');
+INSERT INTO "pm2_5_station" VALUES (235,'1247A','城东开发委',1394125959,1,'','绍兴','shaoxing');
+INSERT INTO "pm2_5_station" VALUES (236,'1248A','市环保站',1394125960,1,'','绍兴','shaoxing');
+INSERT INTO "pm2_5_station" VALUES (237,'1249A','城北水厂',1394125960,1,'','湖州','huzhou');
+INSERT INTO "pm2_5_station" VALUES (238,'1250A','城西水厂',1394125961,1,'','湖州','huzhou');
+INSERT INTO "pm2_5_station" VALUES (239,'1251A','吉山新村',1394125964,1,'','湖州','huzhou');
+INSERT INTO "pm2_5_station" VALUES (240,'1252A','清河小学',1394125966,1,'','嘉兴','jiaxing');
+INSERT INTO "pm2_5_station" VALUES (241,'1253A','嘉兴学院',1394125967,1,'','嘉兴','jiaxing');
+INSERT INTO "pm2_5_station" VALUES (242,'1254A','监测站',1394125968,1,'','嘉兴','jiaxing');
+INSERT INTO "pm2_5_station" VALUES (243,'1255A','黄岩环保大楼',1394125968,1,'','台州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (244,'1256A','台州环保大楼',1394125970,1,'','台州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (245,'1257A','路桥田洋王',1394125971,1,'','台州','taizhou');
+INSERT INTO "pm2_5_station" VALUES (246,'1258A','定海檀枫',1394125972,1,'','舟山','zhoushan');
+INSERT INTO "pm2_5_station" VALUES (247,'1259A','普陀东港',1394125973,1,'','舟山','zhoushan');
+INSERT INTO "pm2_5_station" VALUES (248,'1260A','临城新区',1394125973,1,'','舟山','zhoushan');
+INSERT INTO "pm2_5_station" VALUES (249,'1261A','四中',1394125975,1,'','金华','jinhua');
+INSERT INTO "pm2_5_station" VALUES (250,'1262A','十五中',1394125977,1,'','金华','jinhua');
+INSERT INTO "pm2_5_station" VALUES (251,'1263A','监测站',1394125979,1,'','金华','jinhua');
+INSERT INTO "pm2_5_station" VALUES (252,'1264A','环保大楼',1394125981,1,'','衢州','quzhou');
+INSERT INTO "pm2_5_station" VALUES (253,'1265A','实验学校',1394125982,1,'','衢州','quzhou');
+INSERT INTO "pm2_5_station" VALUES (254,'1266A','衢州学院',1394125983,1,'','衢州','quzhou');
+INSERT INTO "pm2_5_station" VALUES (255,'1267A','监测站大楼',1394125984,1,'','丽水','lishui');
+INSERT INTO "pm2_5_station" VALUES (256,'1268A','莲都小学',1394125984,1,'','丽水','lishui');
+INSERT INTO "pm2_5_station" VALUES (257,'1269A','余庄前',1394125985,1,'','丽水','lishui');
+INSERT INTO "pm2_5_station" VALUES (258,'1270A','明珠广场',1394125986,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (259,'1271A','三里街',1394125988,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (260,'1272A','琥珀山庄',1394125989,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (261,'1273A','董铺水库',1394125990,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (262,'1274A','长江中路',1394125991,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (263,'1275A','庐阳区',1394125993,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (264,'1276A','瑶海区',1394125994,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (265,'1277A','包河区',1394125995,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (266,'1278A','滨湖新区',1394125996,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (267,'1279A','高新区',1394125997,1,'','合肥','hefei');
+INSERT INTO "pm2_5_station" VALUES (268,'1280A','鼓山',1394125998,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (269,'1281A','快安',1394125999,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (270,'1282A','师大',1394126000,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (271,'1283A','五四北路',1394126001,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (272,'1284A','杨桥西路',1394126002,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (273,'1285A','紫阳',1394126003,1,'','福州','fuzhou');
+INSERT INTO "pm2_5_station" VALUES (274,'1286A','溪东',1394126006,1,'','厦门','shamen');
+INSERT INTO "pm2_5_station" VALUES (275,'1287A','洪文',1394126007,1,'','厦门','shamen');
+INSERT INTO "pm2_5_station" VALUES (276,'1288A','鼓浪屿',1394126008,1,'','厦门','shamen');
+INSERT INTO "pm2_5_station" VALUES (277,'1289A','湖里',1394126009,1,'','厦门','shamen');
+INSERT INTO "pm2_5_station" VALUES (278,'1290A','省外办',1394126010,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (279,'1291A','省林业公司',1394126011,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (280,'1292A','林科所',1394126012,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (281,'1293A','京东镇政府',1394126012,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (282,'1294A','建工学校',1394126013,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (283,'1295A','象湖',1394126015,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (284,'1296A','武术学校',1394126016,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (285,'1297A','石化',1394126017,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (286,'1298A','省站',1394126019,1,'','南昌','nanchang');
+INSERT INTO "pm2_5_station" VALUES (287,'1299A','科干所',1394126020,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (288,'1300A','农科所',1394126021,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (289,'1301A','开发区',1394126022,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (290,'1302A','济南化工厂',1394126023,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (291,'1303A','省种子仓库',1394126024,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (292,'1304A','机床二厂',1394126025,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (293,'1305A','市监测站',1394126026,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (294,'1306A','长清党校',1394126027,1,'','济南','jinan');
+INSERT INTO "pm2_5_station" VALUES (295,'1307A','仰口',1394126028,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (296,'1308A','李沧区子站',1394126029,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (297,'1309A','市北区子站',1394126032,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (298,'1310A','市南区东部子站',1394126033,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (299,'1311A','四方区子站',1394126033,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (300,'1312A','市南区西部子站',1394126034,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (301,'1313A','崂山区子站',1394126035,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (302,'1314A','黄岛区子站',1394126036,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (303,'1315A','城阳区子站',1394126037,1,'','青岛','qingdao');
+INSERT INTO "pm2_5_station" VALUES (304,'1316A','烟厂',1394126039,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (305,'1317A','郑纺机',1394126040,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (306,'1318A','银行学校',1394126041,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (307,'1319A','供水公司',1394126042,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (308,'1320A','经开区管委',1394126045,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (309,'1321A','四十七中',1394126046,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (310,'1322A','市监测站',1394126047,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (311,'1323A','河医大',1394126049,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (312,'1324A','岗李水库',1394126050,1,'','郑州','zhengzhou');
+INSERT INTO "pm2_5_station" VALUES (313,'1325A','东湖梨园',1394126051,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (314,'1326A','汉阳月湖',1394126052,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (315,'1327A','汉口花桥',1394126053,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (316,'1328A','武昌紫阳',1394126054,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (317,'1329A','青山钢花',1394126055,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (318,'1330A','沌口新区',1394126058,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (319,'1331A','汉口江滩',1394126058,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (320,'1332A','东湖高新',1394126059,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (321,'1333A','吴家山',1394126060,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (322,'1334A','沉湖七壕',1394126061,1,'','武汉','wuhan');
+INSERT INTO "pm2_5_station" VALUES (323,'1335A','经开区环保局',1394126063,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (324,'1336A','高开区环保局',1394126063,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (325,'1337A','马坡岭',1394126064,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (326,'1338A','湖南师范大学',1394126065,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (327,'1339A','雨花区环保局',1394126067,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (328,'1340A','伍家岭',1394126068,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (329,'1341A','火车新站',1394126070,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (330,'1342A','天心区环保局',1394126071,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (331,'1343A','湖南中医药大学',1394126072,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (332,'1344A','沙坪',1394126073,1,'','长沙','changsha');
+INSERT INTO "pm2_5_station" VALUES (333,'1345A','广雅中学',1394126074,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (334,'1346A','市五中',1394126075,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (335,'1347A','天河职幼',1394126076,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (336,'1348A','广东商学院',1394126077,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (337,'1349A','市八十六中',1394126078,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (338,'1350A','番禺中学',1394126079,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (339,'1351A','花都师范',1394126081,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (340,'1352A','市监测站',1394126083,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (341,'1353A','九龙镇镇龙',1394126084,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (342,'1354A','麓湖',1394126085,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (343,'1355A','帽峰山森林公园',1394126086,1,'','广州','guangzhou');
+INSERT INTO "pm2_5_station" VALUES (344,'1356A','荔园',1394126087,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (345,'1357A','洪湖',1394126088,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (346,'1358A','华侨城',1394126089,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (347,'1359A','南油',1394126090,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (348,'1360A','盐田',1394126091,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (349,'1361A','龙岗',1394126092,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (350,'1362A','西乡',1394126093,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (351,'1363A','南澳',1394126096,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (352,'1364A','葵涌',1394126097,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (353,'1365A','梅沙',1394126098,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (354,'1366A','观澜',1394126098,1,'','深圳','shenzhen');
+INSERT INTO "pm2_5_station" VALUES (355,'1367A','吉大',1394126100,1,'','珠海','zhuhai');
+INSERT INTO "pm2_5_station" VALUES (356,'1368A','前山',1394126101,1,'','珠海','zhuhai');
+INSERT INTO "pm2_5_station" VALUES (357,'1369A','唐家',1394126102,1,'','珠海','zhuhai');
+INSERT INTO "pm2_5_station" VALUES (358,'1370A','斗门',1394126103,1,'','珠海','zhuhai');
+INSERT INTO "pm2_5_station" VALUES (359,'1371A','湾梁',1394126104,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (360,'1372A','华材职中',1394126105,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (361,'1373A','南海气象局',1394126106,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (362,'1374A','顺德苏岗',1394126108,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (363,'1375A','容桂街道办',1394126110,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (364,'1376A','高明孔堂',1394126112,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (365,'1377A','三水监测站',1394126113,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (366,'1378A','三水云东海',1394126114,1,'','佛山','foshan');
+INSERT INTO "pm2_5_station" VALUES (367,'1379A','华柏园',1394126115,1,'','中山','zhongshan');
+INSERT INTO "pm2_5_station" VALUES (368,'1380A','张溪',1394126116,1,'','中山','zhongshan');
+INSERT INTO "pm2_5_station" VALUES (369,'1381A','紫马岭',1394126117,1,'','中山','zhongshan');
+INSERT INTO "pm2_5_station" VALUES (370,'1382A','长江旅游区',1394126119,1,'','中山','zhongshan');
+INSERT INTO "pm2_5_station" VALUES (371,'1383A','北街',1394126119,1,'','江门','jiangmen');
+INSERT INTO "pm2_5_station" VALUES (372,'1384A','西区',1394126121,1,'','江门','jiangmen');
+INSERT INTO "pm2_5_station" VALUES (373,'1385A','圭峰西',1394126123,1,'','江门','jiangmen');
+INSERT INTO "pm2_5_station" VALUES (374,'1386A','东湖',1394126124,1,'','江门','jiangmen');
+INSERT INTO "pm2_5_station" VALUES (375,'1387A','实验中学',1394126125,1,'','东莞','dongguan');
+INSERT INTO "pm2_5_station" VALUES (376,'1388A','南城元岭',1394126126,1,'','东莞','dongguan');
+INSERT INTO "pm2_5_station" VALUES (377,'1389A','莞城二水厂',1394126127,1,'','东莞','dongguan');
+INSERT INTO "pm2_5_station" VALUES (378,'1390A','东城石井',1394126128,1,'','东莞','dongguan');
+INSERT INTO "pm2_5_station" VALUES (379,'1391A','南城西平',1394126129,1,'','东莞','dongguan');
+INSERT INTO "pm2_5_station" VALUES (380,'1392A','河南岸金山湖子站',1394126130,1,'','惠州','huizhou');
+INSERT INTO "pm2_5_station" VALUES (381,'1393A','下埔横江三路子站',1394126131,1,'','惠州','huizhou');
+INSERT INTO "pm2_5_station" VALUES (382,'1394A','江北云山西路子站',1394126132,1,'','惠州','huizhou');
+INSERT INTO "pm2_5_station" VALUES (383,'1395A','惠阳区承修路船湖子站',1394126133,1,'','惠州','huizhou');
+INSERT INTO "pm2_5_station" VALUES (384,'1396A','大亚湾管委会子站',1394126136,1,'','惠州','huizhou');
+INSERT INTO "pm2_5_station" VALUES (385,'1397A','睦岗子站',1394126137,1,'','肇庆','zhaoqing');
+INSERT INTO "pm2_5_station" VALUES (386,'1398A','城中子站',1394126138,1,'','肇庆','zhaoqing');
+INSERT INTO "pm2_5_station" VALUES (387,'1399A','坑口子站',1394126140,1,'','肇庆','zhaoqing');
+INSERT INTO "pm2_5_station" VALUES (388,'1400A','七星岩子站',1394126141,1,'','肇庆','zhaoqing');
+INSERT INTO "pm2_5_station" VALUES (389,'1401A','振宁花园',1394126142,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (390,'1402A','北湖',1394126143,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (391,'1403A','市监测站',1394126144,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (392,'1404A','大自然花园',1394126145,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (393,'1405A','仙葫',1394126146,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (394,'1406A','区农职院',1394126147,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (395,'1408A','沙井镇街道办',1394126149,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (396,'1409A','东寨港',1394126150,1,'','海口','haikou');
+INSERT INTO "pm2_5_station" VALUES (397,'1410A','海南大学',1394126151,1,'','海口','haikou');
+INSERT INTO "pm2_5_station" VALUES (398,'1411A','秀英海南医院',1394126152,1,'','海口','haikou');
+INSERT INTO "pm2_5_station" VALUES (399,'1412A','海南师范大学',1394126153,1,'','海口','haikou');
+INSERT INTO "pm2_5_station" VALUES (400,'1413A','龙华路环保局宿舍',1394126154,1,'','海口','haikou');
+INSERT INTO "pm2_5_station" VALUES (401,'1414A','缙云山',1394126155,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (402,'1415A','高家花园',1394126156,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (403,'1416A','天生',1394126157,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (404,'1417A','两路',1394126158,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (405,'1418A','虎溪',1394126159,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (406,'1419A','南坪',1394126159,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (407,'1420A','唐家沱',1394126161,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (408,'1421A','茶园',1394126162,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (409,'1422A','白市驿',1394126163,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (410,'1423A','解放碑',1394126164,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (411,'1424A','杨家坪',1394126165,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (412,'1425A','空港',1394126167,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (413,'1426A','新山村',1394126167,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (414,'1427A','礼嘉',1394126169,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (415,'1429A','鱼新街',1394126170,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (416,'1431A','金泉两河',1394126171,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (417,'1432A','十里店',1394126173,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (418,'1433A','三瓦窑',1394126175,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (419,'1434A','沙河铺',1394126176,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (420,'1435A','梁家巷',1394126177,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (421,'1436A','草堂寺',1394126178,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (422,'1437A','人民公园',1394126179,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (423,'1438A','灵岩寺',1394126180,1,'','成都','chengdu');
+INSERT INTO "pm2_5_station" VALUES (424,'1439A','马鞍山',1394126181,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (425,'1440A','市环保站',1394126182,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (426,'1441A','金阳新区',1394126184,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (427,'1442A','乌当区',1394126185,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (428,'1443A','花溪区',1394126188,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (429,'1444A','小河区',1394126189,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (430,'1445A','鸿边门',1394126190,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (431,'1446A','冶金厅',1394126190,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (432,'1447A','太慈桥',1394126192,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (433,'1449A','关上',1394126193,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (434,'1450A','呈贡新区',1394126194,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (435,'1451A','西山森林公园',1394126195,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (436,'1452A','龙泉镇',1394126196,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (437,'1453A','东风东路',1394126197,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (438,'1454A','金鼎山',1394126198,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (439,'1455A','碧鸡广场',1394126200,1,'','昆明','kunming');
+INSERT INTO "pm2_5_station" VALUES (440,'1456A','八廓街',1394126201,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (441,'1457A','市环保局',1394126203,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (442,'1458A','区监测站',1394126204,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (443,'1459A','西藏大学',1394126205,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (444,'1460A','区辐射站',1394126206,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (445,'1461A','拉萨火车站',1394126207,1,'','拉萨','lasa');
+INSERT INTO "pm2_5_station" VALUES (446,'1462A','高压开关厂',1394126208,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (447,'1463A','兴庆小区',1394126209,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (448,'1464A','纺织城',1394126210,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (449,'1465A','小寨',1394126211,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (450,'1466A','市人民体育场',1394126214,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (451,'1467A','高新西区',1394126215,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (452,'1468A','经开区',1394126216,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (453,'1469A','长安区',1394126217,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (454,'1470A','阎良区',1394126218,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (455,'1471A','临潼区',1394126219,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (456,'1472A','草滩',1394126221,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (457,'1473A','曲江文化产业集团',1394126221,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (458,'1474A','广运潭',1394126222,1,'','西安','xian');
+INSERT INTO "pm2_5_station" VALUES (459,'1475A','职工医院',1394126223,1,'','兰州','lanzhou');
+INSERT INTO "pm2_5_station" VALUES (460,'1476A','兰炼宾馆',1394126224,1,'','兰州','lanzhou');
+INSERT INTO "pm2_5_station" VALUES (461,'1477A','榆中兰大校区',1394126226,1,'','兰州','lanzhou');
+INSERT INTO "pm2_5_station" VALUES (462,'1478A','生物制品所',1394126228,1,'','兰州','lanzhou');
+INSERT INTO "pm2_5_station" VALUES (463,'1479A','铁路设计院',1394126229,1,'','兰州','lanzhou');
+INSERT INTO "pm2_5_station" VALUES (464,'1480A','市环境监测站',1394126230,1,'','西宁','xining');
+INSERT INTO "pm2_5_station" VALUES (465,'1481A','省医药仓库',1394126231,1,'','西宁','xining');
+INSERT INTO "pm2_5_station" VALUES (466,'1482A','四陆医院',1394126232,1,'','西宁','xining');
+INSERT INTO "pm2_5_station" VALUES (467,'1483A','第五水厂',1394126233,1,'','西宁','xining');
+INSERT INTO "pm2_5_station" VALUES (468,'1484A','贺兰山马莲口',1394126234,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (469,'1486A','宁安大街',1394126235,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (470,'1487A','宁化生活区',1394126235,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (471,'1488A','贺兰山东路',1394126236,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (472,'1489A','学院路',1394126238,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (473,'1490A','监测站',1394126240,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (474,'1491A','收费所',1394126241,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (475,'1492A','新疆农科院农场',1394126243,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (476,'1493A','铁路局',1394126244,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (477,'1494A','三十一中学',1394126245,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (478,'1495A','七十四中学',1394126246,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (479,'1496A','米东区环保局',1394126247,1,'','乌鲁木齐','wulumuqi');
+INSERT INTO "pm2_5_station" VALUES (480,'1428A','蔡家',1394126248,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (481,'1430A','南泉',1394126249,1,'','重庆','zhongqing');
+INSERT INTO "pm2_5_station" VALUES (482,'1552A','桐木岭',1394126250,1,'','贵阳','guiyang');
+INSERT INTO "pm2_5_station" VALUES (483,'1485A','银湖巷',1394126251,1,'','银川','yinchuan');
+INSERT INTO "pm2_5_station" VALUES (484,'1001A','万寿西宫',1394126253,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (485,'1002A','定陵',1394126255,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (486,'1003A','东四',1394126256,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (487,'1004A','天坛',1394126257,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (488,'1005A','农展馆',1394126257,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (489,'1006A','官园',1394126258,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (490,'1007A','海淀区万柳',1394126259,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (491,'1008A','顺义新城',1394126261,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (492,'1009A','怀柔镇',1394126262,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (493,'1010A','昌平镇',1394126263,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (494,'1011A','奥体中心',1394126264,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (495,'1012A','古城',1394126266,1,'','北京','beijing');
+INSERT INTO "pm2_5_station" VALUES (496,'1508A','板塘',1394126267,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (497,'1511A','市监测站',1394126268,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (498,'1512A','江麓',1394126269,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (499,'1513A','岳塘',1394126270,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (500,'1514A','科大',1394126271,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (501,'1515A','天台山庄',1394126272,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (502,'1518A','株冶医院',1394126273,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (503,'1519A','市四中',1394126274,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (504,'1520A','火车站',1394126275,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (505,'1524A','市监测站',1394126276,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (506,'1559A','大京风景区',1394126278,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (507,'1562A','昭山',1394126280,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (508,'1564A','韶山',1394126281,1,'','湘潭','xiangtan');
+INSERT INTO "pm2_5_station" VALUES (509,'1696A','市自来水厂',1394126281,1,'','河源','heyuan');
+INSERT INTO "pm2_5_station" VALUES (510,'1697A','市三小',1394126282,1,'','河源','heyuan');
+INSERT INTO "pm2_5_station" VALUES (511,'1698A','河源中学',1394126283,1,'','河源','heyuan');
+INSERT INTO "pm2_5_station" VALUES (512,'1702A','环保局',1394126284,1,'','清远','qingyuan');
+INSERT INTO "pm2_5_station" VALUES (513,'1703A','凤城街办',1394126285,1,'','清远','qingyuan');
+INSERT INTO "pm2_5_station" VALUES (514,'1598A','三水厂',1394126286,1,'','营口','yingkou');
+INSERT INTO "pm2_5_station" VALUES (515,'1599A','西炮台',1394126288,1,'','营口','yingkou');
+INSERT INTO "pm2_5_station" VALUES (516,'1600A','轴承厂',1394126289,1,'','丹东','dandong');
+INSERT INTO "pm2_5_station" VALUES (517,'1601A','财专',1394126291,1,'','丹东','dandong');
+INSERT INTO "pm2_5_station" VALUES (518,'1602A','元宝山水厂',1394126293,1,'','丹东','dandong');
+INSERT INTO "pm2_5_station" VALUES (519,'1603A','实验小学',1394126294,1,'','丹东','dandong');
+INSERT INTO "pm2_5_station" VALUES (520,'1604A','开发区',1394126296,1,'','盘锦','panjin');
+INSERT INTO "pm2_5_station" VALUES (521,'1704A','扶贫区',1394126297,1,'','清远','qingyuan');
+INSERT INTO "pm2_5_station" VALUES (522,'1715A','东风水库',1394126298,1,'','玉溪','yuxi');
+INSERT INTO "pm2_5_station" VALUES (523,'1716A','市监测站',1394126299,1,'','玉溪','yuxi');
+INSERT INTO "pm2_5_station" VALUES (524,'1717A','大营街镇',1394126300,1,'','玉溪','yuxi');
+INSERT INTO "pm2_5_station" VALUES (525,'1596A','营口大学',1394126301,1,'','营口','yingkou');
+INSERT INTO "pm2_5_station" VALUES (526,'1597A','植物园',1394126302,1,'','营口','yingkou');
+INSERT INTO "pm2_5_station" VALUES (527,'1585A','市环境监测站',1394126303,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (528,'1586A','包百大楼',1394126305,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (529,'1587A','东河城环局',1394126307,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (530,'1588A','青山宾馆',1394126308,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (531,'1589A','惠龙物流',1394126309,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (532,'1590A','东河鸿龙湾',1394126310,1,'','包头','baotou');
+INSERT INTO "pm2_5_station" VALUES (533,'1591A','综合楼',1394126311,1,'','鄂尔多斯','eerduosi');
+INSERT INTO "pm2_5_station" VALUES (534,'1605A','兴隆台',1394126313,1,'','盘锦','panjin');
+INSERT INTO "pm2_5_station" VALUES (535,'1606A','鼎翔',1394126314,1,'','盘锦','panjin');
+INSERT INTO "pm2_5_station" VALUES (536,'1607A','葫芦岛市西山坡',1394126315,1,'','葫芦岛','huludao');
+INSERT INTO "pm2_5_station" VALUES (537,'1608A','化工医院',1394126316,1,'','葫芦岛','huludao');
+INSERT INTO "pm2_5_station" VALUES (538,'1609A','新区公园',1394126319,1,'','葫芦岛','huludao');
+INSERT INTO "pm2_5_station" VALUES (539,'1610A','连山区政府',1394126319,1,'','葫芦岛','huludao');
+INSERT INTO "pm2_5_station" VALUES (540,'1614A','清源山',1394126320,1,'','泉州','quanzhou');
+INSERT INTO "pm2_5_station" VALUES (541,'1592A','巴音孟克林场办事处',1394126321,1,'','鄂尔多斯','eerduosi');
+INSERT INTO "pm2_5_station" VALUES (542,'1593A','康泽苑',1394126322,1,'','鄂尔多斯','eerduosi');
+INSERT INTO "pm2_5_station" VALUES (543,'1594A','华泰汽车城',1394126324,1,'','鄂尔多斯','eerduosi');
+INSERT INTO "pm2_5_station" VALUES (544,'1595A','奥林花园',1394126325,1,'','鄂尔多斯','eerduosi');
+INSERT INTO "pm2_5_station" VALUES (545,'1611A','涂山街',1394126326,1,'','泉州','quanzhou');
+INSERT INTO "pm2_5_station" VALUES (546,'1612A','津头埔',1394126327,1,'','泉州','quanzhou');
+INSERT INTO "pm2_5_station" VALUES (547,'1613A','万安',1394126328,1,'','泉州','quanzhou');
+INSERT INTO "pm2_5_station" VALUES (548,'1615A','植物油厂',1394126330,1,'','莱芜','laiwu');
+INSERT INTO "pm2_5_station" VALUES (549,'1623A','黑马集团',1394126332,1,'','德州','dezhou');
+INSERT INTO "pm2_5_station" VALUES (550,'1624A','监理站',1394126333,1,'','德州','dezhou');
+INSERT INTO "pm2_5_station" VALUES (551,'1625A','区政府',1394126334,1,'','聊城','liaocheng');
+INSERT INTO "pm2_5_station" VALUES (552,'1627A','党校',1394126335,1,'','聊城','liaocheng');
+INSERT INTO "pm2_5_station" VALUES (553,'1628A','市环保局',1394126336,1,'','滨州','binzhou');
+INSERT INTO "pm2_5_station" VALUES (554,'1629A','第二水厂',1394126337,1,'','滨州','binzhou');
+INSERT INTO "pm2_5_station" VALUES (555,'1616A','技术学院',1394126338,1,'','莱芜','laiwu');
+INSERT INTO "pm2_5_station" VALUES (556,'1617A','日升国际',1394126339,1,'','莱芜','laiwu');
+INSERT INTO "pm2_5_station" VALUES (557,'1618A','沂河小区',1394126339,1,'','临沂','linyi');
+INSERT INTO "pm2_5_station" VALUES (558,'1619A','鲁南制药厂',1394126340,1,'','临沂','linyi');
+INSERT INTO "pm2_5_station" VALUES (559,'1620A','新光毛纺厂',1394126342,1,'','临沂','linyi');
+INSERT INTO "pm2_5_station" VALUES (560,'1621A','河东保险公司',1394126344,1,'','临沂','linyi');
+INSERT INTO "pm2_5_station" VALUES (561,'1622A','儿童乐园',1394126346,1,'','德州','dezhou');
+INSERT INTO "pm2_5_station" VALUES (562,'1638A','薛城环保局',1394126348,1,'','枣庄','zaozhuang');
+INSERT INTO "pm2_5_station" VALUES (563,'1639A','峄城区政府',1394126349,1,'','枣庄','zaozhuang');
+INSERT INTO "pm2_5_station" VALUES (564,'1640A','台儿庄区环保局',1394126350,1,'','枣庄','zaozhuang');
+INSERT INTO "pm2_5_station" VALUES (565,'1641A','山亭区环保局',1394126350,1,'','枣庄','zaozhuang');
+INSERT INTO "pm2_5_station" VALUES (566,'1642A','开发区',1394126351,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (567,'1630A','北中新校',1394126353,1,'','滨州','binzhou');
+INSERT INTO "pm2_5_station" VALUES (568,'1631A','人民公园',1394126354,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (569,'1632A','东风化工厂',1394126355,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (570,'1633A','双山',1394126356,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (571,'1634A','气象站',1394126358,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (572,'1635A','莆田园',1394126360,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (573,'1636A','三金集团',1394126361,1,'','淄博','zibo');
+INSERT INTO "pm2_5_station" VALUES (574,'1637A','市中区政府',1394126362,1,'','枣庄','zaozhuang');
+INSERT INTO "pm2_5_station" VALUES (575,'1651A','共达公司',1394126363,1,'','潍坊','weifang');
+INSERT INTO "pm2_5_station" VALUES (576,'1652A','寒亭监测站',1394126364,1,'','潍坊','weifang');
+INSERT INTO "pm2_5_station" VALUES (577,'1653A','火炬城',1394126365,1,'','济宁','jining');
+INSERT INTO "pm2_5_station" VALUES (578,'1654A','监测站',1394126366,1,'','济宁','jining');
+INSERT INTO "pm2_5_station" VALUES (579,'1655A','电化厂',1394126367,1,'','济宁','jining');
+INSERT INTO "pm2_5_station" VALUES (580,'1643A','轴承厂',1394126368,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (581,'1644A','西郊化工站',1394126371,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (582,'1645A','莱山环保局',1394126372,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (583,'1646A','福山环保局',1394126373,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (584,'1647A','牟平环保局',1394126374,1,'','烟台','yantai');
+INSERT INTO "pm2_5_station" VALUES (585,'1648A','仲裁委',1394126375,1,'','潍坊','weifang');
+INSERT INTO "pm2_5_station" VALUES (586,'1649A','刘家园',1394126377,1,'','潍坊','weifang');
+INSERT INTO "pm2_5_station" VALUES (587,'1650A','环保局',1394126378,1,'','潍坊','weifang');
+INSERT INTO "pm2_5_station" VALUES (588,'1664A','市监测站',1394126378,1,'','威海','weihai');
+INSERT INTO "pm2_5_station" VALUES (589,'1665A','西城阳光环保公司',1394126379,1,'','东营','dongying');
+INSERT INTO "pm2_5_station" VALUES (590,'1666A','市环保局',1394126380,1,'','东营','dongying');
+INSERT INTO "pm2_5_station" VALUES (591,'1667A','耿井村',1394126382,1,'','东营','dongying');
+INSERT INTO "pm2_5_station" VALUES (592,'1674A','金平子站',1394126382,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (593,'1656A','监测站',1394126385,1,'','泰安','taian');
+INSERT INTO "pm2_5_station" VALUES (594,'1657A','人口学校',1394126386,1,'','泰安','taian');
+INSERT INTO "pm2_5_station" VALUES (595,'1658A','电力学校',1394126387,1,'','泰安','taian');
+INSERT INTO "pm2_5_station" VALUES (596,'1659A','监测站',1394126388,1,'','日照','rizhao');
+INSERT INTO "pm2_5_station" VALUES (597,'1660A','市政府广场',1394126389,1,'','日照','rizhao');
+INSERT INTO "pm2_5_station" VALUES (598,'1661A','港务局',1394126390,1,'','日照','rizhao');
+INSERT INTO "pm2_5_station" VALUES (599,'1662A','华夏技校',1394126391,1,'','威海','weihai');
+INSERT INTO "pm2_5_station" VALUES (600,'1663A','山大分校',1394126392,1,'','威海','weihai');
+INSERT INTO "pm2_5_station" VALUES (601,'1722A','红旗广场',1394126393,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (602,'1723A','云冈宾馆',1394126394,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (603,'1724A','大同大学',1394126395,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (604,'1725A','安家小村',1394126398,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (605,'1726A','教育学院',1394126399,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (606,'1675A','龙湖子站',1394126400,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (607,'1738A','市中心',1394126401,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (608,'1739A','赛鱼',1394126402,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (609,'1740A','南庄',1394126402,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (610,'1741A','白羊墅',1394126404,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (611,'1742A','平坦',1394126405,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (612,'1743A','大阳泉',1394126406,1,'','阳泉','yangquan');
+INSERT INTO "pm2_5_station" VALUES (613,'1721A','果树场',1394126407,1,'','大同','datong');
+INSERT INTO "pm2_5_station" VALUES (614,'1735A','工商学校',1394126409,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (615,'1736A','市委',1394126411,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (616,'1737A','南机场',1394126412,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (617,'1870A','柳东小学',1394126413,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (618,'1871A','环保监测站',1394126414,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (619,'1727A','清华站',1394126415,1,'','长治','changzhi');
+INSERT INTO "pm2_5_station" VALUES (620,'1728A','监测站',1394126416,1,'','长治','changzhi');
+INSERT INTO "pm2_5_station" VALUES (621,'1729A','澳瑞特',1394126417,1,'','长治','changzhi');
+INSERT INTO "pm2_5_station" VALUES (622,'1730A','审计局',1394126418,1,'','长治','changzhi');
+INSERT INTO "pm2_5_station" VALUES (623,'1731A','长治八中',1394126419,1,'','长治','changzhi');
+INSERT INTO "pm2_5_station" VALUES (624,'1732A','市监测站',1394126420,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (625,'1733A','临钢医院',1394126422,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (626,'1734A','技工学校',1394126424,1,'','临汾','linfen');
+INSERT INTO "pm2_5_station" VALUES (627,'1918A','气象站',1394126425,1,'','咸阳','xianyang');
+INSERT INTO "pm2_5_station" VALUES (628,'1919A','中华小区',1394126426,1,'','咸阳','xianyang');
+INSERT INTO "pm2_5_station" VALUES (629,'1920A','师范学院',1394126427,1,'','咸阳','xianyang');
+INSERT INTO "pm2_5_station" VALUES (630,'1921A','中医学院',1394126429,1,'','咸阳','xianyang');
+INSERT INTO "pm2_5_station" VALUES (631,'1922A','党校',1394126430,1,'','铜川','tongchuan');
+INSERT INTO "pm2_5_station" VALUES (632,'1872A','河西水厂',1394126430,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (633,'1873A','市四中',1394126432,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (634,'1874A','市九中',1394126433,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (635,'1875A','古亭山',1394126434,1,'','柳州','liuzhou');
+INSERT INTO "pm2_5_station" VALUES (636,'1866A','牛尾岭水库',1394126436,1,'','北海','beihai');
+INSERT INTO "pm2_5_station" VALUES (637,'1867A','海滩公园',1394126437,1,'','北海','beihai');
+INSERT INTO "pm2_5_station" VALUES (638,'1868A','新市环保局',1394126439,1,'','北海','beihai');
+INSERT INTO "pm2_5_station" VALUES (639,'1869A','北海工业园',1394126440,1,'','北海','beihai');
+INSERT INTO "pm2_5_station" VALUES (640,'1939A','日报社',1394126441,1,'','渭南','weinan');
+INSERT INTO "pm2_5_station" VALUES (641,'1940A','体育馆',1394126442,1,'','渭南','weinan');
+INSERT INTO "pm2_5_station" VALUES (642,'1923A','王益区政府',1394126443,1,'','铜川','tongchuan');
+INSERT INTO "pm2_5_station" VALUES (643,'1924A','新区管委会',1394126444,1,'','铜川','tongchuan');
+INSERT INTO "pm2_5_station" VALUES (644,'1925A','新区兰芝公司',1394126445,1,'','铜川','tongchuan');
+INSERT INTO "pm2_5_station" VALUES (645,'1926A','枣园',1394126446,1,'','延安','yanan');
+INSERT INTO "pm2_5_station" VALUES (646,'1927A','延大医附院',1394126448,1,'','延安','yanan');
+INSERT INTO "pm2_5_station" VALUES (647,'1928A','市监测站',1394126450,1,'','延安','yanan');
+INSERT INTO "pm2_5_station" VALUES (648,'1929A','百米大道',1394126451,1,'','延安','yanan');
+INSERT INTO "pm2_5_station" VALUES (649,'1938A','农科所',1394126452,1,'','渭南','weinan');
+INSERT INTO "pm2_5_station" VALUES (650,'1931A','竹园沟',1394126454,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (651,'1932A','三陆医院',1394126455,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (652,'1678A','潮阳子站',1394126456,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (653,'1679A','潮南子站',1394126457,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (654,'1669A','市八中',1394126458,1,'','韶关','shaoguan');
+INSERT INTO "pm2_5_station" VALUES (655,'1933A','监测站',1394126459,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (656,'1934A','技工学校',1394126461,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (657,'1935A','陈仓区环保局家属楼',1394126462,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (658,'1936A','文理学院',1394126463,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (659,'1937A','三迪小学',1394126464,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (660,'1718A','市气象局',1394126465,1,'','菏泽','heze');
+INSERT INTO "pm2_5_station" VALUES (661,'1719A','市政协',1394126466,1,'','菏泽','heze');
+INSERT INTO "pm2_5_station" VALUES (662,'1720A','菏泽学院',1394126467,1,'','菏泽','heze');
+INSERT INTO "pm2_5_station" VALUES (663,'1676A','濠江子站',1394126468,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (664,'1677A','澄海子站',1394126469,1,'','汕头','shantou');
+INSERT INTO "pm2_5_station" VALUES (665,'1670A','碧湖山庄',1394126470,1,'','韶关','shaoguan');
+INSERT INTO "pm2_5_station" VALUES (666,'1671A','园林处',1394126471,1,'','韶关','shaoguan');
+INSERT INTO "pm2_5_station" VALUES (667,'1672A','韶关学院',1394126474,1,'','韶关','shaoguan');
+INSERT INTO "pm2_5_station" VALUES (668,'1673A','曲江监测站',1394126476,1,'','韶关','shaoguan');
+INSERT INTO "pm2_5_station" VALUES (669,'1941A','高新一小',1394126477,1,'','渭南','weinan');
+INSERT INTO "pm2_5_station" VALUES (670,'1407A','英华嘉园',1394126478,1,'','南宁','nanning');
+INSERT INTO "pm2_5_station" VALUES (671,'1680A','湛江影剧院',1394126479,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (672,'1681A','市环境监测站',1394126480,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (673,'1682A','环保局宿舍',1394126480,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (674,'1683A','霞山游泳场',1394126481,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (675,'1684A','麻章区环保局',1394126483,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (676,'1685A','坡头区环保局',1394126484,1,'','湛江','zhanjiang');
+INSERT INTO "pm2_5_station" VALUES (677,'1686A','市环保局茂港分局',1394126487,1,'','茂名','maoming');
+INSERT INTO "pm2_5_station" VALUES (678,'1687A','茂石化七小',1394126488,1,'','茂名','maoming');
+INSERT INTO "pm2_5_station" VALUES (679,'1688A','健康路',1394126490,1,'','茂名','maoming');
+INSERT INTO "pm2_5_station" VALUES (680,'1689A','高岭',1394126491,1,'','茂名','maoming');
+INSERT INTO "pm2_5_station" VALUES (681,'1690A','嘉应大学',1394126492,1,'','梅州','meizhou');
+INSERT INTO "pm2_5_station" VALUES (682,'1691A','梅县新城',1394126493,1,'','梅州','meizhou');
+INSERT INTO "pm2_5_station" VALUES (683,'1692A','环境监控中心',1394126494,1,'','梅州','meizhou');
+INSERT INTO "pm2_5_station" VALUES (684,'1693A','市环保局',1394126496,1,'','汕尾','shanwei');
+INSERT INTO "pm2_5_station" VALUES (685,'1694A','市政府',1394126497,1,'','汕尾','shanwei');
+INSERT INTO "pm2_5_station" VALUES (686,'1695A','新城中学',1394126499,1,'','汕尾','shanwei');
+INSERT INTO "pm2_5_station" VALUES (687,'1699A','鸳鸯湖',1394126500,1,'','阳江','yangjiang');
+INSERT INTO "pm2_5_station" VALUES (688,'1700A','南恩路',1394126502,1,'','阳江','yangjiang');
+INSERT INTO "pm2_5_station" VALUES (689,'1701A','马南垌',1394126503,1,'','阳江','yangjiang');
+INSERT INTO "pm2_5_station" VALUES (690,'1705A','西园路',1394126504,1,'','潮州','chaozhou');
+INSERT INTO "pm2_5_station" VALUES (691,'1706A','档案局',1394126505,1,'','潮州','chaozhou');
+INSERT INTO "pm2_5_station" VALUES (692,'1707A','市政公司',1394126506,1,'','潮州','chaozhou');
+INSERT INTO "pm2_5_station" VALUES (693,'1708A','东湖公园',1394126507,1,'','揭阳','jieyang');
+INSERT INTO "pm2_5_station" VALUES (694,'1709A','仙滘',1394126508,1,'','揭阳','jieyang');
+INSERT INTO "pm2_5_station" VALUES (695,'1710A','中长',1394126509,1,'','揭阳','jieyang');
+INSERT INTO "pm2_5_station" VALUES (696,'1711A','渔湖初级中学',1394126510,1,'','揭阳','jieyang');
+INSERT INTO "pm2_5_station" VALUES (697,'1712A','新市府',1394126512,1,'','云浮','yunfu');
+INSERT INTO "pm2_5_station" VALUES (698,'1713A','市监测站',1394126513,1,'','云浮','yunfu');
+INSERT INTO "pm2_5_station" VALUES (699,'1714A','牧羊',1394126515,1,'','云浮','yunfu');
+INSERT INTO "pm2_5_station" VALUES (700,'1839A','四零三',1394126516,1,'','宜昌','yichang');
+INSERT INTO "pm2_5_station" VALUES (701,'1840A','白龙岗',1394126516,1,'','宜昌','yichang');
+INSERT INTO "pm2_5_station" VALUES (702,'1841A','伍家岗',1394126517,1,'','宜昌','yichang');
+INSERT INTO "pm2_5_station" VALUES (703,'1842A','点军区',1394126519,1,'','宜昌','yichang');
+INSERT INTO "pm2_5_station" VALUES (704,'1843A','夷陵区',1394126520,1,'','宜昌','yichang');
+INSERT INTO "pm2_5_station" VALUES (705,'1844A','市图书馆',1394126521,1,'','荆州','jingzhou');
+INSERT INTO "pm2_5_station" VALUES (706,'1845A','市委党校',1394126522,1,'','荆州','jingzhou');
+INSERT INTO "pm2_5_station" VALUES (707,'1846A','科融环保',1394126523,1,'','荆州','jingzhou');
+INSERT INTO "pm2_5_station" VALUES (708,'1744A','松山一中',1394126525,1,'','赤峰','chifeng');
+INSERT INTO "pm2_5_station" VALUES (709,'1745A','哈达街',1394126526,1,'','赤峰','chifeng');
+INSERT INTO "pm2_5_station" VALUES (710,'1746A','天义路',1394126527,1,'','赤峰','chifeng');
+INSERT INTO "pm2_5_station" VALUES (711,'1747A','松山路',1394126528,1,'','赤峰','chifeng');
+INSERT INTO "pm2_5_station" VALUES (712,'1951A','长征新村',1394126530,1,'','克拉玛依','kelamayi');
+INSERT INTO "pm2_5_station" VALUES (713,'1952A','南林小区',1394126531,1,'','克拉玛依','kelamayi');
+INSERT INTO "pm2_5_station" VALUES (714,'1953A','白碱滩区',1394126532,1,'','克拉玛依','kelamayi');
+INSERT INTO "pm2_5_station" VALUES (715,'1954A','独山子区',1394126533,1,'','克拉玛依','kelamayi');
+INSERT INTO "pm2_5_station" VALUES (716,'1955A','乌尔禾区商贸楼',1394126534,1,'','克拉玛依','kelamayi');
+INSERT INTO "pm2_5_station" VALUES (717,'1956A','孔雀公园',1394126535,1,'','库尔勒','kuerle');
+INSERT INTO "pm2_5_station" VALUES (718,'1957A','棉纺厂',1394126537,1,'','库尔勒','kuerle');
+INSERT INTO "pm2_5_station" VALUES (719,'1958A','经济开发区',1394126539,1,'','库尔勒','kuerle');
+INSERT INTO "pm2_5_station" VALUES (720,'1779A','安居小区',1394126541,1,'','齐齐哈尔','qiqihaer');
+INSERT INTO "pm2_5_station" VALUES (721,'1780A','中心广场',1394126542,1,'','齐齐哈尔','qiqihaer');
+INSERT INTO "pm2_5_station" VALUES (722,'1781A','农牧车辆厂',1394126543,1,'','齐齐哈尔','qiqihaer');
+INSERT INTO "pm2_5_station" VALUES (723,'1782A','富区环保局',1394126544,1,'','齐齐哈尔','qiqihaer');
+INSERT INTO "pm2_5_station" VALUES (724,'1783A','市环境监测站',1394126545,1,'','齐齐哈尔','qiqihaer');
+INSERT INTO "pm2_5_station" VALUES (725,'1784A','环保大楼　',1394126546,1,'','牡丹江','mudanjiang');
+INSERT INTO "pm2_5_station" VALUES (726,'1785A','文化广场　',1394126547,1,'','牡丹江','mudanjiang');
+INSERT INTO "pm2_5_station" VALUES (727,'1786A','第一医院',1394126549,1,'','牡丹江','mudanjiang');
+INSERT INTO "pm2_5_station" VALUES (728,'1787A','机车工厂',1394126551,1,'','牡丹江','mudanjiang');
+INSERT INTO "pm2_5_station" VALUES (729,'1788A','第一中学',1394126552,1,'','牡丹江','mudanjiang');
+INSERT INTO "pm2_5_station" VALUES (730,'1916A','环境监测站',1394126554,1,'','曲靖','qujing');
+INSERT INTO "pm2_5_station" VALUES (731,'1917A','烟厂办公区',1394126555,1,'','曲靖','qujing');
+INSERT INTO "pm2_5_station" VALUES (732,'1803A','十里',1394126556,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (733,'1804A','茅山头',1394126557,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (734,'1805A','西园',1394126558,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (735,'1806A','五七二七厂',1394126559,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (736,'1807A','水科所',1394126561,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (737,'1808A','综合工业园',1394126563,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (738,'1809A','石化总厂',1394126565,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (739,'1810A','庐山气象台',1394126566,1,'','九江','jiujiang');
+INSERT INTO "pm2_5_station" VALUES (740,'1942A','市科委',1394126567,1,'','金昌','jinchang');
+INSERT INTO "pm2_5_station" VALUES (741,'1943A','新川苑',1394126567,1,'','金昌','jinchang');
+INSERT INTO "pm2_5_station" VALUES (742,'1944A','公司二招',1394126569,1,'','金昌','jinchang');
+INSERT INTO "pm2_5_station" VALUES (743,'1945A','气象局',1394126570,1,'','嘉峪关','jiayuguan');
+INSERT INTO "pm2_5_station" VALUES (744,'1946A','酒钢耐材公司',1394126571,1,'','嘉峪关','jiayuguan');
+INSERT INTO "pm2_5_station" VALUES (745,'1811A','中信二小',1394126572,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (746,'1812A','市委党校',1394126573,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (747,'1813A','市监测站',1394126575,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (748,'1814A','豫西宾馆',1394126576,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (749,'1815A','河南林校',1394126577,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (750,'1816A','开发区管委会',1394126578,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (751,'1817A','市委新办公区',1394126579,1,'','洛阳','luoyang');
+INSERT INTO "pm2_5_station" VALUES (752,'1818A','棉研所',1394126580,1,'','安阳','anyang');
+INSERT INTO "pm2_5_station" VALUES (753,'1819A','红庙街',1394126582,1,'','安阳','anyang');
+INSERT INTO "pm2_5_station" VALUES (754,'1820A','银杏小区',1394126583,1,'','安阳','anyang');
+INSERT INTO "pm2_5_station" VALUES (755,'1821A','环保局',1394126583,1,'','安阳','anyang');
+INSERT INTO "pm2_5_station" VALUES (756,'1822A','铁佛寺',1394126584,1,'','安阳','anyang');
+INSERT INTO "pm2_5_station" VALUES (757,'1823A','河大一附院',1394126585,1,'','开封','kaifeng');
+INSERT INTO "pm2_5_station" VALUES (758,'1824A','肿瘤医院',1394126587,1,'','开封','kaifeng');
+INSERT INTO "pm2_5_station" VALUES (759,'1825A','妇幼保健院',1394126589,1,'','开封','kaifeng');
+INSERT INTO "pm2_5_station" VALUES (760,'1826A','世纪星幼儿园',1394126590,1,'','开封','kaifeng');
+INSERT INTO "pm2_5_station" VALUES (761,'1827A','市监测站　',1394126591,1,'','焦作','jiaozuo');
+INSERT INTO "pm2_5_station" VALUES (762,'1828A','市环保局　',1394126592,1,'','焦作','jiaozuo');
+INSERT INTO "pm2_5_station" VALUES (763,'1829A','高新区政府',1394126594,1,'','焦作','jiaozuo');
+INSERT INTO "pm2_5_station" VALUES (764,'1830A','影视城',1394126595,1,'','焦作','jiaozuo');
+INSERT INTO "pm2_5_station" VALUES (765,'1831A','高压开关厂',1394126595,1,'','平顶山','pingdingshan');
+INSERT INTO "pm2_5_station" VALUES (766,'1832A','新华旅馆',1394126596,1,'','平顶山','pingdingshan');
+INSERT INTO "pm2_5_station" VALUES (767,'1833A','规划设计院',1394126597,1,'','平顶山','pingdingshan');
+INSERT INTO "pm2_5_station" VALUES (768,'1834A','平顶山工学院',1394126599,1,'','平顶山','pingdingshan');
+INSERT INTO "pm2_5_station" VALUES (769,'1835A','市政府',1394126600,1,'','三门峡','sanmenxia');
+INSERT INTO "pm2_5_station" VALUES (770,'1836A','开发区',1394126602,1,'','三门峡','sanmenxia');
+INSERT INTO "pm2_5_station" VALUES (771,'1837A','二  印',1394126603,1,'','三门峡','sanmenxia');
+INSERT INTO "pm2_5_station" VALUES (772,'1838A','风景区',1394126604,1,'','三门峡','sanmenxia');
+INSERT INTO "pm2_5_station" VALUES (773,'1911A','丁字口',1394126605,1,'','遵义','zunyi');
+INSERT INTO "pm2_5_station" VALUES (774,'1912A','凤凰山',1394126606,1,'','遵义','zunyi');
+INSERT INTO "pm2_5_station" VALUES (775,'1913A','忠庄',1394126607,1,'','遵义','zunyi');
+INSERT INTO "pm2_5_station" VALUES (776,'1914A','舟水桥',1394126608,1,'','遵义','zunyi');
+INSERT INTO "pm2_5_station" VALUES (777,'1915A','干田坝',1394126609,1,'','遵义','zunyi');
+INSERT INTO "pm2_5_station" VALUES (778,'1985A','吴江市环保局',1394126611,1,'','吴江','wujiang');
+INSERT INTO "pm2_5_station" VALUES (779,'1986A','教师进修学校',1394126613,1,'','吴江','wujiang');
+INSERT INTO "pm2_5_station" VALUES (780,'1987A','吴江开发区',1394126614,1,'','吴江','wujiang');
+INSERT INTO "pm2_5_station" VALUES (781,'1988A','昆山实验小学',1394126617,1,'','昆山','kunshan');
+INSERT INTO "pm2_5_station" VALUES (782,'1989A','震川中学',1394126617,1,'','昆山','kunshan');
+INSERT INTO "pm2_5_station" VALUES (783,'1990A','海虞子站',1394126619,1,'','常熟','changshu');
+INSERT INTO "pm2_5_station" VALUES (784,'1991A','兴福子站',1394126620,1,'','常熟','changshu');
+INSERT INTO "pm2_5_station" VALUES (785,'1992A','菱塘子站',1394126621,1,'','常熟','changshu');
+INSERT INTO "pm2_5_station" VALUES (786,'1993A','张家港市监测站',1394126622,1,'','张家港','zhangjiagang');
+INSERT INTO "pm2_5_station" VALUES (787,'1994A','城北小学',1394126623,1,'','张家港','zhangjiagang');
+INSERT INTO "pm2_5_station" VALUES (788,'1995A','太仓市监测站',1394126625,1,'','太仓','taicang');
+INSERT INTO "pm2_5_station" VALUES (789,'1996A','科教新城实小',1394126626,1,'','太仓','taicang');
+INSERT INTO "pm2_5_station" VALUES (790,'1997A','消防指挥中心',1394126628,1,'','句容','jurong');
+INSERT INTO "pm2_5_station" VALUES (791,'1998A','房家坝',1394126629,1,'','句容','jurong');
+INSERT INTO "pm2_5_station" VALUES (792,'1999A','虹桥邮政',1394126630,1,'','江阴','jiangyin');
+INSERT INTO "pm2_5_station" VALUES (793,'2000A','五星公园',1394126631,1,'','江阴','jiangyin');
+INSERT INTO "pm2_5_station" VALUES (794,'2001A','第二实验小学',1394126631,1,'','江阴','jiangyin');
+INSERT INTO "pm2_5_station" VALUES (795,'2002A','宜兴市环保局',1394126633,1,'','宜兴','yixing');
+INSERT INTO "pm2_5_station" VALUES (796,'2003A','宜园',1394126634,1,'','宜兴','yixing');
+INSERT INTO "pm2_5_station" VALUES (797,'2004A','金坛市环境监测站',1394126635,1,'','金坛','jintan');
+INSERT INTO "pm2_5_station" VALUES (798,'2005A','金坛市自来水公司',1394126636,1,'','金坛','jintan');
+INSERT INTO "pm2_5_station" VALUES (799,'2006A','溧阳市东门子站',1394126639,1,'','溧阳','liyang');
+INSERT INTO "pm2_5_station" VALUES (800,'2007A','燕山子站',1394126640,1,'','溧阳','liyang');
+INSERT INTO "pm2_5_station" VALUES (801,'2008A','海门市监测站',1394126641,1,'','海门','haimen');
+INSERT INTO "pm2_5_station" VALUES (802,'2009A','蓓蕾幼儿园',1394126642,1,'','海门','haimen');
+INSERT INTO "pm2_5_station" VALUES (803,'1930A','庙沟村',1394126644,1,'','宝鸡','baoji');
+INSERT INTO "pm2_5_station" VALUES (804,'1847A','南湖风景区',1394126645,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (805,'1848A','城陵矶',1394126646,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (806,'1849A','开发区',1394126647,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (807,'1850A','云溪区',1394126649,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (808,'1851A','君山区',1394126651,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (809,'1852A','金凤水库',1394126652,1,'','岳阳','yueyang');
+INSERT INTO "pm2_5_station" VALUES (810,'1853A','市监测站',1394126653,1,'','常德','changde');
+INSERT INTO "pm2_5_station" VALUES (811,'1854A','市二中',1394126654,1,'','常德','changde');
+INSERT INTO "pm2_5_station" VALUES (812,'1855A','鼎城区环保局',1394126655,1,'','常德','changde');
+INSERT INTO "pm2_5_station" VALUES (813,'1856A','市技术监督局',1394126656,1,'','常德','changde');
+INSERT INTO "pm2_5_station" VALUES (814,'1857A','百合山',1394126658,1,'','常德','changde');
+INSERT INTO "pm2_5_station" VALUES (815,'1858A','永定新区',1394126659,1,'','张家界','zhangjiajie');
+INSERT INTO "pm2_5_station" VALUES (816,'1859A','电业局',1394126660,1,'','张家界','zhangjiajie');
+INSERT INTO "pm2_5_station" VALUES (817,'1860A','未央路',1394126661,1,'','张家界','zhangjiajie');
+INSERT INTO "pm2_5_station" VALUES (818,'1861A','袁家界',1394126664,1,'','张家界','zhangjiajie');
+INSERT INTO "pm2_5_station" VALUES (819,'2031A','云田中学',1394126665,1,'','株洲','zhuzhou');
+INSERT INTO "pm2_5_station" VALUES (820,'1878A','富乐山',1394126668,1,'','绵阳','mianyang');
+INSERT INTO "pm2_5_station" VALUES (821,'1879A','市人大',1394126669,1,'','绵阳','mianyang');
+INSERT INTO "pm2_5_station" VALUES (822,'1880A','高新区自来水公司',1394126671,1,'','绵阳','mianyang');
+INSERT INTO "pm2_5_station" VALUES (823,'1881A','三水厂',1394126672,1,'','绵阳','mianyang');
+INSERT INTO "pm2_5_station" VALUES (824,'1882A','石马中学',1394126673,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (825,'1883A','市委',1394126674,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (826,'1884A','宜宾四中',1394126676,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (827,'1885A','市政府',1394126678,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (828,'1886A','黄金嘴',1394126679,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (829,'1887A','沙坪中学',1394126680,1,'','宜宾','yibin');
+INSERT INTO "pm2_5_station" VALUES (830,'1888A','弄弄坪',1394126681,1,'','攀枝花','panzhihua');
+INSERT INTO "pm2_5_station" VALUES (831,'1889A','河门口',1394126682,1,'','攀枝花','panzhihua');
+INSERT INTO "pm2_5_station" VALUES (832,'1890A','炳草岗',1394126683,1,'','攀枝花','panzhihua');
+INSERT INTO "pm2_5_station" VALUES (833,'1891A','仁和',1394126686,1,'','攀枝花','panzhihua');
+INSERT INTO "pm2_5_station" VALUES (834,'1892A','金江',1394126687,1,'','攀枝花','panzhihua');
+INSERT INTO "pm2_5_station" VALUES (835,'1893A','九狮山',1394126689,1,'','泸州','luzhou');
+INSERT INTO "pm2_5_station" VALUES (836,'1894A','小市上码头',1394126691,1,'','泸州','luzhou');
+INSERT INTO "pm2_5_station" VALUES (837,'1895A','兰田宪桥',1394126692,1,'','泸州','luzhou');
+INSERT INTO "pm2_5_station" VALUES (838,'1896A','市环监站',1394126693,1,'','泸州','luzhou');
+INSERT INTO "pm2_5_station" VALUES (839,'1897A','大塘山',1394126694,1,'','自贡','zigong');
+INSERT INTO "pm2_5_station" VALUES (840,'1898A','盐马路',1394126695,1,'','自贡','zigong');
+INSERT INTO "pm2_5_station" VALUES (841,'1899A','檀木林街',1394126697,1,'','自贡','zigong');
+INSERT INTO "pm2_5_station" VALUES (842,'1900A','春华路',1394126698,1,'','自贡','zigong');
+INSERT INTO "pm2_5_station" VALUES (843,'1901A','东山公园',1394126699,1,'','德阳','deyang');
+INSERT INTO "pm2_5_station" VALUES (844,'1902A','西小区',1394126700,1,'','德阳','deyang');
+INSERT INTO "pm2_5_station" VALUES (845,'1903A','市检察院',1394126701,1,'','德阳','deyang');
+INSERT INTO "pm2_5_station" VALUES (846,'1904A','耐火材料厂',1394126703,1,'','德阳','deyang');
+INSERT INTO "pm2_5_station" VALUES (847,'1905A','西山风景区',1394126705,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (848,'1906A','南充市委',1394126706,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (849,'1907A','南充炼油厂',1394126707,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (850,'1908A','高坪区监测站',1394126708,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (851,'1909A','嘉陵区环保局',1394126710,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (852,'1910A','市环境监测站',1394126710,1,'','南充','nanchong');
+INSERT INTO "pm2_5_station" VALUES (853,'1876A','河东子站',1394126711,1,'','三亚','sanya');
+INSERT INTO "pm2_5_station" VALUES (854,'1877A','河西子站',1394126712,1,'','三亚','sanya');
+INSERT INTO "pm2_5_station" VALUES (855,'1772A','哈达湾',1394126714,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (856,'1773A','东局子',1394126714,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (857,'1774A','电力学院',1394126715,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (858,'1775A','江北',1394126718,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (859,'1776A','江南公园',1394126719,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (860,'1777A','农科院',1394126720,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (861,'1778A','丰满',1394126721,1,'','吉林','jilin');
+INSERT INTO "pm2_5_station" VALUES (862,'1947A','沙湖旅游区',1394126722,1,'','石嘴山','shizuishan');
+INSERT INTO "pm2_5_station" VALUES (863,'1948A','大武口黄河东街',1394126723,1,'','石嘴山','shizuishan');
+INSERT INTO "pm2_5_station" VALUES (864,'1949A','惠农南大街',1394126724,1,'','石嘴山','shizuishan');
+INSERT INTO "pm2_5_station" VALUES (865,'1950A','红果子镇惠新街',1394126726,1,'','石嘴山','shizuishan');
+INSERT INTO "pm2_5_station" VALUES (866,'2010A','市政府',1394126727,1,'','临安','linan');
+INSERT INTO "pm2_5_station" VALUES (867,'2011A','四中',1394126728,1,'','临安','linan');
+INSERT INTO "pm2_5_station" VALUES (868,'2012A','监测站',1394126731,1,'','富阳','fuyang');
+INSERT INTO "pm2_5_station" VALUES (869,'2013A','富春二小',1394126732,1,'','富阳','fuyang');
+INSERT INTO "pm2_5_station" VALUES (870,'2014A','江东',1394126734,1,'','义乌','yiwu');
+INSERT INTO "pm2_5_station" VALUES (871,'2015A','北苑',1394126735,1,'','义乌','yiwu');
+INSERT INTO "pm2_5_station" VALUES (872,'2016A','图书馆',1394126736,1,'','诸暨','zhuji');
+INSERT INTO "pm2_5_station" VALUES (873,'2017A','富林印务',1394126737,1,'','诸暨','zhuji');
+INSERT INTO "pm2_5_station" VALUES (874,'1748A','深沟寺',1394126738,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (875,'1749A','中心站',1394126739,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (876,'1750A','太平子站',1394126740,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (877,'1751A','铁西',1394126741,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (878,'1752A','开发区',1394126744,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (879,'1753A','明达新区',1394126746,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (880,'1754A','千山公园',1394126747,1,'','鞍山','anshan');
+INSERT INTO "pm2_5_station" VALUES (881,'1755A','望花',1394126748,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (882,'1756A','新华',1394126749,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (883,'1757A','东洲',1394126750,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (884,'1758A','站前',1394126751,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (885,'1759A','水库',1394126752,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (886,'1760A','沈抚新城',1394126754,1,'','抚顺','fushun');
+INSERT INTO "pm2_5_station" VALUES (887,'1761A','大峪',1394126755,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (888,'1762A','溪湖',1394126756,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (889,'1763A','彩屯',1394126756,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (890,'1764A','东明',1394126759,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (891,'1765A','职业病院',1394126760,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (892,'1766A','威宁',1394126761,1,'','本溪','benxi');
+INSERT INTO "pm2_5_station" VALUES (893,'1767A','南山',1394126762,1,'','锦州','jinzhou');
+INSERT INTO "pm2_5_station" VALUES (894,'1768A','开发区',1394126763,1,'','锦州','jinzhou');
+INSERT INTO "pm2_5_station" VALUES (895,'1769A','百股水厂',1394126764,1,'','锦州','jinzhou');
+INSERT INTO "pm2_5_station" VALUES (896,'1770A','监测站',1394126765,1,'','锦州','jinzhou');
+INSERT INTO "pm2_5_station" VALUES (897,'1771A','北湖公园',1394126766,1,'','锦州','jinzhou');
+INSERT INTO "pm2_5_station" VALUES (898,'2018A','抱龙山庄',1394126767,1,'','瓦房店','wafangdian');
+INSERT INTO "pm2_5_station" VALUES (899,'2019A','东山公园',1394126768,1,'','瓦房店','wafangdian');
+INSERT INTO "pm2_5_station" VALUES (900,'1862A','电子科大尧山校区',1394126769,1,'','桂林','guilin');
+INSERT INTO "pm2_5_station" VALUES (901,'1863A','监测站',1394126772,1,'','桂林','guilin');
+INSERT INTO "pm2_5_station" VALUES (902,'1864A','龙隐路小学',1394126773,1,'','桂林','guilin');
+INSERT INTO "pm2_5_station" VALUES (903,'1865A','八中',1394126774,1,'','桂林','guilin');
+INSERT INTO "pm2_5_station" VALUES (904,'1794A','监测站',1394126775,1,'','芜湖','wuhu');
+INSERT INTO "pm2_5_station" VALUES (905,'1795A','科创中心',1394126777,1,'','芜湖','wuhu');
+INSERT INTO "pm2_5_station" VALUES (906,'1796A','四水厂',1394126778,1,'','芜湖','wuhu');
+INSERT INTO "pm2_5_station" VALUES (907,'1797A','五七二零厂',1394126779,1,'','芜湖','wuhu');
+INSERT INTO "pm2_5_station" VALUES (908,'1668A','广南水库',1394126780,1,'','东营','dongying');
+INSERT INTO "pm2_5_station" VALUES (909,'1967A','胶州环保局',1394126784,1,'','胶州','xiaozhou');
+INSERT INTO "pm2_5_station" VALUES (910,'1968A','胶州一中',1394126786,1,'','胶州','xiaozhou');
+INSERT INTO "pm2_5_station" VALUES (911,'1961A','环境监测站',1394126788,1,'','章丘','zhangqiu');
+INSERT INTO "pm2_5_station" VALUES (912,'1962A','明水开发区',1394126791,1,'','章丘','zhangqiu');
+INSERT INTO "pm2_5_station" VALUES (913,'1963A','环保局子站',1394126794,1,'','即墨','jimo');
+INSERT INTO "pm2_5_station" VALUES (914,'1964A','开发区子站',1394126797,1,'','即墨','jimo');
+INSERT INTO "pm2_5_station" VALUES (915,'1971A','1号',1394126801,1,'','平度','pingdu');
+INSERT INTO "pm2_5_station" VALUES (916,'1972A','2号',1394126803,1,'','平度','pingdu');
+INSERT INTO "pm2_5_station" VALUES (917,'1965A','JN子站',1394126804,1,'','胶南','xiaonan');
+INSERT INTO "pm2_5_station" VALUES (918,'1966A','2号子站',1394126806,1,'','胶南','xiaonan');
+INSERT INTO "pm2_5_station" VALUES (919,'1969A','环保局子站',1394126807,1,'','莱西','laixi');
+INSERT INTO "pm2_5_station" VALUES (920,'1970A','人民广场子站',1394126808,1,'','莱西','laixi');
+INSERT INTO "pm2_5_station" VALUES (921,'1977A','莱州环保局',1394126809,1,'','莱州','laizhou');
+INSERT INTO "pm2_5_station" VALUES (922,'1978A','莱州外经委',1394126813,1,'','莱州','laizhou');
+INSERT INTO "pm2_5_station" VALUES (923,'1973A','蓬莱环保局',1394126817,1,'','蓬莱','penglai');
+INSERT INTO "pm2_5_station" VALUES (924,'1974A','蓬莱博物馆',1394126818,1,'','蓬莱','penglai');
+INSERT INTO "pm2_5_station" VALUES (925,'1975A','招远环保局',1394126819,1,'','招远','zhaoyuan');
+INSERT INTO "pm2_5_station" VALUES (926,'1976A','招远教育局',1394126820,1,'','招远','zhaoyuan');
+INSERT INTO "pm2_5_station" VALUES (927,'1959A','监测站',1394126821,1,'','寿光','shouguang');
+INSERT INTO "pm2_5_station" VALUES (928,'1960A','世纪学校',1394126823,1,'','寿光','shouguang');
+INSERT INTO "pm2_5_station" VALUES (929,'1981A','文登市环保局',1394126825,1,'','文登','wendeng');
+INSERT INTO "pm2_5_station" VALUES (930,'1982A','文登市丝绸公司',1394126825,1,'','文登','wendeng');
+INSERT INTO "pm2_5_station" VALUES (931,'1979A','荣成市环保局办公楼',1394126827,1,'','荣成','rongcheng');
+INSERT INTO "pm2_5_station" VALUES (932,'1980A','山东成山轮胎公司',1394126829,1,'','荣成','rongcheng');
+INSERT INTO "pm2_5_station" VALUES (933,'1983A','乳山市环保局',1394126831,1,'','乳山','rushan');
+INSERT INTO "pm2_5_station" VALUES (934,'1984A','乳山市气象局',1394126832,1,'','乳山','rushan');
+INSERT INTO "pm2_5_station" VALUES (935,'1626A','二轻机',1394126833,1,'','聊城','liaocheng');
+INSERT INTO "pm2_5_station" VALUES (936,'1798A','湖东路四小',1394126835,1,'','马鞍山','maanshan');
+INSERT INTO "pm2_5_station" VALUES (937,'1799A','天平服装',1394126836,1,'','马鞍山','maanshan');
+INSERT INTO "pm2_5_station" VALUES (938,'1800A','慈湖二小',1394126837,1,'','马鞍山','maanshan');
+INSERT INTO "pm2_5_station" VALUES (939,'1801A','马钢动力厂',1394126838,1,'','马鞍山','maanshan');
+INSERT INTO "pm2_5_station" VALUES (940,'1802A','市教育基地',1394126840,1,'','马鞍山','maanshan');
+INSERT INTO "pm2_5_station" VALUES (941,'1789A','大同区',1394126842,1,'','大庆','daqing');
+INSERT INTO "pm2_5_station" VALUES (942,'1790A','龙凤区',1394126844,1,'','大庆','daqing');
+INSERT INTO "pm2_5_station" VALUES (943,'1791A','红岗区',1394126845,1,'','大庆','daqing');
+INSERT INTO "pm2_5_station" VALUES (944,'1792A','萨尔图区',1394126846,1,'','大庆','daqing');
+INSERT INTO "pm2_5_station" VALUES (945,'1793A','让胡路区',1394126847,1,'','大庆','daqing');
+CREATE TABLE "weather_cities" (
+  "id" int(10) NOT NULL ,
+  "cityCode" varchar(60) NOT NULL DEFAULT '',
+  "cityName" varchar(60) NOT NULL DEFAULT '',
+  "spellName" varchar(60) NOT NULL DEFAULT '',
+  "date" int(10) NOT NULL DEFAULT '0',
+  "bz" int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY ("id")
+);
+INSERT INTO "weather_cities" VALUES (1,'101010100','北京
+','beijing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (2,'101010200','海淀
+','haidian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (3,'101010300','朝阳
+','zhaoyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (4,'101010400','顺义
+','shunyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (5,'101010500','怀柔
+','huairou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (6,'101010600','通州
+','tongzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (7,'101010700','昌平
+','changping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (8,'101010800','延庆
+','yanqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (9,'101010900','丰台
+','fengtai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (10,'101011000','石景山
+','shijingshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (11,'101011100','大兴
+','daxing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (12,'101011200','房山
+','fangshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (13,'101011300','密云
+','miyun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (14,'101011400','门头沟
+','mentougou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (15,'101011500','平谷
+','pinggu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (16,'101011600','八达岭
+','badaling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (17,'101011700','佛爷顶
+','foyeding
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (18,'101011800','汤河口
+','tanghekou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (19,'101011900','密云上甸子
+','miyunshangdianzi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (20,'101012000','斋堂
+','zhaitang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (21,'101012100','霞云岭
+','xiayunling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (22,'101020100','上海
+','shanghai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (23,'101020200','闵行
+','minxing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (24,'101020300','宝山
+','baoshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (25,'101020400','川沙
+','chuansha
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (26,'101020500','嘉定
+','jiading
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (27,'101020600','南汇
+','nanhui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (28,'101020700','金山
+','jinshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (29,'101020800','青浦
+','qingpu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (30,'101020900','松江
+','songjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (31,'101021000','奉贤
+','fengxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (32,'101021100','崇明
+','chongming
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (33,'101021101','陈家镇
+','chenjiazhen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (34,'101021102','引水船
+','yinshuichuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (35,'101021200','徐家汇
+','xujiahui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (36,'101021300','浦东
+','pudong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (37,'101030100','天津
+','tianjin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (38,'101030200','武清
+','wuqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (39,'101030300','宝坻
+','baochi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (40,'101030400','东丽
+','dongli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (41,'101030500','西青
+','xiqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (42,'101030600','北辰
+','beichen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (43,'101030700','宁河
+','ninghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (44,'101030800','汉沽
+','hangu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (45,'101030900','静海
+','jinghai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (46,'101031000','津南
+','jinnan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (47,'101031100','塘沽
+','tanggu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (48,'101031200','大港
+','dagang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (49,'101031300','平台
+','pingtai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (50,'101031400','蓟县
+','jixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (51,'101040100','重庆
+','zhongqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (52,'101040200','永川
+','yongchuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (53,'101040300','合川
+','hechuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (54,'101040400','南川
+','nanchuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (55,'101040500','江津
+','jiangjin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (56,'101040600','万盛
+','wansheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (57,'101040700','渝北
+','yubei
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (58,'101040800','北碚
+','beibei
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (59,'101040900','巴南
+','banan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (60,'101041000','长寿
+','changshou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (61,'101041100','黔江
+','qianjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (62,'101041200','万州天城
+','wanzhoutiancheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (63,'101041300','万州龙宝
+','wanzhoulongbao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (64,'101041400','涪陵
+','fuling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (65,'101041500','开县
+','kaixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (66,'101041600','城口
+','chengkou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (67,'101041700','云阳
+','yunyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (68,'101041800','巫溪
+','wuxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (69,'101041900','奉节
+','fengjie
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (70,'101042000','巫山
+','wushan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (71,'101042100','潼南
+','tongnan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (72,'101042200','垫江
+','dianjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (73,'101042300','梁平
+','liangping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (74,'101042400','忠县
+','zhongxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (75,'101042500','石柱
+','shizhu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (76,'101042600','大足
+','dazu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (77,'101042700','荣昌
+','rongchang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (78,'101042800','铜梁
+','tongliang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (79,'101042900','璧山
+','bishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (80,'101043000','丰都
+','fengdu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (81,'101043100','武隆
+','wulong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (82,'101043200','彭水
+','pengshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (83,'101043300','綦江
+','qijiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (84,'101043400','酉阳
+','youyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (85,'101043500','金佛山
+','jinfoshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (86,'101043600','秀山
+','xiushan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (87,'101043700','沙坪坝
+','shapingba
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (88,'101050101','哈尔滨
+','haerbin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (89,'101050102','双城
+','shuangcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (90,'101050103','呼兰
+','hulan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (91,'101050104','阿城
+','acheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (92,'101050105','宾县
+','binxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (93,'101050106','依兰
+','yilan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (94,'101050107','巴彦
+','bayan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (95,'101050108','通河
+','tonghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (96,'101050109','方正
+','fangzheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (97,'101050110','延寿
+','yanshou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (98,'101050111','尚志
+','shangzhi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (99,'101050112','五常
+','wuchang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (100,'101050113','木兰
+','mulan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (101,'101050201','齐齐哈尔
+','qiqihaer
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (102,'101050202','讷河
+','nehe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (103,'101050203','龙江
+','longjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (104,'101050204','甘南
+','gannan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (105,'101050205','富裕
+','fuyu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (106,'101050206','依安
+','yian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (107,'101050207','拜泉
+','baiquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (108,'101050208','克山
+','keshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (109,'101050209','克东
+','kedong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (110,'101050210','泰来
+','tailai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (111,'101050301','牡丹江
+','mudanjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (112,'101050302','海林
+','hailin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (113,'101050303','穆棱
+','muleng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (114,'101050304','林口
+','linkou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (115,'101050305','绥芬河
+','suifenhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (116,'101050306','宁安
+','ningan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (117,'101050307','东宁
+','dongning
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (118,'101050401','佳木斯
+','jiamusi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (119,'101050402','汤原
+','tangyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (120,'101050403','抚远
+','fuyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (121,'101050404','桦川
+','huachuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (122,'101050405','桦南
+','huanan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (123,'101050406','同江
+','tongjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (124,'101050407','富锦
+','fujin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (125,'101050501','绥化
+','suihua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (126,'101050502','肇东
+','zhaodong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (127,'101050503','安达
+','anda
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (128,'101050504','海伦
+','hailun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (129,'101050505','明水
+','mingshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (130,'101050506','望奎
+','wangkui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (131,'101050507','兰西
+','lanxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (132,'101050508','青冈
+','qinggang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (133,'101050509','庆安
+','qingan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (134,'101050510','绥棱
+','suileng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (135,'101050601','黑河
+','heihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (136,'101050602','嫩江
+','nenjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (137,'101050603','孙吴
+','sunwu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (138,'101050604','逊克
+','xunke
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (139,'101050605','五大连池
+','wudalianchi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (140,'101050606','北安
+','beian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (141,'101050701','大兴安岭
+','daxinganling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (142,'101050702','塔河
+','tahe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (143,'101050703','漠河
+','mohe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (144,'101050704','呼玛
+','huma
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (145,'101050705','呼中
+','huzhong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (146,'101050706','新林
+','xinlin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (147,'101050707','阿木尔
+','amuer
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (148,'101050708','加格达奇
+','jiagedaqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (149,'101050801','伊春
+','yichun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (150,'101050802','乌伊岭
+','wuyiling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (151,'101050803','五营
+','wuying
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (152,'101050804','铁力
+','tieli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (153,'101050805','嘉荫
+','jiayin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (154,'101050901','大庆
+','daqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (155,'101050902','林甸
+','lindian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (156,'101050903','肇州
+','zhaozhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (157,'101050904','肇源
+','zhaoyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (158,'101050905','杜蒙
+','dumeng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (159,'101051002','七台河
+','qitaihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (160,'101051003','勃利
+','boli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (161,'101051101','鸡西
+','jixi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (162,'101051102','虎林
+','hulin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (163,'101051103','密山
+','mishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (164,'101051104','鸡东
+','jidong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (165,'101051201','鹤岗
+','hegang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (166,'101051202','绥滨
+','suibin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (167,'101051203','萝北
+','luobei
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (168,'101051301','双鸭山
+','shuangyashan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (169,'101051302','集贤
+','jixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (170,'101051303','宝清
+','baoqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (171,'101051304','饶河
+','raohe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (172,'101060101','长春
+','changchun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (173,'101060102','农安
+','nongan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (174,'101060103','德惠
+','dehui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (175,'101060104','九台
+','jiutai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (176,'101060105','榆树
+','yushu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (177,'101060106','双阳
+','shuangyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (178,'101060201','吉林
+','jilin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (179,'101060202','舒兰
+','shulan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (180,'101060203','永吉
+','yongji
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (181,'101060204','蛟河
+','jiaohe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (182,'101060205','磐石
+','panshi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (183,'101060206','桦甸
+','huadian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (184,'101060207','烟筒山
+','yantongshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (185,'101060301','延吉
+','yanji
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (186,'101060302','敦化
+','dunhua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (187,'101060303','安图
+','antu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (188,'101060304','汪清
+','wangqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (189,'101060305','和龙
+','helong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (190,'101060306','天池
+','tianchi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (191,'101060307','龙井
+','longjing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (192,'101060308','珲春
+','hunchun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (193,'101060309','图们
+','tumen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (194,'101060310','松江
+','songjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (195,'101060311','罗子沟
+','luozigou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (196,'101060312','延边
+','yanbian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (197,'101060401','四平
+','siping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (198,'101060402','双辽
+','shuangliao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (199,'101060403','梨树
+','lishu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (200,'101060404','公主岭
+','gongzhuling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (201,'101060405','伊通
+','yitong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (202,'101060406','孤家子
+','gujiazi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (203,'101060501','通化
+','tonghua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (204,'101060502','梅河口
+','meihekou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (205,'101060503','柳河
+','liuhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (206,'101060504','辉南
+','huinan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (207,'101060505','集安
+','jian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (208,'101060506','通化县
+','tonghuaxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (209,'101060601','白城
+','baicheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (210,'101060602','洮南
+','taonan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (211,'101060603','大安
+','daan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (212,'101060604','镇赉
+','zhenlai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (213,'101060605','通榆
+','tongyu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (214,'101060701','辽源
+','liaoyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (215,'101060702','东丰
+','dongfeng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (216,'101060801','松原
+','songyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (217,'101060802','乾安
+','ganan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (218,'101060803','前郭
+','qianguo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (219,'101060804','长岭
+','changling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (220,'101060805','扶余
+','fuyu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (221,'101060901','白山
+','baishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (222,'101060902','靖宇
+','jingyu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (223,'101060903','临江
+','linjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (224,'101060904','东岗
+','donggang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (225,'101060905','长白
+','changbai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (226,'101070101','沈阳
+','chenyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (227,'101070102','苏家屯
+','sujiatun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (228,'101070103','辽中
+','liaozhong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (229,'101070104','康平
+','kangping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (230,'101070105','法库
+','faku
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (231,'101070106','新民
+','xinmin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (232,'101070107','于洪
+','yuhong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (233,'101070108','新城子
+','xinchengzi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (234,'101070201','大连
+','dalian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (235,'101070202','瓦房店
+','wafangdian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (236,'101070203','金州
+','jinzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (237,'101070204','普兰店
+','pulandian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (238,'101070205','旅顺
+','lvshun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (239,'101070206','长海
+','changhai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (240,'101070207','庄河
+','zhuanghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (241,'101070208','皮口
+','pikou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (242,'101070209','海洋岛
+','haiyangdao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (243,'101070301','鞍山
+','anshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (244,'101070302','台安
+','taian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (245,'101070303','岫岩
+','xiuyan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (246,'101070304','海城
+','haicheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (247,'101070401','抚顺
+','fushun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (248,'101070403','清原
+','qingyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (249,'101070404','章党
+','zhangdang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (250,'101070501','本溪
+','benxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (251,'101070502','本溪县
+','benxixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (252,'101070503','草河口
+','caohekou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (253,'101070504','桓仁
+','huanren
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (254,'101070601','丹东
+','dandong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (255,'101070602','凤城
+','fengcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (256,'101070603','宽甸
+','kuandian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (257,'101070604','东港
+','donggang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (258,'101070605','东沟
+','donggou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (259,'101070701','锦州
+','jinzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (260,'101070702','凌海
+','linghai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (261,'101070703','北宁
+','beining
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (262,'101070704','义县
+','yixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (263,'101070705','黑山
+','heishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (264,'101070706','北镇
+','beizhen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (265,'101070801','营口
+','yingkou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (266,'101070802','大石桥
+','dashiqiao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (267,'101070803','盖州
+','gaizhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (268,'101070901','阜新
+','fuxin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (269,'101070902','彰武
+','zhangwu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (270,'101071001','辽阳
+','liaoyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (271,'101071002','辽阳县
+','liaoyangxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (272,'101071003','灯塔
+','dengta
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (273,'101071101','铁岭
+','tieling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (274,'101071102','开原
+','kaiyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (275,'101071103','昌图
+','changtu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (276,'101071104','西丰
+','xifeng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (277,'101071201','朝阳
+','zhaoyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (278,'101071202','建平
+','jianping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (279,'101071203','凌源
+','lingyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (280,'101071204','喀左
+','kazuo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (281,'101071205','北票
+','beipiao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (282,'101071206','羊山
+','yangshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (283,'101071207','建平县
+','jianpingxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (284,'101071301','盘锦
+','panjin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (285,'101071302','大洼
+','dawa
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (286,'101071303','盘山
+','panshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (287,'101071401','葫芦岛
+','huludao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (288,'101071402','建昌
+','jianchang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (289,'101071403','绥中
+','suizhong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (290,'101071404','兴城
+','xingcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (291,'101080101','呼和浩特
+','huhehaote
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (292,'101080102','土默特左旗
+','tumotezuoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (293,'101080103','托克托
+','tuoketuo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (294,'101080104','和林格尔
+','helingeer
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (295,'101080105','清水河
+','qingshuihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (296,'101080106','呼和浩特市郊区
+','huhehaoteshijiaoqu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (297,'101080107','武川
+','wuchuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (298,'101080201','包头
+','baotou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (299,'101080202','白云鄂博
+','baiyunebo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (300,'101080203','满都拉
+','mandula
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (301,'101080204','土默特右旗
+','tumoteyouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (302,'101080205','固阳
+','guyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (303,'101080206','达尔罕茂明安联合旗
+','daerhanmaominganlianheqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (304,'101080207','石拐
+','shiguai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (305,'101080301','乌海
+','wuhai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (306,'101080401','集宁
+','jining
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (307,'101080402','卓资
+','zhuozi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (308,'101080403','化德
+','huade
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (309,'101080404','商都
+','shangdu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (310,'101080405','希拉穆仁
+','xilamuren
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (311,'101080406','兴和
+','xinghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (312,'101080407','凉城
+','liangcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (313,'101080408','察哈尔右翼前旗
+','chahaeryouyiqianqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (314,'101080409','察哈尔右翼中旗
+','chahaeryouyizhongqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (315,'101080410','察哈尔右翼后旗
+','chahaeryouyihouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (316,'101080411','四子王旗
+','siziwangqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (317,'101080412','丰镇
+','fengzhen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (318,'101080501','通辽
+','tongliao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (319,'101080502','舍伯吐
+','shebotu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (320,'101080503','科尔沁左翼中旗
+','keerqinzuoyizhongqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (321,'101080504','科尔沁左翼后旗
+','keerqinzuoyihouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (322,'101080505','青龙山
+','qinglongshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (323,'101080506','开鲁
+','kailu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (324,'101080507','库伦旗
+','kulunqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (325,'101080508','奈曼旗
+','naimanqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (326,'101080509','扎鲁特旗
+','zhaluteqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (327,'101080510','高力板
+','gaoliban
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (328,'101080511','巴雅尔吐胡硕
+','bayaertuhushuo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (329,'101080512','通辽钱家店
+','tongliaoqianjiadian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (330,'101080601','赤峰
+','chifeng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (331,'101080602','赤峰郊区站
+','chifengjiaoquzhan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (332,'101080603','阿鲁科尔沁旗
+','alukeerqinqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (333,'101080604','浩尔吐
+','haoertu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (334,'101080605','巴林左旗
+','balinzuoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (335,'101080606','巴林右旗
+','balinyouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (336,'101080607','林西
+','linxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (337,'101080608','克什克腾旗
+','keshiketengqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (338,'101080609','翁牛特旗
+','wengniuteqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (339,'101080610','岗子
+','gangzi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (340,'101080611','喀喇沁旗
+','kalaqinqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (341,'101080612','八里罕
+','balihan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (342,'101080613','宁城
+','ningcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (343,'101080614','敖汉旗
+','aohanqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (344,'101080615','宝过图
+','baoguotu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (345,'101080701','鄂尔多斯
+','eerduosi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (346,'101080703','达拉特旗
+','dalateqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (347,'101080704','准格尔旗
+','zhungeerqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (348,'101080705','鄂托克前旗
+','etuokeqianqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (349,'101080706','河南
+','henan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (350,'101080707','伊克乌素
+','yikewusu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (351,'101080708','鄂托克旗
+','etuokeqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (352,'101080709','杭锦旗
+','hangjinqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (353,'101080710','乌审旗
+','wushenqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (354,'101080711','伊金霍洛旗
+','yijinhuoluoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (355,'101080712','乌审召
+','wushenzhao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (356,'101080713','东胜
+','dongsheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (357,'101080801','临河
+','linhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (358,'101080802','五原
+','wuyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (359,'101080803','磴口
+','dengkou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (360,'101080804','乌拉特前旗
+','wulateqianqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (361,'101080805','大佘太
+','dashetai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (362,'101080806','乌拉特中旗
+','wulatezhongqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (363,'101080807','乌拉特后旗
+','wulatehouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (364,'101080808','海力素
+','hailisu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (365,'101080809','那仁宝力格
+','narenbaolige
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (366,'101080810','杭锦后旗
+','hangjinhouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (367,'101080811','巴盟农试站
+','bamengnongshizhan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (368,'101080901','锡林浩特
+','xilinhaote
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (369,'101080902','朝克乌拉
+','zhaokewula
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (370,'101080903','二连浩特
+','erlianhaote
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (371,'101080904','阿巴嘎旗
+','abagaqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (372,'101080905','伊和郭勒
+','yiheguole
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (373,'101080906','苏尼特左旗
+','sunitezuoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (374,'101080907','苏尼特右旗
+','suniteyouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (375,'101080908','朱日和
+','zhurihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (376,'101080909','东乌珠穆沁旗
+','dongwuzhumuqinqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (377,'101080910','西乌珠穆沁旗
+','xiwuzhumuqinqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (378,'101080911','太仆寺旗
+','taipusiqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (379,'101080912','镶黄旗
+','xianghuangqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (380,'101080913','正镶白旗
+','zhengxiangbaiqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (381,'101080914','正兰旗
+','zhenglanqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (382,'101080915','多伦
+','duolun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (383,'101080916','博克图
+','boketu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (384,'101080917','乌拉盖
+','wulagai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (385,'101080918','白日乌拉
+','bairiwula
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (386,'101080919','那日图
+','naritu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (387,'101081000','呼伦贝尔
+','hulunbeier
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (388,'101081001','海拉尔
+','hailaer
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (389,'101081002','小二沟
+','xiaoergou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (390,'101081003','阿荣旗
+','arongqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (391,'101081004','莫力达瓦旗
+','molidawaqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (392,'101081005','鄂伦春旗
+','elunchunqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (393,'101081006','鄂温克旗
+','ewenkeqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (394,'101081007','陈巴尔虎旗
+','chenbaerhuqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (395,'101081008','新巴尔虎左旗
+','xinbaerhuzuoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (396,'101081009','新巴尔虎右旗
+','xinbaerhuyouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (397,'101081010','满洲里
+','manzhouli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (398,'101081011','牙克石
+','yakeshi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (399,'101081012','扎兰屯
+','zhalantun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (400,'101081014','额尔古纳
+','eerguna
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (401,'101081015','根河
+','genhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (402,'101081016','图里河
+','tulihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (403,'101081101','乌兰浩特
+','wulanhaote
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (404,'101081102','阿尔山
+','aershan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (405,'101081103','科尔沁右翼中旗
+','keerqinyouyizhongqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (406,'101081104','胡尔勒
+','huerle
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (407,'101081105','扎赉特旗
+','zhalaiteqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (408,'101081106','索伦
+','suolun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (409,'101081107','突泉
+','tuquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (410,'101081108','霍林郭勒
+','huolinguole
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (411,'101081201','阿拉善左旗
+','alashanzuoqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (412,'101081202','阿拉善右旗
+','alashanyouqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (413,'101081203','额济纳旗
+','ejinaqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (414,'101081204','拐子湖
+','guaizihu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (415,'101081205','吉兰太
+','jilantai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (416,'101081206','锡林高勒
+','xilingaole
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (417,'101081207','头道湖
+','toudaohu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (418,'101081208','中泉子
+','zhongquanzi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (419,'101081209','巴彦诺尔贡
+','bayannuoergong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (420,'101081210','雅布赖
+','yabulai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (421,'101081211','乌斯太
+','wusitai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (422,'101081212','孪井滩
+','luanjingtan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (423,'101090101','石家庄
+','shijiazhuang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (424,'101090102','井陉
+','jingxing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (425,'101090103','正定
+','zhengding
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (426,'101090104','栾城
+','luancheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (427,'101090105','行唐
+','xingtang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (428,'101090106','灵寿
+','lingshou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (429,'101090107','高邑
+','gaoyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (430,'101090108','深泽
+','shenze
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (431,'101090109','赞皇
+','zanhuang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (432,'101090110','无极
+','wuji
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (433,'101090111','平山
+','pingshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (434,'101090112','元氏
+','yuanshi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (435,'101090113','赵县
+','zhaoxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (436,'101090114','辛集
+','xinji
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (437,'101090115','藁城
+','gaocheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (438,'101090116','晋洲
+','jinzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (439,'101090117','新乐
+','xinle
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (440,'101090201','保定
+','baoding
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (441,'101090202','满城
+','mancheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (442,'101090203','阜平
+','fuping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (443,'101090204','徐水
+','xushui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (444,'101090205','唐县
+','tangxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (445,'101090206','高阳
+','gaoyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (446,'101090207','容城
+','rongcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (447,'101090208','紫荆关
+','zijingguan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (448,'101090209','涞源
+','laiyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (449,'101090210','望都
+','wangdu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (450,'101090211','安新
+','anxin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (451,'101090212','易县
+','yixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (452,'101090213','涞水
+','laishui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (453,'101090214','曲阳
+','quyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (454,'101090215','蠡县
+','lixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (455,'101090216','顺平
+','shunping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (456,'101090217','雄县
+','xiongxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (457,'101090218','涿州
+','zhuozhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (458,'101090219','定州
+','dingzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (459,'101090220','安国
+','anguo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (460,'101090221','高碑店
+','gaobeidian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (461,'101090301','张家口
+','zhangjiakou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (462,'101090302','宣化
+','xuanhua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (463,'101090303','张北
+','zhangbei
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (464,'101090304','康保
+','kangbao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (465,'101090305','沽源
+','guyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (466,'101090306','尚义
+','shangyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (467,'101090307','蔚县
+','weixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (468,'101090308','阳原
+','yangyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (469,'101090309','怀安
+','huaian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (470,'101090310','万全
+','wanquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (471,'101090311','怀来
+','huailai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (472,'101090312','涿鹿
+','zhuolu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (473,'101090313','赤城
+','chicheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (474,'101090314','崇礼
+','chongli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (475,'101090402','承德
+','chengde
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (476,'101090403','承德县
+','chengdexian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (477,'101090404','兴隆
+','xinglong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (478,'101090405','平泉
+','pingquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (479,'101090406','滦平
+','luanping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (480,'101090407','隆化
+','longhua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (481,'101090408','丰宁
+','fengning
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (482,'101090409','宽城
+','kuancheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (483,'101090410','围场
+','weichang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (484,'101090411','塞罕坎
+','saihankan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (485,'101090501','唐山
+','tangshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (486,'101090502','丰南
+','fengnan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (487,'101090503','丰润
+','fengrun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (488,'101090504','滦县
+','luanxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (489,'101090505','滦南
+','luannan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (490,'101090506','乐亭
+','leting
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (491,'101090507','迁西
+','qianxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (492,'101090508','玉田
+','yutian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (493,'101090509','唐海
+','tanghai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (494,'101090510','遵化
+','zunhua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (495,'101090511','迁安
+','qianan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (496,'101090601','廊坊
+','langfang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (497,'101090602','固安
+','guan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (498,'101090603','永清
+','yongqing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (499,'101090604','香河
+','xianghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (500,'101090605','大城
+','dacheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (501,'101090606','文安
+','wenan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (502,'101090607','大厂
+','dachang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (503,'101090608','霸州
+','bazhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (504,'101090609','三河
+','sanhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (505,'101090701','沧州
+','cangzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (506,'101090702','青县
+','qingxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (507,'101090703','东光
+','dongguang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (508,'101090704','海兴
+','haixing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (509,'101090705','盐山
+','yanshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (510,'101090706','肃宁
+','suning
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (511,'101090707','南皮
+','nanpi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (512,'101090708','吴桥
+','wuqiao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (513,'101090709','献县
+','xianxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (514,'101090710','孟村
+','mengcun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (515,'101090711','泊头
+','botou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (516,'101090712','任丘
+','renqiu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (517,'101090713','黄骅
+','huanghua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (518,'101090714','河间
+','hejian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (519,'101090715','曹妃甸
+','caofeidian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (520,'101090801','衡水
+','hengshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (521,'101090802','枣强
+','zaoqiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (522,'101090803','武邑
+','wuyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (523,'101090804','武强
+','wuqiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (524,'101090805','饶阳
+','raoyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (525,'101090806','安平
+','anping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (526,'101090807','故城
+','gucheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (527,'101090808','景县
+','jingxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (528,'101090809','阜城
+','fucheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (529,'101090810','冀州
+','jizhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (530,'101090811','深州
+','shenzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (531,'101090901','邢台
+','xingtai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (532,'101090902','临城
+','lincheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (533,'101090903','邢台县浆水
+','xingtaixianjiangshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (534,'101090904','内邱
+','neiqiu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (535,'101090905','柏乡
+','baixiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (536,'101090906','隆尧
+','longyao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (537,'101090907','南和
+','nanhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (538,'101090908','宁晋
+','ningjin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (539,'101090909','巨鹿
+','julu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (540,'101090910','新河
+','xinhe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (541,'101090911','广宗
+','guangzong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (542,'101090912','平乡
+','pingxiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (543,'101090913','威县
+','weixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (544,'101090914','清河
+','qinghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (545,'101090915','临西
+','linxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (546,'101090916','南宫
+','nangong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (547,'101090917','沙河
+','shahe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (548,'101090918','任县
+','renxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (549,'101091001','邯郸
+','handan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (550,'101091002','峰峰
+','fengfeng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (551,'101091003','临漳
+','linzhang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (552,'101091004','成安
+','chengan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (553,'101091005','大名
+','daming
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (554,'101091006','涉县
+','shexian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (555,'101091007','磁县
+','cixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (556,'101091008','肥乡
+','feixiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (557,'101091009','永年
+','yongnian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (558,'101091010','邱县
+','qiuxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (559,'101091011','鸡泽
+','jize
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (560,'101091012','广平
+','guangping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (561,'101091013','馆陶
+','guantao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (562,'101091014','魏县
+','weixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (563,'101091015','曲周
+','quzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (564,'101091016','武安
+','wuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (565,'101091101','秦皇岛
+','qinhuangdao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (566,'101091102','青龙
+','qinglong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (567,'101091103','昌黎
+','changli
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (568,'101091104','抚宁
+','funing
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (569,'101091105','卢龙
+','lulong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (570,'101091106','北戴河
+','beidaihe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (571,'101100101','太原
+','taiyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (572,'101100102','清徐
+','qingxu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (573,'101100103','阳曲
+','yangqu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (574,'101100104','娄烦
+','loufan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (575,'101100105','太原古交区
+','taiyuangujiaoqu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (576,'101100106','太原北郊
+','taiyuanbeijiao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (577,'101100107','太原南郊
+','taiyuannanjiao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (578,'101100201','大同
+','datong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (579,'101100202','阳高
+','yanggao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (580,'101100203','大同县
+','datongxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (581,'101100204','天镇
+','tianzhen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (582,'101100205','广灵
+','guangling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (583,'101100206','灵邱
+','lingqiu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (584,'101100207','浑源
+','hunyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (585,'101100208','左云
+','zuoyun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (586,'101100301','阳泉
+','yangquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (587,'101100302','盂县
+','yuxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (588,'101100303','平定
+','pingding
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (589,'101100401','晋中
+','jinzhong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (590,'101100402','榆次
+','yuci
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (591,'101100403','榆社
+','yushe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (592,'101100404','左权
+','zuoquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (593,'101100405','和顺
+','heshun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (594,'101100406','昔阳
+','xiyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (595,'101100407','寿阳
+','shouyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (596,'101100408','太谷
+','taigu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (597,'101100409','祁县
+','qixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (598,'101100410','平遥
+','pingyao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (599,'101100411','灵石
+','lingshi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (600,'101100412','介休
+','jiexiu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (601,'101100501','长治
+','changzhi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (602,'101100502','黎城
+','licheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (603,'101100503','屯留
+','tunliu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (604,'101100504','潞城
+','lucheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (605,'101100505','襄垣
+','xiangyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (606,'101100506','平顺
+','pingshun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (607,'101100507','武乡
+','wuxiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (608,'101100508','沁县
+','qinxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (609,'101100509','长子
+','changzi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (610,'101100510','沁源
+','qinyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (611,'101100511','壶关
+','huguan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (612,'101100601','晋城
+','jincheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (613,'101100602','沁水
+','qinshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (614,'101100603','阳城
+','yangcheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (615,'101100604','陵川
+','lingchuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (616,'101100605','高平
+','gaoping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (617,'101100701','临汾
+','linfen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (618,'101100702','曲沃
+','quwo
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (619,'101100703','永和
+','yonghe
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (620,'101100704','隰县
+','xixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (621,'101100705','大宁
+','daning
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (622,'101100706','吉县
+','jixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (623,'101100707','襄汾
+','xiangfen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (624,'101100708','蒲县
+','puxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (625,'101100709','汾西
+','fenxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (626,'101100710','洪洞
+','hongdong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (627,'101100711','霍州
+','huozhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (628,'101100712','乡宁
+','xiangning
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (629,'101100713','翼城
+','yicheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (630,'101100714','侯马
+','houma
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (631,'101100715','浮山
+','fushan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (632,'101100716','安泽
+','anze
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (633,'101100717','古县
+','guxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (634,'101100801','运城
+','yuncheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (635,'101100802','临猗
+','linyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (636,'101100803','稷山
+','jishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (637,'101100804','万荣
+','wanrong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (638,'101100805','河津
+','hejin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (639,'101100806','新绛
+','xinjiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (640,'101100807','绛县
+','jiangxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (641,'101100808','闻喜
+','wenxi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (642,'101100809','垣曲
+','yuanqu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (643,'101100810','永济
+','yongji
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (644,'101100811','芮城
+','ruicheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (645,'101100812','夏县
+','xiaxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (646,'101100813','平陆
+','pinglu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (647,'101100901','朔州
+','shuozhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (648,'101100902','平鲁
+','pinglu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (649,'101100903','山阴
+','shanyin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (650,'101100904','右玉
+','youyu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (651,'101100905','应县
+','yingxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (652,'101100906','怀仁
+','huairen
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (653,'101101001','忻州
+','xinzhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (654,'101101002','定襄
+','dingxiang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (655,'101101003','五台县豆村
+','wutaixiandoucun
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (656,'101101004','河曲
+','hequ
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (657,'101101005','偏关
+','pianguan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (658,'101101006','神池
+','shenchi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (659,'101101007','宁武
+','ningwu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (660,'101101008','代县
+','daixian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (661,'101101009','繁峙
+','fanzhi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (662,'101101010','五台山
+','wutaishan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (663,'101101011','保德
+','baode
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (664,'101101012','静乐
+','jingle
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (665,'101101013','岢岚
+','kelan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (666,'101101014','五寨
+','wuzhai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (667,'101101015','原平
+','yuanping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (668,'101101100','吕梁
+','lvliang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (669,'101101101','离石
+','lishi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (670,'101101102','临县
+','linxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (671,'101101103','兴县
+','xingxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (672,'101101104','岚县
+','lanxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (673,'101101105','柳林
+','liulin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (674,'101101106','石楼
+','shilou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (675,'101101107','方山
+','fangshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (676,'101101108','交口
+','jiaokou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (677,'101101109','中阳
+','zhongyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (678,'101101110','孝义
+','xiaoyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (679,'101101111','汾阳
+','fenyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (680,'101101112','文水
+','wenshui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (681,'101101113','交城
+','jiaocheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (682,'101110101','西安
+','xian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (683,'101110102','长安
+','changan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (684,'101110103','临潼
+','lintong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (685,'101110104','蓝田
+','lantian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (686,'101110105','周至
+','zhouzhi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (687,'101110106','户县
+','huxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (688,'101110107','高陵
+','gaoling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (689,'101110108','杨凌
+','yangling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (690,'101110200','咸阳
+','xianyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (691,'101110201','三原
+','sanyuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (692,'101110202','礼泉
+','liquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (693,'101110203','永寿
+','yongshou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (694,'101110204','淳化
+','chunhua
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (695,'101110205','泾阳
+','jingyang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (696,'101110206','武功
+','wugong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (697,'101110207','乾县
+','ganxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (698,'101110208','彬县
+','binxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (699,'101110209','长武
+','changwu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (700,'101110210','旬邑
+','xunyi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (701,'101110211','兴平
+','xingping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (702,'101110300','延安
+','yanan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (703,'101110301','延长
+','yanchang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (704,'101110302','延川
+','yanchuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (705,'101110303','子长
+','zichang
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (706,'101110304','宜川
+','yichuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (707,'101110305','富县
+','fuxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (708,'101110306','志丹
+','zhidan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (709,'101110307','安塞
+','ansai
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (710,'101110308','甘泉
+','ganquan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (711,'101110309','洛川
+','luochuan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (712,'101110310','黄陵
+','huangling
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (713,'101110311','黄龙
+','huanglong
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (714,'101110312','吴起
+','wuqi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (715,'101110401','榆林
+','yulin
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (716,'101110402','府谷
+','fugu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (717,'101110403','神木
+','shenmu
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (718,'101110404','佳县
+','jiaxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (719,'101110405','定边
+','dingbian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (720,'101110406','靖边
+','jingbian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (721,'101110407','横山
+','hengshan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (722,'101110408','米脂
+','mizhi
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (723,'101110409','子洲
+','zizhou
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (724,'101110410','绥德
+','suide
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (725,'101110411','吴堡
+','wubao
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (726,'101110412','清涧
+','qingjian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (727,'101110501','渭南
+','weinan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (728,'101110502','华县
+','huaxian
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (729,'101110503','潼关
+','tongguan
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (730,'101110504','大荔
+','dali
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (731,'101110505','白水
+','baishui
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (732,'101110506','富平
+','fuping
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (733,'101110507','蒲城
+','pucheng
+',1393672312,1);
+INSERT INTO "weather_cities" VALUES (734,'101110508','澄城','chengcheng',1393672312,1);
 CREATE TABLE "writers" (
   "id" int(11) NOT NULL ,
   "name" varchar(25) DEFAULT NULL,
