@@ -2,12 +2,12 @@
  * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
  * Version: 1.0
  * Author: zhangchunsheng
- * Date: 2014-02-15
+ * Date: 2014-03-11
  * Description: 创建tabGroup
  */
 var tabGroupHelper = {};
 tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
-	var Window = require('ui/common/ApplicationWindowV2'),
+	var Window = require('ui/common/ApplicationWindowV3'),
 		TabView = require('ui/common/view/TabView');
 	
 	var config = require('ui/config/config'),
@@ -19,8 +19,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		title: L(menu.name),
 		menuName: menu.name,
 		menu: menu,
-		welcomeWindow: welcomeWindow,
-		url: menu.url.substring(1)
+		welcomeWindow: welcomeWindow
 	});
 	
 	var icon = "",
@@ -45,8 +44,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			pageId: menus[i].pageId,
 			newsId: menus[i].newsId,
 			parentCode: menus[i].parentCode,
-			sl_cid: menus[i].sl_cid,
-			template_url: menus[i].url//template
+			sl_cid: menus[i].sl_cid
 		}));
 		tabGroupView.addTab(appTabs[i]);
 		
@@ -69,13 +67,8 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
 				menu = visitInfo.activeMenu[index];
 			
-				//url = menu.url + "?r=" + new Date().getTime();
-				url = menu.url;
-				webUtil = require('utils/webUtil');
-				webUtil.setWebviewAttribute(webview, menu);
 				
-				//webview.reload();
-				webview.setUrl(url);
+				webview.setHtml('test');
 				
 				tabGroupView.setActiveTab(visitInfo.activeTabIndex);
 			});
