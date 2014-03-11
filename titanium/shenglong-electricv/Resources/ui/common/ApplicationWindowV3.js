@@ -45,7 +45,8 @@ function ApplicationWindow(opts) {
 		pageId: opts.menu.pageId,
 		newsId: opts.menu.newsId,
 		parentCode: opts.menu.parentCode,
-		sl_cid: opts.menu.sl_cid
+		sl_cid: opts.menu.sl_cid,
+        template_url: opts.menu.url//template
 	});
 	this.webview = webview;
 	
@@ -102,6 +103,9 @@ function ApplicationWindow(opts) {
 		that.submenu.showLeftButton(JSON.parse(e.parentMenu));
 		
 		var menu = JSON.parse(e.menu);
+		
+		webUtil = require('utils/webUtil');
+        webUtil.setWebviewAttribute(webview, menu);
 	
 		webview.setHtml('test');
 	});

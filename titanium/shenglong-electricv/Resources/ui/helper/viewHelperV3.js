@@ -246,6 +246,8 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		});
 	};
 	
+	var logger = require('utils/logger');
+	
 	this.changeSubmenu = function(submenus) {
 		var that = this;
 		
@@ -357,11 +359,21 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					
 					var menu = submenus[i];
 					
+					webUtil = require('utils/webUtil');
+                    webUtil.setWebviewAttribute(webview, menu);
+                    
+                    var beginDate = new Date();
+                    logger.info("---------------getContent start:" + beginDate.getTime());
+                    content = webUtil.getContent(webview);
+                    logger.info(content);
+                    var endDate = new Date();
+                    logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+					
 					visitInfo.activeSubMenu[bottomTabIndex].index = activeTabIndex;
 					visitInfo.activeMenu[bottomTabIndex] = menu;
 					Ti.App.Properties.setObject('Ti.App.visitInfo', visitInfo);
 				
-					webview.setHtml('test');
+					webview.setHtml(content.content);
 					
 					that.hideLeftButton();
 				});

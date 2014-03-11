@@ -14,6 +14,8 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		menus = config.menus,
 		menu = menus[Ti.App.visitInfo.activeTabIndex];
 	
+	var logger = require('utils/logger');
+	
 	var appTabs = [],
 		appWin = new Window({
 		title: L(menu.name),
@@ -44,7 +46,8 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			pageId: menus[i].pageId,
 			newsId: menus[i].newsId,
 			parentCode: menus[i].parentCode,
-			sl_cid: menus[i].sl_cid
+			sl_cid: menus[i].sl_cid,
+            template_url: menus[i].url//template
 		}));
 		tabGroupView.addTab(appTabs[i]);
 		
@@ -66,9 +69,18 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				submenu.changeSubmenu(menu.submenus);
 				visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
 				menu = visitInfo.activeMenu[index];
-			
 				
-				webview.setHtml('test');
+				webUtil = require('utils/webUtil');
+                webUtil.setWebviewAttribute(webview, menu);
+			
+                var beginDate = new Date();
+                logger.info("---------------getContent start:" + beginDate.getTime());
+                content = webUtil.getContent(webview);
+                logger.info(content);
+                var endDate = new Date();
+                logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+                
+				webview.setHtml(content.content);
 				
 				tabGroupView.setActiveTab(visitInfo.activeTabIndex);
 			});
