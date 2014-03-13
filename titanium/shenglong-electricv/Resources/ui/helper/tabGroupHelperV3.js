@@ -2,25 +2,26 @@
  * Copyright(c)2013,zhangchunsheng,www.zhangchunsheng.com.cn
  * Version: 1.0
  * Author: zhangchunsheng
- * Date: 2014-02-15
+ * Date: 2014-03-11
  * Description: 创建tabGroup
  */
 var tabGroupHelper = {};
 tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
-	var Window = require('ui/common/ApplicationWindowV2'),
+	var Window = require('ui/common/ApplicationWindowV3'),
 		TabView = require('ui/common/view/TabView');
 	
 	var config = require('ui/config/config'),
 		menus = config.menus,
 		menu = menus[Ti.App.visitInfo.activeTabIndex];
 	
+	var logger = require('utils/logger');
+	
 	var appTabs = [],
 		appWin = new Window({
 		title: L(menu.name),
 		menuName: menu.name,
 		menu: menu,
-		welcomeWindow: welcomeWindow,
-		url: menu.url.substring(1)
+		welcomeWindow: welcomeWindow
 	});
 	
 	var icon = "",
@@ -46,7 +47,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 			newsId: menus[i].newsId,
 			parentCode: menus[i].parentCode,
 			sl_cid: menus[i].sl_cid,
-			template_url: menus[i].url//template
+            template_url: menus[i].url//template
 		}));
 		tabGroupView.addTab(appTabs[i]);
 		
@@ -68,14 +69,24 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 				submenu.changeSubmenu(menu.submenus);
 				visitInfo = Ti.App.Properties.getObject('Ti.App.visitInfo');
 				menu = visitInfo.activeMenu[index];
-			
-				//url = menu.url + "?r=" + new Date().getTime();
-				url = menu.url;
-				webUtil = require('utils/webUtil');
-				webUtil.setWebviewAttribute(webview, menu);
 				
-				//webview.reload();
-				webview.setUrl(url);
+				webUtil = require('utils/webUtil');
+                webUtil.setWebviewAttribute(webview, menu);
+			
+                var beginDate = new Date();
+                logger.info("---------------getContent start:" + beginDate.getTime());
+                content = webUtil.getContent(webview);
+                logger.info(content);
+                var endDate = new Date();
+                logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+                
+                var makeHtml = new MakeHtml({
+                    name: content.name,
+                    banner: content.banner,
+                    content: content.content
+                });
+                var html = makeHtml.getHtml();
+				webview.setHtml(html);
 				
 				tabGroupView.setActiveTab(visitInfo.activeTabIndex);
 			});

@@ -82,8 +82,10 @@ if (Ti.version < 1.8) {
 		Window = require('ui/handheld/android/ApplicationWindow');
 	}
 	
+	Ti.include('ui/common/html/MakeHtml.js');
+	
 	//入口程序
-	var ApplicationTabGroup = require('ui/common/ApplicationTabGroupV2');
+	var ApplicationTabGroup = require('ui/common/ApplicationTabGroupV3');
 	var tabGroup = new ApplicationTabGroup();
 	
 	Ti.Geolocation.purpose = "盛隆电气想使用您的定位服务";
