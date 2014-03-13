@@ -7,6 +7,7 @@
  */
 var messageWin;
 function ApplicationTabGroup() {
+    Ti.include('ui/common/html/MakeHtml.js');
 	//构建tabGroup
 	var TabGroupView = require('ui/common/view/TabGroupView');
 	var self = new TabGroupView({});

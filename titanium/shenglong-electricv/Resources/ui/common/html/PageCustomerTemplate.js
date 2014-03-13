@@ -8,6 +8,19 @@
  *      甲午年（马年）丁卯月癸未日 农历二月十三
  *          PageCustomerTemplate
  */
-function PageCustomerTemplate(opts) {
-    
+Ti.include('Template.js');
+
+T.PageCustomerTemplate = function(opts) {
+    if(opts == null) {
+        opts = {
+            name: 'pageCustomer'
+        };
+    } else {
+        opts.name = 'pageCustomer';
+    }
+    //继承属性
+    T.Template.call(this, opts);
 };
+
+//继承方法
+T.PageCustomerTemplate.prototype = new T.Template();

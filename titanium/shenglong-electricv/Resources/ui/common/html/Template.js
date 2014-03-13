@@ -8,6 +8,15 @@
  *      甲午年（马年）丁卯月癸未日 农历二月十三
  *          Template
  */
-function Template(opts) {
-    
+var T;
+if(T == null) {
+    T = {};
+}
+T.Template = function(opts) {
+    if(opts == null) {
+        opts = {
+            name: 'template'
+        };
+    }
+    this.name = opts.name;
 };

@@ -8,6 +8,16 @@
  *      甲午年（马年）农历二月十三
  *          MakeHtml
  */
+Ti.include('NewsListTemplate.js');
+Ti.include('NewsTemplate.js');
+Ti.include('PageCounselAndFeedback.js');
+Ti.include('PageCustomerTemplate.js');
+Ti.include('PageHomeTemplate.js');
+Ti.include('PageTemplate.js');
+Ti.include('SubmenuTemplate.js');
+
+Ti.API.info(T);
+
 function MakeHtml(opts) {
     
 };
