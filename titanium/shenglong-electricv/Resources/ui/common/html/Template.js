@@ -19,4 +19,7 @@ T.Template = function(opts) {
         };
     }
     this.name = opts.name;
+    if(this.name != 'template') {
+        this.html = '';
+    }
 };

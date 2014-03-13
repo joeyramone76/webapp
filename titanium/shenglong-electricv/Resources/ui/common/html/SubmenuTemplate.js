@@ -18,6 +18,64 @@ T.SubmenuTemplate = function(opts) {
     } else {
         opts.name = 'submenu';
     }
+    this.bannerTemplate = '<div class="{banner.banner}"></div>\
+                        <div class="{banner.bannerTitleClass}">{banner.banner_title}</div>';
+    this.contentTemplate = '<li class="f_item">\
+                        <a href="#" class="f_name" onclick="visitPage({submenu.id})"><span>{submenu.showName}</span></a>\
+                    </li>';
+    
+    this.html = '';
+    this.head = '<!DOCTYPE html>\
+            <html lang="zh-CN">\
+                <head>\
+                    <meta charset="UTF-8" />\
+                    <link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />\
+                    <link rel="shortcut icon" href="./favicon.ico" />\
+                    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\
+                    <!--<meta http-equiv="cache-control" content="max-age=0" />\
+                    <meta http-equiv="cache-control" content="no-cache" />\
+                    <meta http-equiv="expires" content="0" />\
+                    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />\
+                    <meta http-equiv="pragma" content="no-cache" />-->\
+                    <link rel="stylesheet" type="text/css" href="./css/about.css" />\
+                    <title>盛隆电气集团欢迎您!</title>\
+                </head>';
+    this.body = [];
+    this.body.push('<body>\
+                <div class="wrapper">\
+                    <!--<header class="clearfix">\
+                        <div class="logo">\
+                            <a href="./index.html"><img src="./images/logo.png" alt=""/></a>\
+                        </div>\
+                    </header>-->\
+                    <div id="banner" class="slider">');
+    this.body.push('{$banner}');
+    this.body.push('</div>
+    this.body.push('<div class="content">\
+                        <div class="content_wrap clearfix">\
+                            <div class="side_bar">\
+                                <div class="pages_list">\
+                                    <ul id="submenu">');
+    this.body.push('{$content}');
+    this.body.push('</ul>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>\
+                <script type="text/javascript" src="./js/zepto.min.js"></script>\
+                <script type="text/javascript" src="./js/underscore.js"></script>\
+                <script type="text/javascript">\
+                    function visitPage(menuId) {\
+                        var timestamp = (new Date()).getTime();\
+                        Ti.App.fireEvent("app:visitPage", {\
+                            timestamp: timestamp\
+                        });\
+                        return false;\
+                    }\
+                </script>\
+            </body>\
+        </html>');
     //继承属性
     T.Template.call(this, opts);
 };
