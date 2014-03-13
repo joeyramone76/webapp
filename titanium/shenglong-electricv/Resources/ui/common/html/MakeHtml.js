@@ -16,10 +16,38 @@ Ti.include('PageHomeTemplate.js');
 Ti.include('PageTemplate.js');
 Ti.include('SubmenuTemplate.js');
 
-Ti.API.info(T);
-
 function MakeHtml(opts) {
-    
+    this.opts = opts;
+};
+
+MakeHtml.prototype.getHtml = function() {
+    var opts = this.opts;
+    var template = {};
+    if(opts.name == 'newsList') {
+        template = new T.NewsListTemplate(opts);
+        template.makeHtml();
+    } else if(opts.name == 'news') {
+        template = new T.NewsTemplate(opts);
+        template.makeHtml();
+    } else if(opts.name == 'pageCounselAndFeedback') {
+        template = new T.PageCounselAndFeedback(opts);
+        template.makeHtml();
+    } else if(opts.name == 'pageCustomer') {
+        template = new T.PageCustomerTemplate(opts);
+        template.makeHtml();
+    } else if(opts.name == 'pageHome') {
+        template = new T.PageHomeTemplate(opts);
+        template.makeHtml();
+    } else if(opts.name == 'page') {
+        template = new T.PageTemplate(opts);
+        template.makeHtml();
+    } else if(opts.name == 'submenu') {
+        template = new T.SubmenuTemplate(opts);
+        template.makeHtml();
+    } else {
+        template = new T.Template(opts);
+        template.makeHtml();
+    }
 };
 
 /**

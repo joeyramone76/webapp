@@ -18,6 +18,9 @@ T.NewsListTemplate = function(opts) {
     } else {
         opts.name = 'newsList';
     }
+    this.banner = opts.banner;
+    this.content = opts.content;
+    
     this.bannerTemplate = '<div class="{banner.banner}"></div>\
                         <div class="{banner.bannerTitleClass}">{banner.banner_title}</div>';
     this.contentTemplate = '<div class="post_item clearfix" onclick="visitNews({news.sl_news_id})">\

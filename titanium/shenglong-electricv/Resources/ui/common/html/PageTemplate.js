@@ -18,6 +18,9 @@ T.PageTemplate = function(opts) {
     } else {
         opts.name = 'page';
     }
+    this.banner = opts.banner;
+    this.content = opts.content;
+    
     this.bannerTemplate = '<div class="{banner.banner}"></div>\
                         <div class="{banner.bannerTitleClass}">{banner.banner_title}</div>';
     this.contentTemplate = '{content}';

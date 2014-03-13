@@ -23,3 +23,18 @@ T.Template = function(opts) {
         this.html = '';
     }
 };
+
+T.Template.prototype.makeHtml = function() {
+    this.html = this.head;
+    var content = "";
+    for(var i = 0 ; i < this.body.length ; i++) {
+        if(this.body[i] == '{$banner}') {
+            content = this.body[i].replace('{$banner}', this.banner);
+        } else if(this.body[i] == '{$content}') {
+            content = this.body[i].replace('{$content}', this.content);
+        } else {
+            content = this.body[i];
+        }
+        this.html += content;
+    }
+};

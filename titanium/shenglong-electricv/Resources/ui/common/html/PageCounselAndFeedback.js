@@ -18,6 +18,9 @@ T.PageCounselAndFeedbackTemplate = function(opts) {
     } else {
         opts.name = 'pageCounselAndFeedback';
     }
+    this.banner = opts.banner;
+    this.content = opts.content;
+    
     this.bannerTemplate = '';
     this.contentTemplate = '';
     
