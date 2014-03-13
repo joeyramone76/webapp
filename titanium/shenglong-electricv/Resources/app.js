@@ -82,6 +82,8 @@ if (Ti.version < 1.8) {
 		Window = require('ui/handheld/android/ApplicationWindow');
 	}
 	
+	Ti.include('ui/common/html/MakeHtml.js');
+	
 	//入口程序
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroupV3');
 	var tabGroup = new ApplicationTabGroup();

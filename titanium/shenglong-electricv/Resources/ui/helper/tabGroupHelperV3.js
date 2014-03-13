@@ -80,7 +80,13 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
                 var endDate = new Date();
                 logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
                 
-				webview.setHtml(content.content);
+                var makeHtml = new MakeHtml({
+                    name: content.name,
+                    banner: content.banner,
+                    content: content.content
+                });
+                var html = makeHtml.getHtml();
+				webview.setHtml(html);
 				
 				tabGroupView.setActiveTab(visitInfo.activeTabIndex);
 			});

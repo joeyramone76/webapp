@@ -10,7 +10,7 @@
  */
 Ti.include('Template.js');
 
-T.PageCounselAndFeedbackTemplate = function(opts) {
+T.PageCounselAndFeedback = function(opts) {
     if(opts == null) {
         opts = {
             name: 'pageCounselAndFeedback'
@@ -120,4 +120,4 @@ T.PageCounselAndFeedbackTemplate = function(opts) {
 };
 
 //继承方法
-T.PageCounselAndFeedbackTemplate.prototype = new T.Template();
+T.PageCounselAndFeedback.prototype = new T.Template();

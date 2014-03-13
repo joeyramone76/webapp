@@ -48,6 +48,7 @@ MakeHtml.prototype.getHtml = function() {
         template = new T.Template(opts);
         template.makeHtml();
     }
+    return template.html;
 };
 
 /**

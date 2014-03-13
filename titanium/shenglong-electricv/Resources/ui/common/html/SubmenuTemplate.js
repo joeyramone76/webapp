@@ -53,7 +53,7 @@ T.SubmenuTemplate = function(opts) {
                     </header>-->\
                     <div id="banner" class="slider">');
     this.body.push('{$banner}');
-    this.body.push('</div>
+    this.body.push('</div>');
     this.body.push('<div class="content">\
                         <div class="content_wrap clearfix">\
                             <div class="side_bar">\
