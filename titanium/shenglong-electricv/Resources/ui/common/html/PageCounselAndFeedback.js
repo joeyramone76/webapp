@@ -29,12 +29,12 @@ T.PageCounselAndFeedback = function(opts) {
                 <html lang="zh-CN">\
                     <head>\
                         <meta charset="UTF-8" />\
-                        <link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />\
-                        <link rel="shortcut icon" href="./favicon.ico" />\
+                        <link rel="stylesheet" type="text/css" href="website/css/base_mobile.css" />\
+                        <link rel="shortcut icon" href="website/favicon.ico" />\
                         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\
-                        <link rel="stylesheet" type="text/css" href="./css/about.css" />\
-                        <link rel="stylesheet" type="text/css" href="./css/contact.css" />\
-                        <link rel="stylesheet" type="text/css" href="./css/email.css" />\
+                        <link rel="stylesheet" type="text/css" href="website/css/about.css" />\
+                        <link rel="stylesheet" type="text/css" href="website/css/contact.css" />\
+                        <link rel="stylesheet" type="text/css" href="website/css/email.css" />\
                         <title>盛隆电气集团欢迎您!</title>\
                     </head>';
     this.body = [];
@@ -82,7 +82,7 @@ T.PageCounselAndFeedback = function(opts) {
                             </div>\
                         </div>\
                     </div>\
-                    <script type="text/javascript" src="./js/zepto.min.js"></script>\
+                    <script type="text/javascript" src="website/js/zepto.min.js"></script>\
                     <script type="text/javascript">\
                         var url = "http://m.shenglong-electric.com.cn/email/postEmail";\
                         $(document).ready(function() {\

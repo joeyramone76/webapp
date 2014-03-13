@@ -37,16 +37,16 @@ T.NewsListTemplate = function(opts) {
         <html lang="zh-CN">\
             <head>\
                 <meta charset="UTF-8" />\
-                <link rel="stylesheet" type="text/css" href="./css/base_mobile.css" />\
-                <link rel="shortcut icon" href="./favicon.ico" />\
+                <link rel="stylesheet" type="text/css" href="website/css/base_mobile.css" />\
+                <link rel="shortcut icon" href="website/favicon.ico" />\
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">\
                 <!--<meta http-equiv="cache-control" content="max-age=0" />\
                 <meta http-equiv="cache-control" content="no-cache" />\
                 <meta http-equiv="expires" content="0" />\
                 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />\
                 <meta http-equiv="pragma" content="no-cache" />-->\
-                <link rel="stylesheet" type="text/css" href="./css/news.css" />\
-                <link rel="stylesheet" type="text/css" href="./css/pager.css" />\
+                <link rel="stylesheet" type="text/css" href="website/css/news.css" />\
+                <link rel="stylesheet" type="text/css" href="website/css/pager.css" />\
                 <title>盛隆电气集团欢迎您!</title>\
             </head>';
     this.body = [];
@@ -54,7 +54,7 @@ T.NewsListTemplate = function(opts) {
                 <div class="wrapper">\
                     <!--<header class="clearfix">\
                         <div class="logo">\
-                            <a href="./index.html"><img src="./images/logo.png" alt=""/></a>\
+                            <a href="./index.html"><img src="website/images/logo.png" alt=""/></a>\
                         </div>\
                     </header>-->');
                     
@@ -67,8 +67,8 @@ T.NewsListTemplate = function(opts) {
     this.body.push('</div>\
                     </div>\
                 </div>\
-                <script type="text/javascript" src="./js/zepto.min.js"></script>\
-                <script type="text/javascript" src="./js/underscore.js"></script>\
+                <script type="text/javascript" src="website/js/zepto.min.js"></script>\
+                <script type="text/javascript" src="website/js/underscore.js"></script>\
                 <script type="text/javascript">\
                     var menu = {};\
                     var newslist = [];\
