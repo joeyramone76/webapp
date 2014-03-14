@@ -280,6 +280,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		var bottomTabIndex = visitInfo.activeTabIndex;
 		activeTabIndex = visitInfo.activeSubMenu[bottomTabIndex].index;
 		
+		this.scrollView.opacity = 0;
 		for(var i = 0, l = submenus.length ; i < l ; i++) {
 			submenuName = submenus[i].showName;
 			config.buttonWidth = config.fontWidth * submenuName.length;
@@ -373,6 +374,11 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				});
 			})(url, i);
 		}
+		var animation = Ti.UI.createAnimation();
+        animation.duration = 100;
+        animation.opacity = 1;
+		//this.scrollView.animate(animation);
+		this.scrollView.opacity = 1;
 	};
 	
 	this.changeSubmenu(submenus);
