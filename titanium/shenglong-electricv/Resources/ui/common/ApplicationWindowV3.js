@@ -50,6 +50,23 @@ function ApplicationWindow(opts) {
 	});
 	this.webview = webview;
 	
+	webUtil = require('utils/webUtil');
+    webUtil.setWebviewAttribute(webview, opts.menu);
+	var beginDate = new Date();
+    logger.info("---------------getContent start:" + beginDate.getTime());
+    content = webUtil.getContent(webview);
+    logger.info(content);
+    var endDate = new Date();
+    logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+    
+    var makeHtml = new MakeHtml({
+        name: content.name,
+        banner: content.banner,
+        content: content.content
+    });
+    var html = makeHtml.getHtml();
+    webview.setHtml(html);
+	
 	/**
 	 * 正在加载提示
 	 */
