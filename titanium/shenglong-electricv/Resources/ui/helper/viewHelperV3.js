@@ -387,11 +387,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 					visitInfo.activeMenu[bottomTabIndex] = menu;
 					Ti.App.Properties.setObject('Ti.App.visitInfo', visitInfo);
 				
-    				var makeHtml = new MakeHtml({
-                        name: content.name,
-                        banner: content.banner,
-                        content: content.content
-                    });
+    				var makeHtml = new MakeHtml(content);
                     var html = makeHtml.getHtml();
 					webview.setHtml(html);
 					

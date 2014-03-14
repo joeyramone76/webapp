@@ -104,6 +104,12 @@ T.Template.prototype.makeHtml = function() {
             } else {
                 content = this.body[i].replace('{$content}', this.content);
             }
+        } else if(this.body[i].indexOf('{$submenus}') > 0) {
+            var html = this.submenus;
+            content = this.body[i].replace('{$submenus}', html);
+        } else if(this.body[i].indexOf('{$parentMenu}') > 0) {
+            var html = this.parentMenu;
+            content = this.body[i].replace('{$parentMenu}', html);
         } else {
             content = this.body[i];
         }

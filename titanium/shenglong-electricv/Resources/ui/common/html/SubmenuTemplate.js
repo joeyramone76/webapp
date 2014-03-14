@@ -20,6 +20,8 @@ T.SubmenuTemplate = function(opts) {
     }
     this.banner = opts.banner;
     this.content = opts.content;
+    this.parentMenu = opts.menu;
+    this.submenus = opts.content;
     
     this.bannerTemplate = '<div class="{banner.banner}"></div>\
                         <div class="{banner.bannerTitleClass}">{banner.banner_title}</div>';
@@ -68,13 +70,26 @@ T.SubmenuTemplate = function(opts) {
                 </div>\
                 <script type="text/javascript" src="website/js/zepto.min.js"></script>\
                 <script type="text/javascript" src="website/js/underscore.js"></script>\
-                <script type="text/javascript">\
-                    function visitPage(menuId) {\
+                <script type="text/javascript">');
+    this.body.push('var submenus = {$submenus};');
+    this.body.push('var parentMenu = {$parentMenu};');
+    this.body.push('function visitPage(menuId) {\
+                        var menu = getMenu(menuId);\
                         var timestamp = (new Date()).getTime();\
                         Ti.App.fireEvent("app:visitPage", {\
+                            menu: JSON.stringify(menu),\
+                            parentMenu: JSON.stringify(parentMenu),\
                             timestamp: timestamp\
                         });\
                         return false;\
+                    }\
+                    function getMenu(menuId) {\
+                        for(var i = 0 ; i < submenus.length ; i++) {\
+                            if(menuId == submenus[i].id) {\
+                                return submenus[i];\
+                            }\
+                        }\
+                        return null;\
                     }\
                 </script>\
             </body>\
