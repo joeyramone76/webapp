@@ -54,7 +54,9 @@ T.PageCustomerTemplate = function(opts) {
     this.body.push('</div>\
                     <div class="content">\
                         <div id="content" class="page_content clearfix">');
+    this.body.push('<ul class="list">');
     this.body.push('{$content}');
+    this.body.push('</ul>');
     this.body.push('</div>\
                     </div>\
                 </div>\

@@ -20,6 +20,7 @@ T.NewsListTemplate = function(opts) {
     }
     this.banner = opts.banner;
     this.content = opts.content;
+    this.parentMenu = opts.menu;
     
     this.bannerTemplate = '<div class="{banner.banner}"></div>\
                         <div class="{banner.bannerTitleClass}">{banner.banner_title}</div>';
@@ -71,13 +72,13 @@ T.NewsListTemplate = function(opts) {
                 <script type="text/javascript" src="website/js/underscore.js"></script>\
                 <script type="text/javascript">\
                     var menu = {};\
-                    var newslist = [];\
-                    var parentMenu = {};\
-                    function visitNews(sl_news_id) {\
+                    var newslist = [];');
+    this.body.push('var parentMenu = {$parentMenu};');
+    this.body.push('function visitNews(sl_news_id) {\
                         var timestamp = (new Date()).getTime();\
                         Ti.App.fireEvent("app:visitNews", {\
                             sl_news_id: sl_news_id,\
-                            //parentMenu: JSON.stringify(parentMenu),\
+                            parentMenu: JSON.stringify(parentMenu),\
                             timestamp: timestamp\
                         });\
                         return false;\

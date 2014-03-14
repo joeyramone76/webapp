@@ -80,11 +80,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
                 var endDate = new Date();
                 logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
                 
-                var makeHtml = new MakeHtml({
-                    name: content.name,
-                    banner: content.banner,
-                    content: content.content
-                });
+                var makeHtml = new MakeHtml(content);
                 var html = makeHtml.getHtml();
 				webview.setHtml(html);
 				

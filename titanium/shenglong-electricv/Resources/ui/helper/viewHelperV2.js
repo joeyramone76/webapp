@@ -116,7 +116,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	window.add(this.leftBg);
 	
 	//右侧菜单按钮
-	var rightBg = Ti.UI.createView({
+	this.rightBg = Ti.UI.createView({
 		contentWidth: config.arrowWidth,
 		contentHeight: config.contentHeight,
 		top: config.scrollBgTop,
@@ -128,7 +128,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		opacity: config.opacity,
 		layout: 'horizontal'
 	});
-	var rightImage = Ti.UI.createView({
+	this.rightImage = Ti.UI.createView({
 		backgroundImage: config.rightBackgroundImage,
 		height: config.arrowHeight,
 		width: config.arrowWidth,
@@ -137,7 +137,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		zIndex: config.arrowIndex,
 		opacity: config.opacity
 	});
-	var rightSplit = Ti.UI.createView({
+	this.rightSplit = Ti.UI.createView({
 		backgroundImage: config.splitBackgroundImage,
 		height: config.splitHeight,
 		width: config.splitWidth,
@@ -145,9 +145,9 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		zIndex: config.arrowIndex,
 		opacity: config.opacity
 	});
-	rightBg.add(rightSplit);
-	rightBg.add(rightImage);
-	window.add(rightBg);
+	this.rightBg.add(this.rightSplit);
+	this.rightBg.add(this.rightImage);
+	window.add(this.rightBg);
 	
 	//mask窗口
 	var MaskWindow = require('ui/common/MaskWindow');
@@ -161,7 +161,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	maskWindow.addEventListener('click', function(e) {
 		menuWindow.close();
 	});
-	rightBg.addEventListener('click', function(e) {
+	this.rightBg.addEventListener('click', function(e) {
 		menuWindow.open();
 	});
 	
@@ -183,24 +183,25 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	this.scrollView = scrollView;
 	this.webview = webview;
 	
+	var that = this;
 	scrollView.addEventListener('scroll', function(e) {
 		/*Ti.API.info('x ' + e.x + ' y ' + e.y);
 		
 		if(e.x > 10) {
-			leftImage.show();
+			that.leftImage.show();
 		} else {
-			leftImage.hide();
+			that.leftImage.hide();
 		}
 		if(e.x < config.contentWidth - config.scrollViewWidth - 10) {
-			rightImage.show();
+			that.rightImage.show();
 		} else {
-			rightImage.hide();
+			that.rightImage.hide();
 		}*/
 	});
 	//this.leftImage.show();
 	//this.leftSplit.show();
-	rightImage.show();
-	rightSplit.show();
+	this.rightImage.show();
+	this.rightSplit.show();
 	
 	window.add(scrollView);
 	
@@ -208,7 +209,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 	this.backBtn.menu = {};
 	
 	this.showLeftButton = function(menu) {
-		that = this;
+		var that = this;
 		this.leftImage.show();
 		this.leftSplit.show();
 		
@@ -246,6 +247,18 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		});
 	};
 	
+	this.hideSubmenu = function() {
+       this.leftBg.opacity = 0;
+       this.scrollView.opacity = 0;
+       this.rightBg.opacity = 0;
+    };
+    
+    this.showSubmenu = function() {
+       this.leftBg.opacity = 1;
+       this.scrollView.opacity = 1;
+       this.rightBg.opacity = 1;
+    };
+	
 	this.changeSubmenu = function(submenus) {
 		var that = this;
 		
@@ -280,6 +293,7 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 		var bottomTabIndex = visitInfo.activeTabIndex;
 		activeTabIndex = visitInfo.activeSubMenu[bottomTabIndex].index;
 		
+		this.hideSubmenu();
 		for(var i = 0, l = submenus.length ; i < l ; i++) {
 			submenuName = submenus[i].showName;
 			config.buttonWidth = config.fontWidth * submenuName.length;
@@ -373,6 +387,11 @@ viewHelper.createSubMenu = function(window, webview, opts) {
 				});
 			})(url, i);
 		}
+		var animation = Ti.UI.createAnimation();
+        animation.duration = 100;
+        animation.opacity = 1;
+		//this.scrollView.animate(animation);
+		this.showSubmenu();
 	};
 	
 	this.changeSubmenu(submenus);

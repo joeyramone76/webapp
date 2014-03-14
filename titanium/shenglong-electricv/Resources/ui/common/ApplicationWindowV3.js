@@ -50,6 +50,19 @@ function ApplicationWindow(opts) {
 	});
 	this.webview = webview;
 	
+	webUtil = require('utils/webUtil');
+    webUtil.setWebviewAttribute(webview, opts.menu);
+	var beginDate = new Date();
+    logger.info("---------------getContent start:" + beginDate.getTime());
+    content = webUtil.getContent(webview);
+    logger.info(content);
+    var endDate = new Date();
+    logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+    
+    var makeHtml = new MakeHtml(content);
+    var html = makeHtml.getHtml();
+    webview.setHtml(html);
+	
 	/**
 	 * 正在加载提示
 	 */
@@ -107,7 +120,16 @@ function ApplicationWindow(opts) {
 		webUtil = require('utils/webUtil');
         webUtil.setWebviewAttribute(webview, menu);
 	
-		webview.setHtml('test');
+		var beginDate = new Date();
+        logger.info("---------------getContent start:" + beginDate.getTime());
+        content = webUtil.getContent(webview);
+        logger.info(content);
+        var endDate = new Date();
+        logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+    
+        var makeHtml = new MakeHtml(content);
+        var html = makeHtml.getHtml();
+        webview.setHtml(html);
 	});
 	
 	Ti.App.addEventListener('app:visitNews', function(e) {
@@ -120,7 +142,16 @@ function ApplicationWindow(opts) {
 		webview.sl_news_id = sl_news_id;
 		webview.timestamp = e.timestamp;
 	
-		webview.setHtml('test');
+		var beginDate = new Date();
+        logger.info("---------------getContent start:" + beginDate.getTime());
+        content = webUtil.getContent(webview);
+        logger.info(content);
+        var endDate = new Date();
+        logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+    
+        var makeHtml = new MakeHtml(content);
+        var html = makeHtml.getHtml();
+        webview.setHtml(html);
 	});
 	
 	Ti.App.addEventListener('app:submit', function(e) {
@@ -155,7 +186,21 @@ function ApplicationWindow(opts) {
 		//change webview menu
 		var menu = that.submenu.backBtn.menu;
 		
-		webview.goBack();
+		webUtil = require('utils/webUtil');
+        webUtil.setWebviewAttribute(webview, menu);
+    
+        var beginDate = new Date();
+        logger.info("---------------getContent start:" + beginDate.getTime());
+        content = webUtil.getContent(webview);
+        logger.info(content);
+        var endDate = new Date();
+        logger.info("---------------getContent end:" + endDate.getTime() + " use time:" + (endDate.getTime() - beginDate.getTime()));
+    
+        var makeHtml = new MakeHtml(content);
+        var html = makeHtml.getHtml();
+        webview.setHtml(html);
+		
+		//webview.goBack();
 	});
 	
 	this.window.add(refreshView.tableView);
