@@ -29,7 +29,7 @@ tabGroupHelper.createAppTabs = function(tabGroupView, welcomeWindow) {
 		
 	for(var i = 0, l = menus.length ; i < l ; i++) {
 		if(menus[i].icon == "") {
-			icon = "/images/KS_nav_ui.png";
+			icon = "/images/tabs/home.png";
 		} else {
 			icon = menus[i].icon;
 		}
