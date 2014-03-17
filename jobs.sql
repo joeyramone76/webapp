@@ -292,3 +292,11 @@ ALTER TABLE pm2_5.pm2_5_data2014 AUTO_INCREMENT = 946;
 
 -- 2014-03-07
 SELECT * FROM app_menus;
+
+-- 2014-03-15
+SELECT * FROM app_menus;
+
+-- 2014-03-17
+SELECT * FROM app_menus;
+
+SHOW CREATE TABLE auth_group;
