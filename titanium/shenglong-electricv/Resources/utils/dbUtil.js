@@ -107,8 +107,8 @@ dbUtil.getPage = function(pageId) {
 	return datas;
 };
 
-dbUtil.getNewsList = function(sl_cid) {
-	var sql = "SELECT id,sl_cid,sl_news_id,title,image,post_desc,post_date,post_time,date FROM app_news WHERE sl_cid=" + sl_cid + "";
+dbUtil.getNewsList = function(sl_cid, startRow, endRow) {
+	var sql = "SELECT id,sl_cid,sl_news_id,title,image,post_desc,post_date,post_time,date FROM app_news WHERE sl_cid=" + sl_cid + " limit " + startRow + "," + endRow;
 	var columns = ["id","sl_cid","sl_news_id","title","image","post_desc","post_date","post_time","date"];
 	return dbUtil.getData(sql, columns);
 };

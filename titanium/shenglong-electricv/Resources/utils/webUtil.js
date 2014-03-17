@@ -21,7 +21,7 @@ webUtil.getContent = function(webview) {
 		name = "page";
 	} else if(webview.type == 2) {//newslist
 		var sl_cid = webview.sl_cid;
-		datas = dbUtil.getNewsList(sl_cid);
+		datas = dbUtil.getNewsList(sl_cid, 1, 20);
 		content = JSON.stringify(datas);
 		name = "newsList";
 	} else if(webview.type == 4) {//news
@@ -46,7 +46,7 @@ webUtil.getContent = function(webview) {
 			name = "pageCustomer";
 		} else if(template_url.indexOf("newslist_template") > 0) {
 			var sl_cid = webview.sl_cid;
-			datas = dbUtil.getNewsList(sl_cid);
+			datas = dbUtil.getNewsList(sl_cid, 1, 20);
 			content = JSON.stringify(datas);
 			name = "newsList";
 		} else if(template_url.indexOf("submenu") > 0) {
