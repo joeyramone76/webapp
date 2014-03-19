@@ -300,3 +300,24 @@ SELECT * FROM app_menus;
 SELECT * FROM app_menus;
 
 SHOW CREATE TABLE auth_group;
+
+#BEGIN;
+CREATE TABLE `polls_poll` (
+    `id` INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `question` VARCHAR(200) NOT NULL,
+    `pub_date` DATETIME NOT NULL
+)
+;
+CREATE TABLE `polls_choice` (
+    `id` INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `poll_id` INTEGER NOT NULL,
+    `choice_text` VARCHAR(200) NOT NULL,
+    `votes` INTEGER NOT NULL
+)
+;
+ALTER TABLE `polls_choice` ADD CONSTRAINT `poll_id_refs_id_3aa09835` FOREIGN KEY
+ (`poll_id`) REFERENCES `polls_poll` (`id`);
+
+# COMMIT;
+
+SELECT * FROM polls_poll;
