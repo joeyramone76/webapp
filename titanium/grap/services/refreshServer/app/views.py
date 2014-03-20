@@ -6,9 +6,9 @@ Author: zhangchunsheng
 Date: 2014-03-20
 Description: views
 Modification:
-	¼×¡¢ÒÒ¡¢±û¡¢¶¡¡¢Îì¡¢¼º¡¢¸ý¡¢ÐÁ¡¢ÈÉ¡¢¹ï ¼×£¨ji¨££©¡¢ÒÒ£¨y¨«£©¡¢±û£¨b¨«ng£©¡¢¶¡£¨d¨©ng£©¡¢Îì£¨w¨´£©¡¢¼º£¨j¨«£©¡¢¸ý£¨g¨¥ng£©¡¢ÐÁ£¨x¨©n£©¡¢ÈÉ£¨r¨¦n£©¡¢¹ï£¨gu¨«£©
-	×Ó¡¢³ó¡¢Òú¡¢Ã®¡¢³½¡¢ËÈ¡¢Îç¡¢Î´¡¢Éê¡¢ÓÏ¡¢Ðç¡¢º¥ ×Ó£¨z¨«£©¡¢³ó£¨ch¨¯u£©¡¢Òú£¨y¨ªn£©¡¢Ã®£¨m¨£o£©¡¢³½£¨ch¨¦n£©¡¢ËÈ£¨s¨¬£©¡¢Îç£¨w¨³£©¡¢Î´£¨w¨¨i£©¡¢Éê£¨sh¨¥n£©¡¢ÓÏ£¨y¨¯u£©¡¢Ðç£¨x¨±£©¡¢º¥£¨h¨¤i£©
-	¼×ÎçÄê£¨ÂíÄê£©¶¡Ã®ÔÂ¸ýÒúÈÕ Å©Àú¶þÔÂ¶þÊ®
+	ç”²ã€ä¹™ã€ä¸™ã€ä¸ã€æˆŠã€å·±ã€åºšã€è¾›ã€å£¬ã€ç™¸ ç”²ï¼ˆjiÇŽï¼‰ã€ä¹™ï¼ˆyÇï¼‰ã€ä¸™ï¼ˆbÇngï¼‰ã€ä¸ï¼ˆdÄ«ngï¼‰ã€æˆŠï¼ˆwÃ¹ï¼‰ã€å·±ï¼ˆjÇï¼‰ã€åºšï¼ˆgÄ“ngï¼‰ã€è¾›ï¼ˆxÄ«nï¼‰ã€å£¬ï¼ˆrÃ©nï¼‰ã€ç™¸ï¼ˆguÇï¼‰
+	å­ã€ä¸‘ã€å¯…ã€å¯ã€è¾°ã€å·³ã€åˆã€æœªã€ç”³ã€é…‰ã€æˆŒã€äº¥ å­ï¼ˆzÇï¼‰ã€ä¸‘ï¼ˆchÇ’uï¼‰ã€å¯…ï¼ˆyÃ­nï¼‰ã€å¯ï¼ˆmÇŽoï¼‰ã€è¾°ï¼ˆchÃ©nï¼‰ã€å·³ï¼ˆsÃ¬ï¼‰ã€åˆï¼ˆwÇ”ï¼‰ã€æœªï¼ˆwÃ¨iï¼‰ã€ç”³ï¼ˆshÄ“nï¼‰ã€é…‰ï¼ˆyÇ’uï¼‰ã€æˆŒï¼ˆxÅ«ï¼‰ã€äº¥ï¼ˆhÃ iï¼‰
+	ç”²åˆå¹´ï¼ˆé©¬å¹´ï¼‰ä¸å¯æœˆåºšå¯…æ—¥ å†œåŽ†äºŒæœˆäºŒå
 '''
 from django.http import Http404;
 from django.shortcuts import render, get_object_or_404;

@@ -12,8 +12,11 @@ Modification:
 '''
 from django.conf.urls import patterns, url;
 from app import views;
+from app import newsView;
 
 urlpatterns = patterns('',
 	# ex: /app/
-	url(r'^$', views.index, name='index')
+	url(r'^$', views.index, name='index'),
+	url(r'^news$', newsView.index, name='news'),
+	url(r'^news/getNews$', newsView.getNews, name='getNews')
 );
