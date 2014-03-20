@@ -52,3 +52,44 @@ p.choice_set.count();
 Choice.objects.filter(poll__pub_date__year=current_year)
 c = p.choice_set.filter(choice_text__startswith='Just hacking');
 c.delete();
+
+import datetime;
+from django.utils import timezone;
+from polls.models import Poll;
+
+future_poll = Poll(pub_date=timezone.now() + datetime.timedelta(days=30));
+future_poll.was_published_recently();
+
+python manage.py test polls
+
+from django.test.utils import setup_test_environment;
+setup_test_environment();
+
+from django.test.client import Client;
+client = Client();
+
+# get a response from '/'
+response = client.get('/');
+# we should expect a 404 from that address
+response.status_code;
+
+# on the other hand we should expect to find something at '/polls/index'
+# we'll use 'reverse()' rather than a hardcoded URL
+from django.core.urlresolvers import reverse;
+response = client.get(reverse('polls:index'));
+response.status_code;
+
+response.content;
+
+# note - you might get unexpected results if your 'TIME_ZONE'
+# IN 'settings.py' is not correct. If you need to change it,
+# you will also need to restart your shell session
+from polls.models import Poll;
+from django.utils import timezone;
+# create a Poll and save it
+p = Poll(question="Who is your favorite Beatle?", pub_date=timezone.now());
+p.save();
+# check the response once again
+response = client.get('/polls/index');
+response.content;
+response.context['latest_poll_list'];

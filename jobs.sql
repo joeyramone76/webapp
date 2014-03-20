@@ -321,3 +321,6 @@ ALTER TABLE `polls_choice` ADD CONSTRAINT `poll_id_refs_id_3aa09835` FOREIGN KEY
 # COMMIT;
 
 SELECT * FROM polls_poll;
+
+SELECT @@max_allowed_packet;-- 1048576
+SET GLOBAL max_allowed_packet=10485760;
