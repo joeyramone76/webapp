@@ -324,3 +324,9 @@ SELECT * FROM polls_poll;
 
 SELECT @@max_allowed_packet;-- 1048576
 SET GLOBAL max_allowed_packet=10485760;
+
+-- 2014-03-20
+SELECT * FROM app_menus;
+SHOW CREATE TABLE app_menus;
+SHOW CREATE TABLE app_news;
+SHOW CREATE TABLE app_pages;
