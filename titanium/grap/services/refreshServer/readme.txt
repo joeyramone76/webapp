@@ -93,3 +93,8 @@ p.save();
 response = client.get('/polls/index');
 response.content;
 response.context['latest_poll_list'];
+
+package
+python setup.py sdist
+pip install --user django-polls/dist/django-polls-0.1.zip
+c:\users\zhang\appdata\roaming\python\python27\site-packages\polls
