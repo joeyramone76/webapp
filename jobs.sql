@@ -330,3 +330,4 @@ SELECT * FROM app_menus;
 SHOW CREATE TABLE app_menus;
 SHOW CREATE TABLE app_news;
 SHOW CREATE TABLE app_pages;
+ALTER TABLE app_menus ADD COLUMN website_url VARCHAR(255) NOT NULL DEFAULT '' COMMENT 'website url';

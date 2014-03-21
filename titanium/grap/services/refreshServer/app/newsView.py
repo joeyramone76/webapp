@@ -10,6 +10,19 @@ Modification:
 	子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥 子（zǐ）、丑（chǒu）、寅（yín）、卯（mǎo）、辰（chén）、巳（sì）、午（wǔ）、未（wèi）、申（shēn）、酉（yǒu）、戌（xū）、亥（hài）
 	甲午年（马年）丁卯月庚寅日 农历二月二十
 '''
+import sys;
+import os;
+import datetime;
+import time;
+import re;
+import string;
+import urllib;
+import urllib2;
+import json;
+import time;
+import math;
+import codecs;
+
 from django.http import Http404;
 from django.shortcuts import render, get_object_or_404;
 from django.http import HttpResponseRedirect, HttpResponse;
@@ -25,4 +38,6 @@ def index(request):
 	return HttpResponse("news");
 	
 def getNews(request):
-	return HttpResponse("getNews");
+	url = "http://www.shenglong-electric.com.cn/news/index/cid/7";
+	html = urllib2.urlopen(url).read();
+	return HttpResponse(html);

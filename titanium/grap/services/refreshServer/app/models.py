@@ -24,6 +24,7 @@ class Menus(models.Model):
 	banner = models.CharField(max_length=255);
 	url = models.CharField(max_length=255);
 	sl_url = models.CharField(max_length=255);
+	website_url = models.CharField(max_length=255);
 	parentId = models.IntegerField(default=0);
 	hasSubMenu = models.IntegerField(default=0);
 	date = models.IntegerField(default=0);
