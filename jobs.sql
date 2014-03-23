@@ -300,3 +300,41 @@ SELECT * FROM app_menus;
 SELECT * FROM app_menus;
 
 SHOW CREATE TABLE auth_group;
+
+#BEGIN;
+CREATE TABLE `polls_poll` (
+    `id` INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `question` VARCHAR(200) NOT NULL,
+    `pub_date` DATETIME NOT NULL
+)
+;
+CREATE TABLE `polls_choice` (
+    `id` INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    `poll_id` INTEGER NOT NULL,
+    `choice_text` VARCHAR(200) NOT NULL,
+    `votes` INTEGER NOT NULL
+)
+;
+ALTER TABLE `polls_choice` ADD CONSTRAINT `poll_id_refs_id_3aa09835` FOREIGN KEY
+ (`poll_id`) REFERENCES `polls_poll` (`id`);
+
+# COMMIT;
+
+SELECT * FROM polls_poll;
+
+SELECT @@max_allowed_packet;-- 1048576
+SET GLOBAL max_allowed_packet=10485760;
+
+-- 2014-03-20
+SELECT * FROM app_menus;
+SHOW CREATE TABLE app_menus;
+SHOW CREATE TABLE app_news;
+SHOW CREATE TABLE app_pages;
+ALTER TABLE app_menus ADD COLUMN website_url VARCHAR(255) NOT NULL DEFAULT '' COMMENT 'website url';
+
+-- 2014-03-21
+SELECT * FROM app_menus;
+SELECT * FROM app_news;
+SELECT * FROM app_pages;
+
+SELECT * FROM app_menus WHERE parentCode='002';
