@@ -38,6 +38,15 @@ def index(request):
 	return HttpResponse("news");
 	
 def getNews(request):
+	newsMenus = Menus.objects.filter(
+		parentCode = '002'
+	);
+	
+	json = "";
+	for newsMenu in newsMenus:
+		json += newsMenu.menu_code;
 	url = "http://www.shenglong-electric.com.cn/news/index/cid/7";
 	html = urllib2.urlopen(url).read();
+	html = urllib2.urlopen(newslist_url).read();
+	news_urls = get_newsurls(html);
 	return HttpResponse(html);

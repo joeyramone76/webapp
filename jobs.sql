@@ -331,3 +331,10 @@ SHOW CREATE TABLE app_menus;
 SHOW CREATE TABLE app_news;
 SHOW CREATE TABLE app_pages;
 ALTER TABLE app_menus ADD COLUMN website_url VARCHAR(255) NOT NULL DEFAULT '' COMMENT 'website url';
+
+-- 2014-03-21
+SELECT * FROM app_menus;
+SELECT * FROM app_news;
+SELECT * FROM app_pages;
+
+SELECT * FROM app_menus WHERE parentCode='002';
