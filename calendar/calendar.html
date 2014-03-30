@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<HEAD>
+		<title>万年历查询</title>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="农历; 阳历; 月历; 节日; 时区; 节气; 八字; 干支; 生肖; gregorian solar; chinese lunar; calendar;" />
+		<meta name="robots" content="All" />
+		<meta name="description" content="gregorian solar calendar and chinese lunar calendar" />
+		<meta name="generator" content="MSHTML 6.00.2900.2802" />
+		<style type=text/css>
+			p {
+				font-size: 9pt;
+				font-family: 宋体;
+			}
+			td {
+				font-size: 9pt;
+				font-family: 宋体, simsun;
+			}
+			a:link {
+				color: #000000;
+				text-decoration: none;
+			}
+			a:visited {
+				color: #000000;
+				text-decoration: none;
+			}
+			a:active {
+				color: green;
+				text-decoration: none;
+			}
+			a:hover {
+				color: red;
+				text-decoration: underline;
+			}
+		</style>
+
+		<script type="text/javascript" src="calendar.js"></script>
+		<script type="text/javascript">
+			<!--
+			//===== 算世界时间
+			function timeAdd(UTC, T) {
+				var result = "";
+				var plusMinus, DST, y, tSave;
+				if(T.substring(0, 1) == "-") {
+					plusMinus = -1;
+				} else {
+					plusMinus = 1
+				}
+				UTC = UTC.substring(5);
+				UTC = UTC.substring(0, UTC.length - 4);
+				y = UTC.split(" ")[2];
+				result = (parseInt(T.substr(1, 2)) * 60 + parseInt(T.substr(3, 2))) * plusMinus + UTC;
+				//美国日光节约期间: 4月第一个星期日00:00 至 10月最後一个星期日00:00
+				/*if(T.substr(5, 1) == "*"
+					&& DateSerial(y, 4, (9 - Weekday(DateSerial(y, 4, 1)) % 7) ) <= result
+					&& DateSerial(y, 10, 31 - Weekday(DateSerial(y, 10, 31))) >= result) {
+					result = DateAdd("h", 1, result) + "<font style='font-size:18pt;font-family:Wingdings; color:red'>R</font>";
+				} else {
+					
+				}*/
+				return result;
+			}
+			-->
+		</script>
+
+		<style>
+			.todyaColor {
+				background-color: aqua
+			}
+		</style>
+	</head>
+	<body leftMargin=0 topMargin=0 onload="initial()">
+		<script type="text/javascript">
+			lck = 0;
+			function r(hval) {
+				if(lck == 0) {
+					document.bgColor = hval;
+				}
+			}
+		</script>
+
+		<div id="detail" style="position: absolute"></div>
+		<center>
+			<form name="CLD">
+				<table>
+					<tbody>
+						<tr>
+							<td vAlign="top" align="middle">
+								<br><font style="font-size: 9pt" size=2>本机时间:</font>
+								<br><font id="Clock" face="Arial" color="#000080" size=4 align="center"></font>
+								<p><!--时区 *表示自动调整为日光节约时间-->
+									<font style="font-size: 9pt" size=2>
+										<select style="font-size: 9pt" onchange="changeTZ()" name="TZ">
+											<option value="-1200 安尼威土克、瓜甲兰" selected>国际换日线</option>
+											<option value="-1100 中途岛、萨摩亚群岛">萨摩亚</option>
+											<option value="-1000 夏威夷">夏威夷</option>
+											<option value="-0900*阿拉斯加">阿拉斯加</option>
+											<option value="-0800*太平洋时间(美加)、提亚纳">太平洋</option>
+											<option value="-0700*亚历桑那">美国山区</option>
+											<option value="-0700*山区时间(美加)">美加山区</option>
+											<option value="-0600*萨克其万(加拿大)">加拿大中部</option>
+											<option value="-0600*墨西哥市、塔克西卡帕">墨西哥</option>
+											<option value="-0600*中部时间(美加)">美加中部</option>
+											<option value="-0500*波哥大、里玛">南美洲太平洋</option>
+											<option value="-0500*东部时间(美加)">美加东部</option>
+											<option value="-0500*印第安纳(东部)">美东</option>
+											<option value="-0400*加拉卡斯、拉帕兹">南美洲西部</option>
+											<option value="-0400*大西洋时间 加拿大)">大西洋</option>
+											<option value="-0330 新岛(加拿大东岸)">纽芬兰</option>
+											<option value="-0300 波西尼亚">东南美洲</option>
+											<option value="-0300 布鲁诺斯爱丽斯、乔治城">南美洲东部</option>
+											<option value="-0200*大西洋中部">大西洋中部</option>
+											<option value="-0100*亚速尔群岛、维德角群岛">亚速尔</option>
+											<option value="+0000 格林威治时间、都柏林、爱丁堡、伦敦">英国夏令</option>
+											<option value="+0000 莫洛维亚(赖比瑞亚)、卡萨布兰卡">格林威治标准</option>
+											<option value="+0100 巴黎、马德里">罗马</option>
+											<option value="+0100 布拉格, 华沙, 布达佩斯">中欧</option>
+											<option value="+0100 柏林、斯德哥尔摩、罗马、伯恩、布鲁赛尔、维也纳">西欧</option>
+											<option value="+0200 以色列">以色列</option>
+											<option value="+0200*东欧">东欧</option>
+											<option value="+0200*开罗">埃及</option>
+											<option value="+0200*雅典、赫尔辛基、伊斯坦堡">GFT</option>
+											<option value="+0200*赫拉雷、皮托里">南非</option>
+											<option value="+0300*巴格达、科威特、奈洛比(肯亚)、里雅德(沙乌地)">沙乌地阿拉伯</option>
+											<option value="+0300*莫斯科、圣彼得堡、贺占、窝瓦格瑞德">俄罗斯</option>
+											<option value="+0330*德黑兰">伊朗</option>
+											<option value="+0400*阿布达比(东阿拉伯)、莫斯凯、塔布理斯(乔治亚共和)">阿拉伯</option>
+											<option value="+0430*喀布尔">阿富汗</option>
+											<option value="+0500 伊斯兰马巴德、克洛奇、伊卡特林堡、塔须肯">西亚</option>
+											<option value="+0530 孟买、加尔各答、马垂斯、新德里、可伦坡">印度</option>
+											<option value="+0600 阿马提、达卡">中亚</option>
+											<option value="+0700 曼谷、亚加达、胡志明市">曼谷</option>
+											<option value="+0800 北京、重庆、黑龙江">中国</option>
+											<option value="+0900 东京、大阪、扎幌、汉城、亚库兹(东西伯利亚)">东京</option>
+											<option value="+0930 达尔文">澳洲中部</option>
+											<option value="+1000 布里斯本、墨尔本、席德尼">席德尼</option>
+											<option value="+1000 霍巴特">塔斯梅尼亚</option>
+											<option value="+1000 关岛、莫斯比港、海  威">西太平洋</option>
+											<option value="+1100*马哥大、所罗门群岛、新卡伦多尼亚">太平洋中部</option>
+											<option value="+1200 威灵顿、奥克兰">纽西兰</option>
+											<option value="+1200 斐济、肯加塔、马歇尔群岛">斐济</option>
+										</select>
+										时间
+									</font>
+									<br />
+									<font id="Clock2" face="Arial" color=#000080 size=4 align="center"></font>
+									<br />
+									<font style="font-size: 120pt; color: green; font-family: Webdings">&ucirc;</font>
+									<br />
+									<font id="CITY" style="font-size: 9pt; width: 150px; color: blue; font-family: '新细明体'"></font>
+								</p>
+							</td>
+							<td align="middle">
+								<div style="z-index: -1; position: absolute; top: 30px">
+									<font id="YMBG" style="font-size: 90pt; color: #f0f0f0; font-family: 'Arial Black'">
+										&nbsp;0000<br>&nbsp;JUN
+									</font>
+								</div>
+								<table border=0>
+									<tbody>
+										<tr>
+											<td bgColor="#000080" colSpan=7>
+												<font style="font-size: 9pt" color=#ffffff size=2>
+													公历
+													<select style="font-size: 9pt" onchange="changeCld()" name="SY">
+														<script type="text/javascript">
+															<!--
+															for(var i = 1900 ; i < 2050 ; i++)
+																document.write('<option>' + i + '</option>');
+															//-->
+														</script>
+													</select>
+													年
+													<select style="font-size: 9pt" onchange="changeCld()" name="SM">
+														<script type="text/javascript">
+															<!--
+															for(var i = 1 ; i < 13 ; i++)
+																document.write('<option>' + i + '</option>')
+															//-->
+														</script>
+													</select>
+													月
+												</font>
+												<font id="GZ" face="标楷体" color="yellow" size=3>
+												</font>
+												<br />
+											</td>
+										</tr>
+										<tr align="middle" bgColor=#e0e0e0>
+											<td width=54>
+												<font color="red">日</font>
+											</td>
+											<td width=54>一</td>
+											<td width=54>二</td>
+											<td width=54>三</td>
+											<td width=54>四</td>
+											<td width=54>五</td>
+											<td width=54>
+												<font color="green">六</font>
+											</td>
+										</tr>
+										<script type="text/javascript">
+											<!--
+												var gNum;
+												for(var i = 0 ; i < 6 ; i++) {
+													document.write('<tr align=center>');
+													for(var j = 0 ; j < 7 ; j++) {
+														gNum = i * 7 + j;
+														document.write('<td id="GD' + gNum +'" onMouseOver="mOvr(' + gNum +')" onMouseOut="mOut()"><font id="SD' + gNum +'" size=5 face="Arial Black"');
+														if(j == 0) {
+															document.write(' color="red"');
+														}
+														if(j == 6) {
+															if(i % 2 == 1) {
+																document.write(' color="red"');
+															} else {
+																document.write(' color="green"');
+															}
+														}
+														document.write(' title=""> </font><br><font id="LD' + gNum + '" size=2 style="font-size:9pt"> </font></td>');
+													}
+													document.write('</tr>');
+												}
+											//-->
+										</script>
+									</tbody>
+								</table>
+							</td>
+							<td vAlign="top" align="middle" width=40>
+								<br />
+								<br />
+								<br />
+								<br />
+								<button style="font-size: 9pt" onclick="pushBtm('YU')">年↑</button>
+								<br />
+								<button style="font-size: 9pt" onclick="pushBtm('YD')">年↓</button>
+								<p />
+								<button style="font-size: 9pt" onclick="pushBtm('MU')">月↑</button>
+								<br />
+								<button style="font-size: 9pt" onclick="pushBtm('MD')">月↓</button>
+								<p>
+									<button style="font-size: 9pt" onclick="pushBtm('')">今日</button>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<p></p>
+			<hr width="90%" color="#cccccc" noShade size=1 />
+			<font style="font-size: 9pt" face="ARIAL" size=2>
+				阳历中
+				<font color=red>红色</font>
+				/
+				<font color="green">绿色</font>
+				<font color=black>
+					表示节假日，农历中
+					<font color=green>绿色</font>
+					表示为24节气日，
+					<font color=red>红色</font>
+					表示为传统节日，
+					<font color=blue>蓝色</font>
+					则表示为公众节假日
+				</font>
+			</font>
+			<br />
+		</center>
+	</body>
+</html>
